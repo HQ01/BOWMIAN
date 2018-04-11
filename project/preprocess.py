@@ -150,37 +150,35 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
         pairs = filterPairs(pairs, max_length)
     print("Trimmed to %s sentence pairs" % len(pairs))
     print("Counting words...")
+    max_ngrams_len = 0 
     for pair in pairs:
         #input_lang.addSentence(pair[0])
         pair[0] = output_lang.addSentence(pair[1])
+        if len(pair[0]) > max_ngrams_len:
+            max_ngrams_len = len(pair[0])
+    print("Max Ngrams length:", max_ngrams_len)
 
     print("Counted words:")
 #     print(input_lang.name, input_lang.n_words)
     print(output_lang.name, output_lang.n_words)
-    return input_lang, output_lang, pairs
+    return input_lang, output_lang, pairs, max_ngrams_len
 
 if __name__ == '__main__':
     args = parser.parse_args()
     
-    input_lang, output_lang, pairs = prepareData('eng', 'fra', 
+    input_lang, output_lang, pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, True)
     vocab_ngrams = output_lang.createNGramDictionary()
+    lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
+        vocab_ngrams, max_ngrams_len)
+
+    with open("pairs.pkl", 'wb') as f:
+        pkl.dump(pairs, f, protocol=pkl.HIGHEST_PROTOCOL) 
+    with open("lang.pkl", 'wb') as f:
+        pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
-    with open("lang_word2index.pkl", 'wb') as f:
-        pkl.dump(output_lang.word2index, f, protocol=pkl.HIGHEST_PROTOCOL)
-    with open("lang_index2word.pkl", 'wb') as f:
-        pkl.dump(output_lang.index2word, f, protocol=pkl.HIGHEST_PROTOCOL)
-    with open("dict_ngram.pkl", 'wb') as f:
-        pkl.dump(vocab_ngrams, f, protocol=pkl.HIGHEST_PROTOCOL)
-    
-    # with open("lang_word2index.pkl", 'rb') as f:
-    #     lang_word2index_load = pkl.load(f)
-    # with open("lang_index2word.pkl", 'rb') as f:
-    #     lang_index2word_load = pkl.load(f)
-    # with open("dict_ngram.pkl", 'rb') as f:
-    #     vocab_ngrams_load = pkl.load(f)
-    # assert(lang_word2index_load == output_lang.word2index)
-    # assert(lang_index2word_load == output_lang.index2word)
-    # assert(vocab_ngrams == vocab_ngrams_load)
+    # with open("lang.pkl", 'rb') as f:
+    #     lang_load = pkl.load(f)
+    # assert(lang_load == lang)
     
     print(random.choice(pairs))
