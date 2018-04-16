@@ -15,6 +15,7 @@ from torch.autograd import Variable
 
 from util import *
 from model import *
+from metric import score
 
 # Training settings
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
@@ -22,6 +23,8 @@ parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
                     help='data path of lang.pkl (default: current folder)')
 parser.add_argument('--model', type=str, default='', metavar='MODEL',
                     help='model architecture (default: )')
+parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
+                    help='metric to use (default: ROUGE; BLEU and BLEU_clip available)')
 parser.add_argument('--num-words', type=int, default='10000', metavar='N',
                     help='maximum ngrams vocabulary size to use (default: 10000')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
@@ -34,8 +37,10 @@ parser.add_argument('--plot-every', type=int, default='100', metavar='N',
                     help='plot every (default: 100')
 parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                     help='learning rate (default: 0.01)')
+parser.add_argument('--order', type=int, default='2', metavar='N',
+                    help='order of ngram (set by preprocessing)')
 parser.add_argument('--max-length', type=int, default='100', metavar='N',
-                    help='max-ngrams-length (default: 100')
+                    help='max-ngrams-length (set by preprocessing)')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
@@ -51,8 +56,9 @@ class Lang:
         self.word2count = lang_load[1]
         self.index2word = lang_load[2]
         self.n_words = lang_load[3]
-        self.vocab_ngrams = lang_load[4]
-        self.max_ngrams_len = lang_load[5]
+        self.order = lang_load[4]
+        self.vocab_ngrams = lang_load[5]
+        self.max_ngrams_len = lang_load[6]
 
 def indexesFromSentence(lang, sentence):
     return [lang.word2index[word] for word in sentence.split(' ')]
@@ -312,6 +318,8 @@ def evaluate(encoder, decoder, sentence, lang, args):
     return decoded_words
 
 def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
+    list_cand = []
+    list_ref = []
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
@@ -321,6 +329,9 @@ def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
         output_sentence = ' '.join(output_words)
         print('<', output_sentence)
         print('')
+        list_cand.append(output_sentence)
+        list_ref.append(pair[1])
+    print("{} score: {}".format(args.metric, score(list_cand, list_ref, args.order, args.metric)))
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -337,6 +348,7 @@ if __name__ == '__main__':
     with open(args.data_path + "/lang.pkl", 'rb') as f:
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
+    args.order = lang.order
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and decoder

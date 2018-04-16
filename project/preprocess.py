@@ -170,7 +170,7 @@ if __name__ == '__main__':
         args.order, args.data_path, args.filter_pair, args.max_length, True)
     vocab_ngrams = output_lang.createNGramDictionary()
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
-        vocab_ngrams, max_ngrams_len)
+        args.order, vocab_ngrams, max_ngrams_len)
 
     with open("pairs.pkl", 'wb') as f:
         pkl.dump(pairs, f, protocol=pkl.HIGHEST_PROTOCOL) 
