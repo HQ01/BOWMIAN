@@ -56,8 +56,8 @@ class Lang:
         # for single words
         self.word2index = {}
         self.word2count = {}
-        self.index2word = {0: "SOS", 1: "EOS"}
-        self.n_words = 2  # Count SOS and EOS
+        self.index2word = {0: "UNK", 1: "SOS", 2: "EOS"}
+        self.n_words = 3  # Count UNK, SOS and EOS
         
         # for ngrams
         self.order = order

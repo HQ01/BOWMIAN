@@ -7,24 +7,13 @@ from torch import optim
 import torch.nn.functional as F
 
 class NGramEncoder(nn.Module):
-    def __init__(self, input_size, hidden_size, use_cuda):
+    def __init__(self, input_size, hidden_size, mode):
         super(NGramEncoder, self).__init__()
-        self.use_cuda = use_cuda
         self.hidden_size = hidden_size
-        self.embedding = nn.Embedding(input_size, hidden_size)
+        self.embeddingBag = nn.EmbeddingBag(input_size, hidden_size, mode=mode)
     
-    def forward(self, input, hidden):
-        embedded = self.embedding(input).view(1, 1, -1)
-        output = embedded
-        hidden = hidden + embedded
-        return output, hidden
-    
-    def initHidden(self):
-        result = Variable(torch.zeros(1, 1, self.hidden_size))
-        if self.use_cuda:
-            return result.cuda()
-        else:
-            return result
+    def forward(self, input):
+        return self.embeddingBag(input.view(1, -1)).view(1, 1, -1) # convert to 2-D tensor first for embeddingBag
 
 class DecoderRNN(nn.Module):
     def __init__(self, hidden_size, output_size, use_cuda):

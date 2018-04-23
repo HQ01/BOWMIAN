@@ -24,8 +24,8 @@ from metric import score
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
 parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
                     help='data path of pairs.pkl and lang.pkl (default: current folder)')
-parser.add_argument('--model', type=str, default='', metavar='MODEL',
-                    help='model architecture (default: )')
+parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
+                    help='mode of bag-of-n-gram representation (default: sum)')
 parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
                     help='metric to use (default: ROUGE; BLEU and BLEU_clip available)')
 parser.add_argument('--num-words', type=int, default='10000', metavar='N',
@@ -72,7 +72,7 @@ def indexesFromSentence(lang, sentence):
         if word in lang.word2index:
             result.append(lang.word2index[word])
         else:
-            pass
+            result.append(UNK_token)
     return result
 
 def variableFromSentence(lang, sentence, args):
@@ -90,11 +90,11 @@ def indexesFromNGramList(vocab, ngram_list, num_words):
         if ng in vocab:
             idx = vocab[ng]
             if idx > num_words:
-                pass
+                result.append(UNK_token)
             else:
                 result.append(idx)
         else:
-            pass
+            result.append(UNK_token)
     return result
 
 def variableFromNGramList(vocab, ngram_list, num_words, args):
@@ -121,7 +121,7 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     use_cuda = args.cuda
     max_length = args.max_length
 
-    encoder_hidden = encoder.initHidden()
+    # encoder_hidden = encoder.initHidden()
 
     encoder_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
@@ -133,10 +133,11 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
 
     loss = 0
-    for ei in range(input_length):
-        encoder_output, encoder_hidden = encoder(
-            input_variable[ei], encoder_hidden)
-        encoder_outputs[ei] = encoder_output[0][0]
+    encoder_hidden = encoder(input_variable)
+    # for ei in range(input_length):
+    #     encoder_output, encoder_hidden = encoder(input_variable[ei],
+    #                                              encoder_hidden)
+    #     encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
 
     decoder_input = Variable(torch.LongTensor([[SOS_token]]))
     decoder_input = decoder_input.cuda() if use_cuda else decoder_input
@@ -181,7 +182,7 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
 
 def train_attn(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, args):
     use_cuda = args.cuda
-    max_length = args.max_length * 2
+    max_length = args.max_length
     
     encoder_hidden = encoder.initHidden()
 
@@ -284,6 +285,8 @@ def trainEpochs(encoder, decoder, lang, pairs, args):
                 plot_losses.append(plot_loss_avg)
                 plot_loss_total = 0
 
+        print("Epoch {}/{} finished".format(epoch, args.n_epochs))
+
     showPlot(plot_losses)
 
 
@@ -297,15 +300,16 @@ def evaluate(encoder, decoder, sentence, lang, args):
 
     input_variable = variableFromNGramList(lang.vocab_ngrams, sentence, args.num_words, args)
     input_length = input_variable.size()[0]
-    encoder_hidden = encoder.initHidden()
+    # encoder_hidden = encoder.initHidden()
 
     encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
     encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
 
-    for ei in range(input_length):
-        encoder_output, encoder_hidden = encoder(input_variable[ei],
-                                                 encoder_hidden)
-        encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
+    encoder_hidden = encoder(input_variable)
+    # for ei in range(input_length):
+    #     encoder_output, encoder_hidden = encoder(input_variable[ei],
+    #                                              encoder_hidden)
+    #     encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
 
     decoder_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
     decoder_input = decoder_input.cuda() if use_cuda else decoder_input
@@ -376,7 +380,7 @@ if __name__ == '__main__':
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and decoder
-    encoder = NGramEncoder(args.num_words, args.hidden_size, args.cuda)
+    encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
     decoder = DecoderRNN(args.hidden_size, lang.n_words, args.cuda)
     if args.cuda:
         encoder = encoder.cuda()
@@ -394,7 +398,10 @@ if __name__ == '__main__':
     evaluateRandomly(encoder, decoder, test_pairs, lang, args)
     evaluateTestingPairs(encoder, decoder, test_pairs, lang, args)
 
-    # # Export trained embedding weights
-    # embedding = encoder1.embedding.weight.data.numpy()
-    # with open("embedding_weights.pkl", 'wb') as f:
-    #     pkl.dump(embedding, f, protocol=pkl.HIGHEST_PROTOCOL) 
+    # Export trained embedding weights
+    if args.cuda:
+        embedding_weights = encoder.embeddingBag.weight.data.cpu().numpy()
+    else: 
+        embedding_weights = encoder.embeddingBag.weight.data.numpy()
+    with open("embedding_weights.pkl", 'wb') as f:
+        pkl.dump(embedding_weights, f, protocol=pkl.HIGHEST_PROTOCOL)

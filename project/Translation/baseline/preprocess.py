@@ -39,7 +39,7 @@ eng_prefixes = (
 )
 
 def filterPair(p, max_length):
-    return len(p[1].split(' ')) < max_length and p[1].startswith(eng_prefixes)
+    return len(p[0].split(' ')) < max_length and p[0].startswith(eng_prefixes)
 
 def filterPairs(pairs, max_length):
     return [pair for pair in pairs if filterPair(pair, max_length)]
@@ -56,8 +56,8 @@ class Lang:
         # for single words
         self.word2index = {}
         self.word2count = {}
-        self.index2word = {0: "SOS", 1: "EOS"}
-        self.n_words = 2  # Count SOS and EOS
+        self.index2word = {0: "UNK", 1: "SOS", 2: "EOS"}
+        self.n_words = 3  # Count UNK, SOS and EOS
 
     def addSentence(self, sent):
         for word in sent.split(' '):
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     input_lang, output_lang, train_pairs, test_pairs = prepareData('eng', 'fra', 
-        args.order, args.data_path, args.filter_pair, args.max_length, True)
+        args.order, args.data_path, args.filter_pair, args.max_length, False)
     input_lang = (input_lang.word2index, input_lang.word2count, input_lang.index2word, input_lang.n_words)
     output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
     with open("pairs.pkl", 'wb') as f:

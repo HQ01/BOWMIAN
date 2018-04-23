@@ -69,7 +69,7 @@ def indexesFromSentence(lang, sentence):
         if word in lang.word2index:
             result.append(lang.word2index[word])
         else:
-            pass
+            result.append(UNK_token)
     return result
 
 def variableFromSentence(lang, sentence, args):
@@ -260,6 +260,8 @@ def trainEpochs(encoder, decoder, input_lang, output_lang, pairs, args):
                 plot_loss_avg = plot_loss_total / plot_every
                 plot_losses.append(plot_loss_avg)
                 plot_loss_total = 0
+        
+        print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
     showPlot(plot_losses)
 

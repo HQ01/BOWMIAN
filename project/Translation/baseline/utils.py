@@ -13,8 +13,9 @@ import matplotlib.ticker as ticker
 nlp = spacy.load('en')
 
 # Define constants
-SOS_token = 0
-EOS_token = 1
+UNK_token = 0
+SOS_token = 1
+EOS_token = 2
 
 # Turn a Unicode string to plain ASCII
 def unicodeToAscii(s):
