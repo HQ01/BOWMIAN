@@ -1,0 +1,16 @@
+Reading lines...
+Read 108673 training sentence pairs
+Read 27169 testing sentence pairs
+Trimmed to 9427 training sentence pairs
+Trimmed to 2358 testing sentence pairs
+Counting words and constructing training pairs...
+Counted words in training sentences:
+eng 2877
+fra 4338
+Constructing test pairs...
+Max Ngrams length of all training and testing sentences: 27
+Example training sentence pairs:
+[['i', 'm', 'sorry', 'my', 'father', 'is', 'out', '.', 'i m', 'm sorry', 'sorry my', 'my father', 'father is', 'is out', 'out .', 'i m sorry', 'm sorry my', 'sorry my father', 'my father is', 'father is out', 'is out .'], 'je suis desole mon pere est sorti .']
+Example testing sentence pairs:
+[['you', 're', 'very', 'brave', '.', 'you re', 're very', 'very brave', 'brave .', 'you re very', 're very brave', 'very brave .'], 'vous etes fort brave .']
+

@@ -4,6 +4,7 @@ import argparse
 import time
 from io import open
 import random
+import math
 import numpy as np
 import pickle as pkl
 
@@ -66,24 +67,6 @@ class Lang:
         self.vocab_ngrams = lang_load[5]
         self.max_ngrams_len = lang_load[6]
 
-def indexesFromSentence(lang, sentence):
-    result = []
-    for word in sentence.split(' '):
-        if word in lang.word2index:
-            result.append(lang.word2index[word])
-        else:
-            result.append(UNK_token)
-    return result
-
-def variableFromSentence(lang, sentence, args):
-    indexes = indexesFromSentence(lang, sentence)
-    indexes.append(EOS_token)
-    result = Variable(torch.LongTensor(indexes).view(-1, 1))
-    if args.cuda:
-        return result.cuda()
-    else:
-        return result
-
 def indexesFromNGramList(vocab, ngram_list, num_words):
     result = []
     for ng in ngram_list:
@@ -104,10 +87,20 @@ def variableFromNGramList(vocab, ngram_list, num_words, args):
         return result.cuda()
     else:
         return result
+
+def variableFromSentenceLength(label, args):
+    length = int(label)
+    # bins: (1-4), (5-8), (9-12), (13-16), (17-20), (20-24), (24+)
+    category = min(math.floor((length - 1) / 4), 6)
+    result = Variable(torch.LongTensor([category]))
+    if args.cuda:
+        return result.cuda()
+    else:
+        return result
     
 def variablesFromPair(pair, lang, args):
     input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
-    target_variable = variableFromSentence(lang, pair[1], args)
+    target_variable = variableFromSentenceLength(pair[1], args)
     return (input_variable, target_variable)
 
 
@@ -119,30 +112,20 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
     use_cuda = args.cuda
     max_length = args.max_length
 
-    # encoder_hidden = encoder.initHidden()
+    loss = 0
 
     # encoder_optimizer.zero_grad()
     net_optimizer.zero_grad()
 
-    input_length = input_variable.size()[0]
-    target_length = target_variable.size()[0]
-
-    encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
-    encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-
-    loss = 0
     encoder_hidden = encoder(input_variable)
-    # for ei in range(input_length):
-    #     encoder_output, encoder_hidden = encoder(input_variable[ei],
-    #                                              encoder_hidden)
-    #     encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
-
+    net_output = net(encoder_hidden)
+    loss = criterion(net_output, target_variable)
     loss.backward()
 
     # encoder_optimizer.step()
     net_optimizer.step()
 
-    return loss.data[0] / target_length
+    return loss.data[0]
 
 def trainEpochs(encoder, net, lang, pairs, args):
     n_epochs = args.n_epochs
@@ -159,7 +142,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
 
     # encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
     net_optimizer = optim.SGD(net.parameters(), lr=learning_rate)
-    criterion = nn.NLLLoss()
+    criterion = nn.CrossEntropyLoss()
 
     for epoch in range(1, args.n_epochs + 1):
         random.shuffle(pairs)
@@ -177,6 +160,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
             plot_loss_total += loss
 
             if iter % args.print_every == 0:
+                evaluateRandomly(encoder, net, pairs, lang, args)
                 print_loss_avg = print_loss_total / print_every
                 print_loss_total = 0
                 print('%s (%d %d%%) %.4f' % (timeSince(start, iter / n_iters),
@@ -196,64 +180,48 @@ def trainEpochs(encoder, net, lang, pairs, args):
 # Evaluation
 ###############################################
 
-def evaluate(encoder, decoder, sentence, lang, args):
-    use_cuda = args.cuda
-    max_length = args.max_length
-
-    input_variable = variableFromNGramList(lang.vocab_ngrams, sentence, args.num_words, args)
-    input_length = input_variable.size()[0]
-    # encoder_hidden = encoder.initHidden()
-
-    encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
-    encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-
-    encoder_hidden = encoder(input_variable)
-    # for ei in range(input_length):
-    #     encoder_output, encoder_hidden = encoder(input_variable[ei],
-    #                                              encoder_hidden)
-    #     encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
-
-    decoder_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
-    decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-
-    decoder_hidden = encoder_hidden
-
-    decoded_words = []
-    decoder_attentions = torch.zeros(max_length, max_length)
-
-    for di in range(max_length):
-#         decoder_output, decoder_hidden, decoder_attention = decoder(
-#             decoder_input, decoder_hidden, encoder_outputs)
-#         decoder_attentions[di] = decoder_attention.data
-        decoder_output, decoder_hidden = decoder(
-            decoder_input, decoder_hidden)
-        topv, topi = decoder_output.data.topk(1)
-        ni = topi[0][0]
-        if ni == EOS_token:
-            decoded_words.append('<EOS>')
-            break
-        else:
-            decoded_words.append(lang.index2word[ni])
-
-        decoder_input = Variable(torch.LongTensor([[ni]]))
-        decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-
-#     return decoded_words, decoder_attentions[:di + 1]
-    return decoded_words
-
-def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
+def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
         print('=', pair[1])
-#         output_words, attentions = evaluate(encoder, decoder, pair[0])
-        output_words = evaluate(encoder, decoder, pair[0], lang, args)
-        output_sentence = ' '.join(output_words)
-        print('<', output_sentence)
+
+        input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+        input_length = input_variable.size()[0]
+
+        encoder_hidden = encoder(input_variable)
+
+        outputs = net(encoder_hidden)
+        predict = torch.max(outputs, 1)[1].data[0]
+
+        if predict < 6:
+            print('< {}-{}'.format(predict * 4 + 1, predict * 4 + 4))
+        else:
+            print('< 24+')
         print('')
 
-def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
-    pass
+def evaluateTestingPairs(encoder, net, pairs, lang, args):
+    use_cuda = args.cuda
+    max_length = args.max_length
+
+    correct = 0
+    total = 0
+    for pair in pairs:
+        input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+        input_length = input_variable.size()[0]
+
+        encoder_hidden = encoder(input_variable)
+
+        outputs = net(encoder_hidden)
+        predict = torch.max(outputs, 1)[1].data[0]
+        label = min(math.floor((int(pair[1]) - 1) / 4), 6)
+        
+        total += 1
+        if (predict == label):
+            correct += 1
+
+    print('Accuracy of the network on the sentence length test set: %d %%' % (
+        100 * correct / total))
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -274,8 +242,8 @@ if __name__ == '__main__':
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and net
+    net = MLP(args.hidden_size, class_size=7)
     encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
-    net = MLP() # TODO
     if args.cuda:
         encoder = encoder.cuda()
         net = net.cuda()

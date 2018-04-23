@@ -7,35 +7,18 @@ from torch import optim
 import torch.nn.functional as F
 
 class MLP(nn.Module):
-    def __init__(self, class_size=6, act='Tanh'):
-        super(MLPNet,self).__init__()
-        
-        self.hids = []
-        
-        self.fc1 = nn.Linear(100, 64)
-        self.tanh = eval('nn.{}'.format(act))()
+    def __init__(self, input_size, class_size=7):
+        super(MLP, self).__init__()
+        self.fc1 = nn.Linear(input_size, 64)
         self.fc2 = nn.Linear(64, 32)
         self.fc3 = nn.Linear(32, class_size)
         
-        self.hid_modules = nn.ModuleList([h[0] for h in self.hids])
-
-        #self.classifier = nn.Linear(options['n_hid'], 2)
-        self.criterion = nn.CrossEntropyLoss()
-        
-    def forward(self, sentEmb):
-
-        h = sentEmb
-        h = self.fc1(h)
-        h = self.tanh(h)
-        h = self.fc2(h)
-        h = self.tanh(h)
-        h = self.fc3(h)
-        
-        #z = self.classifier(h)
-        m = nn.Softmax(dim=1)
-        z = m(h)
-
-        return z
+    def forward(self, embedding):
+        out = embedding.view(1, -1)
+        out = F.relu(self.fc1(out))
+        out = F.relu(self.fc2(out))
+        out = self.fc3(out)
+        return out
 
 class NGramEncoder(nn.Module):
     def __init__(self, input_size, hidden_size, mode):
