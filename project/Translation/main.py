@@ -117,13 +117,13 @@ def variablesFromPair(pair, input_lang, output_lang, args):
 
 teacher_forcing_ratio = 0.5
  
-def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, args):
+def train(input_variable, target_variable, encoder, decoder, decoder_optimizer, criterion, args):
     use_cuda = args.cuda
     max_length = args.max_length
 
     # encoder_hidden = encoder.initHidden()
 
-    encoder_optimizer.zero_grad()
+    # encoder_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
 
     input_length = input_variable.size()[0]
@@ -171,7 +171,7 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
 
     loss.backward()
 
-    encoder_optimizer.step()
+    # encoder_optimizer.step()
     decoder_optimizer.step()
 
     return loss.data[0] / target_length
