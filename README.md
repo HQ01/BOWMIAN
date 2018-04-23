@@ -1,3 +1,3 @@
-# B.O.W.M.I.A.N
+# B.O.N.M.I.A.N
 
-Bag of word may include anything you need
+Bag of ngrams may include anything you need
