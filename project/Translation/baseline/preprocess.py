@@ -14,8 +14,8 @@ from utils import *
 ###############################################
 
 parser = argparse.ArgumentParser(description='Data Preprocessing')
-parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path (default: current folder)')
+parser.add_argument('--data-path', type=str, default='../../data', metavar='PATH',
+                    help='data path (default: ../../data)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
 parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
@@ -58,21 +58,10 @@ class Lang:
         self.word2count = {}
         self.index2word = {0: "SOS", 1: "EOS"}
         self.n_words = 2  # Count SOS and EOS
-        
-        # for ngrams
-        self.order = order
-        self.vocab0 = OrderedDict()
 
     def addSentence(self, sent):
         for word in sent.split(' '):
             self.addWord(word)
-        ngrams = extract_ngrams(sent, self.order)
-        for ng in ngrams:
-            if ng in self.vocab0:
-                self.vocab0[ng] += 1
-            else:
-                self.vocab0[ng] = 1
-        return ngrams
 
     def addWord(self, word):
         if word not in self.word2index:
@@ -82,13 +71,6 @@ class Lang:
             self.n_words += 1
         else:
             self.word2count[word] += 1
-    
-    def createNGramDictionary(self):
-        tokens = list(self.vocab0.keys())
-        freqs = list(self.vocab0.values())
-        sidx = np.argsort(freqs)[::-1]
-        vocab = OrderedDict([(tokens[s], i) for i, s in enumerate(sidx)])
-        return vocab
 
 def readLangs(lang1, lang2, order, data_path, reverse=False):
     print("Reading lines...")
@@ -129,36 +111,25 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
     print("Counting words and constructing training pairs...")
     max_ngrams_len = 0 
     for pair in train_pairs:
-        #input_lang.addSentence(pair[0])
-        pair[0] = output_lang.addSentence(pair[1])
-        if len(pair[0]) > max_ngrams_len:
-            max_ngrams_len = len(pair[0])
+        input_lang.addSentence(pair[0])
+        output_lang.addSentence(pair[1])
     print("Counted words in training sentences:")
-#     print(input_lang.name, input_lang.n_words)
+    print(input_lang.name, input_lang.n_words)
     print(output_lang.name, output_lang.n_words)
-    print("Constructing test pairs...")
-    for pair in test_pairs:
-        #input_lang.addSentence(pair[0])
-        pair[0] = extract_ngrams(pair[1], order)
-        if len(pair[0]) > max_ngrams_len:
-            max_ngrams_len = len(pair[0])
-    print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
 
-    return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
+    return input_lang, output_lang, train_pairs, test_pairs
 
 if __name__ == '__main__':
     args = parser.parse_args()
     
-    input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
+    input_lang, output_lang, train_pairs, test_pairs = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, True)
-    vocab_ngrams = output_lang.createNGramDictionary()
-    lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
-        args.order, vocab_ngrams, max_ngrams_len)
-
+    input_lang = (input_lang.word2index, input_lang.word2count, input_lang.index2word, input_lang.n_words)
+    output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
     with open("pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
     with open("lang.pkl", 'wb') as f:
-        pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
+        pkl.dump((input_lang, output_lang), f, protocol=pkl.HIGHEST_PROTOCOL)
     
     # with open("lang.pkl", 'rb') as f:
     #     lang_load = pkl.load(f)

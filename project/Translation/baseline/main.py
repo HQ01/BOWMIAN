@@ -62,9 +62,6 @@ class Lang:
         self.word2count = lang_load[1]
         self.index2word = lang_load[2]
         self.n_words = lang_load[3]
-        self.order = lang_load[4]
-        self.vocab_ngrams = lang_load[5]
-        self.max_ngrams_len = lang_load[6]
 
 def indexesFromSentence(lang, sentence):
     result = []
@@ -76,38 +73,18 @@ def indexesFromSentence(lang, sentence):
     return result
 
 def variableFromSentence(lang, sentence, args):
+    use_cuda = args.cuda
     indexes = indexesFromSentence(lang, sentence)
     indexes.append(EOS_token)
     result = Variable(torch.LongTensor(indexes).view(-1, 1))
-    if args.cuda:
+    if use_cuda:
         return result.cuda()
     else:
         return result
 
-def indexesFromNGramList(vocab, ngram_list, num_words):
-    result = []
-    for ng in ngram_list:
-        if ng in vocab:
-            idx = vocab[ng]
-            if idx > num_words:
-                pass
-            else:
-                result.append(idx)
-        else:
-            pass
-    return result
-
-def variableFromNGramList(vocab, ngram_list, num_words, args):
-    indexes = indexesFromNGramList(vocab, ngram_list, num_words)
-    result = Variable(torch.LongTensor(indexes).view(-1, 1))
-    if args.cuda:
-        return result.cuda()
-    else:
-        return result
-    
-def variablesFromPair(pair, lang, args):
-    input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
-    target_variable = variableFromSentence(lang, pair[1], args)
+def variablesFromPair(pair, input_lang, output_lang, args):
+    input_variable = variableFromSentence(input_lang, pair[0], args)
+    target_variable = variableFromSentence(output_lang, pair[1], args)
     return (input_variable, target_variable)
 
 
@@ -116,7 +93,7 @@ def variablesFromPair(pair, lang, args):
 ###############################################
 
 teacher_forcing_ratio = 0.5
-
+ 
 def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, args):
     use_cuda = args.cuda
     max_length = args.max_length
@@ -241,7 +218,7 @@ def train_attn(input_variable, target_variable, encoder, decoder, encoder_optimi
 
     return loss.data[0] / target_length
 
-def trainEpochs(encoder, decoder, lang, pairs, args):
+def trainEpochs(encoder, decoder, input_lang, output_lang, pairs, args):
     n_epochs = args.n_epochs
     print_every = args.print_every
     plot_every = args.plot_every
@@ -260,7 +237,7 @@ def trainEpochs(encoder, decoder, lang, pairs, args):
 
     for epoch in range(1, args.n_epochs + 1):
         random.shuffle(pairs)
-        training_pairs = [variablesFromPair(pair, lang, args)
+        training_pairs = [variablesFromPair(pair, input_lang, output_lang, args)
                       for pair in pairs]
 
         for training_pair in training_pairs:
@@ -286,16 +263,15 @@ def trainEpochs(encoder, decoder, lang, pairs, args):
 
     showPlot(plot_losses)
 
-
 ###############################################
 # Evaluation
 ###############################################
 
-def evaluate(encoder, decoder, sentence, lang, args):
+def evaluate(encoder, decoder, sentence, input_lang, output_lang, args):
     use_cuda = args.cuda
     max_length = args.max_length
 
-    input_variable = variableFromNGramList(lang.vocab_ngrams, sentence, args.num_words, args)
+    input_variable = variableFromSentence(input_lang, sentence, args)
     input_length = input_variable.size()[0]
     encoder_hidden = encoder.initHidden()
 
@@ -327,7 +303,7 @@ def evaluate(encoder, decoder, sentence, lang, args):
             decoded_words.append('<EOS>')
             break
         else:
-            decoded_words.append(lang.index2word[ni])
+            decoded_words.append(output_lang.index2word[ni])
 
         decoder_input = Variable(torch.LongTensor([[ni]]))
         decoder_input = decoder_input.cuda() if use_cuda else decoder_input
@@ -335,23 +311,23 @@ def evaluate(encoder, decoder, sentence, lang, args):
 #     return decoded_words, decoder_attentions[:di + 1]
     return decoded_words
 
-def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
+def evaluateRandomly(encoder, decoder, pairs, input_lang, output_lang, args, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
         print('=', pair[1])
 #         output_words, attentions = evaluate(encoder, decoder, pair[0])
-        output_words = evaluate(encoder, decoder, pair[0], lang, args)
+        output_words = evaluate(encoder, decoder, pair[0], input_lang, output_lang, args)
         output_sentence = ' '.join(output_words)
         print('<', output_sentence)
         print('')
 
-def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
+def evaluateTestingPairs(encoder, decoder, pairs, input_lang, output_lang, args):
     list_cand = []
     list_ref = []
     print("Evaluating {} testing sentences...".format(len(pairs)))
     for pair in pairs:
-        output_words = evaluate(encoder, decoder, pair[0], lang, args)
+        output_words = evaluate(encoder, decoder, pair[0], input_lang, output_lang, args)
         output_sentence = ' '.join(output_words)
         list_cand.append(output_sentence)
         list_ref.append(pair[1])
@@ -370,31 +346,26 @@ if __name__ == '__main__':
     with open(args.data_path + "/pairs.pkl", 'rb') as f:
         (train_pairs, test_pairs) = pkl.load(f)
     with open(args.data_path + "/lang.pkl", 'rb') as f:
-        lang_load = pkl.load(f)
-    lang = Lang(lang_load)
-    args.order = lang.order
-    args.max_length = lang.max_ngrams_len
+        (input_lang_load, output_lang_load) = pkl.load(f)
+    input_lang = Lang(input_lang_load)
+    output_lang = Lang(output_lang_load)
+    args.max_length = 50
 
     # Set encoder and decoder
-    encoder = NGramEncoder(args.num_words, args.hidden_size, args.cuda)
-    decoder = DecoderRNN(args.hidden_size, lang.n_words, args.cuda)
+    encoder = EncoderRNN(args.num_words, args.hidden_size, args.cuda)
+    decoder = DecoderRNN(args.hidden_size, output_lang.n_words, args.cuda)
     if args.cuda:
         encoder = encoder.cuda()
         decoder = decoder.cuda()
 
     # Train and evalute
     print("Evaluate randomly on training sentences:")
-    evaluateRandomly(encoder, decoder, train_pairs, lang, args)
+    evaluateRandomly(encoder, decoder, train_pairs, input_lang, output_lang, args)
     print("Evaluate randomly on testing sentences:")
-    evaluateRandomly(encoder, decoder, test_pairs, lang, args)
-    trainEpochs(encoder, decoder, lang, train_pairs, args)
+    evaluateRandomly(encoder, decoder, test_pairs, input_lang, output_lang, args)
+    trainEpochs(encoder, decoder, input_lang, output_lang, train_pairs, args)
     print("Evaluate randomly on training sentences:")
-    evaluateRandomly(encoder, decoder, train_pairs, lang, args)
+    evaluateRandomly(encoder, decoder, train_pairs, input_lang, output_lang, args)
     print("Evaluate randomly on testing sentences:")
-    evaluateRandomly(encoder, decoder, test_pairs, lang, args)
-    evaluateTestingPairs(encoder, decoder, test_pairs, lang, args)
-
-    # # Export trained embedding weights
-    # embedding = encoder1.embedding.weight.data.numpy()
-    # with open("embedding_weights.pkl", 'wb') as f:
-    #     pkl.dump(embedding, f, protocol=pkl.HIGHEST_PROTOCOL) 
+    evaluateRandomly(encoder, decoder, test_pairs, input_lang, output_lang, args)
+    evaluateTestingPairs(encoder, decoder, test_pairs, input_lang, output_lang, args)

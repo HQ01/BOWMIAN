@@ -14,8 +14,8 @@ from utils import *
 ###############################################
 
 parser = argparse.ArgumentParser(description='Data Preprocessing')
-parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path (default: current folder)')
+parser.add_argument('--data-path', type=str, default='../data', metavar='PATH',
+                    help='data path (default: ../data)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
 parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
