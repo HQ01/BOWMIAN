@@ -1,4 +1,4 @@
-from __future__ import print_function, division
+from __future__ import unicode_literals, print_function, division
 
 import argparse
 import time
@@ -13,14 +13,17 @@ import torch.optim as optim
 import torch.backends.cudnn as cudnn
 from torch.autograd import Variable
 
-from util import *
+from utils import *
 from model import *
 from metric import score
 
+###############################################
 # Training settings
+###############################################
+
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
 parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path of lang.pkl (default: current folder)')
+                    help='data path of pairs.pkl and lang.pkl (default: current folder)')
 parser.add_argument('--model', type=str, default='', metavar='MODEL',
                     help='model architecture (default: )')
 parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
@@ -45,6 +48,7 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
+
 
 ###############################################
 # Preparing training data
@@ -84,7 +88,7 @@ def indexesFromNGramList(vocab, ngram_list, num_words):
         else:
             pass
     return result
-    
+
 def variableFromNGramList(vocab, ngram_list, num_words, args):
     indexes = indexesFromNGramList(vocab, ngram_list, num_words)
     result = Variable(torch.LongTensor(indexes).view(-1, 1))
@@ -169,7 +173,7 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
 
 def train_attn(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, args):
     use_cuda = args.cuda
-    max_length = args.max_length
+    max_length = args.max_length * 2
     
     encoder_hidden = encoder.initHidden()
 
@@ -270,7 +274,7 @@ def trainIters(encoder, decoder, lang, pairs, args):
     showPlot(plot_losses)
 
 ###############################################
-# Empirical evaluating
+# Evaluation
 ###############################################
 
 def evaluate(encoder, decoder, sentence, lang, args):
@@ -318,8 +322,6 @@ def evaluate(encoder, decoder, sentence, lang, args):
     return decoded_words
 
 def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
-    list_cand = []
-    list_ref = []
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
@@ -329,6 +331,14 @@ def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
         output_sentence = ' '.join(output_words)
         print('<', output_sentence)
         print('')
+
+def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
+    list_cand = []
+    list_ref = []
+    print("Evaluating {} testing sentences...".format(len(pairs)))
+    for pair in pairs:
+        output_words = evaluate(encoder, decoder, pair[0], lang, args)
+        output_sentence = ' '.join(output_words)
         list_cand.append(output_sentence)
         list_ref.append(pair[1])
     print("{} score: {}".format(args.metric, score(list_cand, list_ref, args.order, args.metric)))
@@ -344,7 +354,7 @@ if __name__ == '__main__':
 
     # Load pairs.pkl and lang.pkl
     with open(args.data_path + "/pairs.pkl", 'rb') as f:
-        pairs = pkl.load(f)
+        (train_pairs, test_pairs) = pkl.load(f)
     with open(args.data_path + "/lang.pkl", 'rb') as f:
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
@@ -352,13 +362,25 @@ if __name__ == '__main__':
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and decoder
-    encoder1 = NGramEncoder(args.num_words, args.hidden_size, args.cuda)
-    decoder1 = DecoderRNN(args.hidden_size, lang.n_words, args.cuda)
+    encoder = NGramEncoder(args.num_words, args.hidden_size, args.cuda)
+    decoder = DecoderRNN(args.hidden_size, lang.n_words, args.cuda)
     if args.cuda:
-        encoder1 = encoder1.cuda()
-        decoder1 = decoder1.cuda()
+        encoder = encoder.cuda()
+        decoder = decoder.cuda()
 
     # Train and evalute
-    evaluateRandomly(encoder1, decoder1, pairs, lang, args)
-    trainIters(encoder1, decoder1, lang, pairs, args)
-    evaluateRandomly(encoder1, decoder1, pairs, lang, args)
+    print("Evaluate randomly on training sentences:")
+    evaluateRandomly(encoder, decoder, train_pairs, lang, args)
+    print("Evaluate randomly on testing sentences:")
+    evaluateRandomly(encoder, decoder, test_pairs, lang, args)
+    trainIters(encoder, decoder, lang, train_pairs, args)
+    print("Evaluate randomly on training sentences:")
+    evaluateRandomly(encoder, decoder, train_pairs, lang, args)
+    print("Evaluate randomly on testing sentences:")
+    evaluateRandomly(encoder, decoder, test_pairs, lang, args)
+    evaluateTestingPairs(encoder, decoder, test_pairs, lang, args)
+
+    # # Export trained embedding weights
+    # embedding = encoder1.embedding.weight.data.numpy()
+    # with open("embedding_weights.pkl", 'wb') as f:
+    #     pkl.dump(embedding, f, protocol=pkl.HIGHEST_PROTOCOL) 
