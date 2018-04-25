@@ -23,6 +23,8 @@ from metric import score
 ###############################################
 
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser.add_argument('--order', type=int, default='3', metavar='N',
+                    help='order of ngram (default: 3)')
 parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
                     help='data path of pairs.pkl and lang.pkl (default: current folder)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
@@ -43,8 +45,6 @@ parser.add_argument('--plot-every', type=int, default='100', metavar='N',
                     help='plot every (default: 100) iters')
 parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                     help='learning rate (default: 0.01)')
-parser.add_argument('--order', type=int, default='2', metavar='N',
-                    help='order of ngram (set by preprocessing)')
 parser.add_argument('--max-length', type=int, default='100', metavar='N',
                     help='max-ngrams-length (set by preprocessing)')
 parser.add_argument('--no-cuda', action='store_true', default=False,
@@ -160,7 +160,6 @@ def trainEpochs(encoder, net, lang, pairs, args):
             plot_loss_total += loss
 
             if iter % args.print_every == 0:
-                evaluateRandomly(encoder, net, pairs, lang, args)
                 print_loss_avg = print_loss_total / print_every
                 print_loss_total = 0
                 print('%s (%d %d%%) %.4f' % (timeSince(start, iter / n_iters),
@@ -173,7 +172,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses)
+    showPlot(plot_losses, args.order)
 
 
 ###############################################
@@ -233,12 +232,11 @@ if __name__ == '__main__':
         torch.cuda.manual_seed(args.seed)
 
     # Load pairs.pkl and lang.pkl
-    with open(args.data_path + "/pairs.pkl", 'rb') as f:
+    with open(args.data_path + "/pairs%d.pkl" % args.order, 'rb') as f:
         (train_pairs, test_pairs) = pkl.load(f)
-    with open(args.data_path + "/lang.pkl", 'rb') as f:
+    with open(args.data_path + "/lang%d.pkl" % args.order, 'rb') as f:
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
-    args.order = lang.order
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and net
@@ -249,7 +247,7 @@ if __name__ == '__main__':
         net = net.cuda()
 
     # Load pretrained embedding weights
-    with open("embedding_weights.pkl", 'rb') as f:
+    with open("embedding_weights%d.pkl" % args.order, 'rb') as f:
         embedding_weights = pkl.load(f)
         encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
 

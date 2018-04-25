@@ -126,22 +126,21 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
     print("Trimmed to %s training sentence pairs" % len(train_pairs))
     print("Trimmed to %s testing sentence pairs" % len(test_pairs))
 
-    print("Counting words and constructing training pairs...")
+    print("Constructing training pairs...")
     max_ngrams_len = 0 
     for pair in train_pairs:
-        #input_lang.addSentence(pair[0])
-        pair[0] = output_lang.addSentence(pair[1])
+        pair[0] =extract_ngrams(pair[1], order)
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
-    print("Counted words in training sentences:")
-#     print(input_lang.name, input_lang.n_words)
-    print(output_lang.name, output_lang.n_words)
+        uwords = [t.text for t in nlp(str(pair[1]))]
+        pair[1] = len(uwords) # including punctuations
     print("Constructing test pairs...")
     for pair in test_pairs:
-        #input_lang.addSentence(pair[0])
         pair[0] = extract_ngrams(pair[1], order)
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
+        uwords = [t.text for t in nlp(str(pair[1]))]
+        pair[1] = len(uwords) # including punctuations
     print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
 
     return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
@@ -155,9 +154,9 @@ if __name__ == '__main__':
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
 
-    with open("pairs.pkl", 'wb') as f:
+    with open("pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open("lang.pkl", 'wb') as f:
+    with open("lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
     # with open("lang.pkl", 'rb') as f:

@@ -6,6 +6,20 @@ from torch.autograd import Variable
 from torch import optim
 import torch.nn.functional as F
 
+class MLP(nn.Module):
+    def __init__(self, input_size, class_size=7):
+        super(MLP, self).__init__()
+        self.fc1 = nn.Linear(input_size, 64)
+        self.fc2 = nn.Linear(64, 32)
+        self.fc3 = nn.Linear(32, class_size)
+        
+    def forward(self, embedding):
+        out = embedding.view(1, -1)
+        out = F.relu(self.fc1(out))
+        out = F.relu(self.fc2(out))
+        out = self.fc3(out)
+        return out
+
 class NGramEncoder(nn.Module):
     def __init__(self, input_size, hidden_size, mode):
         super(NGramEncoder, self).__init__()

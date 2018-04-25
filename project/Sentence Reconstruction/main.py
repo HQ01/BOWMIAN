@@ -22,6 +22,8 @@ from metric import score
 ###############################################
 
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser.add_argument('--order', type=int, default='3', metavar='N',
+                    help='order of ngram')
 parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
                     help='data path of pairs.pkl and lang.pkl (default: current folder)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
@@ -42,8 +44,8 @@ parser.add_argument('--plot-every', type=int, default='100', metavar='N',
                     help='plot every (default: 100) iters')
 parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                     help='learning rate (default: 0.01)')
-parser.add_argument('--order', type=int, default='2', metavar='N',
-                    help='order of ngram (set by preprocessing)')
+parser.add_argument('--clip', type=float, default=10, metavar='CLIP',
+                    help='gradient clip threshold (default: 10)')
 parser.add_argument('--max-length', type=int, default='100', metavar='N',
                     help='max-ngrams-length (set by preprocessing)')
 parser.add_argument('--no-cuda', action='store_true', default=False,
@@ -121,8 +123,6 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     use_cuda = args.cuda
     max_length = args.max_length
 
-    # encoder_hidden = encoder.initHidden()
-
     encoder_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
 
@@ -134,10 +134,6 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
 
     loss = 0
     encoder_hidden = encoder(input_variable)
-    # for ei in range(input_length):
-    #     encoder_output, encoder_hidden = encoder(input_variable[ei],
-    #                                              encoder_hidden)
-    #     encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
 
     decoder_input = Variable(torch.LongTensor([[SOS_token]]))
     decoder_input = decoder_input.cuda() if use_cuda else decoder_input
@@ -149,8 +145,6 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     if use_teacher_forcing:
         # Teacher forcing: Feed the target as the next input
         for di in range(target_length):
-#             decoder_output, decoder_hidden, decoder_attention = decoder(
-#                 decoder_input, decoder_hidden, encoder_outputs)
             decoder_output, decoder_hidden = decoder(
                 decoder_input, decoder_hidden)
             loss += criterion(decoder_output, target_variable[di])
@@ -159,8 +153,6 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     else:
         # Without teacher forcing: use its own predictions as the next input
         for di in range(target_length):
-#             decoder_output, decoder_hidden, decoder_attention = decoder(
-#                 decoder_input, decoder_hidden, encoder_outputs)
             decoder_output, decoder_hidden = decoder(
                 decoder_input, decoder_hidden)
             topv, topi = decoder_output.data.topk(1)
@@ -175,67 +167,9 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
 
     loss.backward()
 
-    encoder_optimizer.step()
-    decoder_optimizer.step()
-
-    return loss.data[0] / target_length
-
-def train_attn(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, args):
-    use_cuda = args.cuda
-    max_length = args.max_length
-    
-    encoder_hidden = encoder.initHidden()
-
-    encoder_optimizer.zero_grad()
-    decoder_optimizer.zero_grad()
-
-    input_length = input_variable.size()[0]
-    target_length = target_variable.size()[0]
-
-    encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
-    encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-
-    loss = 0
-    for ei in range(input_length):
-        encoder_output, encoder_hidden = encoder(
-            input_variable[ei], encoder_hidden)
-        encoder_outputs[ei] = encoder_output[0][0]
-
-    decoder_input = Variable(torch.LongTensor([[SOS_token]]))
-    decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-
-    decoder_hidden = encoder_hidden
-
-    use_teacher_forcing = True if random.random() < teacher_forcing_ratio else False
-
-    if use_teacher_forcing:
-        # Teacher forcing: Feed the target as the next input
-        for di in range(target_length):
-            decoder_output, decoder_hidden, decoder_attention = decoder(
-                decoder_input, decoder_hidden, encoder_outputs)
-            # decoder_output, decoder_hidden = decoder(
-            #     decoder_input, decoder_hidden)
-            loss += criterion(decoder_output, target_variable[di])
-            decoder_input = target_variable[di]  # Teacher forcing
-
-    else:
-        # Without teacher forcing: use its own predictions as the next input
-        for di in range(target_length):
-            decoder_output, decoder_hidden, decoder_attention = decoder(
-                decoder_input, decoder_hidden, encoder_outputs)
-            # decoder_output, decoder_hidden = decoder(
-            #     decoder_input, decoder_hidden)
-            topv, topi = decoder_output.data.topk(1)
-            ni = topi[0][0]
-
-            decoder_input = Variable(torch.LongTensor([[ni]]))
-            decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-
-            loss += criterion(decoder_output, target_variable[di])
-            if ni == EOS_token:
-                break
-
-    loss.backward()
+    # Clip gradient
+    nn.utils.clip_grad_norm(encoder.parameters(), args.clip)
+    nn.utils.clip_grad_norm(decoder.parameters(), args.clip)
 
     encoder_optimizer.step()
     decoder_optimizer.step()
@@ -287,7 +221,7 @@ def trainEpochs(encoder, decoder, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses)
+    showPlot(plot_losses, args.order)
 
 
 ###############################################
@@ -306,10 +240,6 @@ def evaluate(encoder, decoder, sentence, lang, args):
     encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
 
     encoder_hidden = encoder(input_variable)
-    # for ei in range(input_length):
-    #     encoder_output, encoder_hidden = encoder(input_variable[ei],
-    #                                              encoder_hidden)
-    #     encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
 
     decoder_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
     decoder_input = decoder_input.cuda() if use_cuda else decoder_input
@@ -320,9 +250,6 @@ def evaluate(encoder, decoder, sentence, lang, args):
     decoder_attentions = torch.zeros(max_length, max_length)
 
     for di in range(max_length):
-#         decoder_output, decoder_hidden, decoder_attention = decoder(
-#             decoder_input, decoder_hidden, encoder_outputs)
-#         decoder_attentions[di] = decoder_attention.data
         decoder_output, decoder_hidden = decoder(
             decoder_input, decoder_hidden)
         topv, topi = decoder_output.data.topk(1)
@@ -336,7 +263,6 @@ def evaluate(encoder, decoder, sentence, lang, args):
         decoder_input = Variable(torch.LongTensor([[ni]]))
         decoder_input = decoder_input.cuda() if use_cuda else decoder_input
 
-#     return decoded_words, decoder_attentions[:di + 1]
     return decoded_words
 
 def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
@@ -344,7 +270,6 @@ def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
         pair = random.choice(pairs)
         print('>', pair[0])
         print('=', pair[1])
-#         output_words, attentions = evaluate(encoder, decoder, pair[0])
         output_words = evaluate(encoder, decoder, pair[0], lang, args)
         output_sentence = ' '.join(output_words)
         print('<', output_sentence)
@@ -371,12 +296,11 @@ if __name__ == '__main__':
         torch.cuda.manual_seed(args.seed)
 
     # Load pairs.pkl and lang.pkl
-    with open(args.data_path + "/pairs.pkl", 'rb') as f:
+    with open(args.data_path + "/pairs%d.pkl" % args.order, 'rb') as f:
         (train_pairs, test_pairs) = pkl.load(f)
-    with open(args.data_path + "/lang.pkl", 'rb') as f:
+    with open(args.data_path + "/lang%d.pkl" % args.order, 'rb') as f:
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
-    args.order = lang.order
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and decoder
@@ -403,5 +327,5 @@ if __name__ == '__main__':
         embedding_weights = encoder.embeddingBag.weight.data.cpu().numpy()
     else: 
         embedding_weights = encoder.embeddingBag.weight.data.numpy()
-    with open("embedding_weights.pkl", 'wb') as f:
+    with open("embedding_weights%d.pkl" % args.order, 'wb') as f:
         pkl.dump(embedding_weights, f, protocol=pkl.HIGHEST_PROTOCOL)

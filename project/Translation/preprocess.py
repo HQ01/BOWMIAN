@@ -157,9 +157,9 @@ if __name__ == '__main__':
     output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
 
-    with open("pairs.pkl", 'wb') as f:
+    with open("pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open("lang.pkl", 'wb') as f:
+    with open("lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump((input_lang, output_lang), f, protocol=pkl.HIGHEST_PROTOCOL)
     
     # with open("lang.pkl", 'rb') as f:
