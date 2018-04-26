@@ -1,0 +1,14 @@
+Reading lines...
+Read 108673 training sentence pairs
+Read 27169 testing sentence pairs
+Trimmed to 9427 training sentence pairs
+Trimmed to 2358 testing sentence pairs
+Counting words and constructing training pairs...
+Counted words in training sentences:
+eng 2877
+fra 4338
+Example training sentence pairs:
+['he s reading a novel right now .', 'il est en train de lire un roman .']
+Example testing sentence pairs:
+['i m not hiding anything from you .', 'je ne te cache rien .']
+

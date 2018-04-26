@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-nlp = spacy.load('en')
+nlp = spacy.load("../en_core_web_sm-2.0.0/en_core_web_sm/en_core_web_sm-2.0.0")
 
 # Define constants
 UNK_token = 0

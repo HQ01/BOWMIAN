@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: en-core-web-sm
+Version: 2.0.0
+Summary: English multi-task CNN trained on OntoNotes, with GloVe vectors trained on Common Crawl. Assigns word vectors, context-specific token vectors, POS tags, dependency parse and named entities.
+Home-page: https://explosion.ai
+Author: Explosion AI
+Author-email: contact@explosion.ai
+License: CC BY-SA 3.0
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
