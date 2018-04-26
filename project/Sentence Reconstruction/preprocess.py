@@ -14,8 +14,12 @@ from utils import *
 ###############################################
 
 parser = argparse.ArgumentParser(description='Data Preprocessing')
-parser.add_argument('--data-path', type=str, default='../data', metavar='PATH',
-                    help='data path (default: ../data)')
+parser.add_argument('-hpc', action='set_hpc_mode', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
+                    help='data path (default: /scratch/zc807/nlu/data)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
+                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
 parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
@@ -148,6 +152,9 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
 
 if __name__ == '__main__':
     args = parser.parse_args()
+    if not args.hpc:
+        args.data_path = '.'
+        args.save_data_path = '.'
     
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, True)
@@ -155,14 +162,10 @@ if __name__ == '__main__':
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
 
-    with open("pairs%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open("lang%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
-    
-    # with open("lang.pkl", 'rb') as f:
-    #     lang_load = pkl.load(f)
-    # assert(lang_load == lang)
     
     print("Example training sentence pairs:")
     print(random.choice(train_pairs))

@@ -24,8 +24,12 @@ from metric import score
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
 parser.add_argument('--order', type=int, default='3', metavar='N',
                     help='order of ngram')
-parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: current folder)')
+parser.add_argument('-hpc', action='set_hpc_mode', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+                    help='data path to save embedding_weights.pkl (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
                     help='mode of bag-of-n-gram representation (default: sum)')
 parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
@@ -221,7 +225,7 @@ def trainEpochs(encoder, decoder, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses, args.order)
+    showPlot(plot_losses, args)
 
 
 ###############################################
@@ -327,5 +331,5 @@ if __name__ == '__main__':
         embedding_weights = encoder.embeddingBag.weight.data.cpu().numpy()
     else: 
         embedding_weights = encoder.embeddingBag.weight.data.numpy()
-    with open("embedding_weights%d.pkl" % args.order, 'wb') as f:
+    with open(args.data_path + "embedding_weights%d.pkl" % args.order, 'wb') as f:
         pkl.dump(embedding_weights, f, protocol=pkl.HIGHEST_PROTOCOL)
