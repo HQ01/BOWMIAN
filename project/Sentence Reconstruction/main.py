@@ -24,7 +24,7 @@ from metric import score
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
 parser.add_argument('--order', type=int, default='3', metavar='N',
                     help='order of ngram')
-parser.add_argument('-hpc', action='set_hpc_mode', default=False,
+parser.add_argument('-hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
                     help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
@@ -293,6 +293,9 @@ def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
 if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
+    if not args.hpc:
+        args.data_path = '.'
+        args.save_data_path = '.'
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
