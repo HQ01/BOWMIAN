@@ -14,7 +14,7 @@ from utils import *
 ###############################################
 
 parser = argparse.ArgumentParser(description='Data Preprocessing')
-parser.add_argument('--hpc', action='set_hpc_mode', default=False,
+parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
                     help='data path (default: /scratch/zc807/nlu/data)')
