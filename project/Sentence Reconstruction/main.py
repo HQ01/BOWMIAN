@@ -24,7 +24,7 @@ from metric import score
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
 parser.add_argument('--order', type=int, default='3', metavar='N',
                     help='order of ngram')
-parser.add_argument('-hpc', action='store_true', default=False,
+parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
                     help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
