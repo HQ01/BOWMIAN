@@ -166,8 +166,8 @@ if __name__ == '__main__':
         args.save_data_path = '.'
     
     print("order: {}".format(args.order))
-    print("filter: {}".format(args.filter))
-    if args.filter:
+    print("filter: {}".format(args.filter_pair))
+    if args.filter_pair:
         print("max-length: {}".format(args.max_length))
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, True)
