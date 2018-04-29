@@ -9,7 +9,7 @@ lines = open('eng-fra.txt', encoding='utf-8').\
 random.shuffle(lines)
 size = len(lines)
 train_set = lines[:int(size*0.8)]
-test_set = lines[int(size*0.2):]
+test_set = lines[int(size*0.8):]
 
 with open("train.txt", 'w') as f:
     for s in train_set:
@@ -27,7 +27,7 @@ lines_MT = open('eng-fra-MT.txt', encoding='utf-8').\
 random.shuffle(lines_MT)
 size_MT = len(lines_MT)
 train_set_MT = lines_MT[:int(size_MT*0.8)]
-test_set_MT = lines_MT[int(size_MT*0.2):]
+test_set_MT = lines_MT[int(size_MT*0.8):]
 
 with open("train-MT.txt", 'w') as f:
     for s in train_set_MT:
