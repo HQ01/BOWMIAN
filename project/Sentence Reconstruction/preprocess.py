@@ -33,21 +33,17 @@ parser.add_argument('--max-length', type=int, default=10, metavar='N',
 # Auxiliary functions for data preprocessing
 ###############################################
 
-# eng_prefixes = (
-#     "i am ", "i m ",
-#     "he is", "he s ",
-#     "she is", "she s",
-#     "you are", "you re ",
-#     "we are", "we re ",
-#     "they are", "they re "
-# )
 eng_prefixes = (
-    "i", "he", "she", "it", 
-    "you", "we", "they",
-    "a", "the", "this", "that", "here", "there",
+    "i am ", "i m ",
+    "he is", "he s ",
+    "she is", "she s",
+    "you are", "you re ",
+    "we are", "we re ",
+    "they are", "they re ",
+    "a", "the", "this", "there",
     "is", "was", "are", "were", 
-    "can", "could", "do", "did", "will", "would"
-    "what", "when", "where", "which", "why"
+    "can", "could", "do", "did",
+    "what", "when", "where",
     "as", "since"
 )
 
