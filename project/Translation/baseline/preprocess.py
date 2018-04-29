@@ -144,7 +144,7 @@ if __name__ == '__main__':
     
     with open(args.save_data_path + "/baseline_pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.save_data_path + "baseline_lang.pkl", 'wb') as f:
+    with open(args.save_data_path + "/baseline_lang.pkl", 'wb') as f:
         pkl.dump((input_lang, output_lang), f, protocol=pkl.HIGHEST_PROTOCOL)
     
     # with open("lang.pkl", 'rb') as f:
