@@ -14,10 +14,12 @@ from utils import *
 ###############################################
 
 parser = argparse.ArgumentParser(description='Data Preprocessing')
-parser.add_argument('--data-path', type=str, default='../../data', metavar='PATH',
-                    help='data path (default: ../../data)')
-parser.add_argument('--order', type=int, default=3, metavar='N',
-                    help='order of ngram')
+parser.add_argument('--hpc', action='store_true', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
+                    help='data path (default: /scratch/zc807/nlu/data)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
+                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
 parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
                     help='disable pair filtering (default: enabled)')
 parser.set_defaults(filter_pair=True)
@@ -35,7 +37,12 @@ eng_prefixes = (
     "she is", "she s",
     "you are", "you re ",
     "we are", "we re ",
-    "they are", "they re "
+    "they are", "they re ",
+    "a", "the", "this", "there",
+    "is", "was", "are", "were", 
+    "can", "could", "do", "did",
+    "what", "when", "where",
+    "as", "since"
 )
 
 def filterPair(p, max_length):
@@ -121,14 +128,21 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
 
 if __name__ == '__main__':
     args = parser.parse_args()
+    if not args.hpc:
+        args.data_path = '../../data'
+        args.save_data_path = '.'
     
+    print("filter: {}".format(args.filter_pair))
+    if args.filter_pair:
+        print("max-length: {}".format(args.max_length))
     input_lang, output_lang, train_pairs, test_pairs = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, False)
     input_lang = (input_lang.word2index, input_lang.word2count, input_lang.index2word, input_lang.n_words)
     output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
-    with open("pairs.pkl", 'wb') as f:
+    
+    with open(args.save_data_path + "/baseline_pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open("lang.pkl", 'wb') as f:
+    with open(args.save_data_path + "baseline_lang.pkl", 'wb') as f:
         pkl.dump((input_lang, output_lang), f, protocol=pkl.HIGHEST_PROTOCOL)
     
     # with open("lang.pkl", 'rb') as f:

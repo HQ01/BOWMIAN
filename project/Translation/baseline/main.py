@@ -22,8 +22,10 @@ from metric import score
 ###############################################
 
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
-parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: current folder)')
+parser.add_argument('--hpc', action='store_true', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
 parser.add_argument('--model', type=str, default='', metavar='MODEL',
                     help='model architecture (default: )')
 parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
@@ -276,6 +278,17 @@ def evaluateTestingPairs(encoder, decoder, pairs, input_lang, output_lang, args)
 if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
+    if not args.hpc:
+        args.data_path = '.'
+
+    # Print settings
+    print("metric: {}".format(args.metric))
+    print("hidden-size: {}".format(args.hidden_size))
+    print("n-epochs: {}".format(args.n_epochs))
+    print("print-every: {}".format(args.print_every))
+    print("plot-every: {}".format(args.plot_every))
+    print("lr: {}".format(args.lr))
+    print("clip: {}".format(args.clip))
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
@@ -283,9 +296,9 @@ if __name__ == '__main__':
         torch.cuda.manual_seed(args.seed)
 
     # Load pairs.pkl and lang.pkl
-    with open(args.data_path + "/pairs.pkl", 'rb') as f:
+    with open(args.data_path + "/baseline_pairs.pkl", 'rb') as f:
         (train_pairs, test_pairs) = pkl.load(f)
-    with open(args.data_path + "/lang.pkl", 'rb') as f:
+    with open(args.data_path + "/baseline_lang.pkl", 'rb') as f:
         (input_lang_load, output_lang_load) = pkl.load(f)
     input_lang = Lang(input_lang_load)
     output_lang = Lang(output_lang_load)
@@ -309,3 +322,4 @@ if __name__ == '__main__':
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, decoder, test_pairs, input_lang, output_lang, args)
     evaluateTestingPairs(encoder, decoder, test_pairs, input_lang, output_lang, args)
+    print("Finished")

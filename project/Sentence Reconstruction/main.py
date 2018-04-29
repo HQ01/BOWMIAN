@@ -294,7 +294,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
-        args.data_path = '../data'
+        args.data_path = '.'
         args.save_data_path = '.'
 
     # Print settings
@@ -347,5 +347,5 @@ if __name__ == '__main__':
         embedding_weights = encoder.embeddingBag.weight.data.cpu().numpy()
     else: 
         embedding_weights = encoder.embeddingBag.weight.data.numpy()
-    with open(args.data_path + "/embedding_weights%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "/embedding_weights%d.pkl" % args.order, 'wb') as f:
         pkl.dump(embedding_weights, f, protocol=pkl.HIGHEST_PROTOCOL)
