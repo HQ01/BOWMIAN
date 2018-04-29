@@ -33,13 +33,22 @@ parser.add_argument('--max-length', type=int, default=10, metavar='N',
 # Auxiliary functions for data preprocessing
 ###############################################
 
+# eng_prefixes = (
+#     "i am ", "i m ",
+#     "he is", "he s ",
+#     "she is", "she s",
+#     "you are", "you re ",
+#     "we are", "we re ",
+#     "they are", "they re "
+# )
 eng_prefixes = (
-    "i am ", "i m ",
-    "he is", "he s ",
-    "she is", "she s",
-    "you are", "you re ",
-    "we are", "we re ",
-    "they are", "they re "
+    "i", "he", "she", "it", 
+    "you", "we", "they",
+    "a", "the", "this", "that", "here", "there",
+    "is", "was", "are", "were", 
+    "can", "could", "do", "did", "will", "would"
+    "what", "when", "where", "which", "why"
+    "as", "since"
 )
 
 def filterPair(p, max_length):
@@ -153,7 +162,7 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
 if __name__ == '__main__':
     args = parser.parse_args()
     if not args.hpc:
-        args.data_path = '.'
+        args.data_path = '../data'
         args.save_data_path = '.'
     
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
