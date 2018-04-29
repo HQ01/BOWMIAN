@@ -347,5 +347,5 @@ if __name__ == '__main__':
         embedding_weights = encoder.embeddingBag.weight.data.cpu().numpy()
     else: 
         embedding_weights = encoder.embeddingBag.weight.data.numpy()
-    with open(args.data_path + "embedding_weights%d.pkl" % args.order, 'wb') as f:
+    with open(args.data_path + "/embedding_weights%d.pkl" % args.order, 'wb') as f:
         pkl.dump(embedding_weights, f, protocol=pkl.HIGHEST_PROTOCOL)

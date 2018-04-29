@@ -171,9 +171,9 @@ if __name__ == '__main__':
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
 
-    with open(args.save_data_path + "pairs%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "/pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.save_data_path + "lang%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "/lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("Example training sentence pairs:")
