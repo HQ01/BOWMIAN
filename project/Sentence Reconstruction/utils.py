@@ -71,5 +71,5 @@ def showPlot(points, args):
     loc = ticker.MultipleLocator(base=0.2)
     ax.yaxis.set_major_locator(loc)
     plt.plot(points)
-    plt.savefig(args.data_path + "loss%d.pdf" % args.order)
+    plt.savefig(args.data_path + "/loss%d.pdf" % args.order)
     plt.close(fig)
