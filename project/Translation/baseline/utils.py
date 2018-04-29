@@ -1,5 +1,6 @@
 from __future__ import unicode_literals, print_function, division
 
+import os
 import spacy
 import unicodedata
 import string
