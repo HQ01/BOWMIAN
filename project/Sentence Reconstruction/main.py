@@ -34,8 +34,8 @@ parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', 
                     help='mode of bag-of-n-gram representation (default: sum)')
 parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
                     help='metric to use (default: ROUGE; BLEU and BLEU_clip available)')
-parser.add_argument('--num-words', type=int, default='10000', metavar='N',
-                    help='maximum ngrams vocabulary size to use (default: 10000')
+parser.add_argument('--num-words', type=int, default='50000', metavar='N',
+                    help='maximum ngrams vocabulary size to use (default: 50000')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -294,8 +294,20 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
-        args.data_path = '.'
+        args.data_path = '../data'
         args.save_data_path = '.'
+
+    # Print settings
+    print("order: {}".foramt(args.order))
+    print("mode: {}".foramt(args.mode))
+    print("metric: {}".foramt(args.metric))
+    print("num-words: {}".foramt(args.num_words))
+    print("hidden-size: {}".foramt(args.hidden_size))
+    print("n-epochs: {}".foramt(args.n_epochs))
+    print("print-every: {}".foramt(args.print_every))
+    print("plot-every: {}".foramt(args.plot_every))
+    print("lr: {}".foramt(args.lr))
+    print("clip: {}".foramt(args.clip))
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
@@ -328,6 +340,7 @@ if __name__ == '__main__':
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, decoder, test_pairs, lang, args)
     evaluateTestingPairs(encoder, decoder, test_pairs, lang, args)
+    print("Finished\n")
 
     # Export trained embedding weights
     if args.cuda:

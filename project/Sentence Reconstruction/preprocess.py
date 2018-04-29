@@ -155,7 +155,7 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
         pair[0] = extract_ngrams(pair[1], order)
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
-    print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
+    print("Max Ngrams length of all training and testing sentences:\n", max_ngrams_len)
 
     return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
 
@@ -165,6 +165,10 @@ if __name__ == '__main__':
         args.data_path = '../data'
         args.save_data_path = '.'
     
+    print("order: {}".format(args.order))
+    print("filter: {}".format(args.filter))
+    if args.filter:
+        print("max-length: {}".format(args.max_length))
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, True)
     vocab_ngrams = output_lang.createNGramDictionary()
