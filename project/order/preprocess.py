@@ -39,7 +39,7 @@ eng_prefixes = (
 )
 
 def filterPair(p, max_length):
-    return len(p[1].split(' ')) < max_length and p[1].startswith(eng_prefixes)
+    return len(p[1].split(' ')) < max_length and p[1].startswith(eng_prefixes) and len(p[1].split(' ')) >= 3
 
 def filterPairs(pairs, max_length):
     return [pair for pair in pairs if filterPair(pair, max_length)]
@@ -128,19 +128,71 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
 
     print("Constructing training pairs...")
     max_ngrams_len = 0 
-    for pair in train_pairs:
+    len_train_pairs = len(train_pairs)
+
+    for i in range(len_train_pairs):
+        pair = train_pairs[i]
+        #output_lang.addSentence(pair[1])
         pair[0] =extract_ngrams(pair[1], order)
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
         uwords = [t.text for t in nlp(str(pair[1]))]
-        pair[1] = len(uwords) # including punctuations
+        #print(uwords)
+        if uwords[-1] in ('.', '!', '?'):
+            del uwords[-1] # delete punctuation
+        word1 = random.choice(uwords)
+        word1_ind = uwords.index(word1)
+        if (word1_ind == len(uwords) - 1):
+            word2 = random.choice(uwords[:word1_ind])
+            temp = word2
+            word2 = word1
+            word1 = temp
+        else:
+            word2 = random.choice(uwords[word1_ind+1:])
+
+        word3 = random.choice(uwords)
+        word3_ind = uwords.index(word3)
+        if (word3_ind == len(uwords) - 1):
+            word4 = random.choice(uwords[:word3_ind])
+            temp = word4
+            word4 = word3
+            word3 = temp
+        else:
+            word4 = random.choice(uwords[word3_ind+1:])
+
+        pair[1] = [word1, word2]
+        pair.append(1)
+
+        train_pairs.append([pair[0], [word4, word3], 0])
+
+
     print("Constructing test pairs...")
-    for pair in test_pairs:
-        pair[0] = extract_ngrams(pair[1], order)
+    len_test_pairs = len(test_pairs)
+    for i in range(len_test_pairs):
+        pair = test_pairs[i]
+        #output_lang.addSentence(pair[1])
+        pair[0] =extract_ngrams(pair[1], order)
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
         uwords = [t.text for t in nlp(str(pair[1]))]
-        pair[1] = len(uwords) # including punctuations
+        #print(uwords)
+        if uwords[-1] in ('.', '!', '?'):
+            del uwords[-1] # delete punctuation
+        word1 = random.choice(uwords)
+        word1_ind = uwords.index(word1)
+        word2 = random.choice(uwords[word1_ind::])
+
+        word3 = random.choice(uwords)
+        word3_ind = uwords.index(word3)
+        word4 = random.choice(uwords[word3_ind::])
+
+        pair[1] = [word1, word2]
+        pair.append(1)
+
+        test_pairs.append([pair[0], [word4, word3], 0])
+
+
+        
     print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
 
     return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
@@ -151,14 +203,13 @@ if __name__ == '__main__':
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.filter_pair, args.max_length, True)
     vocab_ngrams = output_lang.createNGramDictionary()
-    lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
-        args.order, vocab_ngrams, max_ngrams_len)
+    #lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
+    #    args.order, vocab_ngrams, max_ngrams_len)
 
-    with open("pairs%d.pkl" % args.order, 'wb') as f:
-        pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open("lang%d.pkl" % args.order, 'wb') as f:
-        pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
-    
+    with open("train_pairs%d.pkl" % args.order, 'wb') as f:
+        pkl.dump(train_pairs, f, protocol=pkl.HIGHEST_PROTOCOL) 
+    with open("test_pairs%d.pkl" % args.order, 'wb') as f:
+        pkl.dump(test_pairs, f, protocol=pkl.HIGHEST_PROTOCOL) 
     # with open("lang.pkl", 'rb') as f:
     #     lang_load = pkl.load(f)
     # assert(lang_load == lang)
