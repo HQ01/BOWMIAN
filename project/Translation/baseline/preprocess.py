@@ -20,6 +20,8 @@ parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', 
                     help='data path (default: /scratch/zc807/nlu/data)')
 parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
                     help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
+parser.add_argument('--order', type=int, default=3, metavar='N',
+                    help='order of ngram')
 parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
                     help='disable pair filtering (default: enabled)')
 parser.set_defaults(filter_pair=True)
