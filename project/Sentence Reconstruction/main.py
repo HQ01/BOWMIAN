@@ -298,16 +298,16 @@ if __name__ == '__main__':
         args.save_data_path = '.'
 
     # Print settings
-    print("order: {}".foramt(args.order))
-    print("mode: {}".foramt(args.mode))
-    print("metric: {}".foramt(args.metric))
-    print("num-words: {}".foramt(args.num_words))
-    print("hidden-size: {}".foramt(args.hidden_size))
-    print("n-epochs: {}".foramt(args.n_epochs))
-    print("print-every: {}".foramt(args.print_every))
-    print("plot-every: {}".foramt(args.plot_every))
-    print("lr: {}".foramt(args.lr))
-    print("clip: {}".foramt(args.clip))
+    print("order: {}".format(args.order))
+    print("mode: {}".format(args.mode))
+    print("metric: {}".format(args.metric))
+    print("num-words: {}".format(args.num_words))
+    print("hidden-size: {}".format(args.hidden_size))
+    print("n-epochs: {}".format(args.n_epochs))
+    print("print-every: {}".format(args.print_every))
+    print("plot-every: {}".format(args.plot_every))
+    print("lr: {}".format(args.lr))
+    print("clip: {}".format(args.clip))
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
