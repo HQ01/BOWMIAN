@@ -20,6 +20,23 @@ class MLP(nn.Module):
         out = self.fc3(out)
         return out
 
+class MLP_wc(nn.Module):
+    def __init__(self,input_size,class_size = 2):
+        super(MLP_wc, self).__init__()
+        self.fc1 = nn.Linear(input_size*2,64)
+        #self.fc2 = nn.Linear(input_size,32)
+        self.fc2 = nn.Linear(64,32)
+        self.fc4 = nn.Linear(32,class_size)
+
+
+    def forward(self,embedding,aux):
+        out = embedding.view(1,-1)
+        #aux = embedding.view(1,-1)
+        out = F.relu(self.fc1(out))
+        out = F.relu(self.fc2(out))
+        out = self.fc4(out)
+        return out
+
 class NGramEncoder(nn.Module):
     def __init__(self, input_size, hidden_size, mode):
         super(NGramEncoder, self).__init__()
