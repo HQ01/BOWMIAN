@@ -37,7 +37,7 @@ def BLEU_clip(cand, ref, n):
 def Coherence():
     pass
 
-def score(list_cand, list_ref, n, method='ROUGE'):
+def score(list_cand, list_ref, method='ROUGE', n=4):
     score = 0
     dic = {'ROUGE':ROUGE, 'BLEU':BLEU, 'BLEU_clip':BLEU_clip}
     fun = dic[method]

@@ -22,7 +22,7 @@ parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/se
                     help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
-parser.add_argument('--num_pairs', type=int, default=40000, metavar='N',
+parser.add_argument('--num-pairs', type=int, default=40000, metavar='N',
                     help='number of training pairs to use, 4 times of that of testing pairs')
 
 
@@ -91,13 +91,17 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     print("Trimmed to %s testing sentence pairs" % len(test_pairs))
 
     print("Counting words and constructing training pairs...")
-    max_ngrams_len = 0 
     for pair in train_pairs:
+        pair[1] = pair[0]
         input_lang.addSentence(pair[0])
-        output_lang.addSentence(pair[0])
+        output_lang.addSentence(pair[1])
     print("Counted words in training sentences:")
     print(input_lang.name, input_lang.n_words)
     print(output_lang.name, output_lang.n_words)
+    
+    print("Constructing testing pairs...")
+    for pair in test_pairs:
+        pair[1] = pair[0]
 
     return input_lang, output_lang, train_pairs, test_pairs
 
@@ -107,17 +111,17 @@ if __name__ == '__main__':
         args.data_path = '../../data'
         args.save_data_path = '.'
     
-    print("filter: {}".format(args.filter_pair))
-    if args.filter_pair:
-        print("max-length: {}".format(args.max_length))
-    input_lang, output_lang, train_pairs, test_pairs = prepareData('eng', 'fra', 
+    print("hpc mode: {}".format(args.hpc))
+    print("order: {}".format(args.order))
+    print("num-pairs: {}".format(args.num_pairs))
+    input_lang, output_lang, train_pairs, test_pairs = prepareData('eng', 'eng', 
         args.order, args.data_path, args.num_pairs, False)
     input_lang = (input_lang.word2index, input_lang.word2count, input_lang.index2word, input_lang.n_words)
     output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
     
-    with open(args.save_data_path + "/baseline_pairs.pkl", 'wb') as f:
+    with open(args.save_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.save_data_path + "/baseline_lang.pkl", 'wb') as f:
+    with open(args.save_data_path + "/RNNEncoder_lang.pkl", 'wb') as f:
         pkl.dump((input_lang, output_lang), f, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("Example training sentence pairs:")

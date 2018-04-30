@@ -288,7 +288,8 @@ def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
     for pair in pairs:
         output_words = evaluate(encoder, decoder, pair[0], lang, args)
         output_sentence = ' '.join(output_words)
-        if len(output_words) > (6 + 2): # extra 2 for '.' and '<EOS>'
+        sent_length = len([t.text for t in nlp(str(pair[1]))])
+        if sent_length > (6 + 1): # extra 1 for ending punctuation
             list_cand_long.append(output_sentence)
             list_ref_long.append(pair[1])
         else:
@@ -297,12 +298,12 @@ def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
 
     print("Num of short sentences (length <= 6):", len(list_cand_short))
     if len(list_cand_short) > 0:
-        score_short = score(list_cand_short, list_ref_short, args.order, args.metric)
+        score_short = score(list_cand_short, list_ref_short, args.metric)
         print("{} score for short sentences (length <= 6): {}".format(args.metric, score_short))
 
     print("Num of long sentences (length > 6):", len(list_cand_long))
     if len(list_cand_long) > 0:
-        score_long = score(list_cand_long, list_ref_long, args.order, args.metric)
+        score_long = score(list_cand_long, list_ref_long, args.metric)
         print("{} score for long sentences (length > 6): {}".format(args.metric, score_long))
 
     score_overall = (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
@@ -327,6 +328,7 @@ if __name__ == '__main__':
     print("plot-every: {}".format(args.plot_every))
     print("lr: {}".format(args.lr))
     print("clip: {}".format(args.clip))
+    print("use cuda: {}".format(args.cuda))
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
@@ -351,6 +353,7 @@ if __name__ == '__main__':
         decoder = decoder.cuda()
 
     # Train and evalute
+    print("\nStart")
     print("Evaluate randomly on training sentences:")
     evaluateRandomly(encoder, decoder, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences:")
