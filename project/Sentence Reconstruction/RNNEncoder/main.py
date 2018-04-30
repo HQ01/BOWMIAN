@@ -28,8 +28,8 @@ parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentenc
                     help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
 parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
                     help='data path to save embedding_weights.pkl (default: /scratch/zc807/nlu/embedding_weights)')
-parser.add_argument('--metric', type=str, default='BLEU', metavar='METRIC',
-                    help='metric to use (default: BLEU; ROUGE and BLEU_clip available)')
+parser.add_argument('--metric', type=str, default='MULTI', metavar='METRIC',
+                    help='metric to use (default: MULTI; ROUGE, BLEU and BLEU_clip available)')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
