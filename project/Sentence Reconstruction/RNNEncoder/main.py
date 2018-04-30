@@ -15,7 +15,7 @@ from torch.autograd import Variable
 
 from utils import *
 from model import *
-from metric import score
+from metric import score, multi_score
 
 ###############################################
 # Training settings
@@ -279,17 +279,51 @@ def evaluateTestingPairs(encoder, decoder, pairs, input_lang, output_lang, args)
 
     print("Num of short sentences (length <= 6):", len(list_cand_short))
     if len(list_cand_short) > 0:
-        score_short = score(list_cand_short, list_ref_short, args.metric)
-        print("{} score for short sentences (length <= 6): {}".format(args.metric, score_short))
+        if args.metric == "MULTI":
+            score_short_rouge1, score_short_rouge2, score_short_bleu, score_short_bleu_clip = \
+                multi_score(list_cand_short, list_ref_short)
+            print("score for short sentnces (length <= 6):")
+            print("ROUGE1:", score_short_rouge1)
+            print("ROUGE2:", score_short_rouge2)
+            print("BLEU:", score_short_bleu)
+            print("BLEU_CLIP:", score_short_bleu_clip)
+            print()
+        else:
+            score_short = score(list_cand_short, list_ref_short, args.metric)
+            print("{} score for short sentnces (length <= 6): {}".format(args.metric, score_short))
 
     print("Num of long sentences (length > 6):", len(list_cand_long))
     if len(list_cand_long) > 0:
-        score_long = score(list_cand_long, list_ref_long, args.metric)
-        print("{} score for long sentences (length > 6): {}".format(args.metric, score_long))
+        if args.metric == "MULTI":
+            score_long_rouge1, score_long_rouge2, score_long_bleu, score_long_bleu_clip = \
+                multi_score(list_cand_long, list_ref_long)
+            print("score for long sentnces (length > 6):")
+            print("ROUGE1:", score_long_rouge1)
+            print("ROUGE2:", score_long_rouge2)
+            print("BLEU:", score_long_bleu)
+            print("BLEU_CLIP:", score_long_bleu_clip)
+            print()
+        else:
+            score_long = score(list_cand_long, list_ref_long, args.metric)
+            print("{} score for long sentnces (length > 6): {}".format(args.metric, score_long))
 
-    score_overall = (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
+    get_score_overall = lambda score_short, score_long: \
+        (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
         / (len(list_cand_short) + len(list_cand_long))
-    print("Overall {} score: {}".format(args.metric, score_overall))
+    if args.metric == "MULTI":
+            score_overall_rouge1 = get_score_overall(score_short_rouge1, score_long_rouge1)
+            score_overall_rouge2 = get_score_overall(score_short_rouge2, score_long_rouge2)
+            score_overall_bleu = get_score_overall(score_short_bleu, score_long_bleu)
+            score_overall_bleu_clip = get_score_overall(score_short_bleu_clip, score_long_bleu_clip)
+            print("Overall:")
+            print("ROUGE1:", score_overall_rouge1)
+            print("ROUGE2:", score_overall_rouge2)
+            print("BLEU:", score_overall_bleu)
+            print("BLEU_CLIP:", score_overall_bleu_clip)
+            print()
+    else:
+        score_overall = get_score_overall(score_short, score_long)
+        print("Overall {} score: {}".format(args.metric, score_overall))
 
 if __name__ == '__main__':
     args = parser.parse_args()

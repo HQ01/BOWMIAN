@@ -39,10 +39,21 @@ class Lang:
         self.word2count = {}
         self.index2word = {0: "UNK", 1: "SOS", 2: "EOS"}
         self.n_words = 3  # Count UNK, SOS and EOS
+        
+        # for ngrams
+        self.order = order
+        self.vocab0 = OrderedDict()
 
     def addSentence(self, sent):
         for word in sent.split(' '):
             self.addWord(word)
+        ngrams = extract_ngrams(sent, self.order)
+        for ng in ngrams:
+            if ng in self.vocab0:
+                self.vocab0[ng] += 1
+            else:
+                self.vocab0[ng] = 1
+        return ngrams
 
     def addWord(self, word):
         if word not in self.word2index:
@@ -52,6 +63,13 @@ class Lang:
             self.n_words += 1
         else:
             self.word2count[word] += 1
+    
+    def createNGramDictionary(self):
+        tokens = list(self.vocab0.keys())
+        freqs = list(self.vocab0.values())
+        sidx = np.argsort(freqs)[::-1]
+        vocab = OrderedDict([(tokens[s], i) for i, s in enumerate(sidx)])
+        return vocab
 
 def readLangs(lang1, lang2, order, data_path, reverse=False):
     print("Reading lines...")
@@ -92,7 +110,6 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
     print("Counting words and constructing training pairs...")
     for pair in train_pairs:
-        pair[1] = pair[0]
         input_lang.addSentence(pair[0])
         output_lang.addSentence(pair[1])
     print("Counted words in training sentences:")
