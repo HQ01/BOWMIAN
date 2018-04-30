@@ -21,7 +21,7 @@ from metric import score
 # Training settings
 ###############################################
 
-parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser = argparse.ArgumentParser(description='Sentence Reconstruction with Encoder-Decoder')
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',

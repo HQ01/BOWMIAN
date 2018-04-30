@@ -21,17 +21,15 @@ from metric import score
 # Training settings
 ###############################################
 
-parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser = argparse.ArgumentParser(description='Translation with Encoder-Decoder')
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
-parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
-parser.add_argument('--model', type=str, default='', metavar='MODEL',
-                    help='model architecture (default: )')
-parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
-                    help='metric to use (default: ROUGE; BLEU and BLEU_clip available)')
-parser.add_argument('--num-words', type=int, default='10000', metavar='N',
-                    help='maximum ngrams vocabulary size to use (default: 10000')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+                    help='data path to save embedding_weights.pkl (default: /scratch/zc807/nlu/embedding_weights)')
+parser.add_argument('--metric', type=str, default='BLEU', metavar='METRIC',
+                    help='metric to use (default: BLEU; ROUGE and BLEU_clip available)')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -46,12 +44,11 @@ parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                     help='learning rate (default: 0.01)')
 parser.add_argument('--clip', type=float, default=10, metavar='CLIP',
                     help='gradient clip threshold (default: 10)')
-parser.add_argument('--max-length', type=int, default='100', metavar='N',
-                    help='max-ngrams-length (set by preprocessing)')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
+parser.set_defaults(max_length=100)
 
 
 ###############################################
@@ -203,7 +200,8 @@ def trainEpochs(encoder, decoder, input_lang, output_lang, pairs, args):
         
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses)
+    showPlot(plot_losses, args)
+
 
 ###############################################
 # Evaluation
@@ -231,12 +229,8 @@ def evaluate(encoder, decoder, sentence, input_lang, output_lang, args):
     decoder_hidden = encoder_hidden
 
     decoded_words = []
-    decoder_attentions = torch.zeros(max_length, max_length)
 
     for di in range(max_length):
-#         decoder_output, decoder_hidden, decoder_attention = decoder(
-#             decoder_input, decoder_hidden, encoder_outputs)
-#         decoder_attentions[di] = decoder_attention.data
         decoder_output, decoder_hidden = decoder(
             decoder_input, decoder_hidden)
         topv, topi = decoder_output.data.topk(1)
@@ -250,7 +244,6 @@ def evaluate(encoder, decoder, sentence, input_lang, output_lang, args):
         decoder_input = Variable(torch.LongTensor([[ni]]))
         decoder_input = decoder_input.cuda() if use_cuda else decoder_input
 
-#     return decoded_words, decoder_attentions[:di + 1]
     return decoded_words
 
 def evaluateRandomly(encoder, decoder, pairs, input_lang, output_lang, args, n=10):
@@ -258,30 +251,56 @@ def evaluateRandomly(encoder, decoder, pairs, input_lang, output_lang, args, n=1
         pair = random.choice(pairs)
         print('>', pair[0])
         print('=', pair[1])
-#         output_words, attentions = evaluate(encoder, decoder, pair[0])
         output_words = evaluate(encoder, decoder, pair[0], input_lang, output_lang, args)
         output_sentence = ' '.join(output_words)
         print('<', output_sentence)
         print('')
 
 def evaluateTestingPairs(encoder, decoder, pairs, input_lang, output_lang, args):
-    list_cand = []
-    list_ref = []
+    score_short = 0
+    score_long = 0
+    list_cand_short = []
+    list_ref_short = []
+    list_cand_long = []
+    list_ref_long = []
+
     print("Evaluating {} testing sentences...".format(len(pairs)))
+    
     for pair in pairs:
         output_words = evaluate(encoder, decoder, pair[0], input_lang, output_lang, args)
         output_sentence = ' '.join(output_words)
-        list_cand.append(output_sentence)
-        list_ref.append(pair[1])
-    print("{} score: {}".format(args.metric, score(list_cand, list_ref, args.order, args.metric)))
+        sent_length = len([t.text for t in nlp(str(pair[1]))])
+        if sent_length > (6 + 1): # extra 1 for ending punctuation
+            list_cand_long.append(output_sentence)
+            list_ref_long.append(pair[1])
+        else:
+            list_cand_short.append(output_sentence)
+            list_ref_short.append(pair[1])
+
+    print("Num of short sentences (length <= 6):", len(list_cand_short))
+    if len(list_cand_short) > 0:
+        score_short = score(list_cand_short, list_ref_short, args.metric)
+        print("{} score for short sentences (length <= 6): {}".format(args.metric, score_short))
+
+    print("Num of long sentences (length > 6):", len(list_cand_long))
+    if len(list_cand_long) > 0:
+        score_long = score(list_cand_long, list_ref_long, args.metric)
+        print("{} score for long sentences (length > 6): {}".format(args.metric, score_long))
+
+    score_overall = (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
+        / (len(list_cand_short) + len(list_cand_long))
+    print("Overall {} score: {}".format(args.metric, score_overall))
 
 if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
         args.data_path = '.'
+        args.save_data_path = '.'
 
     # Print settings
+    print("RNNEncoder USED")
+    print("hpc mode: {}".format(args.hpc))
     print("metric: {}".format(args.metric))
     print("hidden-size: {}".format(args.hidden_size))
     print("n-epochs: {}".format(args.n_epochs))
@@ -289,6 +308,7 @@ if __name__ == '__main__':
     print("plot-every: {}".format(args.plot_every))
     print("lr: {}".format(args.lr))
     print("clip: {}".format(args.clip))
+    print("use cuda: {}".format(args.cuda))
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
@@ -296,22 +316,24 @@ if __name__ == '__main__':
         torch.cuda.manual_seed(args.seed)
 
     # Load pairs.pkl and lang.pkl
-    with open(args.data_path + "/baseline_pairs.pkl", 'rb') as f:
+    with open(args.data_path + "/RNNEncoder_pairs.pkl", 'rb') as f:
         (train_pairs, test_pairs) = pkl.load(f)
-    with open(args.data_path + "/baseline_lang.pkl", 'rb') as f:
+    with open(args.data_path + "/RNNEncoder_lang.pkl", 'rb') as f:
         (input_lang_load, output_lang_load) = pkl.load(f)
     input_lang = Lang(input_lang_load)
     output_lang = Lang(output_lang_load)
     args.max_length = 50
 
     # Set encoder and decoder
-    encoder = EncoderRNN(args.num_words, args.hidden_size, args.cuda)
+    encoder = EncoderRNN(input_lang.n_words, args.hidden_size, args.cuda)
+    encoder.load_state_dict(torch.load(args.save_data_path + "/RNNEncoder_state_dict.pt"))
     decoder = DecoderRNN(args.hidden_size, output_lang.n_words, args.cuda)
     if args.cuda:
         encoder = encoder.cuda()
         decoder = decoder.cuda()
 
     # Train and evalute
+    print("\nStart")
     print("Evaluate randomly on training sentences:")
     evaluateRandomly(encoder, decoder, train_pairs, input_lang, output_lang, args)
     print("Evaluate randomly on testing sentences:")
@@ -322,4 +344,4 @@ if __name__ == '__main__':
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, decoder, test_pairs, input_lang, output_lang, args)
     evaluateTestingPairs(encoder, decoder, test_pairs, input_lang, output_lang, args)
-    print("Finished")
+    print("Finished\n")
