@@ -34,8 +34,6 @@ parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', 
                     help='mode of bag-of-n-gram representation (default: sum)')
 parser.add_argument('--metric', type=str, default='BLEU', metavar='METRIC',
                     help='metric to use (default: BLEU; ROUGE and BLEU_clip available)')
-parser.add_argument('--num-words', type=int, default='50000', metavar='N',
-                    help='maximum ngrams vocabulary size to use (default: 50000')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -54,6 +52,7 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
+parser.set_defaults(num_words=10000)
 parser.set_defaults(max_length=100)
 
 
@@ -237,7 +236,6 @@ def evaluate(encoder, decoder, sentence, lang, args):
 
     input_variable = variableFromNGramList(lang.vocab_ngrams, sentence, args.num_words, args)
     input_length = input_variable.size()[0]
-    # encoder_hidden = encoder.initHidden()
 
     encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
     encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
@@ -250,7 +248,6 @@ def evaluate(encoder, decoder, sentence, lang, args):
     decoder_hidden = encoder_hidden
 
     decoded_words = []
-    decoder_attentions = torch.zeros(max_length, max_length)
 
     for di in range(max_length):
         decoder_output, decoder_hidden = decoder(
@@ -279,15 +276,38 @@ def evaluateRandomly(encoder, decoder, pairs, lang, args, n=10):
         print('')
 
 def evaluateTestingPairs(encoder, decoder, pairs, lang, args):
-    list_cand = []
-    list_ref = []
+    score_short = 0
+    score_long = 0
+    list_cand_short = []
+    list_ref_short = []
+    list_cand_long = []
+    list_ref_long = []
+
     print("Evaluating {} testing sentences...".format(len(pairs)))
+    
     for pair in pairs:
         output_words = evaluate(encoder, decoder, pair[0], lang, args)
         output_sentence = ' '.join(output_words)
-        list_cand.append(output_sentence)
-        list_ref.append(pair[1])
-    print("{} score: {}".format(args.metric, score(list_cand, list_ref, args.order, args.metric)))
+        if len(output_words) > (6 + 2): # extra 2 for '.' and '<EOS>'
+            list_cand_long.append(output_sentence)
+            list_ref_long.append(pair[1])
+        else:
+            list_cand_short.append(output_sentence)
+            list_ref_short.append(pair[1])
+
+    print("Num of short sentences (length <= 6):", len(list_cand_short))
+    if len(list_cand_short) > 0:
+        score_short = score(list_cand_short, list_ref_short, args.order, args.metric)
+        print("{} score for short sentences (length <= 6): {}".format(args.metric, score_short))
+
+    print("Num of long sentences (length > 6):", len(list_cand_long))
+    if len(list_cand_long) > 0:
+        score_long = score(list_cand_long, list_ref_long, args.order, args.metric)
+        print("{} score for long sentences (length > 6): {}".format(args.metric, score_long))
+
+    score_overall = (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
+        / (len(list_cand_short) + len(list_cand_long))
+    print("Overall {} score: {}".format(args.metric, score_overall))
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -301,7 +321,6 @@ if __name__ == '__main__':
     print("order: {}".format(args.order))
     print("mode: {}".format(args.mode))
     print("metric: {}".format(args.metric))
-    print("num-words: {}".format(args.num_words))
     print("hidden-size: {}".format(args.hidden_size))
     print("n-epochs: {}".format(args.n_epochs))
     print("print-every: {}".format(args.print_every))
@@ -321,6 +340,8 @@ if __name__ == '__main__':
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
     args.max_length = lang.max_ngrams_len
+    args.num_words = len(lang.vocab_ngrams) 
+    print("Ngram Vocab Size:", len(lang.vocab_ngrams))
 
     # Set encoder and decoder
     encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
@@ -342,7 +363,7 @@ if __name__ == '__main__':
     evaluateTestingPairs(encoder, decoder, test_pairs, lang, args)
     print("Finished\n")
 
-    # Export trained embedding weights
+    # Export trained weights
     if args.cuda:
         embedding_weights = encoder.embeddingBag.weight.data.cpu().numpy()
     else: 

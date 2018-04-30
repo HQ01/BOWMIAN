@@ -326,3 +326,4 @@ if __name__ == '__main__':
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, decoder, test_pairs, input_lang, output_lang, args)
     evaluateTestingPairs(encoder, decoder, test_pairs, input_lang, output_lang, args)
+    print("Finished\n")

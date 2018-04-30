@@ -22,7 +22,7 @@ parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/se
                     help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
-parser.add_argument('--num_pairs', type=int, default=40000, metavar='N',
+parser.add_argument('--num-pairs', type=int, default=40000, metavar='N',
                     help='number of training pairs to use, 4 times of that of testing pairs')
 
 
