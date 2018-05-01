@@ -18,8 +18,8 @@ parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
                     help='data path (default: /scratch/zc807/nlu/data)')
-parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
-                    help='data path to load embedding weights (default: /scratch/zc807/nlu/embedding_weights)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/sentence_length', metavar='PATH',
+                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_length)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
 parser.add_argument('--num-pairs', type=int, default=20000, metavar='N',
@@ -133,7 +133,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if not args.hpc:
         args.data_path = '../data'
-        args.load_data_path = '.'
+        args.save_data_path = '.'
     
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
@@ -144,9 +144,9 @@ if __name__ == '__main__':
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
 
-    with open(args.load_data_path + "/pairs%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "/pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.load_data_path + "/lang%d.pkl" % args.order, 'wb') as f:
+    with open(args.save_data_path + "/lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("Example training sentence pairs:")
