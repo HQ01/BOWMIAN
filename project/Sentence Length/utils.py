@@ -10,7 +10,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-nlp = spacy.load('en')
+if os.path.isdir("/scratch/zc807/nlu"):
+    # hpc mode
+    nlp = spacy.load("/scratch/zc807/nlu/en_core_web_sm-2.0.0/en_core_web_sm/en_core_web_sm-2.0.0")
+else:
+    # local mode
+    nlp = spacy.load('en')
 
 # Define constants
 UNK_token = 0
