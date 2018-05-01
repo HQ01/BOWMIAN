@@ -102,9 +102,9 @@ def variableFromSentenceLength(label, args):
 
 
 def variableFromOrder(label,args):
-    result = int(result)
+    result = int(label)
 
-    result = Variabel(torch.LongTensor([result]))
+    result = Variable(torch.LongTensor([result]))
     if args.cuda:
         return result.cuda()
     else:
@@ -113,8 +113,8 @@ def variableFromOrder(label,args):
     
 def variablesFromPair(pair, lang, args):
     input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
-    word_1 = variableFromNGramList(lang.vocab_ngrams,[pair[1][0]],args_num_words, args)
-    word_2 = variableFromNGramList(lang.vocab_ngrams,[pair[1][1]],args_num_words,args)
+    word_1 = variableFromNGramList(lang.vocab_ngrams,[pair[1][0]],args.num_words, args)
+    word_2 = variableFromNGramList(lang.vocab_ngrams,[pair[1][1]],args.num_words,args)
     target_variable = variableFromOrder(pair[2],args)
     return [input_variable,word_1,word_2,target_variable]
 
@@ -220,7 +220,7 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         predict = torch.max(outputs, 1)[1].data[0]
 
         #if predict < 6:
-        print('< prediction is -{}, 1 represent first word is in front of the second, 0 vice versa'.format(predict))
+        print('< prediction is -{}, ###1 represent first word is in front of the second, 0 vice versa###'.format(predict))
         #else:
             #print('< 24+')
         print('')
@@ -252,7 +252,7 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
         if (predict == label):
             correct += 1
 
-    print('Accuracy of the network on the sentence length test set: %d %%' % (
+    print('Accuracy of the network on the word order test set: %d %%' % (
         100 * correct / total))
 
 if __name__ == '__main__':

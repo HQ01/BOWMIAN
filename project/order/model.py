@@ -31,7 +31,7 @@ class MLP_order(nn.Module):
         self.fc3 = nn.Linear(32,class_size)
 
 
-    def forward(self,embedding,word1,word2):
+    def forward(self,embedding):
         out = embedding.view(1,-1)
         #word1 = word1.view(1,-1)
         #word2 = word2.view(1,-1)
