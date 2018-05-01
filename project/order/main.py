@@ -97,19 +97,31 @@ def variableFromSentenceLength(label, args):
         return result.cuda()
     else:
         return result
+
+
+def variableFromOrder(label,args):
+    result = int(result)
+
+    result = Variabel(torch.LongTensor([result]))
+    if args.cuda:
+        return result.cuda()
+    else:
+        return result
     
     
 def variablesFromPair(pair, lang, args):
     input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
-    target_variable = variableFromSentenceLength(pair[1], args)
-    return (input_variable, target_variable)
+    word_1 = variableFromNGramList(lang.vocab_ngrams,[pair[1][0]],args_num_words, args)
+    word_2 = variableFromNGramList(lang.vocab_ngrams,[pair[1][1]],args_num_words,args)
+    target_variable = variableFromOrder(pair[2],args)
+    return [input_variable,word_1,word_2,target_variable]
 
 
 ###############################################
 # Training
 ###############################################
 
-def train(input_variable, target_variable, encoder, decoder, net_optimizer, criterion, args):
+def train(input_variable, word_1, word_2, target_variable, encoder, decoder, net_optimizer, criterion, args):
     use_cuda = args.cuda
     max_length = args.max_length
 
@@ -118,9 +130,9 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
     # encoder_optimizer.zero_grad()
     net_optimizer.zero_grad()
 
-    encoder_ngrams = encoder(input_variable[:-2])
-    encoder_word1 = encoder(input_variable[-2])
-    encoder_word2 = encoder(input_variable[-1])
+    encoder_ngrams = encoder(input_variable)
+    encoder_word1 = encoder(word_1)
+    encoder_word2 = encoder(word_2)
     encoder_hidden = torch.cat((encoder_ngrams, encoder_word1, encoder_word2), 0)
 
     net_output = net(encoder_hidden)
@@ -157,9 +169,11 @@ def trainEpochs(encoder, net, lang, pairs, args):
         for training_pair in training_pairs:
             iter += 1
             input_variable = training_pair[0]
-            target_variable = training_pair[1]
+            word_1 = training_pair[1]
+            word_2 = training_pair[2]
+            target_variable = training_pair[3]
 
-            loss = train(input_variable, target_variable, encoder,
+            loss = train(input_variable, word_1, word_2, target_variable, encoder,
                     net, net_optimizer, criterion, args)
             print_loss_total += loss
             plot_loss_total += loss
@@ -187,24 +201,26 @@ def trainEpochs(encoder, net, lang, pairs, args):
 def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
     for i in range(n):
         pair = random.choice(pairs)
-        print('>', pair[0])
-        print('=', pair[1])
+        print('>', pair[0],pair[1])
+        print('=', pair[2], "1 represents first word is in front of the second, 0 vice versa")
 
-        input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
-        input_length = input_variable.size()[0]
+        candidate_pair = variablesFromPair(pair,lang,args)
 
-        encoder_ngrams = encoder(input_variable[:-2])
-        encoder_word1 = encoder(input_variable[-2])
-        encoder_word2 = encoder(input_variable[-1])
+        #input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+        #input_length = input_variable.size()[0]
+
+        encoder_ngrams = encoder(candidate_pair[0])
+        encoder_word1 = encoder(candidate_pair[1])
+        encoder_word2 = encoder(candidate_pair[2])
         encoder_hidden = torch.cat((encoder_ngrams, encoder_word1, encoder_word2), 0)
 
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
 
-        if predict < 6:
-            print('< {}-{}'.format(predict * 4 + 1, predict * 4 + 4))
-        else:
-            print('< 24+')
+        #if predict < 6:
+        print('< prediction is -{}, 1 represent first word is in front of the second, 0 vice versa'.format(predict))
+        #else:
+            #print('< 24+')
         print('')
 
 def evaluateTestingPairs(encoder, net, pairs, lang, args):
@@ -214,17 +230,21 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
     correct = 0
     total = 0
     for pair in pairs:
-        input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
-        input_length = input_variable.size()[0]
 
-        encoder_ngrams = encoder(input_variable[:-2])
-        encoder_word1 = encoder(input_variable[-2])
-        encoder_word2 = encoder(input_variable[-1])
+        candidate_pair = variablesFromPair(pair,lang,args)
+
+        #input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+        #input_length = input_variable.size()[0]
+
+        encoder_ngrams = encoder(candidate_pair[0])
+        encoder_word1 = encoder(candidate_pair[1])
+        encoder_word2 = encoder(candidate_pair[2])
         encoder_hidden = torch.cat((encoder_ngrams, encoder_word1, encoder_word2), 0)
 
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
-        label = min(math.floor((int(pair[1]) - 1) / 4), 6)
+
+        label = int(pair[2])
         
         total += 1
         if (predict == label):
@@ -263,13 +283,13 @@ if __name__ == '__main__':
         encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
 
     # Train and evalute
-    print("Evaluate randomly on training sentences:")
+    print("Evaluate randomly on training sentences -- word order:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)
-    print("Evaluate randomly on testing sentences:")
+    print("Evaluate randomly on testing sentences -- word order:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
     trainEpochs(encoder, net, lang, train_pairs, args)
-    print("Evaluate randomly on training sentences:")
+    print("Evaluate randomly on training sentences -- word order:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)
-    print("Evaluate randomly on testing sentences:")
+    print("Evaluate randomly on testing sentences -- word order:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
     evaluateTestingPairs(encoder, net, test_pairs, lang, args)
