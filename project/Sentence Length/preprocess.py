@@ -14,35 +14,16 @@ from utils import *
 ###############################################
 
 parser = argparse.ArgumentParser(description='Data Preprocessing')
-parser.add_argument('--data-path', type=str, default='../data', metavar='PATH',
-                    help='data path (default: ../data)')
+parser.add_argument('--hpc', action='store_true', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
+                    help='data path (default: /scratch/zc807/nlu/data)')
+parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+                    help='data path to load embedding weights (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
-parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
-                    help='disable pair filtering (default: enabled)')
-parser.set_defaults(filter_pair=True)
-parser.add_argument('--max-length', type=int, default=10, metavar='N',
-                    help='maximum length of sentences, available only if pair filtering enabled (default: 10)')
-
-
-###############################################
-# Auxiliary functions for data preprocessing
-###############################################
-
-eng_prefixes = (
-    "i am ", "i m ",
-    "he is", "he s ",
-    "she is", "she s",
-    "you are", "you re ",
-    "we are", "we re ",
-    "they are", "they re "
-)
-
-def filterPair(p, max_length):
-    return len(p[1].split(' ')) < max_length and p[1].startswith(eng_prefixes)
-
-def filterPairs(pairs, max_length):
-    return [pair for pair in pairs if filterPair(pair, max_length)]
+parser.add_argument('--num-pairs', type=int, default=20000, metavar='N',
+                    help='number of training pairs to use, 4 times of that of testing pairs')
 
 
 ###############################################
@@ -115,14 +96,15 @@ def readLangs(lang1, lang2, order, data_path, reverse=False):
 
     return input_lang, output_lang, train_pairs, test_pairs
 
-def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse=False):
+def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     input_lang, output_lang, train_pairs, test_pairs = readLangs(lang1, lang2, order, data_path, reverse)
     print("Read %s training sentence pairs" % len(train_pairs))
     print("Read %s testing sentence pairs" % len(test_pairs))
 
-    if filter_pair:
-        train_pairs = filterPairs(train_pairs, max_length)
-        test_pairs = filterPairs(test_pairs, max_length)
+    assert(len(train_pairs) > num_pairs)
+    assert(len(test_pairs) > int(num_pairs/4))
+    train_pairs = train_pairs[:num_pairs]
+    test_pairs = test_pairs[:int(num_pairs/4)]
     print("Trimmed to %s training sentence pairs" % len(train_pairs))
     print("Trimmed to %s testing sentence pairs" % len(test_pairs))
 
@@ -130,40 +112,45 @@ def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse
     max_ngrams_len = 0 
     for pair in train_pairs:
         pair[0] =extract_ngrams(pair[1], order)
+        pair.append(pair[1]) # store ref sentence
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
         uwords = [t.text for t in nlp(str(pair[1]))]
-        pair[1] = len(uwords) # including punctuations
+        pair[1] = len(uwords) - 1 # dropping ending punctuation
     print("Constructing test pairs...")
     for pair in test_pairs:
         pair[0] = extract_ngrams(pair[1], order)
+        pair.append(pair[1]) # store ref sentence
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
         uwords = [t.text for t in nlp(str(pair[1]))]
-        pair[1] = len(uwords) # including punctuations
+        pair[1] = len(uwords) - 1 # dropping ending punctuations
     print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
 
     return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
 
 if __name__ == '__main__':
     args = parser.parse_args()
+    if not args.hpc:
+        args.data_path = '../data'
+        args.load_data_path = '.'
     
+    print("hpc mode: {}".format(args.hpc))
+    print("order: {}".format(args.order))
+    print("num-pairs: {}".format(args.num_pairs))
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
-        args.order, args.data_path, args.filter_pair, args.max_length, True)
+        args.order, args.data_path, args.num_pairs, True)
     vocab_ngrams = output_lang.createNGramDictionary()
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
 
-    with open("pairs%d.pkl" % args.order, 'wb') as f:
+    with open(args.load_data_path + "/pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open("lang%d.pkl" % args.order, 'wb') as f:
+    with open(args.load_data_path + "/lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
-    
-    # with open("lang.pkl", 'rb') as f:
-    #     lang_load = pkl.load(f)
-    # assert(lang_load == lang)
     
     print("Example training sentence pairs:")
     print(random.choice(train_pairs))
     print("Example testing sentence pairs:")
     print(random.choice(test_pairs))
+    print("Finished\n")

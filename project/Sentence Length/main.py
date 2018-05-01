@@ -24,15 +24,17 @@ from metric import score
 
 parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
 parser.add_argument('--order', type=int, default='3', metavar='N',
-                    help='order of ngram (default: 3)')
-parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: current folder)')
+                    help='order of ngram')
+parser.add_argument('--hpc', action='store_true', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_length', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_length)')
+parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+                    help='data path to load embedding weights (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
                     help='mode of bag-of-n-gram representation (default: sum)')
-parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
-                    help='metric to use (default: ROUGE; BLEU and BLEU_clip available)')
-parser.add_argument('--num-words', type=int, default='10000', metavar='N',
-                    help='maximum ngrams vocabulary size to use (default: 10000')
+parser.add_argument('--num-words', type=int, default='50000', metavar='N',
+                    help='maximum ngrams vocabulary size to use (default: 50000')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -45,12 +47,11 @@ parser.add_argument('--plot-every', type=int, default='100', metavar='N',
                     help='plot every (default: 100) iters')
 parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                     help='learning rate (default: 0.01)')
-parser.add_argument('--max-length', type=int, default='100', metavar='N',
-                    help='max-ngrams-length (set by preprocessing)')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
+parser.set_defaults(max_length=100)
 
 
 ###############################################
@@ -90,8 +91,8 @@ def variableFromNGramList(vocab, ngram_list, num_words, args):
 
 def variableFromSentenceLength(label, args):
     length = int(label)
-    # bins: (1-4), (5-8), (9-12), (13-16), (17-20), (20-24), (24+)
-    category = min(math.floor((length - 1) / 4), 6)
+    # bins: (1-2), (3-4), (5-6), (7-8), (9-10), (11-12), (13-14), (15-16), (17-18), (18+)
+    category = min(math.floor((length - 1) / 2), 9)
     result = Variable(torch.LongTensor([category]))
     if args.cuda:
         return result.cuda()
@@ -140,7 +141,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
     print_loss_total = 0  # Reset every print_every
     plot_loss_total = 0  # Reset every plot_every
 
-    # encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
+    encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
     net_optimizer = optim.SGD(net.parameters(), lr=learning_rate)
     criterion = nn.CrossEntropyLoss()
 
@@ -183,6 +184,7 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
+        print('ref sent', pair[2])
         print('=', pair[1])
 
         input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
@@ -193,10 +195,10 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
 
-        if predict < 6:
-            print('< {}-{}'.format(predict * 4 + 1, predict * 4 + 4))
+        if predict < 9:
+            print('< {}-{}'.format(predict * 2 + 1, predict * 2 + 2))
         else:
-            print('< 24+')
+            print('< 18+')
         print('')
 
 def evaluateTestingPairs(encoder, net, pairs, lang, args):
@@ -213,7 +215,7 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
 
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
-        label = min(math.floor((int(pair[1]) - 1) / 4), 6)
+        label = min(math.floor((int(pair[1]) - 1) / 2), 9)
         
         total += 1
         if (predict == label):
@@ -225,6 +227,21 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
 if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
+    if not args.hpc:
+        args.data_path = '.'
+        args.load_data_path = '.'
+
+    # Print settings
+    print("hpc mode: {}".format(args.hpc))
+    print("order: {}".format(args.order))
+    print("mode: {}".format(args.mode))
+    print("ngram dictionary size: {}".format(args.num_words))
+    print("hidden-size: {}".format(args.hidden_size))
+    print("n-epochs: {}".format(args.n_epochs))
+    print("print-every: {}".format(args.print_every))
+    print("plot-every: {}".format(args.plot_every))
+    print("lr: {}".format(args.lr))
+    print("use cuda: {}".format(args.cuda))
 
     # Set the seed for generating random numbers
     torch.manual_seed(args.seed)
@@ -240,25 +257,26 @@ if __name__ == '__main__':
     args.max_length = lang.max_ngrams_len
 
     # Set encoder and net
-    net = MLP(args.hidden_size, class_size=7)
     encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
+    with open(args.load_data_path + "/embedding_weights%d.pkl" % args.order, 'rb') as f:
+        embedding_weights = pkl.load(f)
+        encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
+    net = MLP(args.hidden_size, class_size=10)
     if args.cuda:
         encoder = encoder.cuda()
         net = net.cuda()
 
-    # Load pretrained embedding weights
-    with open("embedding_weights%d.pkl" % args.order, 'rb') as f:
-        embedding_weights = pkl.load(f)
-        encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
-
     # Train and evalute
+    print("Start")
     print("Evaluate randomly on training sentences:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
+    evaluateTestingPairs(encoder, net, test_pairs, lang, args) 
     trainEpochs(encoder, net, lang, train_pairs, args)
     print("Evaluate randomly on training sentences:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
     evaluateTestingPairs(encoder, net, test_pairs, lang, args)
+    print("Finished\n")
