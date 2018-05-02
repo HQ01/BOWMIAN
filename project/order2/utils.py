@@ -1,6 +1,5 @@
 from __future__ import unicode_literals, print_function, division
 
-import os
 import spacy
 import unicodedata
 import string
@@ -10,6 +9,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import os
 
 if os.path.isdir("/scratch/zc807/nlu"):
     # hpc mode
@@ -64,12 +64,12 @@ def timeSince(since, percent):
     rs = es - s
     return '%s (- %s)' % (asMinutes(s), asMinutes(rs))
 
-def showPlot(points, args):
+def showPlot(points, order):
     plt.figure()
     fig, ax = plt.subplots()
     # this locator puts ticks at regular intervals
     loc = ticker.MultipleLocator(base=0.2)
     ax.yaxis.set_major_locator(loc)
     plt.plot(points)
-    plt.savefig(args.data_path + "/RNNEncoder_loss.pdf")
+    plt.savefig('loss%d.jpg' % order)
     plt.close(fig)
