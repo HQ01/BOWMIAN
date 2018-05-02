@@ -28,7 +28,7 @@ parser.add_argument('--order', type=int, default='3', metavar='N',
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/word_order', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_length)')
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/word_order)')
 parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
                     help='data path to load embedding weights (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
@@ -98,7 +98,6 @@ def variableFromSentenceLength(label, args):
         return result.cuda()
     else:
         return result
-
 
 def variableFromOrder(label,args):
     result = int(label)

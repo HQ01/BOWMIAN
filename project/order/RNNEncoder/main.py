@@ -25,8 +25,8 @@ from metric import score
 parser = argparse.ArgumentParser(description='Infering Sentence Length with RNNEncoder + MLP')
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
-parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_length', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_length)')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/word_order', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/word_order)')
 parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
                     help='data path to load embedding weights (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
@@ -82,11 +82,17 @@ def variableFromSentence(lang, sentence, args):
     else:
         return result
 
-def variableFromSentenceLength(label, args):
-    length = int(label)
-    # bins: (1-2), (3-4), (5-6), (7-8), (9-10), (11-12), (13-14), (15-16), (17-18), (18+)
-    category = min(math.floor((length - 1) / 2), 9)
-    result = Variable(torch.LongTensor([category]))
+def variableFromWord(lang, word, args):
+    use_cuda = args.cuda
+    indexes = indexesFromSentence(lang, word)
+    result = Variable(torch.LongTensor(indexes).view(-1, 1))
+    if use_cuda:
+        return result.cuda()
+    else:
+        return result
+
+def variableFromWordOrder(label, args):
+    result = Variable(torch.LongTensor([int(label)]))
     if args.cuda:
         return result.cuda()
     else:
@@ -94,15 +100,17 @@ def variableFromSentenceLength(label, args):
 
 def variablesFromPair(pair, lang, args):
     input_variable = variableFromSentence(lang, pair[0], args)
-    target_variable = variableFromSentenceLength(pair[1], args)
-    return (input_variable, target_variable)
+    word1_variable = variableFromWord(lang, pair[1][0], args)
+    word2_variable = variableFromWord(lang, pair[1][1], args)
+    target_variable = variableFromWordOrder(pair[2], args)
+    return (input_variable, word1_variable, word2_variable, target_variable)
 
 
 ###############################################
 # Training
 ###############################################
 
-def train(input_variable, target_variable, encoder, decoder, net_optimizer, criterion, args):
+def train(input_variable, word1_variable, word2_variable, target_variable, encoder, decoder, net_optimizer, criterion, args):
     use_cuda = args.cuda
     max_length = args.max_length
 
@@ -113,16 +121,20 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
 
     input_length = input_variable.size()[0]
     encoder_hidden = encoder.initHidden()
-
     encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
     encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-
     for ei in range(input_length):
         encoder_output, encoder_hidden = encoder(
             input_variable[ei], encoder_hidden)
         encoder_outputs[ei] = encoder_output[0][0]
+    encoder_sentence = encoder_hidden
+    
+    encoder_word1 = encoder.embedding(word1_variable).view(1, 1, -1)
+    encoder_word2 = encoder.embedding(word2_variable).view(1, 1, -1)
 
-    net_output = net(encoder_hidden)
+    encoder_representation = torch.cat((encoder_sentence, encoder_word1, encoder_word2), 0)
+
+    net_output = net(encoder_representation)
     loss = criterion(net_output, target_variable)
     loss.backward()
 
@@ -156,10 +168,12 @@ def trainEpochs(encoder, net, lang, pairs, args):
         for training_pair in training_pairs:
             iter += 1
             input_variable = training_pair[0]
-            target_variable = training_pair[1]
+            word1_variable = training_pair[1]
+            word2_variable = training_pair[2]
+            target_variable = training_pair[3]
 
-            loss = train(input_variable, target_variable, encoder,
-                    net, net_optimizer, criterion, args)
+            loss = train(input_variable, word1_variable, word2_variable, target_variable, 
+                    encoder, net, net_optimizer, criterion, args)
             print_loss_total += loss
             plot_loss_total += loss
 
@@ -176,7 +190,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses)
+    showPlot(plot_losses, args)
 
 
 ###############################################
@@ -191,26 +205,34 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         pair = random.choice(pairs)
         print('>', pair[0])
         print('=', pair[1])
+        
+        variable_pair = variablesFromPair(pair, lang, args)
+        input_variable = variable_pair[0]
+        word1_variable = variable_pair[1]
+        word2_variable = variable_pair[2]
+        target_variable = variable_pair[3]
 
-        input_variable = variableFromSentence(lang, pair[0], args)
         input_length = input_variable.size()[0]
         encoder_hidden = encoder.initHidden()
-
         encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
         encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-
         for ei in range(input_length):
             encoder_output, encoder_hidden = encoder(
                 input_variable[ei], encoder_hidden)
             encoder_outputs[ei] = encoder_output[0][0]
+        encoder_sentence = encoder_hidden
 
-        outputs = net(encoder_hidden)
+        encoder_word1 = encoder.embedding(word1_variable).view(1, 1, -1)
+        encoder_word2 = encoder.embedding(word2_variable).view(1, 1, -1)
+
+        encoder_representation = torch.cat((encoder_sentence, encoder_word1, encoder_word2), 0)
+
+        outputs = net(encoder_representation)
         predict = torch.max(outputs, 1)[1].data[0]
-
-        if predict < 9:
-            print('< {}-{}'.format(predict * 2 + 1, predict * 2 + 2))
-        else:
-            print('< 18+')
+        #if predict < 6:
+        print('< prediction is: {}, ###1 represent first word is in front of the second, 0 vice versa###'.format(predict))
+        #else:
+            #print('< 24+')
         print('')
 
 def evaluateTestingPairs(encoder, net, pairs, lang, args):
@@ -220,27 +242,37 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
     correct = 0
     total = 0
     for pair in pairs:
-        input_variable = variableFromSentence(lang, pair[0], args)
+        variable_pair = variablesFromPair(pair, lang, args)
+        input_variable = variable_pair[0]
+        word1_variable = variable_pair[1]
+        word2_variable = variable_pair[2]
+        target_variable = variable_pair[3]
+
         input_length = input_variable.size()[0]
         encoder_hidden = encoder.initHidden()
-
         encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
         encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-
         for ei in range(input_length):
             encoder_output, encoder_hidden = encoder(
                 input_variable[ei], encoder_hidden)
             encoder_outputs[ei] = encoder_output[0][0]
+        encoder_sentence = encoder_hidden
+        
+        encoder_word1 = encoder.embedding(word1_variable).view(1, 1, -1)
+        encoder_word2 = encoder.embedding(word2_variable).view(1, 1, -1)
 
-        outputs = net(encoder_hidden)
+        encoder_representation = torch.cat((encoder_sentence, encoder_word1, encoder_word2), 0)
+
+        outputs = net(encoder_representation)
         predict = torch.max(outputs, 1)[1].data[0]
-        label = min(math.floor((int(pair[1]) - 1) / 2), 9)
+
+        label = int(pair[2])
         
         total += 1
         if (predict == label):
             correct += 1
 
-    print('Accuracy of the network on the sentence length test set: %d %%' % (
+    print('Accuracy of the network on the word order test set: %d %%' % (
         100 * correct / total))
 
 if __name__ == '__main__':
@@ -253,7 +285,7 @@ if __name__ == '__main__':
     # Print settings
     print("hpc mode: {}".format(args.hpc))
     print("mode: {}".format(args.mode))
-    print("ngram dictionary size: {}".format(args.num_words))
+    print("max ngram dictionary size: {}".format(args.num_words))
     print("hidden-size: {}".format(args.hidden_size))
     print("n-epochs: {}".format(args.n_epochs))
     print("print-every: {}".format(args.print_every))
@@ -276,7 +308,7 @@ if __name__ == '__main__':
     # Set encoder and net
     encoder = EncoderRNN(lang.n_words, args.hidden_size, args.mode)
     encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
-    net = MLP(args.hidden_size, class_size=10)
+    net = MLP(args.hidden_size, class_size=2)
     if args.cuda:
         encoder = encoder.cuda()
         net = net.cuda()
