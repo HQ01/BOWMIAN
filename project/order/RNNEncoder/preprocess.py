@@ -105,7 +105,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
         # sentence too short!
         if len(uwords) < 2:
-            break
+            continue
 
         word1 = random.choice(uwords)
         word1_ind = uwords.index(word1)
@@ -144,7 +144,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
         
         # sentence too short!
         if len(uwords) < 2:
-            break
+            continue
 
         word1 = random.choice(uwords)
         word1_ind = uwords.index(word1)
