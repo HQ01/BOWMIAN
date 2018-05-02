@@ -89,9 +89,11 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     test_pairs = test_pairs[:int(num_pairs/4)]
     print("Trimmed to %s training sentence pairs" % len(train_pairs))
     print("Trimmed to %s testing sentence pairs" % len(test_pairs))
+    max_ngrams_len = 0
 
+    cleaned_train_pairs = []
+    cleaned_test_pairs = []
     print("Constructing training pairs...")
-    max_ngrams_len = 0 
     for i in range(len(train_pairs)):
         pair = train_pairs[i]
         output_lang.addSentence(pair[0])
@@ -100,6 +102,11 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
         #print(uwords)
         if uwords[-1] in ('.', '!', '?'):
             del uwords[-1] # delete punctuation
+
+        # sentence too short!
+        if len(uwords) < 2:
+            break
+
         word1 = random.choice(uwords)
         word1_ind = uwords.index(word1)
         if (word1_ind == len(uwords) - 1):
@@ -123,7 +130,8 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
         pair[1] = [word1, word2]
         pair.append(1)
 
-        train_pairs.append([pair[0], [word4, word3], 0])
+        cleaned_train_pairs.append(pair)
+        cleaned_train_pairs.append([pair[0], [word4, word3], 0])
 
     print("Constructing test pairs...")
     for i in range(len(test_pairs)):
@@ -133,6 +141,11 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
         #print(uwords)
         if uwords[-1] in ('.', '!', '?'):
             del uwords[-1] # delete punctuation
+        
+        # sentence too short!
+        if len(uwords) < 2:
+            break
+
         word1 = random.choice(uwords)
         word1_ind = uwords.index(word1)
         word2 = random.choice(uwords[word1_ind::])
@@ -144,9 +157,10 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
         pair[1] = [word1, word2]
         pair.append(1)
 
-        test_pairs.append([pair[0], [word4, word3], 0])
+        cleaned_test_pairs.append(pair)
+        cleaned_test_pairs.append([pair[0], [word4, word3], 0])
 
-    return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
+    return input_lang, output_lang, cleaned_train_pairs, cleaned_test_pairs, max_ngrams_len
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -157,11 +171,13 @@ if __name__ == '__main__':
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
     print("num-sentence-pairs: {}".format(args.num_pairs))
-    print("num-training-pairs (2 per sentence): {}".format(args.num_pairs * 2))
 
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.num_pairs, True)
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
+
+    print("num-cleaned-training-pairs (2 pairs per cleaned sentence): {}".format(len(train_pairs)))
+    print("num-cleaned-testing-pairs (2 pairs per cleaned sentence): {}".format(len(test_pairs)))
 
     with open(args.save_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
