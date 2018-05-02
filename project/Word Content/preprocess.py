@@ -183,15 +183,15 @@ if __name__ == '__main__':
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path,  args.num_pairs, True)
     #vocab_ngrams = output_lang.createNGramDictionary()
-    #lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
-    #    args.order, vocab_ngrams, max_ngrams_len)
+    lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
+        args.order, vocab_ngrams, max_ngrams_len)
 
     with open("train_pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump(train_pairs, f, protocol=pkl.HIGHEST_PROTOCOL) 
     with open("test_pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump(test_pairs, f, protocol=pkl.HIGHEST_PROTOCOL) 
-    #with open("lang%d.pkl" % args.order, 'wb') as f:
-    #    pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
+    with open("lang%d.pkl" % args.order, 'wb') as f:
+        pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
     # with open("lang.pkl", 'rb') as f:
     #     lang_load = pkl.load(f)
