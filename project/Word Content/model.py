@@ -15,8 +15,10 @@ class MLP(nn.Module):
         
     def forward(self, embedding):
         out = embedding.view(1, -1)
-        out = F.relu(self.fc1(out))
-        out = F.relu(self.fc2(out))
+        print(out)
+        out = nn.Tanh(self.fc1(out))
+        print(out)
+        out = nn.Tanh(self.fc2(out))
         out = self.fc3(out)
         return out
 
@@ -27,13 +29,14 @@ class MLP_wc(nn.Module):
         #self.fc2 = nn.Linear(input_size,32)
         self.fc2 = nn.Linear(64,32)
         self.fc4 = nn.Linear(32,class_size)
+        self.tanh = nn.Tanh()
 
 
-    def forward(self,embedding,aux):
+    def forward(self,embedding):
         out = embedding.view(1,-1)
         #aux = embedding.view(1,-1)
-        out = F.relu(self.fc1(out))
-        out = F.relu(self.fc2(out))
+        out = self.tanh(self.fc1(out))
+        out = self.tanh(self.fc2(out))
         out = self.fc4(out)
         return out
 
