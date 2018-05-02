@@ -15,9 +15,9 @@ class MLP(nn.Module):
         
     def forward(self, embedding):
         out = embedding.view(1, -1)
-        print(out)
+        #print(out)
         out = nn.Tanh(self.fc1(out))
-        print(out)
+        #print(out)
         out = nn.Tanh(self.fc2(out))
         out = self.fc3(out)
         return out
@@ -26,19 +26,21 @@ class MLP_wc(nn.Module):
     def __init__(self,input_size,class_size = 2):
         super(MLP_wc, self).__init__()
         self.fc1 = nn.Linear(input_size*2,64)
-        #self.fc2 = nn.Linear(input_size,32)
-        self.fc2 = nn.Linear(64,32)
-        self.fc4 = nn.Linear(32,class_size)
-        self.tanh = nn.Tanh()
+        self.fc2 = nn.Linear(64, 32)
+        self.fc3 = nn.Linear(32, class_size)
 
 
     def forward(self,embedding):
         out = embedding.view(1,-1)
         #aux = embedding.view(1,-1)
-        out = self.tanh(self.fc1(out))
-        out = self.tanh(self.fc2(out))
-        out = self.fc4(out)
-        return out
+        out = F.relu(self.fc1(out))
+        out = F.relu(self.fc2(out))
+        out = self.fc3(out)
+        #print("before softmax: ", out)
+        m = nn.Softmax(dim=1)
+        z = m(out)
+        #print("after softmax: ", z)
+        return z
 
 class NGramEncoder(nn.Module):
     def __init__(self, input_size, hidden_size, mode):
