@@ -22,7 +22,7 @@ from metric import score
 # Training settings
 ###############################################
 
-parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser = argparse.ArgumentParser(description='Infering Word Order with NGrams + MLP')
 parser.add_argument('--order', type=int, default='3', metavar='N',
                     help='order of ngram')
 parser.add_argument('--hpc', action='store_true', default=False,
@@ -52,7 +52,6 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
 parser.set_defaults(max_length=100)
-
 
 
 ###############################################
@@ -298,7 +297,7 @@ if __name__ == '__main__':
         net = net.cuda()
 
     # Train and evalute
-    print("Start")
+    print("\nStart")
     print("Evaluate randomly on training sentences -- word order:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences -- word order:")
@@ -309,3 +308,4 @@ if __name__ == '__main__':
     print("Evaluate randomly on testing sentences -- word order:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
     evaluateTestingPairs(encoder, net, test_pairs, lang, args)
+    print("Finished\n")

@@ -183,7 +183,8 @@ if __name__ == '__main__':
     
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
-    print("num-pairs: {}".format(args.num_pairs))
+    print("num-sentence-pairs: {}".format(args.num_pairs))
+    print("num-training-pairs (2 per sentence): {}".format(args.num_pairs * 2))
     
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.num_pairs, True)

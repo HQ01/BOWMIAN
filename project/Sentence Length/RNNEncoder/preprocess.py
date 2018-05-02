@@ -93,7 +93,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     print("Constructing training pairs...")
     max_ngrams_len = 0 
     for pair in train_pairs:
-        input_lang.addSentence(pair[1])
+        output_lang.addSentence(pair[1])
         pair[0] = pair[1]
         uwords = [t.text for t in nlp(str(pair[1]))]
         pair[1] = len(uwords) - 1 # dropping ending punctuation
