@@ -146,7 +146,6 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
         train_pairs.append([pair[0], [word4, word3], 0])
 
-
     print("Constructing test pairs...")
     len_test_pairs = len(test_pairs)
     for i in range(len_test_pairs):
@@ -172,8 +171,6 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
         test_pairs.append([pair[0], [word4, word3], 0])
 
-
-        
     print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
 
     return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len

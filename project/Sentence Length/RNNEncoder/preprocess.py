@@ -109,7 +109,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if not args.hpc:
         args.data_path = '../../data'
-        args.load_data_path = '.'
+        args.save_data_path = '.'
     
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
@@ -118,9 +118,9 @@ if __name__ == '__main__':
         args.order, args.data_path, args.num_pairs, True)
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
 
-    with open(args.load_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
+    with open(args.save_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.load_data_path + "/RNNEncoder_lang.pkl", 'wb') as f:
+    with open(args.save_data_path + "/RNNEncoder_lang.pkl", 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("Example training sentence pairs:")
