@@ -109,7 +109,6 @@ def variableFromOrder(label,args):
     else:
         return result
     
-    
 def variablesFromPair(pair, lang, args):
     input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
     word_1 = variableFromNGramList(lang.vocab_ngrams,[pair[1][0]],args.num_words, args)
@@ -192,7 +191,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses, args.order)
+    showPlot(plot_losses, args)
 
 
 ###############################################
@@ -202,8 +201,8 @@ def trainEpochs(encoder, net, lang, pairs, args):
 def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
     for i in range(n):
         pair = random.choice(pairs)
-        print('>', pair[0],pair[1])
-        print('=', pair[2], "1 represents first word is in front of the second, 0 vice versa")
+        print('>', pair[0], pair[1])
+        print('=', pair[2])
 
         candidate_pair = variablesFromPair(pair,lang,args)
 
@@ -214,12 +213,11 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         encoder_word1 = encoder(candidate_pair[1])
         encoder_word2 = encoder(candidate_pair[2])
         encoder_hidden = torch.cat((encoder_ngrams, encoder_word1, encoder_word2), 0)
-
+        
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
-
         #if predict < 6:
-        print('< prediction is -{}, ###1 represent first word is in front of the second, 0 vice versa###'.format(predict))
+        print('< prediction is: {}, ###1 represent first word is in front of the second, 0 vice versa###'.format(predict))
         #else:
             #print('< 24+')
         print('')
@@ -265,7 +263,7 @@ if __name__ == '__main__':
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
     print("mode: {}".format(args.mode))
-    print("ngram dictionary size: {}".format(args.num_words))
+    print("max ngram dictionary size: {}".format(args.num_words))
     print("hidden-size: {}".format(args.hidden_size))
     print("n-epochs: {}".format(args.n_epochs))
     print("print-every: {}".format(args.print_every))
@@ -291,7 +289,7 @@ if __name__ == '__main__':
     with open(args.load_data_path + "/embedding_weights%d.pkl" % args.order, 'rb') as f:
         embedding_weights = pkl.load(f)
         encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
-    net = MLP_order(args.hidden_size, class_size=10)
+    net = MLP(args.hidden_size, class_size=2)
     if args.cuda:
         encoder = encoder.cuda()
         net = net.cuda()
@@ -302,6 +300,7 @@ if __name__ == '__main__':
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences -- word order:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
+    evaluateTestingPairs(encoder, net, test_pairs, lang, args)
     trainEpochs(encoder, net, lang, train_pairs, args)
     print("Evaluate randomly on training sentences -- word order:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)

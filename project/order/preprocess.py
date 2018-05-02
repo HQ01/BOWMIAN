@@ -113,8 +113,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
     for i in range(len_train_pairs):
         pair = train_pairs[i]
-        #output_lang.addSentence(pair[1])
-        pair[0] =extract_ngrams(pair[1], order)
+        pair[0] = output_lang.addSentence(pair[1])
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
         uwords = [t.text for t in nlp(str(pair[1]))]

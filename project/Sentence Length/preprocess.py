@@ -111,7 +111,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     print("Constructing training pairs...")
     max_ngrams_len = 0 
     for pair in train_pairs:
-        pair[0] =extract_ngrams(pair[1], order)
+        pair[0] = output_lang.addSentence(pair[1])
         pair.append(pair[1]) # store ref sentence
         if len(pair[0]) > max_ngrams_len:
             max_ngrams_len = len(pair[0])
