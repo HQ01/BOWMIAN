@@ -79,6 +79,18 @@ def variableFromWordContent(label, args):
     else:
         return result
 
+def variableFromOneWord(lang, word, args):
+    if word in lang.word2index:
+        index = lang.word2index[word]
+    else:
+        index = UNK_token
+    result = Variable(torch.LongTensor([index]).view(-1, 1))
+
+    if args.cuda:
+        return result[0].cuda()
+    else:
+        return result[0]
+
 def variableFromSentence(lang, sentence, args):
     use_cuda = args.cuda
     indexes = indexesFromSentence(lang, sentence)
@@ -135,6 +147,7 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
         encoder_outputs[ei] = encoder_output[0][0]
 
     encoder_sentence = encoder_hidden
+
     encoder_output, encoder_word = encoder(
             word_content, encoder_hidden)
 
@@ -211,7 +224,7 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         print('=', pair[2])
 
         input_sentence = variableFromSentence(lang, pair[0], args)
-        word_content = variableFromSentence(lang, pair[1][0], args)
+        word_content = variableFromOneWord(lang, pair[1][0], args)
         input_length = input_sentence.size()[0]
         encoder_hidden = encoder.initHidden()
 
@@ -224,9 +237,8 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
             encoder_outputs[ei] = encoder_output[0][0]
 
         encoder_sentence = encoder_hidden
-
         encoder_output, encoder_word = encoder(word_content, encoder_hidden)        
-
+        
         encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
 
         outputs = net(encoder_final)
@@ -243,11 +255,11 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
     total = 0
     for pair in pairs:
         pair = random.choice(pairs)
-        print('>', pair[0], pair[1])
-        print('=', pair[2])
+        #print('>', pair[0], pair[1])
+        #print('=', pair[2])
 
         input_sentence = variableFromSentence(lang, pair[0], args)
-        word_content = variableFromSentence(lang, pair[1][0], args)
+        word_content = variableFromOneWord(lang, pair[1][0], args)
         input_length = input_sentence.size()[0]
         encoder_hidden = encoder.initHidden()
 
@@ -309,8 +321,9 @@ if __name__ == '__main__':
     lang = Lang(lang_load)
 
     # Set encoder and net
-    encoder = EncoderRNN(lang.n_words, args.hidden_size, args.mode)
-    #encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
+    print(args.cuda)
+    encoder = EncoderRNN(lang.n_words, args.hidden_size, args.cuda)
+    encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
     net = MLP_wc(args.hidden_size, class_size=2)
     if args.cuda:
         encoder = encoder.cuda()

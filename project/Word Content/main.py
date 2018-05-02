@@ -207,8 +207,8 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         input_contentWord = variableFromNGramList(lang.vocab_ngrams, pair[1], args.num_words, args)
         #input_length = input_variable.size()[0] + input_word.size()[0] #+1
 
-        print("input_ngrams: ", input_ngrams)
-        print("input_contentWord: ", input_contentWord)
+        #print("input_ngrams: ", input_ngrams)
+        #print("input_contentWord: ", input_contentWord)
         encoder_ngrams = encoder(input_ngrams)
         #print(encoder_ngrams)
         encoder_word = encoder(input_contentWord)
@@ -282,7 +282,7 @@ if __name__ == '__main__':
         net = net.cuda()
 
     # Load pretrained embedding weights
-    with open("embedding_weights%d.pkl" % args.order, 'rb') as f:
+    with open(args.load_data_path + "/embedding_weights%d.pkl" % args.order, 'rb') as f:
         embedding_weights = pkl.load(f)
         encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
 
