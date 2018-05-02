@@ -148,11 +148,23 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
         word1 = random.choice(uwords)
         word1_ind = uwords.index(word1)
-        word2 = random.choice(uwords[word1_ind::])
+        if (word1_ind == len(uwords) - 1):
+            word2 = random.choice(uwords[:word1_ind])
+            temp = word2
+            word2 = word1
+            word1 = temp
+        else:
+            word2 = random.choice(uwords[word1_ind+1:])
 
         word3 = random.choice(uwords)
         word3_ind = uwords.index(word3)
-        word4 = random.choice(uwords[word3_ind::])
+        if (word3_ind == len(uwords) - 1):
+            word4 = random.choice(uwords[:word3_ind])
+            temp = word4
+            word4 = word3
+            word3 = temp
+        else:
+            word4 = random.choice(uwords[word3_ind+1:])
 
         pair[1] = [word1, word2]
         pair.append(1)
