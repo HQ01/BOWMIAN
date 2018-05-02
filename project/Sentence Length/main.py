@@ -22,7 +22,7 @@ from metric import score
 # Training settings
 ###############################################
 
-parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser = argparse.ArgumentParser(description='Infering Sentence Length with NGrams + MLP')
 parser.add_argument('--order', type=int, default='3', metavar='N',
                     help='order of ngram')
 parser.add_argument('--hpc', action='store_true', default=False,
@@ -173,7 +173,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses, args.order)
+    showPlot(plot_losses, args)
 
 
 ###############################################
@@ -184,7 +184,7 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
-        print('ref sent', pair[2])
+        print('ref sent:', pair[2])
         print('=', pair[1])
 
         input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
@@ -235,7 +235,7 @@ if __name__ == '__main__':
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
     print("mode: {}".format(args.mode))
-    print("ngram dictionary size: {}".format(args.num_words))
+    print("max ngram dictionary size: {}".format(args.num_words))
     print("hidden-size: {}".format(args.hidden_size))
     print("n-epochs: {}".format(args.n_epochs))
     print("print-every: {}".format(args.print_every))
@@ -272,7 +272,7 @@ if __name__ == '__main__':
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
-    evaluateTestingPairs(encoder, net, test_pairs, lang, args) 
+    evaluateTestingPairs(encoder, net, test_pairs, lang, args)
     trainEpochs(encoder, net, lang, train_pairs, args)
     print("Evaluate randomly on training sentences:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)

@@ -22,9 +22,7 @@ from metric import score
 # Training settings
 ###############################################
 
-parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
-parser.add_argument('--order', type=int, default='3', metavar='N',
-                    help='order of ngram')
+parser = argparse.ArgumentParser(description='Infering Sentence Length with RNNEncoder + MLP')
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_length', metavar='PATH',
@@ -64,27 +62,22 @@ class Lang:
         self.word2count = lang_load[1]
         self.index2word = lang_load[2]
         self.n_words = lang_load[3]
-        self.order = lang_load[4]
-        self.vocab_ngrams = lang_load[5]
-        self.max_ngrams_len = lang_load[6]
 
-def indexesFromNGramList(vocab, ngram_list, num_words):
+def indexesFromSentence(lang, sentence):
     result = []
-    for ng in ngram_list:
-        if ng in vocab:
-            idx = vocab[ng]
-            if idx > num_words:
-                result.append(UNK_token)
-            else:
-                result.append(idx)
+    for word in sentence.split(' '):
+        if word in lang.word2index:
+            result.append(lang.word2index[word])
         else:
             result.append(UNK_token)
     return result
 
-def variableFromNGramList(vocab, ngram_list, num_words, args):
-    indexes = indexesFromNGramList(vocab, ngram_list, num_words)
+def variableFromSentence(lang, sentence, args):
+    use_cuda = args.cuda
+    indexes = indexesFromSentence(lang, sentence)
+    indexes.append(EOS_token)
     result = Variable(torch.LongTensor(indexes).view(-1, 1))
-    if args.cuda:
+    if use_cuda:
         return result.cuda()
     else:
         return result
@@ -98,9 +91,9 @@ def variableFromSentenceLength(label, args):
         return result.cuda()
     else:
         return result
-    
+
 def variablesFromPair(pair, lang, args):
-    input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+    input_variable = variableFromSentence(lang, pair[0], args)
     target_variable = variableFromSentenceLength(pair[1], args)
     return (input_variable, target_variable)
 
@@ -118,7 +111,17 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
     # encoder_optimizer.zero_grad()
     net_optimizer.zero_grad()
 
-    encoder_hidden = encoder(input_variable)
+    input_length = input_variable.size()[0]
+    encoder_hidden = encoder.initHidden()
+
+    encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
+    encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
+
+    for ei in range(input_length):
+        encoder_output, encoder_hidden = encoder(
+            input_variable[ei], encoder_hidden)
+        encoder_outputs[ei] = encoder_output[0][0]
+
     net_output = net(encoder_hidden)
     loss = criterion(net_output, target_variable)
     loss.backward()
@@ -173,7 +176,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
 
         print("Epoch {}/{} finished".format(epoch, args.n_epochs))
 
-    showPlot(plot_losses, args.order)
+    showPlot(plot_losses)
 
 
 ###############################################
@@ -181,16 +184,25 @@ def trainEpochs(encoder, net, lang, pairs, args):
 ###############################################
 
 def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
+    use_cuda = args.cuda
+    max_length = args.max_length
+
     for i in range(n):
         pair = random.choice(pairs)
         print('>', pair[0])
-        print('ref sent', pair[2])
         print('=', pair[1])
 
-        input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+        input_variable = variableFromSentence(lang, pair[0], args)
         input_length = input_variable.size()[0]
+        encoder_hidden = encoder.initHidden()
 
-        encoder_hidden = encoder(input_variable)
+        encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
+        encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
+
+        for ei in range(input_length):
+            encoder_output, encoder_hidden = encoder(
+                input_variable[ei], encoder_hidden)
+            encoder_outputs[ei] = encoder_output[0][0]
 
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
@@ -208,10 +220,17 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
     correct = 0
     total = 0
     for pair in pairs:
-        input_variable = variableFromNGramList(lang.vocab_ngrams, pair[0], args.num_words, args)
+        input_variable = variableFromSentence(lang, pair[0], args)
         input_length = input_variable.size()[0]
+        encoder_hidden = encoder.initHidden()
 
-        encoder_hidden = encoder(input_variable)
+        encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
+        encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
+
+        for ei in range(input_length):
+            encoder_output, encoder_hidden = encoder(
+                input_variable[ei], encoder_hidden)
+            encoder_outputs[ei] = encoder_output[0][0]
 
         outputs = net(encoder_hidden)
         predict = torch.max(outputs, 1)[1].data[0]
@@ -233,7 +252,6 @@ if __name__ == '__main__':
 
     # Print settings
     print("hpc mode: {}".format(args.hpc))
-    print("order: {}".format(args.order))
     print("mode: {}".format(args.mode))
     print("ngram dictionary size: {}".format(args.num_words))
     print("hidden-size: {}".format(args.hidden_size))
@@ -249,29 +267,22 @@ if __name__ == '__main__':
         torch.cuda.manual_seed(args.seed)
 
     # Load pairs.pkl and lang.pkl
-    with open(args.data_path + "/pairs%d.pkl" % args.order, 'rb') as f:
+    with open(args.data_path + "/RNNEncoder_pairs.pkl", 'rb') as f:
         (train_pairs, test_pairs) = pkl.load(f)
-    with open(args.data_path + "/lang%d.pkl" % args.order, 'rb') as f:
+    with open(args.data_path + "/RNNEncoder_lang.pkl", 'rb') as f:
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
-    args.max_length = lang.max_ngrams_len
 
     # Set encoder and net
-    encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
+    encoder = EncoderRNN(6435, args.hidden_size, args.mode)
+    encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
     net = MLP(args.hidden_size, class_size=10)
-
-    # Load pretrained embedding weights
-    with open(args.load_data_path + "/embedding_weights%d.pkl" % args.order, 'rb') as f:
-        embedding_weights = pkl.load(f)
-        encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
-
-    # Set to CUDA mode if available
     if args.cuda:
         encoder = encoder.cuda()
         net = net.cuda()
 
     # Train and evalute
-    print("Start")
+    print("\nStart")
     print("Evaluate randomly on training sentences:")
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences:")
