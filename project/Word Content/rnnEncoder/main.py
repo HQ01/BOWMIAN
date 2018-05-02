@@ -79,18 +79,6 @@ def variableFromWordContent(label, args):
     else:
         return result
 
-def variableFromOneWord(lang, word, args):
-    if word in lang.word2index:
-        index = lang.word2index[word]
-    else:
-        index = UNK_token
-    result = Variable(torch.LongTensor([index]).view(-1, 1))
-
-    if args.cuda:
-        return result[0].cuda()
-    else:
-        return result[0]
-
 def variableFromSentence(lang, sentence, args):
     use_cuda = args.cuda
     indexes = indexesFromSentence(lang, sentence)
@@ -101,19 +89,18 @@ def variableFromSentence(lang, sentence, args):
     else:
         return result
 
-def variableFromSentenceLength(label, args):
-    length = int(label)
-    # bins: (1-2), (3-4), (5-6), (7-8), (9-10), (11-12), (13-14), (15-16), (17-18), (18+)
-    category = min(math.floor((length - 1) / 2), 9)
-    result = Variable(torch.LongTensor([category]))
-    if args.cuda:
+def variableFromWord(lang, word, args):
+    use_cuda = args.cuda
+    indexes = indexesFromSentence(lang, word)
+    result = Variable(torch.LongTensor(indexes).view(-1, 1))
+    if use_cuda:
         return result.cuda()
     else:
         return result
 
 def variablesFromPair(pair, lang, args):
     input_variable1 = variableFromSentence(lang, pair[0], args)
-    input_variable2 = ariableFromSentence(lang, pair[1], args)
+    input_variable2 = variableFromWord(lang, pair[1][0], args)
     target_variable = variableFromWordContent(pair[2], args)
     input_variable = [input_variable1, input_variable2]
     return (input_variable, target_variable)
@@ -148,12 +135,11 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
 
     encoder_sentence = encoder_hidden
 
-    encoder_output, encoder_word = encoder(
-            word_content, encoder_hidden)
+    encoder_word = encoder.embedding(word_content).view(1, 1, -1)
 
-    encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
+    encoder_final = torch.cat((encoder_sentence, encoder_word), 0)
 
-    net_output = net(encoder_hidden)
+    net_output = net(encoder_final)
     loss = criterion(net_output, target_variable)
     loss.backward()
 
@@ -224,7 +210,8 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         print('=', pair[2])
 
         input_sentence = variableFromSentence(lang, pair[0], args)
-        word_content = variableFromOneWord(lang, pair[1][0], args)
+        word_content = variableFromWord(lang, pair[1][0], args)
+
         input_length = input_sentence.size()[0]
         encoder_hidden = encoder.initHidden()
 
@@ -237,9 +224,10 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
             encoder_outputs[ei] = encoder_output[0][0]
 
         encoder_sentence = encoder_hidden
-        encoder_output, encoder_word = encoder(word_content, encoder_hidden)        
-        
-        encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
+
+        encoder_word = encoder.embedding(word_content).view(1, 1, -1)
+
+        encoder_final = torch.cat((encoder_sentence, encoder_word), 0)
 
         outputs = net(encoder_final)
         predict = torch.max(outputs, 1)[1].data[0]
@@ -259,7 +247,8 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
         #print('=', pair[2])
 
         input_sentence = variableFromSentence(lang, pair[0], args)
-        word_content = variableFromOneWord(lang, pair[1][0], args)
+        word_content = variableFromWord(lang, pair[1][0], args)
+
         input_length = input_sentence.size()[0]
         encoder_hidden = encoder.initHidden()
 
@@ -273,10 +262,9 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
 
         encoder_sentence = encoder_hidden
 
-        encoder_output, encoder_word = encoder(word_content, encoder_hidden)        
+        encoder_word = encoder.embedding(word_content).view(1, 1, -1)
 
-        encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
-
+        encoder_final = torch.cat((encoder_sentence, encoder_word), 0)
         outputs = net(encoder_final)
         predict = torch.max(outputs, 1)[1].data[0]
         label = pair[2]
@@ -285,7 +273,7 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
         if (predict == label):
             correct += 1
 
-    print('Accuracy of the network on the sentence length test set: %d %%' % (
+    print('Accuracy of the network on the word content test set: %d %%' % (
         100 * correct / total))
 
 if __name__ == '__main__':
