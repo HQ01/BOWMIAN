@@ -93,7 +93,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     print("Constructing training pairs...")
     max_ngrams_len = 0 
     for pair in train_pairs:
-        input_lang.addSentence(pair[1])
+        output_lang.addSentence(pair[1])
         pair[0] = pair[1]
         uwords = [t.text for t in nlp(str(pair[1]))]
         pair[1] = len(uwords) - 1 # dropping ending punctuation
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if not args.hpc:
         args.data_path = '../../data'
-        args.load_data_path = '.'
+        args.save_data_path = '.'
     
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
@@ -118,9 +118,9 @@ if __name__ == '__main__':
         args.order, args.data_path, args.num_pairs, True)
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
 
-    with open(args.load_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
+    with open(args.save_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.load_data_path + "/RNNEncoder_lang.pkl", 'wb') as f:
+    with open(args.save_data_path + "/RNNEncoder_lang.pkl", 'wb') as f:
         pkl.dump(lang, f, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("Example training sentence pairs:")

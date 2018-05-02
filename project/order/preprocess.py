@@ -146,7 +146,6 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
         train_pairs.append([pair[0], [word4, word3], 0])
 
-
     print("Constructing test pairs...")
     len_test_pairs = len(test_pairs)
     for i in range(len_test_pairs):
@@ -172,8 +171,6 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 
         test_pairs.append([pair[0], [word4, word3], 0])
 
-
-        
     print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
 
     return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
@@ -186,7 +183,8 @@ if __name__ == '__main__':
     
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
-    print("num-pairs: {}".format(args.num_pairs))
+    print("num-sentence-pairs: {}".format(args.num_pairs))
+    print("num-training-pairs (2 per sentence): {}".format(args.num_pairs * 2))
     
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.num_pairs, True)

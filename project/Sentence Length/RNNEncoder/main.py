@@ -274,7 +274,7 @@ if __name__ == '__main__':
     lang = Lang(lang_load)
 
     # Set encoder and net
-    encoder = EncoderRNN(6435, args.hidden_size, args.mode)
+    encoder = EncoderRNN(lang.n_words, args.hidden_size, args.mode)
     encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
     net = MLP(args.hidden_size, class_size=10)
     if args.cuda:
