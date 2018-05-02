@@ -100,8 +100,10 @@ def variableFromSentenceLength(label, args):
         return result
 
 def variablesFromPair(pair, lang, args):
-    input_variable = variableFromSentence(lang, pair[0], args)
-    target_variable = variableFromSentenceLength(pair[1], args)
+    input_variable1 = variableFromSentence(lang, pair[0], args)
+    input_variable2 = ariableFromSentence(lang, pair[1], args)
+    target_variable = variableFromWordContent(pair[2], args)
+    input_variable = [input_variable1, input_variable2]
     return (input_variable, target_variable)
 
 
@@ -209,7 +211,7 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         print('=', pair[2])
 
         input_sentence = variableFromSentence(lang, pair[0], args)
-        word_content = variableFromWordContent(lang, pair[1], args)
+        word_content = variableFromSentence(lang, pair[1][0], args)
         input_length = input_sentence.size()[0]
         encoder_hidden = encoder.initHidden()
 
@@ -245,7 +247,7 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
         print('=', pair[2])
 
         input_sentence = variableFromSentence(lang, pair[0], args)
-        word_content = variableFromWordContent(lang, pair[1], args)
+        word_content = variableFromSentence(lang, pair[1][0], args)
         input_length = input_sentence.size()[0]
         encoder_hidden = encoder.initHidden()
 
@@ -308,7 +310,7 @@ if __name__ == '__main__':
 
     # Set encoder and net
     encoder = EncoderRNN(lang.n_words, args.hidden_size, args.mode)
-    encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
+    #encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
     net = MLP_wc(args.hidden_size, class_size=2)
     if args.cuda:
         encoder = encoder.cuda()
