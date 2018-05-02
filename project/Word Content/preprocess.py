@@ -21,8 +21,8 @@ parser.add_argument('--order', type=int, default=3, metavar='N',
 parser.add_argument('--no-filter-pair', dest='filter-pair', action='store_false',
                     help='disable pair filtering (default: enabled)')
 parser.set_defaults(filter_pair=True)
-parser.add_argument('--max-length', type=int, default=10, metavar='N',
-                    help='maximum length of sentences, available only if pair filtering enabled (default: 10)')
+parser.add_argument('--num-pairs', type=int, default=20000, metavar='N',
+                    help='number of pairs, available only if pair filtering enabled (default: 10)')
 
 
 ###############################################
@@ -115,14 +115,20 @@ def readLangs(lang1, lang2, order, data_path, reverse=False):
 
     return input_lang, output_lang, train_pairs, test_pairs
 
-def prepareData(lang1, lang2, order, data_path, filter_pair, max_length, reverse=False):
+def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     input_lang, output_lang, train_pairs, test_pairs = readLangs(lang1, lang2, order, data_path, reverse)
     print("Read %s training sentence pairs" % len(train_pairs))
     print("Read %s testing sentence pairs" % len(test_pairs))
 
-    if filter_pair:
-        train_pairs = filterPairs(train_pairs, max_length)
-        test_pairs = filterPairs(test_pairs, max_length)
+#    if filter_pair:
+#        train_pairs = filterPairs(train_pairs, max_length)
+#        test_pairs = filterPairs(test_pairs, max_length)
+    assert(len(train_pairs) > num_pairs)
+    assert(len(test_pairs) > int(num_pairs/4))
+    random.shuffle(train_pairs)
+    random.shuffle(test_pairs)
+    train_pairs = train_pairs[:num_pairs]
+    test_pairs = test_pairs[:int(num_pairs/4)]
     print("Trimmed to %s training sentence pairs" % len(train_pairs))
     print("Trimmed to %s testing sentence pairs" % len(test_pairs))
 
@@ -175,7 +181,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
-        args.order, args.data_path, args.filter_pair, args.max_length, True)
+        args.order, args.data_path,  args.num_pairs, True)
     #vocab_ngrams = output_lang.createNGramDictionary()
     #lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
     #    args.order, vocab_ngrams, max_ngrams_len)
