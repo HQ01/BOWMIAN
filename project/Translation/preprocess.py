@@ -18,8 +18,8 @@ parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
                     help='data path (default: /scratch/zc807/nlu/data)')
-parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
-                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
+                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
 parser.add_argument('--num-pairs', type=int, default=40000, metavar='N',
