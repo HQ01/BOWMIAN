@@ -15,7 +15,7 @@ from torch.autograd import Variable
 
 from utils import *
 from model import *
-from metric import score
+from metric import score, multi_score
 
 ###############################################
 # Training settings
@@ -24,12 +24,12 @@ from metric import score
 parser = argparse.ArgumentParser(description='Translation with Encoder-Decoder')
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
-parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/sentence_reconstruction', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/sentence_reconstruction)')
-parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
+parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
                     help='data path to save embedding_weights.pkl (default: /scratch/zc807/nlu/embedding_weights)')
-parser.add_argument('--metric', type=str, default='BLEU', metavar='METRIC',
-                    help='metric to use (default: BLEU; ROUGE and BLEU_clip available)')
+parser.add_argument('--metric', type=str, default='MULTI', metavar='METRIC',
+                    help='metric to use (default: MULTI; ROUGE, BLEU and BLEU_clip available)')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -93,13 +93,13 @@ def variablesFromPair(pair, input_lang, output_lang, args):
 
 teacher_forcing_ratio = 0.5
  
-def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, args):
+def train(input_variable, target_variable, encoder, decoder, decoder_optimizer, criterion, args):
     use_cuda = args.cuda
     max_length = args.max_length
 
     encoder_hidden = encoder.initHidden()
 
-    encoder_optimizer.zero_grad()
+    # encoder_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
 
     input_length = input_variable.size()[0]
@@ -147,10 +147,10 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     loss.backward()
 
     # Clip gradient
-    nn.utils.clip_grad_norm(encoder.parameters(), args.clip)
+    # nn.utils.clip_grad_norm(encoder.parameters(), args.clip)
     nn.utils.clip_grad_norm(decoder.parameters(), args.clip)
 
-    encoder_optimizer.step()
+    # encoder_optimizer.step()
     decoder_optimizer.step()
 
     return loss.data[0] / target_length
@@ -168,7 +168,7 @@ def trainEpochs(encoder, decoder, input_lang, output_lang, pairs, args):
     print_loss_total = 0  # Reset every print_every
     plot_loss_total = 0  # Reset every plot_every
 
-    encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
+    # encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
     decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
     criterion = nn.NLLLoss()
 
@@ -183,7 +183,7 @@ def trainEpochs(encoder, decoder, input_lang, output_lang, pairs, args):
             target_variable = training_pair[1]
 
             loss = train(input_variable, target_variable, encoder,
-                     decoder, encoder_optimizer, decoder_optimizer, criterion, args)
+                     decoder, decoder_optimizer, criterion, args)
             print_loss_total += loss
             plot_loss_total += loss
 
@@ -279,24 +279,58 @@ def evaluateTestingPairs(encoder, decoder, pairs, input_lang, output_lang, args)
 
     print("Num of short sentences (length <= 6):", len(list_cand_short))
     if len(list_cand_short) > 0:
-        score_short = score(list_cand_short, list_ref_short, args.metric)
-        print("{} score for short sentences (length <= 6): {}".format(args.metric, score_short))
+        if args.metric == "MULTI":
+            score_short_rouge1, score_short_rouge2, score_short_bleu, score_short_bleu_clip = \
+                multi_score(list_cand_short, list_ref_short)
+            print("score for short sentnces (length <= 6):")
+            print("ROUGE1:", score_short_rouge1)
+            print("ROUGE2:", score_short_rouge2)
+            print("BLEU:", score_short_bleu)
+            print("BLEU_CLIP:", score_short_bleu_clip)
+            print()
+        else:
+            score_short = score(list_cand_short, list_ref_short, args.metric)
+            print("{} score for short sentnces (length <= 6): {}".format(args.metric, score_short))
 
     print("Num of long sentences (length > 6):", len(list_cand_long))
     if len(list_cand_long) > 0:
-        score_long = score(list_cand_long, list_ref_long, args.metric)
-        print("{} score for long sentences (length > 6): {}".format(args.metric, score_long))
+        if args.metric == "MULTI":
+            score_long_rouge1, score_long_rouge2, score_long_bleu, score_long_bleu_clip = \
+                multi_score(list_cand_long, list_ref_long)
+            print("score for long sentnces (length > 6):")
+            print("ROUGE1:", score_long_rouge1)
+            print("ROUGE2:", score_long_rouge2)
+            print("BLEU:", score_long_bleu)
+            print("BLEU_CLIP:", score_long_bleu_clip)
+            print()
+        else:
+            score_long = score(list_cand_long, list_ref_long, args.metric)
+            print("{} score for long sentnces (length > 6): {}".format(args.metric, score_long))
 
-    score_overall = (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
+    get_score_overall = lambda score_short, score_long: \
+        (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
         / (len(list_cand_short) + len(list_cand_long))
-    print("Overall {} score: {}".format(args.metric, score_overall))
+    if args.metric == "MULTI":
+            score_overall_rouge1 = get_score_overall(score_short_rouge1, score_long_rouge1)
+            score_overall_rouge2 = get_score_overall(score_short_rouge2, score_long_rouge2)
+            score_overall_bleu = get_score_overall(score_short_bleu, score_long_bleu)
+            score_overall_bleu_clip = get_score_overall(score_short_bleu_clip, score_long_bleu_clip)
+            print("Overall:")
+            print("ROUGE1:", score_overall_rouge1)
+            print("ROUGE2:", score_overall_rouge2)
+            print("BLEU:", score_overall_bleu)
+            print("BLEU_CLIP:", score_overall_bleu_clip)
+            print()
+    else:
+        score_overall = get_score_overall(score_short, score_long)
+        print("Overall {} score: {}".format(args.metric, score_overall))
 
 if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
         args.data_path = '.'
-        args.save_data_path = '.'
+        args.load_data_path = '../../embedding_weights'
 
     # Print settings
     print("RNNEncoder USED")
@@ -326,7 +360,7 @@ if __name__ == '__main__':
 
     # Set encoder and decoder
     encoder = EncoderRNN(input_lang.n_words, args.hidden_size, args.cuda)
-    encoder.load_state_dict(torch.load(args.save_data_path + "/RNNEncoder_state_dict.pt"))
+    encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
     decoder = DecoderRNN(args.hidden_size, output_lang.n_words, args.cuda)
     if args.cuda:
         encoder = encoder.cuda()

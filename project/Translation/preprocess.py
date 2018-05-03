@@ -47,6 +47,10 @@ class Lang:
     def addSentence(self, sent):
         for word in sent.split(' '):
             self.addWord(word)
+
+    def addSentenceNgram(self, sent):
+        for word in sent.split(' '):
+            self.addWord(word)
         ngrams = extract_ngrams(sent, self.order)
         for ng in ngrams:
             if ng in self.vocab0:
@@ -108,9 +112,12 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     print("Trimmed to %s training sentence pairs" % len(train_pairs))
     print("Trimmed to %s testing sentence pairs" % len(test_pairs))
 
+    max_ngrams_len = 0
     print("Counting words and constructing training pairs...")
     for pair in train_pairs:
-        input_lang.addSentence(pair[0])
+        pair[0] = input_lang.addSentenceNgram(pair[0])
+        if len(pair[0]) > max_ngrams_len:
+            max_ngrams_len = len(pair[0])
         output_lang.addSentence(pair[1])
     print("Counted words in training sentences:")
     print(input_lang.name, input_lang.n_words)
@@ -118,27 +125,32 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     
     print("Constructing testing pairs...")
     for pair in test_pairs:
-        pair[1] = pair[0]
+        pair[0] = extract_ngrams(pair[0], order)
 
-    return input_lang, output_lang, train_pairs, test_pairs
+    print("Max Ngrams length of all training and testing sentences:", max_ngrams_len)
+
+    return input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len
 
 if __name__ == '__main__':
     args = parser.parse_args()
     if not args.hpc:
-        args.data_path = '../../data'
+        args.data_path = '../data'
         args.save_data_path = '.'
     
     print("hpc mode: {}".format(args.hpc))
     print("order: {}".format(args.order))
     print("num-pairs: {}".format(args.num_pairs))
-    input_lang, output_lang, train_pairs, test_pairs = prepareData('eng', 'eng', 
+    input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.num_pairs, False)
-    input_lang = (input_lang.word2index, input_lang.word2count, input_lang.index2word, input_lang.n_words)
-    output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
+    vocab_ngrams = input_lang.createNGramDictionary()
+    input_lang = (input_lang.word2index, input_lang.word2count, input_lang.index2word, input_lang.n_words,
+        args.order, vocab_ngrams, max_ngrams_len)
+    output_lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words,
+        args.order, None, None)
     
-    with open(args.save_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:
+    with open(args.save_data_path + "/pairs%d.pkl" % args.order, 'wb') as f:
         pkl.dump((train_pairs, test_pairs), f, protocol=pkl.HIGHEST_PROTOCOL) 
-    with open(args.save_data_path + "/RNNEncoder_lang.pkl", 'wb') as f:
+    with open(args.save_data_path + "/lang%d.pkl" % args.order, 'wb') as f:
         pkl.dump((input_lang, output_lang), f, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("Example training sentence pairs:")
