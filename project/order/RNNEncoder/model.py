@@ -38,7 +38,7 @@ class MLP(nn.Module):
         self.fc3 = nn.Linear(32,class_size)
 
     def forward(self,embedding):
-        out = embedding.view(1,-1)
+        out = embedding.view(1, -1)
         #word1 = word1.view(1,-1)
         #word2 = word2.view(1,-1)
         out = F.relu(self.fc1(out))

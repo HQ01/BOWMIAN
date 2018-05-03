@@ -84,7 +84,7 @@ def variableFromSentence(lang, sentence, args):
 
 def variableFromWord(lang, word, args):
     use_cuda = args.cuda
-    indexes = indexesFromSentence(lang, word)
+    indexes = [lang.word2index[word] if word in lang.word2index else UNK_token]
     result = Variable(torch.LongTensor(indexes).view(-1, 1))
     if use_cuda:
         return result.cuda()
@@ -257,7 +257,7 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
                 input_variable[ei], encoder_hidden)
             encoder_outputs[ei] = encoder_output[0][0]
         encoder_sentence = encoder_hidden
-        
+
         encoder_word1 = encoder.embedding(word1_variable).view(1, 1, -1)
         encoder_word2 = encoder.embedding(word2_variable).view(1, 1, -1)
 
