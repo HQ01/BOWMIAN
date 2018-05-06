@@ -1,0 +1,516 @@
+################################################
+Start program
+num of epochs:  3
+order:  1
+Evaluate randomly on training sentences:
+> ['i', 'm', 'impressed', 'with', 'your', 'french', '.'] ['campus']
+= 0
+outputs:  Variable containing:
+ 0.5611  0.4389
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['would', 'you', 'be', 'so', 'kind', 'as', 'to', 'shut', 'that', 'window', '?'] ['you']
+= 1
+outputs:  Variable containing:
+ 0.6070  0.3930
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'll', 'study', 'harder', 'from', 'now', 'on', '.'] ['makes']
+= 0
+outputs:  Variable containing:
+ 0.6027  0.3973
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['you', 'did', 'not', 'come', 'to', 'school', 'yesterday', '.'] ['suspended']
+= 0
+outputs:  Variable containing:
+ 0.6500  0.3500
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['tom', 'is', 'a', 'very', 'good', 'guitarist', 'isn', 't', 'he', '?'] ['harder']
+= 0
+outputs:  Variable containing:
+ 0.6742  0.3258
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'need', 'you', 'to', 'do', 'me', 'a', 'favor', '.'] ['favor']
+= 1
+outputs:  Variable containing:
+ 0.6579  0.3421
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['the', 'only', 'person', 'who', 'hasn', 't', 'paid', 'is', 'you', '.'] ['person']
+= 1
+outputs:  Variable containing:
+ 0.6957  0.3043
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['he', 'ogled', 'a', 'girl', 'outside', 'a', 'pub', '.'] ['elevator']
+= 0
+outputs:  Variable containing:
+ 0.6626  0.3374
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['what', 'are', 'you', 'reading', '?'] ['what']
+= 1
+outputs:  Variable containing:
+ 0.5881  0.4119
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['leave', 'my', 'room', 'immediately', '.'] ['leave']
+= 1
+outputs:  Variable containing:
+ 0.7132  0.2868
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+Evaluate randomly on testing sentences:
+> ['she', 'can', 't', 'find', 'her', 'hat', '.'] ['she']
+= 1
+outputs:  Variable containing:
+ 0.6089  0.3911
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'grew', 'these', 'carrots', 'myself', '.'] ['pickpocket']
+= 0
+outputs:  Variable containing:
+ 0.5657  0.4343
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'll', 'show', 'you', 'the', 'way', 'out', '.'] ['classmates']
+= 0
+outputs:  Variable containing:
+ 0.5963  0.4037
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'suggest', 'you', 'leave', '.'] ['club']
+= 0
+outputs:  Variable containing:
+ 0.6346  0.3654
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['you', 'must', 'be', 'in', 'good', 'physical', 'condition', '.'] ['you']
+= 1
+outputs:  Variable containing:
+ 0.6536  0.3464
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['did', 'you', 'bring', 'a', 'weapon', '?'] ['class']
+= 0
+outputs:  Variable containing:
+ 0.6937  0.3063
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'was', 'disappointed', 'in', 'her', '.'] ['was']
+= 1
+outputs:  Variable containing:
+ 0.5907  0.4093
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['traffic', 'is', 'a', 'major', 'urban', 'problem', '.'] ['traffic']
+= 1
+outputs:  Variable containing:
+ 0.7307  0.2693
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['he', 'finds', 'fault', 'with', 'everything', 'i', 'say', '.'] ['finds']
+= 1
+outputs:  Variable containing:
+ 0.6419  0.3581
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'm', 'forgetful', '.'] ['m']
+= 1
+outputs:  Variable containing:
+ 0.6355  0.3645
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+0m 10s (- 29m 53s) (1000 0%) 0.6387
+0m 12s (- 19m 2s) (2000 1%) 0.6031
+0m 15s (- 15m 22s) (3000 1%) 0.5982
+0m 18s (- 13m 31s) (4000 2%) 0.5611
+0m 21s (- 12m 23s) (5000 2%) 0.5790
+0m 24s (- 11m 37s) (6000 3%) 0.5594
+0m 26s (- 11m 4s) (7000 3%) 0.5597
+0m 29s (- 10m 38s) (8000 4%) 0.5659
+0m 32s (- 10m 17s) (9000 5%) 0.5666
+0m 35s (- 9m 59s) (10000 5%) 0.5603
+0m 38s (- 9m 45s) (11000 6%) 0.5676
+0m 40s (- 9m 32s) (12000 6%) 0.5519
+0m 43s (- 9m 21s) (13000 7%) 0.5602
+0m 46s (- 9m 11s) (14000 7%) 0.5451
+0m 49s (- 9m 2s) (15000 8%) 0.5622
+0m 52s (- 8m 54s) (16000 8%) 0.5575
+0m 54s (- 8m 46s) (17000 9%) 0.5621
+0m 57s (- 8m 39s) (18000 10%) 0.5575
+1m 0s (- 8m 33s) (19000 10%) 0.5357
+1m 3s (- 8m 26s) (20000 11%) 0.5567
+1m 6s (- 8m 20s) (21000 11%) 0.5418
+1m 8s (- 8m 15s) (22000 12%) 0.5475
+1m 11s (- 8m 9s) (23000 12%) 0.5556
+1m 14s (- 8m 4s) (24000 13%) 0.5399
+1m 17s (- 7m 59s) (25000 13%) 0.5495
+1m 20s (- 7m 54s) (26000 14%) 0.5450
+1m 22s (- 7m 50s) (27000 15%) 0.5290
+1m 25s (- 7m 45s) (28000 15%) 0.5435
+1m 28s (- 7m 41s) (29000 16%) 0.5489
+1m 31s (- 7m 36s) (30000 16%) 0.5444
+1m 34s (- 7m 32s) (31000 17%) 0.5496
+1m 37s (- 7m 28s) (32000 17%) 0.5462
+1m 39s (- 7m 24s) (33000 18%) 0.5311
+1m 42s (- 7m 20s) (34000 18%) 0.5418
+1m 45s (- 7m 16s) (35000 19%) 0.5307
+1m 48s (- 7m 12s) (36000 20%) 0.5447
+1m 51s (- 7m 9s) (37000 20%) 0.5559
+1m 53s (- 7m 5s) (38000 21%) 0.5122
+1m 56s (- 7m 1s) (39000 21%) 0.5379
+1m 59s (- 6m 57s) (40000 22%) 0.5379
+2m 2s (- 6m 54s) (41000 22%) 0.5392
+2m 5s (- 6m 50s) (42000 23%) 0.5308
+2m 7s (- 6m 47s) (43000 23%) 0.5382
+2m 10s (- 6m 43s) (44000 24%) 0.5409
+2m 13s (- 6m 40s) (45000 25%) 0.5434
+2m 16s (- 6m 36s) (46000 25%) 0.5266
+2m 19s (- 6m 33s) (47000 26%) 0.5442
+2m 21s (- 6m 30s) (48000 26%) 0.5252
+2m 24s (- 6m 26s) (49000 27%) 0.5203
+2m 27s (- 6m 23s) (50000 27%) 0.5311
+2m 30s (- 6m 20s) (51000 28%) 0.5393
+2m 33s (- 6m 16s) (52000 28%) 0.5146
+2m 35s (- 6m 13s) (53000 29%) 0.5291
+2m 38s (- 6m 10s) (54000 30%) 0.5331
+2m 41s (- 6m 7s) (55000 30%) 0.5072
+2m 44s (- 6m 3s) (56000 31%) 0.5298
+2m 47s (- 6m 0s) (57000 31%) 0.5296
+2m 49s (- 5m 57s) (58000 32%) 0.5189
+2m 52s (- 5m 54s) (59000 32%) 0.5246
+Epoch 1/3 finished
+3m 3s (- 6m 6s) (60000 33%) 0.5282
+3m 6s (- 6m 3s) (61000 33%) 0.5270
+3m 9s (- 5m 59s) (62000 34%) 0.5123
+3m 11s (- 5m 56s) (63000 35%) 0.5118
+3m 14s (- 5m 52s) (64000 35%) 0.5157
+3m 17s (- 5m 49s) (65000 36%) 0.5025
+3m 20s (- 5m 45s) (66000 36%) 0.5159
+3m 23s (- 5m 42s) (67000 37%) 0.5256
+3m 25s (- 5m 39s) (68000 37%) 0.5169
+3m 28s (- 5m 35s) (69000 38%) 0.5065
+3m 31s (- 5m 32s) (70000 38%) 0.5079
+3m 34s (- 5m 29s) (71000 39%) 0.5086
+3m 37s (- 5m 25s) (72000 40%) 0.5178
+3m 40s (- 5m 22s) (73000 40%) 0.4972
+3m 42s (- 5m 19s) (74000 41%) 0.5330
+3m 45s (- 5m 15s) (75000 41%) 0.5132
+3m 48s (- 5m 12s) (76000 42%) 0.5002
+3m 51s (- 5m 9s) (77000 42%) 0.5268
+3m 54s (- 5m 6s) (78000 43%) 0.5066
+3m 56s (- 5m 2s) (79000 43%) 0.5115
+3m 59s (- 4m 59s) (80000 44%) 0.5164
+4m 2s (- 4m 56s) (81000 45%) 0.5291
+4m 5s (- 4m 53s) (82000 45%) 0.5065
+4m 8s (- 4m 49s) (83000 46%) 0.5176
+4m 10s (- 4m 46s) (84000 46%) 0.5051
+4m 13s (- 4m 43s) (85000 47%) 0.5158
+4m 16s (- 4m 40s) (86000 47%) 0.5213
+4m 19s (- 4m 37s) (87000 48%) 0.4970
+4m 22s (- 4m 34s) (88000 48%) 0.5193
+4m 25s (- 4m 30s) (89000 49%) 0.5208
+4m 27s (- 4m 27s) (90000 50%) 0.5147
+4m 30s (- 4m 24s) (91000 50%) 0.5106
+4m 33s (- 4m 21s) (92000 51%) 0.5110
+4m 36s (- 4m 18s) (93000 51%) 0.5062
+4m 39s (- 4m 15s) (94000 52%) 0.5172
+4m 41s (- 4m 12s) (95000 52%) 0.5085
+4m 44s (- 4m 9s) (96000 53%) 0.5070
+4m 47s (- 4m 5s) (97000 53%) 0.5186
+4m 50s (- 4m 2s) (98000 54%) 0.4904
+4m 53s (- 3m 59s) (99000 55%) 0.4830
+4m 56s (- 3m 56s) (100000 55%) 0.5045
+4m 58s (- 3m 53s) (101000 56%) 0.5163
+5m 1s (- 3m 50s) (102000 56%) 0.5105
+5m 4s (- 3m 47s) (103000 57%) 0.5106
+5m 7s (- 3m 44s) (104000 57%) 0.5092
+5m 10s (- 3m 41s) (105000 58%) 0.4899
+5m 12s (- 3m 38s) (106000 58%) 0.5183
+5m 15s (- 3m 35s) (107000 59%) 0.5123
+5m 18s (- 3m 32s) (108000 60%) 0.5106
+5m 21s (- 3m 29s) (109000 60%) 0.4970
+5m 24s (- 3m 26s) (110000 61%) 0.5063
+5m 26s (- 3m 23s) (111000 61%) 0.5028
+5m 29s (- 3m 20s) (112000 62%) 0.5050
+5m 32s (- 3m 17s) (113000 62%) 0.5048
+5m 35s (- 3m 14s) (114000 63%) 0.5050
+5m 38s (- 3m 11s) (115000 63%) 0.4910
+5m 41s (- 3m 8s) (116000 64%) 0.4963
+5m 43s (- 3m 5s) (117000 65%) 0.5136
+5m 46s (- 3m 2s) (118000 65%) 0.5204
+5m 49s (- 2m 59s) (119000 66%) 0.4981
+Epoch 2/3 finished
+6m 0s (- 2m 59s) (120000 66%) 0.5256
+6m 2s (- 2m 56s) (121000 67%) 0.4892
+6m 5s (- 2m 53s) (122000 67%) 0.5038
+6m 8s (- 2m 50s) (123000 68%) 0.5046
+6m 11s (- 2m 47s) (124000 68%) 0.4999
+6m 14s (- 2m 44s) (125000 69%) 0.5179
+6m 16s (- 2m 41s) (126000 70%) 0.4924
+6m 19s (- 2m 38s) (127000 70%) 0.4886
+6m 22s (- 2m 35s) (128000 71%) 0.4826
+6m 25s (- 2m 32s) (129000 71%) 0.5084
+6m 28s (- 2m 29s) (130000 72%) 0.4919
+6m 30s (- 2m 26s) (131000 72%) 0.4895
+6m 33s (- 2m 23s) (132000 73%) 0.4869
+6m 36s (- 2m 20s) (133000 73%) 0.4924
+6m 39s (- 2m 17s) (134000 74%) 0.4958
+6m 42s (- 2m 14s) (135000 75%) 0.5108
+6m 45s (- 2m 10s) (136000 75%) 0.4918
+6m 47s (- 2m 7s) (137000 76%) 0.4974
+6m 50s (- 2m 4s) (138000 76%) 0.5025
+6m 53s (- 2m 1s) (139000 77%) 0.5056
+6m 56s (- 1m 58s) (140000 77%) 0.4932
+6m 59s (- 1m 55s) (141000 78%) 0.4847
+7m 1s (- 1m 52s) (142000 78%) 0.4830
+7m 4s (- 1m 49s) (143000 79%) 0.5176
+7m 7s (- 1m 46s) (144000 80%) 0.4931
+7m 10s (- 1m 43s) (145000 80%) 0.4916
+7m 13s (- 1m 40s) (146000 81%) 0.5049
+7m 16s (- 1m 37s) (147000 81%) 0.4925
+7m 18s (- 1m 34s) (148000 82%) 0.4865
+7m 21s (- 1m 31s) (149000 82%) 0.5066
+7m 24s (- 1m 28s) (150000 83%) 0.4771
+7m 27s (- 1m 25s) (151000 83%) 0.4801
+7m 30s (- 1m 22s) (152000 84%) 0.4879
+7m 32s (- 1m 19s) (153000 85%) 0.4906
+7m 35s (- 1m 16s) (154000 85%) 0.4893
+7m 38s (- 1m 13s) (155000 86%) 0.4892
+7m 41s (- 1m 10s) (156000 86%) 0.4979
+7m 44s (- 1m 7s) (157000 87%) 0.4996
+7m 47s (- 1m 4s) (158000 87%) 0.4924
+7m 49s (- 1m 1s) (159000 88%) 0.4946
+7m 52s (- 0m 59s) (160000 88%) 0.4959
+7m 55s (- 0m 56s) (161000 89%) 0.4824
+7m 58s (- 0m 53s) (162000 90%) 0.4794
+8m 1s (- 0m 50s) (163000 90%) 0.4831
+8m 3s (- 0m 47s) (164000 91%) 0.4823
+8m 6s (- 0m 44s) (165000 91%) 0.4773
+8m 9s (- 0m 41s) (166000 92%) 0.5041
+8m 12s (- 0m 38s) (167000 92%) 0.5134
+8m 15s (- 0m 35s) (168000 93%) 0.4861
+8m 18s (- 0m 32s) (169000 93%) 0.4950
+8m 20s (- 0m 29s) (170000 94%) 0.4829
+8m 23s (- 0m 26s) (171000 95%) 0.4886
+8m 26s (- 0m 23s) (172000 95%) 0.4994
+8m 29s (- 0m 20s) (173000 96%) 0.5069
+8m 32s (- 0m 17s) (174000 96%) 0.4964
+8m 34s (- 0m 14s) (175000 97%) 0.4894
+8m 37s (- 0m 11s) (176000 97%) 0.4759
+8m 40s (- 0m 8s) (177000 98%) 0.4983
+8m 43s (- 0m 5s) (178000 98%) 0.4938
+8m 46s (- 0m 2s) (179000 99%) 0.4873
+Epoch 3/3 finished
+Evaluate randomly on training sentences:
+> ['i', 'don', 't', 'feel', 'very', 'confident', '.'] ['expectations']
+= 0
+outputs:  Variable containing:
+ 0.9999  0.0001
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['you', 'can', 'come', 'home', '.'] ['home']
+= 1
+outputs:  Variable containing:
+ 3.5251e-12  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['we', 've', 'known', 'each', 'other', 'for', 'thirty', 'years', '.'] ['for']
+= 1
+outputs:  Variable containing:
+ 1.2185e-19  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['it', 's', 'a', 'quarter', 'to', 'three', '.'] ['quarter']
+= 1
+outputs:  Variable containing:
+ 0.9959  0.0041
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'know', 'you', 've', 'been', 'avoiding', 'me', '.'] ['me']
+= 1
+outputs:  Variable containing:
+ 2.9368e-31  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['they', 'used', 'a', 'high', 'speed', 'camera', '.'] ['they']
+= 1
+outputs:  Variable containing:
+ 7.4126e-23  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['his', 'story', 'is', 'well', 'worth', 'listening', 'to', '.'] ['put']
+= 0
+outputs:  Variable containing:
+ 0.7173  0.2827
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['think', 'about', 'your', 'future', '.'] ['think']
+= 1
+outputs:  Variable containing:
+ 6.9679e-27  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['we', 'needed', 'it', '.'] ['correct']
+= 0
+outputs:  Variable containing:
+ 0.9946  0.0054
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'have', 'people', 'thinking', 'i', 'm', 'weak', '.'] ['m']
+= 1
+outputs:  Variable containing:
+ 0.0053  0.9947
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+Evaluate randomly on testing sentences:
+> ['this', 'is', 'a', 'portrait', 'of', 'my', 'late', 'father', '.'] ['refundable']
+= 0
+outputs:  Variable containing:
+ 0.9961  0.0039
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['he', 'threw', 'a', 'rock', 'into', 'the', 'pond', '.'] ['embarrassed']
+= 0
+outputs:  Variable containing:
+ 0.9049  0.0951
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['it', 's', 'time', 'consuming', '.'] ['conclusive']
+= 0
+outputs:  Variable containing:
+ 0.9864  0.0136
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['speak', 'quietly', '.'] ['quietly']
+= 1
+outputs:  Variable containing:
+ 0  1
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['she', 'seems', 'reserved', 'but', 'she', 's', 'actually', 'a', 'strong', 'willed', 'person', '.'] ['she']
+= 1
+outputs:  Variable containing:
+ 0.0205  0.9795
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['i', 'just', 'can', 't', 'remember', '.'] ['can']
+= 1
+outputs:  Variable containing:
+ 3.8929e-20  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['i', 'just', 'don', 't', 'feel', 'like', 'it', '.'] ['secrets']
+= 0
+outputs:  Variable containing:
+ 0.9992  0.0008
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['this', 'could', 'take', 'a', 'while', '.'] ['could']
+= 1
+outputs:  Variable containing:
+ 1.1555e-13  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['are', 'you', 'blackmailing', 'me', '?'] ['wine']
+= 0
+outputs:  Variable containing:
+ 0.9991  0.0009
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'decided', 'not', 'to', 'go', 'to', 'europe', '.'] ['i']
+= 1
+outputs:  Variable containing:
+ 0  1
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+################################################
+training setting:
+order:  1
+epoch:  3
+learning rate:  0.001
+Accuracy of the network on the word content test set: 82 %
