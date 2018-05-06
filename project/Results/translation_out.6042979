@@ -1,0 +1,2491 @@
+RNNEncoder USED
+hpc mode: True
+metric: MULTI
+hidden-size: 256
+n-epochs: 30
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+
+Start
+Evaluate randomly on training sentences:
+> she did come here .
+= elle est bien venue ici .
+< epicerie lancer lancer entoures lancer mug mug mug mug neigeait enthousiastes entrepot station station station station lawrence trampoline francais esperez faineant esperez plaisanter faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot
+
+> it was quite funny .
+= ce fut assez amusant .
+< conditionne justice conseille proximite depassa utilisez utilisez accroitre accroitre berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence
+
+> they come from the same country .
+= elles proviennent du meme pays .
+< ignorait crack crack berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez
+
+> i didn t finish reading that book .
+= je n avais pas fini de lire ce livre .
+< forcerent consommateurs epater medicaments proximite depassa proximite etudiant cause berner frigidaire rats proximite detaillee crack berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot
+
+> i m not ready yet .
+= je ne suis pas encore pret .
+< douter douter gueule savait savait esclaves sincerite cederont rats station station station lawrence entoures faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose
+
+> we shouldn t confuse solitude with isolation . they are two separate things .
+= on ne devrait pas confondre la solitude et l isolation . ce sont deux choses differentes .
+< barreaux capacite garage faineant esperez deplacer lancer depassa utilisez utilisez accroitre accroitre berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station
+
+> i don t know what it is .
+= je ne sais pas ce que c est .
+< rate grassouillettes championnat comiques admire vouliez vouliez declenchee cederont explications accroitre accroitre berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station
+
+> are you going home by bus ?
+= rentres tu chez toi en bus ?
+< voulions dynamite berner haletait faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez
+
+> he is intelligent .
+= il est intelligent .
+< emission crack esperez berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez
+
+> you re so impatient .
+= vous etes tellement impatientes .
+< nettoie passees crack berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez
+
+Evaluate randomly on testing sentences:
+> team members are provided with equipment and uniforms .
+= l equipement et les uniformes sont fournis aux membres des equipes .
+< curiosite emotives decois epates retrouve entoures lancer mug mug station station station station lawrence entoures faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures
+
+> now that my brother is a university student he has to do a lot of reading .
+= maintenant que mon frere est etudiant a l universite il doit beaucoup lire .
+< bataille suspecte vouliez vouliez vouliez penetre evoquer frigidaire faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant
+
+> they had fun with us .
+= ils se sont amuses avec nous .
+< chemise crack berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter
+
+> does anyone know japanese ?
+= quiconque connait il le japonais ?
+< voulions emission berner berner haletait meler berner haletait meler faineant esperez esperez deplacer lancer depassa utilisez surprend accroitre accroitre berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant
+
+> he narrowly escaped being run over .
+= il a vraiment failli se faire renverser .
+< langue grincheux entoures lancer lancer depassa utilisez utilisez accroitre accroitre berner berner serons berner haletait faineant forcees faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station
+
+> when was the last time you went to an art gallery ?
+= quand avez vous ete dans une galerie d art pour la derniere fois ?
+< certain certain reussir tardera camper vouliez imprudente vivants berner berner haletait sonner faineant faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant
+
+> his house was sold for .
+= sa maison a ete vendue pour . .
+< pressees observe insecte brulerent national esperez decharger berner serons berner haletait faineant forcees faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant
+
+> i m not mad .
+= je ne suis pas fou .
+< epicerie indifferent indifferent detaillee deprime berner haletait meler berner haletait faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez
+
+> i thought you d be much fatter .
+= je pensais que vous seriez beaucoup plus gros .
+< incendie incendie emotives indifferent entoures esperez faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter
+
+> they are bored .
+= ils s ennuient .
+< grincheux immergee archeologue roule station station station station station lawrence trampoline francais esperez faineant esperez appelle evoquer berner frigidaire faineant esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station station station lawrence entoures dispose emotives esperez faineant esperez plaisanter faineant esperez plaisanter enthousiastes esperez entrepot station station
+
+0m 34s (- 342m 0s) (1000 0%) 4.9491
+1m 13s (- 365m 31s) (2000 0%) 4.8190
+1m 53s (- 377m 59s) (3000 0%) 4.6883
+2m 36s (- 388m 43s) (4000 0%) 4.7026
+3m 16s (- 388m 49s) (5000 0%) 4.5560
+3m 58s (- 394m 9s) (6000 1%) 4.5619
+4m 41s (- 397m 58s) (7000 1%) 4.4678
+5m 23s (- 399m 34s) (8000 1%) 4.3841
+6m 8s (- 403m 41s) (9000 1%) 4.3971
+6m 50s (- 403m 25s) (10000 1%) 4.3017
+7m 33s (- 404m 24s) (11000 1%) 4.2749
+8m 14s (- 403m 28s) (12000 2%) 4.1955
+8m 54s (- 402m 26s) (13000 2%) 4.1732
+9m 39s (- 403m 59s) (14000 2%) 4.2249
+10m 25s (- 406m 52s) (15000 2%) 4.1366
+11m 9s (- 407m 34s) (16000 2%) 4.1300
+11m 53s (- 407m 34s) (17000 2%) 4.0764
+12m 36s (- 407m 56s) (18000 3%) 4.0211
+13m 19s (- 407m 32s) (19000 3%) 4.0481
+14m 2s (- 407m 5s) (20000 3%) 4.0408
+Epoch 1/30 finished
+14m 47s (- 407m 56s) (21000 3%) 3.9579
+15m 29s (- 407m 3s) (22000 3%) 3.9309
+16m 14s (- 407m 29s) (23000 3%) 3.9230
+16m 56s (- 406m 39s) (24000 4%) 3.8819
+17m 41s (- 407m 0s) (25000 4%) 3.8130
+18m 26s (- 407m 13s) (26000 4%) 3.8552
+19m 9s (- 406m 37s) (27000 4%) 3.8375
+19m 54s (- 406m 35s) (28000 4%) 3.7969
+20m 35s (- 405m 19s) (29000 4%) 3.7598
+21m 19s (- 405m 11s) (30000 5%) 3.7773
+22m 2s (- 404m 42s) (31000 5%) 3.7437
+22m 45s (- 403m 53s) (32000 5%) 3.8330
+23m 31s (- 404m 11s) (33000 5%) 3.7805
+24m 13s (- 403m 19s) (34000 5%) 3.7595
+24m 59s (- 403m 32s) (35000 5%) 3.7995
+25m 44s (- 403m 21s) (36000 6%) 3.7935
+26m 27s (- 402m 39s) (37000 6%) 3.7565
+27m 9s (- 401m 42s) (38000 6%) 3.6440
+27m 53s (- 401m 15s) (39000 6%) 3.7058
+28m 36s (- 400m 36s) (40000 6%) 3.7186
+Epoch 2/30 finished
+29m 22s (- 400m 32s) (41000 6%) 3.6302
+30m 3s (- 399m 23s) (42000 7%) 3.5380
+30m 45s (- 398m 31s) (43000 7%) 3.5112
+31m 30s (- 398m 10s) (44000 7%) 3.5495
+32m 14s (- 397m 40s) (45000 7%) 3.5582
+33m 1s (- 397m 42s) (46000 7%) 3.5891
+33m 46s (- 397m 18s) (47000 7%) 3.5809
+34m 28s (- 396m 31s) (48000 8%) 3.5842
+35m 13s (- 396m 7s) (49000 8%) 3.5344
+35m 56s (- 395m 25s) (50000 8%) 3.4693
+36m 39s (- 394m 32s) (51000 8%) 3.5271
+37m 24s (- 394m 17s) (52000 8%) 3.5177
+38m 8s (- 393m 38s) (53000 8%) 3.4896
+38m 52s (- 393m 3s) (54000 9%) 3.4928
+39m 38s (- 392m 49s) (55000 9%) 3.6047
+40m 23s (- 392m 23s) (56000 9%) 3.4993
+41m 4s (- 391m 20s) (57000 9%) 3.4793
+41m 47s (- 390m 35s) (58000 9%) 3.5012
+42m 31s (- 389m 55s) (59000 9%) 3.5074
+43m 16s (- 389m 29s) (60000 10%) 3.5324
+Epoch 3/30 finished
+44m 2s (- 389m 11s) (61000 10%) 3.4097
+44m 48s (- 388m 48s) (62000 10%) 3.3700
+45m 30s (- 387m 55s) (63000 10%) 3.3862
+46m 16s (- 387m 34s) (64000 10%) 3.3726
+46m 57s (- 386m 29s) (65000 10%) 3.3321
+47m 43s (- 386m 10s) (66000 11%) 3.3671
+48m 25s (- 385m 12s) (67000 11%) 3.3781
+49m 9s (- 384m 36s) (68000 11%) 3.3022
+49m 54s (- 384m 7s) (69000 11%) 3.3812
+50m 38s (- 383m 23s) (70000 11%) 3.3379
+51m 23s (- 382m 54s) (71000 11%) 3.3379
+52m 5s (- 381m 58s) (72000 12%) 3.2975
+52m 48s (- 381m 12s) (73000 12%) 3.2933
+53m 31s (- 380m 27s) (74000 12%) 3.3087
+54m 15s (- 379m 47s) (75000 12%) 3.3020
+54m 59s (- 379m 5s) (76000 12%) 3.2352
+55m 43s (- 378m 30s) (77000 12%) 3.3025
+56m 27s (- 377m 48s) (78000 13%) 3.3652
+57m 12s (- 377m 17s) (79000 13%) 3.3638
+57m 57s (- 376m 41s) (80000 13%) 3.3927
+Epoch 4/30 finished
+58m 43s (- 376m 15s) (81000 13%) 3.1690
+59m 27s (- 375m 35s) (82000 13%) 3.1462
+60m 9s (- 374m 44s) (83000 13%) 3.2143
+60m 52s (- 373m 58s) (84000 14%) 3.2015
+61m 38s (- 373m 25s) (85000 14%) 3.1652
+62m 19s (- 372m 32s) (86000 14%) 3.1881
+63m 3s (- 371m 51s) (87000 14%) 3.1297
+63m 50s (- 371m 25s) (88000 14%) 3.2787
+64m 35s (- 370m 50s) (89000 14%) 3.1483
+65m 24s (- 370m 38s) (90000 15%) 3.2353
+66m 10s (- 370m 9s) (91000 15%) 3.2522
+66m 58s (- 369m 49s) (92000 15%) 3.1957
+67m 45s (- 369m 23s) (93000 15%) 3.1903
+68m 30s (- 368m 49s) (94000 15%) 3.1621
+69m 15s (- 368m 8s) (95000 15%) 3.2640
+70m 1s (- 367m 39s) (96000 16%) 3.1963
+70m 47s (- 367m 7s) (97000 16%) 3.1906
+71m 30s (- 366m 17s) (98000 16%) 3.1243
+72m 15s (- 365m 41s) (99000 16%) 3.1731
+73m 3s (- 365m 15s) (100000 16%) 3.1950
+Epoch 5/30 finished
+73m 51s (- 364m 56s) (101000 16%) 2.9861
+74m 36s (- 364m 13s) (102000 17%) 2.9892
+75m 22s (- 363m 43s) (103000 17%) 2.9991
+76m 7s (- 363m 2s) (104000 17%) 3.0468
+76m 52s (- 362m 25s) (105000 17%) 3.1282
+77m 36s (- 361m 42s) (106000 17%) 3.0040
+78m 21s (- 361m 1s) (107000 17%) 3.1270
+79m 5s (- 360m 17s) (108000 18%) 3.0642
+79m 50s (- 359m 40s) (109000 18%) 3.1093
+80m 35s (- 359m 0s) (110000 18%) 3.0171
+81m 18s (- 358m 11s) (111000 18%) 3.1206
+82m 3s (- 357m 33s) (112000 18%) 3.0894
+82m 49s (- 356m 58s) (113000 18%) 3.1042
+83m 37s (- 356m 30s) (114000 19%) 3.0642
+84m 23s (- 355m 53s) (115000 19%) 3.0865
+85m 6s (- 355m 6s) (116000 19%) 3.0536
+85m 51s (- 354m 25s) (117000 19%) 3.0634
+86m 33s (- 353m 36s) (118000 19%) 3.0625
+87m 19s (- 352m 59s) (119000 19%) 3.0826
+88m 3s (- 352m 12s) (120000 20%) 3.1037
+Epoch 6/30 finished
+88m 50s (- 351m 39s) (121000 20%) 2.9003
+89m 35s (- 351m 2s) (122000 20%) 2.9414
+90m 20s (- 350m 21s) (123000 20%) 2.8997
+91m 7s (- 349m 47s) (124000 20%) 2.9287
+91m 51s (- 349m 4s) (125000 20%) 2.9407
+92m 30s (- 347m 58s) (126000 21%) 2.9786
+93m 0s (- 346m 22s) (127000 21%) 2.9939
+93m 32s (- 344m 56s) (128000 21%) 3.0352
+94m 8s (- 343m 45s) (129000 21%) 3.0013
+94m 53s (- 343m 2s) (130000 21%) 2.9886
+95m 36s (- 342m 16s) (131000 21%) 2.9478
+96m 20s (- 341m 34s) (132000 22%) 2.9736
+97m 2s (- 340m 44s) (133000 22%) 2.8753
+97m 45s (- 339m 59s) (134000 22%) 2.9346
+98m 28s (- 339m 11s) (135000 22%) 2.9387
+99m 13s (- 338m 32s) (136000 22%) 3.0530
+99m 57s (- 337m 49s) (137000 22%) 2.9773
+100m 39s (- 336m 59s) (138000 23%) 2.9053
+101m 25s (- 336m 21s) (139000 23%) 2.9465
+102m 13s (- 335m 52s) (140000 23%) 2.9856
+Epoch 7/30 finished
+102m 58s (- 335m 13s) (141000 23%) 2.7635
+103m 41s (- 334m 27s) (142000 23%) 2.8573
+104m 28s (- 333m 53s) (143000 23%) 2.8672
+105m 14s (- 333m 16s) (144000 24%) 2.8555
+105m 59s (- 332m 34s) (145000 24%) 2.8616
+106m 46s (- 332m 1s) (146000 24%) 2.9141
+107m 29s (- 331m 14s) (147000 24%) 2.8650
+108m 12s (- 330m 29s) (148000 24%) 2.8201
+108m 55s (- 329m 41s) (149000 24%) 2.8562
+109m 41s (- 329m 3s) (150000 25%) 2.8306
+110m 27s (- 328m 27s) (151000 25%) 2.8705
+111m 9s (- 327m 38s) (152000 25%) 2.8475
+111m 54s (- 326m 58s) (153000 25%) 2.8855
+112m 38s (- 326m 13s) (154000 25%) 2.8460
+113m 23s (- 325m 33s) (155000 25%) 2.8874
+114m 7s (- 324m 50s) (156000 26%) 2.9106
+114m 51s (- 324m 6s) (157000 26%) 2.8336
+115m 34s (- 323m 20s) (158000 26%) 2.7772
+116m 18s (- 322m 34s) (159000 26%) 2.8996
+117m 1s (- 321m 49s) (160000 26%) 2.9505
+Epoch 8/30 finished
+117m 46s (- 321m 8s) (161000 26%) 2.6930
+118m 32s (- 320m 30s) (162000 27%) 2.7596
+119m 15s (- 319m 42s) (163000 27%) 2.6773
+119m 58s (- 318m 56s) (164000 27%) 2.7444
+120m 43s (- 318m 15s) (165000 27%) 2.7686
+121m 29s (- 317m 38s) (166000 27%) 2.7356
+122m 16s (- 317m 3s) (167000 27%) 2.8068
+123m 0s (- 316m 18s) (168000 28%) 2.7125
+123m 46s (- 315m 40s) (169000 28%) 2.7364
+124m 31s (- 314m 59s) (170000 28%) 2.8119
+125m 16s (- 314m 17s) (171000 28%) 2.8315
+126m 0s (- 313m 33s) (172000 28%) 2.7913
+126m 43s (- 312m 45s) (173000 28%) 2.7621
+127m 27s (- 312m 2s) (174000 28%) 2.8033
+128m 12s (- 311m 21s) (175000 29%) 2.8192
+128m 54s (- 310m 33s) (176000 29%) 2.7851
+129m 37s (- 309m 47s) (177000 29%) 2.7432
+130m 21s (- 309m 3s) (178000 29%) 2.7553
+131m 4s (- 308m 16s) (179000 29%) 2.8175
+131m 47s (- 307m 31s) (180000 30%) 2.8024
+Epoch 9/30 finished
+132m 32s (- 306m 49s) (181000 30%) 2.6804
+133m 18s (- 306m 9s) (182000 30%) 2.6702
+134m 2s (- 305m 26s) (183000 30%) 2.6440
+134m 47s (- 304m 45s) (184000 30%) 2.6943
+135m 34s (- 304m 6s) (185000 30%) 2.7415
+136m 19s (- 303m 26s) (186000 31%) 2.6906
+137m 4s (- 302m 43s) (187000 31%) 2.7421
+137m 48s (- 302m 1s) (188000 31%) 2.6630
+138m 31s (- 301m 13s) (189000 31%) 2.6208
+139m 16s (- 300m 33s) (190000 31%) 2.7069
+140m 1s (- 299m 50s) (191000 31%) 2.6599
+140m 48s (- 299m 12s) (192000 32%) 2.7714
+141m 34s (- 298m 32s) (193000 32%) 2.7388
+142m 17s (- 297m 46s) (194000 32%) 2.6544
+143m 3s (- 297m 8s) (195000 32%) 2.7063
+143m 50s (- 296m 28s) (196000 32%) 2.6796
+144m 36s (- 295m 50s) (197000 32%) 2.7064
+145m 21s (- 295m 7s) (198000 33%) 2.6843
+146m 6s (- 294m 24s) (199000 33%) 2.6873
+146m 51s (- 293m 43s) (200000 33%) 2.6251
+Epoch 10/30 finished
+147m 37s (- 293m 2s) (201000 33%) 2.5335
+148m 24s (- 292m 24s) (202000 33%) 2.6053
+149m 10s (- 291m 44s) (203000 33%) 2.6740
+149m 55s (- 291m 2s) (204000 34%) 2.5776
+150m 41s (- 290m 21s) (205000 34%) 2.6618
+151m 28s (- 289m 43s) (206000 34%) 2.5421
+152m 15s (- 289m 4s) (207000 34%) 2.5677
+153m 0s (- 288m 21s) (208000 34%) 2.6003
+153m 46s (- 287m 40s) (209000 34%) 2.6109
+154m 32s (- 286m 59s) (210000 35%) 2.6549
+155m 18s (- 286m 19s) (211000 35%) 2.5966
+156m 2s (- 285m 35s) (212000 35%) 2.6806
+156m 47s (- 284m 52s) (213000 35%) 2.6727
+157m 32s (- 284m 10s) (214000 35%) 2.5815
+158m 18s (- 283m 28s) (215000 35%) 2.6619
+159m 3s (- 282m 47s) (216000 36%) 2.6021
+159m 49s (- 282m 6s) (217000 36%) 2.6231
+160m 32s (- 281m 19s) (218000 36%) 2.6202
+161m 14s (- 280m 30s) (219000 36%) 2.6533
+161m 58s (- 279m 47s) (220000 36%) 2.6643
+Epoch 11/30 finished
+162m 47s (- 279m 11s) (221000 36%) 2.4487
+163m 34s (- 278m 31s) (222000 37%) 2.5672
+164m 20s (- 277m 50s) (223000 37%) 2.5108
+165m 7s (- 277m 10s) (224000 37%) 2.5615
+165m 51s (- 276m 25s) (225000 37%) 2.5247
+166m 39s (- 275m 47s) (226000 37%) 2.5582
+167m 22s (- 275m 1s) (227000 37%) 2.5592
+168m 8s (- 274m 20s) (228000 38%) 2.5913
+168m 54s (- 273m 39s) (229000 38%) 2.5302
+169m 40s (- 272m 56s) (230000 38%) 2.5180
+170m 22s (- 272m 9s) (231000 38%) 2.6248
+171m 7s (- 271m 26s) (232000 38%) 2.5445
+171m 52s (- 270m 43s) (233000 38%) 2.5564
+172m 39s (- 270m 2s) (234000 39%) 2.5700
+173m 23s (- 269m 17s) (235000 39%) 2.5635
+174m 9s (- 268m 36s) (236000 39%) 2.6316
+174m 50s (- 267m 48s) (237000 39%) 2.4620
+175m 36s (- 267m 5s) (238000 39%) 2.5570
+176m 20s (- 266m 21s) (239000 39%) 2.5365
+177m 4s (- 265m 37s) (240000 40%) 2.5622
+Epoch 12/30 finished
+177m 52s (- 264m 57s) (241000 40%) 2.4264
+178m 37s (- 264m 15s) (242000 40%) 2.4565
+179m 23s (- 263m 33s) (243000 40%) 2.5045
+180m 8s (- 262m 49s) (244000 40%) 2.4749
+180m 53s (- 262m 6s) (245000 40%) 2.4661
+181m 39s (- 261m 24s) (246000 41%) 2.4732
+182m 25s (- 260m 43s) (247000 41%) 2.4379
+183m 9s (- 259m 58s) (248000 41%) 2.4546
+183m 53s (- 259m 13s) (249000 41%) 2.3901
+184m 38s (- 258m 29s) (250000 41%) 2.4822
+185m 23s (- 257m 46s) (251000 41%) 2.4552
+186m 9s (- 257m 4s) (252000 42%) 2.4319
+186m 52s (- 256m 18s) (253000 42%) 2.5148
+187m 39s (- 255m 37s) (254000 42%) 2.5051
+188m 25s (- 254m 55s) (255000 42%) 2.5134
+189m 10s (- 254m 12s) (256000 42%) 2.5200
+189m 56s (- 253m 30s) (257000 42%) 2.5096
+190m 41s (- 252m 46s) (258000 43%) 2.5199
+191m 25s (- 252m 1s) (259000 43%) 2.5491
+192m 12s (- 251m 21s) (260000 43%) 2.4456
+Epoch 13/30 finished
+193m 1s (- 250m 42s) (261000 43%) 2.3404
+193m 47s (- 250m 0s) (262000 43%) 2.3980
+194m 35s (- 249m 20s) (263000 43%) 2.4394
+195m 18s (- 248m 34s) (264000 44%) 2.4009
+196m 5s (- 247m 53s) (265000 44%) 2.4182
+196m 50s (- 247m 9s) (266000 44%) 2.3488
+197m 36s (- 246m 26s) (267000 44%) 2.4070
+198m 21s (- 245m 43s) (268000 44%) 2.3452
+199m 7s (- 245m 1s) (269000 44%) 2.4614
+199m 55s (- 244m 21s) (270000 45%) 2.3625
+200m 42s (- 243m 40s) (271000 45%) 2.4269
+201m 31s (- 243m 1s) (272000 45%) 2.4580
+202m 19s (- 242m 20s) (273000 45%) 2.4505
+203m 8s (- 241m 41s) (274000 45%) 2.4408
+203m 54s (- 240m 59s) (275000 45%) 2.3714
+204m 39s (- 240m 14s) (276000 46%) 2.4985
+205m 25s (- 239m 32s) (277000 46%) 2.3880
+206m 12s (- 238m 50s) (278000 46%) 2.5072
+206m 58s (- 238m 8s) (279000 46%) 2.4181
+207m 41s (- 237m 22s) (280000 46%) 2.4800
+Epoch 14/30 finished
+208m 27s (- 236m 39s) (281000 46%) 2.2704
+209m 14s (- 235m 57s) (282000 47%) 2.3830
+210m 0s (- 235m 13s) (283000 47%) 2.3108
+210m 46s (- 234m 30s) (284000 47%) 2.4022
+211m 29s (- 233m 45s) (285000 47%) 2.3814
+212m 12s (- 232m 59s) (286000 47%) 2.3669
+212m 58s (- 232m 16s) (287000 47%) 2.3366
+213m 44s (- 231m 32s) (288000 48%) 2.3838
+214m 29s (- 230m 49s) (289000 48%) 2.3185
+215m 16s (- 230m 6s) (290000 48%) 2.3874
+216m 2s (- 229m 24s) (291000 48%) 2.3519
+216m 48s (- 228m 40s) (292000 48%) 2.3798
+217m 32s (- 227m 55s) (293000 48%) 2.4068
+218m 20s (- 227m 15s) (294000 49%) 2.3304
+219m 4s (- 226m 30s) (295000 49%) 2.3851
+219m 50s (- 225m 47s) (296000 49%) 2.3454
+220m 37s (- 225m 4s) (297000 49%) 2.3589
+221m 21s (- 224m 19s) (298000 49%) 2.3536
+222m 6s (- 223m 35s) (299000 49%) 2.3782
+222m 48s (- 222m 48s) (300000 50%) 2.4083
+Epoch 15/30 finished
+223m 38s (- 222m 9s) (301000 50%) 2.2593
+224m 25s (- 221m 27s) (302000 50%) 2.2951
+225m 13s (- 220m 45s) (303000 50%) 2.2802
+225m 58s (- 220m 1s) (304000 50%) 2.2411
+226m 44s (- 219m 18s) (305000 50%) 2.2905
+227m 30s (- 218m 35s) (306000 51%) 2.3353
+228m 13s (- 217m 49s) (307000 51%) 2.3198
+228m 59s (- 217m 5s) (308000 51%) 2.2754
+229m 44s (- 216m 21s) (309000 51%) 2.3503
+230m 32s (- 215m 39s) (310000 51%) 2.3000
+231m 18s (- 214m 56s) (311000 51%) 2.2929
+232m 4s (- 214m 12s) (312000 52%) 2.2432
+232m 50s (- 213m 29s) (313000 52%) 2.3441
+233m 37s (- 212m 47s) (314000 52%) 2.3510
+234m 25s (- 212m 5s) (315000 52%) 2.3128
+235m 10s (- 211m 21s) (316000 52%) 2.3307
+235m 57s (- 210m 39s) (317000 52%) 2.3201
+236m 43s (- 209m 55s) (318000 53%) 2.3300
+237m 28s (- 209m 11s) (319000 53%) 2.3407
+238m 13s (- 208m 26s) (320000 53%) 2.3427
+Epoch 16/30 finished
+239m 0s (- 207m 44s) (321000 53%) 2.1764
+239m 47s (- 207m 1s) (322000 53%) 2.1993
+240m 33s (- 206m 18s) (323000 53%) 2.2003
+241m 21s (- 205m 35s) (324000 54%) 2.2591
+242m 7s (- 204m 52s) (325000 54%) 2.2491
+242m 53s (- 204m 8s) (326000 54%) 2.2314
+243m 41s (- 203m 27s) (327000 54%) 2.2417
+244m 24s (- 202m 40s) (328000 54%) 2.2153
+245m 9s (- 201m 56s) (329000 54%) 2.2111
+245m 55s (- 201m 12s) (330000 55%) 2.2120
+246m 39s (- 200m 27s) (331000 55%) 2.3246
+247m 25s (- 199m 43s) (332000 55%) 2.2510
+248m 9s (- 198m 58s) (333000 55%) 2.2538
+248m 56s (- 198m 15s) (334000 55%) 2.3247
+249m 40s (- 197m 30s) (335000 55%) 2.3140
+250m 24s (- 196m 45s) (336000 56%) 2.1920
+251m 11s (- 196m 1s) (337000 56%) 2.3159
+251m 54s (- 195m 15s) (338000 56%) 2.3089
+252m 40s (- 194m 32s) (339000 56%) 2.3429
+253m 24s (- 193m 47s) (340000 56%) 2.2666
+Epoch 17/30 finished
+254m 12s (- 193m 4s) (341000 56%) 2.1252
+254m 59s (- 192m 21s) (342000 56%) 2.1229
+255m 47s (- 191m 39s) (343000 57%) 2.1881
+256m 37s (- 190m 58s) (344000 57%) 2.2403
+257m 29s (- 190m 18s) (345000 57%) 2.1865
+258m 19s (- 189m 38s) (346000 57%) 2.0940
+259m 12s (- 188m 59s) (347000 57%) 2.2183
+260m 1s (- 188m 17s) (348000 57%) 2.1549
+260m 52s (- 187m 37s) (349000 58%) 2.1332
+261m 44s (- 186m 57s) (350000 58%) 2.1742
+262m 34s (- 186m 16s) (351000 58%) 2.1341
+263m 26s (- 185m 36s) (352000 58%) 2.2390
+264m 16s (- 184m 54s) (353000 58%) 2.2585
+265m 6s (- 184m 13s) (354000 59%) 2.2727
+265m 58s (- 183m 33s) (355000 59%) 2.2216
+266m 49s (- 182m 53s) (356000 59%) 2.2394
+267m 39s (- 182m 11s) (357000 59%) 2.1969
+268m 31s (- 181m 30s) (358000 59%) 2.2379
+269m 23s (- 180m 50s) (359000 59%) 2.2552
+270m 14s (- 180m 9s) (360000 60%) 2.2455
+Epoch 18/30 finished
+271m 7s (- 179m 29s) (361000 60%) 2.0713
+271m 53s (- 178m 45s) (362000 60%) 2.0599
+272m 38s (- 178m 0s) (363000 60%) 2.1302
+273m 28s (- 177m 18s) (364000 60%) 2.1787
+274m 18s (- 176m 36s) (365000 60%) 2.1015
+275m 3s (- 175m 51s) (366000 61%) 2.1560
+275m 53s (- 175m 9s) (367000 61%) 2.1867
+276m 39s (- 174m 24s) (368000 61%) 2.1471
+277m 24s (- 173m 39s) (369000 61%) 2.1570
+278m 7s (- 172m 53s) (370000 61%) 2.0677
+278m 54s (- 172m 9s) (371000 61%) 2.1888
+279m 43s (- 171m 26s) (372000 62%) 2.1373
+280m 28s (- 170m 41s) (373000 62%) 2.1211
+281m 14s (- 169m 56s) (374000 62%) 2.1637
+281m 59s (- 169m 11s) (375000 62%) 2.1480
+282m 47s (- 168m 28s) (376000 62%) 2.1694
+283m 31s (- 167m 42s) (377000 62%) 2.1372
+284m 23s (- 167m 1s) (378000 63%) 2.1839
+285m 14s (- 166m 19s) (379000 63%) 2.2542
+286m 5s (- 165m 38s) (380000 63%) 2.1656
+Epoch 19/30 finished
+286m 56s (- 164m 55s) (381000 63%) 2.0363
+287m 47s (- 164m 14s) (382000 63%) 1.9701
+288m 38s (- 163m 32s) (383000 63%) 2.0470
+289m 30s (- 162m 51s) (384000 64%) 2.0724
+290m 23s (- 162m 9s) (385000 64%) 2.0962
+291m 11s (- 161m 26s) (386000 64%) 2.0617
+291m 59s (- 160m 42s) (387000 64%) 2.0414
+292m 48s (- 159m 59s) (388000 64%) 2.1314
+293m 39s (- 159m 16s) (389000 64%) 2.1339
+294m 30s (- 158m 35s) (390000 65%) 2.1533
+295m 21s (- 157m 52s) (391000 65%) 2.1001
+296m 11s (- 157m 9s) (392000 65%) 2.2260
+297m 1s (- 156m 26s) (393000 65%) 2.0963
+297m 51s (- 155m 44s) (394000 65%) 2.0851
+298m 41s (- 155m 1s) (395000 65%) 2.1397
+299m 32s (- 154m 18s) (396000 66%) 2.1335
+300m 19s (- 153m 33s) (397000 66%) 2.1425
+301m 9s (- 152m 50s) (398000 66%) 2.0724
+301m 59s (- 152m 8s) (399000 66%) 2.1619
+302m 48s (- 151m 24s) (400000 66%) 2.1332
+Epoch 20/30 finished
+303m 40s (- 150m 42s) (401000 66%) 2.0062
+304m 29s (- 149m 58s) (402000 67%) 2.0169
+305m 19s (- 149m 15s) (403000 67%) 2.0147
+306m 7s (- 148m 31s) (404000 67%) 2.0707
+306m 57s (- 147m 47s) (405000 67%) 1.9797
+307m 46s (- 147m 3s) (406000 67%) 2.0385
+308m 36s (- 146m 20s) (407000 67%) 2.0639
+309m 23s (- 145m 35s) (408000 68%) 1.9431
+310m 11s (- 144m 51s) (409000 68%) 2.0722
+310m 56s (- 144m 5s) (410000 68%) 2.1076
+311m 43s (- 143m 21s) (411000 68%) 2.0135
+312m 33s (- 142m 37s) (412000 68%) 2.0284
+313m 22s (- 141m 53s) (413000 68%) 2.0972
+314m 11s (- 141m 9s) (414000 69%) 2.0899
+315m 1s (- 140m 26s) (415000 69%) 2.1552
+315m 45s (- 139m 39s) (416000 69%) 2.0843
+316m 35s (- 138m 56s) (417000 69%) 2.1330
+317m 26s (- 138m 13s) (418000 69%) 2.1306
+318m 14s (- 137m 28s) (419000 69%) 2.0256
+319m 3s (- 136m 44s) (420000 70%) 2.0294
+Epoch 21/30 finished
+319m 53s (- 136m 0s) (421000 70%) 2.0147
+320m 34s (- 135m 13s) (422000 70%) 1.8782
+321m 25s (- 134m 29s) (423000 70%) 1.9436
+322m 15s (- 133m 46s) (424000 70%) 1.9885
+323m 1s (- 133m 0s) (425000 70%) 1.9497
+323m 52s (- 132m 17s) (426000 71%) 2.0479
+324m 35s (- 131m 30s) (427000 71%) 2.0176
+325m 21s (- 130m 44s) (428000 71%) 2.0425
+326m 10s (- 130m 0s) (429000 71%) 2.0692
+326m 59s (- 129m 16s) (430000 71%) 2.0817
+327m 48s (- 128m 32s) (431000 71%) 2.1166
+328m 38s (- 127m 48s) (432000 72%) 2.0253
+329m 21s (- 127m 1s) (433000 72%) 1.9983
+330m 8s (- 126m 16s) (434000 72%) 2.0634
+330m 56s (- 125m 31s) (435000 72%) 2.0360
+331m 45s (- 124m 47s) (436000 72%) 2.0640
+332m 35s (- 124m 3s) (437000 72%) 2.0517
+333m 22s (- 123m 18s) (438000 73%) 2.0229
+334m 9s (- 122m 33s) (439000 73%) 2.1469
+334m 56s (- 121m 47s) (440000 73%) 2.0877
+Epoch 22/30 finished
+335m 46s (- 121m 3s) (441000 73%) 1.8969
+336m 39s (- 120m 20s) (442000 73%) 1.9928
+337m 31s (- 119m 37s) (443000 73%) 1.9251
+338m 22s (- 118m 53s) (444000 74%) 1.8980
+339m 13s (- 118m 9s) (445000 74%) 1.9198
+340m 6s (- 117m 26s) (446000 74%) 2.0389
+340m 58s (- 116m 42s) (447000 74%) 1.9855
+341m 47s (- 115m 58s) (448000 74%) 1.9153
+342m 35s (- 115m 12s) (449000 74%) 1.9566
+343m 19s (- 114m 26s) (450000 75%) 1.9744
+344m 9s (- 113m 41s) (451000 75%) 1.9521
+344m 58s (- 112m 57s) (452000 75%) 1.9649
+345m 46s (- 112m 12s) (453000 75%) 1.9942
+346m 35s (- 111m 27s) (454000 75%) 2.0380
+347m 22s (- 110m 42s) (455000 75%) 2.0088
+348m 7s (- 109m 55s) (456000 76%) 2.0500
+348m 54s (- 109m 10s) (457000 76%) 1.9618
+349m 46s (- 108m 26s) (458000 76%) 2.0459
+350m 34s (- 107m 41s) (459000 76%) 1.9472
+351m 25s (- 106m 57s) (460000 76%) 2.0906
+Epoch 23/30 finished
+352m 10s (- 106m 11s) (461000 76%) 1.8768
+352m 57s (- 105m 25s) (462000 77%) 1.8493
+353m 47s (- 104m 41s) (463000 77%) 1.8594
+354m 37s (- 103m 56s) (464000 77%) 1.8705
+355m 27s (- 103m 11s) (465000 77%) 1.9351
+356m 17s (- 102m 27s) (466000 77%) 1.9824
+356m 59s (- 101m 40s) (467000 77%) 1.9156
+357m 49s (- 100m 55s) (468000 78%) 1.8545
+358m 38s (- 100m 10s) (469000 78%) 2.0425
+359m 28s (- 99m 25s) (470000 78%) 1.9698
+360m 17s (- 98m 40s) (471000 78%) 1.8967
+361m 4s (- 97m 55s) (472000 78%) 1.9668
+361m 50s (- 97m 9s) (473000 78%) 2.0178
+362m 40s (- 96m 24s) (474000 79%) 1.9309
+363m 30s (- 95m 39s) (475000 79%) 1.9678
+364m 18s (- 94m 54s) (476000 79%) 2.0465
+365m 8s (- 94m 9s) (477000 79%) 1.9912
+365m 54s (- 93m 23s) (478000 79%) 2.0316
+366m 42s (- 92m 38s) (479000 79%) 1.9876
+367m 31s (- 91m 52s) (480000 80%) 1.9684
+Epoch 24/30 finished
+368m 20s (- 91m 7s) (481000 80%) 1.8474
+369m 10s (- 90m 22s) (482000 80%) 1.9172
+369m 57s (- 89m 37s) (483000 80%) 1.8826
+370m 42s (- 88m 50s) (484000 80%) 1.8545
+371m 31s (- 88m 5s) (485000 80%) 1.8890
+372m 21s (- 87m 20s) (486000 81%) 1.8002
+373m 11s (- 86m 35s) (487000 81%) 1.8804
+374m 2s (- 85m 50s) (488000 81%) 1.8663
+374m 50s (- 85m 5s) (489000 81%) 2.0282
+375m 38s (- 84m 19s) (490000 81%) 1.8934
+376m 29s (- 83m 34s) (491000 81%) 1.9333
+377m 18s (- 82m 49s) (492000 82%) 1.9521
+378m 7s (- 82m 4s) (493000 82%) 1.9135
+378m 55s (- 81m 18s) (494000 82%) 1.8263
+379m 40s (- 80m 32s) (495000 82%) 1.8796
+380m 30s (- 79m 47s) (496000 82%) 1.8964
+381m 20s (- 79m 1s) (497000 82%) 1.9533
+382m 12s (- 78m 17s) (498000 83%) 1.9924
+383m 1s (- 77m 31s) (499000 83%) 2.0136
+383m 47s (- 76m 45s) (500000 83%) 1.9016
+Epoch 25/30 finished
+384m 35s (- 75m 59s) (501000 83%) 1.8448
+385m 25s (- 75m 14s) (502000 83%) 1.7601
+386m 13s (- 74m 28s) (503000 83%) 1.7694
+387m 2s (- 73m 43s) (504000 84%) 1.8754
+387m 53s (- 72m 58s) (505000 84%) 1.9132
+388m 37s (- 72m 11s) (506000 84%) 1.7491
+389m 25s (- 71m 25s) (507000 84%) 1.8727
+390m 14s (- 70m 40s) (508000 84%) 1.8134
+391m 5s (- 69m 55s) (509000 84%) 1.8429
+391m 55s (- 69m 9s) (510000 85%) 1.8851
+392m 43s (- 68m 23s) (511000 85%) 1.9288
+393m 28s (- 67m 37s) (512000 85%) 1.8812
+394m 10s (- 66m 50s) (513000 85%) 1.8984
+394m 43s (- 66m 2s) (514000 85%) 1.8786
+395m 17s (- 65m 14s) (515000 85%) 1.9014
+396m 4s (- 64m 28s) (516000 86%) 1.8432
+396m 54s (- 63m 43s) (517000 86%) 1.9278
+397m 42s (- 62m 57s) (518000 86%) 1.9475
+398m 33s (- 62m 12s) (519000 86%) 1.9522
+399m 25s (- 61m 26s) (520000 86%) 1.9686
+Epoch 26/30 finished
+400m 16s (- 60m 41s) (521000 86%) 1.7670
+401m 7s (- 59m 56s) (522000 87%) 1.8256
+401m 56s (- 59m 10s) (523000 87%) 1.7553
+402m 48s (- 58m 25s) (524000 87%) 1.8708
+403m 39s (- 57m 39s) (525000 87%) 1.8638
+404m 30s (- 56m 54s) (526000 87%) 1.7743
+405m 19s (- 56m 8s) (527000 87%) 1.8454
+406m 8s (- 55m 23s) (528000 88%) 1.8094
+406m 56s (- 54m 37s) (529000 88%) 1.7454
+407m 47s (- 53m 51s) (530000 88%) 1.7621
+408m 37s (- 53m 5s) (531000 88%) 1.8369
+409m 29s (- 52m 20s) (532000 88%) 1.8660
+410m 20s (- 51m 34s) (533000 88%) 1.9330
+411m 10s (- 50m 49s) (534000 89%) 1.9014
+412m 2s (- 50m 3s) (535000 89%) 1.9745
+412m 52s (- 49m 17s) (536000 89%) 1.7968
+413m 43s (- 48m 32s) (537000 89%) 1.8519
+414m 35s (- 47m 46s) (538000 89%) 1.8898
+415m 27s (- 47m 1s) (539000 89%) 1.8341
+416m 18s (- 46m 15s) (540000 90%) 1.7839
+Epoch 27/30 finished
+417m 11s (- 45m 29s) (541000 90%) 1.7929
+418m 1s (- 44m 44s) (542000 90%) 1.7146
+418m 51s (- 43m 58s) (543000 90%) 1.8013
+419m 42s (- 43m 12s) (544000 90%) 1.8648
+420m 31s (- 42m 26s) (545000 90%) 1.6986
+421m 21s (- 41m 40s) (546000 91%) 1.7713
+422m 11s (- 40m 54s) (547000 91%) 1.7619
+423m 3s (- 40m 8s) (548000 91%) 1.8068
+423m 53s (- 39m 22s) (549000 91%) 1.7212
+424m 43s (- 38m 36s) (550000 91%) 1.8365
+425m 35s (- 37m 50s) (551000 91%) 1.7483
+426m 23s (- 37m 4s) (552000 92%) 1.7843
+427m 13s (- 36m 18s) (553000 92%) 1.8214
+428m 5s (- 35m 32s) (554000 92%) 1.8113
+428m 54s (- 34m 46s) (555000 92%) 1.7912
+429m 44s (- 34m 0s) (556000 92%) 1.8182
+430m 35s (- 33m 14s) (557000 92%) 1.9547
+431m 27s (- 32m 28s) (558000 93%) 1.8575
+432m 15s (- 31m 42s) (559000 93%) 1.7511
+433m 5s (- 30m 56s) (560000 93%) 1.8631
+Epoch 28/30 finished
+433m 56s (- 30m 10s) (561000 93%) 1.6778
+434m 45s (- 29m 23s) (562000 93%) 1.6998
+435m 37s (- 28m 37s) (563000 93%) 1.6652
+436m 28s (- 27m 51s) (564000 94%) 1.6714
+437m 20s (- 27m 5s) (565000 94%) 1.7635
+438m 10s (- 26m 19s) (566000 94%) 1.7371
+439m 0s (- 25m 33s) (567000 94%) 1.7511
+439m 52s (- 24m 46s) (568000 94%) 1.7072
+440m 45s (- 24m 0s) (569000 94%) 1.7447
+441m 38s (- 23m 14s) (570000 95%) 1.8041
+442m 30s (- 22m 28s) (571000 95%) 1.8828
+443m 21s (- 21m 42s) (572000 95%) 1.7610
+444m 12s (- 20m 55s) (573000 95%) 1.7736
+445m 4s (- 20m 9s) (574000 95%) 1.7988
+445m 54s (- 19m 23s) (575000 95%) 1.7460
+446m 42s (- 18m 36s) (576000 96%) 1.8239
+447m 33s (- 17m 50s) (577000 96%) 1.8272
+448m 23s (- 17m 3s) (578000 96%) 1.6975
+449m 15s (- 16m 17s) (579000 96%) 1.8428
+450m 6s (- 15m 31s) (580000 96%) 1.8310
+Epoch 29/30 finished
+450m 58s (- 14m 44s) (581000 96%) 1.6834
+451m 48s (- 13m 58s) (582000 97%) 1.6500
+452m 40s (- 13m 12s) (583000 97%) 1.7207
+453m 31s (- 12m 25s) (584000 97%) 1.7105
+454m 23s (- 11m 39s) (585000 97%) 1.7065
+455m 13s (- 10m 52s) (586000 97%) 1.6207
+456m 4s (- 10m 6s) (587000 97%) 1.7622
+456m 47s (- 9m 19s) (588000 98%) 1.7379
+457m 29s (- 8m 32s) (589000 98%) 1.7504
+458m 9s (- 7m 45s) (590000 98%) 1.7653
+458m 51s (- 6m 59s) (591000 98%) 1.6890
+459m 32s (- 6m 12s) (592000 98%) 1.7443
+460m 16s (- 5m 25s) (593000 98%) 1.7316
+460m 59s (- 4m 39s) (594000 99%) 1.6670
+461m 47s (- 3m 52s) (595000 99%) 1.7486
+462m 31s (- 3m 6s) (596000 99%) 1.7319
+463m 11s (- 2m 19s) (597000 99%) 1.7647
+463m 55s (- 1m 33s) (598000 99%) 1.8325
+464m 39s (- 0m 46s) (599000 99%) 1.8815
+465m 24s (- 0m 0s) (600000 100%) 1.7533
+Epoch 30/30 finished
+Evaluate randomly on training sentences:
+> you were terrified weren t you ?
+= tu etais terrifie n est ce pas ?
+< vous etiez terrifie n est ce pas ? <EOS>
+
+> there s nothing wrong with that either .
+= il n y a rien de mal a cela non plus .
+< il n y a rien de nom de . . <EOS>
+
+> give it to me please .
+= donnez moi cela je vous prie .
+< donnez moi cela je vous prie . <EOS>
+
+> there is so much to do and only a lifetime to do it .
+= il y a tant a faire et seulement la duree d une vie pour le faire .
+< il y a peu d acheter d une . <EOS>
+
+> taking all things into consideration i have made up my mind to give up the idea .
+= en prenant tous les facteurs en consideration j ai decide d abandonner cette idee .
+< tous les choses a qui et je je me suis suis je la . <EOS>
+
+> almost a third of the gunshot victims were teenagers .
+= presque un tiers des victimes de la fusillade etaient des adolescents .
+< presque un tiers des victimes de la des . . <EOS>
+
+> i refuse to accept that .
+= je refuse de l accepter .
+< je refuse de l accepter . <EOS>
+
+> you can get a car license after you turn eighteen .
+= on peut obtenir un permis de conduire apres avoir eu dix huit ans .
+< vous pouvez vous faire un un et un tu en <EOS>
+
+> she filled the vase with water .
+= elle emplit le vase d eau .
+< elle emplit le vase avec eau . <EOS>
+
+> it won t be hard .
+= ce ne sera pas dur .
+< ca ne sera pas dur . <EOS>
+
+Evaluate randomly on testing sentences:
+> ask anyone .
+= demande a n importe qui .
+< quiconque toi a quiconque ! <EOS>
+
+> how did you get into the house ?
+= comment as tu penetre dans la maison ?
+< comment es tu tu l entree ? <EOS>
+
+> tom says he ll only speak to mary .
+= tom dit qu il ne parlera qu a mary uniquement .
+< tom et mary etaient bien a a a la . <EOS>
+
+> let s go to eat together .
+= allons manger ensemble .
+< allons y aller . <EOS>
+
+> we re meant for each other .
+= nous sommes faits l un pour l autre .
+< nous sommes fini de ce . . <EOS>
+
+> i don t know why you re all so jumpy .
+= j ignore pourquoi vous etes tous tellement agites .
+< je ne sais pas si tu aies tu . . <EOS>
+
+> it s not cheap to eat here .
+= manger ici n est pas bon marche .
+< il n est pas a de manger . <EOS>
+
+> you re wasting both of our time .
+= tu gaspilles notre temps a tous les deux .
+< tu es fais de notre temps de . <EOS>
+
+> tom is a bit short for his age .
+= tom est legerement petit pour son age .
+< tom est le grand de frere frere . <EOS>
+
+> i eat alone .
+= je mange seule .
+< je les en paix . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2286
+score for short sentnces (length <= 6):
+ROUGE1: 0.32330478224507037
+ROUGE2: 0.22523202092393657
+BLEU: 0.26686108680859216
+BLEU_CLIP: 0.2510617990932931
+
+Num of long sentences (length > 6): 2714
+score for long sentnces (length > 6):
+ROUGE1: 0.341922001054573
+ROUGE2: 0.2334280688803262
+BLEU: 0.20072241327689103
+BLEU_CLIP: 0.17984143161003754
+
+Overall:
+ROUGE1: 0.3334102086148684
+ROUGE2: 0.22968083575466486
+BLEU: 0.23096101481558481
+BLEU_CLIP: 0.21240338362338199
+
+Finished
+
+hpc mode: True
+order: 1
+mode: sum
+metric: MULTI
+hidden-size: 256
+n-epochs: 30
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Ngram Vocab Size: 6431
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.']
+= elle est bien venue ici .
+< abandonnee abandonnee abandonnee tandis abandonnee tandis abandonnee digeree aupres consentement abandonnee digeree aupres consentement risques recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer
+
+> ['it', 'was', 'quite', 'funny', '.']
+= ce fut assez amusant .
+< tatoue vertu abeilles deces raisonnable escargots escargots devenait recommencer concentrees oublier risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.']
+= elles proviennent du meme pays .
+< tiroir quoi leger leger culot schema matinal fusible fusible annules apparemment ecoutiez ecoutiez enfiler concentrees etudiait chauves concentrees chauves glisser consentement fusible fusible vigilant aupres charades charades faisant lundis ecoutiez occasionnellement pressentiment ignores concentrees pacifique aupres
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.']
+= je n avais pas fini de lire ce livre .
+< occupait blesses blesses blesses descendons maigrichonne blesses alimentaires fusible fusible aeroport remarquable occupera cause fusible fusible aeroport coiffer concentrees risques digeree decevez aupres deviennent deviennent reverrai maigres concentrees perou bonjour finirai finirai ecoutiez cloturee ecoutiez disque
+
+> ['i', 'm', 'not', 'ready', 'yet', '.']
+= je ne suis pas encore pret .
+< occupait soyez soyez pagaille pagaille pagaille charades aupres charades faisant realisera bonjour finirai finirai ecoutiez cloturee ecoutiez disque enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.']
+= on ne devrait pas confondre la solitude et l isolation . ce sont deux choses differentes .
+< dumes refusa refusa incessamment incessamment incessamment incessamment incessamment incessamment digeree digeree digeree digeree oublier digeree oublier digeree oublier digeree oublier digeree realisera aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.']
+= je ne sais pas ce que c est .
+< cet cet cet cet apeures cet cou separement deviennent hoover glisser aupres charades faisant fusible aeroport librement faisant fusible aeroport comptons fusible comporte egare deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?']
+= rentres tu chez toi en bus ?
+< prit prit precedent gratuite precedent recolte apercu suivie sortis prunes faisant fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible
+
+> ['he', 'is', 'intelligent', '.']
+= il est intelligent .
+< dumes consentement consentement consentement consentement contribue discutames inspirer contiennent risques deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['you', 're', 'so', 'impatient', '.']
+= vous etes tellement impatientes .
+< disputer disputer accroche accroche accroche autorise absence ecoutiez ecoutiez enfiler concentrees etudiait chauves concentrees chauves glisser consentement fusible fusible vigilant aupres charades charades faisant lundis ecoutiez occasionnellement pressentiment ignores concentrees pacifique aupres deviennent deviennent deviennent instant
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.']
+= l equipement et les uniformes sont fournis aux membres des equipes .
+< cet cet cet matinal matinal matinal matinal matinal fusible fusible fusible vigilant portier cours attentes attentes delibere fusible vigilant risques digeree aupres realisera deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.']
+= maintenant que mon frere est etudiant a l universite il doit beaucoup lire .
+< spectaculaire armoires etudie ayez morts decalames refusa ayez refusa je deces aupres mal aupres mort techniquement declenche occupera enthousiasme stresse etudiait revolutions coupa chauves fusible fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible
+
+> ['they', 'had', 'fun', 'with', 'us', '.']
+= ils se sont amuses avec nous .
+< quoi quoi quoi quoi quoi matinal fusible fusible fusible vigilant aupres charades charades faisant lundis ecoutiez occasionnellement pressentiment ignores concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez
+
+> ['does', 'anyone', 'know', 'japanese', '?']
+= quiconque connait il le japonais ?
+< main main main main main ecoutiez receptionnees receptionnees interrupteur ecoutiez enfiler cheville avariee receptionnees interrupteur occupera entrera faisant aeroport comptons fusible fusible comporte egare deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.']
+= il a vraiment failli se faire renverser .
+< vendez semblez semblez virelangue matinal heros heros prouve prouve doit grenade dine naturelles ferions ivresse promue recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?']
+= quand avez vous ete dans une galerie d art pour la derniere fois ?
+< occupait embouteillage embouteillage discutaient embouteillage lampe avaient efficacement efficacement efficacement efficacement efficacement efficacement decouvrirent absence ecoutiez fournirai receptionnees receptionnees oublie tempete arrivames abandonnerais ecoutiez enfiler concentrees pacifique aupres deviennent deviennent deviennent carbone carbone feriez feriez feriez
+
+> ['his', 'house', 'was', 'sold', 'for', '.']
+= sa maison a ete vendue pour . .
+< accroche accroche accroche leger schema schema ascenseur schema alimentaires debutante abandonnee digeree aupres consentement risques recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer
+
+> ['i', 'm', 'not', 'mad', '.']
+= je ne suis pas fou .
+< prudence prudence blesses blesses batterie lampe leger mains fusible stresse portier seduisant recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.']
+= je pensais que vous seriez beaucoup plus gros .
+< cet cet cet cet cet cet matinal onereux matinal entrees fusible fusible vigilant basses parlera instantanees abandonnerais plia plaide declenche intriguee ascenseur oublier oublier risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer
+
+> ['they', 'are', 'bored', '.']
+= ils s ennuient .
+< quoi quoi matinal consentement consentement fusible fusible fusible vigilant basses parlera instantanees abandonnerais plia plaide declenche intriguee ascenseur oublier oublier risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres
+
+0m 16s (- 167m 0s) (1000 0%) 5.1599
+0m 32s (- 159m 58s) (2000 0%) 4.6724
+0m 47s (- 158m 33s) (3000 0%) 4.5248
+1m 3s (- 158m 10s) (4000 0%) 4.5175
+1m 19s (- 157m 38s) (5000 0%) 4.3466
+1m 35s (- 157m 15s) (6000 1%) 4.3974
+1m 51s (- 157m 14s) (7000 1%) 4.2932
+2m 7s (- 157m 19s) (8000 1%) 4.2259
+2m 23s (- 157m 2s) (9000 1%) 4.2365
+2m 39s (- 156m 53s) (10000 1%) 4.1610
+2m 55s (- 156m 51s) (11000 1%) 4.1823
+3m 11s (- 156m 38s) (12000 2%) 4.0782
+3m 27s (- 156m 18s) (13000 2%) 4.0572
+3m 43s (- 156m 11s) (14000 2%) 4.0607
+4m 0s (- 156m 3s) (15000 2%) 4.0158
+4m 16s (- 155m 57s) (16000 2%) 4.0795
+4m 32s (- 155m 41s) (17000 2%) 3.9504
+4m 48s (- 155m 33s) (18000 3%) 3.9329
+5m 5s (- 155m 30s) (19000 3%) 3.9839
+5m 21s (- 155m 26s) (20000 3%) 3.9482
+Epoch 1/30 finished
+5m 39s (- 156m 11s) (21000 3%) 3.7812
+5m 56s (- 155m 59s) (22000 3%) 3.7288
+6m 12s (- 155m 56s) (23000 3%) 3.7514
+6m 29s (- 155m 38s) (24000 4%) 3.7091
+6m 45s (- 155m 25s) (25000 4%) 3.6707
+7m 1s (- 155m 12s) (26000 4%) 3.6759
+7m 18s (- 155m 2s) (27000 4%) 3.7029
+7m 34s (- 154m 50s) (28000 4%) 3.6622
+7m 51s (- 154m 39s) (29000 4%) 3.6724
+8m 7s (- 154m 30s) (30000 5%) 3.6383
+8m 24s (- 154m 14s) (31000 5%) 3.6288
+8m 40s (- 154m 5s) (32000 5%) 3.6889
+8m 57s (- 153m 56s) (33000 5%) 3.6510
+9m 14s (- 153m 42s) (34000 5%) 3.6024
+9m 30s (- 153m 28s) (35000 5%) 3.6343
+9m 46s (- 153m 16s) (36000 6%) 3.6768
+10m 3s (- 153m 1s) (37000 6%) 3.5992
+10m 19s (- 152m 44s) (38000 6%) 3.5059
+10m 36s (- 152m 30s) (39000 6%) 3.5679
+10m 52s (- 152m 16s) (40000 6%) 3.6226
+Epoch 2/30 finished
+11m 10s (- 152m 28s) (41000 6%) 3.3746
+11m 27s (- 152m 14s) (42000 7%) 3.3399
+11m 44s (- 152m 1s) (43000 7%) 3.3202
+12m 0s (- 151m 49s) (44000 7%) 3.3351
+12m 17s (- 151m 31s) (45000 7%) 3.3492
+12m 33s (- 151m 20s) (46000 7%) 3.3956
+12m 50s (- 151m 1s) (47000 7%) 3.3544
+13m 6s (- 150m 47s) (48000 8%) 3.3982
+13m 23s (- 150m 34s) (49000 8%) 3.3898
+13m 40s (- 150m 20s) (50000 8%) 3.2718
+13m 56s (- 150m 2s) (51000 8%) 3.3538
+14m 13s (- 149m 54s) (52000 8%) 3.3743
+14m 30s (- 149m 40s) (53000 8%) 3.3391
+14m 46s (- 149m 23s) (54000 9%) 3.2876
+15m 3s (- 149m 15s) (55000 9%) 3.4267
+15m 20s (- 149m 0s) (56000 9%) 3.3195
+15m 36s (- 148m 44s) (57000 9%) 3.3231
+15m 53s (- 148m 33s) (58000 9%) 3.3756
+16m 10s (- 148m 19s) (59000 9%) 3.3888
+16m 27s (- 148m 6s) (60000 10%) 3.3601
+Epoch 3/30 finished
+16m 45s (- 148m 6s) (61000 10%) 3.0971
+17m 2s (- 147m 53s) (62000 10%) 3.0752
+17m 19s (- 147m 40s) (63000 10%) 3.1076
+17m 36s (- 147m 26s) (64000 10%) 3.1078
+17m 52s (- 147m 11s) (65000 10%) 3.0941
+18m 9s (- 146m 56s) (66000 11%) 3.1389
+18m 26s (- 146m 41s) (67000 11%) 3.1305
+18m 43s (- 146m 26s) (68000 11%) 3.0943
+18m 59s (- 146m 10s) (69000 11%) 3.1542
+19m 16s (- 145m 57s) (70000 11%) 3.1165
+19m 33s (- 145m 40s) (71000 11%) 3.1189
+19m 49s (- 145m 25s) (72000 12%) 3.1063
+20m 6s (- 145m 9s) (73000 12%) 3.0655
+20m 23s (- 144m 53s) (74000 12%) 3.1314
+20m 39s (- 144m 37s) (75000 12%) 3.0947
+20m 56s (- 144m 21s) (76000 12%) 3.0773
+21m 12s (- 144m 5s) (77000 12%) 3.1032
+21m 29s (- 143m 48s) (78000 13%) 3.1661
+21m 46s (- 143m 35s) (79000 13%) 3.2082
+22m 3s (- 143m 21s) (80000 13%) 3.1854
+Epoch 4/30 finished
+22m 21s (- 143m 16s) (81000 13%) 2.8547
+22m 38s (- 143m 2s) (82000 13%) 2.8726
+22m 55s (- 142m 46s) (83000 13%) 2.9033
+23m 12s (- 142m 33s) (84000 14%) 2.8900
+23m 29s (- 142m 18s) (85000 14%) 2.8851
+23m 45s (- 142m 1s) (86000 14%) 2.8823
+24m 2s (- 141m 44s) (87000 14%) 2.8594
+24m 19s (- 141m 30s) (88000 14%) 3.0419
+24m 36s (- 141m 14s) (89000 14%) 2.9038
+24m 52s (- 140m 59s) (90000 15%) 2.9729
+25m 9s (- 140m 45s) (91000 15%) 2.9766
+25m 26s (- 140m 30s) (92000 15%) 2.9617
+25m 43s (- 140m 14s) (93000 15%) 2.9492
+26m 0s (- 139m 57s) (94000 15%) 2.9276
+26m 16s (- 139m 41s) (95000 15%) 3.0018
+26m 33s (- 139m 27s) (96000 16%) 2.9788
+26m 51s (- 139m 14s) (97000 16%) 2.9744
+27m 7s (- 138m 58s) (98000 16%) 2.9008
+27m 24s (- 138m 42s) (99000 16%) 2.9185
+27m 41s (- 138m 26s) (100000 16%) 2.9688
+Epoch 5/30 finished
+28m 0s (- 138m 21s) (101000 16%) 2.6544
+28m 17s (- 138m 5s) (102000 17%) 2.7018
+28m 34s (- 137m 50s) (103000 17%) 2.6732
+28m 50s (- 137m 35s) (104000 17%) 2.7386
+29m 7s (- 137m 19s) (105000 17%) 2.8065
+29m 24s (- 137m 3s) (106000 17%) 2.7064
+29m 41s (- 136m 49s) (107000 17%) 2.8487
+29m 58s (- 136m 33s) (108000 18%) 2.7921
+30m 15s (- 136m 18s) (109000 18%) 2.7901
+30m 32s (- 136m 2s) (110000 18%) 2.7243
+30m 49s (- 135m 47s) (111000 18%) 2.8470
+31m 6s (- 135m 31s) (112000 18%) 2.7900
+31m 23s (- 135m 16s) (113000 18%) 2.7985
+31m 40s (- 135m 1s) (114000 19%) 2.7999
+31m 57s (- 134m 46s) (115000 19%) 2.8629
+32m 13s (- 134m 29s) (116000 19%) 2.7810
+32m 30s (- 134m 13s) (117000 19%) 2.7748
+32m 47s (- 133m 57s) (118000 19%) 2.8159
+33m 4s (- 133m 41s) (119000 19%) 2.8357
+33m 21s (- 133m 25s) (120000 20%) 2.8354
+Epoch 6/30 finished
+33m 40s (- 133m 16s) (121000 20%) 2.5212
+33m 56s (- 133m 0s) (122000 20%) 2.6088
+34m 13s (- 132m 43s) (123000 20%) 2.5157
+34m 30s (- 132m 28s) (124000 20%) 2.5868
+34m 47s (- 132m 12s) (125000 20%) 2.6112
+35m 4s (- 131m 56s) (126000 21%) 2.6693
+35m 21s (- 131m 40s) (127000 21%) 2.6192
+35m 38s (- 131m 25s) (128000 21%) 2.6858
+35m 55s (- 131m 10s) (129000 21%) 2.7169
+36m 12s (- 130m 53s) (130000 21%) 2.6592
+36m 29s (- 130m 38s) (131000 21%) 2.6543
+36m 46s (- 130m 21s) (132000 22%) 2.6358
+37m 3s (- 130m 5s) (133000 22%) 2.5771
+37m 19s (- 129m 49s) (134000 22%) 2.6486
+37m 36s (- 129m 33s) (135000 22%) 2.6120
+37m 53s (- 129m 17s) (136000 22%) 2.7252
+38m 10s (- 129m 1s) (137000 22%) 2.7037
+38m 27s (- 128m 45s) (138000 23%) 2.6203
+38m 44s (- 128m 30s) (139000 23%) 2.7059
+39m 1s (- 128m 14s) (140000 23%) 2.7231
+Epoch 7/30 finished
+39m 20s (- 128m 5s) (141000 23%) 2.3902
+39m 37s (- 127m 49s) (142000 23%) 2.4889
+39m 55s (- 127m 34s) (143000 23%) 2.4775
+40m 12s (- 127m 18s) (144000 24%) 2.4759
+40m 29s (- 127m 2s) (145000 24%) 2.4862
+40m 46s (- 126m 47s) (146000 24%) 2.5184
+41m 3s (- 126m 30s) (147000 24%) 2.5049
+41m 20s (- 126m 14s) (148000 24%) 2.4525
+41m 37s (- 125m 58s) (149000 24%) 2.5450
+41m 54s (- 125m 42s) (150000 25%) 2.5310
+42m 11s (- 125m 27s) (151000 25%) 2.5489
+42m 27s (- 125m 9s) (152000 25%) 2.4858
+42m 44s (- 124m 53s) (153000 25%) 2.5780
+43m 1s (- 124m 36s) (154000 25%) 2.5562
+43m 18s (- 124m 21s) (155000 25%) 2.5623
+43m 36s (- 124m 5s) (156000 26%) 2.5664
+43m 53s (- 123m 50s) (157000 26%) 2.5261
+44m 10s (- 123m 33s) (158000 26%) 2.5033
+44m 27s (- 123m 18s) (159000 26%) 2.6077
+44m 44s (- 123m 2s) (160000 26%) 2.5986
+Epoch 8/30 finished
+45m 3s (- 122m 50s) (161000 26%) 2.3085
+45m 20s (- 122m 35s) (162000 27%) 2.3822
+45m 37s (- 122m 18s) (163000 27%) 2.2934
+45m 54s (- 122m 2s) (164000 27%) 2.3590
+46m 11s (- 121m 45s) (165000 27%) 2.3702
+46m 28s (- 121m 30s) (166000 27%) 2.3668
+46m 45s (- 121m 14s) (167000 27%) 2.4645
+47m 2s (- 120m 58s) (168000 28%) 2.3667
+47m 20s (- 120m 42s) (169000 28%) 2.4112
+47m 37s (- 120m 28s) (170000 28%) 2.4872
+47m 54s (- 120m 12s) (171000 28%) 2.4990
+48m 11s (- 119m 55s) (172000 28%) 2.4307
+48m 28s (- 119m 38s) (173000 28%) 2.3998
+48m 45s (- 119m 22s) (174000 28%) 2.4172
+49m 2s (- 119m 6s) (175000 29%) 2.4808
+49m 19s (- 118m 49s) (176000 29%) 2.4518
+49m 36s (- 118m 33s) (177000 29%) 2.4616
+49m 54s (- 118m 18s) (178000 29%) 2.4687
+50m 10s (- 118m 1s) (179000 29%) 2.4792
+50m 27s (- 117m 45s) (180000 30%) 2.4604
+Epoch 9/30 finished
+50m 46s (- 117m 33s) (181000 30%) 2.2588
+51m 4s (- 117m 17s) (182000 30%) 2.2611
+51m 21s (- 117m 1s) (183000 30%) 2.2450
+51m 38s (- 116m 44s) (184000 30%) 2.2439
+51m 55s (- 116m 28s) (185000 30%) 2.3191
+52m 12s (- 116m 12s) (186000 31%) 2.2599
+52m 29s (- 115m 56s) (187000 31%) 2.3013
+52m 47s (- 115m 40s) (188000 31%) 2.2826
+53m 3s (- 115m 23s) (189000 31%) 2.2431
+53m 21s (- 115m 7s) (190000 31%) 2.3639
+53m 38s (- 114m 51s) (191000 31%) 2.3213
+53m 55s (- 114m 35s) (192000 32%) 2.3947
+54m 12s (- 114m 19s) (193000 32%) 2.3895
+54m 29s (- 114m 2s) (194000 32%) 2.3804
+54m 46s (- 113m 46s) (195000 32%) 2.3639
+55m 3s (- 113m 29s) (196000 32%) 2.3717
+55m 20s (- 113m 13s) (197000 32%) 2.3415
+55m 38s (- 112m 57s) (198000 33%) 2.2895
+55m 55s (- 112m 41s) (199000 33%) 2.3876
+56m 12s (- 112m 25s) (200000 33%) 2.3052
+Epoch 10/30 finished
+56m 31s (- 112m 13s) (201000 33%) 2.1128
+56m 49s (- 111m 57s) (202000 33%) 2.1532
+57m 6s (- 111m 41s) (203000 33%) 2.2639
+57m 24s (- 111m 25s) (204000 34%) 2.1705
+57m 41s (- 111m 9s) (205000 34%) 2.2696
+57m 58s (- 110m 53s) (206000 34%) 2.1988
+58m 15s (- 110m 37s) (207000 34%) 2.2071
+58m 32s (- 110m 20s) (208000 34%) 2.1922
+58m 49s (- 110m 3s) (209000 34%) 2.1543
+59m 7s (- 109m 47s) (210000 35%) 2.3130
+59m 24s (- 109m 31s) (211000 35%) 2.2730
+59m 41s (- 109m 14s) (212000 35%) 2.2798
+59m 58s (- 108m 58s) (213000 35%) 2.2759
+60m 15s (- 108m 41s) (214000 35%) 2.2415
+60m 32s (- 108m 24s) (215000 35%) 2.3007
+60m 49s (- 108m 8s) (216000 36%) 2.2695
+61m 6s (- 107m 51s) (217000 36%) 2.2456
+61m 24s (- 107m 35s) (218000 36%) 2.2665
+61m 41s (- 107m 18s) (219000 36%) 2.2964
+61m 58s (- 107m 2s) (220000 36%) 2.3432
+Epoch 11/30 finished
+62m 17s (- 106m 49s) (221000 36%) 2.0006
+62m 34s (- 106m 33s) (222000 37%) 2.1149
+62m 52s (- 106m 17s) (223000 37%) 2.0840
+63m 9s (- 106m 0s) (224000 37%) 2.0828
+63m 26s (- 105m 43s) (225000 37%) 2.1031
+63m 43s (- 105m 27s) (226000 37%) 2.1286
+64m 0s (- 105m 10s) (227000 37%) 2.1257
+64m 17s (- 104m 53s) (228000 38%) 2.1414
+64m 34s (- 104m 37s) (229000 38%) 2.1513
+64m 52s (- 104m 21s) (230000 38%) 2.1167
+65m 9s (- 104m 4s) (231000 38%) 2.1690
+65m 25s (- 103m 47s) (232000 38%) 2.1343
+65m 43s (- 103m 31s) (233000 38%) 2.2432
+66m 0s (- 103m 14s) (234000 39%) 2.2368
+66m 17s (- 102m 58s) (235000 39%) 2.1720
+66m 35s (- 102m 42s) (236000 39%) 2.2728
+66m 52s (- 102m 25s) (237000 39%) 2.1225
+67m 9s (- 102m 8s) (238000 39%) 2.2042
+67m 26s (- 101m 52s) (239000 39%) 2.1711
+67m 43s (- 101m 35s) (240000 40%) 2.2192
+Epoch 12/30 finished
+68m 3s (- 101m 22s) (241000 40%) 2.0135
+68m 20s (- 101m 5s) (242000 40%) 2.0065
+68m 37s (- 100m 49s) (243000 40%) 2.0262
+68m 55s (- 100m 33s) (244000 40%) 2.0572
+69m 12s (- 100m 16s) (245000 40%) 2.0825
+69m 29s (- 100m 0s) (246000 41%) 2.0641
+69m 46s (- 99m 43s) (247000 41%) 2.0801
+70m 4s (- 99m 27s) (248000 41%) 2.0098
+70m 21s (- 99m 10s) (249000 41%) 2.0002
+70m 38s (- 98m 53s) (250000 41%) 2.0453
+70m 55s (- 98m 36s) (251000 41%) 2.0705
+71m 12s (- 98m 20s) (252000 42%) 2.0425
+71m 29s (- 98m 3s) (253000 42%) 2.1143
+71m 46s (- 97m 46s) (254000 42%) 2.1120
+72m 4s (- 97m 30s) (255000 42%) 2.1349
+72m 21s (- 97m 13s) (256000 42%) 2.0970
+72m 38s (- 96m 57s) (257000 42%) 2.1651
+72m 55s (- 96m 40s) (258000 43%) 2.1742
+73m 13s (- 96m 24s) (259000 43%) 2.2201
+73m 30s (- 96m 7s) (260000 43%) 2.1087
+Epoch 13/30 finished
+73m 49s (- 95m 53s) (261000 43%) 1.9252
+74m 7s (- 95m 37s) (262000 43%) 2.0081
+74m 24s (- 95m 21s) (263000 43%) 1.9639
+74m 41s (- 95m 4s) (264000 44%) 1.9299
+74m 59s (- 94m 47s) (265000 44%) 1.9700
+75m 16s (- 94m 31s) (266000 44%) 1.9635
+75m 33s (- 94m 14s) (267000 44%) 2.0233
+75m 50s (- 93m 57s) (268000 44%) 1.9183
+76m 8s (- 93m 40s) (269000 44%) 2.0785
+76m 25s (- 93m 24s) (270000 45%) 1.9690
+76m 42s (- 93m 7s) (271000 45%) 2.0606
+77m 0s (- 92m 51s) (272000 45%) 2.0111
+77m 17s (- 92m 34s) (273000 45%) 2.0624
+77m 34s (- 92m 17s) (274000 45%) 2.0221
+77m 51s (- 92m 0s) (275000 45%) 1.9975
+78m 8s (- 91m 43s) (276000 46%) 2.0956
+78m 25s (- 91m 27s) (277000 46%) 2.0108
+78m 43s (- 91m 10s) (278000 46%) 2.1100
+79m 0s (- 90m 54s) (279000 46%) 2.0934
+79m 17s (- 90m 37s) (280000 46%) 2.0775
+Epoch 14/30 finished
+79m 37s (- 90m 23s) (281000 46%) 1.8187
+79m 54s (- 90m 6s) (282000 47%) 1.9681
+80m 12s (- 89m 50s) (283000 47%) 1.8868
+80m 29s (- 89m 33s) (284000 47%) 1.9590
+80m 46s (- 89m 16s) (285000 47%) 1.9278
+81m 4s (- 89m 0s) (286000 47%) 1.9375
+81m 21s (- 88m 43s) (287000 47%) 1.9463
+81m 38s (- 88m 26s) (288000 48%) 1.9951
+81m 56s (- 88m 10s) (289000 48%) 1.9051
+82m 13s (- 87m 53s) (290000 48%) 1.9599
+82m 30s (- 87m 36s) (291000 48%) 1.9530
+82m 47s (- 87m 19s) (292000 48%) 1.9754
+83m 4s (- 87m 3s) (293000 48%) 1.9775
+83m 22s (- 86m 46s) (294000 49%) 1.9430
+83m 39s (- 86m 29s) (295000 49%) 2.0161
+83m 56s (- 86m 12s) (296000 49%) 1.9775
+84m 13s (- 85m 55s) (297000 49%) 2.0021
+84m 31s (- 85m 39s) (298000 49%) 2.0019
+84m 48s (- 85m 22s) (299000 49%) 2.0396
+85m 5s (- 85m 5s) (300000 50%) 2.0552
+Epoch 15/30 finished
+85m 24s (- 84m 50s) (301000 50%) 1.7942
+85m 42s (- 84m 34s) (302000 50%) 1.8371
+85m 59s (- 84m 17s) (303000 50%) 1.8438
+86m 16s (- 84m 0s) (304000 50%) 1.7952
+86m 34s (- 83m 43s) (305000 50%) 1.8652
+86m 51s (- 83m 27s) (306000 51%) 1.9782
+87m 8s (- 83m 10s) (307000 51%) 1.8248
+87m 26s (- 82m 53s) (308000 51%) 1.9035
+87m 43s (- 82m 36s) (309000 51%) 1.9764
+88m 0s (- 82m 20s) (310000 51%) 1.9376
+88m 18s (- 82m 3s) (311000 51%) 1.9078
+88m 35s (- 81m 46s) (312000 52%) 1.8658
+88m 52s (- 81m 29s) (313000 52%) 1.9381
+89m 10s (- 81m 13s) (314000 52%) 1.9832
+89m 27s (- 80m 56s) (315000 52%) 1.9054
+89m 45s (- 80m 39s) (316000 52%) 2.0086
+90m 2s (- 80m 23s) (317000 52%) 1.9492
+90m 20s (- 80m 6s) (318000 53%) 1.9462
+90m 37s (- 79m 49s) (319000 53%) 1.9685
+90m 54s (- 79m 32s) (320000 53%) 2.0038
+Epoch 16/30 finished
+91m 14s (- 79m 17s) (321000 53%) 1.7487
+91m 31s (- 79m 1s) (322000 53%) 1.7972
+91m 49s (- 78m 44s) (323000 53%) 1.7797
+92m 6s (- 78m 27s) (324000 54%) 1.8115
+92m 23s (- 78m 11s) (325000 54%) 1.8068
+92m 41s (- 77m 54s) (326000 54%) 1.8353
+92m 58s (- 77m 37s) (327000 54%) 1.8227
+93m 15s (- 77m 20s) (328000 54%) 1.7587
+93m 33s (- 77m 3s) (329000 54%) 1.8816
+93m 50s (- 76m 47s) (330000 55%) 1.8451
+94m 8s (- 76m 30s) (331000 55%) 1.9187
+94m 25s (- 76m 13s) (332000 55%) 1.8470
+94m 43s (- 75m 56s) (333000 55%) 1.8793
+95m 0s (- 75m 40s) (334000 55%) 1.8983
+95m 18s (- 75m 23s) (335000 55%) 1.9292
+95m 35s (- 75m 6s) (336000 56%) 1.8328
+95m 52s (- 74m 49s) (337000 56%) 1.9284
+96m 10s (- 74m 32s) (338000 56%) 1.9154
+96m 27s (- 74m 15s) (339000 56%) 1.9166
+96m 44s (- 73m 58s) (340000 56%) 1.8971
+Epoch 17/30 finished
+97m 3s (- 73m 43s) (341000 56%) 1.6780
+97m 20s (- 73m 26s) (342000 56%) 1.7030
+97m 38s (- 73m 9s) (343000 57%) 1.7976
+97m 56s (- 72m 52s) (344000 57%) 1.7916
+98m 13s (- 72m 36s) (345000 57%) 1.7891
+98m 30s (- 72m 19s) (346000 57%) 1.6873
+98m 48s (- 72m 2s) (347000 57%) 1.8015
+99m 5s (- 71m 45s) (348000 57%) 1.7815
+99m 23s (- 71m 28s) (349000 58%) 1.7408
+99m 40s (- 71m 11s) (350000 58%) 1.7638
+99m 57s (- 70m 54s) (351000 58%) 1.7922
+100m 14s (- 70m 37s) (352000 58%) 1.8197
+100m 32s (- 70m 20s) (353000 58%) 1.8816
+100m 49s (- 70m 3s) (354000 59%) 1.8709
+101m 7s (- 69m 47s) (355000 59%) 1.8894
+101m 24s (- 69m 30s) (356000 59%) 1.8645
+101m 41s (- 69m 13s) (357000 59%) 1.8209
+101m 59s (- 68m 56s) (358000 59%) 1.8829
+102m 17s (- 68m 39s) (359000 59%) 1.9244
+102m 34s (- 68m 23s) (360000 60%) 1.9314
+Epoch 18/30 finished
+102m 53s (- 68m 7s) (361000 60%) 1.6534
+103m 11s (- 67m 50s) (362000 60%) 1.6550
+103m 28s (- 67m 33s) (363000 60%) 1.7213
+103m 46s (- 67m 16s) (364000 60%) 1.7347
+104m 3s (- 67m 0s) (365000 60%) 1.7513
+104m 21s (- 66m 43s) (366000 61%) 1.7350
+104m 39s (- 66m 26s) (367000 61%) 1.8153
+104m 56s (- 66m 9s) (368000 61%) 1.7541
+105m 13s (- 65m 52s) (369000 61%) 1.7484
+105m 31s (- 65m 35s) (370000 61%) 1.6903
+105m 48s (- 65m 18s) (371000 61%) 1.8244
+106m 6s (- 65m 1s) (372000 62%) 1.7663
+106m 23s (- 64m 44s) (373000 62%) 1.7996
+106m 40s (- 64m 27s) (374000 62%) 1.7265
+106m 57s (- 64m 10s) (375000 62%) 1.7907
+107m 15s (- 63m 54s) (376000 62%) 1.8152
+107m 33s (- 63m 37s) (377000 62%) 1.7737
+107m 51s (- 63m 20s) (378000 63%) 1.8709
+108m 9s (- 63m 3s) (379000 63%) 1.8696
+108m 26s (- 62m 46s) (380000 63%) 1.8549
+Epoch 19/30 finished
+108m 45s (- 62m 30s) (381000 63%) 1.6142
+109m 3s (- 62m 14s) (382000 63%) 1.6108
+109m 20s (- 61m 56s) (383000 63%) 1.6255
+109m 37s (- 61m 40s) (384000 64%) 1.6664
+109m 55s (- 61m 23s) (385000 64%) 1.6539
+110m 12s (- 61m 6s) (386000 64%) 1.6916
+110m 30s (- 60m 49s) (387000 64%) 1.6661
+110m 47s (- 60m 32s) (388000 64%) 1.7644
+111m 5s (- 60m 15s) (389000 64%) 1.7555
+111m 23s (- 59m 58s) (390000 65%) 1.7669
+111m 40s (- 59m 41s) (391000 65%) 1.6800
+111m 58s (- 59m 24s) (392000 65%) 1.8349
+112m 15s (- 59m 7s) (393000 65%) 1.7694
+112m 32s (- 58m 50s) (394000 65%) 1.7237
+112m 50s (- 58m 33s) (395000 65%) 1.7864
+113m 7s (- 58m 16s) (396000 66%) 1.7351
+113m 25s (- 57m 59s) (397000 66%) 1.7755
+113m 42s (- 57m 42s) (398000 66%) 1.7252
+114m 0s (- 57m 25s) (399000 66%) 1.8540
+114m 17s (- 57m 8s) (400000 66%) 1.7677
+Epoch 20/30 finished
+114m 37s (- 56m 52s) (401000 66%) 1.5691
+114m 54s (- 56m 35s) (402000 67%) 1.5808
+115m 11s (- 56m 18s) (403000 67%) 1.6479
+115m 29s (- 56m 1s) (404000 67%) 1.6495
+115m 46s (- 55m 44s) (405000 67%) 1.5875
+116m 4s (- 55m 27s) (406000 67%) 1.6232
+116m 21s (- 55m 10s) (407000 67%) 1.6887
+116m 39s (- 54m 53s) (408000 68%) 1.6284
+116m 56s (- 54m 36s) (409000 68%) 1.7000
+117m 14s (- 54m 19s) (410000 68%) 1.7452
+117m 31s (- 54m 2s) (411000 68%) 1.6896
+117m 48s (- 53m 45s) (412000 68%) 1.6270
+118m 6s (- 53m 28s) (413000 68%) 1.7484
+118m 23s (- 53m 11s) (414000 69%) 1.7329
+118m 41s (- 52m 54s) (415000 69%) 1.7989
+118m 58s (- 52m 37s) (416000 69%) 1.7175
+119m 16s (- 52m 20s) (417000 69%) 1.8086
+119m 34s (- 52m 3s) (418000 69%) 1.7726
+119m 51s (- 51m 46s) (419000 69%) 1.7447
+120m 8s (- 51m 29s) (420000 70%) 1.7276
+Epoch 21/30 finished
+120m 28s (- 51m 13s) (421000 70%) 1.5755
+120m 45s (- 50m 56s) (422000 70%) 1.5051
+121m 2s (- 50m 39s) (423000 70%) 1.5706
+121m 20s (- 50m 22s) (424000 70%) 1.6147
+121m 37s (- 50m 4s) (425000 70%) 1.5306
+121m 55s (- 49m 48s) (426000 71%) 1.6659
+122m 13s (- 49m 31s) (427000 71%) 1.6740
+122m 31s (- 49m 14s) (428000 71%) 1.6717
+122m 48s (- 48m 57s) (429000 71%) 1.7559
+123m 6s (- 48m 40s) (430000 71%) 1.6955
+123m 23s (- 48m 23s) (431000 71%) 1.7291
+123m 41s (- 48m 6s) (432000 72%) 1.6328
+123m 58s (- 47m 49s) (433000 72%) 1.6759
+124m 16s (- 47m 32s) (434000 72%) 1.6938
+124m 34s (- 47m 14s) (435000 72%) 1.6786
+124m 51s (- 46m 58s) (436000 72%) 1.7587
+125m 9s (- 46m 41s) (437000 72%) 1.7095
+125m 26s (- 46m 23s) (438000 73%) 1.7555
+125m 44s (- 46m 6s) (439000 73%) 1.8212
+126m 2s (- 45m 49s) (440000 73%) 1.7393
+Epoch 22/30 finished
+126m 21s (- 45m 33s) (441000 73%) 1.5149
+126m 39s (- 45m 16s) (442000 73%) 1.6126
+126m 56s (- 44m 59s) (443000 73%) 1.5430
+127m 14s (- 44m 42s) (444000 74%) 1.5345
+127m 31s (- 44m 25s) (445000 74%) 1.5483
+127m 49s (- 44m 8s) (446000 74%) 1.6401
+128m 7s (- 43m 51s) (447000 74%) 1.6000
+128m 24s (- 43m 34s) (448000 74%) 1.6413
+128m 41s (- 43m 16s) (449000 74%) 1.6386
+128m 59s (- 42m 59s) (450000 75%) 1.6043
+129m 16s (- 42m 42s) (451000 75%) 1.6050
+129m 34s (- 42m 25s) (452000 75%) 1.6537
+129m 52s (- 42m 8s) (453000 75%) 1.6079
+130m 9s (- 41m 51s) (454000 75%) 1.7415
+130m 27s (- 41m 34s) (455000 75%) 1.6614
+130m 44s (- 41m 17s) (456000 76%) 1.6830
+131m 2s (- 41m 0s) (457000 76%) 1.6478
+131m 19s (- 40m 43s) (458000 76%) 1.7152
+131m 37s (- 40m 26s) (459000 76%) 1.6605
+131m 55s (- 40m 8s) (460000 76%) 1.7556
+Epoch 23/30 finished
+132m 14s (- 39m 52s) (461000 76%) 1.4901
+132m 32s (- 39m 35s) (462000 77%) 1.4353
+132m 49s (- 39m 18s) (463000 77%) 1.5463
+133m 7s (- 39m 1s) (464000 77%) 1.5106
+133m 24s (- 38m 43s) (465000 77%) 1.5529
+133m 42s (- 38m 26s) (466000 77%) 1.5913
+134m 0s (- 38m 9s) (467000 77%) 1.6023
+134m 17s (- 37m 52s) (468000 78%) 1.5217
+134m 35s (- 37m 35s) (469000 78%) 1.7194
+134m 53s (- 37m 18s) (470000 78%) 1.6806
+135m 10s (- 37m 1s) (471000 78%) 1.5737
+135m 28s (- 36m 44s) (472000 78%) 1.5794
+135m 45s (- 36m 27s) (473000 78%) 1.6696
+136m 3s (- 36m 10s) (474000 79%) 1.6534
+136m 20s (- 35m 52s) (475000 79%) 1.6462
+136m 38s (- 35m 35s) (476000 79%) 1.6706
+136m 56s (- 35m 18s) (477000 79%) 1.6455
+137m 13s (- 35m 1s) (478000 79%) 1.6988
+137m 30s (- 34m 44s) (479000 79%) 1.6968
+137m 48s (- 34m 27s) (480000 80%) 1.6481
+Epoch 24/30 finished
+138m 7s (- 34m 10s) (481000 80%) 1.4122
+138m 25s (- 33m 53s) (482000 80%) 1.5973
+138m 42s (- 33m 36s) (483000 80%) 1.5155
+138m 59s (- 33m 18s) (484000 80%) 1.4716
+139m 17s (- 33m 1s) (485000 80%) 1.5218
+139m 35s (- 32m 44s) (486000 81%) 1.5369
+139m 52s (- 32m 27s) (487000 81%) 1.5758
+140m 10s (- 32m 10s) (488000 81%) 1.5749
+140m 27s (- 31m 53s) (489000 81%) 1.6453
+140m 45s (- 31m 35s) (490000 81%) 1.5583
+141m 3s (- 31m 18s) (491000 81%) 1.6005
+141m 21s (- 31m 1s) (492000 82%) 1.6043
+141m 38s (- 30m 44s) (493000 82%) 1.5966
+141m 56s (- 30m 27s) (494000 82%) 1.5116
+142m 13s (- 30m 10s) (495000 82%) 1.5591
+142m 30s (- 29m 52s) (496000 82%) 1.6405
+142m 48s (- 29m 35s) (497000 82%) 1.6249
+143m 6s (- 29m 18s) (498000 83%) 1.6882
+143m 23s (- 29m 1s) (499000 83%) 1.6516
+143m 41s (- 28m 44s) (500000 83%) 1.6247
+Epoch 25/30 finished
+144m 0s (- 28m 27s) (501000 83%) 1.4753
+144m 18s (- 28m 10s) (502000 83%) 1.4976
+144m 35s (- 27m 53s) (503000 83%) 1.4289
+144m 53s (- 27m 35s) (504000 84%) 1.5162
+145m 11s (- 27m 18s) (505000 84%) 1.5308
+145m 29s (- 27m 1s) (506000 84%) 1.4585
+145m 46s (- 26m 44s) (507000 84%) 1.5507
+146m 4s (- 26m 27s) (508000 84%) 1.4692
+146m 22s (- 26m 10s) (509000 84%) 1.4933
+146m 39s (- 25m 52s) (510000 85%) 1.5609
+146m 57s (- 25m 35s) (511000 85%) 1.5380
+147m 14s (- 25m 18s) (512000 85%) 1.5361
+147m 32s (- 25m 1s) (513000 85%) 1.5572
+147m 49s (- 24m 44s) (514000 85%) 1.5854
+148m 7s (- 24m 26s) (515000 85%) 1.6109
+148m 25s (- 24m 9s) (516000 86%) 1.5801
+148m 42s (- 23m 52s) (517000 86%) 1.6400
+149m 0s (- 23m 35s) (518000 86%) 1.5755
+149m 17s (- 23m 18s) (519000 86%) 1.6699
+149m 35s (- 23m 0s) (520000 86%) 1.6797
+Epoch 26/30 finished
+149m 54s (- 22m 43s) (521000 86%) 1.3904
+150m 12s (- 22m 26s) (522000 87%) 1.4469
+150m 30s (- 22m 9s) (523000 87%) 1.3635
+150m 48s (- 21m 52s) (524000 87%) 1.5024
+151m 5s (- 21m 35s) (525000 87%) 1.5019
+151m 23s (- 21m 17s) (526000 87%) 1.4760
+151m 40s (- 21m 0s) (527000 87%) 1.5211
+151m 58s (- 20m 43s) (528000 88%) 1.5642
+152m 15s (- 20m 26s) (529000 88%) 1.4521
+152m 33s (- 20m 8s) (530000 88%) 1.4617
+152m 50s (- 19m 51s) (531000 88%) 1.5473
+153m 8s (- 19m 34s) (532000 88%) 1.5462
+153m 26s (- 19m 17s) (533000 88%) 1.6265
+153m 43s (- 19m 0s) (534000 89%) 1.6228
+154m 1s (- 18m 42s) (535000 89%) 1.6156
+154m 19s (- 18m 25s) (536000 89%) 1.4974
+154m 36s (- 18m 8s) (537000 89%) 1.5822
+154m 54s (- 17m 51s) (538000 89%) 1.5696
+155m 12s (- 17m 33s) (539000 89%) 1.5612
+155m 29s (- 17m 16s) (540000 90%) 1.5834
+Epoch 27/30 finished
+155m 49s (- 16m 59s) (541000 90%) 1.4376
+156m 6s (- 16m 42s) (542000 90%) 1.3703
+156m 24s (- 16m 25s) (543000 90%) 1.4694
+156m 42s (- 16m 7s) (544000 90%) 1.5778
+157m 0s (- 15m 50s) (545000 90%) 1.3909
+157m 17s (- 15m 33s) (546000 91%) 1.4621
+157m 35s (- 15m 16s) (547000 91%) 1.4750
+157m 53s (- 14m 58s) (548000 91%) 1.5297
+158m 10s (- 14m 41s) (549000 91%) 1.4217
+158m 28s (- 14m 24s) (550000 91%) 1.4931
+158m 45s (- 14m 7s) (551000 91%) 1.5672
+159m 3s (- 13m 49s) (552000 92%) 1.4582
+159m 20s (- 13m 32s) (553000 92%) 1.4811
+159m 38s (- 13m 15s) (554000 92%) 1.5492
+159m 56s (- 12m 58s) (555000 92%) 1.5349
+160m 13s (- 12m 40s) (556000 92%) 1.5225
+160m 31s (- 12m 23s) (557000 92%) 1.6593
+160m 49s (- 12m 6s) (558000 93%) 1.5388
+161m 6s (- 11m 49s) (559000 93%) 1.5403
+161m 24s (- 11m 31s) (560000 93%) 1.6066
+Epoch 28/30 finished
+161m 43s (- 11m 14s) (561000 93%) 1.3245
+162m 1s (- 10m 57s) (562000 93%) 1.4043
+162m 18s (- 10m 40s) (563000 93%) 1.3699
+162m 36s (- 10m 22s) (564000 94%) 1.4521
+162m 54s (- 10m 5s) (565000 94%) 1.4510
+163m 11s (- 9m 48s) (566000 94%) 1.4665
+163m 29s (- 9m 30s) (567000 94%) 1.3911
+163m 46s (- 9m 13s) (568000 94%) 1.4590
+164m 4s (- 8m 56s) (569000 94%) 1.5184
+164m 22s (- 8m 39s) (570000 95%) 1.4974
+164m 40s (- 8m 21s) (571000 95%) 1.6403
+164m 58s (- 8m 4s) (572000 95%) 1.5188
+165m 15s (- 7m 47s) (573000 95%) 1.4863
+165m 33s (- 7m 29s) (574000 95%) 1.5726
+165m 51s (- 7m 12s) (575000 95%) 1.4506
+166m 8s (- 6m 55s) (576000 96%) 1.5296
+166m 26s (- 6m 38s) (577000 96%) 1.5486
+166m 43s (- 6m 20s) (578000 96%) 1.4625
+167m 1s (- 6m 3s) (579000 96%) 1.5398
+167m 19s (- 5m 46s) (580000 96%) 1.6371
+Epoch 29/30 finished
+167m 38s (- 5m 28s) (581000 96%) 1.3118
+167m 56s (- 5m 11s) (582000 97%) 1.3576
+168m 14s (- 4m 54s) (583000 97%) 1.4631
+168m 31s (- 4m 37s) (584000 97%) 1.4305
+168m 49s (- 4m 19s) (585000 97%) 1.4201
+169m 7s (- 4m 2s) (586000 97%) 1.3570
+169m 25s (- 3m 45s) (587000 97%) 1.4387
+169m 42s (- 3m 27s) (588000 98%) 1.4417
+170m 0s (- 3m 10s) (589000 98%) 1.4864
+170m 18s (- 2m 53s) (590000 98%) 1.4554
+170m 35s (- 2m 35s) (591000 98%) 1.4547
+170m 53s (- 2m 18s) (592000 98%) 1.4595
+171m 11s (- 2m 1s) (593000 98%) 1.4660
+171m 28s (- 1m 43s) (594000 99%) 1.4515
+171m 46s (- 1m 26s) (595000 99%) 1.4557
+172m 3s (- 1m 9s) (596000 99%) 1.4864
+172m 21s (- 0m 51s) (597000 99%) 1.5167
+172m 39s (- 0m 34s) (598000 99%) 1.5203
+172m 56s (- 0m 17s) (599000 99%) 1.6250
+173m 14s (- 0m 0s) (600000 100%) 1.5187
+Epoch 30/30 finished
+Evaluate randomly on training sentences:
+> ['you', 'were', 'terrified', 'weren', 't', 'you', '?']
+= tu etais terrifie n est ce pas ?
+< vous etiez terrifie n est ce pas ? <EOS>
+
+> ['there', 's', 'nothing', 'wrong', 'with', 'that', 'either', '.']
+= il n y a rien de mal a cela non plus .
+< il n y a rien de sa il . <EOS>
+
+> ['give', 'it', 'to', 'me', 'please', '.']
+= donnez moi cela je vous prie .
+< donnez moi la montre . <EOS>
+
+> ['there', 'is', 'so', 'much', 'to', 'do', 'and', 'only', 'a', 'lifetime', 'to', 'do', 'it', '.']
+= il y a tant a faire et seulement la duree d une vie pour le faire .
+< il y a tant simple simple simple ca simple ca . <EOS>
+
+> ['taking', 'all', 'things', 'into', 'consideration', 'i', 'have', 'made', 'up', 'my', 'mind', 'to', 'give', 'up', 'the', 'idea', '.']
+= en prenant tous les facteurs en consideration j ai decide d abandonner cette idee .
+< j ai decide des quelques modifications quelques assister a decide les problemes . <EOS>
+
+> ['almost', 'a', 'third', 'of', 'the', 'gunshot', 'victims', 'were', 'teenagers', '.']
+= presque un tiers des victimes de la fusillade etaient des adolescents .
+< presque un de victimes de victimes de la tete . <EOS>
+
+> ['i', 'refuse', 'to', 'accept', 'that', '.']
+= je refuse de l accepter .
+< je refuse de l accepter . <EOS>
+
+> ['you', 'can', 'get', 'a', 'car', 'license', 'after', 'you', 'turn', 'eighteen', '.']
+= on peut obtenir un permis de conduire apres avoir eu dix huit ans .
+< tu devrais conduire . <EOS>
+
+> ['she', 'filled', 'the', 'vase', 'with', 'water', '.']
+= elle emplit le vase d eau .
+< elle emplit le vase d eau . <EOS>
+
+> ['it', 'won', 't', 'be', 'hard', '.']
+= ce ne sera pas dur .
+< ca ne sera pas dur . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['ask', 'anyone', '.']
+= demande a n importe qui .
+< personne ne l a . <EOS>
+
+> ['how', 'did', 'you', 'get', 'into', 'the', 'house', '?']
+= comment as tu penetre dans la maison ?
+< comment l avez vous chez moi ? <EOS>
+
+> ['tom', 'says', 'he', 'll', 'only', 'speak', 'to', 'mary', '.']
+= tom dit qu il ne parlera qu a mary uniquement .
+< tom a dit qu il te que mary . <EOS>
+
+> ['let', 's', 'go', 'to', 'eat', 'together', '.']
+= allons manger ensemble .
+< allons nous en dehors . <EOS>
+
+> ['we', 're', 'meant', 'for', 'each', 'other', '.']
+= nous sommes faits l un pour l autre .
+< nous sommes a son talent . <EOS>
+
+> ['i', 'don', 't', 'know', 'why', 'you', 're', 'all', 'so', 'jumpy', '.']
+= j ignore pourquoi vous etes tous tellement agites .
+< vous ignore pourquoi je sais tous les tous . <EOS>
+
+> ['it', 's', 'not', 'cheap', 'to', 'eat', 'here', '.']
+= manger ici n est pas bon marche .
+< il n est pas manger ici pour la . <EOS>
+
+> ['you', 're', 'wasting', 'both', 'of', 'our', 'time', '.']
+= tu gaspilles notre temps a tous les deux .
+< vous gaspillez toutes du temps de la notre . <EOS>
+
+> ['tom', 'is', 'a', 'bit', 'short', 'for', 'his', 'age', '.']
+= tom est legerement petit pour son age .
+< tom est son age de son moment . <EOS>
+
+> ['i', 'eat', 'alone', '.']
+= je mange seule .
+< j ai pris seule . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2286
+score for short sentnces (length <= 6):
+ROUGE1: 0.33775948878528395
+ROUGE2: 0.23906961996158688
+BLEU: 0.284905295928916
+BLEU_CLIP: 0.2675332881369604
+
+Num of long sentences (length > 6): 2714
+score for long sentnces (length > 6):
+ROUGE1: 0.3374435135274309
+ROUGE2: 0.22750969966407578
+BLEU: 0.2054247533571189
+BLEU_CLIP: 0.17267556665272532
+
+Overall:
+ROUGE1: 0.33758797741532137
+ROUGE2: 0.23279489522409785
+BLEU: 0.24176325742094454
+BLEU_CLIP: 0.2160445169153176
+
+Finished
+
+hpc mode: True
+order: 2
+mode: sum
+metric: MULTI
+hidden-size: 256
+n-epochs: 30
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Ngram Vocab Size: 47196
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .']
+= elle est bien venue ici .
+< clonage clonage repetition disneyland disneyland absence digeree remarquable recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .']
+= ce fut assez amusant .
+< appareils ignorez ignorez ignorez ignorez decevez decevez aupres charades charades faisant occasionnellement aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .']
+= elles proviennent du meme pays .
+< elections elections elections comiques comiques devinette egare fois egare agence dortoir promue ecoutiez disque recommencer receptionnees tempete concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .']
+= je n avais pas fini de lire ce livre .
+< personnes termes termes termes termes termes termes largue largue largue instant concentrees seduisant maltraites debutante abandonnee digeree aupres consentement risques recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .']
+= je ne suis pas encore pret .
+< pouce demanda paye paye paye paye presentai coiffure risques schema digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .']
+= on ne devrait pas confondre la solitude et l isolation . ce sont deux choses differentes .
+< occupait occupait retentir risquez risquez tournoyer delibere fusible annules postuler fusible vigilant basses parlera instantanees abandonnerais plia plaide declenche intriguee ascenseur oublier oublier risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .']
+= je ne sais pas ce que c est .
+< apprecient partisans partisans bienvenues sortiriez sortiriez coulisses moururent moururent vigilant embaucher devenait portais ecoutiez expulse mains receptionnees portier seduisant recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?']
+= rentres tu chez toi en bus ?
+< essayai virus virus virus mensonge extirper somme superieure partirent ecoutiez enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .']
+= il est intelligent .
+< voulais etudiants etudiants etudiants etudiants reservons matinal naturelles absence stricto digeree aupres realisera deviennent deviennent carbone carbone feriez embaucher alimentaires tempete fusible chasseur concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .']
+= vous etes tellement impatientes .
+< examiner photos photos hommes hommes hommes front adoraient blagues exercer nettoyer enfiler absence digeree receptionnees vitamines deviennent carbone carbone embaucher brisee recommencer recommencer souhaite critiquer egare pure annules enfiler concentrees pacifique aupres deviennent deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .']
+= l equipement et les uniformes sont fournis aux membres des equipes .
+< frequente frequente conspiration conspiration conspiration conspiration conspiration conspiration conspiration conspiration conspiration conspiration conspiration conspiration conspiration decouvrirai chacune manques charades depassee absolument sensu deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .']
+= maintenant que mon frere est etudiant a l universite il doit beaucoup lire .
+< loucha automobile disposent disposent gentiment derechef gentiment indelicat costume costume costume costume emporta nouvelles gentiment gentiment necessairement quasiment quasiment quasiment rafraichissant delibere delibere embaucher devenait alimentaires aupres fixer amis concentrees etudiait chauves fusible fusible aeroport remarquable occupera cause fusible fusible aeroport coiffer concentrees risques digeree decevez aupres deviennent deviennent reverrai maigres concentrees perou bonjour finirai finirai ecoutiez cloturee ecoutiez disque enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .']
+= ils se sont amuses avec nous .
+< sansonnet previens extirper extirper extirper partirent moutons promue serum feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?']
+= quiconque connait il le japonais ?
+< deciderai deciderai deciderai deciderai soi corde concentrees seduisant recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .']
+= il a vraiment failli se faire renverser .
+< frequente maree maree maree pulmonaire serons comptable comptable comptable comptable sou comptable sou rare recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?']
+= quand avez vous ete dans une galerie d art pour la derniere fois ?
+< surmenees immense alterer alterer alterer alterer echoue echoue echoue attendions demarra demarra cloturee sortis cloturee concentrees absence risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .']
+= sa maison a ete vendue pour . .
+< descendons descendons descendons percevoir tiennent t tiennent t t tiennent couriez chauves fusible fusible comporte existe existe ma attentes delibere delibere abandonnee digeree aupres fixer amis concentrees recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .']
+= je ne suis pas fou .
+< frequente frequente frequente eau eau delicieusement delibere delicieusement delibere abandonnee digeree aupres consentement risques recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .']
+= je pensais que vous seriez beaucoup plus gros .
+< fesses deciderai scintillaient rentrerent rentrerent rentrerent eau eau eau disque marrant recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .']
+= ils s ennuient .
+< frequente frequente hopital descendons rare decouvrirai demarra mains delibere embaucher alimentaires tienne refusa aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+0m 16s (- 164m 57s) (1000 0%) 5.2604
+0m 31s (- 158m 40s) (2000 0%) 4.6998
+0m 47s (- 155m 57s) (3000 0%) 4.4987
+1m 2s (- 155m 30s) (4000 0%) 4.5256
+1m 18s (- 155m 30s) (5000 0%) 4.4095
+1m 34s (- 155m 35s) (6000 1%) 4.4884
+1m 50s (- 155m 39s) (7000 1%) 4.3670
+2m 6s (- 155m 36s) (8000 1%) 4.3043
+2m 22s (- 155m 26s) (9000 1%) 4.3544
+2m 38s (- 155m 28s) (10000 1%) 4.2555
+2m 54s (- 155m 25s) (11000 1%) 4.2442
+3m 9s (- 155m 7s) (12000 2%) 4.1678
+3m 25s (- 154m 50s) (13000 2%) 4.1664
+3m 41s (- 154m 47s) (14000 2%) 4.2187
+3m 58s (- 154m 42s) (15000 2%) 4.1545
+4m 14s (- 154m 34s) (16000 2%) 4.1911
+4m 30s (- 154m 23s) (17000 2%) 4.1126
+4m 46s (- 154m 9s) (18000 3%) 4.0442
+5m 2s (- 154m 4s) (19000 3%) 4.1357
+5m 18s (- 153m 57s) (20000 3%) 4.0759
+Epoch 1/30 finished
+5m 36s (- 154m 51s) (21000 3%) 3.9376
+5m 53s (- 154m 38s) (22000 3%) 3.8749
+6m 9s (- 154m 33s) (23000 3%) 3.8877
+6m 25s (- 154m 18s) (24000 4%) 3.8595
+6m 42s (- 154m 6s) (25000 4%) 3.8199
+6m 58s (- 153m 54s) (26000 4%) 3.8462
+7m 14s (- 153m 45s) (27000 4%) 3.8600
+7m 31s (- 153m 34s) (28000 4%) 3.8511
+7m 47s (- 153m 19s) (29000 4%) 3.7470
+8m 3s (- 153m 8s) (30000 5%) 3.8263
+8m 19s (- 152m 55s) (31000 5%) 3.8065
+8m 36s (- 152m 46s) (32000 5%) 3.9038
+8m 52s (- 152m 37s) (33000 5%) 3.8375
+9m 9s (- 152m 27s) (34000 5%) 3.8167
+9m 26s (- 152m 17s) (35000 5%) 3.8618
+9m 42s (- 152m 4s) (36000 6%) 3.8712
+9m 58s (- 151m 50s) (37000 6%) 3.7874
+10m 14s (- 151m 34s) (38000 6%) 3.6949
+10m 31s (- 151m 22s) (39000 6%) 3.7591
+10m 47s (- 151m 9s) (40000 6%) 3.7843
+Epoch 2/30 finished
+11m 6s (- 151m 22s) (41000 6%) 3.5398
+11m 22s (- 151m 12s) (42000 7%) 3.5091
+11m 39s (- 150m 58s) (43000 7%) 3.4958
+11m 55s (- 150m 46s) (44000 7%) 3.5151
+12m 12s (- 150m 31s) (45000 7%) 3.5045
+12m 29s (- 150m 20s) (46000 7%) 3.5944
+12m 45s (- 150m 5s) (47000 7%) 3.5802
+13m 2s (- 149m 53s) (48000 8%) 3.5824
+13m 18s (- 149m 40s) (49000 8%) 3.5119
+13m 35s (- 149m 27s) (50000 8%) 3.4979
+13m 51s (- 149m 11s) (51000 8%) 3.5387
+14m 8s (- 149m 0s) (52000 8%) 3.5056
+14m 24s (- 148m 46s) (53000 8%) 3.5461
+14m 41s (- 148m 29s) (54000 9%) 3.4831
+14m 58s (- 148m 19s) (55000 9%) 3.6168
+15m 14s (- 148m 7s) (56000 9%) 3.5450
+15m 31s (- 147m 53s) (57000 9%) 3.5346
+15m 48s (- 147m 41s) (58000 9%) 3.5618
+16m 5s (- 147m 29s) (59000 9%) 3.5423
+16m 21s (- 147m 14s) (60000 10%) 3.5479
+Epoch 3/30 finished
+16m 39s (- 147m 15s) (61000 10%) 3.2421
+16m 56s (- 147m 1s) (62000 10%) 3.2583
+17m 13s (- 146m 48s) (63000 10%) 3.2769
+17m 30s (- 146m 34s) (64000 10%) 3.3116
+17m 46s (- 146m 20s) (65000 10%) 3.2783
+18m 3s (- 146m 7s) (66000 11%) 3.3153
+18m 20s (- 145m 52s) (67000 11%) 3.2814
+18m 36s (- 145m 37s) (68000 11%) 3.2602
+18m 53s (- 145m 23s) (69000 11%) 3.3245
+19m 10s (- 145m 10s) (70000 11%) 3.2959
+19m 26s (- 144m 54s) (71000 11%) 3.3096
+19m 43s (- 144m 39s) (72000 12%) 3.2974
+20m 0s (- 144m 24s) (73000 12%) 3.2824
+20m 16s (- 144m 9s) (74000 12%) 3.3124
+20m 33s (- 143m 54s) (75000 12%) 3.2874
+20m 50s (- 143m 38s) (76000 12%) 3.2746
+21m 6s (- 143m 23s) (77000 12%) 3.3044
+21m 23s (- 143m 7s) (78000 13%) 3.3615
+21m 40s (- 142m 53s) (79000 13%) 3.3556
+21m 56s (- 142m 40s) (80000 13%) 3.3882
+Epoch 4/30 finished
+22m 15s (- 142m 36s) (81000 13%) 3.0081
+22m 32s (- 142m 23s) (82000 13%) 3.0302
+22m 49s (- 142m 8s) (83000 13%) 3.0846
+23m 6s (- 141m 54s) (84000 14%) 3.0600
+23m 22s (- 141m 39s) (85000 14%) 3.0549
+23m 39s (- 141m 24s) (86000 14%) 3.0699
+23m 56s (- 141m 7s) (87000 14%) 3.0216
+24m 12s (- 140m 53s) (88000 14%) 3.1952
+24m 29s (- 140m 37s) (89000 14%) 3.0684
+24m 46s (- 140m 22s) (90000 15%) 3.1403
+25m 3s (- 140m 8s) (91000 15%) 3.1882
+25m 20s (- 139m 55s) (92000 15%) 3.1603
+25m 37s (- 139m 39s) (93000 15%) 3.1174
+25m 53s (- 139m 23s) (94000 15%) 3.1140
+26m 10s (- 139m 8s) (95000 15%) 3.1740
+26m 27s (- 138m 53s) (96000 16%) 3.1450
+26m 44s (- 138m 38s) (97000 16%) 3.1494
+27m 0s (- 138m 22s) (98000 16%) 3.0917
+27m 17s (- 138m 6s) (99000 16%) 3.1252
+27m 34s (- 137m 53s) (100000 16%) 3.1791
+Epoch 5/30 finished
+27m 53s (- 137m 48s) (101000 16%) 2.7870
+28m 10s (- 137m 33s) (102000 17%) 2.8387
+28m 27s (- 137m 18s) (103000 17%) 2.8786
+28m 44s (- 137m 3s) (104000 17%) 2.8698
+29m 1s (- 136m 47s) (105000 17%) 2.9376
+29m 17s (- 136m 31s) (106000 17%) 2.8326
+29m 34s (- 136m 17s) (107000 17%) 3.0418
+29m 51s (- 136m 2s) (108000 18%) 2.9505
+30m 8s (- 135m 47s) (109000 18%) 2.9644
+30m 25s (- 135m 31s) (110000 18%) 2.9036
+30m 42s (- 135m 17s) (111000 18%) 3.0223
+30m 59s (- 135m 2s) (112000 18%) 2.9890
+31m 16s (- 134m 47s) (113000 18%) 2.9444
+31m 33s (- 134m 32s) (114000 19%) 3.0101
+31m 50s (- 134m 18s) (115000 19%) 3.0392
+32m 7s (- 134m 1s) (116000 19%) 2.9332
+32m 24s (- 133m 47s) (117000 19%) 2.9768
+32m 41s (- 133m 31s) (118000 19%) 2.9958
+32m 58s (- 133m 15s) (119000 19%) 3.0148
+33m 14s (- 132m 59s) (120000 20%) 3.0133
+Epoch 6/30 finished
+33m 33s (- 132m 52s) (121000 20%) 2.6604
+33m 50s (- 132m 36s) (122000 20%) 2.7515
+34m 7s (- 132m 21s) (123000 20%) 2.6247
+34m 24s (- 132m 6s) (124000 20%) 2.7399
+34m 41s (- 131m 50s) (125000 20%) 2.7760
+34m 58s (- 131m 35s) (126000 21%) 2.7987
+35m 15s (- 131m 18s) (127000 21%) 2.7720
+35m 32s (- 131m 4s) (128000 21%) 2.8376
+35m 49s (- 130m 47s) (129000 21%) 2.8355
+36m 6s (- 130m 32s) (130000 21%) 2.7950
+36m 23s (- 130m 17s) (131000 21%) 2.8180
+36m 40s (- 130m 0s) (132000 22%) 2.8129
+36m 57s (- 129m 44s) (133000 22%) 2.7450
+37m 14s (- 129m 29s) (134000 22%) 2.8366
+37m 31s (- 129m 13s) (135000 22%) 2.8219
+37m 47s (- 128m 57s) (136000 22%) 2.9618
+38m 4s (- 128m 41s) (137000 22%) 2.9005
+38m 21s (- 128m 25s) (138000 23%) 2.7882
+38m 38s (- 128m 10s) (139000 23%) 2.8984
+38m 55s (- 127m 54s) (140000 23%) 2.8826
+Epoch 7/30 finished
+39m 14s (- 127m 45s) (141000 23%) 2.5101
+39m 32s (- 127m 30s) (142000 23%) 2.5579
+39m 49s (- 127m 15s) (143000 23%) 2.6134
+40m 6s (- 126m 59s) (144000 24%) 2.5793
+40m 22s (- 126m 42s) (145000 24%) 2.6436
+40m 40s (- 126m 27s) (146000 24%) 2.7113
+40m 57s (- 126m 11s) (147000 24%) 2.6439
+41m 13s (- 125m 55s) (148000 24%) 2.6189
+41m 30s (- 125m 39s) (149000 24%) 2.6738
+41m 48s (- 125m 24s) (150000 25%) 2.6904
+42m 5s (- 125m 8s) (151000 25%) 2.7107
+42m 21s (- 124m 52s) (152000 25%) 2.6719
+42m 38s (- 124m 35s) (153000 25%) 2.7508
+42m 55s (- 124m 19s) (154000 25%) 2.6966
+43m 12s (- 124m 3s) (155000 25%) 2.6953
+43m 29s (- 123m 47s) (156000 26%) 2.7470
+43m 47s (- 123m 32s) (157000 26%) 2.6918
+44m 4s (- 123m 17s) (158000 26%) 2.6717
+44m 21s (- 123m 3s) (159000 26%) 2.7657
+44m 39s (- 122m 48s) (160000 26%) 2.7938
+Epoch 8/30 finished
+44m 58s (- 122m 38s) (161000 26%) 2.4202
+45m 16s (- 122m 23s) (162000 27%) 2.4747
+45m 33s (- 122m 7s) (163000 27%) 2.4294
+45m 50s (- 121m 51s) (164000 27%) 2.5125
+46m 7s (- 121m 35s) (165000 27%) 2.5011
+46m 24s (- 121m 20s) (166000 27%) 2.5188
+46m 41s (- 121m 4s) (167000 27%) 2.6018
+46m 58s (- 120m 48s) (168000 28%) 2.5038
+47m 15s (- 120m 32s) (169000 28%) 2.5244
+47m 32s (- 120m 15s) (170000 28%) 2.6161
+47m 50s (- 120m 0s) (171000 28%) 2.6235
+48m 7s (- 119m 44s) (172000 28%) 2.5544
+48m 24s (- 119m 28s) (173000 28%) 2.5975
+48m 41s (- 119m 11s) (174000 28%) 2.5659
+48m 58s (- 118m 56s) (175000 29%) 2.6096
+49m 15s (- 118m 39s) (176000 29%) 2.5967
+49m 32s (- 118m 23s) (177000 29%) 2.5881
+49m 49s (- 118m 8s) (178000 29%) 2.6243
+50m 6s (- 117m 51s) (179000 29%) 2.6488
+50m 23s (- 117m 35s) (180000 30%) 2.6465
+Epoch 9/30 finished
+50m 42s (- 117m 23s) (181000 30%) 2.3328
+50m 59s (- 117m 7s) (182000 30%) 2.3505
+51m 17s (- 116m 51s) (183000 30%) 2.3577
+51m 34s (- 116m 35s) (184000 30%) 2.3780
+51m 50s (- 116m 18s) (185000 30%) 2.4483
+52m 8s (- 116m 2s) (186000 31%) 2.4444
+52m 25s (- 115m 46s) (187000 31%) 2.4345
+52m 42s (- 115m 30s) (188000 31%) 2.4123
+52m 59s (- 115m 13s) (189000 31%) 2.3851
+53m 16s (- 114m 57s) (190000 31%) 2.5349
+53m 33s (- 114m 41s) (191000 31%) 2.4825
+53m 50s (- 114m 25s) (192000 32%) 2.5170
+54m 7s (- 114m 9s) (193000 32%) 2.5415
+54m 24s (- 113m 52s) (194000 32%) 2.4735
+54m 41s (- 113m 35s) (195000 32%) 2.5004
+54m 58s (- 113m 19s) (196000 32%) 2.4620
+55m 15s (- 113m 3s) (197000 32%) 2.5406
+55m 32s (- 112m 46s) (198000 33%) 2.4553
+55m 50s (- 112m 30s) (199000 33%) 2.5622
+56m 7s (- 112m 14s) (200000 33%) 2.4651
+Epoch 10/30 finished
+56m 26s (- 112m 2s) (201000 33%) 2.2041
+56m 43s (- 111m 46s) (202000 33%) 2.2562
+57m 1s (- 111m 30s) (203000 33%) 2.3798
+57m 18s (- 111m 14s) (204000 34%) 2.2559
+57m 35s (- 110m 58s) (205000 34%) 2.3828
+57m 52s (- 110m 42s) (206000 34%) 2.2744
+58m 10s (- 110m 26s) (207000 34%) 2.3415
+58m 27s (- 110m 9s) (208000 34%) 2.3583
+58m 44s (- 109m 53s) (209000 34%) 2.3116
+59m 1s (- 109m 37s) (210000 35%) 2.4409
+59m 18s (- 109m 20s) (211000 35%) 2.3608
+59m 35s (- 109m 3s) (212000 35%) 2.3905
+59m 52s (- 108m 47s) (213000 35%) 2.3950
+60m 9s (- 108m 30s) (214000 35%) 2.3303
+60m 26s (- 108m 14s) (215000 35%) 2.4461
+60m 43s (- 107m 57s) (216000 36%) 2.3714
+61m 0s (- 107m 41s) (217000 36%) 2.4076
+61m 18s (- 107m 25s) (218000 36%) 2.3934
+61m 35s (- 107m 8s) (219000 36%) 2.4293
+61m 52s (- 106m 52s) (220000 36%) 2.4875
+Epoch 11/30 finished
+62m 11s (- 106m 39s) (221000 36%) 2.0855
+62m 28s (- 106m 23s) (222000 37%) 2.2011
+62m 46s (- 106m 7s) (223000 37%) 2.2024
+63m 3s (- 105m 50s) (224000 37%) 2.1998
+63m 20s (- 105m 34s) (225000 37%) 2.2006
+63m 37s (- 105m 17s) (226000 37%) 2.2812
+63m 55s (- 105m 1s) (227000 37%) 2.2900
+64m 12s (- 104m 45s) (228000 38%) 2.2250
+64m 29s (- 104m 28s) (229000 38%) 2.2914
+64m 46s (- 104m 12s) (230000 38%) 2.2615
+65m 3s (- 103m 55s) (231000 38%) 2.3075
+65m 20s (- 103m 38s) (232000 38%) 2.2651
+65m 37s (- 103m 22s) (233000 38%) 2.3670
+65m 55s (- 103m 6s) (234000 39%) 2.3565
+66m 12s (- 102m 49s) (235000 39%) 2.3103
+66m 29s (- 102m 33s) (236000 39%) 2.4204
+66m 46s (- 102m 16s) (237000 39%) 2.2724
+67m 4s (- 102m 0s) (238000 39%) 2.3560
+67m 21s (- 101m 44s) (239000 39%) 2.3076
+67m 38s (- 101m 27s) (240000 40%) 2.3319
+Epoch 12/30 finished
+67m 57s (- 101m 14s) (241000 40%) 2.1152
+68m 15s (- 100m 58s) (242000 40%) 2.1054
+68m 32s (- 100m 41s) (243000 40%) 2.1708
+68m 49s (- 100m 25s) (244000 40%) 2.1131
+69m 6s (- 100m 8s) (245000 40%) 2.2021
+69m 24s (- 99m 52s) (246000 41%) 2.1763
+69m 41s (- 99m 36s) (247000 41%) 2.1813
+69m 58s (- 99m 19s) (248000 41%) 2.1718
+70m 15s (- 99m 2s) (249000 41%) 2.1345
+70m 33s (- 98m 46s) (250000 41%) 2.1759
+70m 50s (- 98m 29s) (251000 41%) 2.1559
+71m 7s (- 98m 12s) (252000 42%) 2.1320
+71m 24s (- 97m 56s) (253000 42%) 2.2664
+71m 41s (- 97m 39s) (254000 42%) 2.2364
+71m 59s (- 97m 23s) (255000 42%) 2.2358
+72m 16s (- 97m 6s) (256000 42%) 2.2657
+72m 33s (- 96m 50s) (257000 42%) 2.2447
+72m 50s (- 96m 33s) (258000 43%) 2.2714
+73m 8s (- 96m 17s) (259000 43%) 2.3246
+73m 25s (- 96m 1s) (260000 43%) 2.2385
+Epoch 13/30 finished
+73m 44s (- 95m 47s) (261000 43%) 1.9966
+74m 2s (- 95m 31s) (262000 43%) 2.0991
+74m 19s (- 95m 14s) (263000 43%) 2.0856
+74m 36s (- 94m 57s) (264000 44%) 2.0322
+74m 54s (- 94m 41s) (265000 44%) 2.0850
+75m 11s (- 94m 24s) (266000 44%) 2.0043
+75m 28s (- 94m 8s) (267000 44%) 2.1344
+75m 45s (- 93m 51s) (268000 44%) 2.0175
+76m 3s (- 93m 35s) (269000 44%) 2.2045
+76m 20s (- 93m 18s) (270000 45%) 2.1074
+76m 38s (- 93m 2s) (271000 45%) 2.1613
+76m 55s (- 92m 45s) (272000 45%) 2.1565
+77m 12s (- 92m 29s) (273000 45%) 2.1769
+77m 29s (- 92m 12s) (274000 45%) 2.1357
+77m 47s (- 91m 55s) (275000 45%) 2.1693
+78m 4s (- 91m 39s) (276000 46%) 2.2194
+78m 21s (- 91m 22s) (277000 46%) 2.1483
+78m 39s (- 91m 6s) (278000 46%) 2.2468
+78m 56s (- 90m 49s) (279000 46%) 2.1752
+79m 13s (- 90m 32s) (280000 46%) 2.1706
+Epoch 14/30 finished
+79m 32s (- 90m 18s) (281000 46%) 1.8983
+79m 50s (- 90m 2s) (282000 47%) 2.0384
+80m 8s (- 89m 46s) (283000 47%) 1.9913
+80m 25s (- 89m 29s) (284000 47%) 2.0912
+80m 43s (- 89m 12s) (285000 47%) 2.0053
+81m 0s (- 88m 56s) (286000 47%) 2.0236
+81m 17s (- 88m 39s) (287000 47%) 2.0451
+81m 35s (- 88m 23s) (288000 48%) 2.0662
+81m 52s (- 88m 6s) (289000 48%) 2.0080
+82m 9s (- 87m 49s) (290000 48%) 2.0731
+82m 27s (- 87m 33s) (291000 48%) 2.0538
+82m 44s (- 87m 16s) (292000 48%) 2.0835
+83m 1s (- 86m 59s) (293000 48%) 2.1305
+83m 19s (- 86m 43s) (294000 49%) 2.0553
+83m 36s (- 86m 26s) (295000 49%) 2.1704
+83m 53s (- 86m 9s) (296000 49%) 2.0954
+84m 10s (- 85m 52s) (297000 49%) 2.0882
+84m 28s (- 85m 36s) (298000 49%) 2.1439
+84m 45s (- 85m 19s) (299000 49%) 2.1630
+85m 2s (- 85m 2s) (300000 50%) 2.1678
+Epoch 15/30 finished
+85m 22s (- 84m 48s) (301000 50%) 1.8768
+85m 39s (- 84m 31s) (302000 50%) 1.9046
+85m 56s (- 84m 14s) (303000 50%) 1.9413
+86m 14s (- 83m 57s) (304000 50%) 1.9305
+86m 31s (- 83m 41s) (305000 50%) 1.9431
+86m 49s (- 83m 25s) (306000 51%) 2.0772
+87m 6s (- 83m 7s) (307000 51%) 1.9464
+87m 23s (- 82m 51s) (308000 51%) 1.9772
+87m 40s (- 82m 34s) (309000 51%) 2.0661
+87m 58s (- 82m 17s) (310000 51%) 2.0136
+88m 15s (- 82m 1s) (311000 51%) 2.0381
+88m 32s (- 81m 44s) (312000 52%) 1.9389
+88m 50s (- 81m 27s) (313000 52%) 2.0369
+89m 7s (- 81m 11s) (314000 52%) 2.0519
+89m 24s (- 80m 53s) (315000 52%) 1.9997
+89m 42s (- 80m 37s) (316000 52%) 2.1424
+90m 0s (- 80m 21s) (317000 52%) 2.0976
+90m 17s (- 80m 4s) (318000 53%) 2.1013
+90m 35s (- 79m 47s) (319000 53%) 2.0913
+90m 52s (- 79m 30s) (320000 53%) 2.1229
+Epoch 16/30 finished
+91m 11s (- 79m 16s) (321000 53%) 1.8055
+91m 29s (- 78m 59s) (322000 53%) 1.8708
+91m 46s (- 78m 42s) (323000 53%) 1.8626
+92m 4s (- 78m 25s) (324000 54%) 1.9175
+92m 21s (- 78m 8s) (325000 54%) 1.9092
+92m 39s (- 77m 52s) (326000 54%) 1.9295
+92m 56s (- 77m 35s) (327000 54%) 1.9196
+93m 13s (- 77m 18s) (328000 54%) 1.8814
+93m 31s (- 77m 1s) (329000 54%) 1.9981
+93m 48s (- 76m 45s) (330000 55%) 1.9316
+94m 5s (- 76m 28s) (331000 55%) 2.0118
+94m 23s (- 76m 11s) (332000 55%) 1.9749
+94m 40s (- 75m 54s) (333000 55%) 1.9387
+94m 57s (- 75m 37s) (334000 55%) 2.0425
+95m 15s (- 75m 21s) (335000 55%) 2.0877
+95m 32s (- 75m 4s) (336000 56%) 1.9620
+95m 50s (- 74m 47s) (337000 56%) 2.0868
+96m 7s (- 74m 30s) (338000 56%) 2.0162
+96m 24s (- 74m 13s) (339000 56%) 2.0672
+96m 42s (- 73m 56s) (340000 56%) 2.0348
+Epoch 17/30 finished
+97m 1s (- 73m 41s) (341000 56%) 1.7731
+97m 18s (- 73m 24s) (342000 56%) 1.7533
+97m 36s (- 73m 7s) (343000 57%) 1.8655
+97m 53s (- 72m 51s) (344000 57%) 1.8676
+98m 11s (- 72m 34s) (345000 57%) 1.8925
+98m 28s (- 72m 17s) (346000 57%) 1.7836
+98m 46s (- 72m 1s) (347000 57%) 1.9407
+99m 3s (- 71m 44s) (348000 57%) 1.8503
+99m 21s (- 71m 27s) (349000 58%) 1.8493
+99m 38s (- 71m 10s) (350000 58%) 1.9105
+99m 55s (- 70m 53s) (351000 58%) 1.8859
+100m 12s (- 70m 36s) (352000 58%) 1.9519
+100m 30s (- 70m 19s) (353000 58%) 1.9639
+100m 47s (- 70m 2s) (354000 59%) 1.9626
+101m 4s (- 69m 45s) (355000 59%) 2.0236
+101m 22s (- 69m 28s) (356000 59%) 1.9922
+101m 39s (- 69m 11s) (357000 59%) 1.9236
+101m 57s (- 68m 55s) (358000 59%) 2.0115
+102m 14s (- 68m 38s) (359000 59%) 2.0213
+102m 32s (- 68m 21s) (360000 60%) 2.0115
+Epoch 18/30 finished
+102m 51s (- 68m 5s) (361000 60%) 1.7405
+103m 9s (- 67m 49s) (362000 60%) 1.7497
+103m 26s (- 67m 32s) (363000 60%) 1.7960
+103m 44s (- 67m 15s) (364000 60%) 1.8639
+104m 2s (- 66m 58s) (365000 60%) 1.7949
+104m 19s (- 66m 42s) (366000 61%) 1.8671
+104m 37s (- 66m 25s) (367000 61%) 1.9276
+104m 54s (- 66m 8s) (368000 61%) 1.8227
+105m 11s (- 65m 51s) (369000 61%) 1.8559
+105m 29s (- 65m 34s) (370000 61%) 1.8115
+105m 46s (- 65m 17s) (371000 61%) 1.9458
+106m 4s (- 65m 0s) (372000 62%) 1.8678
+106m 21s (- 64m 43s) (373000 62%) 1.8744
+106m 38s (- 64m 26s) (374000 62%) 1.8942
+106m 56s (- 64m 9s) (375000 62%) 1.8975
+107m 13s (- 63m 52s) (376000 62%) 1.9677
+107m 31s (- 63m 35s) (377000 62%) 1.8857
+107m 48s (- 63m 19s) (378000 63%) 1.9568
+108m 6s (- 63m 2s) (379000 63%) 1.9886
+108m 23s (- 62m 45s) (380000 63%) 1.9383
+Epoch 19/30 finished
+108m 42s (- 62m 29s) (381000 63%) 1.6488
+109m 0s (- 62m 12s) (382000 63%) 1.6855
+109m 17s (- 61m 55s) (383000 63%) 1.7018
+109m 35s (- 61m 38s) (384000 64%) 1.8028
+109m 52s (- 61m 21s) (385000 64%) 1.7775
+110m 9s (- 61m 4s) (386000 64%) 1.7548
+110m 26s (- 60m 47s) (387000 64%) 1.7957
+110m 44s (- 60m 30s) (388000 64%) 1.8348
+111m 2s (- 60m 13s) (389000 64%) 1.8218
+111m 19s (- 59m 56s) (390000 65%) 1.8987
+111m 37s (- 59m 39s) (391000 65%) 1.7963
+111m 54s (- 59m 22s) (392000 65%) 1.9442
+112m 12s (- 59m 6s) (393000 65%) 1.8789
+112m 29s (- 58m 49s) (394000 65%) 1.8588
+112m 46s (- 58m 31s) (395000 65%) 1.8667
+113m 4s (- 58m 14s) (396000 66%) 1.8219
+113m 21s (- 57m 57s) (397000 66%) 1.8976
+113m 38s (- 57m 40s) (398000 66%) 1.8276
+113m 56s (- 57m 24s) (399000 66%) 1.9539
+114m 14s (- 57m 7s) (400000 66%) 1.8705
+Epoch 20/30 finished
+114m 33s (- 56m 50s) (401000 66%) 1.6822
+114m 50s (- 56m 33s) (402000 67%) 1.6938
+115m 8s (- 56m 16s) (403000 67%) 1.7210
+115m 25s (- 55m 59s) (404000 67%) 1.7098
+115m 43s (- 55m 43s) (405000 67%) 1.7175
+116m 0s (- 55m 26s) (406000 67%) 1.7581
+116m 18s (- 55m 9s) (407000 67%) 1.7815
+116m 35s (- 54m 52s) (408000 68%) 1.6777
+116m 53s (- 54m 35s) (409000 68%) 1.7669
+117m 10s (- 54m 18s) (410000 68%) 1.8440
+117m 28s (- 54m 1s) (411000 68%) 1.8097
+117m 45s (- 53m 44s) (412000 68%) 1.7904
+118m 2s (- 53m 27s) (413000 68%) 1.8390
+118m 20s (- 53m 10s) (414000 69%) 1.8298
+118m 37s (- 52m 53s) (415000 69%) 1.9287
+118m 55s (- 52m 36s) (416000 69%) 1.8428
+119m 13s (- 52m 19s) (417000 69%) 1.9236
+119m 30s (- 52m 2s) (418000 69%) 1.8925
+119m 48s (- 51m 45s) (419000 69%) 1.8496
+120m 5s (- 51m 28s) (420000 70%) 1.8084
+Epoch 21/30 finished
+120m 24s (- 51m 11s) (421000 70%) 1.6332
+120m 42s (- 50m 54s) (422000 70%) 1.5827
+120m 59s (- 50m 37s) (423000 70%) 1.6703
+121m 17s (- 50m 20s) (424000 70%) 1.6825
+121m 34s (- 50m 3s) (425000 70%) 1.6441
+121m 52s (- 49m 46s) (426000 71%) 1.7490
+122m 9s (- 49m 29s) (427000 71%) 1.7636
+122m 27s (- 49m 12s) (428000 71%) 1.7850
+122m 44s (- 48m 55s) (429000 71%) 1.8535
+123m 2s (- 48m 38s) (430000 71%) 1.7580
+123m 20s (- 48m 21s) (431000 71%) 1.7932
+123m 37s (- 48m 4s) (432000 72%) 1.7532
+123m 54s (- 47m 47s) (433000 72%) 1.7679
+124m 12s (- 47m 30s) (434000 72%) 1.7938
+124m 29s (- 47m 13s) (435000 72%) 1.7929
+124m 47s (- 46m 56s) (436000 72%) 1.8808
+125m 5s (- 46m 39s) (437000 72%) 1.7777
+125m 22s (- 46m 22s) (438000 73%) 1.8229
+125m 40s (- 46m 5s) (439000 73%) 1.9616
+125m 57s (- 45m 48s) (440000 73%) 1.8510
+Epoch 22/30 finished
+126m 17s (- 45m 31s) (441000 73%) 1.6311
+126m 35s (- 45m 14s) (442000 73%) 1.6748
+126m 52s (- 44m 57s) (443000 73%) 1.6354
+127m 10s (- 44m 40s) (444000 74%) 1.6435
+127m 27s (- 44m 23s) (445000 74%) 1.6077
+127m 44s (- 44m 6s) (446000 74%) 1.7559
+128m 2s (- 43m 49s) (447000 74%) 1.6655
+128m 19s (- 43m 32s) (448000 74%) 1.6926
+128m 37s (- 43m 15s) (449000 74%) 1.7067
+128m 54s (- 42m 58s) (450000 75%) 1.6969
+129m 12s (- 42m 41s) (451000 75%) 1.6905
+129m 29s (- 42m 24s) (452000 75%) 1.7273
+129m 47s (- 42m 6s) (453000 75%) 1.7423
+130m 4s (- 41m 49s) (454000 75%) 1.8082
+130m 22s (- 41m 32s) (455000 75%) 1.7874
+130m 39s (- 41m 15s) (456000 76%) 1.8087
+130m 56s (- 40m 58s) (457000 76%) 1.6965
+131m 14s (- 40m 41s) (458000 76%) 1.8136
+131m 31s (- 40m 24s) (459000 76%) 1.8488
+131m 49s (- 40m 7s) (460000 76%) 1.8923
+Epoch 23/30 finished
+132m 8s (- 39m 50s) (461000 76%) 1.5566
+132m 26s (- 39m 33s) (462000 77%) 1.6094
+132m 44s (- 39m 16s) (463000 77%) 1.6375
+133m 1s (- 38m 59s) (464000 77%) 1.6106
+133m 19s (- 38m 42s) (465000 77%) 1.6581
+133m 36s (- 38m 25s) (466000 77%) 1.6814
+133m 54s (- 38m 8s) (467000 77%) 1.6733
+134m 12s (- 37m 51s) (468000 78%) 1.6504
+134m 30s (- 37m 34s) (469000 78%) 1.8400
+134m 47s (- 37m 17s) (470000 78%) 1.7062
+135m 5s (- 36m 59s) (471000 78%) 1.6740
+135m 22s (- 36m 42s) (472000 78%) 1.7167
+135m 40s (- 36m 25s) (473000 78%) 1.7596
+135m 58s (- 36m 8s) (474000 79%) 1.7790
+136m 15s (- 35m 51s) (475000 79%) 1.7047
+136m 32s (- 35m 34s) (476000 79%) 1.8156
+136m 50s (- 35m 17s) (477000 79%) 1.8076
+137m 8s (- 35m 0s) (478000 79%) 1.8095
+137m 25s (- 34m 42s) (479000 79%) 1.7686
+137m 43s (- 34m 25s) (480000 80%) 1.7876
+Epoch 24/30 finished
+138m 2s (- 34m 9s) (481000 80%) 1.5024
+138m 20s (- 33m 52s) (482000 80%) 1.6158
+138m 37s (- 33m 34s) (483000 80%) 1.6012
+138m 55s (- 33m 17s) (484000 80%) 1.5620
+139m 12s (- 33m 0s) (485000 80%) 1.6440
+139m 30s (- 32m 43s) (486000 81%) 1.5964
+139m 47s (- 32m 26s) (487000 81%) 1.6607
+140m 5s (- 32m 9s) (488000 81%) 1.6772
+140m 23s (- 31m 52s) (489000 81%) 1.7637
+140m 40s (- 31m 34s) (490000 81%) 1.7065
+140m 58s (- 31m 17s) (491000 81%) 1.7205
+141m 16s (- 31m 0s) (492000 82%) 1.7074
+141m 33s (- 30m 43s) (493000 82%) 1.7046
+141m 50s (- 30m 26s) (494000 82%) 1.6923
+142m 8s (- 30m 9s) (495000 82%) 1.6577
+142m 25s (- 29m 51s) (496000 82%) 1.7258
+142m 43s (- 29m 34s) (497000 82%) 1.7495
+143m 1s (- 29m 17s) (498000 83%) 1.8115
+143m 18s (- 29m 0s) (499000 83%) 1.7771
+143m 36s (- 28m 43s) (500000 83%) 1.7120
+Epoch 25/30 finished
+143m 55s (- 28m 26s) (501000 83%) 1.5148
+144m 13s (- 28m 9s) (502000 83%) 1.5379
+144m 30s (- 27m 52s) (503000 83%) 1.5595
+144m 48s (- 27m 34s) (504000 84%) 1.6521
+145m 6s (- 27m 17s) (505000 84%) 1.6232
+145m 23s (- 27m 0s) (506000 84%) 1.5656
+145m 41s (- 26m 43s) (507000 84%) 1.6951
+145m 58s (- 26m 26s) (508000 84%) 1.5989
+146m 16s (- 26m 9s) (509000 84%) 1.6218
+146m 34s (- 25m 51s) (510000 85%) 1.6084
+146m 51s (- 25m 34s) (511000 85%) 1.6591
+147m 8s (- 25m 17s) (512000 85%) 1.6269
+147m 26s (- 25m 0s) (513000 85%) 1.7138
+147m 43s (- 24m 43s) (514000 85%) 1.6761
+148m 1s (- 24m 25s) (515000 85%) 1.7113
+148m 18s (- 24m 8s) (516000 86%) 1.6913
+148m 36s (- 23m 51s) (517000 86%) 1.7184
+148m 53s (- 23m 34s) (518000 86%) 1.6791
+149m 11s (- 23m 17s) (519000 86%) 1.8237
+149m 29s (- 22m 59s) (520000 86%) 1.8478
+Epoch 26/30 finished
+149m 48s (- 22m 42s) (521000 86%) 1.4776
+150m 6s (- 22m 25s) (522000 87%) 1.5199
+150m 23s (- 22m 8s) (523000 87%) 1.4779
+150m 41s (- 21m 51s) (524000 87%) 1.6454
+150m 59s (- 21m 34s) (525000 87%) 1.5756
+151m 16s (- 21m 16s) (526000 87%) 1.5902
+151m 33s (- 20m 59s) (527000 87%) 1.6505
+151m 51s (- 20m 42s) (528000 88%) 1.6535
+152m 9s (- 20m 25s) (529000 88%) 1.5428
+152m 26s (- 20m 8s) (530000 88%) 1.6029
+152m 44s (- 19m 50s) (531000 88%) 1.5989
+153m 2s (- 19m 33s) (532000 88%) 1.6372
+153m 19s (- 19m 16s) (533000 88%) 1.7351
+153m 37s (- 18m 59s) (534000 89%) 1.7143
+153m 54s (- 18m 42s) (535000 89%) 1.7445
+154m 12s (- 18m 24s) (536000 89%) 1.6239
+154m 30s (- 18m 7s) (537000 89%) 1.7099
+154m 47s (- 17m 50s) (538000 89%) 1.6827
+155m 5s (- 17m 33s) (539000 89%) 1.6503
+155m 22s (- 17m 15s) (540000 90%) 1.6567
+Epoch 27/30 finished
+155m 42s (- 16m 58s) (541000 90%) 1.5245
+155m 59s (- 16m 41s) (542000 90%) 1.4721
+156m 17s (- 16m 24s) (543000 90%) 1.5836
+156m 35s (- 16m 7s) (544000 90%) 1.6655
+156m 52s (- 15m 49s) (545000 90%) 1.4901
+157m 10s (- 15m 32s) (546000 91%) 1.5933
+157m 27s (- 15m 15s) (547000 91%) 1.5664
+157m 45s (- 14m 58s) (548000 91%) 1.6118
+158m 3s (- 14m 40s) (549000 91%) 1.5003
+158m 20s (- 14m 23s) (550000 91%) 1.6153
+158m 38s (- 14m 6s) (551000 91%) 1.6601
+158m 55s (- 13m 49s) (552000 92%) 1.5491
+159m 12s (- 13m 31s) (553000 92%) 1.5838
+159m 30s (- 13m 14s) (554000 92%) 1.6927
+159m 48s (- 12m 57s) (555000 92%) 1.6413
+160m 5s (- 12m 40s) (556000 92%) 1.6348
+160m 23s (- 12m 22s) (557000 92%) 1.7350
+160m 40s (- 12m 5s) (558000 93%) 1.7071
+160m 58s (- 11m 48s) (559000 93%) 1.5839
+161m 15s (- 11m 31s) (560000 93%) 1.6670
+Epoch 28/30 finished
+161m 34s (- 11m 13s) (561000 93%) 1.3735
+161m 51s (- 10m 56s) (562000 93%) 1.4700
+162m 9s (- 10m 39s) (563000 93%) 1.4906
+162m 27s (- 10m 22s) (564000 94%) 1.5343
+162m 44s (- 10m 4s) (565000 94%) 1.5663
+163m 2s (- 9m 47s) (566000 94%) 1.5341
+163m 19s (- 9m 30s) (567000 94%) 1.5029
+163m 37s (- 9m 13s) (568000 94%) 1.5532
+163m 55s (- 8m 55s) (569000 94%) 1.5885
+164m 12s (- 8m 38s) (570000 95%) 1.6263
+164m 30s (- 8m 21s) (571000 95%) 1.7654
+164m 48s (- 8m 4s) (572000 95%) 1.5907
+165m 6s (- 7m 46s) (573000 95%) 1.5836
+165m 23s (- 7m 29s) (574000 95%) 1.6363
+165m 41s (- 7m 12s) (575000 95%) 1.5886
+165m 58s (- 6m 54s) (576000 96%) 1.6820
+166m 16s (- 6m 37s) (577000 96%) 1.6569
+166m 33s (- 6m 20s) (578000 96%) 1.5858
+166m 51s (- 6m 3s) (579000 96%) 1.6589
+167m 8s (- 5m 45s) (580000 96%) 1.7382
+Epoch 29/30 finished
+167m 28s (- 5m 28s) (581000 96%) 1.4522
+167m 46s (- 5m 11s) (582000 97%) 1.4174
+168m 4s (- 4m 54s) (583000 97%) 1.5218
+168m 21s (- 4m 36s) (584000 97%) 1.5001
+168m 39s (- 4m 19s) (585000 97%) 1.5315
+168m 57s (- 4m 2s) (586000 97%) 1.4868
+169m 14s (- 3m 44s) (587000 97%) 1.5645
+169m 32s (- 3m 27s) (588000 98%) 1.5434
+169m 50s (- 3m 10s) (589000 98%) 1.5834
+170m 7s (- 2m 53s) (590000 98%) 1.5792
+170m 25s (- 2m 35s) (591000 98%) 1.5135
+170m 42s (- 2m 18s) (592000 98%) 1.5831
+171m 0s (- 2m 1s) (593000 98%) 1.6383
+171m 18s (- 1m 43s) (594000 99%) 1.5748
+171m 35s (- 1m 26s) (595000 99%) 1.5891
+171m 53s (- 1m 9s) (596000 99%) 1.6130
+172m 11s (- 0m 51s) (597000 99%) 1.6121
+172m 28s (- 0m 34s) (598000 99%) 1.6940
+172m 46s (- 0m 17s) (599000 99%) 1.7382
+173m 3s (- 0m 0s) (600000 100%) 1.6383
+Epoch 30/30 finished
+Evaluate randomly on training sentences:
+> ['you', 'were', 'terrified', 'weren', 't', 'you', '?', 'you were', 'were terrified', 'terrified weren', 'weren t', 't you', 'you ?']
+= tu etais terrifie n est ce pas ?
+< vous etiez terrifie n est ce pas ? <EOS>
+
+> ['there', 's', 'nothing', 'wrong', 'with', 'that', 'either', '.', 'there s', 's nothing', 'nothing wrong', 'wrong with', 'with that', 'that either', 'either .']
+= il n y a rien de mal a cela non plus .
+< il ne sait pas ce qui ne . <EOS>
+
+> ['give', 'it', 'to', 'me', 'please', '.', 'give it', 'it to', 'to me', 'me please', 'please .']
+= donnez moi cela je vous prie .
+< donnez moi moi a moi . <EOS>
+
+> ['there', 'is', 'so', 'much', 'to', 'do', 'and', 'only', 'a', 'lifetime', 'to', 'do', 'it', '.', 'there is', 'is so', 'so much', 'much to', 'to do', 'do and', 'and only', 'only a', 'a lifetime', 'lifetime to', 'to do', 'do it', 'it .']
+= il y a tant a faire et seulement la duree d une vie pour le faire .
+< il y essaye faire a faire pres de faire pres de faire a faire de la vie a de la vie . <EOS>
+
+> ['taking', 'all', 'things', 'into', 'consideration', 'i', 'have', 'made', 'up', 'my', 'mind', 'to', 'give', 'up', 'the', 'idea', '.', 'taking all', 'all things', 'things into', 'into consideration', 'consideration i', 'i have', 'have made', 'made up', 'up my', 'my mind', 'mind to', 'to give', 'give up', 'up the', 'the idea', 'idea .']
+= en prenant tous les facteurs en consideration j ai decide d abandonner cette idee .
+< tout prenant mes j ai mis a la hurler commencer . <EOS>
+
+> ['almost', 'a', 'third', 'of', 'the', 'gunshot', 'victims', 'were', 'teenagers', '.', 'almost a', 'a third', 'third of', 'of the', 'the gunshot', 'gunshot victims', 'victims were', 'were teenagers', 'teenagers .']
+= presque un tiers des victimes de la fusillade etaient des adolescents .
+< presque un tiers du victimes . <EOS>
+
+> ['i', 'refuse', 'to', 'accept', 'that', '.', 'i refuse', 'refuse to', 'to accept', 'accept that', 'that .']
+= je refuse de l accepter .
+< je refuse de l accepter . <EOS>
+
+> ['you', 'can', 'get', 'a', 'car', 'license', 'after', 'you', 'turn', 'eighteen', '.', 'you can', 'can get', 'get a', 'a car', 'car license', 'license after', 'after you', 'you turn', 'turn eighteen', 'eighteen .']
+= on peut obtenir un permis de conduire apres avoir eu dix huit ans .
+< on voiture ne pouvez dix dix dollars . <EOS>
+
+> ['she', 'filled', 'the', 'vase', 'with', 'water', '.', 'she filled', 'filled the', 'the vase', 'vase with', 'with water', 'water .']
+= elle emplit le vase d eau .
+< elle emplit le vase d eau . <EOS>
+
+> ['it', 'won', 't', 'be', 'hard', '.', 'it won', 'won t', 't be', 'be hard', 'hard .']
+= ce ne sera pas dur .
+< ce ne sera pas dur . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['ask', 'anyone', '.', 'ask anyone', 'anyone .']
+= demande a n importe qui .
+< tom a a . <EOS>
+
+> ['how', 'did', 'you', 'get', 'into', 'the', 'house', '?', 'how did', 'did you', 'you get', 'get into', 'into the', 'the house', 'house ?']
+= comment as tu penetre dans la maison ?
+< comment es tu reste la maison dans la maison ? <EOS>
+
+> ['tom', 'says', 'he', 'll', 'only', 'speak', 'to', 'mary', '.', 'tom says', 'says he', 'he ll', 'll only', 'only speak', 'speak to', 'to mary', 'mary .']
+= tom dit qu il ne parlera qu a mary uniquement .
+< tom fit mary mary mary a mary mary a mary mary a mary . a mary . mary . <EOS>
+
+> ['let', 's', 'go', 'to', 'eat', 'together', '.', 'let s', 's go', 'go to', 'to eat', 'eat together', 'together .']
+= allons manger ensemble .
+< allons allons du a manger . <EOS>
+
+> ['we', 're', 'meant', 'for', 'each', 'other', '.', 'we re', 're meant', 'meant for', 'for each', 'each other', 'other .']
+= nous sommes faits l un pour l autre .
+< nous le passe partie partie . <EOS>
+
+> ['i', 'don', 't', 'know', 'why', 'you', 're', 'all', 'so', 'jumpy', '.', 'i don', 'don t', 't know', 'know why', 'why you', 'you re', 're all', 'all so', 'so jumpy', 'jumpy .']
+= j ignore pourquoi vous etes tous tellement agites .
+< pourquoi ignore pourquoi vous etes deja dire que vous etiez . <EOS>
+
+> ['it', 's', 'not', 'cheap', 'to', 'eat', 'here', '.', 'it s', 's not', 'not cheap', 'cheap to', 'to eat', 'eat here', 'here .']
+= manger ici n est pas bon marche .
+< elle n est pas du retenir ici . <EOS>
+
+> ['you', 're', 'wasting', 'both', 'of', 'our', 'time', '.', 'you re', 're wasting', 'wasting both', 'both of', 'of our', 'our time', 'time .']
+= tu gaspilles notre temps a tous les deux .
+< tu nos nos nouvelle deux . <EOS>
+
+> ['tom', 'is', 'a', 'bit', 'short', 'for', 'his', 'age', '.', 'tom is', 'is a', 'a bit', 'bit short', 'short for', 'for his', 'his age', 'age .']
+= tom est legerement petit pour son age .
+< tom a une photo pour le . <EOS>
+
+> ['i', 'eat', 'alone', '.', 'i eat', 'eat alone', 'alone .']
+= je mange seule .
+< j ai faire d . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2286
+score for short sentnces (length <= 6):
+ROUGE1: 0.27243927314901034
+ROUGE2: 0.1863618676093256
+BLEU: 0.2409660282363681
+BLEU_CLIP: 0.21518680114480543
+
+Num of long sentences (length > 6): 2714
+score for long sentnces (length > 6):
+ROUGE1: 0.25017152338806437
+ROUGE2: 0.16510929523590015
+BLEU: 0.18685754216822992
+BLEU_CLIP: 0.1322781233720507
+
+Overall:
+ROUGE1: 0.2603523385787688
+ROUGE2: 0.17482597132503028
+BLEU: 0.2115959419985827
+BLEU_CLIP: 0.17018397084975417
+
+Finished
+
