@@ -1,0 +1,2493 @@
+hpc mode: True
+order: 3
+mode: sum
+metric: MULTI
+hidden-size: 256
+n-epochs: 30
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Ngram Vocab Size: 117819
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .']
+= elle est bien venue ici .
+< magnetique magnetique magnetique echeance echeance foudre consentement natif veuille concentrees absence risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .']
+= ce fut assez amusant .
+< amputer amputer concentre amputer baisse baisse timbre devenait alimentaires aupres abandonnerais ecoutiez disque recommencer receptionnees tempete concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .']
+= elles proviennent du meme pays .
+< tueront lampe lampe lampe jean jean jean lampe jean largue largue instant instant decevez aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .']
+= je n avais pas fini de lire ce livre .
+< allure ecrasante navette navette navette espion espion espion realisera embaucher embaucher egare agence devenait risques recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .']
+= je ne suis pas encore pret .
+< donnes donnes donnes donnes donnes compte coiffer lundis feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .']
+= on ne devrait pas confondre la solitude et l isolation . ce sont deux choses differentes .
+< prevois laisse laisse laisse laisse laisse tirer tirer tirer tirer voyagea voyagea voyagea voyagea voyagea voyagea sommes dote aupres consentement risques deviennent fusible annules apparemment ecoutiez enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .']
+= je ne sais pas ce que c est .
+< verifier deviennent retournait deciderai deciderai descendez continue fusible fusible aeroport sourirent doit glisser aupres consentement fixer concentrees reservons concentrees fatiguer droite fusible fusible vigilant portier cours attentes decevez aupres charades faisant fusible aeroport librement cependant fusible fusible vigilant basses parlera instantanees abandonnerais plia plaide declenche intriguee ascenseur oublier oublier risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?']
+= rentres tu chez toi en bus ?
+< repondis repondis repondis repondis repondis renommee repondis pouvoir absolument performance delibere risques basses recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .']
+= il est intelligent .
+< decidees centieme centieme centieme apprennent centieme opportunites instant devenait concentrees risques digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .']
+= vous etes tellement impatientes .
+< sous coince coince jete touchee chute naturelles absence digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .']
+= l equipement et les uniformes sont fournis aux membres des equipes .
+< elegantes onu mettait flanque flanque flanque flanque flanque flanque flanque flanque surprit utilise couteaux apercu recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .']
+= maintenant que mon frere est etudiant a l universite il doit beaucoup lire .
+< reveilleras respirer clonage clonage escargots escargots escargots escargots escargots escargots respirer viendras babysitter viendras babysitter viendras babysitter viendras blagues absence decouvre absence digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .']
+= ils se sont amuses avec nous .
+< fetes chemises chemises fetes fetes fetes fetes prevoit chemises absence stricto digeree aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?']
+= quiconque connait il le japonais ?
+< echecs echecs egare egare echecs egare echecs faisant voisine fixer concentrees reservons concentrees fatiguer droite etudiait chauves fusible fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .']
+= il a vraiment failli se faire renverser .
+< touchiez regardee regardee dedans regardee entrer entrer amusez prouve fetes concentrees fatiguer grenade receptionnees interrupteur occupera corail risques basses impose oublie tempete songer receptionnees oublie aupres abandonnerais largue trompette deviennent carbone carbone feriez embaucher embaucher egare concerne devenait concentrees seduisant recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?']
+= quand avez vous ete dans une galerie d art pour la derniere fois ?
+< parviendront laisse laisse laisse laisse laisse caches caches caches assouplies voisine voisine douter recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .']
+= sa maison a ete vendue pour . .
+< fatiguent assassine clandestinite festivites festivites laisse flic flic flic manipulee reservons concentrees reservons fatiguer droite declenche occupera incendie fusible fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .']
+= je ne suis pas fou .
+< dansames perfectionniste perfectionniste longtemps longtemps medicaments etres faisant oublie proche occasionnellement aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .']
+= je pensais que vous seriez beaucoup plus gros .
+< prevois prevois comprehension comprehension comprehension comprehension blagues blagues blagues blagues absence debutant postuler competition competition ecoutiez deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .']
+= ils s ennuient .
+< serviette augmentait entrer tandis extirper lentilles lentilles risques agriculture receptionnees lentilles commentaire recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique
+
+0m 16s (- 167m 48s) (1000 0%) 5.5207
+0m 32s (- 159m 55s) (2000 0%) 4.8954
+0m 47s (- 156m 55s) (3000 0%) 4.6700
+1m 2s (- 155m 59s) (4000 0%) 4.6780
+1m 18s (- 155m 20s) (5000 0%) 4.5042
+1m 34s (- 155m 7s) (6000 1%) 4.6030
+1m 50s (- 155m 26s) (7000 1%) 4.5144
+2m 6s (- 155m 26s) (8000 1%) 4.4479
+2m 22s (- 155m 45s) (9000 1%) 4.5132
+2m 38s (- 155m 41s) (10000 1%) 4.4056
+2m 54s (- 155m 35s) (11000 1%) 4.3892
+3m 10s (- 155m 30s) (12000 2%) 4.3358
+3m 26s (- 155m 26s) (13000 2%) 4.3385
+3m 42s (- 155m 31s) (14000 2%) 4.3831
+3m 59s (- 155m 30s) (15000 2%) 4.3088
+4m 15s (- 155m 18s) (16000 2%) 4.3320
+4m 31s (- 155m 12s) (17000 2%) 4.2848
+4m 47s (- 155m 4s) (18000 3%) 4.2177
+5m 4s (- 154m 56s) (19000 3%) 4.2466
+5m 20s (- 154m 51s) (20000 3%) 4.2216
+Epoch 1/30 finished
+5m 38s (- 155m 44s) (21000 3%) 4.0728
+5m 55s (- 155m 29s) (22000 3%) 4.0456
+6m 11s (- 155m 28s) (23000 3%) 4.0792
+6m 28s (- 155m 13s) (24000 4%) 4.0266
+6m 44s (- 155m 3s) (25000 4%) 3.9748
+7m 1s (- 154m 56s) (26000 4%) 4.0475
+7m 17s (- 154m 44s) (27000 4%) 3.9981
+7m 33s (- 154m 30s) (28000 4%) 3.9945
+7m 50s (- 154m 18s) (29000 4%) 3.9549
+8m 6s (- 154m 9s) (30000 5%) 3.9492
+8m 23s (- 153m 54s) (31000 5%) 3.9587
+8m 39s (- 153m 43s) (32000 5%) 3.9861
+8m 56s (- 153m 33s) (33000 5%) 3.9538
+9m 12s (- 153m 19s) (34000 5%) 3.9076
+9m 29s (- 153m 9s) (35000 5%) 3.9697
+9m 45s (- 152m 54s) (36000 6%) 4.0123
+10m 1s (- 152m 39s) (37000 6%) 3.9163
+10m 18s (- 152m 25s) (38000 6%) 3.8708
+10m 34s (- 152m 12s) (39000 6%) 3.8711
+10m 51s (- 151m 57s) (40000 6%) 3.9092
+Epoch 2/30 finished
+11m 9s (- 152m 9s) (41000 6%) 3.7082
+11m 25s (- 151m 53s) (42000 7%) 3.6575
+11m 42s (- 151m 40s) (43000 7%) 3.6427
+11m 59s (- 151m 27s) (44000 7%) 3.6954
+12m 15s (- 151m 9s) (45000 7%) 3.6770
+12m 32s (- 150m 57s) (46000 7%) 3.7297
+12m 48s (- 150m 40s) (47000 7%) 3.7068
+13m 4s (- 150m 27s) (48000 8%) 3.6987
+13m 21s (- 150m 16s) (49000 8%) 3.7015
+13m 38s (- 150m 3s) (50000 8%) 3.6236
+13m 54s (- 149m 44s) (51000 8%) 3.6635
+14m 11s (- 149m 34s) (52000 8%) 3.7083
+14m 28s (- 149m 19s) (53000 8%) 3.6907
+14m 44s (- 149m 4s) (54000 9%) 3.6518
+15m 1s (- 148m 54s) (55000 9%) 3.7411
+15m 18s (- 148m 40s) (56000 9%) 3.6456
+15m 34s (- 148m 25s) (57000 9%) 3.6741
+15m 51s (- 148m 13s) (58000 9%) 3.6846
+16m 8s (- 147m 59s) (59000 9%) 3.6758
+16m 24s (- 147m 44s) (60000 10%) 3.6971
+Epoch 3/30 finished
+16m 43s (- 147m 46s) (61000 10%) 3.4344
+17m 0s (- 147m 32s) (62000 10%) 3.4145
+17m 16s (- 147m 18s) (63000 10%) 3.4229
+17m 33s (- 147m 5s) (64000 10%) 3.4420
+17m 50s (- 146m 49s) (65000 10%) 3.4175
+18m 7s (- 146m 35s) (66000 11%) 3.4467
+18m 23s (- 146m 22s) (67000 11%) 3.4437
+18m 40s (- 146m 7s) (68000 11%) 3.4059
+18m 57s (- 145m 52s) (69000 11%) 3.4677
+19m 14s (- 145m 40s) (70000 11%) 3.4392
+19m 30s (- 145m 23s) (71000 11%) 3.4318
+19m 47s (- 145m 6s) (72000 12%) 3.3784
+20m 4s (- 144m 52s) (73000 12%) 3.4317
+20m 20s (- 144m 36s) (74000 12%) 3.4460
+20m 37s (- 144m 21s) (75000 12%) 3.4329
+20m 53s (- 144m 4s) (76000 12%) 3.3770
+21m 10s (- 143m 49s) (77000 12%) 3.4453
+21m 27s (- 143m 33s) (78000 13%) 3.5085
+21m 43s (- 143m 17s) (79000 13%) 3.4763
+22m 0s (- 143m 4s) (80000 13%) 3.5450
+Epoch 4/30 finished
+22m 19s (- 143m 1s) (81000 13%) 3.1453
+22m 36s (- 142m 47s) (82000 13%) 3.2089
+22m 52s (- 142m 31s) (83000 13%) 3.2087
+23m 9s (- 142m 18s) (84000 14%) 3.2131
+23m 27s (- 142m 5s) (85000 14%) 3.2145
+23m 43s (- 141m 48s) (86000 14%) 3.2009
+24m 0s (- 141m 32s) (87000 14%) 3.1487
+24m 17s (- 141m 17s) (88000 14%) 3.3389
+24m 33s (- 141m 1s) (89000 14%) 3.2048
+24m 50s (- 140m 46s) (90000 15%) 3.2850
+25m 7s (- 140m 33s) (91000 15%) 3.3200
+25m 24s (- 140m 19s) (92000 15%) 3.2961
+25m 41s (- 140m 4s) (93000 15%) 3.2788
+25m 58s (- 139m 47s) (94000 15%) 3.2567
+26m 14s (- 139m 32s) (95000 15%) 3.3439
+26m 31s (- 139m 17s) (96000 16%) 3.2646
+26m 48s (- 139m 2s) (97000 16%) 3.2877
+27m 5s (- 138m 46s) (98000 16%) 3.1984
+27m 22s (- 138m 30s) (99000 16%) 3.2580
+27m 39s (- 138m 16s) (100000 16%) 3.3079
+Epoch 5/30 finished
+27m 58s (- 138m 12s) (101000 16%) 2.9312
+28m 15s (- 137m 56s) (102000 17%) 2.9878
+28m 32s (- 137m 42s) (103000 17%) 3.0144
+28m 49s (- 137m 27s) (104000 17%) 3.0634
+29m 6s (- 137m 11s) (105000 17%) 3.1093
+29m 22s (- 136m 55s) (106000 17%) 3.0121
+29m 39s (- 136m 40s) (107000 17%) 3.1336
+29m 56s (- 136m 24s) (108000 18%) 3.0532
+30m 13s (- 136m 8s) (109000 18%) 3.1428
+30m 30s (- 135m 52s) (110000 18%) 3.0647
+30m 47s (- 135m 38s) (111000 18%) 3.1625
+31m 4s (- 135m 22s) (112000 18%) 3.1380
+31m 21s (- 135m 7s) (113000 18%) 3.1210
+31m 38s (- 134m 53s) (114000 19%) 3.1070
+31m 55s (- 134m 37s) (115000 19%) 3.1773
+32m 12s (- 134m 21s) (116000 19%) 3.0611
+32m 28s (- 134m 5s) (117000 19%) 3.0967
+32m 45s (- 133m 48s) (118000 19%) 3.1053
+33m 2s (- 133m 32s) (119000 19%) 3.1702
+33m 19s (- 133m 16s) (120000 20%) 3.1809
+Epoch 6/30 finished
+33m 38s (- 133m 9s) (121000 20%) 2.7981
+33m 55s (- 132m 53s) (122000 20%) 2.9064
+34m 11s (- 132m 37s) (123000 20%) 2.8254
+34m 28s (- 132m 21s) (124000 20%) 2.9204
+34m 46s (- 132m 6s) (125000 20%) 2.8995
+35m 3s (- 131m 51s) (126000 21%) 2.9448
+35m 20s (- 131m 35s) (127000 21%) 2.9070
+35m 37s (- 131m 20s) (128000 21%) 3.0482
+35m 54s (- 131m 5s) (129000 21%) 2.9619
+36m 11s (- 130m 49s) (130000 21%) 2.9567
+36m 28s (- 130m 34s) (131000 21%) 2.9617
+36m 45s (- 130m 18s) (132000 22%) 2.9370
+37m 2s (- 130m 2s) (133000 22%) 2.9021
+37m 18s (- 129m 46s) (134000 22%) 2.9414
+37m 35s (- 129m 30s) (135000 22%) 2.9618
+37m 53s (- 129m 15s) (136000 22%) 3.0547
+38m 9s (- 128m 59s) (137000 22%) 3.0222
+38m 26s (- 128m 42s) (138000 23%) 2.9589
+38m 44s (- 128m 27s) (139000 23%) 3.0263
+39m 1s (- 128m 12s) (140000 23%) 3.0311
+Epoch 7/30 finished
+39m 20s (- 128m 3s) (141000 23%) 2.6484
+39m 37s (- 127m 47s) (142000 23%) 2.7544
+39m 54s (- 127m 32s) (143000 23%) 2.7682
+40m 11s (- 127m 16s) (144000 24%) 2.7532
+40m 28s (- 127m 0s) (145000 24%) 2.8172
+40m 45s (- 126m 45s) (146000 24%) 2.8627
+41m 2s (- 126m 29s) (147000 24%) 2.8116
+41m 19s (- 126m 13s) (148000 24%) 2.7614
+41m 36s (- 125m 56s) (149000 24%) 2.7985
+41m 53s (- 125m 40s) (150000 25%) 2.8186
+42m 10s (- 125m 25s) (151000 25%) 2.8977
+42m 27s (- 125m 8s) (152000 25%) 2.8123
+42m 44s (- 124m 52s) (153000 25%) 2.8700
+43m 1s (- 124m 36s) (154000 25%) 2.8495
+43m 18s (- 124m 20s) (155000 25%) 2.8510
+43m 35s (- 124m 4s) (156000 26%) 2.8962
+43m 52s (- 123m 48s) (157000 26%) 2.8708
+44m 9s (- 123m 31s) (158000 26%) 2.7782
+44m 26s (- 123m 16s) (159000 26%) 2.9415
+44m 43s (- 123m 0s) (160000 26%) 2.9521
+Epoch 8/30 finished
+45m 2s (- 122m 49s) (161000 26%) 2.5715
+45m 19s (- 122m 33s) (162000 27%) 2.6447
+45m 36s (- 122m 17s) (163000 27%) 2.6307
+45m 54s (- 122m 1s) (164000 27%) 2.6629
+46m 11s (- 121m 45s) (165000 27%) 2.6842
+46m 28s (- 121m 30s) (166000 27%) 2.6638
+46m 45s (- 121m 15s) (167000 27%) 2.7441
+47m 2s (- 120m 58s) (168000 28%) 2.6319
+47m 19s (- 120m 42s) (169000 28%) 2.7187
+47m 36s (- 120m 26s) (170000 28%) 2.7715
+47m 54s (- 120m 10s) (171000 28%) 2.8062
+48m 10s (- 119m 53s) (172000 28%) 2.7026
+48m 27s (- 119m 37s) (173000 28%) 2.6934
+48m 45s (- 119m 21s) (174000 28%) 2.7476
+49m 2s (- 119m 5s) (175000 29%) 2.7285
+49m 19s (- 118m 48s) (176000 29%) 2.7971
+49m 36s (- 118m 32s) (177000 29%) 2.7614
+49m 53s (- 118m 16s) (178000 29%) 2.7537
+50m 10s (- 117m 59s) (179000 29%) 2.8148
+50m 27s (- 117m 43s) (180000 30%) 2.7725
+Epoch 9/30 finished
+50m 46s (- 117m 31s) (181000 30%) 2.5237
+51m 3s (- 117m 15s) (182000 30%) 2.5688
+51m 20s (- 116m 59s) (183000 30%) 2.4942
+51m 37s (- 116m 42s) (184000 30%) 2.5311
+51m 54s (- 116m 26s) (185000 30%) 2.5610
+52m 11s (- 116m 10s) (186000 31%) 2.6231
+52m 28s (- 115m 54s) (187000 31%) 2.6545
+52m 46s (- 115m 38s) (188000 31%) 2.5633
+53m 2s (- 115m 21s) (189000 31%) 2.5596
+53m 20s (- 115m 5s) (190000 31%) 2.6156
+53m 37s (- 114m 49s) (191000 31%) 2.6329
+53m 54s (- 114m 33s) (192000 32%) 2.6869
+54m 11s (- 114m 17s) (193000 32%) 2.7013
+54m 28s (- 114m 1s) (194000 32%) 2.6011
+54m 45s (- 113m 44s) (195000 32%) 2.6977
+55m 3s (- 113m 28s) (196000 32%) 2.6545
+55m 20s (- 113m 12s) (197000 32%) 2.7151
+55m 37s (- 112m 56s) (198000 33%) 2.6220
+55m 54s (- 112m 40s) (199000 33%) 2.7311
+56m 12s (- 112m 24s) (200000 33%) 2.6250
+Epoch 10/30 finished
+56m 31s (- 112m 11s) (201000 33%) 2.3412
+56m 48s (- 111m 55s) (202000 33%) 2.4577
+57m 6s (- 111m 40s) (203000 33%) 2.5806
+57m 23s (- 111m 24s) (204000 34%) 2.4439
+57m 40s (- 111m 8s) (205000 34%) 2.5502
+57m 58s (- 110m 52s) (206000 34%) 2.4582
+58m 15s (- 110m 35s) (207000 34%) 2.4875
+58m 32s (- 110m 19s) (208000 34%) 2.4878
+58m 49s (- 110m 2s) (209000 34%) 2.5253
+59m 6s (- 109m 46s) (210000 35%) 2.5941
+59m 23s (- 109m 30s) (211000 35%) 2.5946
+59m 40s (- 109m 13s) (212000 35%) 2.5743
+59m 58s (- 108m 57s) (213000 35%) 2.5789
+60m 15s (- 108m 40s) (214000 35%) 2.4967
+60m 32s (- 108m 24s) (215000 35%) 2.5910
+60m 49s (- 108m 7s) (216000 36%) 2.5457
+61m 6s (- 107m 51s) (217000 36%) 2.5714
+61m 23s (- 107m 34s) (218000 36%) 2.5314
+61m 40s (- 107m 18s) (219000 36%) 2.5736
+61m 57s (- 107m 1s) (220000 36%) 2.6589
+Epoch 11/30 finished
+62m 17s (- 106m 48s) (221000 36%) 2.3014
+62m 34s (- 106m 32s) (222000 37%) 2.4038
+62m 51s (- 106m 16s) (223000 37%) 2.3655
+63m 8s (- 105m 59s) (224000 37%) 2.3850
+63m 25s (- 105m 43s) (225000 37%) 2.3343
+63m 43s (- 105m 26s) (226000 37%) 2.4169
+64m 0s (- 105m 10s) (227000 37%) 2.4500
+64m 17s (- 104m 53s) (228000 38%) 2.4515
+64m 34s (- 104m 37s) (229000 38%) 2.4535
+64m 52s (- 104m 21s) (230000 38%) 2.3729
+65m 9s (- 104m 4s) (231000 38%) 2.4177
+65m 26s (- 103m 47s) (232000 38%) 2.4415
+65m 43s (- 103m 31s) (233000 38%) 2.5085
+66m 0s (- 103m 14s) (234000 39%) 2.5130
+66m 17s (- 102m 58s) (235000 39%) 2.4867
+66m 35s (- 102m 42s) (236000 39%) 2.5965
+66m 52s (- 102m 25s) (237000 39%) 2.4398
+67m 9s (- 102m 9s) (238000 39%) 2.5139
+67m 27s (- 101m 53s) (239000 39%) 2.4900
+67m 44s (- 101m 36s) (240000 40%) 2.4955
+Epoch 12/30 finished
+68m 3s (- 101m 22s) (241000 40%) 2.2852
+68m 20s (- 101m 6s) (242000 40%) 2.2949
+68m 38s (- 100m 50s) (243000 40%) 2.3552
+68m 55s (- 100m 33s) (244000 40%) 2.3225
+69m 12s (- 100m 17s) (245000 40%) 2.3510
+69m 30s (- 100m 0s) (246000 41%) 2.3538
+69m 47s (- 99m 44s) (247000 41%) 2.3925
+70m 4s (- 99m 27s) (248000 41%) 2.3021
+70m 21s (- 99m 11s) (249000 41%) 2.2671
+70m 38s (- 98m 54s) (250000 41%) 2.3500
+70m 55s (- 98m 37s) (251000 41%) 2.3034
+71m 13s (- 98m 20s) (252000 42%) 2.3688
+71m 30s (- 98m 4s) (253000 42%) 2.4726
+71m 47s (- 97m 47s) (254000 42%) 2.4033
+72m 4s (- 97m 31s) (255000 42%) 2.4391
+72m 21s (- 97m 14s) (256000 42%) 2.4585
+72m 39s (- 96m 57s) (257000 42%) 2.4309
+72m 56s (- 96m 41s) (258000 43%) 2.4418
+73m 13s (- 96m 25s) (259000 43%) 2.5404
+73m 31s (- 96m 8s) (260000 43%) 2.4215
+Epoch 13/30 finished
+73m 50s (- 95m 54s) (261000 43%) 2.2142
+74m 8s (- 95m 38s) (262000 43%) 2.2577
+74m 25s (- 95m 21s) (263000 43%) 2.2972
+74m 42s (- 95m 5s) (264000 44%) 2.2448
+74m 59s (- 94m 48s) (265000 44%) 2.2579
+75m 17s (- 94m 31s) (266000 44%) 2.1782
+75m 34s (- 94m 15s) (267000 44%) 2.3043
+75m 51s (- 93m 58s) (268000 44%) 2.2095
+76m 8s (- 93m 41s) (269000 44%) 2.3642
+76m 26s (- 93m 25s) (270000 45%) 2.2694
+76m 43s (- 93m 8s) (271000 45%) 2.3381
+77m 0s (- 92m 52s) (272000 45%) 2.3750
+77m 17s (- 92m 35s) (273000 45%) 2.3272
+77m 35s (- 92m 18s) (274000 45%) 2.3265
+77m 51s (- 92m 1s) (275000 45%) 2.3387
+78m 9s (- 91m 44s) (276000 46%) 2.3745
+78m 26s (- 91m 27s) (277000 46%) 2.3313
+78m 43s (- 91m 11s) (278000 46%) 2.4559
+79m 1s (- 90m 54s) (279000 46%) 2.3606
+79m 17s (- 90m 37s) (280000 46%) 2.4242
+Epoch 14/30 finished
+79m 37s (- 90m 23s) (281000 46%) 2.0523
+79m 54s (- 90m 6s) (282000 47%) 2.2291
+80m 12s (- 89m 50s) (283000 47%) 2.1766
+80m 29s (- 89m 33s) (284000 47%) 2.2480
+80m 46s (- 89m 16s) (285000 47%) 2.2256
+81m 3s (- 89m 0s) (286000 47%) 2.2608
+81m 20s (- 88m 43s) (287000 47%) 2.2471
+81m 38s (- 88m 26s) (288000 48%) 2.2646
+81m 55s (- 88m 9s) (289000 48%) 2.1782
+82m 12s (- 87m 52s) (290000 48%) 2.2486
+82m 29s (- 87m 35s) (291000 48%) 2.2534
+82m 47s (- 87m 19s) (292000 48%) 2.2928
+83m 4s (- 87m 2s) (293000 48%) 2.3168
+83m 21s (- 86m 45s) (294000 49%) 2.2117
+83m 39s (- 86m 29s) (295000 49%) 2.3215
+83m 56s (- 86m 12s) (296000 49%) 2.2512
+84m 13s (- 85m 55s) (297000 49%) 2.2881
+84m 30s (- 85m 38s) (298000 49%) 2.3170
+84m 48s (- 85m 22s) (299000 49%) 2.3412
+85m 5s (- 85m 5s) (300000 50%) 2.3147
+Epoch 15/30 finished
+85m 24s (- 84m 50s) (301000 50%) 2.0959
+85m 42s (- 84m 33s) (302000 50%) 2.1079
+85m 59s (- 84m 17s) (303000 50%) 2.1262
+86m 16s (- 84m 0s) (304000 50%) 2.1485
+86m 33s (- 83m 43s) (305000 50%) 2.1137
+86m 51s (- 83m 27s) (306000 51%) 2.2458
+87m 8s (- 83m 9s) (307000 51%) 2.1242
+87m 25s (- 82m 53s) (308000 51%) 2.1564
+87m 43s (- 82m 36s) (309000 51%) 2.2347
+88m 0s (- 82m 19s) (310000 51%) 2.1883
+88m 18s (- 82m 3s) (311000 51%) 2.1946
+88m 35s (- 81m 46s) (312000 52%) 2.1944
+88m 52s (- 81m 29s) (313000 52%) 2.2571
+89m 10s (- 81m 12s) (314000 52%) 2.2276
+89m 27s (- 80m 56s) (315000 52%) 2.2027
+89m 44s (- 80m 39s) (316000 52%) 2.3045
+90m 2s (- 80m 22s) (317000 52%) 2.2785
+90m 19s (- 80m 6s) (318000 53%) 2.2566
+90m 36s (- 79m 49s) (319000 53%) 2.2179
+90m 54s (- 79m 32s) (320000 53%) 2.3159
+Epoch 16/30 finished
+91m 13s (- 79m 17s) (321000 53%) 2.0323
+91m 31s (- 79m 1s) (322000 53%) 2.0341
+91m 48s (- 78m 44s) (323000 53%) 2.0093
+92m 5s (- 78m 27s) (324000 54%) 2.0918
+92m 23s (- 78m 10s) (325000 54%) 2.0727
+92m 40s (- 77m 53s) (326000 54%) 2.1182
+92m 57s (- 77m 36s) (327000 54%) 2.1204
+93m 15s (- 77m 19s) (328000 54%) 2.1070
+93m 32s (- 77m 3s) (329000 54%) 2.1655
+93m 49s (- 76m 46s) (330000 55%) 2.1052
+94m 7s (- 76m 29s) (331000 55%) 2.2039
+94m 24s (- 76m 12s) (332000 55%) 2.1382
+94m 41s (- 75m 55s) (333000 55%) 2.1640
+94m 59s (- 75m 39s) (334000 55%) 2.2453
+95m 16s (- 75m 22s) (335000 55%) 2.2557
+95m 34s (- 75m 5s) (336000 56%) 2.1522
+95m 51s (- 74m 48s) (337000 56%) 2.2409
+96m 8s (- 74m 31s) (338000 56%) 2.2332
+96m 26s (- 74m 14s) (339000 56%) 2.2745
+96m 43s (- 73m 57s) (340000 56%) 2.2572
+Epoch 17/30 finished
+97m 2s (- 73m 42s) (341000 56%) 1.9244
+97m 19s (- 73m 25s) (342000 56%) 1.9123
+97m 37s (- 73m 8s) (343000 57%) 2.0256
+97m 54s (- 72m 51s) (344000 57%) 2.0939
+98m 12s (- 72m 35s) (345000 57%) 2.0256
+98m 29s (- 72m 18s) (346000 57%) 2.0152
+98m 47s (- 72m 1s) (347000 57%) 2.0919
+99m 4s (- 71m 44s) (348000 57%) 2.0737
+99m 22s (- 71m 28s) (349000 58%) 2.0508
+99m 39s (- 71m 11s) (350000 58%) 2.0842
+99m 56s (- 70m 54s) (351000 58%) 2.0719
+100m 13s (- 70m 37s) (352000 58%) 2.1126
+100m 31s (- 70m 20s) (353000 58%) 2.1687
+100m 48s (- 70m 3s) (354000 59%) 2.1959
+101m 6s (- 69m 46s) (355000 59%) 2.1920
+101m 23s (- 69m 29s) (356000 59%) 2.1392
+101m 40s (- 69m 12s) (357000 59%) 2.1192
+101m 58s (- 68m 55s) (358000 59%) 2.1736
+102m 15s (- 68m 39s) (359000 59%) 2.2342
+102m 33s (- 68m 22s) (360000 60%) 2.2502
+Epoch 18/30 finished
+102m 52s (- 68m 6s) (361000 60%) 1.9231
+103m 10s (- 67m 49s) (362000 60%) 1.9340
+103m 27s (- 67m 32s) (363000 60%) 1.9932
+103m 45s (- 67m 16s) (364000 60%) 2.0253
+104m 2s (- 66m 59s) (365000 60%) 1.9880
+104m 20s (- 66m 42s) (366000 61%) 2.0350
+104m 37s (- 66m 25s) (367000 61%) 2.1035
+104m 55s (- 66m 8s) (368000 61%) 2.0262
+105m 12s (- 65m 51s) (369000 61%) 2.0315
+105m 29s (- 65m 34s) (370000 61%) 1.9945
+105m 47s (- 65m 17s) (371000 61%) 2.1113
+106m 4s (- 65m 1s) (372000 62%) 2.0460
+106m 22s (- 64m 44s) (373000 62%) 2.1034
+106m 39s (- 64m 26s) (374000 62%) 2.0885
+106m 56s (- 64m 10s) (375000 62%) 2.0681
+107m 14s (- 63m 53s) (376000 62%) 2.0969
+107m 31s (- 63m 36s) (377000 62%) 2.0824
+107m 49s (- 63m 19s) (378000 63%) 2.1323
+108m 6s (- 63m 2s) (379000 63%) 2.1980
+108m 24s (- 62m 45s) (380000 63%) 2.1057
+Epoch 19/30 finished
+108m 43s (- 62m 29s) (381000 63%) 1.8882
+109m 1s (- 62m 12s) (382000 63%) 1.8605
+109m 18s (- 61m 55s) (383000 63%) 1.9031
+109m 35s (- 61m 38s) (384000 64%) 1.9327
+109m 52s (- 61m 21s) (385000 64%) 1.9549
+110m 10s (- 61m 4s) (386000 64%) 1.9540
+110m 27s (- 60m 47s) (387000 64%) 1.9327
+110m 44s (- 60m 30s) (388000 64%) 2.0563
+111m 2s (- 60m 13s) (389000 64%) 2.0355
+111m 19s (- 59m 56s) (390000 65%) 2.0421
+111m 37s (- 59m 39s) (391000 65%) 2.0639
+111m 55s (- 59m 23s) (392000 65%) 2.1755
+112m 12s (- 59m 6s) (393000 65%) 2.0160
+112m 30s (- 58m 49s) (394000 65%) 2.0722
+112m 47s (- 58m 32s) (395000 65%) 2.0765
+113m 4s (- 58m 15s) (396000 66%) 2.0667
+113m 22s (- 57m 58s) (397000 66%) 2.0952
+113m 39s (- 57m 41s) (398000 66%) 2.0562
+113m 57s (- 57m 24s) (399000 66%) 2.1282
+114m 14s (- 57m 7s) (400000 66%) 2.0508
+Epoch 20/30 finished
+114m 33s (- 56m 51s) (401000 66%) 1.8441
+114m 51s (- 56m 34s) (402000 67%) 1.8821
+115m 8s (- 56m 17s) (403000 67%) 1.9280
+115m 26s (- 56m 0s) (404000 67%) 1.9262
+115m 43s (- 55m 43s) (405000 67%) 1.9450
+116m 1s (- 55m 26s) (406000 67%) 1.9452
+116m 18s (- 55m 9s) (407000 67%) 1.9560
+116m 36s (- 54m 52s) (408000 68%) 1.8620
+116m 53s (- 54m 35s) (409000 68%) 1.9433
+117m 11s (- 54m 18s) (410000 68%) 2.0276
+117m 28s (- 54m 1s) (411000 68%) 1.9798
+117m 45s (- 53m 44s) (412000 68%) 1.9665
+118m 3s (- 53m 27s) (413000 68%) 2.0423
+118m 20s (- 53m 10s) (414000 69%) 2.0357
+118m 38s (- 52m 53s) (415000 69%) 2.0838
+118m 55s (- 52m 36s) (416000 69%) 2.0989
+119m 13s (- 52m 19s) (417000 69%) 2.0968
+119m 31s (- 52m 2s) (418000 69%) 2.0904
+119m 48s (- 51m 45s) (419000 69%) 2.0224
+120m 5s (- 51m 28s) (420000 70%) 1.9625
+Epoch 21/30 finished
+120m 25s (- 51m 12s) (421000 70%) 1.8609
+120m 42s (- 50m 54s) (422000 70%) 1.7482
+120m 59s (- 50m 37s) (423000 70%) 1.8370
+121m 17s (- 50m 20s) (424000 70%) 1.8709
+121m 34s (- 50m 3s) (425000 70%) 1.8293
+121m 52s (- 49m 46s) (426000 71%) 1.9305
+122m 9s (- 49m 29s) (427000 71%) 1.9623
+122m 27s (- 49m 12s) (428000 71%) 1.9316
+122m 44s (- 48m 55s) (429000 71%) 2.0308
+123m 2s (- 48m 38s) (430000 71%) 1.9811
+123m 20s (- 48m 21s) (431000 71%) 2.0244
+123m 37s (- 48m 4s) (432000 72%) 1.9336
+123m 54s (- 47m 47s) (433000 72%) 1.9424
+124m 12s (- 47m 30s) (434000 72%) 2.0215
+124m 29s (- 47m 13s) (435000 72%) 2.0073
+124m 47s (- 46m 56s) (436000 72%) 2.0364
+125m 4s (- 46m 39s) (437000 72%) 1.9571
+125m 22s (- 46m 22s) (438000 73%) 2.0884
+125m 40s (- 46m 5s) (439000 73%) 2.1202
+125m 57s (- 45m 48s) (440000 73%) 2.0494
+Epoch 22/30 finished
+126m 16s (- 45m 31s) (441000 73%) 1.7739
+126m 34s (- 45m 14s) (442000 73%) 1.8699
+126m 51s (- 44m 57s) (443000 73%) 1.7910
+127m 9s (- 44m 40s) (444000 74%) 1.8598
+127m 26s (- 44m 23s) (445000 74%) 1.8198
+127m 44s (- 44m 6s) (446000 74%) 1.9014
+128m 1s (- 43m 49s) (447000 74%) 1.9093
+128m 19s (- 43m 32s) (448000 74%) 1.9098
+128m 36s (- 43m 15s) (449000 74%) 1.9065
+128m 54s (- 42m 58s) (450000 75%) 1.9240
+129m 11s (- 42m 40s) (451000 75%) 1.9077
+129m 29s (- 42m 23s) (452000 75%) 1.9320
+129m 46s (- 42m 6s) (453000 75%) 1.9339
+130m 4s (- 41m 49s) (454000 75%) 2.0383
+130m 21s (- 41m 32s) (455000 75%) 2.0121
+130m 38s (- 41m 15s) (456000 76%) 1.9783
+130m 56s (- 40m 58s) (457000 76%) 1.8972
+131m 13s (- 40m 41s) (458000 76%) 2.0165
+131m 31s (- 40m 24s) (459000 76%) 1.9834
+131m 48s (- 40m 7s) (460000 76%) 2.0520
+Epoch 23/30 finished
+132m 8s (- 39m 50s) (461000 76%) 1.7487
+132m 25s (- 39m 33s) (462000 77%) 1.7637
+132m 43s (- 39m 16s) (463000 77%) 1.7983
+133m 1s (- 38m 59s) (464000 77%) 1.8105
+133m 18s (- 38m 42s) (465000 77%) 1.8742
+133m 35s (- 38m 25s) (466000 77%) 1.8868
+133m 53s (- 38m 8s) (467000 77%) 1.8605
+134m 11s (- 37m 50s) (468000 78%) 1.8675
+134m 29s (- 37m 33s) (469000 78%) 1.9761
+134m 47s (- 37m 16s) (470000 78%) 1.9127
+135m 4s (- 36m 59s) (471000 78%) 1.9146
+135m 21s (- 36m 42s) (472000 78%) 1.9310
+135m 39s (- 36m 25s) (473000 78%) 1.9422
+135m 56s (- 36m 8s) (474000 79%) 1.9560
+136m 14s (- 35m 51s) (475000 79%) 1.9468
+136m 32s (- 35m 34s) (476000 79%) 1.9507
+136m 49s (- 35m 16s) (477000 79%) 1.9710
+137m 6s (- 34m 59s) (478000 79%) 1.9647
+137m 24s (- 34m 42s) (479000 79%) 1.9426
+137m 42s (- 34m 25s) (480000 80%) 1.9316
+Epoch 24/30 finished
+138m 1s (- 34m 8s) (481000 80%) 1.7289
+138m 18s (- 33m 51s) (482000 80%) 1.8450
+138m 36s (- 33m 34s) (483000 80%) 1.8148
+138m 53s (- 33m 17s) (484000 80%) 1.7732
+139m 10s (- 33m 0s) (485000 80%) 1.8181
+139m 28s (- 32m 42s) (486000 81%) 1.7828
+139m 45s (- 32m 25s) (487000 81%) 1.8135
+140m 3s (- 32m 8s) (488000 81%) 1.8570
+140m 20s (- 31m 51s) (489000 81%) 1.9715
+140m 38s (- 31m 34s) (490000 81%) 1.8768
+140m 55s (- 31m 17s) (491000 81%) 1.9272
+141m 13s (- 30m 59s) (492000 82%) 1.8684
+141m 30s (- 30m 42s) (493000 82%) 1.9257
+141m 47s (- 30m 25s) (494000 82%) 1.8406
+142m 4s (- 30m 8s) (495000 82%) 1.8595
+142m 22s (- 29m 51s) (496000 82%) 1.8999
+142m 39s (- 29m 33s) (497000 82%) 1.9339
+142m 57s (- 29m 16s) (498000 83%) 1.9904
+143m 15s (- 28m 59s) (499000 83%) 2.0208
+143m 32s (- 28m 42s) (500000 83%) 1.8891
+Epoch 25/30 finished
+143m 52s (- 28m 25s) (501000 83%) 1.7118
+144m 9s (- 28m 8s) (502000 83%) 1.7286
+144m 26s (- 27m 51s) (503000 83%) 1.6913
+144m 44s (- 27m 34s) (504000 84%) 1.8111
+145m 1s (- 27m 17s) (505000 84%) 1.8253
+145m 19s (- 26m 59s) (506000 84%) 1.7793
+145m 36s (- 26m 42s) (507000 84%) 1.8128
+145m 54s (- 26m 25s) (508000 84%) 1.7638
+146m 11s (- 26m 8s) (509000 84%) 1.8424
+146m 29s (- 25m 51s) (510000 85%) 1.8584
+146m 46s (- 25m 33s) (511000 85%) 1.8870
+147m 4s (- 25m 16s) (512000 85%) 1.8162
+147m 21s (- 24m 59s) (513000 85%) 1.9022
+147m 38s (- 24m 42s) (514000 85%) 1.8705
+147m 56s (- 24m 25s) (515000 85%) 1.9348
+148m 13s (- 24m 7s) (516000 86%) 1.8863
+148m 30s (- 23m 50s) (517000 86%) 1.9117
+148m 48s (- 23m 33s) (518000 86%) 1.8866
+149m 6s (- 23m 16s) (519000 86%) 1.9964
+149m 23s (- 22m 59s) (520000 86%) 1.9790
+Epoch 26/30 finished
+149m 43s (- 22m 42s) (521000 86%) 1.7165
+150m 0s (- 22m 24s) (522000 87%) 1.7569
+150m 18s (- 22m 7s) (523000 87%) 1.7087
+150m 35s (- 21m 50s) (524000 87%) 1.7661
+150m 53s (- 21m 33s) (525000 87%) 1.8181
+151m 10s (- 21m 16s) (526000 87%) 1.7582
+151m 27s (- 20m 58s) (527000 87%) 1.8032
+151m 45s (- 20m 41s) (528000 88%) 1.8126
+152m 3s (- 20m 24s) (529000 88%) 1.7618
+152m 20s (- 20m 7s) (530000 88%) 1.7640
+152m 38s (- 19m 50s) (531000 88%) 1.8253
+152m 55s (- 19m 32s) (532000 88%) 1.8605
+153m 13s (- 19m 15s) (533000 88%) 1.8562
+153m 30s (- 18m 58s) (534000 89%) 1.8766
+153m 48s (- 18m 41s) (535000 89%) 1.9364
+154m 6s (- 18m 24s) (536000 89%) 1.8191
+154m 23s (- 18m 6s) (537000 89%) 1.8617
+154m 41s (- 17m 49s) (538000 89%) 1.8870
+154m 58s (- 17m 32s) (539000 89%) 1.8336
+155m 16s (- 17m 15s) (540000 90%) 1.8151
+Epoch 27/30 finished
+155m 36s (- 16m 58s) (541000 90%) 1.7257
+155m 53s (- 16m 40s) (542000 90%) 1.6374
+156m 10s (- 16m 23s) (543000 90%) 1.7134
+156m 29s (- 16m 6s) (544000 90%) 1.8363
+156m 46s (- 15m 49s) (545000 90%) 1.6744
+157m 3s (- 15m 32s) (546000 91%) 1.7655
+157m 21s (- 15m 14s) (547000 91%) 1.7630
+157m 39s (- 14m 57s) (548000 91%) 1.7883
+157m 56s (- 14m 40s) (549000 91%) 1.7255
+158m 14s (- 14m 23s) (550000 91%) 1.7655
+158m 32s (- 14m 5s) (551000 91%) 1.8716
+158m 49s (- 13m 48s) (552000 92%) 1.7909
+159m 6s (- 13m 31s) (553000 92%) 1.8223
+159m 23s (- 13m 14s) (554000 92%) 1.8400
+159m 41s (- 12m 56s) (555000 92%) 1.8004
+159m 58s (- 12m 39s) (556000 92%) 1.8506
+160m 16s (- 12m 22s) (557000 92%) 1.9232
+160m 34s (- 12m 5s) (558000 93%) 1.8858
+160m 51s (- 11m 47s) (559000 93%) 1.7950
+161m 9s (- 11m 30s) (560000 93%) 1.8991
+Epoch 28/30 finished
+161m 28s (- 11m 13s) (561000 93%) 1.5565
+161m 45s (- 10m 56s) (562000 93%) 1.6325
+162m 3s (- 10m 39s) (563000 93%) 1.7116
+162m 21s (- 10m 21s) (564000 94%) 1.6583
+162m 38s (- 10m 4s) (565000 94%) 1.7166
+162m 56s (- 9m 47s) (566000 94%) 1.7258
+163m 13s (- 9m 29s) (567000 94%) 1.6895
+163m 30s (- 9m 12s) (568000 94%) 1.7219
+163m 48s (- 8m 55s) (569000 94%) 1.8145
+164m 6s (- 8m 38s) (570000 95%) 1.7738
+164m 23s (- 8m 20s) (571000 95%) 1.9029
+164m 41s (- 8m 3s) (572000 95%) 1.8290
+164m 58s (- 7m 46s) (573000 95%) 1.7560
+165m 16s (- 7m 29s) (574000 95%) 1.8844
+165m 33s (- 7m 11s) (575000 95%) 1.7895
+165m 51s (- 6m 54s) (576000 96%) 1.8216
+166m 8s (- 6m 37s) (577000 96%) 1.8071
+166m 26s (- 6m 20s) (578000 96%) 1.7920
+166m 43s (- 6m 2s) (579000 96%) 1.8330
+167m 1s (- 5m 45s) (580000 96%) 1.8937
+Epoch 29/30 finished
+167m 20s (- 5m 28s) (581000 96%) 1.6696
+167m 38s (- 5m 11s) (582000 97%) 1.5853
+167m 55s (- 4m 53s) (583000 97%) 1.7325
+168m 13s (- 4m 36s) (584000 97%) 1.6686
+168m 30s (- 4m 19s) (585000 97%) 1.7319
+168m 48s (- 4m 1s) (586000 97%) 1.6515
+169m 5s (- 3m 44s) (587000 97%) 1.7077
+169m 23s (- 3m 27s) (588000 98%) 1.7428
+169m 40s (- 3m 10s) (589000 98%) 1.7534
+169m 58s (- 2m 52s) (590000 98%) 1.7755
+170m 15s (- 2m 35s) (591000 98%) 1.7301
+170m 32s (- 2m 18s) (592000 98%) 1.7608
+170m 50s (- 2m 1s) (593000 98%) 1.7752
+171m 7s (- 1m 43s) (594000 99%) 1.7445
+171m 25s (- 1m 26s) (595000 99%) 1.8196
+171m 42s (- 1m 9s) (596000 99%) 1.8119
+172m 0s (- 0m 51s) (597000 99%) 1.7826
+172m 18s (- 0m 34s) (598000 99%) 1.8358
+172m 35s (- 0m 17s) (599000 99%) 1.9213
+172m 53s (- 0m 0s) (600000 100%) 1.8397
+Epoch 30/30 finished
+Evaluate randomly on training sentences:
+> ['you', 'were', 'terrified', 'weren', 't', 'you', '?', 'you were', 'were terrified', 'terrified weren', 'weren t', 't you', 'you ?', 'you were terrified', 'were terrified weren', 'terrified weren t', 'weren t you', 't you ?']
+= tu etais terrifie n est ce pas ?
+< vous etiez terrifie n est ce pas ? <EOS>
+
+> ['there', 's', 'nothing', 'wrong', 'with', 'that', 'either', '.', 'there s', 's nothing', 'nothing wrong', 'wrong with', 'with that', 'that either', 'either .', 'there s nothing', 's nothing wrong', 'nothing wrong with', 'wrong with that', 'with that either', 'that either .']
+= il n y a rien de mal a cela non plus .
+< elle n y a rien de ce mal . <EOS>
+
+> ['give', 'it', 'to', 'me', 'please', '.', 'give it', 'it to', 'to me', 'me please', 'please .', 'give it to', 'it to me', 'to me please', 'me please .']
+= donnez moi cela je vous prie .
+< donnez moi s il vous prie . <EOS>
+
+> ['there', 'is', 'so', 'much', 'to', 'do', 'and', 'only', 'a', 'lifetime', 'to', 'do', 'it', '.', 'there is', 'is so', 'so much', 'much to', 'to do', 'do and', 'and only', 'only a', 'a lifetime', 'lifetime to', 'to do', 'do it', 'it .', 'there is so', 'is so much', 'so much to', 'much to do', 'to do and', 'do and only', 'and only a', 'only a lifetime', 'a lifetime to', 'lifetime to do', 'to do it', 'do it .']
+= il y a tant a faire et seulement la duree d une vie pour le faire .
+< un seulement est seulement mais et est seulement mais il ne l <EOS>
+
+> ['taking', 'all', 'things', 'into', 'consideration', 'i', 'have', 'made', 'up', 'my', 'mind', 'to', 'give', 'up', 'the', 'idea', '.', 'taking all', 'all things', 'things into', 'into consideration', 'consideration i', 'i have', 'have made', 'made up', 'up my', 'my mind', 'mind to', 'to give', 'give up', 'up the', 'the idea', 'idea .', 'taking all things', 'all things into', 'things into consideration', 'into consideration i', 'consideration i have', 'i have made', 'have made up', 'made up my', 'up my mind', 'my mind to', 'mind to give', 'to give up', 'give up the', 'up the idea', 'the idea .']
+= en prenant tous les facteurs en consideration j ai decide d abandonner cette idee .
+< toutes prenant toutes les papa pour pour cette reunion pour pour la reunion pour vous a la reunion a la reunion a la reunion a la reunion . <EOS>
+
+> ['almost', 'a', 'third', 'of', 'the', 'gunshot', 'victims', 'were', 'teenagers', '.', 'almost a', 'a third', 'third of', 'of the', 'the gunshot', 'gunshot victims', 'victims were', 'were teenagers', 'teenagers .', 'almost a third', 'a third of', 'third of the', 'of the gunshot', 'the gunshot victims', 'gunshot victims were', 'victims were teenagers', 'were teenagers .']
+= presque un tiers des victimes de la fusillade etaient des adolescents .
+< presque tiers la une de la neige . <EOS>
+
+> ['i', 'refuse', 'to', 'accept', 'that', '.', 'i refuse', 'refuse to', 'to accept', 'accept that', 'that .', 'i refuse to', 'refuse to accept', 'to accept that', 'accept that .']
+= je refuse de l accepter .
+< je refuse de la accepter . <EOS>
+
+> ['you', 'can', 'get', 'a', 'car', 'license', 'after', 'you', 'turn', 'eighteen', '.', 'you can', 'can get', 'get a', 'a car', 'car license', 'license after', 'after you', 'you turn', 'turn eighteen', 'eighteen .', 'you can get', 'can get a', 'get a car', 'a car license', 'car license after', 'license after you', 'after you turn', 'you turn eighteen', 'turn eighteen .']
+= on peut obtenir un permis de conduire apres avoir eu dix huit ans .
+< vous pouvez conduire dans un revoir dans les maison . <EOS>
+
+> ['she', 'filled', 'the', 'vase', 'with', 'water', '.', 'she filled', 'filled the', 'the vase', 'vase with', 'with water', 'water .', 'she filled the', 'filled the vase', 'the vase with', 'vase with water', 'with water .']
+= elle emplit le vase d eau .
+< elle emplit le vase elle du vase . <EOS>
+
+> ['it', 'won', 't', 'be', 'hard', '.', 'it won', 'won t', 't be', 'be hard', 'hard .', 'it won t', 'won t be', 't be hard', 'be hard .']
+= ce ne sera pas dur .
+< ce ne sera pas dur . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['ask', 'anyone', '.', 'ask anyone', 'anyone .', 'ask anyone .']
+= demande a n importe qui .
+< tout le monde . <EOS>
+
+> ['how', 'did', 'you', 'get', 'into', 'the', 'house', '?', 'how did', 'did you', 'you get', 'get into', 'into the', 'the house', 'house ?', 'how did you', 'did you get', 'you get into', 'get into the', 'into the house', 'the house ?']
+= comment as tu penetre dans la maison ?
+< as as tu as la plu ? <EOS>
+
+> ['tom', 'says', 'he', 'll', 'only', 'speak', 'to', 'mary', '.', 'tom says', 'says he', 'he ll', 'll only', 'only speak', 'speak to', 'to mary', 'mary .', 'tom says he', 'says he ll', 'he ll only', 'll only speak', 'only speak to', 'speak to mary', 'to mary .']
+= tom dit qu il ne parlera qu a mary uniquement .
+< tom tom a mary mary . <EOS>
+
+> ['let', 's', 'go', 'to', 'eat', 'together', '.', 'let s', 's go', 'go to', 'to eat', 'eat together', 'together .', 'let s go', 's go to', 'go to eat', 'to eat together', 'eat together .']
+= allons manger ensemble .
+< allons y allons allons . <EOS>
+
+> ['we', 're', 'meant', 'for', 'each', 'other', '.', 'we re', 're meant', 'meant for', 'for each', 'each other', 'other .', 'we re meant', 're meant for', 'meant for each', 'for each other', 'each other .']
+= nous sommes faits l un pour l autre .
+< je travaille a dollars pour l autre . <EOS>
+
+> ['i', 'don', 't', 'know', 'why', 'you', 're', 'all', 'so', 'jumpy', '.', 'i don', 'don t', 't know', 'know why', 'why you', 'you re', 're all', 'all so', 'so jumpy', 'jumpy .', 'i don t', 'don t know', 't know why', 'know why you', 'why you re', 'you re all', 're all so', 'all so jumpy', 'so jumpy .']
+= j ignore pourquoi vous etes tous tellement agites .
+< ce ignore pourquoi tu es pourquoi pourquoi vous . <EOS>
+
+> ['it', 's', 'not', 'cheap', 'to', 'eat', 'here', '.', 'it s', 's not', 'not cheap', 'cheap to', 'to eat', 'eat here', 'here .', 'it s not', 's not cheap', 'not cheap to', 'cheap to eat', 'to eat here', 'eat here .']
+= manger ici n est pas bon marche .
+< il n est pas manger pour manger ici . <EOS>
+
+> ['you', 're', 'wasting', 'both', 'of', 'our', 'time', '.', 'you re', 're wasting', 'wasting both', 'both of', 'of our', 'our time', 'time .', 'you re wasting', 're wasting both', 'wasting both of', 'both of our', 'of our time', 'our time .']
+= tu gaspilles notre temps a tous les deux .
+< vous nous sommes tous les jours . <EOS>
+
+> ['tom', 'is', 'a', 'bit', 'short', 'for', 'his', 'age', '.', 'tom is', 'is a', 'a bit', 'bit short', 'short for', 'for his', 'his age', 'age .', 'tom is a', 'is a bit', 'a bit short', 'bit short for', 'short for his', 'for his age', 'his age .']
+= tom est legerement petit pour son age .
+< tom a un pour pour son pere . <EOS>
+
+> ['i', 'eat', 'alone', '.', 'i eat', 'eat alone', 'alone .', 'i eat alone', 'eat alone .']
+= je mange seule .
+< j ai tout seul . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2286
+score for short sentnces (length <= 6):
+ROUGE1: 0.30777531313659084
+ROUGE2: 0.21051635459410173
+BLEU: 0.2500017043324115
+BLEU_CLIP: 0.23255375906294393
+
+Num of long sentences (length > 6): 2714
+score for long sentnces (length > 6):
+ROUGE1: 0.3031900230914638
+ROUGE2: 0.19858863714474656
+BLEU: 0.17353828038131797
+BLEU_CLIP: 0.14628199867296426
+
+Overall:
+ROUGE1: 0.3052864177000959
+ROUGE2: 0.20404198956259173
+BLEU: 0.2084973578117579
+BLEU_CLIP: 0.18572544752326295
+
+Finished
+
+hpc mode: True
+order: 4
+mode: sum
+metric: MULTI
+hidden-size: 256
+n-epochs: 30
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Ngram Vocab Size: 191656
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .', 'she did come here', 'did come here .']
+= elle est bien venue ici .
+< es contiennent contiennent achetes demenagez couriez demenagez rata recommencer recommencer recommencer souhaite detruite recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .', 'it was quite funny', 'was quite funny .']
+= ce fut assez amusant .
+< rejoindre tentez tentez tentez decouvrira confesse lentilles risques partis delibere embaucher embaucher egare viendras fusible stresse existe existe ma attentes delibere delibere abandonnee digeree aupres fixer amis concentrees recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .']
+= elles proviennent du meme pays .
+< sottises mobile mobile voisine voisine voisine cachere carrure cachere fete occupera moustiques risques sentirez deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .', 'i didn t finish', 'didn t finish reading', 't finish reading that', 'finish reading that book', 'reading that book .']
+= je n avais pas fini de lire ce livre .
+< democratie democratie cloture cloture cloture cloture cloture cerisier refusa bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau economiser bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .', 'i m not ready', 'm not ready yet', 'not ready yet .']
+= je ne suis pas encore pret .
+< balles balles avouai avouai fusees fusees intactes intactes intactes concentrees risques agriculture devenait risques recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .', 'we shouldn t confuse', 'shouldn t confuse solitude', 't confuse solitude with', 'confuse solitude with isolation', 'solitude with isolation .', 'with isolation . they', 'isolation . they are', '. they are two', 'they are two separate', 'are two separate things', 'two separate things .']
+= on ne devrait pas confondre la solitude et l isolation . ce sont deux choses differentes .
+< ascenseur ascenseur risques sauves sauves sauves sauves sauves sauves ascenseur ascenseur ascenseur ascenseur ascenseur parviendra parviendra parviendra parviendra parie quadra charades aiutero quadra charades devale fournirai faisant aeroport comptons fusible fusible comporte egare deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .', 'i don t know', 'don t know what', 't know what it', 'know what it is', 'what it is .']
+= je ne sais pas ce que c est .
+< verifier apprecient apprecient apprecient euphemismes regardant regardant regardant delibere delibere fusees delibere abandonnee digeree digeree aupres realisera deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?', 'are you going home', 'you going home by', 'going home by bus', 'home by bus ?']
+= rentres tu chez toi en bus ?
+< mignons mignons choisi choisi choisi choisi ascenseur resolu ascenseur ascenseur traversez recommencer recommencer recommencer recommencer souhaite recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .', 'he is intelligent .']
+= il est intelligent .
+< skier disque disque disque paroissial commi risques recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .', 'you re so impatient', 're so impatient .']
+= vous etes tellement impatientes .
+< paname religieuses laissent laissent laissent laissent parties parties fermez decouvre bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau bureau
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .', 'team members are provided', 'members are provided with', 'are provided with equipment', 'provided with equipment and', 'with equipment and uniforms', 'equipment and uniforms .']
+= l equipement et les uniformes sont fournis aux membres des equipes .
+< ascenseur ascenseur risques anthropologie contentee contentee contentee contentee risques risques risques risques prevenues prevenues ascenseur prevenues ascenseur ses controler risques recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .']
+= maintenant que mon frere est etudiant a l universite il doit beaucoup lire .
+< ascenseur ascenseur democratie democratie democratie admet democratie admet admet admet admet vivres admet vivres vivres vivres concerne devenait recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .', 'they had fun with', 'had fun with us', 'fun with us .']
+= ils se sont amuses avec nous .
+< grenade cobaye raisonnable mettrai raisonnable causent vite vite vite vota vota concentrees reservons concentrees fatiguer decevez aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?']
+= quiconque connait il le japonais ?
+< electrice figee tomba tomba tomba mangent tomba interdite mangeames postuler ecoutiez fournirai receptionnees receptionnees interrupteur grenade tempete receptionnees soutenu charite fusible fusible aeroport coiffer concentrees emporta finirai aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .']
+= il a vraiment failli se faire renverser .
+< ensuite demenagez demenagez demenagez demenagez risques rendriez risques risques basses risques basses risques basses impose debutante abandonnee digeree aupres consentement risques recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?']
+= quand avez vous ete dans une galerie d art pour la derniere fois ?
+< art art art art art art art etatsunienne etatsunienne declenche declenche declenche declenche declenche declenche dote declenche dote pot declenche pot pot declenche pot risques agriculture egalement decevez aupres deviennent deviennent carbone carbone feriez embaucher alimentaires tempete fusible chasseur concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .']
+= sa maison a ete vendue pour . .
+< art art demenagez demenagez demenagez demenagez recommencer recommencer recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .']
+= je ne suis pas fou .
+< affaires changerent changerent changerent changerent changerent evite finira coiffer faisant aeroport librement faisant ecoutiez enfiler concentrees pacifique aupres deviennent deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .', 'i thought you d', 'thought you d be', 'you d be much', 'd be much fatter', 'be much fatter .']
+= je pensais que vous seriez beaucoup plus gros .
+< blagues dedans dedans papiers papiers indemnise matinal ailles disposais yens coupa coupa sensu entendu lundis ecoutiez enfiler concentrees pacifique aupres deviennent deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .', 'they are bored .']
+= ils s ennuient .
+< ensuite ensuite ensuite ensuite oiseau ascenseur valise valise valise valise collecteur fete oublier oublier digeree realisera aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+0m 16s (- 168m 47s) (1000 0%) 5.6144
+0m 32s (- 161m 44s) (2000 0%) 4.9741
+0m 48s (- 159m 38s) (3000 0%) 4.7724
+1m 4s (- 159m 4s) (4000 0%) 4.7606
+1m 20s (- 158m 53s) (5000 0%) 4.5892
+1m 36s (- 158m 24s) (6000 1%) 4.6605
+1m 52s (- 158m 28s) (7000 1%) 4.5759
+2m 8s (- 158m 18s) (8000 1%) 4.5241
+2m 24s (- 158m 9s) (9000 1%) 4.5274
+2m 40s (- 157m 55s) (10000 1%) 4.4439
+2m 56s (- 157m 56s) (11000 1%) 4.5174
+3m 13s (- 157m 46s) (12000 2%) 4.4057
+3m 29s (- 157m 49s) (13000 2%) 4.4167
+3m 46s (- 157m 48s) (14000 2%) 4.4431
+4m 2s (- 157m 48s) (15000 2%) 4.3760
+4m 19s (- 157m 42s) (16000 2%) 4.4117
+4m 35s (- 157m 28s) (17000 2%) 4.3172
+4m 51s (- 157m 19s) (18000 3%) 4.2894
+5m 8s (- 157m 25s) (19000 3%) 4.3997
+5m 25s (- 157m 19s) (20000 3%) 4.3241
+Epoch 1/30 finished
+5m 44s (- 158m 9s) (21000 3%) 4.1501
+6m 0s (- 157m 54s) (22000 3%) 4.1162
+6m 17s (- 157m 43s) (23000 3%) 4.1562
+6m 33s (- 157m 27s) (24000 4%) 4.1027
+6m 50s (- 157m 19s) (25000 4%) 4.1001
+7m 7s (- 157m 8s) (26000 4%) 4.1020
+7m 23s (- 156m 55s) (27000 4%) 4.0647
+7m 40s (- 156m 42s) (28000 4%) 4.0840
+7m 56s (- 156m 28s) (29000 4%) 4.0702
+8m 13s (- 156m 16s) (30000 5%) 4.0419
+8m 30s (- 156m 1s) (31000 5%) 4.0365
+8m 46s (- 155m 47s) (32000 5%) 4.0614
+9m 3s (- 155m 36s) (33000 5%) 4.0220
+9m 20s (- 155m 23s) (34000 5%) 4.0231
+9m 36s (- 155m 10s) (35000 5%) 4.0297
+9m 52s (- 154m 49s) (36000 6%) 4.0392
+10m 9s (- 154m 33s) (37000 6%) 4.0048
+10m 25s (- 154m 17s) (38000 6%) 3.9751
+10m 42s (- 154m 3s) (39000 6%) 3.9556
+10m 59s (- 153m 49s) (40000 6%) 4.0250
+Epoch 2/30 finished
+11m 18s (- 154m 4s) (41000 6%) 3.8228
+11m 34s (- 153m 48s) (42000 7%) 3.7615
+11m 51s (- 153m 32s) (43000 7%) 3.7338
+12m 7s (- 153m 18s) (44000 7%) 3.7571
+12m 24s (- 152m 59s) (45000 7%) 3.7591
+12m 41s (- 152m 46s) (46000 7%) 3.8534
+12m 57s (- 152m 28s) (47000 7%) 3.8033
+13m 14s (- 152m 13s) (48000 8%) 3.7840
+13m 31s (- 152m 0s) (49000 8%) 3.8273
+13m 47s (- 151m 46s) (50000 8%) 3.7683
+14m 4s (- 151m 28s) (51000 8%) 3.7613
+14m 21s (- 151m 15s) (52000 8%) 3.7845
+14m 37s (- 150m 56s) (53000 8%) 3.7971
+14m 54s (- 150m 39s) (54000 9%) 3.7648
+15m 11s (- 150m 30s) (55000 9%) 3.8964
+15m 28s (- 150m 17s) (56000 9%) 3.7767
+15m 44s (- 150m 1s) (57000 9%) 3.7758
+16m 1s (- 149m 46s) (58000 9%) 3.7881
+16m 18s (- 149m 31s) (59000 9%) 3.7956
+16m 35s (- 149m 16s) (60000 10%) 3.8252
+Epoch 3/30 finished
+16m 53s (- 149m 18s) (61000 10%) 3.5541
+17m 10s (- 149m 3s) (62000 10%) 3.5259
+17m 27s (- 148m 49s) (63000 10%) 3.5716
+17m 44s (- 148m 34s) (64000 10%) 3.5594
+18m 1s (- 148m 18s) (65000 10%) 3.5368
+18m 17s (- 148m 2s) (66000 11%) 3.5639
+18m 34s (- 147m 47s) (67000 11%) 3.6074
+18m 51s (- 147m 33s) (68000 11%) 3.5161
+19m 8s (- 147m 18s) (69000 11%) 3.6313
+19m 25s (- 147m 5s) (70000 11%) 3.5520
+19m 42s (- 146m 47s) (71000 11%) 3.5456
+19m 58s (- 146m 32s) (72000 12%) 3.5558
+20m 15s (- 146m 15s) (73000 12%) 3.5561
+20m 32s (- 145m 58s) (74000 12%) 3.5764
+20m 48s (- 145m 42s) (75000 12%) 3.5696
+21m 5s (- 145m 26s) (76000 12%) 3.5098
+21m 22s (- 145m 10s) (77000 12%) 3.5960
+21m 39s (- 144m 54s) (78000 13%) 3.6174
+21m 56s (- 144m 40s) (79000 13%) 3.6173
+22m 13s (- 144m 26s) (80000 13%) 3.6625
+Epoch 4/30 finished
+22m 32s (- 144m 22s) (81000 13%) 3.2693
+22m 48s (- 144m 7s) (82000 13%) 3.3301
+23m 5s (- 143m 52s) (83000 13%) 3.3816
+23m 22s (- 143m 38s) (84000 14%) 3.3664
+23m 39s (- 143m 22s) (85000 14%) 3.3613
+23m 56s (- 143m 5s) (86000 14%) 3.3788
+24m 13s (- 142m 49s) (87000 14%) 3.3078
+24m 30s (- 142m 33s) (88000 14%) 3.4488
+24m 46s (- 142m 16s) (89000 14%) 3.3284
+25m 3s (- 142m 0s) (90000 15%) 3.4297
+25m 20s (- 141m 45s) (91000 15%) 3.4649
+25m 37s (- 141m 30s) (92000 15%) 3.4217
+25m 54s (- 141m 14s) (93000 15%) 3.3982
+26m 11s (- 140m 57s) (94000 15%) 3.3656
+26m 28s (- 140m 41s) (95000 15%) 3.4692
+26m 44s (- 140m 25s) (96000 16%) 3.4244
+27m 1s (- 140m 9s) (97000 16%) 3.4516
+27m 18s (- 139m 52s) (98000 16%) 3.3807
+27m 35s (- 139m 36s) (99000 16%) 3.3981
+27m 52s (- 139m 21s) (100000 16%) 3.4410
+Epoch 5/30 finished
+28m 11s (- 139m 15s) (101000 16%) 3.1200
+28m 28s (- 139m 1s) (102000 17%) 3.1278
+28m 45s (- 138m 45s) (103000 17%) 3.1799
+29m 2s (- 138m 29s) (104000 17%) 3.2221
+29m 19s (- 138m 12s) (105000 17%) 3.2386
+29m 35s (- 137m 56s) (106000 17%) 3.1610
+29m 53s (- 137m 41s) (107000 17%) 3.3205
+30m 9s (- 137m 25s) (108000 18%) 3.2379
+30m 26s (- 137m 9s) (109000 18%) 3.2782
+30m 43s (- 136m 51s) (110000 18%) 3.1681
+31m 0s (- 136m 37s) (111000 18%) 3.3261
+31m 17s (- 136m 22s) (112000 18%) 3.2846
+31m 34s (- 136m 6s) (113000 18%) 3.2687
+31m 51s (- 135m 51s) (114000 19%) 3.2613
+32m 8s (- 135m 34s) (115000 19%) 3.2998
+32m 25s (- 135m 17s) (116000 19%) 3.2675
+32m 42s (- 135m 0s) (117000 19%) 3.2563
+32m 59s (- 134m 44s) (118000 19%) 3.2641
+33m 16s (- 134m 28s) (119000 19%) 3.3101
+33m 33s (- 134m 12s) (120000 20%) 3.2753
+Epoch 6/30 finished
+33m 51s (- 134m 3s) (121000 20%) 2.9315
+34m 8s (- 133m 47s) (122000 20%) 3.0597
+34m 25s (- 133m 30s) (123000 20%) 3.0237
+34m 42s (- 133m 15s) (124000 20%) 3.0604
+35m 0s (- 133m 0s) (125000 20%) 3.0745
+35m 16s (- 132m 43s) (126000 21%) 3.1130
+35m 33s (- 132m 26s) (127000 21%) 3.0602
+35m 50s (- 132m 10s) (128000 21%) 3.1755
+36m 7s (- 131m 54s) (129000 21%) 3.1472
+36m 24s (- 131m 38s) (130000 21%) 3.1643
+36m 41s (- 131m 22s) (131000 21%) 3.1096
+36m 58s (- 131m 5s) (132000 22%) 3.1402
+37m 15s (- 130m 48s) (133000 22%) 3.0589
+37m 32s (- 130m 32s) (134000 22%) 3.1467
+37m 49s (- 130m 16s) (135000 22%) 3.1223
+38m 6s (- 130m 1s) (136000 22%) 3.2362
+38m 23s (- 129m 44s) (137000 22%) 3.1414
+38m 40s (- 129m 28s) (138000 23%) 3.1318
+38m 57s (- 129m 13s) (139000 23%) 3.1544
+39m 14s (- 128m 56s) (140000 23%) 3.1868
+Epoch 7/30 finished
+39m 33s (- 128m 47s) (141000 23%) 2.8819
+39m 50s (- 128m 31s) (142000 23%) 2.9266
+40m 8s (- 128m 15s) (143000 23%) 2.9668
+40m 25s (- 127m 59s) (144000 24%) 2.9138
+40m 41s (- 127m 42s) (145000 24%) 2.9820
+40m 59s (- 127m 27s) (146000 24%) 3.0643
+41m 16s (- 127m 10s) (147000 24%) 2.9550
+41m 32s (- 126m 52s) (148000 24%) 2.8744
+41m 49s (- 126m 35s) (149000 24%) 2.9707
+42m 6s (- 126m 19s) (150000 25%) 3.0178
+42m 23s (- 126m 3s) (151000 25%) 3.0623
+42m 40s (- 125m 47s) (152000 25%) 2.9830
+42m 57s (- 125m 30s) (153000 25%) 3.0614
+43m 14s (- 125m 13s) (154000 25%) 3.0290
+43m 31s (- 124m 57s) (155000 25%) 3.0476
+43m 48s (- 124m 41s) (156000 26%) 3.0734
+44m 5s (- 124m 24s) (157000 26%) 2.9997
+44m 22s (- 124m 7s) (158000 26%) 2.9511
+44m 39s (- 123m 51s) (159000 26%) 3.1181
+44m 56s (- 123m 35s) (160000 26%) 3.1146
+Epoch 8/30 finished
+45m 15s (- 123m 24s) (161000 26%) 2.7553
+45m 32s (- 123m 7s) (162000 27%) 2.8736
+45m 49s (- 122m 51s) (163000 27%) 2.7930
+46m 6s (- 122m 34s) (164000 27%) 2.8125
+46m 23s (- 122m 17s) (165000 27%) 2.8497
+46m 40s (- 122m 1s) (166000 27%) 2.8802
+46m 57s (- 121m 45s) (167000 27%) 2.9242
+47m 14s (- 121m 28s) (168000 28%) 2.8498
+47m 31s (- 121m 11s) (169000 28%) 2.8739
+47m 48s (- 120m 56s) (170000 28%) 2.9606
+48m 6s (- 120m 40s) (171000 28%) 2.9570
+48m 22s (- 120m 22s) (172000 28%) 2.9101
+48m 39s (- 120m 6s) (173000 28%) 2.8680
+48m 56s (- 119m 49s) (174000 28%) 2.9382
+49m 13s (- 119m 33s) (175000 29%) 2.9631
+49m 30s (- 119m 15s) (176000 29%) 2.9343
+49m 47s (- 118m 58s) (177000 29%) 2.9512
+50m 4s (- 118m 42s) (178000 29%) 2.9350
+50m 21s (- 118m 26s) (179000 29%) 2.9693
+50m 38s (- 118m 9s) (180000 30%) 2.9913
+Epoch 9/30 finished
+50m 57s (- 117m 57s) (181000 30%) 2.7273
+51m 14s (- 117m 41s) (182000 30%) 2.7417
+51m 31s (- 117m 24s) (183000 30%) 2.6863
+51m 48s (- 117m 7s) (184000 30%) 2.7427
+52m 5s (- 116m 50s) (185000 30%) 2.8060
+52m 22s (- 116m 34s) (186000 31%) 2.7385
+52m 39s (- 116m 18s) (187000 31%) 2.8279
+52m 56s (- 116m 1s) (188000 31%) 2.7789
+53m 13s (- 115m 44s) (189000 31%) 2.7237
+53m 30s (- 115m 28s) (190000 31%) 2.8243
+53m 47s (- 115m 11s) (191000 31%) 2.8159
+54m 4s (- 114m 54s) (192000 32%) 2.8377
+54m 21s (- 114m 38s) (193000 32%) 2.9143
+54m 38s (- 114m 21s) (194000 32%) 2.7978
+54m 55s (- 114m 4s) (195000 32%) 2.8564
+55m 12s (- 113m 47s) (196000 32%) 2.8180
+55m 29s (- 113m 31s) (197000 32%) 2.8820
+55m 46s (- 113m 14s) (198000 33%) 2.8039
+56m 3s (- 112m 58s) (199000 33%) 2.8738
+56m 21s (- 112m 42s) (200000 33%) 2.7628
+Epoch 10/30 finished
+56m 40s (- 112m 30s) (201000 33%) 2.5453
+56m 57s (- 112m 13s) (202000 33%) 2.6439
+57m 14s (- 111m 57s) (203000 33%) 2.7930
+57m 31s (- 111m 40s) (204000 34%) 2.6312
+57m 49s (- 111m 24s) (205000 34%) 2.7491
+58m 6s (- 111m 8s) (206000 34%) 2.6501
+58m 23s (- 110m 52s) (207000 34%) 2.6682
+58m 40s (- 110m 35s) (208000 34%) 2.7231
+58m 57s (- 110m 18s) (209000 34%) 2.7072
+59m 14s (- 110m 1s) (210000 35%) 2.8006
+59m 31s (- 109m 45s) (211000 35%) 2.7881
+59m 48s (- 109m 28s) (212000 35%) 2.7750
+60m 6s (- 109m 11s) (213000 35%) 2.7542
+60m 23s (- 108m 55s) (214000 35%) 2.6731
+60m 40s (- 108m 38s) (215000 35%) 2.8243
+60m 56s (- 108m 21s) (216000 36%) 2.7534
+61m 13s (- 108m 4s) (217000 36%) 2.7951
+61m 30s (- 107m 47s) (218000 36%) 2.7360
+61m 47s (- 107m 30s) (219000 36%) 2.7523
+62m 5s (- 107m 14s) (220000 36%) 2.8635
+Epoch 11/30 finished
+62m 24s (- 107m 1s) (221000 36%) 2.5018
+62m 41s (- 106m 44s) (222000 37%) 2.5973
+62m 59s (- 106m 28s) (223000 37%) 2.5348
+63m 16s (- 106m 12s) (224000 37%) 2.5693
+63m 32s (- 105m 54s) (225000 37%) 2.5209
+63m 50s (- 105m 38s) (226000 37%) 2.6215
+64m 7s (- 105m 21s) (227000 37%) 2.6610
+64m 24s (- 105m 4s) (228000 38%) 2.6179
+64m 41s (- 104m 48s) (229000 38%) 2.6334
+64m 58s (- 104m 31s) (230000 38%) 2.6122
+65m 15s (- 104m 14s) (231000 38%) 2.6916
+65m 32s (- 103m 57s) (232000 38%) 2.6652
+65m 49s (- 103m 41s) (233000 38%) 2.7230
+66m 6s (- 103m 24s) (234000 39%) 2.7134
+66m 23s (- 103m 7s) (235000 39%) 2.6637
+66m 41s (- 102m 51s) (236000 39%) 2.7783
+66m 58s (- 102m 34s) (237000 39%) 2.6281
+67m 15s (- 102m 17s) (238000 39%) 2.6817
+67m 32s (- 102m 1s) (239000 39%) 2.6947
+67m 49s (- 101m 44s) (240000 40%) 2.6703
+Epoch 12/30 finished
+68m 8s (- 101m 31s) (241000 40%) 2.4788
+68m 26s (- 101m 14s) (242000 40%) 2.4708
+68m 43s (- 100m 57s) (243000 40%) 2.5477
+69m 0s (- 100m 40s) (244000 40%) 2.5183
+69m 17s (- 100m 24s) (245000 40%) 2.5464
+69m 34s (- 100m 7s) (246000 41%) 2.5259
+69m 51s (- 99m 50s) (247000 41%) 2.5593
+70m 8s (- 99m 33s) (248000 41%) 2.5354
+70m 25s (- 99m 16s) (249000 41%) 2.5112
+70m 42s (- 98m 59s) (250000 41%) 2.4964
+70m 59s (- 98m 42s) (251000 41%) 2.5343
+71m 16s (- 98m 25s) (252000 42%) 2.5371
+71m 33s (- 98m 9s) (253000 42%) 2.6458
+71m 50s (- 97m 52s) (254000 42%) 2.6312
+72m 8s (- 97m 35s) (255000 42%) 2.6098
+72m 25s (- 97m 18s) (256000 42%) 2.6394
+72m 42s (- 97m 2s) (257000 42%) 2.6516
+72m 59s (- 96m 45s) (258000 43%) 2.6235
+73m 16s (- 96m 28s) (259000 43%) 2.7049
+73m 34s (- 96m 12s) (260000 43%) 2.6333
+Epoch 13/30 finished
+73m 53s (- 95m 58s) (261000 43%) 2.3776
+74m 11s (- 95m 42s) (262000 43%) 2.5224
+74m 28s (- 95m 25s) (263000 43%) 2.4728
+74m 45s (- 95m 8s) (264000 44%) 2.4225
+75m 2s (- 94m 51s) (265000 44%) 2.4559
+75m 19s (- 94m 34s) (266000 44%) 2.4129
+75m 36s (- 94m 17s) (267000 44%) 2.4981
+75m 53s (- 94m 0s) (268000 44%) 2.4276
+76m 10s (- 93m 44s) (269000 44%) 2.5690
+76m 28s (- 93m 27s) (270000 45%) 2.4739
+76m 45s (- 93m 10s) (271000 45%) 2.5459
+77m 2s (- 92m 54s) (272000 45%) 2.5549
+77m 19s (- 92m 37s) (273000 45%) 2.5391
+77m 36s (- 92m 20s) (274000 45%) 2.5211
+77m 53s (- 92m 3s) (275000 45%) 2.4732
+78m 10s (- 91m 46s) (276000 46%) 2.5976
+78m 27s (- 91m 29s) (277000 46%) 2.5253
+78m 45s (- 91m 13s) (278000 46%) 2.6226
+79m 2s (- 90m 56s) (279000 46%) 2.5488
+79m 19s (- 90m 39s) (280000 46%) 2.6057
+Epoch 14/30 finished
+79m 38s (- 90m 25s) (281000 46%) 2.3047
+79m 56s (- 90m 8s) (282000 47%) 2.4265
+80m 13s (- 89m 51s) (283000 47%) 2.3890
+80m 30s (- 89m 35s) (284000 47%) 2.4614
+80m 47s (- 89m 18s) (285000 47%) 2.4034
+81m 4s (- 89m 1s) (286000 47%) 2.4085
+81m 22s (- 88m 44s) (287000 47%) 2.4477
+81m 39s (- 88m 27s) (288000 48%) 2.4658
+81m 56s (- 88m 10s) (289000 48%) 2.3904
+82m 13s (- 87m 54s) (290000 48%) 2.4358
+82m 30s (- 87m 37s) (291000 48%) 2.4201
+82m 48s (- 87m 20s) (292000 48%) 2.4885
+83m 5s (- 87m 3s) (293000 48%) 2.5120
+83m 22s (- 86m 46s) (294000 49%) 2.4282
+83m 39s (- 86m 30s) (295000 49%) 2.5437
+83m 56s (- 86m 13s) (296000 49%) 2.4646
+84m 13s (- 85m 55s) (297000 49%) 2.4659
+84m 30s (- 85m 38s) (298000 49%) 2.5321
+84m 48s (- 85m 22s) (299000 49%) 2.5261
+85m 5s (- 85m 5s) (300000 50%) 2.5428
+Epoch 15/30 finished
+85m 24s (- 84m 50s) (301000 50%) 2.2918
+85m 41s (- 84m 33s) (302000 50%) 2.2835
+85m 58s (- 84m 16s) (303000 50%) 2.2995
+86m 16s (- 83m 59s) (304000 50%) 2.3359
+86m 33s (- 83m 42s) (305000 50%) 2.3525
+86m 50s (- 83m 26s) (306000 51%) 2.4418
+87m 7s (- 83m 9s) (307000 51%) 2.3344
+87m 24s (- 82m 51s) (308000 51%) 2.3784
+87m 41s (- 82m 35s) (309000 51%) 2.4808
+87m 58s (- 82m 18s) (310000 51%) 2.4203
+88m 16s (- 82m 1s) (311000 51%) 2.3698
+88m 33s (- 81m 44s) (312000 52%) 2.3675
+88m 50s (- 81m 27s) (313000 52%) 2.4685
+89m 8s (- 81m 11s) (314000 52%) 2.4608
+89m 25s (- 80m 54s) (315000 52%) 2.4262
+89m 42s (- 80m 37s) (316000 52%) 2.5245
+90m 0s (- 80m 20s) (317000 52%) 2.4893
+90m 17s (- 80m 4s) (318000 53%) 2.4613
+90m 34s (- 79m 47s) (319000 53%) 2.4388
+90m 51s (- 79m 30s) (320000 53%) 2.4471
+Epoch 16/30 finished
+91m 10s (- 79m 15s) (321000 53%) 2.2361
+91m 28s (- 78m 58s) (322000 53%) 2.2772
+91m 45s (- 78m 41s) (323000 53%) 2.2316
+92m 2s (- 78m 24s) (324000 54%) 2.2979
+92m 20s (- 78m 7s) (325000 54%) 2.3175
+92m 37s (- 77m 50s) (326000 54%) 2.3125
+92m 54s (- 77m 33s) (327000 54%) 2.2958
+93m 11s (- 77m 16s) (328000 54%) 2.2839
+93m 28s (- 77m 0s) (329000 54%) 2.3379
+93m 46s (- 76m 43s) (330000 55%) 2.3258
+94m 3s (- 76m 26s) (331000 55%) 2.4078
+94m 20s (- 76m 9s) (332000 55%) 2.3502
+94m 37s (- 75m 52s) (333000 55%) 2.3402
+94m 55s (- 75m 35s) (334000 55%) 2.4822
+95m 11s (- 75m 18s) (335000 55%) 2.4628
+95m 28s (- 75m 1s) (336000 56%) 2.3599
+95m 45s (- 74m 44s) (337000 56%) 2.4839
+96m 2s (- 74m 26s) (338000 56%) 2.4445
+96m 19s (- 74m 9s) (339000 56%) 2.3840
+96m 36s (- 73m 52s) (340000 56%) 2.4307
+Epoch 17/30 finished
+96m 55s (- 73m 36s) (341000 56%) 2.1230
+97m 12s (- 73m 19s) (342000 56%) 2.1331
+97m 29s (- 73m 2s) (343000 57%) 2.2332
+97m 46s (- 72m 45s) (344000 57%) 2.2918
+98m 3s (- 72m 29s) (345000 57%) 2.2978
+98m 20s (- 72m 11s) (346000 57%) 2.2273
+98m 38s (- 71m 55s) (347000 57%) 2.2612
+98m 55s (- 71m 37s) (348000 57%) 2.2651
+99m 12s (- 71m 21s) (349000 58%) 2.2295
+99m 30s (- 71m 4s) (350000 58%) 2.2921
+99m 48s (- 70m 48s) (351000 58%) 2.3082
+100m 5s (- 70m 31s) (352000 58%) 2.3316
+100m 22s (- 70m 14s) (353000 58%) 2.3527
+100m 39s (- 69m 56s) (354000 59%) 2.3518
+100m 56s (- 69m 39s) (355000 59%) 2.4216
+101m 13s (- 69m 22s) (356000 59%) 2.4127
+101m 30s (- 69m 5s) (357000 59%) 2.3116
+101m 47s (- 68m 48s) (358000 59%) 2.4104
+102m 5s (- 68m 31s) (359000 59%) 2.3937
+102m 22s (- 68m 15s) (360000 60%) 2.4208
+Epoch 18/30 finished
+102m 41s (- 67m 59s) (361000 60%) 2.1375
+102m 59s (- 67m 42s) (362000 60%) 2.1632
+103m 16s (- 67m 25s) (363000 60%) 2.2050
+103m 34s (- 67m 8s) (364000 60%) 2.2143
+103m 51s (- 66m 51s) (365000 60%) 2.1807
+104m 8s (- 66m 35s) (366000 61%) 2.2574
+104m 26s (- 66m 18s) (367000 61%) 2.3011
+104m 43s (- 66m 1s) (368000 61%) 2.2683
+105m 0s (- 65m 44s) (369000 61%) 2.2404
+105m 17s (- 65m 27s) (370000 61%) 2.1995
+105m 35s (- 65m 10s) (371000 61%) 2.3304
+105m 52s (- 64m 53s) (372000 62%) 2.2729
+106m 9s (- 64m 36s) (373000 62%) 2.2893
+106m 26s (- 64m 19s) (374000 62%) 2.2749
+106m 44s (- 64m 2s) (375000 62%) 2.2809
+107m 1s (- 63m 45s) (376000 62%) 2.2988
+107m 18s (- 63m 28s) (377000 62%) 2.3191
+107m 36s (- 63m 11s) (378000 63%) 2.3398
+107m 54s (- 62m 55s) (379000 63%) 2.4078
+108m 11s (- 62m 38s) (380000 63%) 2.3418
+Epoch 19/30 finished
+108m 30s (- 62m 22s) (381000 63%) 2.1144
+108m 48s (- 62m 5s) (382000 63%) 2.0752
+109m 5s (- 61m 48s) (383000 63%) 2.1016
+109m 22s (- 61m 31s) (384000 64%) 2.1542
+109m 39s (- 61m 14s) (385000 64%) 2.1633
+109m 56s (- 60m 57s) (386000 64%) 2.1561
+110m 13s (- 60m 40s) (387000 64%) 2.1869
+110m 31s (- 60m 23s) (388000 64%) 2.1975
+110m 48s (- 60m 6s) (389000 64%) 2.2547
+111m 6s (- 59m 49s) (390000 65%) 2.2845
+111m 23s (- 59m 32s) (391000 65%) 2.2272
+111m 41s (- 59m 15s) (392000 65%) 2.3394
+111m 58s (- 58m 58s) (393000 65%) 2.2683
+112m 15s (- 58m 41s) (394000 65%) 2.2705
+112m 33s (- 58m 24s) (395000 65%) 2.2590
+112m 50s (- 58m 7s) (396000 66%) 2.2940
+113m 7s (- 57m 50s) (397000 66%) 2.2466
+113m 24s (- 57m 33s) (398000 66%) 2.2338
+113m 42s (- 57m 17s) (399000 66%) 2.3790
+114m 0s (- 57m 0s) (400000 66%) 2.2451
+Epoch 20/30 finished
+114m 19s (- 56m 44s) (401000 66%) 2.0503
+114m 36s (- 56m 27s) (402000 67%) 2.1026
+114m 54s (- 56m 10s) (403000 67%) 2.1400
+115m 11s (- 55m 53s) (404000 67%) 2.1552
+115m 28s (- 55m 36s) (405000 67%) 2.1266
+115m 46s (- 55m 19s) (406000 67%) 2.1590
+116m 3s (- 55m 2s) (407000 67%) 2.1618
+116m 21s (- 54m 45s) (408000 68%) 2.0621
+116m 38s (- 54m 28s) (409000 68%) 2.1490
+116m 55s (- 54m 11s) (410000 68%) 2.2415
+117m 13s (- 53m 54s) (411000 68%) 2.1748
+117m 30s (- 53m 37s) (412000 68%) 2.1497
+117m 47s (- 53m 20s) (413000 68%) 2.2458
+118m 4s (- 53m 3s) (414000 69%) 2.2478
+118m 22s (- 52m 46s) (415000 69%) 2.2989
+118m 39s (- 52m 29s) (416000 69%) 2.2653
+118m 57s (- 52m 12s) (417000 69%) 2.3463
+119m 14s (- 51m 55s) (418000 69%) 2.2739
+119m 31s (- 51m 37s) (419000 69%) 2.1787
+119m 48s (- 51m 20s) (420000 70%) 2.1935
+Epoch 21/30 finished
+120m 6s (- 51m 4s) (421000 70%) 2.0678
+120m 23s (- 50m 46s) (422000 70%) 1.9364
+120m 40s (- 50m 29s) (423000 70%) 2.0189
+120m 57s (- 50m 12s) (424000 70%) 2.1214
+121m 13s (- 49m 55s) (425000 70%) 2.0192
+121m 30s (- 49m 38s) (426000 71%) 2.1564
+121m 47s (- 49m 20s) (427000 71%) 2.1435
+122m 4s (- 49m 3s) (428000 71%) 2.2026
+122m 21s (- 48m 46s) (429000 71%) 2.2473
+122m 38s (- 48m 29s) (430000 71%) 2.1511
+122m 56s (- 48m 12s) (431000 71%) 2.2232
+123m 12s (- 47m 55s) (432000 72%) 2.1485
+123m 29s (- 47m 37s) (433000 72%) 2.1633
+123m 46s (- 47m 20s) (434000 72%) 2.2196
+124m 3s (- 47m 3s) (435000 72%) 2.1645
+124m 20s (- 46m 46s) (436000 72%) 2.2240
+124m 37s (- 46m 29s) (437000 72%) 2.1774
+124m 54s (- 46m 11s) (438000 73%) 2.2376
+125m 11s (- 45m 54s) (439000 73%) 2.2907
+125m 28s (- 45m 37s) (440000 73%) 2.2505
+Epoch 22/30 finished
+125m 47s (- 45m 21s) (441000 73%) 2.0184
+126m 4s (- 45m 4s) (442000 73%) 2.0770
+126m 21s (- 44m 46s) (443000 73%) 1.9873
+126m 38s (- 44m 29s) (444000 74%) 2.0308
+126m 55s (- 44m 12s) (445000 74%) 1.9875
+127m 12s (- 43m 55s) (446000 74%) 2.0927
+127m 29s (- 43m 38s) (447000 74%) 2.0924
+127m 45s (- 43m 20s) (448000 74%) 2.0823
+128m 2s (- 43m 3s) (449000 74%) 2.0900
+128m 19s (- 42m 46s) (450000 75%) 2.1120
+128m 36s (- 42m 29s) (451000 75%) 2.0772
+128m 53s (- 42m 12s) (452000 75%) 2.1771
+129m 10s (- 41m 55s) (453000 75%) 2.1611
+129m 27s (- 41m 37s) (454000 75%) 2.1963
+129m 44s (- 41m 20s) (455000 75%) 2.1975
+130m 1s (- 41m 3s) (456000 76%) 2.1978
+130m 18s (- 40m 46s) (457000 76%) 2.1425
+130m 35s (- 40m 29s) (458000 76%) 2.2200
+130m 52s (- 40m 12s) (459000 76%) 2.2026
+131m 9s (- 39m 55s) (460000 76%) 2.2674
+Epoch 23/30 finished
+131m 28s (- 39m 38s) (461000 76%) 1.9764
+131m 45s (- 39m 21s) (462000 77%) 1.9884
+132m 2s (- 39m 4s) (463000 77%) 2.0262
+132m 19s (- 38m 47s) (464000 77%) 2.0216
+132m 36s (- 38m 29s) (465000 77%) 2.0316
+132m 53s (- 38m 12s) (466000 77%) 2.0910
+133m 10s (- 37m 55s) (467000 77%) 2.0694
+133m 27s (- 37m 38s) (468000 78%) 2.0477
+133m 44s (- 37m 21s) (469000 78%) 2.1778
+134m 1s (- 37m 4s) (470000 78%) 2.1275
+134m 18s (- 36m 47s) (471000 78%) 2.1141
+134m 34s (- 36m 29s) (472000 78%) 2.1193
+134m 51s (- 36m 12s) (473000 78%) 2.1815
+135m 8s (- 35m 55s) (474000 79%) 2.1514
+135m 25s (- 35m 38s) (475000 79%) 2.1203
+135m 42s (- 35m 21s) (476000 79%) 2.1626
+135m 59s (- 35m 4s) (477000 79%) 2.1498
+136m 16s (- 34m 46s) (478000 79%) 2.1802
+136m 33s (- 34m 29s) (479000 79%) 2.1737
+136m 49s (- 34m 12s) (480000 80%) 2.1448
+Epoch 24/30 finished
+137m 8s (- 33m 55s) (481000 80%) 1.9242
+137m 26s (- 33m 38s) (482000 80%) 2.0333
+137m 42s (- 33m 21s) (483000 80%) 1.9851
+137m 59s (- 33m 4s) (484000 80%) 1.9723
+138m 16s (- 32m 47s) (485000 80%) 2.0616
+138m 33s (- 32m 30s) (486000 81%) 2.0028
+138m 50s (- 32m 12s) (487000 81%) 2.0706
+139m 7s (- 31m 55s) (488000 81%) 2.0453
+139m 24s (- 31m 38s) (489000 81%) 2.1542
+139m 42s (- 31m 21s) (490000 81%) 2.0774
+139m 58s (- 31m 4s) (491000 81%) 2.1097
+140m 15s (- 30m 47s) (492000 82%) 2.0666
+140m 32s (- 30m 30s) (493000 82%) 2.0807
+140m 49s (- 30m 12s) (494000 82%) 2.0360
+141m 6s (- 29m 55s) (495000 82%) 2.0784
+141m 22s (- 29m 38s) (496000 82%) 2.0640
+141m 40s (- 29m 21s) (497000 82%) 2.1315
+141m 57s (- 29m 4s) (498000 83%) 2.1830
+142m 14s (- 28m 47s) (499000 83%) 2.1514
+142m 31s (- 28m 30s) (500000 83%) 2.1180
+Epoch 25/30 finished
+142m 49s (- 28m 13s) (501000 83%) 1.9060
+143m 7s (- 27m 56s) (502000 83%) 1.9682
+143m 23s (- 27m 39s) (503000 83%) 1.8602
+143m 41s (- 27m 22s) (504000 84%) 2.0531
+143m 58s (- 27m 5s) (505000 84%) 2.0341
+144m 15s (- 26m 47s) (506000 84%) 1.9723
+144m 32s (- 26m 30s) (507000 84%) 2.0808
+144m 49s (- 26m 13s) (508000 84%) 1.9516
+145m 6s (- 25m 56s) (509000 84%) 2.0758
+145m 24s (- 25m 39s) (510000 85%) 2.0480
+145m 41s (- 25m 22s) (511000 85%) 2.0671
+145m 58s (- 25m 5s) (512000 85%) 2.0366
+146m 16s (- 24m 48s) (513000 85%) 2.0529
+146m 33s (- 24m 31s) (514000 85%) 2.0272
+146m 50s (- 24m 14s) (515000 85%) 2.0980
+147m 7s (- 23m 57s) (516000 86%) 2.0212
+147m 25s (- 23m 40s) (517000 86%) 2.0865
+147m 42s (- 23m 22s) (518000 86%) 2.1074
+148m 0s (- 23m 5s) (519000 86%) 2.1911
+148m 18s (- 22m 48s) (520000 86%) 2.2028
+Epoch 26/30 finished
+148m 37s (- 22m 32s) (521000 86%) 1.8843
+148m 55s (- 22m 15s) (522000 87%) 1.9612
+149m 12s (- 21m 58s) (523000 87%) 1.9060
+149m 31s (- 21m 41s) (524000 87%) 2.0345
+149m 49s (- 21m 24s) (525000 87%) 2.0137
+150m 6s (- 21m 7s) (526000 87%) 1.9938
+150m 23s (- 20m 49s) (527000 87%) 2.0350
+150m 41s (- 20m 32s) (528000 88%) 2.0548
+150m 58s (- 20m 15s) (529000 88%) 1.8773
+151m 16s (- 19m 58s) (530000 88%) 1.9318
+151m 33s (- 19m 41s) (531000 88%) 2.0048
+151m 50s (- 19m 24s) (532000 88%) 2.0911
+152m 8s (- 19m 7s) (533000 88%) 2.0606
+152m 25s (- 18m 50s) (534000 89%) 2.1174
+152m 43s (- 18m 33s) (535000 89%) 2.1336
+153m 0s (- 18m 16s) (536000 89%) 2.0384
+153m 17s (- 17m 59s) (537000 89%) 2.1037
+153m 35s (- 17m 41s) (538000 89%) 2.1077
+153m 52s (- 17m 24s) (539000 89%) 2.0356
+154m 9s (- 17m 7s) (540000 90%) 2.0419
+Epoch 27/30 finished
+154m 29s (- 16m 50s) (541000 90%) 1.9052
+154m 46s (- 16m 33s) (542000 90%) 1.8552
+155m 3s (- 16m 16s) (543000 90%) 1.9021
+155m 21s (- 15m 59s) (544000 90%) 2.0828
+155m 38s (- 15m 42s) (545000 90%) 1.9091
+155m 56s (- 15m 25s) (546000 91%) 1.9634
+156m 13s (- 15m 8s) (547000 91%) 1.9911
+156m 31s (- 14m 51s) (548000 91%) 2.0015
+156m 48s (- 14m 33s) (549000 91%) 1.9305
+157m 5s (- 14m 16s) (550000 91%) 1.9859
+157m 23s (- 13m 59s) (551000 91%) 2.0504
+157m 40s (- 13m 42s) (552000 92%) 1.9611
+157m 57s (- 13m 25s) (553000 92%) 2.0299
+158m 15s (- 13m 8s) (554000 92%) 2.0395
+158m 32s (- 12m 51s) (555000 92%) 2.0066
+158m 49s (- 12m 34s) (556000 92%) 2.0068
+159m 6s (- 12m 17s) (557000 92%) 2.1694
+159m 24s (- 11m 59s) (558000 93%) 2.1079
+159m 41s (- 11m 42s) (559000 93%) 1.9923
+159m 58s (- 11m 25s) (560000 93%) 2.1337
+Epoch 28/30 finished
+160m 18s (- 11m 8s) (561000 93%) 1.8128
+160m 36s (- 10m 51s) (562000 93%) 1.8768
+160m 55s (- 10m 34s) (563000 93%) 1.8710
+161m 14s (- 10m 17s) (564000 94%) 1.8613
+161m 33s (- 10m 0s) (565000 94%) 1.9629
+161m 52s (- 9m 43s) (566000 94%) 1.9658
+162m 11s (- 9m 26s) (567000 94%) 1.9141
+162m 30s (- 9m 9s) (568000 94%) 1.9295
+162m 49s (- 8m 52s) (569000 94%) 2.0064
+163m 8s (- 8m 35s) (570000 95%) 2.0438
+163m 28s (- 8m 18s) (571000 95%) 2.1729
+163m 47s (- 8m 1s) (572000 95%) 2.0291
+164m 6s (- 7m 43s) (573000 95%) 1.9712
+164m 25s (- 7m 26s) (574000 95%) 2.0748
+164m 43s (- 7m 9s) (575000 95%) 2.0266
+165m 3s (- 6m 52s) (576000 96%) 1.9868
+165m 21s (- 6m 35s) (577000 96%) 2.0607
+165m 40s (- 6m 18s) (578000 96%) 1.9844
+165m 59s (- 6m 1s) (579000 96%) 1.9929
+166m 18s (- 5m 44s) (580000 96%) 2.1088
+Epoch 29/30 finished
+166m 39s (- 5m 27s) (581000 96%) 1.8576
+166m 58s (- 5m 9s) (582000 97%) 1.8423
+167m 18s (- 4m 52s) (583000 97%) 1.9434
+167m 36s (- 4m 35s) (584000 97%) 1.9121
+167m 56s (- 4m 18s) (585000 97%) 1.9552
+168m 14s (- 4m 1s) (586000 97%) 1.8299
+168m 33s (- 3m 43s) (587000 97%) 1.9483
+168m 53s (- 3m 26s) (588000 98%) 1.9566
+169m 11s (- 3m 9s) (589000 98%) 1.9561
+169m 30s (- 2m 52s) (590000 98%) 1.9368
+169m 49s (- 2m 35s) (591000 98%) 1.9390
+170m 8s (- 2m 17s) (592000 98%) 1.9734
+170m 27s (- 2m 0s) (593000 98%) 2.0022
+170m 46s (- 1m 43s) (594000 99%) 1.9656
+171m 5s (- 1m 26s) (595000 99%) 1.9543
+171m 24s (- 1m 9s) (596000 99%) 1.9880
+171m 43s (- 0m 51s) (597000 99%) 1.9649
+172m 2s (- 0m 34s) (598000 99%) 2.0622
+172m 21s (- 0m 17s) (599000 99%) 2.1035
+172m 40s (- 0m 0s) (600000 100%) 2.0037
+Epoch 30/30 finished
+Evaluate randomly on training sentences:
+> ['you', 'were', 'terrified', 'weren', 't', 'you', '?', 'you were', 'were terrified', 'terrified weren', 'weren t', 't you', 'you ?', 'you were terrified', 'were terrified weren', 'terrified weren t', 'weren t you', 't you ?', 'you were terrified weren', 'were terrified weren t', 'terrified weren t you', 'weren t you ?']
+= tu etais terrifie n est ce pas ?
+< tu regardiez ne dire pas ? ? ? <EOS>
+
+> ['there', 's', 'nothing', 'wrong', 'with', 'that', 'either', '.', 'there s', 's nothing', 'nothing wrong', 'wrong with', 'with that', 'that either', 'either .', 'there s nothing', 's nothing wrong', 'nothing wrong with', 'wrong with that', 'with that either', 'that either .', 'there s nothing wrong', 's nothing wrong with', 'nothing wrong with that', 'wrong with that either', 'with that either .']
+= il n y a rien de mal a cela non plus .
+< c en a y a a . <EOS>
+
+> ['give', 'it', 'to', 'me', 'please', '.', 'give it', 'it to', 'to me', 'me please', 'please .', 'give it to', 'it to me', 'to me please', 'me please .', 'give it to me', 'it to me please', 'to me please .']
+= donnez moi cela je vous prie .
+< donnez moi de m appartient . <EOS>
+
+> ['there', 'is', 'so', 'much', 'to', 'do', 'and', 'only', 'a', 'lifetime', 'to', 'do', 'it', '.', 'there is', 'is so', 'so much', 'much to', 'to do', 'do and', 'and only', 'only a', 'a lifetime', 'lifetime to', 'to do', 'do it', 'it .', 'there is so', 'is so much', 'so much to', 'much to do', 'to do and', 'do and only', 'and only a', 'only a lifetime', 'a lifetime to', 'lifetime to do', 'to do it', 'do it .', 'there is so much', 'is so much to', 'so much to do', 'much to do and', 'to do and only', 'do and only a', 'and only a lifetime', 'only a lifetime to', 'a lifetime to do', 'lifetime to do it', 'to do it .']
+= il y a tant a faire et seulement la duree d une vie pour le faire .
+< il y a faire bon d faire faire faire faire faire faire faire faire faire faire faire . <EOS>
+
+> ['taking', 'all', 'things', 'into', 'consideration', 'i', 'have', 'made', 'up', 'my', 'mind', 'to', 'give', 'up', 'the', 'idea', '.', 'taking all', 'all things', 'things into', 'into consideration', 'consideration i', 'i have', 'have made', 'made up', 'up my', 'my mind', 'mind to', 'to give', 'give up', 'up the', 'the idea', 'idea .', 'taking all things', 'all things into', 'things into consideration', 'into consideration i', 'consideration i have', 'i have made', 'have made up', 'made up my', 'up my mind', 'my mind to', 'mind to give', 'to give up', 'give up the', 'up the idea', 'the idea .', 'taking all things into', 'all things into consideration', 'things into consideration i', 'into consideration i have', 'consideration i have made', 'i have made up', 'have made up my', 'made up my mind', 'up my mind to', 'my mind to give', 'mind to give up', 'to give up the', 'give up the idea', 'up the idea .']
+= en prenant tous les facteurs en consideration j ai decide d abandonner cette idee .
+< s elle m a cote d argent a votre mes a mes parents . <EOS>
+
+> ['almost', 'a', 'third', 'of', 'the', 'gunshot', 'victims', 'were', 'teenagers', '.', 'almost a', 'a third', 'third of', 'of the', 'the gunshot', 'gunshot victims', 'victims were', 'were teenagers', 'teenagers .', 'almost a third', 'a third of', 'third of the', 'of the gunshot', 'the gunshot victims', 'gunshot victims were', 'victims were teenagers', 'were teenagers .', 'almost a third of', 'a third of the', 'third of the gunshot', 'of the gunshot victims', 'the gunshot victims were', 'gunshot victims were teenagers', 'victims were teenagers .']
+= presque un tiers des victimes de la fusillade etaient des adolescents .
+< les tiers tiers a ete tiers dans la victimes de la dans . <EOS>
+
+> ['i', 'refuse', 'to', 'accept', 'that', '.', 'i refuse', 'refuse to', 'to accept', 'accept that', 'that .', 'i refuse to', 'refuse to accept', 'to accept that', 'accept that .', 'i refuse to accept', 'refuse to accept that', 'to accept that .']
+= je refuse de l accepter .
+< je refuse de l accepter . <EOS>
+
+> ['you', 'can', 'get', 'a', 'car', 'license', 'after', 'you', 'turn', 'eighteen', '.', 'you can', 'can get', 'get a', 'a car', 'car license', 'license after', 'after you', 'you turn', 'turn eighteen', 'eighteen .', 'you can get', 'can get a', 'get a car', 'a car license', 'car license after', 'license after you', 'after you turn', 'you turn eighteen', 'turn eighteen .', 'you can get a', 'can get a car', 'get a car license', 'a car license after', 'car license after you', 'license after you turn', 'after you turn eighteen', 'you turn eighteen .']
+= on peut obtenir un permis de conduire apres avoir eu dix huit ans .
+< tu vous a aussi vous a chaque detendre a envoye . <EOS>
+
+> ['she', 'filled', 'the', 'vase', 'with', 'water', '.', 'she filled', 'filled the', 'the vase', 'vase with', 'with water', 'water .', 'she filled the', 'filled the vase', 'the vase with', 'vase with water', 'with water .', 'she filled the vase', 'filled the vase with', 'the vase with water', 'vase with water .']
+= elle emplit le vase d eau .
+< elle emplit le vase de eau . <EOS>
+
+> ['it', 'won', 't', 'be', 'hard', '.', 'it won', 'won t', 't be', 'be hard', 'hard .', 'it won t', 'won t be', 't be hard', 'be hard .', 'it won t be', 'won t be hard', 't be hard .']
+= ce ne sera pas dur .
+< ce ne sera pas dur . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['ask', 'anyone', '.', 'ask anyone', 'anyone .', 'ask anyone .']
+= demande a n importe qui .
+< il a eu . <EOS>
+
+> ['how', 'did', 'you', 'get', 'into', 'the', 'house', '?', 'how did', 'did you', 'you get', 'get into', 'into the', 'the house', 'house ?', 'how did you', 'did you get', 'you get into', 'get into the', 'into the house', 'the house ?', 'how did you get', 'did you get into', 'you get into the', 'get into the house', 'into the house ?']
+= comment as tu penetre dans la maison ?
+< comment etes vous connaissez ci ? <EOS>
+
+> ['tom', 'says', 'he', 'll', 'only', 'speak', 'to', 'mary', '.', 'tom says', 'says he', 'he ll', 'll only', 'only speak', 'speak to', 'to mary', 'mary .', 'tom says he', 'says he ll', 'he ll only', 'll only speak', 'only speak to', 'speak to mary', 'to mary .', 'tom says he ll', 'says he ll only', 'he ll only speak', 'll only speak to', 'only speak to mary', 'speak to mary .']
+= tom dit qu il ne parlera qu a mary uniquement .
+< il refuse refuse jamais pour le sport a l ecole . <EOS>
+
+> ['let', 's', 'go', 'to', 'eat', 'together', '.', 'let s', 's go', 'go to', 'to eat', 'eat together', 'together .', 'let s go', 's go to', 'go to eat', 'to eat together', 'eat together .', 'let s go to', 's go to eat', 'go to eat together', 'to eat together .']
+= allons manger ensemble .
+< allons manger manger manger manger . <EOS>
+
+> ['we', 're', 'meant', 'for', 'each', 'other', '.', 'we re', 're meant', 'meant for', 'for each', 'each other', 'other .', 'we re meant', 're meant for', 'meant for each', 'for each other', 'each other .', 'we re meant for', 're meant for each', 'meant for each other', 'for each other .']
+= nous sommes faits l un pour l autre .
+< nous sommes quelque quelque de quelque . . <EOS>
+
+> ['i', 'don', 't', 'know', 'why', 'you', 're', 'all', 'so', 'jumpy', '.', 'i don', 'don t', 't know', 'know why', 'why you', 'you re', 're all', 'all so', 'so jumpy', 'jumpy .', 'i don t', 'don t know', 't know why', 'know why you', 'why you re', 'you re all', 're all so', 'all so jumpy', 'so jumpy .', 'i don t know', 'don t know why', 't know why you', 'know why you re', 'why you re all', 'you re all so', 're all so jumpy', 'all so jumpy .']
+= j ignore pourquoi vous etes tous tellement agites .
+< je ignore si vous etes nerveuses . <EOS>
+
+> ['it', 's', 'not', 'cheap', 'to', 'eat', 'here', '.', 'it s', 's not', 'not cheap', 'cheap to', 'to eat', 'eat here', 'here .', 'it s not', 's not cheap', 'not cheap to', 'cheap to eat', 'to eat here', 'eat here .', 'it s not cheap', 's not cheap to', 'not cheap to eat', 'cheap to eat here', 'to eat here .']
+= manger ici n est pas bon marche .
+< ce n est pas encore pour pour . <EOS>
+
+> ['you', 're', 'wasting', 'both', 'of', 'our', 'time', '.', 'you re', 're wasting', 'wasting both', 'both of', 'of our', 'our time', 'time .', 'you re wasting', 're wasting both', 'wasting both of', 'both of our', 'of our time', 'our time .', 'you re wasting both', 're wasting both of', 'wasting both of our', 'both of our time', 'of our time .']
+= tu gaspilles notre temps a tous les deux .
+< tu es une bon au de anglais . <EOS>
+
+> ['tom', 'is', 'a', 'bit', 'short', 'for', 'his', 'age', '.', 'tom is', 'is a', 'a bit', 'bit short', 'short for', 'for his', 'his age', 'age .', 'tom is a', 'is a bit', 'a bit short', 'bit short for', 'short for his', 'for his age', 'his age .', 'tom is a bit', 'is a bit short', 'a bit short for', 'bit short for his', 'short for his age', 'for his age .']
+= tom est legerement petit pour son age .
+< tom a probablement un a la <EOS>
+
+> ['i', 'eat', 'alone', '.', 'i eat', 'eat alone', 'alone .', 'i eat alone', 'eat alone .', 'i eat alone .']
+= je mange seule .
+< j ai oublie a l ecole . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2286
+score for short sentnces (length <= 6):
+ROUGE1: 0.3035077345556015
+ROUGE2: 0.20568327167463432
+BLEU: 0.2446616521419655
+BLEU_CLIP: 0.22670000845853708
+
+Num of long sentences (length > 6): 2714
+score for long sentnces (length > 6):
+ROUGE1: 0.29406508156451516
+ROUGE2: 0.1912202878069671
+BLEU: 0.1646745993366025
+BLEU_CLIP: 0.13989962516346327
+
+Overall:
+ROUGE1: 0.2983822625120398
+ROUGE2: 0.19783276403126457
+BLEU: 0.20124467987921446
+BLEU_CLIP: 0.17958476040597102
+
+Finished
+
+hpc mode: True
+order: 5
+mode: sum
+metric: MULTI
+hidden-size: 256
+n-epochs: 30
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Ngram Vocab Size: 254362
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .', 'she did come here', 'did come here .', 'she did come here .']
+= elle est bien venue ici .
+< escalade provenant provenant invitation premedite entrer ancien taire apprecierent loterie deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .', 'it was quite funny', 'was quite funny .', 'it was quite funny .']
+= ce fut assez amusant .
+< valises valises valises valises inutilement inutilement alimentaires inutilement inutilement alimentaires inutilement ameliore escargots devenait alimentaires aupres fixer amis concentrees etudiait chauves fusible fusible aeroport remarquable occupera cause fusible fusible aeroport coiffer concentrees risques digeree decevez aupres deviennent deviennent reverrai maigres concentrees perou bonjour finirai finirai ecoutiez cloturee ecoutiez disque enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .', 'they come from the same', 'come from the same country', 'from the same country .']
+= elles proviennent du meme pays .
+< beurre batterie batterie batterie vaine vaine promue delicieusement delicieusement chauves chauves glisser blamez consentement concentrees jazz chauves concentrees chauves concentrees pacifique largue promue collecteur risques deviennent tempete agence fusible fusible vigilant basses parlera risques deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .', 'i didn t finish', 'didn t finish reading', 't finish reading that', 'finish reading that book', 'reading that book .', 'i didn t finish reading', 'didn t finish reading that', 't finish reading that book', 'finish reading that book .']
+= je n avais pas fini de lire ce livre .
+< gosse gosse gosse gosse gosse gosse exprime trainante exprime trainante fusillees fusillees fusillees fusillees fusillees fusillees fusillees fusillees fusillees fusillees boulanger maigrichonne maigrichonne souhaitait ecoutiez cloturee concentrees trompette fournirai fournirai chirurgicale stresse etudiait revolutions coupa chauves fusible fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible incendie fusible
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .', 'i m not ready', 'm not ready yet', 'not ready yet .', 'i m not ready yet', 'm not ready yet .']
+= je ne suis pas encore pret .
+< appauvrit tv tv tv tv tv crochet rafraichissant rafraichissant attentes attentes delibere delibere embaucher egare dortoir attribuee promue nager receptionnees oublie tempete arrivames chasseur concentrees fatiguer decevez aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .', 'we shouldn t confuse', 'shouldn t confuse solitude', 't confuse solitude with', 'confuse solitude with isolation', 'solitude with isolation .', 'with isolation . they', 'isolation . they are', '. they are two', 'they are two separate', 'are two separate things', 'two separate things .', 'we shouldn t confuse solitude', 'shouldn t confuse solitude with', 't confuse solitude with isolation', 'confuse solitude with isolation .', 'solitude with isolation . they', 'with isolation . they are', 'isolation . they are two', '. they are two separate', 'they are two separate things', 'are two separate things .']
+= on ne devrait pas confondre la solitude et l isolation . ce sont deux choses differentes .
+< mordre mordre arrives arrives arrives arrives arrives cobaye cobaye cobaye hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts ressemblerait hauts ressemblerait ressemblerait ressemblerait ressemblerait ressemblerait ressemblerait ressemblerait ressemblerait ressemblerait autoriser attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant attrapee mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant mangeant
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .', 'i don t know', 'don t know what', 't know what it', 'know what it is', 'what it is .', 'i don t know what', 'don t know what it', 't know what it is', 'know what it is .']
+= je ne sais pas ce que c est .
+< depeints attraperai attraperai attraperai attraperai attraperai attraperai pourparlers acheve pourparlers gsm amis contents declenche regler sauveur debutante abandonnee digeree aupres consentement risques fusible aeroport remarquable occupera cause fusible fusible aeroport coiffer concentrees risques digeree decevez aupres deviennent deviennent reverrai maigres concentrees perou bonjour finirai finirai ecoutiez cloturee ecoutiez disque enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?', 'are you going home', 'you going home by', 'going home by bus', 'home by bus ?', 'are you going home by', 'you going home by bus', 'going home by bus ?']
+= rentres tu chez toi en bus ?
+< escalade relativement relativement decharger decharger decharger licencier coupa coupa formes riche apprennent deces aupres mal aupres mort couteaux consentement fusible aeroport fusible aeroport remarquable occupera cause fusible fusible aeroport coiffer concentrees risques digeree decevez aupres deviennent deviennent reverrai maigres concentrees perou bonjour finirai finirai ecoutiez cloturee ecoutiez disque enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .', 'he is intelligent .']
+= il est intelligent .
+< verriez verriez garees confort confort recommencer recommencer recommencer recommencer souhaite detruite recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .', 'you re so impatient', 're so impatient .', 'you re so impatient .']
+= vous etes tellement impatientes .
+< familiere familiere familiere familiere familiere familiere risques record risques yens deviennent deviennent carbone carbone embaucher brisee recommencer recommencer souhaite critiquer egare pure annules enfiler concentrees pacifique aupres deviennent deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .', 'team members are provided', 'members are provided with', 'are provided with equipment', 'provided with equipment and', 'with equipment and uniforms', 'equipment and uniforms .', 'team members are provided with', 'members are provided with equipment', 'are provided with equipment and', 'provided with equipment and uniforms', 'with equipment and uniforms .']
+= l equipement et les uniformes sont fournis aux membres des equipes .
+< gosse gosse arrives arrives ressentir ressentir gagnerez gagnerez gagnerez gagnerez gagnerez trainante trainante trainante trainante trainante trainante trainante trainante trainante trainante trainante attrapee trainante attrapee connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees connectees tremblait trepidante trepidante consentement matin delibere delibere embaucher egare viendras fusible stresse existe existe ma attentes delibere delibere abandonnee digeree aupres fixer amis concentrees recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .', 'now that my brother is', 'that my brother is a', 'my brother is a university', 'brother is a university student', 'is a university student he', 'a university student he has', 'university student he has to', 'student he has to do', 'he has to do a', 'has to do a lot', 'to do a lot of', 'do a lot of reading', 'a lot of reading .']
+= maintenant que mon frere est etudiant a l universite il doit beaucoup lire .
+< mordre signe signe cobaye arrives effectuer effectuer effectuer effectuer effectuer effectuer effectuer effectuer arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives arrives hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts hauts
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .', 'they had fun with', 'had fun with us', 'fun with us .', 'they had fun with us', 'had fun with us .']
+= ils se sont amuses avec nous .
+< escalade escalade escalade escalade escalade escalade escalade salle escalade batterie attendions deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?', 'does anyone know japanese ?']
+= quiconque connait il le japonais ?
+< sentes politesse politesse politesse entrer ancien maigrir additionnant apprecierent loterie deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .', 'he narrowly escaped being run', 'narrowly escaped being run over', 'escaped being run over .']
+= il a vraiment failli se faire renverser .
+< cinq francais approchez approchez approchez approchez approchez approchez deceda deceda deceda deceda deceda assez clonage assez realiseront clonage interdite assez realiseront songer absence recommencer recommencer recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?', 'when was the last time', 'was the last time you', 'the last time you went', 'last time you went to', 'time you went to an', 'you went to an art', 'went to an art gallery', 'to an art gallery ?']
+= quand avez vous ete dans une galerie d art pour la derniere fois ?
+< voulu voulu voulu voulu ressentir ressentir ressentir ressentir ressentir renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer renforcer visage visage renforcer visage arriveront immense terrestres aerodrome collecteur douter articles fete deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .', 'his house was sold for', 'house was sold for .']
+= sa maison a ete vendue pour . .
+< ouvrage stimulateur immediat immediat immediat deciderai figee dedans renforcer postuler situe situe absence embaucher embaucher egare faisable cela mains receptionnees viendras fusible fusible aeroport coiffer concentrees risques digeree decevez aupres deviennent deviennent reverrai maigres concentrees perou bonjour finirai finirai ecoutiez cloturee ecoutiez disque enfiler concentrees pacifique aupres deviennent deviennent deviennent instant aupres deviennent deviennent carbone carbone feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez feriez
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .', 'i m not mad .']
+= je ne suis pas fou .
+< ville myope myope fusillees fusillees loterie myope ancien fleuve largue receptionnees interrupteur occupera corail risques basses impose oublie tempete songer receptionnees oublie aupres abandonnerais largue trompette deviennent carbone carbone feriez embaucher embaucher egare concerne devenait concentrees seduisant recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .', 'i thought you d', 'thought you d be', 'you d be much', 'd be much fatter', 'be much fatter .', 'i thought you d be', 'thought you d be much', 'you d be much fatter', 'd be much fatter .']
+= je pensais que vous seriez beaucoup plus gros .
+< confisquer confisquer confisquer fusillees fusillees fusillees fusillees fusillees fusillees fusillees fusillees fusillees fusillees alimentaires ironique delibere risques receptionnees oublie tempete fusible stresse portier seduisant recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .', 'they are bored .']
+= ils s ennuient .
+< lyceens lentilles lentilles lentilles lentilles risques recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer souhaite critiquer recommencer recommencer souhaite critiquer recommencer concentrees pacifique aupres largue largue parle stresse etudiait digeree recommencer recommencer recommencer recommencer
+
+0m 18s (- 184m 30s) (1000 0%) 5.7283
+0m 35s (- 175m 47s) (2000 0%) 5.0684
+0m 51s (- 172m 21s) (3000 0%) 4.8482
+1m 9s (- 171m 43s) (4000 0%) 4.8806
+1m 26s (- 170m 56s) (5000 0%) 4.6772
+1m 43s (- 170m 26s) (6000 1%) 4.7568
+2m 0s (- 170m 27s) (7000 1%) 4.6966
+2m 18s (- 170m 24s) (8000 1%) 4.6393
+2m 35s (- 170m 31s) (9000 1%) 4.6785
+2m 53s (- 170m 17s) (10000 1%) 4.5596
+3m 10s (- 170m 12s) (11000 1%) 4.6046
+3m 28s (- 170m 0s) (12000 2%) 4.4860
+3m 45s (- 169m 42s) (13000 2%) 4.5327
+4m 3s (- 169m 35s) (14000 2%) 4.5596
+4m 20s (- 169m 33s) (15000 2%) 4.4968
+4m 38s (- 169m 24s) (16000 2%) 4.5547
+4m 55s (- 169m 10s) (17000 2%) 4.4737
+5m 13s (- 168m 53s) (18000 3%) 4.4160
+5m 31s (- 168m 55s) (19000 3%) 4.5019
+5m 49s (- 168m 46s) (20000 3%) 4.4113
+Epoch 1/30 finished
+6m 9s (- 169m 50s) (21000 3%) 4.3067
+6m 27s (- 169m 30s) (22000 3%) 4.2280
+6m 44s (- 169m 18s) (23000 3%) 4.2533
+7m 2s (- 169m 3s) (24000 4%) 4.2340
+7m 20s (- 168m 50s) (25000 4%) 4.2004
+7m 38s (- 168m 35s) (26000 4%) 4.2401
+7m 56s (- 168m 26s) (27000 4%) 4.2224
+8m 14s (- 168m 15s) (28000 4%) 4.2144
+8m 32s (- 168m 5s) (29000 4%) 4.1793
+8m 50s (- 167m 59s) (30000 5%) 4.1958
+9m 8s (- 167m 48s) (31000 5%) 4.1977
+9m 26s (- 167m 36s) (32000 5%) 4.2537
+9m 44s (- 167m 29s) (33000 5%) 4.2076
+10m 2s (- 167m 15s) (34000 5%) 4.1680
+10m 20s (- 167m 2s) (35000 5%) 4.1938
+10m 38s (- 166m 46s) (36000 6%) 4.2243
+10m 56s (- 166m 32s) (37000 6%) 4.1639
+11m 14s (- 166m 13s) (38000 6%) 4.0783
+11m 32s (- 165m 56s) (39000 6%) 4.1085
+11m 49s (- 165m 39s) (40000 6%) 4.1190
+Epoch 2/30 finished
+12m 10s (- 165m 56s) (41000 6%) 3.9520
+12m 27s (- 165m 37s) (42000 7%) 3.8764
+12m 45s (- 165m 20s) (43000 7%) 3.8522
+13m 3s (- 165m 3s) (44000 7%) 3.8783
+13m 21s (- 164m 40s) (45000 7%) 3.8811
+13m 39s (- 164m 26s) (46000 7%) 3.9713
+13m 56s (- 164m 2s) (47000 7%) 3.9365
+14m 14s (- 163m 49s) (48000 8%) 3.9731
+14m 32s (- 163m 34s) (49000 8%) 3.9352
+14m 50s (- 163m 19s) (50000 8%) 3.8956
+15m 8s (- 162m 58s) (51000 8%) 3.8922
+15m 27s (- 162m 50s) (52000 8%) 3.9664
+15m 44s (- 162m 31s) (53000 8%) 3.9138
+16m 2s (- 162m 13s) (54000 9%) 3.8921
+16m 21s (- 162m 5s) (55000 9%) 3.9963
+16m 39s (- 161m 48s) (56000 9%) 3.8872
+16m 57s (- 161m 33s) (57000 9%) 3.9115
+17m 15s (- 161m 17s) (58000 9%) 3.9310
+17m 33s (- 161m 1s) (59000 9%) 3.9416
+17m 51s (- 160m 47s) (60000 10%) 3.9989
+Epoch 3/30 finished
+18m 11s (- 160m 48s) (61000 10%) 3.6672
+18m 30s (- 160m 32s) (62000 10%) 3.6913
+18m 48s (- 160m 17s) (63000 10%) 3.7156
+19m 6s (- 160m 3s) (64000 10%) 3.6983
+19m 24s (- 159m 45s) (65000 10%) 3.7064
+19m 42s (- 159m 31s) (66000 11%) 3.7562
+20m 0s (- 159m 12s) (67000 11%) 3.7530
+20m 18s (- 158m 56s) (68000 11%) 3.6631
+20m 37s (- 158m 40s) (69000 11%) 3.7884
+20m 55s (- 158m 24s) (70000 11%) 3.7182
+21m 13s (- 158m 6s) (71000 11%) 3.6937
+21m 31s (- 157m 49s) (72000 12%) 3.7078
+21m 49s (- 157m 32s) (73000 12%) 3.6930
+22m 7s (- 157m 15s) (74000 12%) 3.7082
+22m 25s (- 156m 57s) (75000 12%) 3.7403
+22m 43s (- 156m 40s) (76000 12%) 3.6751
+23m 1s (- 156m 24s) (77000 12%) 3.7294
+23m 19s (- 156m 7s) (78000 13%) 3.7886
+23m 38s (- 155m 52s) (79000 13%) 3.7610
+23m 56s (- 155m 36s) (80000 13%) 3.8002
+Epoch 4/30 finished
+24m 16s (- 155m 32s) (81000 13%) 3.4276
+24m 35s (- 155m 17s) (82000 13%) 3.4955
+24m 53s (- 155m 0s) (83000 13%) 3.5682
+25m 11s (- 154m 44s) (84000 14%) 3.5390
+25m 29s (- 154m 27s) (85000 14%) 3.5044
+25m 47s (- 154m 10s) (86000 14%) 3.5302
+26m 5s (- 153m 50s) (87000 14%) 3.4404
+26m 23s (- 153m 34s) (88000 14%) 3.6378
+26m 41s (- 153m 14s) (89000 14%) 3.5193
+26m 59s (- 152m 58s) (90000 15%) 3.5768
+27m 18s (- 152m 43s) (91000 15%) 3.6203
+27m 36s (- 152m 27s) (92000 15%) 3.5852
+27m 54s (- 152m 8s) (93000 15%) 3.5914
+28m 12s (- 151m 50s) (94000 15%) 3.5358
+28m 30s (- 151m 31s) (95000 15%) 3.6117
+28m 48s (- 151m 14s) (96000 16%) 3.5877
+29m 7s (- 150m 59s) (97000 16%) 3.5639
+29m 25s (- 150m 43s) (98000 16%) 3.5285
+29m 43s (- 150m 24s) (99000 16%) 3.5535
+30m 1s (- 150m 6s) (100000 16%) 3.5651
+Epoch 5/30 finished
+30m 21s (- 150m 1s) (101000 16%) 3.2391
+30m 40s (- 149m 44s) (102000 17%) 3.3178
+30m 58s (- 149m 26s) (103000 17%) 3.3105
+31m 16s (- 149m 9s) (104000 17%) 3.3505
+31m 34s (- 148m 51s) (105000 17%) 3.4144
+31m 52s (- 148m 32s) (106000 17%) 3.2939
+32m 10s (- 148m 16s) (107000 17%) 3.4617
+32m 28s (- 147m 58s) (108000 18%) 3.3425
+32m 47s (- 147m 40s) (109000 18%) 3.4282
+33m 5s (- 147m 22s) (110000 18%) 3.3623
+33m 23s (- 147m 6s) (111000 18%) 3.4886
+33m 42s (- 146m 50s) (112000 18%) 3.4185
+34m 0s (- 146m 32s) (113000 18%) 3.3844
+34m 18s (- 146m 15s) (114000 19%) 3.4050
+34m 36s (- 145m 58s) (115000 19%) 3.5260
+34m 54s (- 145m 39s) (116000 19%) 3.3897
+35m 12s (- 145m 22s) (117000 19%) 3.4556
+35m 31s (- 145m 4s) (118000 19%) 3.4145
+35m 49s (- 144m 47s) (119000 19%) 3.4500
+36m 7s (- 144m 29s) (120000 20%) 3.4115
+Epoch 6/30 finished
+36m 27s (- 144m 20s) (121000 20%) 3.1050
+36m 45s (- 144m 2s) (122000 20%) 3.2062
+37m 3s (- 143m 44s) (123000 20%) 3.1607
+37m 22s (- 143m 27s) (124000 20%) 3.2212
+37m 40s (- 143m 9s) (125000 20%) 3.2234
+37m 58s (- 142m 51s) (126000 21%) 3.2861
+38m 16s (- 142m 32s) (127000 21%) 3.2306
+38m 34s (- 142m 16s) (128000 21%) 3.3521
+38m 53s (- 141m 58s) (129000 21%) 3.3345
+39m 11s (- 141m 40s) (130000 21%) 3.3022
+39m 29s (- 141m 23s) (131000 21%) 3.2767
+39m 47s (- 141m 5s) (132000 22%) 3.3195
+40m 5s (- 140m 46s) (133000 22%) 3.1723
+40m 23s (- 140m 28s) (134000 22%) 3.2681
+40m 41s (- 140m 10s) (135000 22%) 3.2899
+41m 0s (- 139m 53s) (136000 22%) 3.3896
+41m 18s (- 139m 35s) (137000 22%) 3.3111
+41m 36s (- 139m 17s) (138000 23%) 3.2374
+41m 54s (- 139m 0s) (139000 23%) 3.3167
+42m 13s (- 138m 43s) (140000 23%) 3.3651
+Epoch 7/30 finished
+42m 33s (- 138m 33s) (141000 23%) 3.0144
+42m 52s (- 138m 16s) (142000 23%) 3.1306
+43m 10s (- 137m 59s) (143000 23%) 3.0858
+43m 28s (- 137m 41s) (144000 24%) 3.0808
+43m 47s (- 137m 23s) (145000 24%) 3.1338
+44m 5s (- 137m 6s) (146000 24%) 3.2048
+44m 23s (- 136m 48s) (147000 24%) 3.1221
+44m 41s (- 136m 30s) (148000 24%) 3.0763
+45m 0s (- 136m 12s) (149000 24%) 3.1172
+45m 18s (- 135m 55s) (150000 25%) 3.1322
+45m 36s (- 135m 38s) (151000 25%) 3.1912
+45m 54s (- 135m 19s) (152000 25%) 3.1255
+46m 13s (- 135m 2s) (153000 25%) 3.2186
+46m 31s (- 134m 44s) (154000 25%) 3.1705
+46m 49s (- 134m 26s) (155000 25%) 3.1624
+47m 8s (- 134m 9s) (156000 26%) 3.2340
+47m 26s (- 133m 52s) (157000 26%) 3.1885
+47m 44s (- 133m 34s) (158000 26%) 3.1226
+48m 3s (- 133m 17s) (159000 26%) 3.2733
+48m 21s (- 133m 0s) (160000 26%) 3.2739
+Epoch 8/30 finished
+48m 42s (- 132m 48s) (161000 26%) 2.9134
+49m 0s (- 132m 31s) (162000 27%) 3.0237
+49m 19s (- 132m 13s) (163000 27%) 2.9247
+49m 37s (- 131m 55s) (164000 27%) 2.9829
+49m 55s (- 131m 36s) (165000 27%) 2.9969
+50m 13s (- 131m 18s) (166000 27%) 3.0342
+50m 32s (- 131m 2s) (167000 27%) 3.1015
+50m 50s (- 130m 44s) (168000 28%) 3.0143
+51m 9s (- 130m 27s) (169000 28%) 3.0568
+51m 27s (- 130m 9s) (170000 28%) 3.0968
+51m 46s (- 129m 52s) (171000 28%) 3.1702
+52m 4s (- 129m 34s) (172000 28%) 3.0791
+52m 22s (- 129m 16s) (173000 28%) 3.0595
+52m 40s (- 128m 58s) (174000 28%) 3.1069
+52m 59s (- 128m 41s) (175000 29%) 3.1276
+53m 17s (- 128m 24s) (176000 29%) 3.0924
+53m 36s (- 128m 5s) (177000 29%) 3.0883
+53m 54s (- 127m 48s) (178000 29%) 3.0833
+54m 12s (- 127m 30s) (179000 29%) 3.1289
+54m 31s (- 127m 12s) (180000 30%) 3.1395
+Epoch 9/30 finished
+54m 51s (- 127m 0s) (181000 30%) 2.8823
+55m 10s (- 126m 43s) (182000 30%) 2.8982
+55m 28s (- 126m 25s) (183000 30%) 2.8576
+55m 47s (- 126m 7s) (184000 30%) 2.9135
+56m 5s (- 125m 49s) (185000 30%) 2.9665
+56m 23s (- 125m 31s) (186000 31%) 2.9481
+56m 42s (- 125m 14s) (187000 31%) 3.0265
+57m 0s (- 124m 56s) (188000 31%) 2.9294
+57m 18s (- 124m 38s) (189000 31%) 2.8951
+57m 37s (- 124m 21s) (190000 31%) 3.0018
+57m 56s (- 124m 3s) (191000 31%) 2.9879
+58m 14s (- 123m 45s) (192000 32%) 3.0132
+58m 32s (- 123m 27s) (193000 32%) 3.0761
+58m 50s (- 123m 9s) (194000 32%) 2.9521
+59m 9s (- 122m 51s) (195000 32%) 3.0384
+59m 27s (- 122m 33s) (196000 32%) 2.9714
+59m 46s (- 122m 16s) (197000 32%) 3.0554
+60m 4s (- 121m 58s) (198000 33%) 2.9575
+60m 22s (- 121m 40s) (199000 33%) 3.0655
+60m 41s (- 121m 23s) (200000 33%) 3.0146
+Epoch 10/30 finished
+61m 2s (- 121m 9s) (201000 33%) 2.7679
+61m 21s (- 120m 52s) (202000 33%) 2.7969
+61m 39s (- 120m 35s) (203000 33%) 2.9694
+61m 58s (- 120m 17s) (204000 34%) 2.8492
+62m 16s (- 119m 59s) (205000 34%) 2.9295
+62m 35s (- 119m 41s) (206000 34%) 2.8307
+62m 53s (- 119m 24s) (207000 34%) 2.8589
+63m 11s (- 119m 5s) (208000 34%) 2.8934
+63m 29s (- 118m 47s) (209000 34%) 2.8671
+63m 48s (- 118m 30s) (210000 35%) 2.9599
+64m 6s (- 118m 12s) (211000 35%) 2.9313
+64m 25s (- 117m 53s) (212000 35%) 2.9635
+64m 43s (- 117m 35s) (213000 35%) 2.9251
+65m 1s (- 117m 17s) (214000 35%) 2.8475
+65m 20s (- 116m 59s) (215000 35%) 2.9663
+65m 38s (- 116m 41s) (216000 36%) 2.9024
+65m 56s (- 116m 23s) (217000 36%) 2.9227
+66m 14s (- 116m 5s) (218000 36%) 2.8669
+66m 33s (- 115m 47s) (219000 36%) 2.9253
+66m 52s (- 115m 29s) (220000 36%) 3.0178
+Epoch 11/30 finished
+67m 13s (- 115m 16s) (221000 36%) 2.6708
+67m 31s (- 114m 58s) (222000 37%) 2.7550
+67m 50s (- 114m 40s) (223000 37%) 2.7097
+68m 8s (- 114m 22s) (224000 37%) 2.7408
+68m 26s (- 114m 4s) (225000 37%) 2.7417
+68m 45s (- 113m 46s) (226000 37%) 2.8351
+69m 3s (- 113m 28s) (227000 37%) 2.8613
+69m 22s (- 113m 11s) (228000 38%) 2.7995
+69m 40s (- 112m 53s) (229000 38%) 2.8459
+69m 59s (- 112m 35s) (230000 38%) 2.7765
+70m 17s (- 112m 17s) (231000 38%) 2.7954
+70m 35s (- 111m 58s) (232000 38%) 2.8358
+70m 54s (- 111m 41s) (233000 38%) 2.8907
+71m 12s (- 111m 23s) (234000 39%) 2.8977
+71m 31s (- 111m 5s) (235000 39%) 2.8315
+71m 49s (- 110m 47s) (236000 39%) 2.9576
+72m 8s (- 110m 29s) (237000 39%) 2.7956
+72m 26s (- 110m 11s) (238000 39%) 2.8813
+72m 45s (- 109m 53s) (239000 39%) 2.8657
+73m 3s (- 109m 35s) (240000 40%) 2.8862
+Epoch 12/30 finished
+73m 24s (- 109m 21s) (241000 40%) 2.6811
+73m 42s (- 109m 3s) (242000 40%) 2.7236
+74m 1s (- 108m 45s) (243000 40%) 2.7197
+74m 20s (- 108m 27s) (244000 40%) 2.6759
+74m 39s (- 108m 10s) (245000 40%) 2.7309
+74m 57s (- 107m 52s) (246000 41%) 2.7357
+75m 16s (- 107m 34s) (247000 41%) 2.7229
+75m 34s (- 107m 16s) (248000 41%) 2.7121
+75m 52s (- 106m 57s) (249000 41%) 2.6671
+76m 10s (- 106m 39s) (250000 41%) 2.6778
+76m 29s (- 106m 21s) (251000 41%) 2.6983
+76m 47s (- 106m 2s) (252000 42%) 2.7207
+77m 6s (- 105m 44s) (253000 42%) 2.8071
+77m 24s (- 105m 26s) (254000 42%) 2.8028
+77m 42s (- 105m 8s) (255000 42%) 2.8162
+78m 1s (- 104m 50s) (256000 42%) 2.8296
+78m 19s (- 104m 32s) (257000 42%) 2.8024
+78m 38s (- 104m 14s) (258000 43%) 2.8265
+78m 57s (- 103m 56s) (259000 43%) 2.9051
+79m 15s (- 103m 38s) (260000 43%) 2.7718
+Epoch 13/30 finished
+79m 36s (- 103m 24s) (261000 43%) 2.6090
+79m 55s (- 103m 6s) (262000 43%) 2.7134
+80m 14s (- 102m 48s) (263000 43%) 2.6655
+80m 32s (- 102m 30s) (264000 44%) 2.6548
+80m 50s (- 102m 12s) (265000 44%) 2.6351
+81m 9s (- 101m 53s) (266000 44%) 2.5569
+81m 27s (- 101m 35s) (267000 44%) 2.7028
+81m 45s (- 101m 17s) (268000 44%) 2.6006
+82m 4s (- 100m 59s) (269000 44%) 2.7181
+82m 22s (- 100m 41s) (270000 45%) 2.6123
+82m 41s (- 100m 23s) (271000 45%) 2.7222
+82m 59s (- 100m 5s) (272000 45%) 2.7321
+83m 18s (- 99m 47s) (273000 45%) 2.7004
+83m 36s (- 99m 28s) (274000 45%) 2.6734
+83m 55s (- 99m 10s) (275000 45%) 2.6918
+84m 13s (- 98m 52s) (276000 46%) 2.7712
+84m 32s (- 98m 34s) (277000 46%) 2.6757
+84m 51s (- 98m 16s) (278000 46%) 2.8122
+85m 9s (- 97m 59s) (279000 46%) 2.6860
+85m 28s (- 97m 40s) (280000 46%) 2.7467
+Epoch 14/30 finished
+85m 48s (- 97m 25s) (281000 46%) 2.4866
+86m 8s (- 97m 7s) (282000 47%) 2.6365
+86m 26s (- 96m 49s) (283000 47%) 2.5852
+86m 45s (- 96m 31s) (284000 47%) 2.6263
+87m 3s (- 96m 13s) (285000 47%) 2.5846
+87m 22s (- 95m 55s) (286000 47%) 2.5940
+87m 40s (- 95m 37s) (287000 47%) 2.6320
+87m 59s (- 95m 19s) (288000 48%) 2.6674
+88m 17s (- 95m 0s) (289000 48%) 2.5494
+88m 36s (- 94m 42s) (290000 48%) 2.6258
+88m 54s (- 94m 24s) (291000 48%) 2.6123
+89m 13s (- 94m 6s) (292000 48%) 2.6827
+89m 31s (- 93m 48s) (293000 48%) 2.7007
+89m 50s (- 93m 30s) (294000 49%) 2.5934
+90m 9s (- 93m 12s) (295000 49%) 2.6437
+90m 28s (- 92m 55s) (296000 49%) 2.6532
+90m 46s (- 92m 36s) (297000 49%) 2.6350
+91m 4s (- 92m 18s) (298000 49%) 2.6564
+91m 23s (- 92m 0s) (299000 49%) 2.7264
+91m 42s (- 91m 42s) (300000 50%) 2.6853
+Epoch 15/30 finished
+92m 2s (- 91m 26s) (301000 50%) 2.4391
+92m 21s (- 91m 7s) (302000 50%) 2.4995
+92m 39s (- 90m 49s) (303000 50%) 2.4475
+92m 58s (- 90m 31s) (304000 50%) 2.5311
+93m 16s (- 90m 13s) (305000 50%) 2.5001
+93m 35s (- 89m 55s) (306000 51%) 2.6477
+93m 53s (- 89m 37s) (307000 51%) 2.4837
+94m 12s (- 89m 18s) (308000 51%) 2.5482
+94m 30s (- 89m 0s) (309000 51%) 2.6758
+94m 49s (- 88m 42s) (310000 51%) 2.6037
+95m 8s (- 88m 24s) (311000 51%) 2.5362
+95m 27s (- 88m 6s) (312000 52%) 2.5584
+95m 45s (- 87m 48s) (313000 52%) 2.5988
+96m 4s (- 87m 30s) (314000 52%) 2.6317
+96m 23s (- 87m 12s) (315000 52%) 2.5762
+96m 41s (- 86m 54s) (316000 52%) 2.6691
+97m 1s (- 86m 36s) (317000 52%) 2.6609
+97m 19s (- 86m 18s) (318000 53%) 2.6484
+97m 37s (- 86m 0s) (319000 53%) 2.6564
+97m 56s (- 85m 42s) (320000 53%) 2.6740
+Epoch 16/30 finished
+98m 17s (- 85m 26s) (321000 53%) 2.4325
+98m 36s (- 85m 8s) (322000 53%) 2.4577
+98m 54s (- 84m 49s) (323000 53%) 2.4310
+99m 13s (- 84m 31s) (324000 54%) 2.5212
+99m 32s (- 84m 13s) (325000 54%) 2.4725
+99m 50s (- 83m 55s) (326000 54%) 2.4966
+100m 9s (- 83m 37s) (327000 54%) 2.5048
+100m 27s (- 83m 18s) (328000 54%) 2.4856
+100m 46s (- 83m 0s) (329000 54%) 2.5605
+101m 5s (- 82m 42s) (330000 55%) 2.4791
+101m 24s (- 82m 24s) (331000 55%) 2.6038
+101m 42s (- 82m 6s) (332000 55%) 2.5310
+102m 1s (- 81m 48s) (333000 55%) 2.5784
+102m 20s (- 81m 30s) (334000 55%) 2.6091
+102m 39s (- 81m 12s) (335000 55%) 2.6451
+102m 57s (- 80m 53s) (336000 56%) 2.5029
+103m 16s (- 80m 35s) (337000 56%) 2.6021
+103m 34s (- 80m 16s) (338000 56%) 2.5733
+103m 53s (- 79m 59s) (339000 56%) 2.5872
+104m 12s (- 79m 40s) (340000 56%) 2.5709
+Epoch 17/30 finished
+104m 32s (- 79m 24s) (341000 56%) 2.3087
+104m 51s (- 79m 6s) (342000 56%) 2.2975
+105m 10s (- 78m 47s) (343000 57%) 2.4383
+105m 28s (- 78m 29s) (344000 57%) 2.5092
+105m 47s (- 78m 11s) (345000 57%) 2.4543
+106m 5s (- 77m 53s) (346000 57%) 2.3668
+106m 24s (- 77m 35s) (347000 57%) 2.4475
+106m 43s (- 77m 16s) (348000 57%) 2.4548
+107m 2s (- 76m 58s) (349000 58%) 2.4019
+107m 20s (- 76m 40s) (350000 58%) 2.4821
+107m 39s (- 76m 22s) (351000 58%) 2.4954
+107m 57s (- 76m 3s) (352000 58%) 2.5377
+108m 16s (- 75m 45s) (353000 58%) 2.5626
+108m 34s (- 75m 27s) (354000 59%) 2.5547
+108m 53s (- 75m 9s) (355000 59%) 2.6025
+109m 12s (- 74m 50s) (356000 59%) 2.5675
+109m 30s (- 74m 32s) (357000 59%) 2.4847
+109m 49s (- 74m 14s) (358000 59%) 2.5974
+110m 8s (- 73m 56s) (359000 59%) 2.6082
+110m 26s (- 73m 37s) (360000 60%) 2.5919
+Epoch 18/30 finished
+110m 47s (- 73m 21s) (361000 60%) 2.3619
+111m 6s (- 73m 2s) (362000 60%) 2.3007
+111m 25s (- 72m 44s) (363000 60%) 2.3899
+111m 44s (- 72m 26s) (364000 60%) 2.4605
+112m 2s (- 72m 8s) (365000 60%) 2.3329
+112m 21s (- 71m 50s) (366000 61%) 2.4116
+112m 40s (- 71m 32s) (367000 61%) 2.5104
+112m 58s (- 71m 13s) (368000 61%) 2.4247
+113m 17s (- 70m 55s) (369000 61%) 2.3831
+113m 35s (- 70m 36s) (370000 61%) 2.3511
+113m 54s (- 70m 18s) (371000 61%) 2.4808
+114m 13s (- 70m 0s) (372000 62%) 2.4423
+114m 32s (- 69m 42s) (373000 62%) 2.4781
+114m 50s (- 69m 23s) (374000 62%) 2.4781
+115m 9s (- 69m 5s) (375000 62%) 2.4790
+115m 28s (- 68m 47s) (376000 62%) 2.5368
+115m 46s (- 68m 28s) (377000 62%) 2.4488
+116m 5s (- 68m 11s) (378000 63%) 2.5396
+116m 24s (- 67m 53s) (379000 63%) 2.5408
+116m 43s (- 67m 34s) (380000 63%) 2.5120
+Epoch 19/30 finished
+117m 4s (- 67m 17s) (381000 63%) 2.2425
+117m 22s (- 66m 59s) (382000 63%) 2.2547
+117m 41s (- 66m 40s) (383000 63%) 2.2881
+117m 59s (- 66m 22s) (384000 64%) 2.3597
+118m 18s (- 66m 3s) (385000 64%) 2.4149
+118m 36s (- 65m 45s) (386000 64%) 2.3521
+118m 55s (- 65m 27s) (387000 64%) 2.3454
+119m 14s (- 65m 8s) (388000 64%) 2.4547
+119m 32s (- 64m 50s) (389000 64%) 2.4288
+119m 51s (- 64m 32s) (390000 65%) 2.4565
+120m 10s (- 64m 14s) (391000 65%) 2.3860
+120m 29s (- 63m 55s) (392000 65%) 2.5124
+120m 48s (- 63m 37s) (393000 65%) 2.4614
+121m 6s (- 63m 19s) (394000 65%) 2.4334
+121m 25s (- 63m 1s) (395000 65%) 2.4240
+121m 44s (- 62m 42s) (396000 66%) 2.4550
+122m 2s (- 62m 24s) (397000 66%) 2.4340
+122m 21s (- 62m 5s) (398000 66%) 2.4349
+122m 40s (- 61m 48s) (399000 66%) 2.5071
+122m 59s (- 61m 29s) (400000 66%) 2.4544
+Epoch 20/30 finished
+123m 20s (- 61m 12s) (401000 66%) 2.2609
+123m 38s (- 60m 53s) (402000 67%) 2.2794
+123m 57s (- 60m 35s) (403000 67%) 2.3396
+124m 15s (- 60m 17s) (404000 67%) 2.3561
+124m 34s (- 59m 58s) (405000 67%) 2.3048
+124m 53s (- 59m 40s) (406000 67%) 2.3234
+125m 12s (- 59m 22s) (407000 67%) 2.3833
+125m 30s (- 59m 3s) (408000 68%) 2.2762
+125m 48s (- 58m 45s) (409000 68%) 2.3286
+126m 7s (- 58m 27s) (410000 68%) 2.4503
+126m 26s (- 58m 8s) (411000 68%) 2.3414
+126m 44s (- 57m 50s) (412000 68%) 2.2959
+127m 3s (- 57m 31s) (413000 68%) 2.3744
+127m 21s (- 57m 13s) (414000 69%) 2.4113
+127m 40s (- 56m 54s) (415000 69%) 2.5308
+127m 59s (- 56m 36s) (416000 69%) 2.4351
+128m 18s (- 56m 18s) (417000 69%) 2.4583
+128m 37s (- 56m 0s) (418000 69%) 2.4552
+128m 56s (- 55m 42s) (419000 69%) 2.3219
+129m 15s (- 55m 23s) (420000 70%) 2.3736
+Epoch 21/30 finished
+129m 36s (- 55m 6s) (421000 70%) 2.2800
+129m 55s (- 54m 48s) (422000 70%) 2.1405
+130m 14s (- 54m 29s) (423000 70%) 2.2410
+130m 33s (- 54m 11s) (424000 70%) 2.2812
+130m 51s (- 53m 53s) (425000 70%) 2.2195
+131m 10s (- 53m 34s) (426000 71%) 2.2787
+131m 29s (- 53m 16s) (427000 71%) 2.3317
+131m 47s (- 52m 57s) (428000 71%) 2.3446
+132m 6s (- 52m 39s) (429000 71%) 2.4614
+132m 25s (- 52m 21s) (430000 71%) 2.3681
+132m 44s (- 52m 3s) (431000 71%) 2.3633
+133m 3s (- 51m 44s) (432000 72%) 2.2838
+133m 21s (- 51m 26s) (433000 72%) 2.3804
+133m 40s (- 51m 7s) (434000 72%) 2.4001
+133m 59s (- 50m 49s) (435000 72%) 2.3569
+134m 18s (- 50m 31s) (436000 72%) 2.4179
+134m 37s (- 50m 12s) (437000 72%) 2.3885
+134m 55s (- 49m 54s) (438000 73%) 2.3701
+135m 14s (- 49m 36s) (439000 73%) 2.4930
+135m 33s (- 49m 17s) (440000 73%) 2.4349
+Epoch 22/30 finished
+135m 54s (- 49m 0s) (441000 73%) 2.1551
+136m 13s (- 48m 41s) (442000 73%) 2.3033
+136m 32s (- 48m 23s) (443000 73%) 2.1587
+136m 51s (- 48m 5s) (444000 74%) 2.2111
+137m 9s (- 47m 46s) (445000 74%) 2.1983
+137m 28s (- 47m 28s) (446000 74%) 2.2924
+137m 47s (- 47m 9s) (447000 74%) 2.2790
+138m 5s (- 46m 51s) (448000 74%) 2.3120
+138m 24s (- 46m 32s) (449000 74%) 2.2829
+138m 43s (- 46m 14s) (450000 75%) 2.3015
+139m 2s (- 45m 56s) (451000 75%) 2.2798
+139m 21s (- 45m 37s) (452000 75%) 2.3164
+139m 40s (- 45m 19s) (453000 75%) 2.2983
+139m 59s (- 45m 1s) (454000 75%) 2.3680
+140m 17s (- 44m 42s) (455000 75%) 2.3672
+140m 36s (- 44m 24s) (456000 76%) 2.3726
+140m 55s (- 44m 5s) (457000 76%) 2.2881
+141m 14s (- 43m 47s) (458000 76%) 2.4349
+141m 33s (- 43m 29s) (459000 76%) 2.3653
+141m 52s (- 43m 10s) (460000 76%) 2.4677
+Epoch 23/30 finished
+142m 12s (- 42m 52s) (461000 76%) 2.1590
+142m 31s (- 42m 34s) (462000 77%) 2.1720
+142m 50s (- 42m 15s) (463000 77%) 2.1923
+143m 9s (- 41m 57s) (464000 77%) 2.1600
+143m 28s (- 41m 39s) (465000 77%) 2.2347
+143m 46s (- 41m 20s) (466000 77%) 2.2659
+144m 6s (- 41m 2s) (467000 77%) 2.2615
+144m 25s (- 40m 44s) (468000 78%) 2.2099
+144m 44s (- 40m 25s) (469000 78%) 2.3866
+145m 3s (- 40m 7s) (470000 78%) 2.2873
+145m 22s (- 39m 49s) (471000 78%) 2.2800
+145m 41s (- 39m 30s) (472000 78%) 2.3396
+146m 0s (- 39m 12s) (473000 78%) 2.3677
+146m 19s (- 38m 53s) (474000 79%) 2.3306
+146m 37s (- 38m 35s) (475000 79%) 2.2869
+146m 57s (- 38m 16s) (476000 79%) 2.3282
+147m 15s (- 37m 58s) (477000 79%) 2.3364
+147m 34s (- 37m 40s) (478000 79%) 2.3187
+147m 53s (- 37m 21s) (479000 79%) 2.3654
+148m 12s (- 37m 3s) (480000 80%) 2.3764
+Epoch 24/30 finished
+148m 33s (- 36m 45s) (481000 80%) 2.1256
+148m 52s (- 36m 26s) (482000 80%) 2.2156
+149m 11s (- 36m 8s) (483000 80%) 2.1799
+149m 29s (- 35m 49s) (484000 80%) 2.0912
+149m 48s (- 35m 31s) (485000 80%) 2.2134
+150m 7s (- 35m 12s) (486000 81%) 2.1786
+150m 26s (- 34m 54s) (487000 81%) 2.2609
+150m 45s (- 34m 35s) (488000 81%) 2.2280
+151m 4s (- 34m 17s) (489000 81%) 2.3394
+151m 23s (- 33m 59s) (490000 81%) 2.2847
+151m 42s (- 33m 40s) (491000 81%) 2.2857
+152m 1s (- 33m 22s) (492000 82%) 2.2788
+152m 19s (- 33m 3s) (493000 82%) 2.2990
+152m 38s (- 32m 45s) (494000 82%) 2.1692
+152m 56s (- 32m 26s) (495000 82%) 2.2744
+153m 16s (- 32m 8s) (496000 82%) 2.2952
+153m 34s (- 31m 49s) (497000 82%) 2.2630
+153m 53s (- 31m 31s) (498000 83%) 2.3508
+154m 12s (- 31m 12s) (499000 83%) 2.3550
+154m 31s (- 30m 54s) (500000 83%) 2.2771
+Epoch 25/30 finished
+154m 52s (- 30m 36s) (501000 83%) 2.1023
+155m 10s (- 30m 17s) (502000 83%) 2.0995
+155m 29s (- 29m 59s) (503000 83%) 2.0544
+155m 48s (- 29m 40s) (504000 84%) 2.2353
+156m 7s (- 29m 22s) (505000 84%) 2.2105
+156m 26s (- 29m 3s) (506000 84%) 2.1206
+156m 45s (- 28m 45s) (507000 84%) 2.2091
+157m 4s (- 28m 26s) (508000 84%) 2.1638
+157m 23s (- 28m 8s) (509000 84%) 2.2008
+157m 42s (- 27m 49s) (510000 85%) 2.2193
+158m 1s (- 27m 31s) (511000 85%) 2.2168
+158m 19s (- 27m 12s) (512000 85%) 2.1961
+158m 38s (- 26m 54s) (513000 85%) 2.2630
+158m 57s (- 26m 35s) (514000 85%) 2.2449
+159m 15s (- 26m 17s) (515000 85%) 2.2812
+159m 34s (- 25m 58s) (516000 86%) 2.2684
+159m 53s (- 25m 40s) (517000 86%) 2.2642
+160m 11s (- 25m 21s) (518000 86%) 2.3013
+160m 30s (- 25m 3s) (519000 86%) 2.3719
+160m 49s (- 24m 44s) (520000 86%) 2.4126
+Epoch 26/30 finished
+161m 11s (- 24m 26s) (521000 86%) 2.0760
+161m 30s (- 24m 7s) (522000 87%) 2.1909
+161m 49s (- 23m 49s) (523000 87%) 2.0983
+162m 8s (- 23m 30s) (524000 87%) 2.1498
+162m 26s (- 23m 12s) (525000 87%) 2.2043
+162m 45s (- 22m 53s) (526000 87%) 2.1279
+163m 4s (- 22m 35s) (527000 87%) 2.1742
+163m 23s (- 22m 16s) (528000 88%) 2.1950
+163m 41s (- 21m 58s) (529000 88%) 2.0682
+164m 0s (- 21m 39s) (530000 88%) 2.0987
+164m 19s (- 21m 21s) (531000 88%) 2.1773
+164m 38s (- 21m 2s) (532000 88%) 2.2718
+164m 57s (- 20m 44s) (533000 88%) 2.2864
+165m 16s (- 20m 25s) (534000 89%) 2.2406
+165m 34s (- 20m 7s) (535000 89%) 2.2957
+165m 53s (- 19m 48s) (536000 89%) 2.1477
+166m 12s (- 19m 29s) (537000 89%) 2.2466
+166m 31s (- 19m 11s) (538000 89%) 2.3505
+166m 50s (- 18m 52s) (539000 89%) 2.1900
+167m 9s (- 18m 34s) (540000 90%) 2.2140
+Epoch 27/30 finished
+167m 30s (- 18m 16s) (541000 90%) 2.1222
+167m 49s (- 17m 57s) (542000 90%) 2.0501
+168m 7s (- 17m 38s) (543000 90%) 2.1206
+168m 27s (- 17m 20s) (544000 90%) 2.2880
+168m 45s (- 17m 1s) (545000 90%) 2.1063
+169m 4s (- 16m 43s) (546000 91%) 2.1477
+169m 24s (- 16m 24s) (547000 91%) 2.1528
+169m 43s (- 16m 6s) (548000 91%) 2.1647
+170m 2s (- 15m 47s) (549000 91%) 2.0787
+170m 21s (- 15m 29s) (550000 91%) 2.1506
+170m 40s (- 15m 10s) (551000 91%) 2.2171
+170m 59s (- 14m 52s) (552000 92%) 2.1410
+171m 17s (- 14m 33s) (553000 92%) 2.1954
+171m 36s (- 14m 14s) (554000 92%) 2.2590
+171m 55s (- 13m 56s) (555000 92%) 2.2005
+172m 14s (- 13m 37s) (556000 92%) 2.1809
+172m 33s (- 13m 19s) (557000 92%) 2.3284
+172m 52s (- 13m 0s) (558000 93%) 2.3329
+173m 11s (- 12m 42s) (559000 93%) 2.1565
+173m 30s (- 12m 23s) (560000 93%) 2.2585
+Epoch 28/30 finished
+173m 51s (- 12m 5s) (561000 93%) 1.9827
+174m 10s (- 11m 46s) (562000 93%) 2.0170
+174m 29s (- 11m 28s) (563000 93%) 2.0414
+174m 48s (- 11m 9s) (564000 94%) 2.0492
+175m 7s (- 10m 50s) (565000 94%) 2.1359
+175m 25s (- 10m 32s) (566000 94%) 2.1486
+175m 44s (- 10m 13s) (567000 94%) 2.0917
+176m 3s (- 9m 55s) (568000 94%) 2.1463
+176m 22s (- 9m 36s) (569000 94%) 2.2056
+176m 41s (- 9m 17s) (570000 95%) 2.1900
+177m 1s (- 8m 59s) (571000 95%) 2.3293
+177m 20s (- 8m 40s) (572000 95%) 2.1916
+177m 39s (- 8m 22s) (573000 95%) 2.1664
+177m 58s (- 8m 3s) (574000 95%) 2.2324
+178m 17s (- 7m 45s) (575000 95%) 2.1841
+178m 36s (- 7m 26s) (576000 96%) 2.1678
+178m 55s (- 7m 7s) (577000 96%) 2.1985
+179m 14s (- 6m 49s) (578000 96%) 2.1330
+179m 33s (- 6m 30s) (579000 96%) 2.1885
+179m 52s (- 6m 12s) (580000 96%) 2.2670
+Epoch 29/30 finished
+180m 13s (- 5m 53s) (581000 96%) 2.0414
+180m 32s (- 5m 35s) (582000 97%) 2.0335
+180m 51s (- 5m 16s) (583000 97%) 2.0978
+181m 10s (- 4m 57s) (584000 97%) 2.0651
+181m 29s (- 4m 39s) (585000 97%) 2.1259
+181m 48s (- 4m 20s) (586000 97%) 2.0593
+182m 7s (- 4m 1s) (587000 97%) 2.1556
+182m 26s (- 3m 43s) (588000 98%) 2.1195
+182m 45s (- 3m 24s) (589000 98%) 2.1472
+183m 3s (- 3m 6s) (590000 98%) 2.1100
+183m 22s (- 2m 47s) (591000 98%) 2.0870
+183m 41s (- 2m 28s) (592000 98%) 2.1194
+184m 0s (- 2m 10s) (593000 98%) 2.1255
+184m 18s (- 1m 51s) (594000 99%) 2.1145
+184m 37s (- 1m 33s) (595000 99%) 2.1787
+184m 56s (- 1m 14s) (596000 99%) 2.1432
+185m 15s (- 0m 55s) (597000 99%) 2.1555
+185m 34s (- 0m 37s) (598000 99%) 2.2416
+185m 53s (- 0m 18s) (599000 99%) 2.2908
+186m 10s (- 0m 0s) (600000 100%) 2.1369
+Epoch 30/30 finished
+Evaluate randomly on training sentences:
+> ['you', 'were', 'terrified', 'weren', 't', 'you', '?', 'you were', 'were terrified', 'terrified weren', 'weren t', 't you', 'you ?', 'you were terrified', 'were terrified weren', 'terrified weren t', 'weren t you', 't you ?', 'you were terrified weren', 'were terrified weren t', 'terrified weren t you', 'weren t you ?', 'you were terrified weren t', 'were terrified weren t you', 'terrified weren t you ?']
+= tu etais terrifie n est ce pas ?
+< tu etiez terrifie n est ce pas ? <EOS>
+
+> ['there', 's', 'nothing', 'wrong', 'with', 'that', 'either', '.', 'there s', 's nothing', 'nothing wrong', 'wrong with', 'with that', 'that either', 'either .', 'there s nothing', 's nothing wrong', 'nothing wrong with', 'wrong with that', 'with that either', 'that either .', 'there s nothing wrong', 's nothing wrong with', 'nothing wrong with that', 'wrong with that either', 'with that either .', 'there s nothing wrong with', 's nothing wrong with that', 'nothing wrong with that either', 'wrong with that either .']
+= il n y a rien de mal a cela non plus .
+< il y avait une toutes les . <EOS>
+
+> ['give', 'it', 'to', 'me', 'please', '.', 'give it', 'it to', 'to me', 'me please', 'please .', 'give it to', 'it to me', 'to me please', 'me please .', 'give it to me', 'it to me please', 'to me please .', 'give it to me please', 'it to me please .']
+= donnez moi cela je vous prie .
+< donnez moi ce que je prie . <EOS>
+
+> ['there', 'is', 'so', 'much', 'to', 'do', 'and', 'only', 'a', 'lifetime', 'to', 'do', 'it', '.', 'there is', 'is so', 'so much', 'much to', 'to do', 'do and', 'and only', 'only a', 'a lifetime', 'lifetime to', 'to do', 'do it', 'it .', 'there is so', 'is so much', 'so much to', 'much to do', 'to do and', 'do and only', 'and only a', 'only a lifetime', 'a lifetime to', 'lifetime to do', 'to do it', 'do it .', 'there is so much', 'is so much to', 'so much to do', 'much to do and', 'to do and only', 'do and only a', 'and only a lifetime', 'only a lifetime to', 'a lifetime to do', 'lifetime to do it', 'to do it .', 'there is so much to', 'is so much to do', 'so much to do and', 'much to do and only', 'to do and only a', 'do and only a lifetime', 'and only a lifetime to', 'only a lifetime to do', 'a lifetime to do it', 'lifetime to do it .']
+= il y a tant a faire et seulement la duree d une vie pour le faire .
+< il il faut faire pour la verite pour vous faire <EOS>
+
+> ['taking', 'all', 'things', 'into', 'consideration', 'i', 'have', 'made', 'up', 'my', 'mind', 'to', 'give', 'up', 'the', 'idea', '.', 'taking all', 'all things', 'things into', 'into consideration', 'consideration i', 'i have', 'have made', 'made up', 'up my', 'my mind', 'mind to', 'to give', 'give up', 'up the', 'the idea', 'idea .', 'taking all things', 'all things into', 'things into consideration', 'into consideration i', 'consideration i have', 'i have made', 'have made up', 'made up my', 'up my mind', 'my mind to', 'mind to give', 'to give up', 'give up the', 'up the idea', 'the idea .', 'taking all things into', 'all things into consideration', 'things into consideration i', 'into consideration i have', 'consideration i have made', 'i have made up', 'have made up my', 'made up my mind', 'up my mind to', 'my mind to give', 'mind to give up', 'to give up the', 'give up the idea', 'up the idea .', 'taking all things into consideration', 'all things into consideration i', 'things into consideration i have', 'into consideration i have made', 'consideration i have made up', 'i have made up my', 'have made up my mind', 'made up my mind to', 'up my mind to give', 'my mind to give up', 'mind to give up the', 'to give up the idea', 'give up the idea .']
+= en prenant tous les facteurs en consideration j ai decide d abandonner cette idee .
+< il n est pas aussi tout le monde de la question . <EOS>
+
+> ['almost', 'a', 'third', 'of', 'the', 'gunshot', 'victims', 'were', 'teenagers', '.', 'almost a', 'a third', 'third of', 'of the', 'the gunshot', 'gunshot victims', 'victims were', 'were teenagers', 'teenagers .', 'almost a third', 'a third of', 'third of the', 'of the gunshot', 'the gunshot victims', 'gunshot victims were', 'victims were teenagers', 'were teenagers .', 'almost a third of', 'a third of the', 'third of the gunshot', 'of the gunshot victims', 'the gunshot victims were', 'gunshot victims were teenagers', 'victims were teenagers .', 'almost a third of the', 'a third of the gunshot', 'third of the gunshot victims', 'of the gunshot victims were', 'the gunshot victims were teenagers', 'gunshot victims were teenagers .']
+= presque un tiers des victimes de la fusillade etaient des adolescents .
+< les tiers tiers une victimes de conduire . <EOS>
+
+> ['i', 'refuse', 'to', 'accept', 'that', '.', 'i refuse', 'refuse to', 'to accept', 'accept that', 'that .', 'i refuse to', 'refuse to accept', 'to accept that', 'accept that .', 'i refuse to accept', 'refuse to accept that', 'to accept that .', 'i refuse to accept that', 'refuse to accept that .']
+= je refuse de l accepter .
+< je refuse de l accepter . <EOS>
+
+> ['you', 'can', 'get', 'a', 'car', 'license', 'after', 'you', 'turn', 'eighteen', '.', 'you can', 'can get', 'get a', 'a car', 'car license', 'license after', 'after you', 'you turn', 'turn eighteen', 'eighteen .', 'you can get', 'can get a', 'get a car', 'a car license', 'car license after', 'license after you', 'after you turn', 'you turn eighteen', 'turn eighteen .', 'you can get a', 'can get a car', 'get a car license', 'a car license after', 'car license after you', 'license after you turn', 'after you turn eighteen', 'you turn eighteen .', 'you can get a car', 'can get a car license', 'get a car license after', 'a car license after you', 'car license after you turn', 'license after you turn eighteen', 'after you turn eighteen .']
+= on peut obtenir un permis de conduire apres avoir eu dix huit ans .
+< pouvez vous rester vous vous conduire une voiture . . <EOS>
+
+> ['she', 'filled', 'the', 'vase', 'with', 'water', '.', 'she filled', 'filled the', 'the vase', 'vase with', 'with water', 'water .', 'she filled the', 'filled the vase', 'the vase with', 'vase with water', 'with water .', 'she filled the vase', 'filled the vase with', 'the vase with water', 'vase with water .', 'she filled the vase with', 'filled the vase with water', 'the vase with water .']
+= elle emplit le vase d eau .
+< elle emplit emplit la vase . <EOS>
+
+> ['it', 'won', 't', 'be', 'hard', '.', 'it won', 'won t', 't be', 'be hard', 'hard .', 'it won t', 'won t be', 't be hard', 'be hard .', 'it won t be', 'won t be hard', 't be hard .', 'it won t be hard', 'won t be hard .']
+= ce ne sera pas dur .
+< ce ne sera pas dur . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['ask', 'anyone', '.', 'ask anyone', 'anyone .', 'ask anyone .']
+= demande a n importe qui .
+< personne ne fut . <EOS>
+
+> ['how', 'did', 'you', 'get', 'into', 'the', 'house', '?', 'how did', 'did you', 'you get', 'get into', 'into the', 'the house', 'house ?', 'how did you', 'did you get', 'you get into', 'get into the', 'into the house', 'the house ?', 'how did you get', 'did you get into', 'you get into the', 'get into the house', 'into the house ?', 'how did you get into', 'did you get into the', 'you get into the house', 'get into the house ?']
+= comment as tu penetre dans la maison ?
+< comment comment es tu comment la porte ? <EOS>
+
+> ['tom', 'says', 'he', 'll', 'only', 'speak', 'to', 'mary', '.', 'tom says', 'says he', 'he ll', 'll only', 'only speak', 'speak to', 'to mary', 'mary .', 'tom says he', 'says he ll', 'he ll only', 'll only speak', 'only speak to', 'speak to mary', 'to mary .', 'tom says he ll', 'says he ll only', 'he ll only speak', 'll only speak to', 'only speak to mary', 'speak to mary .', 'tom says he ll only', 'says he ll only speak', 'he ll only speak to', 'll only speak to mary', 'only speak to mary .']
+= tom dit qu il ne parlera qu a mary uniquement .
+< il a pris souvent a . . <EOS>
+
+> ['let', 's', 'go', 'to', 'eat', 'together', '.', 'let s', 's go', 'go to', 'to eat', 'eat together', 'together .', 'let s go', 's go to', 'go to eat', 'to eat together', 'eat together .', 'let s go to', 's go to eat', 'go to eat together', 'to eat together .', 'let s go to eat', 's go to eat together', 'go to eat together .']
+= allons manger ensemble .
+< allons y aller manger . <EOS>
+
+> ['we', 're', 'meant', 'for', 'each', 'other', '.', 'we re', 're meant', 'meant for', 'for each', 'each other', 'other .', 'we re meant', 're meant for', 'meant for each', 'for each other', 'each other .', 'we re meant for', 're meant for each', 'meant for each other', 'for each other .', 'we re meant for each', 're meant for each other', 'meant for each other .']
+= nous sommes faits l un pour l autre .
+< nous n avons blesse des enfants . <EOS>
+
+> ['i', 'don', 't', 'know', 'why', 'you', 're', 'all', 'so', 'jumpy', '.', 'i don', 'don t', 't know', 'know why', 'why you', 'you re', 're all', 'all so', 'so jumpy', 'jumpy .', 'i don t', 'don t know', 't know why', 'know why you', 'why you re', 'you re all', 're all so', 'all so jumpy', 'so jumpy .', 'i don t know', 'don t know why', 't know why you', 'know why you re', 'why you re all', 'you re all so', 're all so jumpy', 'all so jumpy .', 'i don t know why', 'don t know why you', 't know why you re', 'know why you re all', 'why you re all so', 'you re all so jumpy', 're all so jumpy .']
+= j ignore pourquoi vous etes tous tellement agites .
+< j ignore pourquoi ne sais pas si occupes . <EOS>
+
+> ['it', 's', 'not', 'cheap', 'to', 'eat', 'here', '.', 'it s', 's not', 'not cheap', 'cheap to', 'to eat', 'eat here', 'here .', 'it s not', 's not cheap', 'not cheap to', 'cheap to eat', 'to eat here', 'eat here .', 'it s not cheap', 's not cheap to', 'not cheap to eat', 'cheap to eat here', 'to eat here .', 'it s not cheap to', 's not cheap to eat', 'not cheap to eat here', 'cheap to eat here .']
+= manger ici n est pas bon marche .
+< il n est pas si la . <EOS>
+
+> ['you', 're', 'wasting', 'both', 'of', 'our', 'time', '.', 'you re', 're wasting', 'wasting both', 'both of', 'of our', 'our time', 'time .', 'you re wasting', 're wasting both', 'wasting both of', 'both of our', 'of our time', 'our time .', 'you re wasting both', 're wasting both of', 'wasting both of our', 'both of our time', 'of our time .', 'you re wasting both of', 're wasting both of our', 'wasting both of our time', 'both of our time .']
+= tu gaspilles notre temps a tous les deux .
+< notre nos une fille de nos . <EOS>
+
+> ['tom', 'is', 'a', 'bit', 'short', 'for', 'his', 'age', '.', 'tom is', 'is a', 'a bit', 'bit short', 'short for', 'for his', 'his age', 'age .', 'tom is a', 'is a bit', 'a bit short', 'bit short for', 'short for his', 'for his age', 'his age .', 'tom is a bit', 'is a bit short', 'a bit short for', 'bit short for his', 'short for his age', 'for his age .', 'tom is a bit short', 'is a bit short for', 'a bit short for his', 'bit short for his age', 'short for his age .']
+= tom est legerement petit pour son age .
+< tom s est un peu tom . <EOS>
+
+> ['i', 'eat', 'alone', '.', 'i eat', 'eat alone', 'alone .', 'i eat alone', 'eat alone .', 'i eat alone .']
+= je mange seule .
+< j ai l air . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2286
+score for short sentnces (length <= 6):
+ROUGE1: 0.30186209701899797
+ROUGE2: 0.20520372061871947
+BLEU: 0.24133870892400935
+BLEU_CLIP: 0.22268056139447037
+
+Num of long sentences (length > 6): 2714
+score for long sentnces (length > 6):
+ROUGE1: 0.3043995447128922
+ROUGE2: 0.1959702621517339
+BLEU: 0.1567358647041821
+BLEU_CLIP: 0.13481984480329903
+
+Overall:
+ROUGE1: 0.30323942362724376
+ROUGE2: 0.2001917993628397
+BLEU: 0.19541628508148712
+BLEU_CLIP: 0.17498976442878256
+
+Finished
+
