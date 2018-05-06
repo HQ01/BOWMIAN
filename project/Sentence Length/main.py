@@ -74,11 +74,13 @@ def indexesFromNGramList(vocab, ngram_list, num_words):
         if ng in vocab:
             idx = vocab[ng]
             if idx > num_words:
-                result.append(UNK_token)
+                # result.append(UNK_token)
+                pass
             else:
                 result.append(idx)
         else:
-            result.append(UNK_token)
+            # result.append(UNK_token)
+            pass
     return result
 
 def variableFromNGramList(vocab, ngram_list, num_words, args):
@@ -229,7 +231,7 @@ if __name__ == '__main__':
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
         args.data_path = '.'
-        args.load_data_path = '.'
+        args.load_data_path = '../embedding_weights'
 
     # Print settings
     print("hpc mode: {}".format(args.hpc))

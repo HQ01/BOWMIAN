@@ -1,0 +1,271 @@
+Evaluate randomly on training sentences:
+> ['he', 'is', 'still', 'alive', '.', 'he is', 'is still', 'still alive', 'alive .', 'he is still', 'is still alive', 'still alive .']
+= he is still alive .
+< relationship vacation culture culture weight weight racist racist talented entitled now broke weight danger word brighter suspicious suspicious family nap smart because square train minute next broke
+
+> ['you', 're', 'very', 'direct', '.', 'you re', 're very', 'very direct', 'direct .', 'you re very', 're very direct', 'very direct .']
+= you re very direct .
+< castle creationist swedish pulling pulling became included fed gray hand hand cutie paris imaginative dating resilient computer rent dating undamaged now square paris above wednesday wednesday wednesday
+
+> ['you', 're', 'just', 'tired', '.', 'you re', 're just', 'just tired', 'tired .', 'you re just', 're just tired', 'just tired .']
+= you re just tired .
+< taller taller taller danger arguing danger word emotional word best reliable broke entitled rush chasing word reliable troublemaker pictures looking try health talented thankful broke entitled now
+
+> ['you', 're', 'pulling', 'my', 'leg', '.', 'you re', 're pulling', 'pulling my', 'my leg', 'leg .', 'you re pulling', 're pulling my', 'pulling my leg', 'my leg .']
+= you re pulling my leg .
+< gone gone bother bother pulling pulling peeling lovable lovable story story story audacity hand hand hand hand cutie paris imaginative dating danger word reliable troublemaker because album
+
+> ['she', 's', 'an', 'angel', '.', 'she s', 's an', 'an angel', 'angel .', 'she s an', 's an angel', 'an angel .']
+= she s an angel .
+< suspected suspected suspected dancer dancer dancer dancer talented paris letting volunteering gentleman gentleman gentleman prettier angel morning angel morning hand morning square minute innocence richer minute wednesday
+
+> ['i', 'm', 'nervous', 'when', 'speaking', 'in', 'another', 'language', '.', 'i m', 'm nervous', 'nervous when', 'when speaking', 'speaking in', 'in another', 'another language', 'language .', 'i m nervous', 'm nervous when', 'nervous when speaking', 'when speaking in', 'speaking in another', 'in another language', 'another language .']
+= i m nervous when speaking in another language .
+< suspected grandma grandma grandma arrogant arrogant arrogant arrogant spoiling spoiling spoiling spoiling spoiling spoiling spoiling spoiling spoiling spoiling spoiling just humanity mean mumps writers drained hand hand
+
+> ['he', 'is', 'always', 'looking', 'to', 'the', 'future', '.', 'he is', 'is always', 'always looking', 'looking to', 'to the', 'the future', 'future .', 'he is always', 'is always looking', 'always looking to', 'looking to the', 'to the future', 'the future .']
+= he is always looking to the future .
+< pulling possibility spoiled scare scare scare scare scare scare scare scare professional professional professional one board board free free free free free free free free free japan
+
+> ['he', 'is', 'british', '.', 'he is', 'is british', 'british .', 'he is british', 'is british .']
+= he is british .
+< peeling when grandma pulling pulling pulling hand hand hand hand hand hand cutie paris imaginative dating danger word reliable troublemaker because album suspicious stopped gentleman gentleman gentleman
+
+> ['i', 'm', 'not', 'perfect', '.', 'i m', 'm not', 'not perfect', 'perfect .', 'i m not', 'm not perfect', 'not perfect .']
+= i m not perfect .
+< trance trance trance trance prophecies fool mumps richer mumps hottie talented loser blonde watched monday monday under beliefs talented complaints talented volunteering gentleman gentleman gentleman prettier angel
+
+> ['i', 'am', 'going', 'on', 'a', 'picnic', 'tomorrow', '.', 'i am', 'am going', 'going on', 'on a', 'a picnic', 'picnic tomorrow', 'tomorrow .', 'i am going', 'am going on', 'going on a', 'on a picnic', 'a picnic tomorrow', 'picnic tomorrow .']
+= i am going on a picnic tomorrow .
+< compete story story gentle gentle eyes eyes eyes eyes eyes eyes eyes eyes racist racist racist racist visit try outgoing imaginative monday nurse richer loser mumps agreement
+
+Evaluate randomly on testing sentences:
+> ['you', 're', 'the', 'only', 'one', 'for', 'me', 'now', '.', 'you re', 're the', 'the only', 'only one', 'one for', 'for me', 'me now', 'now .', 'you re the', 're the only', 'the only one', 'only one for', 'one for me', 'for me now', 'me now .']
+= you re the only one for me now .
+< soccer soccer reliable reliable reliable sadly stabbed stabbed water water stabbed asian gentleman gentleman gentleman prettier angel morning angel morning hand morning square square influenced am try
+
+> ['you', 're', 'kind', 'of', 'cute', '.', 'you re', 're kind', 'kind of', 'of cute', 'cute .', 'you re kind', 're kind of', 'kind of cute', 'of cute .']
+= you re kind of cute .
+< downtown downtown failure downtown failure hill am try glad am favor broke richer puppy broke puppy broke entitled now square train minute innocence beliefs richer puppy broke
+
+> ['we', 're', 'buying', '.', 'we re', 're buying', 'buying .', 'we re buying', 're buying .']
+= we re buying .
+< suggestion charged pulling harsh stranger stranger stranger stranger try health restaurant mumps richer puppy broke nurse richer loser mumps richer puppy broke puppy broke entitled now square
+
+> ['i', 'm', 'glad', 'to', 'see', 'you', 're', 'ok', '.', 'i m', 'm glad', 'glad to', 'to see', 'see you', 'you re', 're ok', 'ok .', 'i m glad', 'm glad to', 'glad to see', 'to see you', 'see you re', 'you re ok', 're ok .']
+= i m glad to see you re ok .
+< wolf sued sued sued sued sued sued typical angel hand morning hand cutie undamaged monday square try health talented intrigued disgusting jobs volunteering gentleman gentleman gentleman gentleman
+
+> ['i', 'm', 'sorry', 'things', 'didn', 't', 'work', 'out', '.', 'i m', 'm sorry', 'sorry things', 'things didn', 'didn t', 't work', 'work out', 'out .', 'i m sorry', 'm sorry things', 'sorry things didn', 'things didn t', 'didn t work', 't work out', 'work out .']
+= i m sorry things didn t work out .
+< uneasily exceedingly seat seat leading leading spoiling leading night racist racist racist racist racist racist racist racist racist racist racist racist visit because square train minute next
+
+> ['i', 'm', 'a', 'new', 'student', '.', 'i m', 'm a', 'a new', 'new student', 'student .', 'i m a', 'm a new', 'a new student', 'new student .']
+= i m a new student .
+< customer cutie cutie cutie slight any because korean humanity mumps richer loser mumps agreement mumps hottie prettier monday under drained cleaning angel volunteering gentleman gentleman gentleman prettier
+
+> ['i', 'm', 'falling', '.', 'i m', 'm falling', 'falling .', 'i m falling', 'm falling .']
+= i m falling .
+< looked telegram unemployed try hand hand hand hand cutie paris imaginative dating danger word reliable troublemaker because album suspicious stopped gentleman gentleman gentleman thankful broke entitled now
+
+> ['we', 're', 'pulling', 'back', '.', 'we re', 're pulling', 'pulling back', 'back .', 'we re pulling', 're pulling back', 'pulling back .']
+= we re pulling back .
+< suspected suspected suspected suspected suspected suspected board board board jobs volunteering gentleman gentleman gentleman prettier angel morning choosing minute innocence beliefs monday richer puppy broke puppy broke
+
+> ['he', 's', 'three', 'years', 'older', 'than', 'i', 'am', '.', 'he s', 's three', 'three years', 'years older', 'older than', 'than i', 'i am', 'am .', 'he s three', 's three years', 'three years older', 'years older than', 'older than i', 'than i am', 'i am .']
+= he s three years older than i am .
+< about entrance entrance entrance entrance entrance entrance entrance entrance entrance just weight danger word brighter suspicious rent dating undamaged now square train minute next broke innocence richer
+
+> ['you', 're', 'finicky', '.', 'you re', 're finicky', 'finicky .', 'you re finicky', 're finicky .']
+= you re finicky .
+< help wallflower position downtown cardiologist or free free free free free free free free free free japan handling broke smartly danger word divorced best free free free
+
+0m 34s (- 53m 32s) (1000 1%) 3.5614
+1m 6s (- 51m 28s) (2000 2%) 2.8537
+1m 37s (- 49m 37s) (3000 3%) 2.5961
+2m 9s (- 48m 36s) (4000 4%) 2.4559
+2m 40s (- 47m 43s) (5000 5%) 2.3226
+3m 11s (- 46m 59s) (6000 6%) 2.1832
+3m 43s (- 46m 22s) (7000 7%) 2.1015
+4m 14s (- 45m 49s) (8000 8%) 1.9920
+4m 46s (- 45m 13s) (9000 9%) 1.8209
+Epoch 1/10 finished
+5m 19s (- 44m 52s) (10000 10%) 1.6766
+5m 51s (- 44m 19s) (11000 11%) 1.5238
+6m 22s (- 43m 43s) (12000 12%) 1.4791
+6m 56s (- 43m 24s) (13000 13%) 1.5444
+7m 31s (- 43m 9s) (14000 14%) 1.4419
+8m 6s (- 42m 48s) (15000 15%) 1.4078
+8m 40s (- 42m 26s) (16000 16%) 1.4043
+9m 15s (- 42m 4s) (17000 18%) 1.4205
+9m 49s (- 41m 37s) (18000 19%) 1.2605
+Epoch 2/10 finished
+10m 26s (- 41m 22s) (19000 20%) 1.2147
+11m 1s (- 40m 56s) (20000 21%) 1.0321
+11m 36s (- 40m 29s) (21000 22%) 1.1176
+12m 11s (- 40m 2s) (22000 23%) 1.0210
+12m 50s (- 39m 47s) (23000 24%) 1.1225
+13m 26s (- 39m 20s) (24000 25%) 1.0210
+14m 4s (- 38m 59s) (25000 26%) 1.0152
+14m 39s (- 38m 28s) (26000 27%) 1.0036
+15m 14s (- 37m 59s) (27000 28%) 1.0089
+15m 47s (- 37m 23s) (28000 29%) 0.9176
+Epoch 3/10 finished
+16m 23s (- 36m 53s) (29000 30%) 0.8468
+16m 58s (- 36m 22s) (30000 31%) 0.7321
+17m 33s (- 35m 50s) (31000 32%) 0.8098
+18m 6s (- 35m 15s) (32000 33%) 0.7678
+18m 41s (- 34m 42s) (33000 35%) 0.7716
+19m 16s (- 34m 10s) (34000 36%) 0.7773
+19m 50s (- 33m 36s) (35000 37%) 0.8046
+20m 25s (- 33m 3s) (36000 38%) 0.8017
+20m 58s (- 32m 28s) (37000 39%) 0.7593
+Epoch 4/10 finished
+21m 33s (- 31m 56s) (38000 40%) 0.7231
+22m 7s (- 31m 21s) (39000 41%) 0.6264
+22m 40s (- 30m 46s) (40000 42%) 0.6024
+23m 14s (- 30m 11s) (41000 43%) 0.6432
+23m 48s (- 29m 37s) (42000 44%) 0.6545
+24m 22s (- 29m 4s) (43000 45%) 0.6249
+24m 56s (- 28m 29s) (44000 46%) 0.6240
+25m 29s (- 27m 54s) (45000 47%) 0.6066
+26m 2s (- 27m 20s) (46000 48%) 0.5860
+26m 39s (- 26m 48s) (47000 49%) 0.5666
+Epoch 5/10 finished
+27m 18s (- 26m 19s) (48000 50%) 0.5050
+27m 53s (- 25m 45s) (49000 51%) 0.4774
+28m 31s (- 25m 15s) (50000 53%) 0.4962
+29m 5s (- 24m 40s) (51000 54%) 0.4521
+29m 38s (- 24m 5s) (52000 55%) 0.5193
+30m 11s (- 23m 30s) (53000 56%) 0.5148
+30m 45s (- 22m 56s) (54000 57%) 0.4953
+31m 18s (- 22m 21s) (55000 58%) 0.5155
+31m 53s (- 21m 47s) (56000 59%) 0.5202
+Epoch 6/10 finished
+32m 27s (- 21m 13s) (57000 60%) 0.4356
+33m 1s (- 20m 39s) (58000 61%) 0.3754
+33m 34s (- 20m 4s) (59000 62%) 0.4337
+34m 7s (- 19m 29s) (60000 63%) 0.4203
+34m 42s (- 18m 56s) (61000 64%) 0.4229
+35m 16s (- 18m 21s) (62000 65%) 0.4049
+35m 49s (- 17m 47s) (63000 66%) 0.3886
+36m 23s (- 17m 12s) (64000 67%) 0.4272
+36m 56s (- 16m 38s) (65000 68%) 0.3954
+Epoch 7/10 finished
+37m 30s (- 16m 4s) (66000 70%) 0.4533
+38m 3s (- 15m 29s) (67000 71%) 0.3044
+38m 37s (- 14m 55s) (68000 72%) 0.3632
+39m 11s (- 14m 21s) (69000 73%) 0.3115
+39m 43s (- 13m 46s) (70000 74%) 0.3107
+40m 16s (- 13m 11s) (71000 75%) 0.3388
+40m 48s (- 12m 37s) (72000 76%) 0.3305
+41m 20s (- 12m 2s) (73000 77%) 0.3357
+41m 53s (- 11m 28s) (74000 78%) 0.3886
+42m 28s (- 10m 54s) (75000 79%) 0.3669
+Epoch 8/10 finished
+43m 2s (- 10m 20s) (76000 80%) 0.3113
+43m 36s (- 9m 46s) (77000 81%) 0.2738
+44m 9s (- 9m 12s) (78000 82%) 0.2460
+44m 44s (- 8m 38s) (79000 83%) 0.2911
+45m 19s (- 8m 5s) (80000 84%) 0.3007
+45m 51s (- 7m 30s) (81000 85%) 0.2669
+46m 24s (- 6m 56s) (82000 86%) 0.3203
+46m 58s (- 6m 22s) (83000 88%) 0.2900
+47m 31s (- 5m 48s) (84000 89%) 0.3128
+Epoch 9/10 finished
+48m 5s (- 5m 14s) (85000 90%) 0.2563
+48m 39s (- 4m 40s) (86000 91%) 0.2396
+49m 14s (- 4m 6s) (87000 92%) 0.2652
+49m 46s (- 3m 32s) (88000 93%) 0.2376
+50m 20s (- 2m 58s) (89000 94%) 0.2335
+50m 53s (- 2m 24s) (90000 95%) 0.2480
+51m 28s (- 1m 50s) (91000 96%) 0.2567
+52m 1s (- 1m 17s) (92000 97%) 0.2397
+52m 35s (- 0m 43s) (93000 98%) 0.2233
+53m 7s (- 0m 9s) (94000 99%) 0.2458
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['you', 're', 'with', 'friends', '.', 'you re', 're with', 'with friends', 'friends .', 'you re with', 're with friends', 'with friends .']
+= you re with friends .
+< you re with friends . <EOS>
+
+> ['i', 'm', 'concerned', 'with', 'tom', 's', 'safety', '.', 'i m', 'm concerned', 'concerned with', 'with tom', 'tom s', 's safety', 'safety .', 'i m concerned', 'm concerned with', 'concerned with tom', 'with tom s', 'tom s safety', 's safety .']
+= i m concerned with tom s safety .
+< i m concerned with tom s tom . <EOS>
+
+> ['they', 're', 'tired', '.', 'they re', 're tired', 'tired .', 'they re tired', 're tired .']
+= they re tired .
+< they re tired . <EOS>
+
+> ['i', 'm', 'sure', '.', 'i m', 'm sure', 'sure .', 'i m sure', 'm sure .']
+= i m sure .
+< i m sure . <EOS>
+
+> ['i', 'm', 'still', 'angry', 'because', 'of', 'her', '.', 'i m', 'm still', 'still angry', 'angry because', 'because of', 'of her', 'her .', 'i m still', 'm still angry', 'still angry because', 'angry because of', 'because of her', 'of her .']
+= i m still angry because of her .
+< i m still angry because of her . <EOS>
+
+> ['you', 're', 'very', 'attractive', '.', 'you re', 're very', 'very attractive', 'attractive .', 'you re very', 're very attractive', 'very attractive .']
+= you re very attractive .
+< you re very attractive . <EOS>
+
+> ['you', 're', 'very', 'timid', '.', 'you re', 're very', 'very timid', 'timid .', 'you re very', 're very timid', 'very timid .']
+= you re very timid .
+< you re very timid . <EOS>
+
+> ['she', 's', 'a', 'bit', 'naive', '.', 'she s', 's a', 'a bit', 'bit naive', 'naive .', 'she s a', 's a bit', 'a bit naive', 'bit naive .']
+= she s a bit naive .
+< she s a bit naive . <EOS>
+
+> ['i', 'm', 'not', 'here', '.', 'i m', 'm not', 'not here', 'here .', 'i m not', 'm not here', 'not here .']
+= i m not here .
+< i m not here . <EOS>
+
+> ['i', 'm', 'here', 'to', 'see', 'the', 'manager', '.', 'i m', 'm here', 'here to', 'to see', 'see the', 'the manager', 'manager .', 'i m here', 'm here to', 'here to see', 'to see the', 'see the manager', 'the manager .']
+= i m here to see the manager .
+< i m here to see the manager . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['we', 'are', 'under', 'his', 'command', '.', 'we are', 'are under', 'under his', 'his command', 'command .', 'we are under', 'are under his', 'under his command', 'his command .']
+= we are under his command .
+< we are under under his . <EOS>
+
+> ['you', 're', 'disloyal', '.', 'you re', 're disloyal', 'disloyal .', 'you re disloyal', 're disloyal .']
+= you re disloyal .
+< you re disloyal . <EOS>
+
+> ['he', 's', 'as', 'strong', 'as', 'a', 'horse', '.', 'he s', 's as', 'as strong', 'strong as', 'as a', 'a horse', 'horse .', 'he s as', 's as strong', 'as strong as', 'strong as a', 'as a horse', 'a horse .']
+= he s as strong as a horse .
+< he s as as as a . <EOS>
+
+> ['you', 're', 'part', 'of', 'this', '.', 'you re', 're part', 'part of', 'of this', 'this .', 'you re part', 're part of', 'part of this', 'of this .']
+= you re part of this .
+< you re part of this . <EOS>
+
+> ['i', 'm', 'not', 'overly', 'concerned', '.', 'i m', 'm not', 'not overly', 'overly concerned', 'concerned .', 'i m not', 'm not overly', 'not overly concerned', 'overly concerned .']
+= i m not overly concerned .
+< i m not concerned unreasonable . <EOS>
+
+> ['you', 'are', 'not', 'supposed', 'to', 'smoke', 'here', '.', 'you are', 'are not', 'not supposed', 'supposed to', 'to smoke', 'smoke here', 'here .', 'you are not', 'are not supposed', 'not supposed to', 'supposed to smoke', 'to smoke here', 'smoke here .']
+= you are not supposed to smoke here .
+< you are not supposed to smoke here . <EOS>
+
+> ['you', 're', 'too', 'skinny', '.', 'you re', 're too', 'too skinny', 'skinny .', 'you re too', 're too skinny', 'too skinny .']
+= you re too skinny .
+< you re too skinny . <EOS>
+
+> ['they', 're', 'out', 'of', 'their', 'minds', '.', 'they re', 're out', 'out of', 'of their', 'their minds', 'minds .', 'they re out', 're out of', 'out of their', 'of their minds', 'their minds .']
+= they re out of their minds .
+< they re out of their minds . <EOS>
+
+> ['you', 'are', 'not', 'consistent', '.', 'you are', 'are not', 'not consistent', 'consistent .', 'you are not', 'are not consistent', 'not consistent .']
+= you are not consistent .
+< you are not amused . <EOS>
+
+> ['she', 'is', 'happiest', 'when', 'she', 'is', 'at', 'home', '.', 'she is', 'is happiest', 'happiest when', 'when she', 'she is', 'is at', 'at home', 'home .', 'she is happiest', 'is happiest when', 'happiest when she', 'when she is', 'she is at', 'is at home', 'at home .']
+= she is happiest when she is at home .
+< she is at her but home home . <EOS>
+
+Evaluating 2358 testing sentences...
+ROUGE score: 0.48469805725954873
+

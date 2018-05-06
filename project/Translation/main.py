@@ -15,7 +15,7 @@ from torch.autograd import Variable
 
 from utils import *
 from model import *
-from metric import score
+from metric import score, multi_score
 
 ###############################################
 # Training settings
@@ -28,12 +28,14 @@ parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/translation', metavar='PATH',
                     help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/translation)')
-parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
                     help='data path to save embedding_weights.pkl (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
                     help='mode of bag-of-n-gram representation (default: sum)')
-parser.add_argument('--metric', type=str, default='BLEU', metavar='METRIC',
-                    help='metric to use (default: BLEU; ROUGE and BLEU_clip available)')
+parser.add_argument('--metric', type=str, default='MULTI', metavar='METRIC',
+                    help='metric to use (default: MULTI; ROUGE, BLEU and BLEU_clip available)')
+parser.add_argument('--num-words', type=int, default='50000', metavar='N',
+                    help='maximum ngrams vocabulary size to use (default: 50000')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -52,7 +54,6 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
-parser.set_defaults(num_words=10000)
 parser.set_defaults(max_length=100)
 
 
@@ -235,7 +236,7 @@ def evaluate(encoder, decoder, sentence, input_lang, output_lang, args):
     use_cuda = args.cuda
     max_length = args.max_length
 
-    input_variable = variableFromSentence(input_lang, sentence, args)
+    input_variable = variableFromNGramList(input_lang.vocab_ngrams, sentence, args.num_words, args)
     input_length = input_variable.size()[0]
 
     encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
@@ -299,24 +300,58 @@ def evaluateTestingPairs(encoder, decoder, pairs, input_lang, output_lang, args)
 
     print("Num of short sentences (length <= 6):", len(list_cand_short))
     if len(list_cand_short) > 0:
-        score_short = score(list_cand_short, list_ref_short, args.metric)
-        print("{} score for short sentences (length <= 6): {}".format(args.metric, score_short))
+        if args.metric == "MULTI":
+            score_short_rouge1, score_short_rouge2, score_short_bleu, score_short_bleu_clip = \
+                multi_score(list_cand_short, list_ref_short)
+            print("score for short sentnces (length <= 6):")
+            print("ROUGE1:", score_short_rouge1)
+            print("ROUGE2:", score_short_rouge2)
+            print("BLEU:", score_short_bleu)
+            print("BLEU_CLIP:", score_short_bleu_clip)
+            print()
+        else:
+            score_short = score(list_cand_short, list_ref_short, args.metric)
+            print("{} score for short sentnces (length <= 6): {}".format(args.metric, score_short))
 
     print("Num of long sentences (length > 6):", len(list_cand_long))
     if len(list_cand_long) > 0:
-        score_long = score(list_cand_long, list_ref_long, args.metric)
-        print("{} score for long sentences (length > 6): {}".format(args.metric, score_long))
+        if args.metric == "MULTI":
+            score_long_rouge1, score_long_rouge2, score_long_bleu, score_long_bleu_clip = \
+                multi_score(list_cand_long, list_ref_long)
+            print("score for long sentnces (length > 6):")
+            print("ROUGE1:", score_long_rouge1)
+            print("ROUGE2:", score_long_rouge2)
+            print("BLEU:", score_long_bleu)
+            print("BLEU_CLIP:", score_long_bleu_clip)
+            print()
+        else:
+            score_long = score(list_cand_long, list_ref_long, args.metric)
+            print("{} score for long sentnces (length > 6): {}".format(args.metric, score_long))
 
-    score_overall = (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
+    get_score_overall = lambda score_short, score_long: \
+        (score_short * len(list_cand_short) + score_long * len(list_cand_long)) \
         / (len(list_cand_short) + len(list_cand_long))
-    print("Overall {} score: {}".format(args.metric, score_overall))
+    if args.metric == "MULTI":
+            score_overall_rouge1 = get_score_overall(score_short_rouge1, score_long_rouge1)
+            score_overall_rouge2 = get_score_overall(score_short_rouge2, score_long_rouge2)
+            score_overall_bleu = get_score_overall(score_short_bleu, score_long_bleu)
+            score_overall_bleu_clip = get_score_overall(score_short_bleu_clip, score_long_bleu_clip)
+            print("Overall:")
+            print("ROUGE1:", score_overall_rouge1)
+            print("ROUGE2:", score_overall_rouge2)
+            print("BLEU:", score_overall_bleu)
+            print("BLEU_CLIP:", score_overall_bleu_clip)
+            print()
+    else:
+        score_overall = get_score_overall(score_short, score_long)
+        print("Overall {} score: {}".format(args.metric, score_overall))
 
 if __name__ == '__main__':
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
         args.data_path = '.'
-        args.save_data_path = '.'
+        args.load_data_path = '../embedding_weights'
 
     # Print settings
     print("hpc mode: {}".format(args.hpc))
@@ -344,20 +379,17 @@ if __name__ == '__main__':
     input_lang = Lang(input_lang_load)
     output_lang = Lang(output_lang_load)
     args.max_length = input_lang.max_ngrams_len
-    args.num_words = len(input_lang.vocab_ngrams) 
     print("Ngram Vocab Size:", len(input_lang.vocab_ngrams))
 
     # Set encoder and decoder
     encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
+    with open(args.load_data_path + "/embedding_weights%d.pkl" % args.order, 'rb') as f:
+        embedding_weights = pkl.load(f)
+        encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
     decoder = DecoderRNN(args.hidden_size, output_lang.n_words, args.cuda)
     if args.cuda:
         encoder = encoder.cuda()
         decoder = decoder.cuda()
-
-    # Load pretrained embedding weights
-    with open(args.save_data_path + "/embedding_weights%d.pkl" % args.order, 'rb') as f:
-        embedding_weights = pkl.load(f)
-        encoder.embeddingBag.weight.data.copy_(torch.from_numpy(embedding_weights))
 
     # Train and evalute
     print("\nStart")

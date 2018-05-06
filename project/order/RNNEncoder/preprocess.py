@@ -187,7 +187,8 @@ if __name__ == '__main__':
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
         args.order, args.data_path, args.num_pairs, True)
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
-
+    
+    print("output_lang.n_words:", output_lang.n_words)
     print("num-cleaned-training-pairs (2 pairs per cleaned sentence): {}".format(len(train_pairs)))
     print("num-cleaned-testing-pairs (2 pairs per cleaned sentence): {}".format(len(test_pairs)))
 
