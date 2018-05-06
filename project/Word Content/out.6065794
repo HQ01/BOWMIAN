@@ -1,0 +1,516 @@
+################################################
+Start program
+num of epochs:  3
+order:  5
+Evaluate randomly on training sentences:
+> ['i', 'm', 'impressed', 'with', 'your', 'french', '.', 'i m', 'm impressed', 'impressed with', 'with your', 'your french', 'french .', 'i m impressed', 'm impressed with', 'impressed with your', 'with your french', 'your french .', 'i m impressed with', 'm impressed with your', 'impressed with your french', 'with your french .', 'i m impressed with your', 'm impressed with your french', 'impressed with your french .'] ['origin']
+= 0
+outputs:  Variable containing:
+ 0.7440  0.2560
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['would', 'you', 'be', 'so', 'kind', 'as', 'to', 'shut', 'that', 'window', '?', 'would you', 'you be', 'be so', 'so kind', 'kind as', 'as to', 'to shut', 'shut that', 'that window', 'window ?', 'would you be', 'you be so', 'be so kind', 'so kind as', 'kind as to', 'as to shut', 'to shut that', 'shut that window', 'that window ?', 'would you be so', 'you be so kind', 'be so kind as', 'so kind as to', 'kind as to shut', 'as to shut that', 'to shut that window', 'shut that window ?', 'would you be so kind', 'you be so kind as', 'be so kind as to', 'so kind as to shut', 'kind as to shut that', 'as to shut that window', 'to shut that window ?'] ['as']
+= 1
+outputs:  Variable containing:
+ 0.5976  0.4024
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'll', 'study', 'harder', 'from', 'now', 'on', '.', 'i ll', 'll study', 'study harder', 'harder from', 'from now', 'now on', 'on .', 'i ll study', 'll study harder', 'study harder from', 'harder from now', 'from now on', 'now on .', 'i ll study harder', 'll study harder from', 'study harder from now', 'harder from now on', 'from now on .', 'i ll study harder from', 'll study harder from now', 'study harder from now on', 'harder from now on .'] ['blamed']
+= 0
+outputs:  Variable containing:
+ 0.7371  0.2629
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['you', 'did', 'not', 'come', 'to', 'school', 'yesterday', '.', 'you did', 'did not', 'not come', 'come to', 'to school', 'school yesterday', 'yesterday .', 'you did not', 'did not come', 'not come to', 'come to school', 'to school yesterday', 'school yesterday .', 'you did not come', 'did not come to', 'not come to school', 'come to school yesterday', 'to school yesterday .', 'you did not come to', 'did not come to school', 'not come to school yesterday', 'come to school yesterday .'] ['fee']
+= 0
+outputs:  Variable containing:
+ 0.7394  0.2606
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['tom', 'is', 'a', 'very', 'good', 'guitarist', 'isn', 't', 'he', '?', 'tom is', 'is a', 'a very', 'very good', 'good guitarist', 'guitarist isn', 'isn t', 't he', 'he ?', 'tom is a', 'is a very', 'a very good', 'very good guitarist', 'good guitarist isn', 'guitarist isn t', 'isn t he', 't he ?', 'tom is a very', 'is a very good', 'a very good guitarist', 'very good guitarist isn', 'good guitarist isn t', 'guitarist isn t he', 'isn t he ?', 'tom is a very good', 'is a very good guitarist', 'a very good guitarist isn', 'very good guitarist isn t', 'good guitarist isn t he', 'guitarist isn t he ?'] ['juice']
+= 0
+outputs:  Variable containing:
+ 0.7906  0.2094
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'need', 'you', 'to', 'do', 'me', 'a', 'favor', '.', 'i need', 'need you', 'you to', 'to do', 'do me', 'me a', 'a favor', 'favor .', 'i need you', 'need you to', 'you to do', 'to do me', 'do me a', 'me a favor', 'a favor .', 'i need you to', 'need you to do', 'you to do me', 'to do me a', 'do me a favor', 'me a favor .', 'i need you to do', 'need you to do me', 'you to do me a', 'to do me a favor', 'do me a favor .'] ['i']
+= 1
+outputs:  Variable containing:
+ 0.7604  0.2396
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['the', 'only', 'person', 'who', 'hasn', 't', 'paid', 'is', 'you', '.', 'the only', 'only person', 'person who', 'who hasn', 'hasn t', 't paid', 'paid is', 'is you', 'you .', 'the only person', 'only person who', 'person who hasn', 'who hasn t', 'hasn t paid', 't paid is', 'paid is you', 'is you .', 'the only person who', 'only person who hasn', 'person who hasn t', 'who hasn t paid', 'hasn t paid is', 't paid is you', 'paid is you .', 'the only person who hasn', 'only person who hasn t', 'person who hasn t paid', 'who hasn t paid is', 'hasn t paid is you', 't paid is you .'] ['person']
+= 1
+outputs:  Variable containing:
+ 0.5979  0.4021
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['he', 'ogled', 'a', 'girl', 'outside', 'a', 'pub', '.', 'he ogled', 'ogled a', 'a girl', 'girl outside', 'outside a', 'a pub', 'pub .', 'he ogled a', 'ogled a girl', 'a girl outside', 'girl outside a', 'outside a pub', 'a pub .', 'he ogled a girl', 'ogled a girl outside', 'a girl outside a', 'girl outside a pub', 'outside a pub .', 'he ogled a girl outside', 'ogled a girl outside a', 'a girl outside a pub', 'girl outside a pub .'] ['intriguing']
+= 0
+outputs:  Variable containing:
+ 0.7217  0.2783
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['what', 'are', 'you', 'reading', '?', 'what are', 'are you', 'you reading', 'reading ?', 'what are you', 'are you reading', 'you reading ?', 'what are you reading', 'are you reading ?', 'what are you reading ?'] ['what']
+= 1
+outputs:  Variable containing:
+ 0.6623  0.3377
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['leave', 'my', 'room', 'immediately', '.', 'leave my', 'my room', 'room immediately', 'immediately .', 'leave my room', 'my room immediately', 'room immediately .', 'leave my room immediately', 'my room immediately .', 'leave my room immediately .'] ['room']
+= 1
+outputs:  Variable containing:
+ 0.6261  0.3739
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+Evaluate randomly on testing sentences:
+> ['she', 'can', 't', 'find', 'her', 'hat', '.', 'she can', 'can t', 't find', 'find her', 'her hat', 'hat .', 'she can t', 'can t find', 't find her', 'find her hat', 'her hat .', 'she can t find', 'can t find her', 't find her hat', 'find her hat .', 'she can t find her', 'can t find her hat', 't find her hat .'] ['hat']
+= 1
+outputs:  Variable containing:
+ 0.6285  0.3715
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'grew', 'these', 'carrots', 'myself', '.', 'i grew', 'grew these', 'these carrots', 'carrots myself', 'myself .', 'i grew these', 'grew these carrots', 'these carrots myself', 'carrots myself .', 'i grew these carrots', 'grew these carrots myself', 'these carrots myself .', 'i grew these carrots myself', 'grew these carrots myself .'] ['substance']
+= 0
+outputs:  Variable containing:
+ 0.6167  0.3833
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'll', 'show', 'you', 'the', 'way', 'out', '.', 'i ll', 'll show', 'show you', 'you the', 'the way', 'way out', 'out .', 'i ll show', 'll show you', 'show you the', 'you the way', 'the way out', 'way out .', 'i ll show you', 'll show you the', 'show you the way', 'you the way out', 'the way out .', 'i ll show you the', 'll show you the way', 'show you the way out', 'you the way out .'] ['furniture']
+= 0
+outputs:  Variable containing:
+ 0.4938  0.5062
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['i', 'suggest', 'you', 'leave', '.', 'i suggest', 'suggest you', 'you leave', 'leave .', 'i suggest you', 'suggest you leave', 'you leave .', 'i suggest you leave', 'suggest you leave .', 'i suggest you leave .'] ['deceived']
+= 0
+outputs:  Variable containing:
+ 0.5984  0.4016
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['you', 'must', 'be', 'in', 'good', 'physical', 'condition', '.', 'you must', 'must be', 'be in', 'in good', 'good physical', 'physical condition', 'condition .', 'you must be', 'must be in', 'be in good', 'in good physical', 'good physical condition', 'physical condition .', 'you must be in', 'must be in good', 'be in good physical', 'in good physical condition', 'good physical condition .', 'you must be in good', 'must be in good physical', 'be in good physical condition', 'in good physical condition .'] ['be']
+= 1
+outputs:  Variable containing:
+ 0.6730  0.3270
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['did', 'you', 'bring', 'a', 'weapon', '?', 'did you', 'you bring', 'bring a', 'a weapon', 'weapon ?', 'did you bring', 'you bring a', 'bring a weapon', 'a weapon ?', 'did you bring a', 'you bring a weapon', 'bring a weapon ?', 'did you bring a weapon', 'you bring a weapon ?'] ['technician']
+= 0
+outputs:  Variable containing:
+ 0.6295  0.3705
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'was', 'disappointed', 'in', 'her', '.', 'i was', 'was disappointed', 'disappointed in', 'in her', 'her .', 'i was disappointed', 'was disappointed in', 'disappointed in her', 'in her .', 'i was disappointed in', 'was disappointed in her', 'disappointed in her .', 'i was disappointed in her', 'was disappointed in her .'] ['was']
+= 1
+outputs:  Variable containing:
+ 0.4430  0.5570
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['traffic', 'is', 'a', 'major', 'urban', 'problem', '.', 'traffic is', 'is a', 'a major', 'major urban', 'urban problem', 'problem .', 'traffic is a', 'is a major', 'a major urban', 'major urban problem', 'urban problem .', 'traffic is a major', 'is a major urban', 'a major urban problem', 'major urban problem .', 'traffic is a major urban', 'is a major urban problem', 'a major urban problem .'] ['a']
+= 1
+outputs:  Variable containing:
+ 0.6553  0.3447
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['he', 'finds', 'fault', 'with', 'everything', 'i', 'say', '.', 'he finds', 'finds fault', 'fault with', 'with everything', 'everything i', 'i say', 'say .', 'he finds fault', 'finds fault with', 'fault with everything', 'with everything i', 'everything i say', 'i say .', 'he finds fault with', 'finds fault with everything', 'fault with everything i', 'with everything i say', 'everything i say .', 'he finds fault with everything', 'finds fault with everything i', 'fault with everything i say', 'with everything i say .'] ['with']
+= 1
+outputs:  Variable containing:
+ 0.7648  0.2352
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'm', 'forgetful', '.', 'i m', 'm forgetful', 'forgetful .', 'i m forgetful', 'm forgetful .', 'i m forgetful .'] ['forgetful']
+= 1
+outputs:  Variable containing:
+ 0.5965  0.4035
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+0m 12s (- 37m 44s) (1000 0%) 0.6492
+0m 15s (- 23m 10s) (2000 1%) 0.6091
+0m 18s (- 18m 18s) (3000 1%) 0.5990
+0m 21s (- 15m 50s) (4000 2%) 0.5907
+0m 24s (- 14m 20s) (5000 2%) 0.5711
+0m 27s (- 13m 19s) (6000 3%) 0.5644
+0m 30s (- 12m 35s) (7000 3%) 0.5880
+0m 33s (- 12m 1s) (8000 4%) 0.5823
+0m 36s (- 11m 34s) (9000 5%) 0.5721
+0m 39s (- 11m 12s) (10000 5%) 0.5768
+0m 42s (- 10m 53s) (11000 6%) 0.5777
+0m 45s (- 10m 37s) (12000 6%) 0.5619
+0m 48s (- 10m 23s) (13000 7%) 0.5778
+0m 51s (- 10m 10s) (14000 7%) 0.5678
+0m 54s (- 9m 59s) (15000 8%) 0.5813
+0m 57s (- 9m 48s) (16000 8%) 0.5500
+1m 0s (- 9m 39s) (17000 9%) 0.5538
+1m 3s (- 9m 30s) (18000 10%) 0.5547
+1m 6s (- 9m 22s) (19000 10%) 0.5417
+1m 9s (- 9m 14s) (20000 11%) 0.5548
+1m 12s (- 9m 7s) (21000 11%) 0.5640
+1m 15s (- 9m 0s) (22000 12%) 0.5572
+1m 18s (- 8m 54s) (23000 12%) 0.5687
+1m 21s (- 8m 47s) (24000 13%) 0.5597
+1m 24s (- 8m 42s) (25000 13%) 0.5566
+1m 27s (- 8m 36s) (26000 14%) 0.5376
+1m 30s (- 8m 30s) (27000 15%) 0.5557
+1m 33s (- 8m 25s) (28000 15%) 0.5476
+1m 36s (- 8m 20s) (29000 16%) 0.5458
+1m 39s (- 8m 15s) (30000 16%) 0.5575
+1m 42s (- 8m 10s) (31000 17%) 0.5492
+1m 45s (- 8m 5s) (32000 17%) 0.5490
+1m 47s (- 8m 0s) (33000 18%) 0.5610
+1m 50s (- 7m 56s) (34000 18%) 0.5422
+1m 53s (- 7m 51s) (35000 19%) 0.5402
+1m 56s (- 7m 47s) (36000 20%) 0.5402
+1m 59s (- 7m 43s) (37000 20%) 0.5471
+2m 2s (- 7m 39s) (38000 21%) 0.5399
+2m 5s (- 7m 34s) (39000 21%) 0.5443
+2m 8s (- 7m 30s) (40000 22%) 0.5438
+2m 11s (- 7m 26s) (41000 22%) 0.5506
+2m 14s (- 7m 22s) (42000 23%) 0.5424
+2m 17s (- 7m 18s) (43000 23%) 0.5447
+2m 20s (- 7m 15s) (44000 24%) 0.5559
+2m 23s (- 7m 11s) (45000 25%) 0.5506
+2m 26s (- 7m 7s) (46000 25%) 0.5627
+2m 29s (- 7m 3s) (47000 26%) 0.5441
+2m 32s (- 6m 59s) (48000 26%) 0.5674
+2m 35s (- 6m 55s) (49000 27%) 0.5439
+2m 38s (- 6m 52s) (50000 27%) 0.5286
+2m 41s (- 6m 48s) (51000 28%) 0.5419
+2m 44s (- 6m 44s) (52000 28%) 0.5319
+2m 47s (- 6m 41s) (53000 29%) 0.5239
+2m 50s (- 6m 37s) (54000 30%) 0.5647
+2m 53s (- 6m 34s) (55000 30%) 0.5426
+2m 56s (- 6m 30s) (56000 31%) 0.5604
+2m 59s (- 6m 27s) (57000 31%) 0.5395
+3m 2s (- 6m 23s) (58000 32%) 0.5316
+3m 5s (- 6m 20s) (59000 32%) 0.5423
+Epoch 1/3 finished
+3m 18s (- 6m 37s) (60000 33%) 0.5219
+3m 21s (- 6m 33s) (61000 33%) 0.5428
+3m 24s (- 6m 30s) (62000 34%) 0.5357
+3m 27s (- 6m 26s) (63000 35%) 0.5301
+3m 30s (- 6m 22s) (64000 35%) 0.5354
+3m 33s (- 6m 18s) (65000 36%) 0.5384
+3m 36s (- 6m 14s) (66000 36%) 0.5240
+3m 39s (- 6m 10s) (67000 37%) 0.5430
+3m 42s (- 6m 6s) (68000 37%) 0.5413
+3m 45s (- 6m 3s) (69000 38%) 0.5357
+3m 48s (- 5m 59s) (70000 38%) 0.5420
+3m 51s (- 5m 55s) (71000 39%) 0.5396
+3m 54s (- 5m 52s) (72000 40%) 0.5328
+3m 57s (- 5m 48s) (73000 40%) 0.5369
+4m 0s (- 5m 44s) (74000 41%) 0.5185
+4m 3s (- 5m 41s) (75000 41%) 0.5615
+4m 6s (- 5m 37s) (76000 42%) 0.5271
+4m 9s (- 5m 33s) (77000 42%) 0.5296
+4m 12s (- 5m 30s) (78000 43%) 0.5446
+4m 15s (- 5m 26s) (79000 43%) 0.5345
+4m 18s (- 5m 23s) (80000 44%) 0.5595
+4m 21s (- 5m 19s) (81000 45%) 0.5608
+4m 24s (- 5m 16s) (82000 45%) 0.5423
+4m 27s (- 5m 12s) (83000 46%) 0.5484
+4m 30s (- 5m 9s) (84000 46%) 0.5423
+4m 33s (- 5m 5s) (85000 47%) 0.5664
+4m 36s (- 5m 2s) (86000 47%) 0.5342
+4m 39s (- 4m 58s) (87000 48%) 0.5689
+4m 42s (- 4m 55s) (88000 48%) 0.5368
+4m 45s (- 4m 51s) (89000 49%) 0.5348
+4m 48s (- 4m 48s) (90000 50%) 0.5457
+4m 51s (- 4m 44s) (91000 50%) 0.5393
+4m 54s (- 4m 41s) (92000 51%) 0.5390
+4m 57s (- 4m 38s) (93000 51%) 0.5329
+5m 0s (- 4m 34s) (94000 52%) 0.5721
+5m 3s (- 4m 31s) (95000 52%) 0.5171
+5m 6s (- 4m 27s) (96000 53%) 0.5197
+5m 9s (- 4m 24s) (97000 53%) 0.5580
+5m 12s (- 4m 21s) (98000 54%) 0.5341
+5m 15s (- 4m 17s) (99000 55%) 0.5233
+5m 18s (- 4m 14s) (100000 55%) 0.5306
+5m 21s (- 4m 11s) (101000 56%) 0.5294
+5m 24s (- 4m 7s) (102000 56%) 0.5418
+5m 27s (- 4m 4s) (103000 57%) 0.5217
+5m 30s (- 4m 1s) (104000 57%) 0.5194
+5m 33s (- 3m 57s) (105000 58%) 0.5198
+5m 36s (- 3m 54s) (106000 58%) 0.5479
+5m 39s (- 3m 51s) (107000 59%) 0.5231
+5m 42s (- 3m 48s) (108000 60%) 0.5338
+5m 45s (- 3m 44s) (109000 60%) 0.5471
+5m 48s (- 3m 41s) (110000 61%) 0.5426
+5m 51s (- 3m 38s) (111000 61%) 0.5444
+5m 54s (- 3m 34s) (112000 62%) 0.5504
+5m 57s (- 3m 31s) (113000 62%) 0.5507
+6m 0s (- 3m 28s) (114000 63%) 0.5174
+6m 3s (- 3m 25s) (115000 63%) 0.5334
+6m 6s (- 3m 21s) (116000 64%) 0.5291
+6m 9s (- 3m 18s) (117000 65%) 0.5324
+6m 12s (- 3m 15s) (118000 65%) 0.5263
+6m 15s (- 3m 12s) (119000 66%) 0.5452
+Epoch 2/3 finished
+6m 28s (- 3m 14s) (120000 66%) 0.5315
+6m 31s (- 3m 10s) (121000 67%) 0.5243
+6m 34s (- 3m 7s) (122000 67%) 0.5223
+6m 37s (- 3m 4s) (123000 68%) 0.5093
+6m 40s (- 3m 0s) (124000 68%) 0.5303
+6m 43s (- 2m 57s) (125000 69%) 0.5475
+6m 46s (- 2m 54s) (126000 70%) 0.5425
+6m 49s (- 2m 50s) (127000 70%) 0.5141
+6m 52s (- 2m 47s) (128000 71%) 0.5197
+6m 55s (- 2m 44s) (129000 71%) 0.5719
+6m 58s (- 2m 40s) (130000 72%) 0.5421
+7m 1s (- 2m 37s) (131000 72%) 0.5231
+7m 4s (- 2m 34s) (132000 73%) 0.5573
+7m 7s (- 2m 30s) (133000 73%) 0.5623
+7m 10s (- 2m 27s) (134000 74%) 0.5605
+7m 13s (- 2m 24s) (135000 75%) 0.5326
+7m 16s (- 2m 21s) (136000 75%) 0.5351
+7m 19s (- 2m 17s) (137000 76%) 0.5562
+7m 22s (- 2m 14s) (138000 76%) 0.5586
+7m 25s (- 2m 11s) (139000 77%) 0.5526
+7m 28s (- 2m 7s) (140000 77%) 0.5411
+7m 31s (- 2m 4s) (141000 78%) 0.5501
+7m 34s (- 2m 1s) (142000 78%) 0.5347
+7m 37s (- 1m 58s) (143000 79%) 0.5355
+7m 40s (- 1m 54s) (144000 80%) 0.5225
+7m 43s (- 1m 51s) (145000 80%) 0.5455
+7m 45s (- 1m 48s) (146000 81%) 0.5250
+7m 48s (- 1m 45s) (147000 81%) 0.5669
+7m 51s (- 1m 41s) (148000 82%) 0.5496
+7m 54s (- 1m 38s) (149000 82%) 0.5386
+7m 57s (- 1m 35s) (150000 83%) 0.5312
+8m 0s (- 1m 32s) (151000 83%) 0.5305
+8m 3s (- 1m 29s) (152000 84%) 0.5359
+8m 6s (- 1m 25s) (153000 85%) 0.5455
+8m 9s (- 1m 22s) (154000 85%) 0.5426
+8m 12s (- 1m 19s) (155000 86%) 0.5292
+8m 15s (- 1m 16s) (156000 86%) 0.5413
+8m 18s (- 1m 13s) (157000 87%) 0.5537
+8m 21s (- 1m 9s) (158000 87%) 0.6075
+8m 24s (- 1m 6s) (159000 88%) 0.5836
+8m 27s (- 1m 3s) (160000 88%) 0.5667
+8m 30s (- 1m 0s) (161000 89%) 0.5665
+8m 33s (- 0m 57s) (162000 90%) 0.5329
+8m 36s (- 0m 53s) (163000 90%) 0.5453
+8m 39s (- 0m 50s) (164000 91%) 0.5644
+8m 42s (- 0m 47s) (165000 91%) 0.5619
+8m 45s (- 0m 44s) (166000 92%) 0.5547
+8m 48s (- 0m 41s) (167000 92%) 0.5477
+8m 51s (- 0m 37s) (168000 93%) 0.5512
+8m 54s (- 0m 34s) (169000 93%) 0.5768
+8m 57s (- 0m 31s) (170000 94%) 0.5665
+9m 0s (- 0m 28s) (171000 95%) 0.5890
+9m 3s (- 0m 25s) (172000 95%) 0.5655
+9m 6s (- 0m 22s) (173000 96%) 0.5596
+9m 9s (- 0m 18s) (174000 96%) 0.5864
+9m 12s (- 0m 15s) (175000 97%) 0.5395
+9m 15s (- 0m 12s) (176000 97%) 0.5326
+9m 18s (- 0m 9s) (177000 98%) 0.5351
+9m 21s (- 0m 6s) (178000 98%) 0.5450
+9m 24s (- 0m 3s) (179000 99%) 0.5411
+Epoch 3/3 finished
+Evaluate randomly on training sentences:
+> ['i', 'don', 't', 'feel', 'very', 'confident', '.', 'i don', 'don t', 't feel', 'feel very', 'very confident', 'confident .', 'i don t', 'don t feel', 't feel very', 'feel very confident', 'very confident .', 'i don t feel', 'don t feel very', 't feel very confident', 'feel very confident .', 'i don t feel very', 'don t feel very confident', 't feel very confident .'] ['chicken']
+= 0
+outputs:  Variable containing:
+ 1.0000  0.0000
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['you', 'can', 'come', 'home', '.', 'you can', 'can come', 'come home', 'home .', 'you can come', 'can come home', 'come home .', 'you can come home', 'can come home .', 'you can come home .'] ['you']
+= 1
+outputs:  Variable containing:
+ 0  1
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['we', 've', 'known', 'each', 'other', 'for', 'thirty', 'years', '.', 'we ve', 've known', 'known each', 'each other', 'other for', 'for thirty', 'thirty years', 'years .', 'we ve known', 've known each', 'known each other', 'each other for', 'other for thirty', 'for thirty years', 'thirty years .', 'we ve known each', 've known each other', 'known each other for', 'each other for thirty', 'other for thirty years', 'for thirty years .', 'we ve known each other', 've known each other for', 'known each other for thirty', 'each other for thirty years', 'other for thirty years .'] ['for']
+= 1
+outputs:  Variable containing:
+ 0.0000  1.0000
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['it', 's', 'a', 'quarter', 'to', 'three', '.', 'it s', 's a', 'a quarter', 'quarter to', 'to three', 'three .', 'it s a', 's a quarter', 'a quarter to', 'quarter to three', 'to three .', 'it s a quarter', 's a quarter to', 'a quarter to three', 'quarter to three .', 'it s a quarter to', 's a quarter to three', 'a quarter to three .'] ['it']
+= 1
+outputs:  Variable containing:
+ 3.8972e-07  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['i', 'know', 'you', 've', 'been', 'avoiding', 'me', '.', 'i know', 'know you', 'you ve', 've been', 'been avoiding', 'avoiding me', 'me .', 'i know you', 'know you ve', 'you ve been', 've been avoiding', 'been avoiding me', 'avoiding me .', 'i know you ve', 'know you ve been', 'you ve been avoiding', 've been avoiding me', 'been avoiding me .', 'i know you ve been', 'know you ve been avoiding', 'you ve been avoiding me', 've been avoiding me .'] ['you']
+= 1
+outputs:  Variable containing:
+ 0  1
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['they', 'used', 'a', 'high', 'speed', 'camera', '.', 'they used', 'used a', 'a high', 'high speed', 'speed camera', 'camera .', 'they used a', 'used a high', 'a high speed', 'high speed camera', 'speed camera .', 'they used a high', 'used a high speed', 'a high speed camera', 'high speed camera .', 'they used a high speed', 'used a high speed camera', 'a high speed camera .'] ['speed']
+= 1
+outputs:  Variable containing:
+ 0.9981  0.0019
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['his', 'story', 'is', 'well', 'worth', 'listening', 'to', '.', 'his story', 'story is', 'is well', 'well worth', 'worth listening', 'listening to', 'to .', 'his story is', 'story is well', 'is well worth', 'well worth listening', 'worth listening to', 'listening to .', 'his story is well', 'story is well worth', 'is well worth listening', 'well worth listening to', 'worth listening to .', 'his story is well worth', 'story is well worth listening', 'is well worth listening to', 'well worth listening to .'] ['appetite']
+= 0
+outputs:  Variable containing:
+ 0.9864  0.0136
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['think', 'about', 'your', 'future', '.', 'think about', 'about your', 'your future', 'future .', 'think about your', 'about your future', 'your future .', 'think about your future', 'about your future .', 'think about your future .'] ['about']
+= 1
+outputs:  Variable containing:
+ 3.7965e-10  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['we', 'needed', 'it', '.', 'we needed', 'needed it', 'it .', 'we needed it', 'needed it .', 'we needed it .'] ['phoned']
+= 0
+outputs:  Variable containing:
+ 0.8964  0.1036
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'have', 'people', 'thinking', 'i', 'm', 'weak', '.', 'i just', 'just don', 'don t', 't want', 'want to', 'to have', 'have people', 'people thinking', 'thinking i', 'i m', 'm weak', 'weak .', 'i just don', 'just don t', 'don t want', 't want to', 'want to have', 'to have people', 'have people thinking', 'people thinking i', 'thinking i m', 'i m weak', 'm weak .', 'i just don t', 'just don t want', 'don t want to', 't want to have', 'want to have people', 'to have people thinking', 'have people thinking i', 'people thinking i m', 'thinking i m weak', 'i m weak .', 'i just don t want', 'just don t want to', 'don t want to have', 't want to have people', 'want to have people thinking', 'to have people thinking i', 'have people thinking i m', 'people thinking i m weak', 'thinking i m weak .'] ['i']
+= 1
+outputs:  Variable containing:
+ 3.8587e-21  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+Evaluate randomly on testing sentences:
+> ['this', 'is', 'a', 'portrait', 'of', 'my', 'late', 'father', '.', 'this is', 'is a', 'a portrait', 'portrait of', 'of my', 'my late', 'late father', 'father .', 'this is a', 'is a portrait', 'a portrait of', 'portrait of my', 'of my late', 'my late father', 'late father .', 'this is a portrait', 'is a portrait of', 'a portrait of my', 'portrait of my late', 'of my late father', 'my late father .', 'this is a portrait of', 'is a portrait of my', 'a portrait of my late', 'portrait of my late father', 'of my late father .'] ['nail']
+= 0
+outputs:  Variable containing:
+ 1.0000e+00  3.9980e-08
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['he', 'threw', 'a', 'rock', 'into', 'the', 'pond', '.', 'he threw', 'threw a', 'a rock', 'rock into', 'into the', 'the pond', 'pond .', 'he threw a', 'threw a rock', 'a rock into', 'rock into the', 'into the pond', 'the pond .', 'he threw a rock', 'threw a rock into', 'a rock into the', 'rock into the pond', 'into the pond .', 'he threw a rock into', 'threw a rock into the', 'a rock into the pond', 'rock into the pond .'] ['mail']
+= 0
+outputs:  Variable containing:
+ 1.0000e+00  2.2964e-06
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['it', 's', 'time', 'consuming', '.', 'it s', 's time', 'time consuming', 'consuming .', 'it s time', 's time consuming', 'time consuming .', 'it s time consuming', 's time consuming .', 'it s time consuming .'] ['owns']
+= 0
+outputs:  Variable containing:
+ 1.0000e+00  7.7050e-14
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['speak', 'quietly', '.', 'speak quietly', 'quietly .', 'speak quietly .'] ['quietly']
+= 1
+outputs:  Variable containing:
+ 1  0
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['she', 'seems', 'reserved', 'but', 'she', 's', 'actually', 'a', 'strong', 'willed', 'person', '.', 'she seems', 'seems reserved', 'reserved but', 'but she', 'she s', 's actually', 'actually a', 'a strong', 'strong willed', 'willed person', 'person .', 'she seems reserved', 'seems reserved but', 'reserved but she', 'but she s', 'she s actually', 's actually a', 'actually a strong', 'a strong willed', 'strong willed person', 'willed person .', 'she seems reserved but', 'seems reserved but she', 'reserved but she s', 'but she s actually', 'she s actually a', 's actually a strong', 'actually a strong willed', 'a strong willed person', 'strong willed person .', 'she seems reserved but she', 'seems reserved but she s', 'reserved but she s actually', 'but she s actually a', 'she s actually a strong', 's actually a strong willed', 'actually a strong willed person', 'a strong willed person .'] ['person']
+= 1
+outputs:  Variable containing:
+ 1.0000e+00  1.3852e-07
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'just', 'can', 't', 'remember', '.', 'i just', 'just can', 'can t', 't remember', 'remember .', 'i just can', 'just can t', 'can t remember', 't remember .', 'i just can t', 'just can t remember', 'can t remember .', 'i just can t remember', 'just can t remember .'] ['remember']
+= 1
+outputs:  Variable containing:
+ 0.0273  0.9727
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['i', 'just', 'don', 't', 'feel', 'like', 'it', '.', 'i just', 'just don', 'don t', 't feel', 'feel like', 'like it', 'it .', 'i just don', 'just don t', 'don t feel', 't feel like', 'feel like it', 'like it .', 'i just don t', 'just don t feel', 'don t feel like', 't feel like it', 'feel like it .', 'i just don t feel', 'just don t feel like', 'don t feel like it', 't feel like it .'] ['beneath']
+= 0
+outputs:  Variable containing:
+ 1  0
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['this', 'could', 'take', 'a', 'while', '.', 'this could', 'could take', 'take a', 'a while', 'while .', 'this could take', 'could take a', 'take a while', 'a while .', 'this could take a', 'could take a while', 'take a while .', 'this could take a while', 'could take a while .'] ['take']
+= 1
+outputs:  Variable containing:
+ 1.4013e-45  1.0000e+00
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+> ['are', 'you', 'blackmailing', 'me', '?', 'are you', 'you blackmailing', 'blackmailing me', 'me ?', 'are you blackmailing', 'you blackmailing me', 'blackmailing me ?', 'are you blackmailing me', 'you blackmailing me ?', 'are you blackmailing me ?'] ['meets']
+= 0
+outputs:  Variable containing:
+ 1  0
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 0
+
+> ['i', 'decided', 'not', 'to', 'go', 'to', 'europe', '.', 'i decided', 'decided not', 'not to', 'to go', 'go to', 'to europe', 'europe .', 'i decided not', 'decided not to', 'not to go', 'to go to', 'go to europe', 'to europe .', 'i decided not to', 'decided not to go', 'not to go to', 'to go to europe', 'go to europe .', 'i decided not to go', 'decided not to go to', 'not to go to europe', 'to go to europe .'] ['i']
+= 1
+outputs:  Variable containing:
+ 0  1
+[torch.cuda.FloatTensor of size 1x2 (GPU 0)]
+
+< 1
+
+################################################
+training setting:
+order:  5
+epoch:  3
+learning rate:  0.001
+Accuracy of the network on the word content test set: 75 %
