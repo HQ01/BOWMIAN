@@ -22,17 +22,19 @@ from metric import score
 # Training settings
 ###############################################
 
-parser = argparse.ArgumentParser(description='Sentence Reconstruction with NGrams')
+parser = argparse.ArgumentParser(description='Infering Sentence Length with NGrams + MLP')
 parser.add_argument('--order', type=int, default='3', metavar='N',
-                    help='order of ngram (default: 3)')
-parser.add_argument('--data-path', type=str, default='.', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: current folder)')
+                    help='order of ngram')
+parser.add_argument('--hpc', action='store_true', default=False,
+                    help='set to hpc mode')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/word_content', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/word_content)')
+parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/embedding_weights', metavar='PATH',
+                    help='data path to load embedding weights (default: /scratch/zc807/nlu/embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
                     help='mode of bag-of-n-gram representation (default: sum)')
-parser.add_argument('--metric', type=str, default='ROUGE', metavar='METRIC',
-                    help='metric to use (default: ROUGE; BLEU and BLEU_clip available)')
-parser.add_argument('--num-words', type=int, default='10000', metavar='N',
-                    help='maximum ngrams vocabulary size to use (default: 10000')
+parser.add_argument('--num-words', type=int, default='50000', metavar='N',
+                    help='maximum ngrams vocabulary size to use (default: 50000')
 parser.add_argument('--hidden-size', type=int, default='256', metavar='N',
                     help='hidden size (default: 256)')
 parser.add_argument('--n-epochs', type=int, default=1, metavar='N',
@@ -45,13 +47,11 @@ parser.add_argument('--plot-every', type=int, default='100', metavar='N',
                     help='plot every (default: 100) iters')
 parser.add_argument('--lr', type=float, default=0.01, metavar='LR',
                     help='learning rate (default: 0.01)')
-parser.add_argument('--max-length', type=int, default='100', metavar='N',
-                    help='max-ngrams-length (set by preprocessing)')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='disables CUDA training')
 parser.add_argument('--seed', type=int, default=1, metavar='S',
                     help='random seed (default: 1)')
-
+parser.set_defaults(max_length=100)
 
 ###############################################
 # Preparing training data
@@ -128,8 +128,8 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
     
     encoder_ngrams = encoder(input_variable[0])
     encoder_word = encoder(input_variable[1])
-    encoder_hidden = torch.cat((encoder_ngrams, encoder_word), 2)
-    net_output = net(encoder_hidden)
+    #encoder_hidden = torch.cat((encoder_ngrams, encoder_word), 2)
+    net_output = net(encoder_ngrams, encoder_word)
     #print(net_output)
     #print(target_variable)
     loss = criterion(net_output, target_variable)

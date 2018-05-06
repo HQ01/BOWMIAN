@@ -83,7 +83,7 @@ def variableFromSentence(lang, sentence, args):
     use_cuda = args.cuda
     indexes = indexesFromSentence(lang, sentence)
     indexes.append(EOS_token)
-    result = Variable(torch.LongTensor(indexes).view(-1, 1))
+    result = Variable(torch.LongTensor(indexes[:1]).view(-1, 1))
     if use_cuda:
         return result.cuda()
     else:
@@ -136,8 +136,8 @@ def train(input_variable, target_variable, encoder, decoder, net_optimizer, crit
     encoder_sentence = encoder_hidden
 
     encoder_word = encoder.embedding(word_content).view(1, 1, -1)
-
-    encoder_final = torch.cat((encoder_sentence, encoder_word), 0)
+    
+    encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
 
     net_output = net(encoder_final)
     loss = criterion(net_output, target_variable)
@@ -162,7 +162,7 @@ def trainEpochs(encoder, net, lang, pairs, args):
     plot_loss_total = 0  # Reset every plot_every
 
     # encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
-    net_optimizer = optim.SGD(net.parameters(), lr=learning_rate)
+    net_optimizer = optim.Adam(net.parameters(), lr=learning_rate)
     criterion = nn.CrossEntropyLoss()
 
     for epoch in range(1, args.n_epochs + 1):
@@ -226,13 +226,14 @@ def evaluateRandomly(encoder, net, pairs, lang, args, n=10):
         encoder_sentence = encoder_hidden
 
         encoder_word = encoder.embedding(word_content).view(1, 1, -1)
-
-        encoder_final = torch.cat((encoder_sentence, encoder_word), 0)
-
+        #print(encoder_sentence)
+        #print(encoder_word)
+        encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
+        #print(encoder_final)
         outputs = net(encoder_final)
         predict = torch.max(outputs, 1)[1].data[0]
 
-        print('<', predict)
+        #print('<', predict)
         print('')
 
 def evaluateTestingPairs(encoder, net, pairs, lang, args):
@@ -264,8 +265,9 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
 
         encoder_word = encoder.embedding(word_content).view(1, 1, -1)
 
-        encoder_final = torch.cat((encoder_sentence, encoder_word), 0)
+        encoder_final = torch.cat((encoder_sentence, encoder_word), 2)
         outputs = net(encoder_final)
+        #print(outputs)
         predict = torch.max(outputs, 1)[1].data[0]
         label = pair[2]
         
@@ -277,6 +279,7 @@ def evaluateTestingPairs(encoder, net, pairs, lang, args):
         100 * correct / total))
 
 if __name__ == '__main__':
+    print("start program")
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
@@ -307,6 +310,14 @@ if __name__ == '__main__':
     with open(args.data_path + "/RNNEncoder_lang.pkl", 'rb') as f:
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
+
+    print("random train pairs")
+    for i in (10):
+        print(random.choice(train_pairs))
+
+    print("random test pairs")
+    for i in range(10):
+        print(random.choice(test_pairs))
 
     # Set encoder and net
     print(args.cuda)
