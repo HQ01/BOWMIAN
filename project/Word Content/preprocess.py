@@ -125,8 +125,6 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 #        test_pairs = filterPairs(test_pairs, max_length)
     assert(len(train_pairs) > num_pairs)
     assert(len(test_pairs) > int(num_pairs/4))
-    random.shuffle(train_pairs)
-    random.shuffle(test_pairs)
     train_pairs = train_pairs[:num_pairs]
     test_pairs = test_pairs[:int(num_pairs/4)]
     print("Trimmed to %s training sentence pairs" % len(train_pairs))

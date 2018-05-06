@@ -25,7 +25,7 @@ class MLP(nn.Module):
 class MLP_wc(nn.Module):
     def __init__(self,input_size,class_size = 2):
         super(MLP_wc, self).__init__()
-        self.fc1 = nn.Linear(input_size*2,64)
+        self.fc1 = nn.Linear(input_size,64)
         self.aux = nn.Linear(input_size,32)
         self.fc2 = nn.Linear(64,32)
         self.fc4 = nn.Linear(32,class_size)

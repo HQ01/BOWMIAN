@@ -98,9 +98,12 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
         output_lang.addSentence(pair[1])
         pair[0] = pair[1]
         uwords = [t.text for t in nlp(str(pair[1]))]
+        if len(uwords) < 2:
+            continue
         if uwords[-1] in ('.', '!', '?'):
             del uwords[-1] # delete punctuation
         #print(uwords)
+
         random_word = random.choice(list(output_lang.index2word.values()))
         train_pairs.append([pair[0], [random_word], int(random_word in uwords)])
         pair[1] = [random.choice(uwords)]

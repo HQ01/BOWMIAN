@@ -96,7 +96,7 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
     print("Constructing training pairs...")
     for i in range(len(train_pairs)):
         pair = train_pairs[i]
-        output_lang.addSentence(pair[0])
+        output_lang.addSentence(pair[1])
         pair[0] = pair[1]
         uwords = [t.text for t in nlp(str(pair[1]))]
         #print(uwords)

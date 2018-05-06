@@ -264,6 +264,12 @@ if __name__ == '__main__':
     if args.cuda:
         torch.cuda.manual_seed(args.seed)
 
+    # print settings
+    print("################################################")
+    print("Start program")
+    print("num of epochs: ", args.n_epochs)
+    print("order: ", args.order)
+
     # Load pairs.pkl and lang.pkl
     with open(args.data_path + "/train_pairs%d.pkl" % args.order, 'rb') as f:
         train_pairs = pkl.load(f)
@@ -296,4 +302,5 @@ if __name__ == '__main__':
     evaluateRandomly(encoder, net, train_pairs, lang, args)
     print("Evaluate randomly on testing sentences:")
     evaluateRandomly(encoder, net, test_pairs, lang, args)
+    print("################################################")
     evaluateTestingPairs(encoder, net, test_pairs, lang, args)
