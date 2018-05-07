@@ -1,0 +1,622 @@
+hpc mode: True
+order: 4
+mode: sum
+metric: MULTI
+ngram dictionary size: 50000
+hidden-size: 300
+n-epochs: 20
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Untrimmed N-gram Vocab Size: 191656
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .', 'she did come here', 'did come here .']
+= she did come here .
+< aboard list list list list list expands expands expands interrupted population population twenty named hong hong infuriated handles message leak leak spoon gives may excellent building discovered delicious pro pro pretty pro provinces leak pro pro pro sister design leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .', 'it was quite funny', 'was quite funny .']
+= it was quite funny .
+< brothers brothers unfriendly unfriendly guess guess falls policeman threaten mercy eighteenth carbon penalty worry sincerity killer delicious sincerity killer delicious struck sincerity killer delicious hello sincerity killer handles gives may overworked overworked adjusted leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .']
+= they come from the same country .
+< prayed prayed gaze gaze gaze talking immediate illegally slices illegally slices slices beware slices beware perceptive leak pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .', 'i didn t finish', 'didn t finish reading', 't finish reading that', 'finish reading that book', 'reading that book .']
+= i didn t finish reading that book .
+< aboard aboard aboard trusts shared shared expands ways ways ways ways ways ways ways confuse confuse confuse confuse confuse confuse confuse discussion confuse try elba class amaze workmen penalty worry sincerity killer delicious delicious hello visible building building short due leak leak excellent building gives beware bird programs bird suitcase stomach named fracture invest sincerity killer handles gives may overworked overworked adjusted leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .', 'i m not ready', 'm not ready yet', 'not ready yet .']
+= i m not ready yet .
+< admitting whiskey whiskey whiskey whiskey cleverest donut loan vegetables motioned spun spun avoid killer speaks camping beware perceptive perceptive istanbul pro pro bench above killer handles gives may overworked overworked adjusted leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .', 'we shouldn t confuse', 'shouldn t confuse solitude', 't confuse solitude with', 'confuse solitude with isolation', 'solitude with isolation .', 'with isolation . they', 'isolation . they are', '. they are two', 'they are two separate', 'are two separate things', 'two separate things .']
+= we shouldn t confuse solitude with isolation . they are two separate things .
+< trusts aboard aboard aboard aboard aboard aboard aboard aboard aboard aboard aboard aboard aboard aboard list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .', 'i don t know', 'don t know what', 't know what it', 'know what it is', 'what it is .']
+= i don t know what it is .
+< removed removed barking barking barking barking until sentenced perceptive taller impressive heartbroken bending adjusted bending tuxedo slice skating nodded medical sincerity killer handles gives leak leak leak excellent singers programs programs kick bag valuable were maxed motioned adjusted may hello disadvantages disadvantages petals bag bitten medical avoid bird killer handles gives may overworked overworked adjusted adjusted fifties heartbroken adjusted bending tuxedo cuts friend bitten programs programs kick disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?', 'are you going home', 'you going home by', 'going home by bus', 'home by bus ?']
+= are you going home by bus ?
+< showed showed irons gaze glimpsed ripe ripe ripe ripe ripe ripe ripe message message leak leak excellent singers programs programs kick bag valuable were maxed motioned adjusted may hello disadvantages disadvantages petals bag bitten medical avoid bird killer handles gives may overworked overworked adjusted adjusted fifties heartbroken adjusted bending tuxedo cuts friend bitten programs programs kick disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .', 'he is intelligent .']
+= he is intelligent .
+< footsie wasn innocence talk innocence itself itself itself itself itself itself itself itself bucks leak leak leak excellent delicious pro pro provinces leak leak excellent delicious instrument hello vocation vocation motioned may disadvantages disadvantages petals bag workmen penalty penalty handles fracture snack midnight hello tuxedo killer handles gives programs programs bird suitcase stomach scare beware perceptive perceptive foreign pro pro sister worry pro pro howled pro pro unsociable leak leak excellent delicious pro pro provinces leak leak excellent delicious instrument leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .', 'you re so impatient', 're so impatient .']
+= you re so impatient .
+< matsuyama matsuyama matsuyama matsuyama ruled flattered flattered worry sincerity killer delicious sincerity killer delicious sincerity killer delicious struck sincerity killer delicious hello sincerity killer handles gives may overworked overworked adjusted leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .', 'team members are provided', 'members are provided with', 'are provided with equipment', 'provided with equipment and', 'with equipment and uniforms', 'equipment and uniforms .']
+= team members are provided with equipment and uniforms .
+< aboard aboard aboard aboard aboard aboard list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment appointment barrier salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman salesman presents presents presents presents presents bird named hong carbon c scare scare scare scare scare beware dismissed beware perceptive perceptive istanbul friend unforgettable fifties beware perceptive perceptive leak pro pro pro bench leak leak leak excellent singers programs programs bird suitcase
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .']
+= now that my brother is a university student he has to do a lot of reading .
+< aboard trusts require list list list list list list list list list list list unclear unclear unclear unclear glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed about about about about about about expands about expands expands expands expands expands expands expands glimpsed expands glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed glimpsed expands expands expands expands expands expands expands expands expands expands expands expands fairly expands fairly describe fairly ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe ripe fairly scallops scallops discussion confuse discussion confuse discussion confuse discussion try access separates taller rehabilitation leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .', 'they had fun with', 'had fun with us', 'fun with us .']
+= they had fun with us .
+< aboard aboard pilots pilots pilots pilots pilots twins named ripe accomplish message receipt receipt beware perceptive perceptive leak pro pro pro bench leak leak leak excellent singers programs programs bird suitcase stomach named fracture invest sincerity killer handles gives may overworked overworked adjusted leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?']
+= does anyone know japanese ?
+< aboard trusts twenty twenty glimpsed glimpsed launch launch launch accomplish empty empty heartbroken adjusted adjusted may disadvantages chances delicious instrument leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .']
+= he narrowly escaped being run over .
+< trusts aboard aboard aboard aboard aboard list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list list presents tire crew list collector suitcase receipt perceptive perceptive perceptive contract principles tuxedo slice programs here bag valuable pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?']
+= when was the last time you went to an art gallery ?
+< trusts trusts trusts lost cures cures cures cures activity activity activity activity activity activity activity activity internal internal internal internal internal internal internal internal internal whiplash grab grab grab grab grab grab grab grab grab grab grab grab grab grab grab grab grab perceptive perceptive perceptive perceptive perceptive perceptive dismissed standing perceptive perceptive friend regulation handles gives programs programs bird suitcase stomach scare beware perceptive perceptive foreign pro pro sister worry pro pro howled pro pro unsociable leak leak excellent delicious pro pro provinces leak leak excellent delicious instrument leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .']
+= his house was sold for .
+< conserve aboard list list source source list list expands expands interrupted interrupted interrupted interrupted interrupted interrupted interrupted cruel bankrupt bankrupt apartment spun spun sincerity weekends perceptive friend instrument leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .']
+= i m not mad .
+< expands pilots pilots pilots passing passing case collisions passing perceptive leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .', 'i thought you d', 'thought you d be', 'you d be much', 'd be much fatter', 'be much fatter .']
+= i thought you d be much fatter .
+< aboard aboard aboard aboard aboard aboard aboard subtitled expands expands acquainted expands dominated checks dominated dominated orders orders orders confuse parish confuse motioned survival newest written impressive penalty penalty handles fracture snack midnight hello tuxedo killer handles gives programs programs bird suitcase stomach scare beware perceptive perceptive foreign pro pro sister worry pro pro howled pro pro unsociable leak leak excellent delicious pro pro provinces leak leak excellent delicious instrument leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon gives village leak leak spoon
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .', 'they are bored .']
+= they are bored .
+< aboard aboard aboard aboard pilots pilots ways ways prevails prevails ultimate ultimate marvelous sunburned building valuable sincerity weekends beware perceptive perceptive istanbul pro pro bench above killer handles gives may overworked overworked adjusted leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak excellent eighteenth unforgettable leak leak excellent delicious building singers programs disadvantages bitten lawrence feelings suitable unused principles programs programs infuriated pro pro pro sister pro sister sign principles tuxedo technically penalty handles leak leak gives leak
+
+0m 17s (- 116m 7s) (1000 0%) 5.5387
+0m 33s (- 110m 20s) (2000 0%) 4.5940
+0m 49s (- 108m 59s) (3000 0%) 4.3395
+1m 5s (- 108m 35s) (4000 1%) 4.2723
+1m 22s (- 108m 23s) (5000 1%) 4.0753
+1m 38s (- 108m 15s) (6000 1%) 4.0382
+1m 55s (- 108m 12s) (7000 1%) 3.9312
+2m 12s (- 108m 10s) (8000 2%) 3.8160
+2m 29s (- 108m 4s) (9000 2%) 3.8302
+2m 45s (- 107m 53s) (10000 2%) 3.7292
+3m 2s (- 107m 50s) (11000 2%) 3.7420
+3m 19s (- 107m 35s) (12000 3%) 3.5476
+3m 36s (- 107m 23s) (13000 3%) 3.5668
+3m 53s (- 107m 11s) (14000 3%) 3.6191
+4m 10s (- 107m 3s) (15000 3%) 3.5266
+4m 27s (- 106m 56s) (16000 4%) 3.4932
+4m 44s (- 106m 42s) (17000 4%) 3.4127
+5m 1s (- 106m 29s) (18000 4%) 3.4152
+5m 17s (- 106m 14s) (19000 4%) 3.3425
+5m 34s (- 106m 3s) (20000 5%) 3.3174
+Epoch 1/20 finished
+5m 54s (- 106m 30s) (21000 5%) 3.0744
+6m 10s (- 106m 12s) (22000 5%) 2.9902
+6m 28s (- 106m 1s) (23000 5%) 3.0325
+6m 45s (- 105m 45s) (24000 6%) 2.9501
+7m 2s (- 105m 32s) (25000 6%) 2.9706
+7m 19s (- 105m 17s) (26000 6%) 2.9770
+7m 36s (- 105m 3s) (27000 6%) 2.9434
+7m 53s (- 104m 51s) (28000 7%) 2.9164
+8m 10s (- 104m 37s) (29000 7%) 2.8870
+8m 27s (- 104m 23s) (30000 7%) 2.8792
+8m 44s (- 104m 5s) (31000 7%) 2.8335
+9m 1s (- 103m 50s) (32000 8%) 2.8915
+9m 18s (- 103m 36s) (33000 8%) 2.8716
+9m 36s (- 103m 22s) (34000 8%) 2.8351
+9m 53s (- 103m 8s) (35000 8%) 2.8804
+10m 10s (- 102m 54s) (36000 9%) 2.8567
+10m 27s (- 102m 39s) (37000 9%) 2.7874
+10m 44s (- 102m 23s) (38000 9%) 2.7563
+11m 1s (- 102m 6s) (39000 9%) 2.7369
+11m 19s (- 101m 51s) (40000 10%) 2.7737
+Epoch 2/20 finished
+11m 38s (- 101m 51s) (41000 10%) 2.4293
+11m 55s (- 101m 35s) (42000 10%) 2.3907
+12m 12s (- 101m 19s) (43000 10%) 2.4456
+12m 29s (- 101m 3s) (44000 11%) 2.4388
+12m 46s (- 100m 45s) (45000 11%) 2.3973
+13m 3s (- 100m 32s) (46000 11%) 2.4660
+13m 20s (- 100m 15s) (47000 11%) 2.3796
+13m 38s (- 99m 59s) (48000 12%) 2.4520
+13m 55s (- 99m 43s) (49000 12%) 2.4135
+14m 12s (- 99m 27s) (50000 12%) 2.3868
+14m 29s (- 99m 10s) (51000 12%) 2.3360
+14m 46s (- 98m 55s) (52000 13%) 2.4143
+15m 4s (- 98m 39s) (53000 13%) 2.3873
+15m 21s (- 98m 22s) (54000 13%) 2.3926
+15m 38s (- 98m 8s) (55000 13%) 2.5290
+15m 55s (- 97m 51s) (56000 14%) 2.3918
+16m 13s (- 97m 35s) (57000 14%) 2.3598
+16m 30s (- 97m 19s) (58000 14%) 2.4082
+16m 47s (- 97m 3s) (59000 14%) 2.4340
+17m 4s (- 96m 46s) (60000 15%) 2.4385
+Epoch 3/20 finished
+17m 23s (- 96m 40s) (61000 15%) 2.0229
+17m 41s (- 96m 25s) (62000 15%) 2.0869
+17m 58s (- 96m 8s) (63000 15%) 2.0697
+18m 15s (- 95m 51s) (64000 16%) 2.0870
+18m 32s (- 95m 34s) (65000 16%) 2.0762
+18m 50s (- 95m 19s) (66000 16%) 2.1311
+19m 7s (- 95m 3s) (67000 16%) 2.1031
+19m 24s (- 94m 47s) (68000 17%) 2.0320
+19m 42s (- 94m 31s) (69000 17%) 2.1648
+19m 59s (- 94m 15s) (70000 17%) 2.1375
+20m 16s (- 93m 57s) (71000 17%) 2.0293
+20m 33s (- 93m 40s) (72000 18%) 2.1281
+20m 51s (- 93m 24s) (73000 18%) 2.0522
+21m 8s (- 93m 7s) (74000 18%) 2.1004
+21m 25s (- 92m 51s) (75000 18%) 2.0879
+21m 42s (- 92m 34s) (76000 19%) 2.0736
+21m 59s (- 92m 16s) (77000 19%) 2.0873
+22m 17s (- 92m 0s) (78000 19%) 2.1278
+22m 34s (- 91m 43s) (79000 19%) 2.1492
+22m 51s (- 91m 27s) (80000 20%) 2.2282
+Epoch 4/20 finished
+23m 11s (- 91m 18s) (81000 20%) 1.7431
+23m 28s (- 91m 2s) (82000 20%) 1.7882
+23m 45s (- 90m 45s) (83000 20%) 1.8158
+24m 3s (- 90m 29s) (84000 21%) 1.8227
+24m 20s (- 90m 12s) (85000 21%) 1.8126
+24m 37s (- 89m 54s) (86000 21%) 1.7862
+24m 54s (- 89m 37s) (87000 21%) 1.7520
+25m 12s (- 89m 21s) (88000 22%) 1.9336
+25m 29s (- 89m 3s) (89000 22%) 1.7710
+25m 46s (- 88m 47s) (90000 22%) 1.9363
+26m 4s (- 88m 31s) (91000 22%) 1.8991
+26m 21s (- 88m 15s) (92000 23%) 1.9207
+26m 39s (- 87m 58s) (93000 23%) 1.8456
+26m 56s (- 87m 41s) (94000 23%) 1.8894
+27m 13s (- 87m 24s) (95000 23%) 1.8827
+27m 30s (- 87m 7s) (96000 24%) 1.8672
+27m 48s (- 86m 51s) (97000 24%) 1.9271
+28m 5s (- 86m 34s) (98000 24%) 1.8331
+28m 22s (- 86m 16s) (99000 24%) 1.9166
+28m 40s (- 86m 0s) (100000 25%) 1.9930
+Epoch 5/20 finished
+28m 59s (- 85m 49s) (101000 25%) 1.5849
+29m 16s (- 85m 32s) (102000 25%) 1.5777
+29m 34s (- 85m 15s) (103000 25%) 1.6538
+29m 51s (- 84m 58s) (104000 26%) 1.5800
+30m 8s (- 84m 42s) (105000 26%) 1.6639
+30m 25s (- 84m 24s) (106000 26%) 1.5526
+30m 43s (- 84m 8s) (107000 26%) 1.7105
+31m 0s (- 83m 51s) (108000 27%) 1.6924
+31m 18s (- 83m 34s) (109000 27%) 1.7075
+31m 35s (- 83m 17s) (110000 27%) 1.6113
+31m 53s (- 83m 1s) (111000 27%) 1.7335
+32m 10s (- 82m 44s) (112000 28%) 1.7322
+32m 27s (- 82m 27s) (113000 28%) 1.7008
+32m 45s (- 82m 10s) (114000 28%) 1.7674
+33m 2s (- 81m 53s) (115000 28%) 1.7726
+33m 20s (- 81m 36s) (116000 28%) 1.6817
+33m 37s (- 81m 20s) (117000 29%) 1.7867
+33m 54s (- 81m 2s) (118000 29%) 1.6511
+34m 12s (- 80m 45s) (119000 29%) 1.7754
+34m 29s (- 80m 28s) (120000 30%) 1.7030
+Epoch 6/20 finished
+34m 48s (- 80m 15s) (121000 30%) 1.4098
+35m 5s (- 79m 58s) (122000 30%) 1.4715
+35m 22s (- 79m 40s) (123000 30%) 1.3759
+35m 40s (- 79m 24s) (124000 31%) 1.4969
+35m 57s (- 79m 7s) (125000 31%) 1.5037
+36m 15s (- 78m 50s) (126000 31%) 1.5724
+36m 32s (- 78m 33s) (127000 31%) 1.4916
+36m 50s (- 78m 16s) (128000 32%) 1.6433
+37m 7s (- 77m 59s) (129000 32%) 1.5580
+37m 24s (- 77m 42s) (130000 32%) 1.5675
+37m 42s (- 77m 25s) (131000 32%) 1.5235
+37m 59s (- 77m 8s) (132000 33%) 1.5158
+38m 16s (- 76m 50s) (133000 33%) 1.4631
+38m 34s (- 76m 33s) (134000 33%) 1.5153
+38m 51s (- 76m 16s) (135000 33%) 1.4883
+39m 9s (- 75m 59s) (136000 34%) 1.6387
+39m 26s (- 75m 42s) (137000 34%) 1.5722
+39m 43s (- 75m 25s) (138000 34%) 1.5416
+40m 1s (- 75m 8s) (139000 34%) 1.5938
+40m 18s (- 74m 51s) (140000 35%) 1.6212
+Epoch 7/20 finished
+40m 37s (- 74m 37s) (141000 35%) 1.2957
+40m 55s (- 74m 21s) (142000 35%) 1.3953
+41m 12s (- 74m 4s) (143000 35%) 1.3947
+41m 30s (- 73m 46s) (144000 36%) 1.3348
+41m 47s (- 73m 30s) (145000 36%) 1.4151
+42m 5s (- 73m 13s) (146000 36%) 1.4590
+42m 22s (- 72m 56s) (147000 36%) 1.3673
+42m 39s (- 72m 38s) (148000 37%) 1.2541
+42m 57s (- 72m 21s) (149000 37%) 1.3732
+43m 14s (- 72m 4s) (150000 37%) 1.4065
+43m 32s (- 71m 47s) (151000 37%) 1.4830
+43m 49s (- 71m 29s) (152000 38%) 1.3303
+44m 6s (- 71m 13s) (153000 38%) 1.5018
+44m 24s (- 70m 56s) (154000 38%) 1.4408
+44m 41s (- 70m 38s) (155000 38%) 1.4787
+44m 59s (- 70m 21s) (156000 39%) 1.4331
+45m 16s (- 70m 4s) (157000 39%) 1.4766
+45m 33s (- 69m 47s) (158000 39%) 1.4065
+45m 51s (- 69m 30s) (159000 39%) 1.5154
+46m 8s (- 69m 13s) (160000 40%) 1.5453
+Epoch 8/20 finished
+46m 27s (- 68m 58s) (161000 40%) 1.2008
+46m 45s (- 68m 41s) (162000 40%) 1.2477
+47m 2s (- 68m 24s) (163000 40%) 1.1478
+47m 20s (- 68m 7s) (164000 41%) 1.3145
+47m 37s (- 67m 50s) (165000 41%) 1.3035
+47m 55s (- 67m 33s) (166000 41%) 1.3452
+48m 13s (- 67m 16s) (167000 41%) 1.2993
+48m 30s (- 66m 59s) (168000 42%) 1.2925
+48m 47s (- 66m 41s) (169000 42%) 1.2349
+49m 5s (- 66m 24s) (170000 42%) 1.3829
+49m 23s (- 66m 8s) (171000 42%) 1.4521
+49m 40s (- 65m 50s) (172000 43%) 1.3160
+49m 57s (- 65m 33s) (173000 43%) 1.2988
+50m 15s (- 65m 16s) (174000 43%) 1.3625
+50m 32s (- 64m 59s) (175000 43%) 1.4058
+50m 50s (- 64m 42s) (176000 44%) 1.3127
+51m 7s (- 64m 24s) (177000 44%) 1.3863
+51m 25s (- 64m 7s) (178000 44%) 1.3841
+51m 42s (- 63m 50s) (179000 44%) 1.3121
+51m 59s (- 63m 33s) (180000 45%) 1.2620
+Epoch 9/20 finished
+52m 19s (- 63m 18s) (181000 45%) 1.2047
+52m 36s (- 63m 1s) (182000 45%) 1.1841
+52m 54s (- 62m 44s) (183000 45%) 1.1338
+53m 11s (- 62m 26s) (184000 46%) 1.1736
+53m 29s (- 62m 9s) (185000 46%) 1.2335
+53m 46s (- 61m 52s) (186000 46%) 1.1763
+54m 3s (- 61m 35s) (187000 46%) 1.2443
+54m 21s (- 61m 17s) (188000 47%) 1.2583
+54m 38s (- 61m 0s) (189000 47%) 1.2024
+54m 56s (- 60m 43s) (190000 47%) 1.2443
+55m 13s (- 60m 25s) (191000 47%) 1.1735
+55m 31s (- 60m 8s) (192000 48%) 1.2643
+55m 48s (- 59m 51s) (193000 48%) 1.2281
+56m 5s (- 59m 33s) (194000 48%) 1.1637
+56m 23s (- 59m 16s) (195000 48%) 1.2717
+56m 40s (- 58m 59s) (196000 49%) 1.2729
+56m 58s (- 58m 42s) (197000 49%) 1.2673
+57m 15s (- 58m 24s) (198000 49%) 1.2124
+57m 33s (- 58m 7s) (199000 49%) 1.3176
+57m 50s (- 57m 50s) (200000 50%) 1.2594
+Epoch 10/20 finished
+58m 9s (- 57m 35s) (201000 50%) 1.0423
+58m 27s (- 57m 18s) (202000 50%) 1.1110
+58m 45s (- 57m 1s) (203000 50%) 1.2006
+59m 2s (- 56m 43s) (204000 51%) 1.1145
+59m 20s (- 56m 26s) (205000 51%) 1.1320
+59m 37s (- 56m 9s) (206000 51%) 1.0797
+59m 55s (- 55m 51s) (207000 51%) 1.1774
+60m 12s (- 55m 34s) (208000 52%) 1.1006
+60m 29s (- 55m 17s) (209000 52%) 1.1354
+60m 47s (- 54m 59s) (210000 52%) 1.1890
+61m 4s (- 54m 42s) (211000 52%) 1.1718
+61m 22s (- 54m 25s) (212000 53%) 1.1845
+61m 39s (- 54m 8s) (213000 53%) 1.1638
+61m 57s (- 53m 50s) (214000 53%) 1.1193
+62m 14s (- 53m 33s) (215000 53%) 1.1929
+62m 31s (- 53m 16s) (216000 54%) 1.1550
+62m 49s (- 52m 58s) (217000 54%) 1.1645
+63m 6s (- 52m 41s) (218000 54%) 1.1609
+63m 24s (- 52m 24s) (219000 54%) 1.1920
+63m 42s (- 52m 7s) (220000 55%) 1.3301
+Epoch 11/20 finished
+64m 1s (- 51m 51s) (221000 55%) 1.0285
+64m 18s (- 51m 34s) (222000 55%) 1.0567
+64m 36s (- 51m 16s) (223000 55%) 0.9824
+64m 53s (- 50m 59s) (224000 56%) 1.0048
+65m 11s (- 50m 42s) (225000 56%) 1.0320
+65m 28s (- 50m 24s) (226000 56%) 1.0968
+65m 46s (- 50m 7s) (227000 56%) 1.1192
+66m 3s (- 49m 50s) (228000 56%) 1.0910
+66m 20s (- 49m 32s) (229000 57%) 1.0853
+66m 38s (- 49m 15s) (230000 57%) 1.0539
+66m 55s (- 48m 57s) (231000 57%) 1.0494
+67m 12s (- 48m 40s) (232000 57%) 1.0406
+67m 30s (- 48m 22s) (233000 58%) 1.1602
+67m 47s (- 48m 5s) (234000 58%) 1.1066
+68m 5s (- 47m 48s) (235000 58%) 1.1302
+68m 22s (- 47m 31s) (236000 59%) 1.1762
+68m 40s (- 47m 13s) (237000 59%) 1.0567
+68m 57s (- 46m 56s) (238000 59%) 1.1772
+69m 14s (- 46m 38s) (239000 59%) 1.1422
+69m 32s (- 46m 21s) (240000 60%) 1.1417
+Epoch 12/20 finished
+69m 52s (- 46m 5s) (241000 60%) 1.0148
+70m 9s (- 45m 48s) (242000 60%) 0.9614
+70m 27s (- 45m 31s) (243000 60%) 1.0067
+70m 44s (- 45m 13s) (244000 61%) 0.9859
+71m 2s (- 44m 56s) (245000 61%) 1.0646
+71m 19s (- 44m 39s) (246000 61%) 1.0022
+71m 37s (- 44m 21s) (247000 61%) 0.9759
+71m 54s (- 44m 4s) (248000 62%) 1.0401
+72m 12s (- 43m 47s) (249000 62%) 0.9387
+72m 29s (- 43m 29s) (250000 62%) 0.9791
+72m 46s (- 43m 12s) (251000 62%) 0.9613
+73m 4s (- 42m 54s) (252000 63%) 0.9605
+73m 21s (- 42m 37s) (253000 63%) 1.0609
+73m 39s (- 42m 20s) (254000 63%) 1.0372
+73m 56s (- 42m 2s) (255000 63%) 1.1196
+74m 14s (- 41m 45s) (256000 64%) 1.0447
+74m 31s (- 41m 28s) (257000 64%) 1.0750
+74m 49s (- 41m 10s) (258000 64%) 1.0428
+75m 6s (- 40m 53s) (259000 64%) 1.1361
+75m 24s (- 40m 36s) (260000 65%) 1.0335
+Epoch 13/20 finished
+75m 43s (- 40m 19s) (261000 65%) 0.9136
+76m 1s (- 40m 2s) (262000 65%) 0.9907
+76m 18s (- 39m 45s) (263000 65%) 0.9668
+76m 35s (- 39m 27s) (264000 66%) 0.8906
+76m 53s (- 39m 10s) (265000 66%) 0.9321
+77m 10s (- 38m 52s) (266000 66%) 0.9260
+77m 28s (- 38m 35s) (267000 66%) 0.9651
+77m 45s (- 38m 17s) (268000 67%) 0.8648
+78m 2s (- 38m 0s) (269000 67%) 1.0297
+78m 20s (- 37m 43s) (270000 67%) 0.9442
+78m 37s (- 37m 25s) (271000 67%) 0.9980
+78m 55s (- 37m 8s) (272000 68%) 0.9560
+79m 12s (- 36m 50s) (273000 68%) 0.9869
+79m 30s (- 36m 33s) (274000 68%) 0.9469
+79m 47s (- 36m 16s) (275000 68%) 0.9607
+80m 5s (- 35m 58s) (276000 69%) 1.0550
+80m 22s (- 35m 41s) (277000 69%) 0.9477
+80m 40s (- 35m 24s) (278000 69%) 1.1146
+80m 57s (- 35m 6s) (279000 69%) 1.0015
+81m 15s (- 34m 49s) (280000 70%) 1.0114
+Epoch 14/20 finished
+81m 34s (- 34m 32s) (281000 70%) 0.8386
+81m 52s (- 34m 15s) (282000 70%) 1.0182
+82m 10s (- 33m 58s) (283000 70%) 0.9394
+82m 27s (- 33m 40s) (284000 71%) 0.9500
+82m 45s (- 33m 23s) (285000 71%) 0.9067
+83m 2s (- 33m 6s) (286000 71%) 0.8947
+83m 20s (- 32m 48s) (287000 71%) 0.9409
+83m 37s (- 32m 31s) (288000 72%) 0.9651
+83m 55s (- 32m 13s) (289000 72%) 0.8336
+84m 12s (- 31m 56s) (290000 72%) 0.9230
+84m 29s (- 31m 39s) (291000 72%) 0.9192
+84m 47s (- 31m 21s) (292000 73%) 0.9254
+85m 5s (- 31m 4s) (293000 73%) 0.9810
+85m 22s (- 30m 46s) (294000 73%) 0.9362
+85m 40s (- 30m 29s) (295000 73%) 0.9639
+85m 57s (- 30m 12s) (296000 74%) 0.9278
+86m 14s (- 29m 54s) (297000 74%) 0.8815
+86m 32s (- 29m 37s) (298000 74%) 0.9750
+86m 49s (- 29m 19s) (299000 74%) 0.9673
+87m 6s (- 29m 2s) (300000 75%) 0.9510
+Epoch 15/20 finished
+87m 26s (- 28m 45s) (301000 75%) 0.8128
+87m 43s (- 28m 28s) (302000 75%) 0.8004
+88m 1s (- 28m 10s) (303000 75%) 0.7967
+88m 18s (- 27m 53s) (304000 76%) 0.8758
+88m 35s (- 27m 35s) (305000 76%) 0.7834
+88m 53s (- 27m 18s) (306000 76%) 0.9128
+89m 10s (- 27m 0s) (307000 76%) 0.8634
+89m 28s (- 26m 43s) (308000 77%) 0.8568
+89m 45s (- 26m 26s) (309000 77%) 0.9382
+90m 3s (- 26m 8s) (310000 77%) 0.9082
+90m 20s (- 25m 51s) (311000 77%) 0.9042
+90m 38s (- 25m 33s) (312000 78%) 0.8460
+90m 55s (- 25m 16s) (313000 78%) 0.8827
+91m 13s (- 24m 59s) (314000 78%) 0.9377
+91m 30s (- 24m 41s) (315000 78%) 0.9030
+91m 48s (- 24m 24s) (316000 79%) 0.9759
+92m 6s (- 24m 6s) (317000 79%) 0.9466
+92m 23s (- 23m 49s) (318000 79%) 0.9318
+92m 41s (- 23m 32s) (319000 79%) 0.8941
+92m 58s (- 23m 14s) (320000 80%) 0.9741
+Epoch 16/20 finished
+93m 18s (- 22m 57s) (321000 80%) 0.7985
+93m 36s (- 22m 40s) (322000 80%) 0.8151
+93m 53s (- 22m 22s) (323000 80%) 0.7551
+94m 11s (- 22m 5s) (324000 81%) 0.8640
+94m 28s (- 21m 48s) (325000 81%) 0.8150
+94m 46s (- 21m 30s) (326000 81%) 0.8632
+95m 3s (- 21m 13s) (327000 81%) 0.8455
+95m 21s (- 20m 55s) (328000 82%) 0.7880
+95m 38s (- 20m 38s) (329000 82%) 0.8460
+95m 56s (- 20m 21s) (330000 82%) 0.8410
+96m 13s (- 20m 3s) (331000 82%) 0.8572
+96m 31s (- 19m 46s) (332000 83%) 0.8383
+96m 48s (- 19m 28s) (333000 83%) 0.8283
+97m 6s (- 19m 11s) (334000 83%) 0.8854
+97m 24s (- 18m 53s) (335000 83%) 0.8938
+97m 41s (- 18m 36s) (336000 84%) 0.8183
+97m 58s (- 18m 18s) (337000 84%) 0.9202
+98m 15s (- 18m 1s) (338000 84%) 0.8716
+98m 33s (- 17m 44s) (339000 84%) 0.8673
+98m 50s (- 17m 26s) (340000 85%) 0.8454
+Epoch 17/20 finished
+99m 10s (- 17m 9s) (341000 85%) 0.6838
+99m 27s (- 16m 52s) (342000 85%) 0.7307
+99m 45s (- 16m 34s) (343000 85%) 0.8164
+100m 2s (- 16m 17s) (344000 86%) 0.8414
+100m 20s (- 15m 59s) (345000 86%) 0.7832
+100m 37s (- 15m 42s) (346000 86%) 0.6946
+100m 55s (- 15m 24s) (347000 86%) 0.8373
+101m 12s (- 15m 7s) (348000 87%) 0.8179
+101m 29s (- 14m 49s) (349000 87%) 0.7390
+101m 47s (- 14m 32s) (350000 87%) 0.7790
+102m 4s (- 14m 15s) (351000 87%) 0.7851
+102m 22s (- 13m 57s) (352000 88%) 0.8466
+102m 39s (- 13m 40s) (353000 88%) 0.8364
+102m 57s (- 13m 22s) (354000 88%) 0.8664
+103m 14s (- 13m 5s) (355000 88%) 0.8082
+103m 32s (- 12m 47s) (356000 89%) 0.8556
+103m 49s (- 12m 30s) (357000 89%) 0.7449
+104m 7s (- 12m 12s) (358000 89%) 0.8227
+104m 24s (- 11m 55s) (359000 89%) 0.9439
+104m 42s (- 11m 38s) (360000 90%) 0.9299
+Epoch 18/20 finished
+105m 1s (- 11m 20s) (361000 90%) 0.7799
+105m 19s (- 11m 3s) (362000 90%) 0.7294
+105m 36s (- 10m 45s) (363000 90%) 0.7838
+105m 54s (- 10m 28s) (364000 91%) 0.7812
+106m 11s (- 10m 11s) (365000 91%) 0.7388
+106m 29s (- 9m 53s) (366000 91%) 0.7438
+106m 47s (- 9m 36s) (367000 91%) 0.7965
+107m 4s (- 9m 18s) (368000 92%) 0.7268
+107m 22s (- 9m 1s) (369000 92%) 0.8001
+107m 39s (- 8m 43s) (370000 92%) 0.7480
+107m 56s (- 8m 26s) (371000 92%) 0.7310
+108m 14s (- 8m 8s) (372000 93%) 0.7712
+108m 31s (- 7m 51s) (373000 93%) 0.7439
+108m 49s (- 7m 33s) (374000 93%) 0.7435
+109m 6s (- 7m 16s) (375000 93%) 0.7409
+109m 24s (- 6m 59s) (376000 94%) 0.8336
+109m 41s (- 6m 41s) (377000 94%) 0.7865
+109m 59s (- 6m 24s) (378000 94%) 0.8481
+110m 17s (- 6m 6s) (379000 94%) 0.8164
+110m 34s (- 5m 49s) (380000 95%) 0.7880
+Epoch 19/20 finished
+110m 54s (- 5m 31s) (381000 95%) 0.6990
+111m 11s (- 5m 14s) (382000 95%) 0.7102
+111m 28s (- 4m 56s) (383000 95%) 0.6640
+111m 46s (- 4m 39s) (384000 96%) 0.7552
+112m 3s (- 4m 21s) (385000 96%) 0.6840
+112m 21s (- 4m 4s) (386000 96%) 0.7082
+112m 38s (- 3m 47s) (387000 96%) 0.6947
+112m 56s (- 3m 29s) (388000 97%) 0.7096
+113m 13s (- 3m 12s) (389000 97%) 0.6943
+113m 31s (- 2m 54s) (390000 97%) 0.7584
+113m 48s (- 2m 37s) (391000 97%) 0.7243
+114m 6s (- 2m 19s) (392000 98%) 0.7873
+114m 23s (- 2m 2s) (393000 98%) 0.7745
+114m 41s (- 1m 44s) (394000 98%) 0.7169
+114m 58s (- 1m 27s) (395000 98%) 0.7336
+115m 16s (- 1m 9s) (396000 99%) 0.7824
+115m 33s (- 0m 52s) (397000 99%) 0.8016
+115m 51s (- 0m 34s) (398000 99%) 0.7517
+116m 8s (- 0m 17s) (399000 99%) 0.8372
+116m 26s (- 0m 0s) (400000 100%) 0.7416
+Epoch 20/20 finished
+Evaluate randomly on training sentences:
+> ['he', 's', 'a', 'fine', 'young', 'lad', '.', 'he s', 's a', 'a fine', 'fine young', 'young lad', 'lad .', 'he s a', 's a fine', 'a fine young', 'fine young lad', 'young lad .', 'he s a fine', 's a fine young', 'a fine young lad', 'fine young lad .']
+= he s a fine young lad .
+< he s a fine young lad . <EOS>
+
+> ['there', 'were', 'a', 'lot', 'of', 'people', 'in', 'the', 'park', '.', 'there were', 'were a', 'a lot', 'lot of', 'of people', 'people in', 'in the', 'the park', 'park .', 'there were a', 'were a lot', 'a lot of', 'lot of people', 'of people in', 'people in the', 'in the park', 'the park .', 'there were a lot', 'were a lot of', 'a lot of people', 'lot of people in', 'of people in the', 'people in the park', 'in the park .']
+= there were a lot of people in the park .
+< i were a lot of people in the right . <EOS>
+
+> ['there', 'aren', 't', 'as', 'many', 'trains', 'at', 'night', '.', 'there aren', 'aren t', 't as', 'as many', 'many trains', 'trains at', 'at night', 'night .', 'there aren t', 'aren t as', 't as many', 'as many trains', 'many trains at', 'trains at night', 'at night .', 'there aren t as', 'aren t as many', 't as many trains', 'as many trains at', 'many trains at night', 'trains at night .']
+= there aren t as many trains at night .
+< there aren many many many trains trains trains . <EOS>
+
+> ['are', 'you', 'finished', '?', 'are you', 'you finished', 'finished ?', 'are you finished', 'you finished ?', 'are you finished ?']
+= are you finished ?
+< are you finished ? <EOS>
+
+> ['tom', 'kept', 'his', 'illness', 'a', 'secret', '.', 'tom kept', 'kept his', 'his illness', 'illness a', 'a secret', 'secret .', 'tom kept his', 'kept his illness', 'his illness a', 'illness a secret', 'a secret .', 'tom kept his illness', 'kept his illness a', 'his illness a secret', 'illness a secret .']
+= tom kept his illness a secret .
+< tom kept his illness a secret . <EOS>
+
+> ['they', 'found', 'it', '.', 'they found', 'found it', 'it .', 'they found it', 'found it .', 'they found it .']
+= they found it .
+< they found it . <EOS>
+
+> ['let', 's', 'continue', 'where', 'we', 'left', 'off', 'yesterday', '.', 'let s', 's continue', 'continue where', 'where we', 'we left', 'left off', 'off yesterday', 'yesterday .', 'let s continue', 's continue where', 'continue where we', 'where we left', 'we left off', 'left off yesterday', 'off yesterday .', 'let s continue where', 's continue where we', 'continue where we left', 'where we left off', 'we left off yesterday', 'left off yesterday .']
+= let s continue where we left off yesterday .
+< let s continue continue left left left left left yesterday left . <EOS>
+
+> ['tell', 'me', 'about', 'it', '.', 'i', 'm', 'all', 'ears', '.', 'tell me', 'me about', 'about it', 'it .', '. i', 'i m', 'm all', 'all ears', 'ears .', 'tell me about', 'me about it', 'about it .', 'it . i', '. i m', 'i m all', 'm all ears', 'all ears .', 'tell me about it', 'me about it .', 'about it . i', 'it . i m', '. i m all', 'i m all ears', 'm all ears .']
+= tell me about it . i m all ears .
+< tell me about it to all about it . <EOS>
+
+> ['this', 'kind', 'of', 'specialized', 'knowledge', 'has', 'very', 'little', 'to', 'do', 'with', 'daily', 'life', '.', 'this kind', 'kind of', 'of specialized', 'specialized knowledge', 'knowledge has', 'has very', 'very little', 'little to', 'to do', 'do with', 'with daily', 'daily life', 'life .', 'this kind of', 'kind of specialized', 'of specialized knowledge', 'specialized knowledge has', 'knowledge has very', 'has very little', 'very little to', 'little to do', 'to do with', 'do with daily', 'with daily life', 'daily life .', 'this kind of specialized', 'kind of specialized knowledge', 'of specialized knowledge has', 'specialized knowledge has very', 'knowledge has very little', 'has very little to', 'very little to do', 'little to do with', 'to do with daily', 'do with daily life', 'with daily life .']
+= this kind of specialized knowledge has very little to do with daily life .
+< this life life has life to to life life this life ! <EOS>
+
+> ['do', 'not', 'disobey', 'the', 'rules', '.', 'do not', 'not disobey', 'disobey the', 'the rules', 'rules .', 'do not disobey', 'not disobey the', 'disobey the rules', 'the rules .', 'do not disobey the', 'not disobey the rules', 'disobey the rules .']
+= do not disobey the rules .
+< do not disobey the rules . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['i', 'use', 'it', '.', 'i use', 'use it', 'it .', 'i use it', 'use it .', 'i use it .']
+= i use it .
+< i use it . <EOS>
+
+> ['she', 'went', 'out', 'without', 'saying', 'a', 'word', '.', 'she went', 'went out', 'out without', 'without saying', 'saying a', 'a word', 'word .', 'she went out', 'went out without', 'out without saying', 'without saying a', 'saying a word', 'a word .', 'she went out without', 'went out without saying', 'out without saying a', 'without saying a word', 'saying a word .']
+= she went out without saying a word .
+< she out a word without saying . <EOS>
+
+> ['who', 'are', 'you', 'supposed', 'to', 'be', '?', 'who are', 'are you', 'you supposed', 'supposed to', 'to be', 'be ?', 'who are you', 'are you supposed', 'you supposed to', 'supposed to be', 'to be ?', 'who are you supposed', 'are you supposed to', 'you supposed to be', 'supposed to be ?']
+= who are you supposed to be ?
+< who are you supposed to be ? <EOS>
+
+> ['what', 'were', 'you', 'thinking', 'of', '?', 'what were', 'were you', 'you thinking', 'thinking of', 'of ?', 'what were you', 'were you thinking', 'you thinking of', 'thinking of ?', 'what were you thinking', 'were you thinking of', 'you thinking of ?']
+= what were you thinking of ?
+< what were you were you ? <EOS>
+
+> ['you', 're', 'very', 'forward', '.', 'you re', 're very', 'very forward', 'forward .', 'you re very', 're very forward', 'very forward .', 'you re very forward', 're very forward .']
+= you re very forward .
+< you re very perceptive . <EOS>
+
+> ['you', 'are', 'taller', 'than', 'she', 'is', '.', 'you are', 'are taller', 'taller than', 'than she', 'she is', 'is .', 'you are taller', 'are taller than', 'taller than she', 'than she is', 'she is .', 'you are taller than', 'are taller than she', 'taller than she is', 'than she is .']
+= you are taller than she is .
+< you are taller than she is . <EOS>
+
+> ['don', 't', 'ever', 'underestimate', 'tom', '.', 'don t', 't ever', 'ever underestimate', 'underestimate tom', 'tom .', 'don t ever', 't ever underestimate', 'ever underestimate tom', 'underestimate tom .', 'don t ever underestimate', 't ever underestimate tom', 'ever underestimate tom .']
+= don t ever underestimate tom .
+< don t know his possible . <EOS>
+
+> ['this', 'house', 'is', 'fireproof', '.', 'this house', 'house is', 'is fireproof', 'fireproof .', 'this house is', 'house is fireproof', 'is fireproof .', 'this house is fireproof', 'house is fireproof .']
+= this house is fireproof .
+< this house is uninhabitable . <EOS>
+
+> ['we', 've', 'all', 'been', 'there', '.', 'we ve', 've all', 'all been', 'been there', 'there .', 'we ve all', 've all been', 'all been there', 'been there .', 'we ve all been', 've all been there', 'all been there .']
+= we ve all been there .
+< we ve all been there . <EOS>
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.', 'i m', 'm beginning', 'beginning to', 'to get', 'get used', 'used to', 'to doing', 'doing this', 'this .', 'i m beginning', 'm beginning to', 'beginning to get', 'to get used', 'get used to', 'used to doing', 'to doing this', 'doing this .', 'i m beginning to', 'm beginning to get', 'beginning to get used', 'to get used to', 'get used to doing', 'used to doing this', 'to doing this .']
+= i m beginning to get used to doing this .
+< i m to get to understand it more theory . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2809
+score for short sentnces (length <= 6):
+ROUGE1: 0.5366281290008629
+ROUGE2: 0.44999007104393773
+BLEU: 0.6235532870278347
+BLEU_CLIP: 0.5908388672361621
+
+Num of long sentences (length > 6): 2191
+score for long sentnces (length > 6):
+ROUGE1: 0.5052631712969312
+ROUGE2: 0.3842898423135913
+BLEU: 0.41209703380654844
+BLEU_CLIP: 0.35236229519942014
+
+Overall:
+ROUGE1: 0.522884004535
+ROUGE2: 0.4212002308142999
+BLEU: 0.530893156866267
+BLEU_CLIP: 0.4863384333696618
+
+Finished
+
