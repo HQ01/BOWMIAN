@@ -375,10 +375,11 @@ if __name__ == '__main__':
         lang_load = pkl.load(f)
     lang = Lang(lang_load)
     args.max_length = lang.max_ngrams_len
+    args.num_words = len(lang.vocab_ngrams)
     print("N-gram Vocab Size:", len(lang.vocab_ngrams))
 
     # Set encoder and decoder
-    encoder = NGramEncoder(lang.vocab_ngrams, args.hidden_size, args.mode)
+    encoder = NGramEncoder(args.num_words, args.hidden_size, args.mode)
     decoder = DecoderRNN(args.hidden_size, lang.n_words, args.cuda)
     if args.cuda:
         encoder = encoder.cuda()
