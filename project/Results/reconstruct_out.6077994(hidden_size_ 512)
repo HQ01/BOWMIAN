@@ -1,0 +1,622 @@
+hpc mode: True
+order: 2
+mode: sum
+metric: MULTI
+ngram dictionary size: 50000
+hidden-size: 512
+n-epochs: 20
+print-every: 1000
+plot-every: 100
+lr: 0.01
+clip: 10
+use cuda: True
+Untrimmed N-gram Vocab Size: 47196
+
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .']
+= she did come here .
+< loan loan loan loan loan brilliant neat stayed disagrees thermometer chinese monk managed waited obtain taxi dots sell make obedient thermometer smoothly peaches pot handed thermometer titanic make obedient neat touching overcoat aquarium began merely .h hawk sole olympic chairperson golf rains cool neat chinese skinned simply merely titanic pair touching table psychology touching depth waited aquarium began merely .h hawk poor trip hawk sell singers without sell proud touching carrie
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .']
+= it was quite funny .
+< owns e e engineers dreading meaningless spell spell must extinct extinct extinct paramedics obedient neat touching overcoat aquarium began merely .h hawk sole olympic chairperson golf rains cool neat chinese skinned simply merely titanic pair touching table psychology touching depth waited aquarium began merely .h hawk poor trip hawk sell singers without sell proud touching carrie baby crashed ups raw heroin thermometer stones although birthday heals titanic pair baby crashed ups
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .']
+= they come from the same country .
+< tell documents documents documents documents documents ups low inexcusable thermometer bearing decreasing science singers toenails depth waited thermometer bearing decreasing buildings thermometer chinese turkey performing make obedient neat plants chinese monk extinct extinct extinct promptly thermometer stones tines began overcoat simply merely .h pair baby crashed greasy neat lemon heals titanic overcoat skip bowl singers voicing gifted touching overcoat simply merely .h pair baby crashed greasy neat lemon heals titanic overcoat
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .']
+= i didn t finish reading that book .
+< flowers crews volumes volumes distracted signs signs contribute oddly crashed bragging mixed bragging mixed sentence silly thermometer stones merely sock charges honey began overcoat visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .']
+= i m not ready yet .
+< mahjong mahjong duke equally equally latin latin neat lemon heals tines pm promptly thermometer stones although birthday heals page bragging regularly bearing decreasing science singers toenails depth waited thermometer bearing decreasing buildings thermometer chinese turkey performing make obedient neat plants chinese monk extinct extinct extinct promptly thermometer stones tines began overcoat simply merely .h pair baby crashed greasy neat lemon heals titanic overcoat skip bowl singers voicing gifted touching overcoat simply
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .']
+= we shouldn t confuse solitude with isolation . they are two separate things .
+< typhoon backyard backyard backyard kimono backyard kimono simply common interact merely merely hawk liquid penalty sole ruthless cure obedient thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer stones tines
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .']
+= i don t know what it is .
+< charged tell affected affected hudson hudson hudson hudson hudson buildings thermometer produces bearing cyclist heals page bragging regularly bearing decreasing science singers toenails depth waited thermometer bearing decreasing buildings thermometer chinese turkey performing make obedient neat plants chinese monk extinct extinct extinct promptly thermometer stones tines began overcoat simply merely .h pair baby crashed greasy neat lemon heals titanic overcoat skip bowl singers voicing gifted touching overcoat simply merely .h pair
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?']
+= are you going home by bus ?
+< log brings orchestra orchestra which which tines lab heir snore liar master master for flash mixed hospital thermometer stones conservative monk managed forbid visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .']
+= he is intelligent .
+< disappointed disappointed completion sore using museum using overcoat smoothly fool willed seventy cling thermometer produces better cures cures promptly thermometer stones although birthday heals page bragging regularly bearing decreasing science singers toenails depth waited thermometer bearing decreasing buildings thermometer chinese turkey performing make obedient neat plants chinese monk extinct extinct extinct promptly thermometer stones tines began overcoat simply merely .h pair baby crashed greasy neat lemon heals titanic overcoat skip bowl
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .']
+= you re so impatient .
+< faster faster faster wounded wounded mark silly cyclist consciousness museum museum launched overcoat visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .']
+= team members are provided with equipment and uniforms .
+< bag beethoven scattered scattered scattered opinions beethoven beethoven beethoven beethoven chatterbox chatterbox silly phone visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa visa
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .']
+= now that my brother is a university student he has to do a lot of reading .
+< relief relief lawn indians indians indians indians wrong wrong entered entered dust entered entered california elbowed bearing decreasing buildings thermometer chinese characters turkey protested hesitated husbands silly sole olympic chairperson must poverty science honey treatment rains forbid tines lab cleaned round food monk extinct pair practice tied dreading obedient explain feelings touching overcoat simply merely .h olympic waited touching overcoat aquarium began merely .h hawk poor trip hawk sell singers without
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .']
+= they had fun with us .
+< explosion starve starve starve repay opinions wonderful responsibilities thermometer buy crying crying innocence neat touching overcoat simply merely .h hawk sole olympic chairperson golf rains husbands superior thermometer bearing decreasing buildings thermometer chinese characters turkey science entire science singers depth waited thermometer began overcoat simply merely .h hawk poor trip hawk sell singers without sell proud touching carrie baby crashed ups raw heroin thermometer stones although birthday heals titanic pair baby
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?']
+= does anyone know japanese ?
+< instructions genius relieved backgrounds gas backgrounds merely pair merely touching table entrance busier merely touching began merely .h hawk sole olympic chairperson golf rains cool neat chinese skinned simply merely titanic pair touching table psychology touching depth waited aquarium began merely .h hawk poor trip hawk sell singers without sell proud touching carrie baby crashed ups raw heroin thermometer stones although birthday heals titanic pair baby crashed ups quarrel decreasing touching
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .']
+= he narrowly escaped being run over .
+< blowing ready ready ready ready ready extension extension extension still wheel wheel thermometer stones cleaned round thermometer make bearing decreasing dislikes heals page read performing obedient neat touching began overcoat simply merely .h hawk sole olympic chairperson golf rains cool neat chinese skinned simply merely titanic pair touching table psychology touching depth waited aquarium began merely .h hawk poor trip hawk sell singers without sell proud touching carrie baby crashed ups
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?']
+= when was the last time you went to an art gallery ?
+< outlook fame attack attack attack sushi bickering carrie smoky carrie sole doorman forgot science singers paycheck dots forbid doorman blushing science quarrel forbid basket decreasing science treatment singers depth waited thermometer bearing decreasing buildings thermometer chinese turkey performing make obedient neat plants chinese monk extinct extinct extinct promptly thermometer stones tines began overcoat simply merely .h pair baby crashed greasy neat lemon heals titanic overcoat skip bowl singers voicing gifted touching
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .']
+= his house was sold for .
+< instantly warned warned form reduce reduce reduce quick waited blurred repaired waited obtain taxi dots for lemon electricity soon thermometer make obedient thermometer smoothly peaches pot sole doorman forgot published foods touching depth waited thermometer began overcoat although science duke essential simply thermometer make obedient thermometer smoothly peaches pot handed thermometer titanic make obedient neat touching overcoat aquarium began merely .h hawk sole olympic chairperson golf rains cool neat chinese skinned
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .']
+= i m not mad .
+< quality quality journalists grappling journalists believes lemon flash overcoat smoothly fool luna mcdonald golf rains cool chinese monk advance mentioned thermometer chinese characters turkey science singers depth waited thermometer make bearing decreasing dislikes husbands corsage buildings thermometer chinese turkey dreading obedient thermometer make obedient plants panting obvious obvious disagrees passed ocean bearing cyclist singers seventy hospital thermometer stones tines began merely cures reporters thermometer stones tines began merely cures reporters thermometer
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .']
+= i thought you d be much fatter .
+< quality trusting irritates speed bathe merely merely merely .h cures reporters taxi touching depth snore sue touching depth waited aquarium began merely .h hawk poor trip hawk sell singers without sell proud touching carrie baby crashed ups raw heroin thermometer stones although birthday heals titanic pair baby crashed ups quarrel decreasing touching sell singers depth waited thermometer began overcoat simply merely .h hawk poor trip hawk sell singers without sell proud
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .']
+= they are bored .
+< citizenship citizenship citizenship wolf brushing brushing chinese skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled skilled
+
+0m 21s (- 139m 58s) (1000 0%) 4.8009
+0m 40s (- 134m 46s) (2000 0%) 4.0461
+1m 0s (- 134m 3s) (3000 0%) 3.8626
+1m 21s (- 134m 7s) (4000 1%) 3.8060
+1m 41s (- 134m 0s) (5000 1%) 3.5558
+2m 2s (- 134m 23s) (6000 1%) 3.5072
+2m 23s (- 134m 35s) (7000 1%) 3.3939
+2m 44s (- 134m 32s) (8000 2%) 3.3085
+3m 5s (- 134m 20s) (9000 2%) 3.2676
+3m 26s (- 134m 2s) (10000 2%) 3.1379
+3m 47s (- 134m 2s) (11000 2%) 3.1685
+4m 8s (- 133m 53s) (12000 3%) 2.9787
+4m 30s (- 134m 5s) (13000 3%) 3.0010
+4m 52s (- 134m 13s) (14000 3%) 3.0361
+5m 13s (- 134m 13s) (15000 3%) 2.9367
+5m 35s (- 134m 15s) (16000 4%) 2.8978
+5m 57s (- 134m 8s) (17000 4%) 2.8617
+6m 18s (- 133m 55s) (18000 4%) 2.8296
+6m 40s (- 133m 57s) (19000 4%) 2.7799
+7m 3s (- 133m 58s) (20000 5%) 2.7612
+Epoch 1/20 finished
+7m 27s (- 134m 39s) (21000 5%) 2.3635
+7m 49s (- 134m 23s) (22000 5%) 2.2896
+8m 11s (- 134m 18s) (23000 5%) 2.3150
+8m 33s (- 134m 4s) (24000 6%) 2.2471
+8m 55s (- 133m 53s) (25000 6%) 2.2355
+9m 17s (- 133m 42s) (26000 6%) 2.2314
+9m 39s (- 133m 27s) (27000 6%) 2.2601
+10m 1s (- 133m 10s) (28000 7%) 2.2123
+10m 23s (- 132m 54s) (29000 7%) 2.1776
+10m 45s (- 132m 46s) (30000 7%) 2.2293
+11m 7s (- 132m 27s) (31000 7%) 2.2051
+11m 29s (- 132m 14s) (32000 8%) 2.2088
+11m 52s (- 132m 1s) (33000 8%) 2.1843
+12m 14s (- 131m 46s) (34000 8%) 2.1767
+12m 36s (- 131m 31s) (35000 8%) 2.1592
+12m 58s (- 131m 15s) (36000 9%) 2.1535
+13m 21s (- 130m 59s) (37000 9%) 2.1259
+13m 42s (- 130m 38s) (38000 9%) 2.0890
+14m 5s (- 130m 22s) (39000 9%) 2.1047
+14m 27s (- 130m 5s) (40000 10%) 2.0892
+Epoch 2/20 finished
+14m 52s (- 130m 12s) (41000 10%) 1.6851
+15m 14s (- 129m 57s) (42000 10%) 1.6259
+15m 37s (- 129m 39s) (43000 10%) 1.6507
+15m 59s (- 129m 23s) (44000 11%) 1.6702
+16m 21s (- 129m 3s) (45000 11%) 1.6577
+16m 44s (- 128m 47s) (46000 11%) 1.6980
+17m 6s (- 128m 27s) (47000 11%) 1.6735
+17m 28s (- 128m 11s) (48000 12%) 1.7118
+17m 51s (- 127m 52s) (49000 12%) 1.6621
+18m 14s (- 127m 38s) (50000 12%) 1.6856
+18m 36s (- 127m 18s) (51000 12%) 1.6209
+18m 59s (- 127m 8s) (52000 13%) 1.6802
+19m 22s (- 126m 50s) (53000 13%) 1.6468
+19m 44s (- 126m 32s) (54000 13%) 1.6419
+20m 8s (- 126m 20s) (55000 13%) 1.8004
+20m 31s (- 126m 2s) (56000 14%) 1.7125
+20m 53s (- 125m 42s) (57000 14%) 1.6731
+21m 16s (- 125m 26s) (58000 14%) 1.7146
+21m 39s (- 125m 9s) (59000 14%) 1.7350
+22m 1s (- 124m 49s) (60000 15%) 1.7437
+Epoch 3/20 finished
+22m 26s (- 124m 43s) (61000 15%) 1.3182
+22m 49s (- 124m 25s) (62000 15%) 1.3319
+23m 11s (- 124m 4s) (63000 15%) 1.2913
+23m 34s (- 123m 44s) (64000 16%) 1.3276
+23m 56s (- 123m 24s) (65000 16%) 1.3341
+24m 19s (- 123m 4s) (66000 16%) 1.3691
+24m 41s (- 122m 45s) (67000 16%) 1.3442
+25m 4s (- 122m 26s) (68000 17%) 1.3181
+25m 27s (- 122m 7s) (69000 17%) 1.3666
+25m 50s (- 121m 48s) (70000 17%) 1.3768
+26m 12s (- 121m 26s) (71000 17%) 1.2962
+26m 35s (- 121m 6s) (72000 18%) 1.3619
+26m 57s (- 120m 46s) (73000 18%) 1.3268
+27m 20s (- 120m 26s) (74000 18%) 1.3308
+27m 42s (- 120m 5s) (75000 18%) 1.3397
+28m 5s (- 119m 44s) (76000 19%) 1.3149
+28m 28s (- 119m 24s) (77000 19%) 1.3315
+28m 50s (- 119m 4s) (78000 19%) 1.3848
+29m 13s (- 118m 44s) (79000 19%) 1.3952
+29m 36s (- 118m 25s) (80000 20%) 1.4743
+Epoch 4/20 finished
+30m 1s (- 118m 14s) (81000 20%) 1.0061
+30m 24s (- 117m 53s) (82000 20%) 1.0743
+30m 46s (- 117m 33s) (83000 20%) 1.1242
+31m 9s (- 117m 13s) (84000 21%) 1.0743
+31m 32s (- 116m 51s) (85000 21%) 1.0578
+31m 54s (- 116m 29s) (86000 21%) 1.0454
+32m 17s (- 116m 8s) (87000 21%) 1.0251
+32m 40s (- 115m 49s) (88000 22%) 1.1402
+33m 2s (- 115m 28s) (89000 22%) 1.0477
+33m 25s (- 115m 7s) (90000 22%) 1.1675
+33m 48s (- 114m 48s) (91000 22%) 1.1495
+34m 11s (- 114m 28s) (92000 23%) 1.1915
+34m 34s (- 114m 7s) (93000 23%) 1.0928
+34m 56s (- 113m 46s) (94000 23%) 1.1326
+35m 19s (- 113m 24s) (95000 23%) 1.1225
+35m 42s (- 113m 4s) (96000 24%) 1.1235
+36m 5s (- 112m 44s) (97000 24%) 1.1708
+36m 28s (- 112m 23s) (98000 24%) 1.0682
+36m 51s (- 112m 2s) (99000 24%) 1.1521
+37m 13s (- 111m 41s) (100000 25%) 1.2307
+Epoch 5/20 finished
+37m 39s (- 111m 27s) (101000 25%) 0.8841
+38m 1s (- 111m 6s) (102000 25%) 0.8950
+38m 24s (- 110m 44s) (103000 25%) 0.9195
+38m 46s (- 110m 22s) (104000 26%) 0.8453
+39m 9s (- 110m 1s) (105000 26%) 0.9627
+39m 32s (- 109m 38s) (106000 26%) 0.8393
+39m 54s (- 109m 17s) (107000 26%) 0.9936
+40m 17s (- 108m 57s) (108000 27%) 0.9180
+40m 40s (- 108m 36s) (109000 27%) 0.9504
+41m 3s (- 108m 14s) (110000 27%) 0.8820
+41m 26s (- 107m 53s) (111000 27%) 0.9923
+41m 49s (- 107m 32s) (112000 28%) 0.9712
+42m 12s (- 107m 13s) (113000 28%) 0.9484
+42m 36s (- 106m 53s) (114000 28%) 0.9660
+42m 59s (- 106m 33s) (115000 28%) 1.0020
+43m 22s (- 106m 11s) (116000 28%) 0.9187
+43m 44s (- 105m 48s) (117000 29%) 0.9792
+44m 5s (- 105m 23s) (118000 29%) 0.9261
+44m 27s (- 104m 59s) (119000 29%) 0.9762
+44m 49s (- 104m 35s) (120000 30%) 0.9631
+Epoch 6/20 finished
+45m 12s (- 104m 15s) (121000 30%) 0.7471
+45m 34s (- 103m 51s) (122000 30%) 0.7976
+45m 56s (- 103m 26s) (123000 30%) 0.7377
+46m 17s (- 103m 3s) (124000 31%) 0.7917
+46m 39s (- 102m 39s) (125000 31%) 0.8123
+47m 2s (- 102m 16s) (126000 31%) 0.8201
+47m 24s (- 101m 53s) (127000 31%) 0.7482
+47m 46s (- 101m 31s) (128000 32%) 0.8785
+48m 8s (- 101m 8s) (129000 32%) 0.8022
+48m 30s (- 100m 45s) (130000 32%) 0.8202
+48m 52s (- 100m 21s) (131000 32%) 0.7926
+49m 14s (- 99m 59s) (132000 33%) 0.7523
+49m 36s (- 99m 36s) (133000 33%) 0.7287
+49m 58s (- 99m 13s) (134000 33%) 0.7843
+50m 20s (- 98m 49s) (135000 33%) 0.7336
+50m 43s (- 98m 28s) (136000 34%) 0.8695
+51m 6s (- 98m 7s) (137000 34%) 0.8712
+51m 29s (- 97m 46s) (138000 34%) 0.8026
+51m 53s (- 97m 25s) (139000 34%) 0.8617
+52m 16s (- 97m 4s) (140000 35%) 0.8012
+Epoch 7/20 finished
+52m 41s (- 96m 47s) (141000 35%) 0.6581
+53m 4s (- 96m 25s) (142000 35%) 0.7272
+53m 27s (- 96m 4s) (143000 35%) 0.6901
+53m 50s (- 95m 43s) (144000 36%) 0.6392
+54m 14s (- 95m 22s) (145000 36%) 0.7091
+54m 37s (- 95m 1s) (146000 36%) 0.7451
+55m 0s (- 94m 40s) (147000 36%) 0.6772
+55m 23s (- 94m 18s) (148000 37%) 0.5977
+55m 46s (- 93m 57s) (149000 37%) 0.6375
+56m 9s (- 93m 35s) (150000 37%) 0.6872
+56m 32s (- 93m 13s) (151000 37%) 0.7280
+56m 55s (- 92m 51s) (152000 38%) 0.6555
+57m 18s (- 92m 30s) (153000 38%) 0.7091
+57m 41s (- 92m 9s) (154000 38%) 0.7371
+58m 4s (- 91m 47s) (155000 38%) 0.7475
+58m 27s (- 91m 25s) (156000 39%) 0.7413
+58m 50s (- 91m 3s) (157000 39%) 0.7077
+59m 12s (- 90m 41s) (158000 39%) 0.6631
+59m 36s (- 90m 20s) (159000 39%) 0.7518
+59m 59s (- 89m 59s) (160000 40%) 0.7548
+Epoch 8/20 finished
+60m 24s (- 89m 40s) (161000 40%) 0.5553
+60m 47s (- 89m 18s) (162000 40%) 0.6030
+61m 10s (- 88m 57s) (163000 40%) 0.5212
+61m 33s (- 88m 35s) (164000 41%) 0.5889
+61m 56s (- 88m 13s) (165000 41%) 0.6124
+62m 19s (- 87m 51s) (166000 41%) 0.6183
+62m 43s (- 87m 30s) (167000 41%) 0.5785
+63m 6s (- 87m 8s) (168000 42%) 0.5885
+63m 29s (- 86m 47s) (169000 42%) 0.5841
+63m 52s (- 86m 25s) (170000 42%) 0.6445
+64m 16s (- 86m 4s) (171000 42%) 0.6601
+64m 38s (- 85m 41s) (172000 43%) 0.6044
+65m 2s (- 85m 20s) (173000 43%) 0.5682
+65m 24s (- 84m 57s) (174000 43%) 0.6290
+65m 47s (- 84m 35s) (175000 43%) 0.6795
+66m 10s (- 84m 13s) (176000 44%) 0.6377
+66m 33s (- 83m 51s) (177000 44%) 0.6634
+66m 56s (- 83m 29s) (178000 44%) 0.6303
+67m 19s (- 83m 7s) (179000 44%) 0.5973
+67m 42s (- 82m 45s) (180000 45%) 0.5698
+Epoch 9/20 finished
+68m 8s (- 82m 26s) (181000 45%) 0.5501
+68m 31s (- 82m 4s) (182000 45%) 0.5211
+68m 55s (- 81m 43s) (183000 45%) 0.5022
+69m 17s (- 81m 20s) (184000 46%) 0.4960
+69m 40s (- 80m 58s) (185000 46%) 0.5107
+70m 3s (- 80m 36s) (186000 46%) 0.5054
+70m 27s (- 80m 14s) (187000 46%) 0.5660
+70m 50s (- 79m 53s) (188000 47%) 0.4985
+71m 13s (- 79m 30s) (189000 47%) 0.5061
+71m 36s (- 79m 8s) (190000 47%) 0.5374
+71m 59s (- 78m 46s) (191000 47%) 0.5479
+72m 22s (- 78m 24s) (192000 48%) 0.5705
+72m 45s (- 78m 2s) (193000 48%) 0.5089
+73m 8s (- 77m 40s) (194000 48%) 0.4680
+73m 32s (- 77m 18s) (195000 48%) 0.5600
+73m 55s (- 76m 56s) (196000 49%) 0.5478
+74m 18s (- 76m 34s) (197000 49%) 0.5480
+74m 41s (- 76m 12s) (198000 49%) 0.5172
+75m 5s (- 75m 50s) (199000 49%) 0.5437
+75m 28s (- 75m 28s) (200000 50%) 0.5554
+Epoch 10/20 finished
+75m 53s (- 75m 8s) (201000 50%) 0.3940
+76m 17s (- 74m 46s) (202000 50%) 0.4631
+76m 41s (- 74m 25s) (203000 50%) 0.5356
+77m 3s (- 74m 2s) (204000 51%) 0.4682
+77m 28s (- 73m 41s) (205000 51%) 0.4748
+77m 50s (- 73m 18s) (206000 51%) 0.4174
+78m 13s (- 72m 56s) (207000 51%) 0.4692
+78m 35s (- 72m 33s) (208000 52%) 0.4183
+78m 58s (- 72m 10s) (209000 52%) 0.4641
+79m 20s (- 71m 47s) (210000 52%) 0.4843
+79m 43s (- 71m 24s) (211000 52%) 0.4971
+80m 5s (- 71m 1s) (212000 53%) 0.4732
+80m 28s (- 70m 38s) (213000 53%) 0.4758
+80m 50s (- 70m 15s) (214000 53%) 0.4289
+81m 12s (- 69m 52s) (215000 53%) 0.4787
+81m 35s (- 69m 30s) (216000 54%) 0.4439
+81m 58s (- 69m 7s) (217000 54%) 0.4830
+82m 20s (- 68m 44s) (218000 54%) 0.4544
+82m 43s (- 68m 21s) (219000 54%) 0.4570
+83m 5s (- 67m 59s) (220000 55%) 0.5632
+Epoch 11/20 finished
+83m 30s (- 67m 38s) (221000 55%) 0.4079
+83m 53s (- 67m 15s) (222000 55%) 0.4094
+84m 15s (- 66m 52s) (223000 55%) 0.4026
+84m 38s (- 66m 30s) (224000 56%) 0.4010
+85m 1s (- 66m 7s) (225000 56%) 0.3861
+85m 24s (- 65m 45s) (226000 56%) 0.4023
+85m 48s (- 65m 23s) (227000 56%) 0.4249
+86m 10s (- 65m 0s) (228000 56%) 0.4079
+86m 33s (- 64m 38s) (229000 57%) 0.4089
+86m 55s (- 64m 15s) (230000 57%) 0.4066
+87m 17s (- 63m 52s) (231000 57%) 0.3925
+87m 40s (- 63m 29s) (232000 57%) 0.4015
+88m 3s (- 63m 6s) (233000 58%) 0.4443
+88m 26s (- 62m 44s) (234000 58%) 0.4010
+88m 49s (- 62m 21s) (235000 58%) 0.4312
+89m 12s (- 61m 59s) (236000 59%) 0.4808
+89m 34s (- 61m 36s) (237000 59%) 0.3965
+89m 56s (- 61m 13s) (238000 59%) 0.4324
+90m 19s (- 60m 51s) (239000 59%) 0.4439
+90m 42s (- 60m 28s) (240000 60%) 0.4030
+Epoch 12/20 finished
+91m 7s (- 60m 6s) (241000 60%) 0.3742
+91m 29s (- 59m 43s) (242000 60%) 0.3723
+91m 52s (- 59m 21s) (243000 60%) 0.3733
+92m 14s (- 58m 58s) (244000 61%) 0.3657
+92m 37s (- 58m 36s) (245000 61%) 0.4088
+93m 0s (- 58m 13s) (246000 61%) 0.3854
+93m 23s (- 57m 50s) (247000 61%) 0.3221
+93m 46s (- 57m 28s) (248000 62%) 0.3441
+94m 8s (- 57m 5s) (249000 62%) 0.3286
+94m 30s (- 56m 42s) (250000 62%) 0.3246
+94m 53s (- 56m 19s) (251000 62%) 0.3304
+95m 15s (- 55m 56s) (252000 63%) 0.3389
+95m 39s (- 55m 34s) (253000 63%) 0.3800
+96m 2s (- 55m 12s) (254000 63%) 0.3574
+96m 25s (- 54m 49s) (255000 63%) 0.4045
+96m 48s (- 54m 27s) (256000 64%) 0.3602
+97m 11s (- 54m 4s) (257000 64%) 0.3954
+97m 33s (- 53m 41s) (258000 64%) 0.3602
+97m 56s (- 53m 19s) (259000 64%) 0.4101
+98m 18s (- 52m 56s) (260000 65%) 0.3745
+Epoch 13/20 finished
+98m 43s (- 52m 34s) (261000 65%) 0.3128
+99m 6s (- 52m 12s) (262000 65%) 0.3148
+99m 29s (- 51m 49s) (263000 65%) 0.3181
+99m 51s (- 51m 26s) (264000 66%) 0.2851
+100m 14s (- 51m 4s) (265000 66%) 0.3206
+100m 36s (- 50m 41s) (266000 66%) 0.2963
+100m 58s (- 50m 18s) (267000 66%) 0.3092
+101m 20s (- 49m 54s) (268000 67%) 0.2710
+101m 43s (- 49m 32s) (269000 67%) 0.3480
+102m 5s (- 49m 9s) (270000 67%) 0.2952
+102m 28s (- 48m 46s) (271000 67%) 0.3363
+102m 51s (- 48m 24s) (272000 68%) 0.3134
+103m 14s (- 48m 1s) (273000 68%) 0.3445
+103m 36s (- 47m 38s) (274000 68%) 0.3054
+103m 58s (- 47m 15s) (275000 68%) 0.2827
+104m 22s (- 46m 53s) (276000 69%) 0.3736
+104m 44s (- 46m 30s) (277000 69%) 0.3128
+105m 8s (- 46m 8s) (278000 69%) 0.3842
+105m 31s (- 45m 46s) (279000 69%) 0.3234
+105m 54s (- 45m 23s) (280000 70%) 0.2967
+Epoch 14/20 finished
+106m 18s (- 45m 1s) (281000 70%) 0.2484
+106m 43s (- 44m 39s) (282000 70%) 0.3226
+107m 6s (- 44m 16s) (283000 70%) 0.3009
+107m 28s (- 43m 53s) (284000 71%) 0.2925
+107m 51s (- 43m 31s) (285000 71%) 0.2622
+108m 14s (- 43m 8s) (286000 71%) 0.2872
+108m 37s (- 42m 45s) (287000 71%) 0.2860
+108m 59s (- 42m 23s) (288000 72%) 0.3155
+109m 21s (- 42m 0s) (289000 72%) 0.2640
+109m 44s (- 41m 37s) (290000 72%) 0.3009
+110m 6s (- 41m 14s) (291000 72%) 0.2431
+110m 29s (- 40m 52s) (292000 73%) 0.3429
+110m 52s (- 40m 29s) (293000 73%) 0.3097
+111m 16s (- 40m 7s) (294000 73%) 0.2739
+111m 39s (- 39m 44s) (295000 73%) 0.2900
+112m 1s (- 39m 21s) (296000 74%) 0.2885
+112m 23s (- 38m 58s) (297000 74%) 0.2430
+112m 46s (- 38m 35s) (298000 74%) 0.2776
+113m 8s (- 38m 13s) (299000 74%) 0.2639
+113m 30s (- 37m 50s) (300000 75%) 0.2516
+Epoch 15/20 finished
+113m 55s (- 37m 28s) (301000 75%) 0.2420
+114m 17s (- 37m 5s) (302000 75%) 0.2394
+114m 40s (- 36m 42s) (303000 75%) 0.2576
+115m 3s (- 36m 19s) (304000 76%) 0.2465
+115m 25s (- 35m 57s) (305000 76%) 0.2453
+115m 48s (- 35m 34s) (306000 76%) 0.2625
+116m 11s (- 35m 11s) (307000 76%) 0.2166
+116m 33s (- 34m 49s) (308000 77%) 0.2599
+116m 56s (- 34m 26s) (309000 77%) 0.2655
+117m 19s (- 34m 3s) (310000 77%) 0.2652
+117m 41s (- 33m 40s) (311000 77%) 0.2529
+118m 3s (- 33m 17s) (312000 78%) 0.2246
+118m 26s (- 32m 55s) (313000 78%) 0.2428
+118m 49s (- 32m 32s) (314000 78%) 0.2861
+119m 11s (- 32m 9s) (315000 78%) 0.2852
+119m 35s (- 31m 47s) (316000 79%) 0.2918
+119m 59s (- 31m 24s) (317000 79%) 0.2762
+120m 21s (- 31m 2s) (318000 79%) 0.2559
+120m 44s (- 30m 39s) (319000 79%) 0.2670
+121m 7s (- 30m 16s) (320000 80%) 0.2757
+Epoch 16/20 finished
+121m 33s (- 29m 54s) (321000 80%) 0.2288
+121m 55s (- 29m 32s) (322000 80%) 0.2425
+122m 18s (- 29m 9s) (323000 80%) 0.2169
+122m 40s (- 28m 46s) (324000 81%) 0.2435
+123m 2s (- 28m 23s) (325000 81%) 0.2257
+123m 25s (- 28m 0s) (326000 81%) 0.2318
+123m 48s (- 27m 38s) (327000 81%) 0.2173
+124m 10s (- 27m 15s) (328000 82%) 0.2195
+124m 33s (- 26m 52s) (329000 82%) 0.2310
+124m 55s (- 26m 29s) (330000 82%) 0.2348
+125m 18s (- 26m 7s) (331000 82%) 0.2342
+125m 40s (- 25m 44s) (332000 83%) 0.2630
+126m 2s (- 25m 21s) (333000 83%) 0.2140
+126m 25s (- 24m 58s) (334000 83%) 0.2265
+126m 49s (- 24m 36s) (335000 83%) 0.2601
+127m 11s (- 24m 13s) (336000 84%) 0.1814
+127m 34s (- 23m 50s) (337000 84%) 0.2243
+127m 56s (- 23m 28s) (338000 84%) 0.2332
+128m 18s (- 23m 5s) (339000 84%) 0.2098
+128m 41s (- 22m 42s) (340000 85%) 0.2119
+Epoch 17/20 finished
+129m 5s (- 22m 20s) (341000 85%) 0.1831
+129m 29s (- 21m 57s) (342000 85%) 0.2097
+129m 52s (- 21m 34s) (343000 85%) 0.2133
+130m 15s (- 21m 12s) (344000 86%) 0.2378
+130m 39s (- 20m 49s) (345000 86%) 0.1994
+131m 1s (- 20m 26s) (346000 86%) 0.1689
+131m 24s (- 20m 4s) (347000 86%) 0.2180
+131m 46s (- 19m 41s) (348000 87%) 0.1757
+132m 9s (- 19m 18s) (349000 87%) 0.2059
+132m 32s (- 18m 56s) (350000 87%) 0.1691
+132m 54s (- 18m 33s) (351000 87%) 0.1686
+133m 16s (- 18m 10s) (352000 88%) 0.2109
+133m 39s (- 17m 47s) (353000 88%) 0.2066
+134m 2s (- 17m 25s) (354000 88%) 0.2117
+134m 24s (- 17m 2s) (355000 88%) 0.2223
+134m 46s (- 16m 39s) (356000 89%) 0.2238
+135m 8s (- 16m 16s) (357000 89%) 0.1817
+135m 31s (- 15m 54s) (358000 89%) 0.1838
+135m 55s (- 15m 31s) (359000 89%) 0.2741
+136m 18s (- 15m 8s) (360000 90%) 0.2222
+Epoch 18/20 finished
+136m 43s (- 14m 46s) (361000 90%) 0.2172
+137m 5s (- 14m 23s) (362000 90%) 0.1636
+137m 29s (- 14m 0s) (363000 90%) 0.1795
+137m 52s (- 13m 38s) (364000 91%) 0.1866
+138m 15s (- 13m 15s) (365000 91%) 0.1795
+138m 39s (- 12m 52s) (366000 91%) 0.1977
+139m 3s (- 12m 30s) (367000 91%) 0.1955
+139m 26s (- 12m 7s) (368000 92%) 0.1635
+139m 49s (- 11m 44s) (369000 92%) 0.1887
+140m 11s (- 11m 22s) (370000 92%) 0.1545
+140m 33s (- 10m 59s) (371000 92%) 0.1521
+140m 56s (- 10m 36s) (372000 93%) 0.1793
+141m 19s (- 10m 13s) (373000 93%) 0.1574
+141m 41s (- 9m 50s) (374000 93%) 0.1400
+142m 3s (- 9m 28s) (375000 93%) 0.1659
+142m 26s (- 9m 5s) (376000 94%) 0.2102
+142m 49s (- 8m 42s) (377000 94%) 0.1756
+143m 13s (- 8m 20s) (378000 94%) 0.1741
+143m 35s (- 7m 57s) (379000 94%) 0.1887
+143m 58s (- 7m 34s) (380000 95%) 0.1905
+Epoch 19/20 finished
+144m 23s (- 7m 12s) (381000 95%) 0.1685
+144m 46s (- 6m 49s) (382000 95%) 0.1701
+145m 8s (- 6m 26s) (383000 95%) 0.1559
+145m 31s (- 6m 3s) (384000 96%) 0.1666
+145m 54s (- 5m 41s) (385000 96%) 0.1488
+146m 16s (- 5m 18s) (386000 96%) 0.1562
+146m 38s (- 4m 55s) (387000 96%) 0.1537
+147m 1s (- 4m 32s) (388000 97%) 0.1431
+147m 23s (- 4m 10s) (389000 97%) 0.1438
+147m 46s (- 3m 47s) (390000 97%) 0.1754
+148m 9s (- 3m 24s) (391000 97%) 0.1507
+148m 32s (- 3m 1s) (392000 98%) 0.1645
+148m 55s (- 2m 39s) (393000 98%) 0.1774
+149m 17s (- 2m 16s) (394000 98%) 0.1509
+149m 40s (- 1m 53s) (395000 98%) 0.1660
+150m 3s (- 1m 30s) (396000 99%) 0.1488
+150m 26s (- 1m 8s) (397000 99%) 0.1795
+150m 48s (- 0m 45s) (398000 99%) 0.1524
+151m 12s (- 0m 22s) (399000 99%) 0.1845
+151m 35s (- 0m 0s) (400000 100%) 0.1494
+Epoch 20/20 finished
+Evaluate randomly on training sentences:
+> ['he', 's', 'a', 'fine', 'young', 'lad', '.', 'he s', 's a', 'a fine', 'fine young', 'young lad', 'lad .']
+= he s a fine young lad .
+< he s a fine young lad . <EOS>
+
+> ['there', 'were', 'a', 'lot', 'of', 'people', 'in', 'the', 'park', '.', 'there were', 'were a', 'a lot', 'lot of', 'of people', 'people in', 'in the', 'the park', 'park .']
+= there were a lot of people in the park .
+< there were a lot of people in the park . <EOS>
+
+> ['there', 'aren', 't', 'as', 'many', 'trains', 'at', 'night', '.', 'there aren', 'aren t', 't as', 'as many', 'many trains', 'trains at', 'at night', 'night .']
+= there aren t as many trains at night .
+< there aren t as many trains at night . <EOS>
+
+> ['are', 'you', 'finished', '?', 'are you', 'you finished', 'finished ?']
+= are you finished ?
+< are you finished ? <EOS>
+
+> ['tom', 'kept', 'his', 'illness', 'a', 'secret', '.', 'tom kept', 'kept his', 'his illness', 'illness a', 'a secret', 'secret .']
+= tom kept his illness a secret .
+< tom kept his illness a secret . <EOS>
+
+> ['they', 'found', 'it', '.', 'they found', 'found it', 'it .']
+= they found it .
+< they found it . <EOS>
+
+> ['let', 's', 'continue', 'where', 'we', 'left', 'off', 'yesterday', '.', 'let s', 's continue', 'continue where', 'where we', 'we left', 'left off', 'off yesterday', 'yesterday .']
+= let s continue where we left off yesterday .
+< let s continue where we left off yesterday . <EOS>
+
+> ['tell', 'me', 'about', 'it', '.', 'i', 'm', 'all', 'ears', '.', 'tell me', 'me about', 'about it', 'it .', '. i', 'i m', 'm all', 'all ears', 'ears .']
+= tell me about it . i m all ears .
+< tell me about it . i m all ears . <EOS>
+
+> ['this', 'kind', 'of', 'specialized', 'knowledge', 'has', 'very', 'little', 'to', 'do', 'with', 'daily', 'life', '.', 'this kind', 'kind of', 'of specialized', 'specialized knowledge', 'knowledge has', 'has very', 'very little', 'little to', 'to do', 'do with', 'with daily', 'daily life', 'life .']
+= this kind of specialized knowledge has very little to do with daily life .
+< this kind of little knowledge has very little to do with this . <EOS>
+
+> ['do', 'not', 'disobey', 'the', 'rules', '.', 'do not', 'not disobey', 'disobey the', 'the rules', 'rules .']
+= do not disobey the rules .
+< do not disobey the rules . <EOS>
+
+Evaluate randomly on testing sentences:
+> ['i', 'use', 'it', '.', 'i use', 'use it', 'it .']
+= i use it .
+< i use it . <EOS>
+
+> ['she', 'went', 'out', 'without', 'saying', 'a', 'word', '.', 'she went', 'went out', 'out without', 'without saying', 'saying a', 'a word', 'word .']
+= she went out without saying a word .
+< without went went out without out without <EOS>
+
+> ['who', 'are', 'you', 'supposed', 'to', 'be', '?', 'who are', 'are you', 'you supposed', 'supposed to', 'to be', 'be ?']
+= who are you supposed to be ?
+< who are you supposed to be ? <EOS>
+
+> ['what', 'were', 'you', 'thinking', 'of', '?', 'what were', 'were you', 'you thinking', 'thinking of', 'of ?']
+= what were you thinking of ?
+< what were you were thinking of ? <EOS>
+
+> ['you', 're', 'very', 'forward', '.', 'you re', 're very', 'very forward', 'forward .']
+= you re very forward .
+< you re rather re very sharp . <EOS>
+
+> ['you', 'are', 'taller', 'than', 'she', 'is', '.', 'you are', 'are taller', 'taller than', 'than she', 'she is', 'is .']
+= you are taller than she is .
+< you are taller than she is . <EOS>
+
+> ['don', 't', 'ever', 'underestimate', 'tom', '.', 'don t', 't ever', 'ever underestimate', 'underestimate tom', 'tom .']
+= don t ever underestimate tom .
+< don t t ever halfway with tom ever . <EOS>
+
+> ['this', 'house', 'is', 'fireproof', '.', 'this house', 'house is', 'is fireproof', 'fireproof .']
+= this house is fireproof .
+< maybe rarely is is digging is uninhabitable uninhabitable uninhabitable . <EOS>
+
+> ['we', 've', 'all', 'been', 'there', '.', 'we ve', 've all', 'all been', 'been there', 'there .']
+= we ve all been there .
+< we ve all been there . <EOS>
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.', 'i m', 'm beginning', 'beginning to', 'to get', 'get used', 'used to', 'to doing', 'doing this', 'this .']
+= i m beginning to get used to doing this .
+< i m beginning beginning to get this one to this . <EOS>
+
+Evaluating 5000 testing sentences...
+Num of short sentences (length <= 6): 2809
+score for short sentnces (length <= 6):
+ROUGE1: 0.476318988961955
+ROUGE2: 0.41097759818995655
+BLEU: 0.7197763116595438
+BLEU_CLIP: 0.6177013485308247
+
+Num of long sentences (length > 6): 2191
+score for long sentnces (length > 6):
+ROUGE1: 0.42907025262808296
+ROUGE2: 0.3515301768239432
+BLEU: 0.5819805811186454
+BLEU_CLIP: 0.41178310076685976
+
+Overall:
+ROUGE1: 0.45561459270045224
+ROUGE2: 0.38492773814736947
+BLEU: 0.6593942225365221
+BLEU_CLIP: 0.5274679723606552
+
+Finished
+
