@@ -1,0 +1,2967 @@
+hpc mode: True
+order: 1
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences -- word order:
+> ['all', 'i', 'want', 'now', 'is', 'a', 'glass', 'of', 'water', '.'] ['water', 'of']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'apt', 'to', 'make', 'mistakes', '.'] ['apt', 'mistakes']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.'] ['same', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'didn', 't', 'know', 'how', 'to', 'express', 'himself', '.'] ['know', 'express']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['the', 'car', 'isn', 't', 'worth', 'repairing', '.'] ['isn', 't']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'll', 'cut', 'your', 'head', 'off', '!'] ['off', 'll']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'like', 'this', 'book', '.'] ['book', 'this']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['are', 'you', 'still', 'working', 'for', 'tom', '?'] ['for', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'did', 'you', 'get', 'a', 'naked', 'picture', 'of', 'me', '?'] ['picture', 'of']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'wouldn', 't', 'take', 'all', 'that', 'long', 'to', 'explain', '.'] ['to', 'that']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['let', 'me', 'pay', '.'] ['let', 'pay']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.'] ['to', 'reading']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['would', 'he', 'like', 'that', '?'] ['he', 'that']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['does', 'anyone', 'know', 'japanese', '?'] ['japanese', 'anyone']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.'] ['over', 'narrowly']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?'] ['an', 'was']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['his', 'house', 'was', 'sold', 'for', '.'] ['for', 'sold']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'm', 'not', 'mad', '.'] ['not', 'mad']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'faced', 'with', 'a', 'host', 'of', 'problems', '.'] ['host', 'a']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'feel', 'that', 'way', 'about', 'you', '.'] ['you', 'feel']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 49 %
+0m 9s (- 64m 30s) (1000 0%) 0.7009
+0m 13s (- 44m 20s) (2000 0%) 0.6908
+0m 17s (- 37m 36s) (3000 0%) 0.6810
+0m 20s (- 34m 11s) (4000 1%) 0.6830
+0m 24s (- 32m 7s) (5000 1%) 0.6758
+0m 28s (- 30m 43s) (6000 1%) 0.6668
+0m 31s (- 29m 42s) (7000 1%) 0.6558
+0m 35s (- 28m 55s) (8000 2%) 0.6537
+0m 39s (- 28m 18s) (9000 2%) 0.6553
+0m 42s (- 27m 47s) (10000 2%) 0.6465
+0m 46s (- 27m 21s) (11000 2%) 0.6332
+0m 50s (- 26m 59s) (12000 3%) 0.6366
+0m 53s (- 26m 40s) (13000 3%) 0.6364
+0m 57s (- 26m 23s) (14000 3%) 0.6387
+1m 1s (- 26m 8s) (15000 3%) 0.6367
+1m 4s (- 25m 54s) (16000 4%) 0.6374
+1m 8s (- 25m 41s) (17000 4%) 0.6219
+1m 12s (- 25m 30s) (18000 4%) 0.6152
+1m 15s (- 25m 19s) (19000 4%) 0.6198
+1m 19s (- 25m 9s) (20000 5%) 0.5977
+1m 23s (- 25m 0s) (21000 5%) 0.6100
+1m 26s (- 24m 51s) (22000 5%) 0.6253
+1m 30s (- 24m 42s) (23000 5%) 0.6083
+1m 34s (- 24m 34s) (24000 6%) 0.6121
+1m 37s (- 24m 26s) (25000 6%) 0.6182
+1m 41s (- 24m 19s) (26000 6%) 0.5867
+1m 45s (- 24m 12s) (27000 6%) 0.6057
+1m 48s (- 24m 5s) (28000 7%) 0.6078
+1m 52s (- 23m 58s) (29000 7%) 0.6004
+1m 56s (- 23m 52s) (30000 7%) 0.5993
+1m 59s (- 23m 45s) (31000 7%) 0.5992
+2m 3s (- 23m 39s) (32000 8%) 0.6087
+2m 7s (- 23m 33s) (33000 8%) 0.6013
+2m 10s (- 23m 27s) (34000 8%) 0.5936
+2m 14s (- 23m 22s) (35000 8%) 0.6056
+2m 18s (- 23m 16s) (36000 9%) 0.5985
+2m 21s (- 23m 11s) (37000 9%) 0.5913
+2m 25s (- 23m 5s) (38000 9%) 0.5834
+2m 29s (- 23m 0s) (39000 9%) 0.5910
+Epoch 1/10 finished
+2m 39s (- 23m 51s) (40000 10%) 0.6081
+2m 42s (- 23m 44s) (41000 10%) 0.5757
+2m 46s (- 23m 38s) (42000 10%) 0.5810
+2m 50s (- 23m 31s) (43000 10%) 0.5696
+2m 53s (- 23m 25s) (44000 11%) 0.5974
+2m 57s (- 23m 19s) (45000 11%) 0.6062
+3m 1s (- 23m 13s) (46000 11%) 0.5926
+3m 4s (- 23m 7s) (47000 11%) 0.5806
+3m 8s (- 23m 1s) (48000 12%) 0.5722
+3m 12s (- 22m 55s) (49000 12%) 0.5844
+3m 15s (- 22m 49s) (50000 12%) 0.5551
+3m 19s (- 22m 44s) (51000 12%) 0.5805
+3m 23s (- 22m 38s) (52000 13%) 0.5627
+3m 26s (- 22m 33s) (53000 13%) 0.5707
+3m 30s (- 22m 28s) (54000 13%) 0.5930
+3m 34s (- 22m 22s) (55000 13%) 0.5836
+3m 37s (- 22m 17s) (56000 14%) 0.5905
+3m 41s (- 22m 12s) (57000 14%) 0.5763
+3m 45s (- 22m 7s) (58000 14%) 0.5713
+3m 48s (- 22m 2s) (59000 14%) 0.5692
+3m 52s (- 21m 57s) (60000 15%) 0.5722
+3m 56s (- 21m 52s) (61000 15%) 0.5732
+3m 59s (- 21m 47s) (62000 15%) 0.5549
+4m 3s (- 21m 42s) (63000 15%) 0.5598
+4m 7s (- 21m 37s) (64000 16%) 0.5647
+4m 10s (- 21m 32s) (65000 16%) 0.5797
+4m 14s (- 21m 27s) (66000 16%) 0.5550
+4m 18s (- 21m 22s) (67000 16%) 0.5673
+4m 21s (- 21m 18s) (68000 17%) 0.5700
+4m 25s (- 21m 13s) (69000 17%) 0.5565
+4m 29s (- 21m 8s) (70000 17%) 0.5607
+4m 32s (- 21m 3s) (71000 17%) 0.5678
+4m 36s (- 20m 59s) (72000 18%) 0.5576
+4m 40s (- 20m 54s) (73000 18%) 0.5664
+4m 43s (- 20m 50s) (74000 18%) 0.5725
+4m 47s (- 20m 45s) (75000 18%) 0.5665
+4m 51s (- 20m 40s) (76000 19%) 0.5678
+4m 54s (- 20m 36s) (77000 19%) 0.5690
+4m 58s (- 20m 31s) (78000 19%) 0.5596
+5m 2s (- 20m 27s) (79000 19%) 0.5415
+Epoch 2/10 finished
+5m 12s (- 20m 48s) (80000 20%) 0.5784
+5m 15s (- 20m 43s) (81000 20%) 0.5427
+5m 19s (- 20m 38s) (82000 20%) 0.5690
+5m 23s (- 20m 33s) (83000 20%) 0.5505
+5m 26s (- 20m 29s) (84000 21%) 0.5501
+5m 30s (- 20m 24s) (85000 21%) 0.5653
+5m 34s (- 20m 19s) (86000 21%) 0.5435
+5m 37s (- 20m 15s) (87000 21%) 0.5657
+5m 41s (- 20m 10s) (88000 22%) 0.5442
+5m 45s (- 20m 5s) (89000 22%) 0.5546
+5m 48s (- 20m 1s) (90000 22%) 0.5243
+5m 52s (- 19m 56s) (91000 22%) 0.5537
+5m 56s (- 19m 52s) (92000 23%) 0.5474
+5m 59s (- 19m 47s) (93000 23%) 0.5621
+6m 3s (- 19m 42s) (94000 23%) 0.5290
+6m 7s (- 19m 38s) (95000 23%) 0.5656
+6m 10s (- 19m 33s) (96000 24%) 0.5365
+6m 14s (- 19m 29s) (97000 24%) 0.5272
+6m 18s (- 19m 24s) (98000 24%) 0.5738
+6m 21s (- 19m 20s) (99000 24%) 0.5447
+6m 25s (- 19m 16s) (100000 25%) 0.5320
+6m 29s (- 19m 11s) (101000 25%) 0.5244
+6m 32s (- 19m 7s) (102000 25%) 0.5545
+6m 36s (- 19m 2s) (103000 25%) 0.5459
+6m 40s (- 18m 58s) (104000 26%) 0.5309
+6m 43s (- 18m 54s) (105000 26%) 0.5502
+6m 47s (- 18m 49s) (106000 26%) 0.5466
+6m 51s (- 18m 45s) (107000 26%) 0.5567
+6m 54s (- 18m 41s) (108000 27%) 0.5431
+6m 58s (- 18m 36s) (109000 27%) 0.5377
+7m 2s (- 18m 32s) (110000 27%) 0.5465
+7m 5s (- 18m 28s) (111000 27%) 0.5624
+7m 9s (- 18m 24s) (112000 28%) 0.5425
+7m 13s (- 18m 19s) (113000 28%) 0.5563
+7m 16s (- 18m 15s) (114000 28%) 0.5473
+7m 20s (- 18m 11s) (115000 28%) 0.5612
+7m 24s (- 18m 7s) (116000 29%) 0.5667
+7m 27s (- 18m 2s) (117000 29%) 0.5239
+7m 31s (- 17m 58s) (118000 29%) 0.5229
+7m 35s (- 17m 54s) (119000 29%) 0.5439
+Epoch 3/10 finished
+7m 45s (- 18m 4s) (120000 30%) 0.5228
+7m 48s (- 18m 0s) (121000 30%) 0.5292
+7m 52s (- 17m 56s) (122000 30%) 0.5215
+7m 56s (- 17m 51s) (123000 30%) 0.5485
+7m 59s (- 17m 47s) (124000 31%) 0.5119
+8m 3s (- 17m 43s) (125000 31%) 0.5518
+8m 7s (- 17m 39s) (126000 31%) 0.5241
+8m 10s (- 17m 34s) (127000 31%) 0.5124
+8m 14s (- 17m 30s) (128000 32%) 0.5175
+8m 18s (- 17m 26s) (129000 32%) 0.5359
+8m 21s (- 17m 21s) (130000 32%) 0.5454
+8m 25s (- 17m 17s) (131000 32%) 0.5196
+8m 29s (- 17m 13s) (132000 33%) 0.5362
+8m 32s (- 17m 9s) (133000 33%) 0.5421
+8m 36s (- 17m 4s) (134000 33%) 0.5229
+8m 40s (- 17m 0s) (135000 33%) 0.5261
+8m 43s (- 16m 56s) (136000 34%) 0.5306
+8m 47s (- 16m 52s) (137000 34%) 0.5169
+8m 51s (- 16m 48s) (138000 34%) 0.5409
+8m 54s (- 16m 43s) (139000 34%) 0.5388
+8m 58s (- 16m 39s) (140000 35%) 0.5202
+9m 2s (- 16m 35s) (141000 35%) 0.5011
+9m 5s (- 16m 31s) (142000 35%) 0.5288
+9m 9s (- 16m 27s) (143000 35%) 0.5237
+9m 13s (- 16m 23s) (144000 36%) 0.5274
+9m 16s (- 16m 19s) (145000 36%) 0.5241
+9m 20s (- 16m 14s) (146000 36%) 0.5192
+9m 24s (- 16m 10s) (147000 36%) 0.5069
+9m 28s (- 16m 6s) (148000 37%) 0.5225
+9m 31s (- 16m 2s) (149000 37%) 0.4957
+9m 35s (- 15m 58s) (150000 37%) 0.5257
+9m 39s (- 15m 54s) (151000 37%) 0.5071
+9m 42s (- 15m 50s) (152000 38%) 0.5283
+9m 46s (- 15m 46s) (153000 38%) 0.5212
+9m 50s (- 15m 41s) (154000 38%) 0.5669
+9m 53s (- 15m 37s) (155000 38%) 0.5339
+9m 57s (- 15m 33s) (156000 39%) 0.5257
+10m 1s (- 15m 29s) (157000 39%) 0.5254
+10m 4s (- 15m 25s) (158000 39%) 0.5015
+10m 8s (- 15m 21s) (159000 39%) 0.5340
+Epoch 4/10 finished
+10m 18s (- 15m 26s) (160000 40%) 0.5201
+10m 21s (- 15m 22s) (161000 40%) 0.5119
+10m 25s (- 15m 18s) (162000 40%) 0.4715
+10m 29s (- 15m 14s) (163000 40%) 0.5143
+10m 32s (- 15m 10s) (164000 41%) 0.4996
+10m 36s (- 15m 6s) (165000 41%) 0.4943
+10m 40s (- 15m 2s) (166000 41%) 0.4962
+10m 43s (- 14m 57s) (167000 41%) 0.4934
+10m 47s (- 14m 53s) (168000 42%) 0.5121
+10m 51s (- 14m 49s) (169000 42%) 0.5082
+10m 54s (- 14m 45s) (170000 42%) 0.5065
+10m 58s (- 14m 41s) (171000 42%) 0.5069
+11m 2s (- 14m 37s) (172000 43%) 0.4985
+11m 5s (- 14m 33s) (173000 43%) 0.4975
+11m 9s (- 14m 29s) (174000 43%) 0.5087
+11m 13s (- 14m 25s) (175000 43%) 0.5001
+11m 16s (- 14m 21s) (176000 44%) 0.4998
+11m 20s (- 14m 17s) (177000 44%) 0.4951
+11m 24s (- 14m 12s) (178000 44%) 0.5139
+11m 28s (- 14m 8s) (179000 44%) 0.5171
+11m 31s (- 14m 4s) (180000 45%) 0.5412
+11m 35s (- 14m 0s) (181000 45%) 0.5129
+11m 39s (- 13m 56s) (182000 45%) 0.5056
+11m 42s (- 13m 52s) (183000 45%) 0.5164
+11m 46s (- 13m 48s) (184000 46%) 0.5123
+11m 50s (- 13m 44s) (185000 46%) 0.5137
+11m 53s (- 13m 40s) (186000 46%) 0.4996
+11m 57s (- 13m 36s) (187000 46%) 0.4930
+12m 1s (- 13m 32s) (188000 47%) 0.5027
+12m 4s (- 13m 28s) (189000 47%) 0.4837
+12m 8s (- 13m 24s) (190000 47%) 0.5296
+12m 12s (- 13m 20s) (191000 47%) 0.4955
+12m 15s (- 13m 16s) (192000 48%) 0.5194
+12m 19s (- 13m 12s) (193000 48%) 0.5062
+12m 23s (- 13m 8s) (194000 48%) 0.5139
+12m 26s (- 13m 4s) (195000 48%) 0.5079
+12m 30s (- 13m 0s) (196000 49%) 0.5025
+12m 34s (- 12m 56s) (197000 49%) 0.5137
+12m 37s (- 12m 52s) (198000 49%) 0.5110
+12m 41s (- 12m 48s) (199000 49%) 0.5078
+Epoch 5/10 finished
+12m 51s (- 12m 51s) (200000 50%) 0.5032
+12m 55s (- 12m 46s) (201000 50%) 0.4704
+12m 58s (- 12m 42s) (202000 50%) 0.4620
+13m 2s (- 12m 38s) (203000 50%) 0.4866
+13m 6s (- 12m 34s) (204000 51%) 0.4772
+13m 9s (- 12m 30s) (205000 51%) 0.4972
+13m 13s (- 12m 26s) (206000 51%) 0.4687
+13m 17s (- 12m 22s) (207000 51%) 0.4918
+13m 20s (- 12m 18s) (208000 52%) 0.4797
+13m 24s (- 12m 14s) (209000 52%) 0.4834
+13m 28s (- 12m 10s) (210000 52%) 0.4761
+13m 31s (- 12m 6s) (211000 52%) 0.4966
+13m 35s (- 12m 2s) (212000 53%) 0.4721
+13m 39s (- 11m 58s) (213000 53%) 0.4925
+13m 42s (- 11m 54s) (214000 53%) 0.4587
+13m 46s (- 11m 50s) (215000 53%) 0.4823
+13m 50s (- 11m 46s) (216000 54%) 0.4996
+13m 53s (- 11m 42s) (217000 54%) 0.4851
+13m 57s (- 11m 38s) (218000 54%) 0.4981
+14m 1s (- 11m 34s) (219000 54%) 0.4834
+14m 4s (- 11m 30s) (220000 55%) 0.5220
+14m 8s (- 11m 26s) (221000 55%) 0.5142
+14m 12s (- 11m 22s) (222000 55%) 0.5091
+14m 15s (- 11m 18s) (223000 55%) 0.4786
+14m 19s (- 11m 14s) (224000 56%) 0.4808
+14m 23s (- 11m 10s) (225000 56%) 0.4894
+14m 26s (- 11m 6s) (226000 56%) 0.4908
+14m 30s (- 11m 2s) (227000 56%) 0.5260
+14m 34s (- 10m 59s) (228000 57%) 0.4986
+14m 37s (- 10m 55s) (229000 57%) 0.4774
+14m 41s (- 10m 51s) (230000 57%) 0.5014
+14m 45s (- 10m 47s) (231000 57%) 0.4963
+14m 48s (- 10m 43s) (232000 58%) 0.4952
+14m 52s (- 10m 39s) (233000 58%) 0.4958
+14m 56s (- 10m 35s) (234000 58%) 0.4980
+14m 59s (- 10m 31s) (235000 58%) 0.4916
+15m 3s (- 10m 27s) (236000 59%) 0.4711
+15m 7s (- 10m 23s) (237000 59%) 0.4750
+15m 10s (- 10m 19s) (238000 59%) 0.4952
+15m 14s (- 10m 15s) (239000 59%) 0.4912
+Epoch 6/10 finished
+15m 24s (- 10m 15s) (240000 60%) 0.4962
+15m 27s (- 10m 11s) (241000 60%) 0.4696
+15m 31s (- 10m 7s) (242000 60%) 0.4260
+15m 35s (- 10m 3s) (243000 60%) 0.4313
+15m 38s (- 9m 59s) (244000 61%) 0.4771
+15m 42s (- 9m 55s) (245000 61%) 0.4655
+15m 46s (- 9m 51s) (246000 61%) 0.4523
+15m 50s (- 9m 47s) (247000 61%) 0.4676
+15m 53s (- 9m 43s) (248000 62%) 0.4676
+15m 57s (- 9m 40s) (249000 62%) 0.4649
+16m 1s (- 9m 36s) (250000 62%) 0.4730
+16m 4s (- 9m 32s) (251000 62%) 0.4557
+16m 8s (- 9m 28s) (252000 63%) 0.4817
+16m 12s (- 9m 24s) (253000 63%) 0.5149
+16m 15s (- 9m 20s) (254000 63%) 0.4578
+16m 19s (- 9m 16s) (255000 63%) 0.4884
+16m 23s (- 9m 12s) (256000 64%) 0.4786
+16m 26s (- 9m 8s) (257000 64%) 0.4645
+16m 30s (- 9m 4s) (258000 64%) 0.4455
+16m 34s (- 9m 0s) (259000 64%) 0.4499
+16m 37s (- 8m 56s) (260000 65%) 0.5017
+16m 41s (- 8m 52s) (261000 65%) 0.4881
+16m 45s (- 8m 48s) (262000 65%) 0.4751
+16m 48s (- 8m 44s) (263000 65%) 0.4942
+16m 52s (- 8m 40s) (264000 66%) 0.4818
+16m 56s (- 8m 37s) (265000 66%) 0.4391
+16m 59s (- 8m 33s) (266000 66%) 0.4844
+17m 3s (- 8m 29s) (267000 66%) 0.4892
+17m 7s (- 8m 25s) (268000 67%) 0.4860
+17m 10s (- 8m 21s) (269000 67%) 0.4816
+17m 14s (- 8m 17s) (270000 67%) 0.4655
+17m 18s (- 8m 13s) (271000 67%) 0.4799
+17m 21s (- 8m 9s) (272000 68%) 0.4689
+17m 25s (- 8m 5s) (273000 68%) 0.4818
+17m 29s (- 8m 1s) (274000 68%) 0.4606
+17m 32s (- 7m 57s) (275000 68%) 0.4902
+17m 36s (- 7m 54s) (276000 69%) 0.4712
+17m 40s (- 7m 50s) (277000 69%) 0.4753
+17m 43s (- 7m 46s) (278000 69%) 0.4745
+17m 47s (- 7m 42s) (279000 69%) 0.4776
+Epoch 7/10 finished
+17m 57s (- 7m 41s) (280000 70%) 0.4814
+18m 1s (- 7m 37s) (281000 70%) 0.4354
+18m 4s (- 7m 33s) (282000 70%) 0.4324
+18m 8s (- 7m 29s) (283000 70%) 0.4168
+18m 12s (- 7m 25s) (284000 71%) 0.4513
+18m 15s (- 7m 21s) (285000 71%) 0.4456
+18m 19s (- 7m 17s) (286000 71%) 0.4352
+18m 23s (- 7m 13s) (287000 71%) 0.4621
+18m 26s (- 7m 9s) (288000 72%) 0.4534
+18m 30s (- 7m 6s) (289000 72%) 0.4355
+18m 34s (- 7m 2s) (290000 72%) 0.4341
+18m 37s (- 6m 58s) (291000 72%) 0.4054
+18m 41s (- 6m 54s) (292000 73%) 0.4370
+18m 45s (- 6m 50s) (293000 73%) 0.4575
+18m 48s (- 6m 46s) (294000 73%) 0.4598
+18m 52s (- 6m 42s) (295000 73%) 0.4436
+18m 56s (- 6m 38s) (296000 74%) 0.4590
+18m 59s (- 6m 34s) (297000 74%) 0.4479
+19m 3s (- 6m 30s) (298000 74%) 0.4533
+19m 7s (- 6m 27s) (299000 74%) 0.4850
+19m 10s (- 6m 23s) (300000 75%) 0.4504
+19m 14s (- 6m 19s) (301000 75%) 0.4779
+19m 18s (- 6m 15s) (302000 75%) 0.4568
+19m 21s (- 6m 11s) (303000 75%) 0.4438
+19m 25s (- 6m 7s) (304000 76%) 0.4698
+19m 29s (- 6m 3s) (305000 76%) 0.4840
+19m 32s (- 5m 59s) (306000 76%) 0.4645
+19m 36s (- 5m 55s) (307000 76%) 0.4807
+19m 40s (- 5m 52s) (308000 77%) 0.4258
+19m 43s (- 5m 48s) (309000 77%) 0.4592
+19m 47s (- 5m 44s) (310000 77%) 0.4757
+19m 51s (- 5m 40s) (311000 77%) 0.4700
+19m 54s (- 5m 36s) (312000 78%) 0.4648
+19m 58s (- 5m 32s) (313000 78%) 0.4738
+20m 2s (- 5m 28s) (314000 78%) 0.4439
+20m 5s (- 5m 24s) (315000 78%) 0.4754
+20m 9s (- 5m 21s) (316000 79%) 0.4498
+20m 13s (- 5m 17s) (317000 79%) 0.4834
+20m 16s (- 5m 13s) (318000 79%) 0.4932
+20m 20s (- 5m 9s) (319000 79%) 0.4692
+Epoch 8/10 finished
+20m 30s (- 5m 7s) (320000 80%) 0.4588
+20m 34s (- 5m 3s) (321000 80%) 0.4428
+20m 37s (- 4m 59s) (322000 80%) 0.4354
+20m 41s (- 4m 55s) (323000 80%) 0.4453
+20m 45s (- 4m 51s) (324000 81%) 0.4463
+20m 48s (- 4m 47s) (325000 81%) 0.4479
+20m 52s (- 4m 43s) (326000 81%) 0.4148
+20m 56s (- 4m 39s) (327000 81%) 0.4601
+20m 59s (- 4m 36s) (328000 82%) 0.4318
+21m 3s (- 4m 32s) (329000 82%) 0.4390
+21m 7s (- 4m 28s) (330000 82%) 0.4318
+21m 10s (- 4m 24s) (331000 82%) 0.4509
+21m 14s (- 4m 20s) (332000 83%) 0.4429
+21m 18s (- 4m 16s) (333000 83%) 0.4360
+21m 21s (- 4m 12s) (334000 83%) 0.4302
+21m 25s (- 4m 8s) (335000 83%) 0.4452
+21m 29s (- 4m 5s) (336000 84%) 0.4296
+21m 32s (- 4m 1s) (337000 84%) 0.4433
+21m 36s (- 3m 57s) (338000 84%) 0.4571
+21m 40s (- 3m 53s) (339000 84%) 0.4365
+21m 43s (- 3m 49s) (340000 85%) 0.4121
+21m 47s (- 3m 45s) (341000 85%) 0.4505
+21m 51s (- 3m 41s) (342000 85%) 0.4723
+21m 54s (- 3m 37s) (343000 85%) 0.4357
+21m 58s (- 3m 34s) (344000 86%) 0.4511
+22m 2s (- 3m 30s) (345000 86%) 0.4130
+22m 5s (- 3m 26s) (346000 86%) 0.4231
+22m 9s (- 3m 22s) (347000 86%) 0.4429
+22m 13s (- 3m 18s) (348000 87%) 0.4321
+22m 16s (- 3m 14s) (349000 87%) 0.4417
+22m 20s (- 3m 10s) (350000 87%) 0.4308
+22m 24s (- 3m 7s) (351000 87%) 0.4548
+22m 27s (- 3m 3s) (352000 88%) 0.4448
+22m 31s (- 2m 59s) (353000 88%) 0.4185
+22m 35s (- 2m 55s) (354000 88%) 0.4816
+22m 38s (- 2m 51s) (355000 88%) 0.4217
+22m 42s (- 2m 47s) (356000 89%) 0.4402
+22m 46s (- 2m 44s) (357000 89%) 0.4682
+22m 49s (- 2m 40s) (358000 89%) 0.4343
+22m 53s (- 2m 36s) (359000 89%) 0.4226
+Epoch 9/10 finished
+23m 3s (- 2m 33s) (360000 90%) 0.4572
+23m 7s (- 2m 29s) (361000 90%) 0.4144
+23m 10s (- 2m 25s) (362000 90%) 0.4095
+23m 14s (- 2m 21s) (363000 90%) 0.4008
+23m 18s (- 2m 17s) (364000 91%) 0.4092
+23m 21s (- 2m 13s) (365000 91%) 0.3961
+23m 25s (- 2m 10s) (366000 91%) 0.4252
+23m 29s (- 2m 6s) (367000 91%) 0.3955
+23m 32s (- 2m 2s) (368000 92%) 0.4191
+23m 36s (- 1m 58s) (369000 92%) 0.4066
+23m 40s (- 1m 54s) (370000 92%) 0.4078
+23m 43s (- 1m 50s) (371000 92%) 0.4505
+23m 47s (- 1m 46s) (372000 93%) 0.4091
+23m 50s (- 1m 43s) (373000 93%) 0.4001
+23m 54s (- 1m 39s) (374000 93%) 0.4225
+23m 58s (- 1m 35s) (375000 93%) 0.4046
+24m 1s (- 1m 31s) (376000 94%) 0.4301
+24m 5s (- 1m 27s) (377000 94%) 0.4289
+24m 9s (- 1m 23s) (378000 94%) 0.4387
+24m 13s (- 1m 19s) (379000 94%) 0.4255
+24m 16s (- 1m 16s) (380000 95%) 0.4315
+24m 20s (- 1m 12s) (381000 95%) 0.4230
+24m 24s (- 1m 8s) (382000 95%) 0.4363
+24m 27s (- 1m 4s) (383000 95%) 0.4588
+24m 31s (- 1m 0s) (384000 96%) 0.4621
+24m 35s (- 0m 56s) (385000 96%) 0.4534
+24m 38s (- 0m 53s) (386000 96%) 0.4003
+24m 42s (- 0m 49s) (387000 96%) 0.4481
+24m 46s (- 0m 45s) (388000 97%) 0.4153
+24m 49s (- 0m 41s) (389000 97%) 0.4015
+24m 53s (- 0m 37s) (390000 97%) 0.4247
+24m 57s (- 0m 33s) (391000 97%) 0.4338
+25m 0s (- 0m 30s) (392000 98%) 0.3997
+25m 4s (- 0m 26s) (393000 98%) 0.4265
+25m 7s (- 0m 22s) (394000 98%) 0.4295
+25m 11s (- 0m 18s) (395000 98%) 0.4556
+25m 15s (- 0m 14s) (396000 99%) 0.4030
+25m 18s (- 0m 10s) (397000 99%) 0.4372
+25m 22s (- 0m 7s) (398000 99%) 0.4214
+25m 26s (- 0m 3s) (399000 99%) 0.4446
+Epoch 10/10 finished
+Evaluate randomly on training sentences -- word order:
+> ['tom', 'didn', 't', 'expect', 'to', 'sell', 'his', 'old', 'car', 'for', 'so', 'much', 'money', '.'] ['money', 'car']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'saw', 'something', '.'] ['saw', 'something']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['classes', 'start', 'at', 'eight', 'in', 'the', 'morning', '.'] ['morning', 'in']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'do', 'you', 'pronounce', 'your', 'name', '?'] ['how', 'do']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'll', 'be', 'all', 'right', '.'] ['you', 'll']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'fixed', 'myself', 'something', 'to', 'eat', '.'] ['to', 'eat']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'think', 'it', 's', 'necessary', 'to', 'do', 'that', '.'] ['do', 't']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['why', 'are', 'we', 'wasting', 'time', 'like', 'this', '?'] ['wasting', 'like']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'is', 'quick', 'at', 'everything', '.'] ['is', 'at']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 're', 'all', 'here', '.'] ['all', 'they']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['you', 'can', 'not', 'be', 'serious', '.'] ['be', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['can', 'you', 'climb', 'up', 'that', 'tree', '?'] ['climb', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['stir', 'the', 'soup', '.'] ['soup', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 're', 'adorable', '.'] ['re', 'adorable']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'want', 'you', 'to', 'be', 'upset', '.'] ['be', 'upset']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'do', 'it', 'again', '.'] ['it', 'again']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'happened', 'so', 'fast', '.'] ['fast', 'so']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'have', 'such', 'beautiful', 'eyes', '.'] ['beautiful', 'such']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['has', 'the', 'jury', 'reached', 'a', 'verdict', '?'] ['verdict', 'has']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'betrayed', 'you', '.'] ['betrayed', 'you']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 72 %
+Finished
+
+hpc mode: True
+order: 2
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences -- word order:
+> ['all', 'i', 'want', 'now', 'is', 'a', 'glass', 'of', 'water', '.', 'all i', 'i want', 'want now', 'now is', 'is a', 'a glass', 'glass of', 'of water', 'water .'] ['water', 'of']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'apt', 'to', 'make', 'mistakes', '.', 'we are', 'are apt', 'apt to', 'to make', 'make mistakes', 'mistakes .'] ['apt', 'mistakes']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .'] ['same', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'didn', 't', 'know', 'how', 'to', 'express', 'himself', '.', 'he didn', 'didn t', 't know', 'know how', 'how to', 'to express', 'express himself', 'himself .'] ['know', 'express']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['the', 'car', 'isn', 't', 'worth', 'repairing', '.', 'the car', 'car isn', 'isn t', 't worth', 'worth repairing', 'repairing .'] ['isn', 't']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'll', 'cut', 'your', 'head', 'off', '!', 'i ll', 'll cut', 'cut your', 'your head', 'head off', 'off !'] ['off', 'll']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'like', 'this', 'book', '.', 'i like', 'like this', 'this book', 'book .'] ['book', 'this']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['are', 'you', 'still', 'working', 'for', 'tom', '?', 'are you', 'you still', 'still working', 'working for', 'for tom', 'tom ?'] ['for', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'did', 'you', 'get', 'a', 'naked', 'picture', 'of', 'me', '?', 'how did', 'did you', 'you get', 'get a', 'a naked', 'naked picture', 'picture of', 'of me', 'me ?'] ['picture', 'of']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'wouldn', 't', 'take', 'all', 'that', 'long', 'to', 'explain', '.', 'it wouldn', 'wouldn t', 't take', 'take all', 'all that', 'that long', 'long to', 'to explain', 'explain .'] ['to', 'that']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['let', 'me', 'pay', '.', 'let me', 'me pay', 'pay .'] ['let', 'pay']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .'] ['to', 'reading']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['would', 'he', 'like', 'that', '?', 'would he', 'he like', 'like that', 'that ?'] ['he', 'that']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?'] ['japanese', 'anyone']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .'] ['over', 'narrowly']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?'] ['an', 'was']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .'] ['for', 'sold']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .'] ['not', 'mad']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'faced', 'with', 'a', 'host', 'of', 'problems', '.', 'we are', 'are faced', 'faced with', 'with a', 'a host', 'host of', 'of problems', 'problems .'] ['host', 'a']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'feel', 'that', 'way', 'about', 'you', '.', 'i just', 'just don', 'don t', 't feel', 'feel that', 'that way', 'way about', 'about you', 'you .'] ['you', 'feel']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 50 %
+0m 10s (- 67m 12s) (1000 0%) 0.7006
+0m 13s (- 45m 45s) (2000 0%) 0.6935
+0m 17s (- 38m 33s) (3000 0%) 0.6842
+0m 21s (- 34m 55s) (4000 1%) 0.6937
+0m 24s (- 32m 43s) (5000 1%) 0.6821
+0m 28s (- 31m 14s) (6000 1%) 0.6770
+0m 32s (- 30m 8s) (7000 1%) 0.6615
+0m 35s (- 29m 18s) (8000 2%) 0.6628
+0m 39s (- 28m 38s) (9000 2%) 0.6604
+0m 43s (- 28m 6s) (10000 2%) 0.6539
+0m 46s (- 27m 39s) (11000 2%) 0.6565
+0m 50s (- 27m 16s) (12000 3%) 0.6454
+0m 54s (- 26m 55s) (13000 3%) 0.6405
+0m 57s (- 26m 37s) (14000 3%) 0.6517
+1m 1s (- 26m 21s) (15000 3%) 0.6566
+1m 5s (- 26m 6s) (16000 4%) 0.6430
+1m 8s (- 25m 53s) (17000 4%) 0.6357
+1m 12s (- 25m 41s) (18000 4%) 0.6282
+1m 16s (- 25m 30s) (19000 4%) 0.6279
+1m 20s (- 25m 19s) (20000 5%) 0.6071
+1m 23s (- 25m 9s) (21000 5%) 0.6246
+1m 27s (- 25m 0s) (22000 5%) 0.6311
+1m 31s (- 24m 51s) (23000 5%) 0.6168
+1m 34s (- 24m 43s) (24000 6%) 0.6169
+1m 38s (- 24m 35s) (25000 6%) 0.6232
+1m 42s (- 24m 27s) (26000 6%) 0.6138
+1m 45s (- 24m 19s) (27000 6%) 0.6060
+1m 49s (- 24m 12s) (28000 7%) 0.6139
+1m 53s (- 24m 5s) (29000 7%) 0.6065
+1m 56s (- 23m 59s) (30000 7%) 0.6056
+2m 0s (- 23m 52s) (31000 7%) 0.6029
+2m 4s (- 23m 46s) (32000 8%) 0.6168
+2m 7s (- 23m 40s) (33000 8%) 0.5961
+2m 11s (- 23m 34s) (34000 8%) 0.6013
+2m 15s (- 23m 28s) (35000 8%) 0.6059
+2m 18s (- 23m 22s) (36000 9%) 0.6099
+2m 22s (- 23m 17s) (37000 9%) 0.6047
+2m 26s (- 23m 11s) (38000 9%) 0.5915
+2m 29s (- 23m 6s) (39000 9%) 0.5981
+Epoch 1/10 finished
+2m 40s (- 24m 1s) (40000 10%) 0.6060
+2m 43s (- 23m 54s) (41000 10%) 0.5617
+2m 47s (- 23m 47s) (42000 10%) 0.5850
+2m 51s (- 23m 41s) (43000 10%) 0.5645
+2m 54s (- 23m 34s) (44000 11%) 0.5961
+2m 58s (- 23m 28s) (45000 11%) 0.5970
+3m 2s (- 23m 22s) (46000 11%) 0.5980
+3m 5s (- 23m 16s) (47000 11%) 0.5873
+3m 9s (- 23m 10s) (48000 12%) 0.5812
+3m 13s (- 23m 4s) (49000 12%) 0.5938
+3m 17s (- 22m 58s) (50000 12%) 0.5611
+3m 20s (- 22m 52s) (51000 12%) 0.5705
+3m 24s (- 22m 47s) (52000 13%) 0.5739
+3m 28s (- 22m 41s) (53000 13%) 0.5802
+3m 31s (- 22m 36s) (54000 13%) 0.6064
+3m 35s (- 22m 31s) (55000 13%) 0.6013
+3m 39s (- 22m 25s) (56000 14%) 0.6123
+3m 42s (- 22m 20s) (57000 14%) 0.5850
+3m 46s (- 22m 15s) (58000 14%) 0.5568
+3m 50s (- 22m 10s) (59000 14%) 0.5700
+3m 53s (- 22m 5s) (60000 15%) 0.5795
+3m 57s (- 22m 0s) (61000 15%) 0.5714
+4m 1s (- 21m 55s) (62000 15%) 0.5591
+4m 4s (- 21m 49s) (63000 15%) 0.5653
+4m 8s (- 21m 44s) (64000 16%) 0.5592
+4m 12s (- 21m 40s) (65000 16%) 0.5694
+4m 16s (- 21m 35s) (66000 16%) 0.5596
+4m 19s (- 21m 30s) (67000 16%) 0.5920
+4m 23s (- 21m 25s) (68000 17%) 0.5742
+4m 27s (- 21m 20s) (69000 17%) 0.5646
+4m 30s (- 21m 15s) (70000 17%) 0.5608
+4m 34s (- 21m 11s) (71000 17%) 0.5612
+4m 38s (- 21m 6s) (72000 18%) 0.5449
+4m 41s (- 21m 1s) (73000 18%) 0.5818
+4m 45s (- 20m 57s) (74000 18%) 0.5756
+4m 49s (- 20m 52s) (75000 18%) 0.5797
+4m 52s (- 20m 48s) (76000 19%) 0.5645
+4m 56s (- 20m 43s) (77000 19%) 0.5792
+5m 0s (- 20m 39s) (78000 19%) 0.5649
+5m 3s (- 20m 34s) (79000 19%) 0.5727
+Epoch 2/10 finished
+5m 14s (- 20m 56s) (80000 20%) 0.5753
+5m 18s (- 20m 51s) (81000 20%) 0.5576
+5m 21s (- 20m 46s) (82000 20%) 0.5702
+5m 25s (- 20m 42s) (83000 20%) 0.5542
+5m 29s (- 20m 37s) (84000 21%) 0.5490
+5m 32s (- 20m 32s) (85000 21%) 0.5769
+5m 36s (- 20m 27s) (86000 21%) 0.5531
+5m 40s (- 20m 23s) (87000 21%) 0.5555
+5m 43s (- 20m 18s) (88000 22%) 0.5398
+5m 47s (- 20m 13s) (89000 22%) 0.5487
+5m 51s (- 20m 9s) (90000 22%) 0.5379
+5m 54s (- 20m 4s) (91000 22%) 0.5482
+5m 58s (- 19m 59s) (92000 23%) 0.5581
+6m 2s (- 19m 55s) (93000 23%) 0.5491
+6m 5s (- 19m 50s) (94000 23%) 0.5175
+6m 9s (- 19m 46s) (95000 23%) 0.5465
+6m 13s (- 19m 41s) (96000 24%) 0.5382
+6m 17s (- 19m 37s) (97000 24%) 0.5328
+6m 20s (- 19m 32s) (98000 24%) 0.5552
+6m 24s (- 19m 28s) (99000 24%) 0.5279
+6m 28s (- 19m 23s) (100000 25%) 0.5542
+6m 31s (- 19m 19s) (101000 25%) 0.5430
+6m 35s (- 19m 14s) (102000 25%) 0.5399
+6m 39s (- 19m 10s) (103000 25%) 0.5362
+6m 42s (- 19m 5s) (104000 26%) 0.5433
+6m 46s (- 19m 1s) (105000 26%) 0.5408
+6m 50s (- 18m 57s) (106000 26%) 0.5268
+6m 53s (- 18m 52s) (107000 26%) 0.5427
+6m 57s (- 18m 48s) (108000 27%) 0.5482
+7m 1s (- 18m 43s) (109000 27%) 0.5448
+7m 4s (- 18m 39s) (110000 27%) 0.5684
+7m 8s (- 18m 35s) (111000 27%) 0.5516
+7m 12s (- 18m 30s) (112000 28%) 0.5300
+7m 15s (- 18m 26s) (113000 28%) 0.5372
+7m 19s (- 18m 22s) (114000 28%) 0.5337
+7m 23s (- 18m 18s) (115000 28%) 0.5607
+7m 26s (- 18m 13s) (116000 29%) 0.5659
+7m 30s (- 18m 9s) (117000 29%) 0.5297
+7m 34s (- 18m 5s) (118000 29%) 0.5206
+7m 38s (- 18m 1s) (119000 29%) 0.5419
+Epoch 3/10 finished
+7m 48s (- 18m 12s) (120000 30%) 0.5243
+7m 51s (- 18m 7s) (121000 30%) 0.5170
+7m 55s (- 18m 3s) (122000 30%) 0.5098
+7m 59s (- 17m 58s) (123000 30%) 0.5188
+8m 3s (- 17m 54s) (124000 31%) 0.5093
+8m 6s (- 17m 50s) (125000 31%) 0.5462
+8m 10s (- 17m 45s) (126000 31%) 0.5192
+8m 14s (- 17m 41s) (127000 31%) 0.5186
+8m 17s (- 17m 37s) (128000 32%) 0.5202
+8m 21s (- 17m 32s) (129000 32%) 0.5126
+8m 25s (- 17m 28s) (130000 32%) 0.5365
+8m 28s (- 17m 24s) (131000 32%) 0.4924
+8m 32s (- 17m 20s) (132000 33%) 0.5362
+8m 36s (- 17m 15s) (133000 33%) 0.5369
+8m 39s (- 17m 11s) (134000 33%) 0.5022
+8m 43s (- 17m 7s) (135000 33%) 0.5313
+8m 47s (- 17m 3s) (136000 34%) 0.5290
+8m 51s (- 16m 58s) (137000 34%) 0.4982
+8m 54s (- 16m 54s) (138000 34%) 0.5479
+8m 58s (- 16m 50s) (139000 34%) 0.5253
+9m 2s (- 16m 46s) (140000 35%) 0.5229
+9m 5s (- 16m 42s) (141000 35%) 0.5046
+9m 9s (- 16m 37s) (142000 35%) 0.5185
+9m 13s (- 16m 33s) (143000 35%) 0.5122
+9m 16s (- 16m 29s) (144000 36%) 0.5142
+9m 20s (- 16m 25s) (145000 36%) 0.4935
+9m 24s (- 16m 21s) (146000 36%) 0.5194
+9m 27s (- 16m 16s) (147000 36%) 0.5222
+9m 31s (- 16m 12s) (148000 37%) 0.5282
+9m 35s (- 16m 8s) (149000 37%) 0.4913
+9m 38s (- 16m 4s) (150000 37%) 0.5316
+9m 42s (- 16m 0s) (151000 37%) 0.4745
+9m 46s (- 15m 56s) (152000 38%) 0.5050
+9m 50s (- 15m 51s) (153000 38%) 0.4959
+9m 53s (- 15m 47s) (154000 38%) 0.5369
+9m 57s (- 15m 43s) (155000 38%) 0.5323
+10m 1s (- 15m 39s) (156000 39%) 0.5009
+10m 4s (- 15m 35s) (157000 39%) 0.5316
+10m 8s (- 15m 31s) (158000 39%) 0.5048
+10m 12s (- 15m 27s) (159000 39%) 0.5357
+Epoch 4/10 finished
+10m 22s (- 15m 33s) (160000 40%) 0.5201
+10m 26s (- 15m 28s) (161000 40%) 0.4914
+10m 29s (- 15m 24s) (162000 40%) 0.4497
+10m 33s (- 15m 20s) (163000 40%) 0.4711
+10m 37s (- 15m 16s) (164000 41%) 0.5002
+10m 40s (- 15m 12s) (165000 41%) 0.4743
+10m 44s (- 15m 7s) (166000 41%) 0.4738
+10m 48s (- 15m 3s) (167000 41%) 0.4932
+10m 51s (- 14m 59s) (168000 42%) 0.5098
+10m 55s (- 14m 55s) (169000 42%) 0.4928
+10m 59s (- 14m 51s) (170000 42%) 0.4977
+11m 2s (- 14m 47s) (171000 42%) 0.4649
+11m 6s (- 14m 43s) (172000 43%) 0.4872
+11m 10s (- 14m 38s) (173000 43%) 0.4745
+11m 13s (- 14m 34s) (174000 43%) 0.4911
+11m 17s (- 14m 30s) (175000 43%) 0.4841
+11m 21s (- 14m 26s) (176000 44%) 0.4951
+11m 24s (- 14m 22s) (177000 44%) 0.4865
+11m 28s (- 14m 18s) (178000 44%) 0.5026
+11m 32s (- 14m 14s) (179000 44%) 0.5122
+11m 36s (- 14m 10s) (180000 45%) 0.5232
+11m 39s (- 14m 6s) (181000 45%) 0.5062
+11m 43s (- 14m 1s) (182000 45%) 0.4963
+11m 47s (- 13m 57s) (183000 45%) 0.5236
+11m 50s (- 13m 53s) (184000 46%) 0.4967
+11m 54s (- 13m 49s) (185000 46%) 0.4899
+11m 58s (- 13m 45s) (186000 46%) 0.5091
+12m 1s (- 13m 41s) (187000 46%) 0.4926
+12m 5s (- 13m 37s) (188000 47%) 0.4956
+12m 9s (- 13m 33s) (189000 47%) 0.4862
+12m 12s (- 13m 29s) (190000 47%) 0.5206
+12m 16s (- 13m 25s) (191000 47%) 0.4765
+12m 20s (- 13m 21s) (192000 48%) 0.5042
+12m 23s (- 13m 17s) (193000 48%) 0.4919
+12m 27s (- 13m 13s) (194000 48%) 0.4967
+12m 31s (- 13m 9s) (195000 48%) 0.4926
+12m 34s (- 13m 5s) (196000 49%) 0.4899
+12m 38s (- 13m 1s) (197000 49%) 0.4902
+12m 42s (- 12m 57s) (198000 49%) 0.5081
+12m 46s (- 12m 53s) (199000 49%) 0.4809
+Epoch 5/10 finished
+12m 56s (- 12m 56s) (200000 50%) 0.4890
+13m 0s (- 12m 51s) (201000 50%) 0.4425
+13m 3s (- 12m 47s) (202000 50%) 0.4421
+13m 7s (- 12m 43s) (203000 50%) 0.4524
+13m 11s (- 12m 39s) (204000 51%) 0.4386
+13m 15s (- 12m 35s) (205000 51%) 0.4427
+13m 18s (- 12m 31s) (206000 51%) 0.4339
+13m 22s (- 12m 27s) (207000 51%) 0.4786
+13m 26s (- 12m 23s) (208000 52%) 0.4633
+13m 29s (- 12m 19s) (209000 52%) 0.4750
+13m 33s (- 12m 15s) (210000 52%) 0.4595
+13m 37s (- 12m 11s) (211000 52%) 0.4706
+13m 40s (- 12m 7s) (212000 53%) 0.4379
+13m 44s (- 12m 3s) (213000 53%) 0.4693
+13m 48s (- 11m 59s) (214000 53%) 0.4478
+13m 51s (- 11m 55s) (215000 53%) 0.4775
+13m 55s (- 11m 51s) (216000 54%) 0.4990
+13m 59s (- 11m 47s) (217000 54%) 0.4719
+14m 3s (- 11m 43s) (218000 54%) 0.4712
+14m 6s (- 11m 39s) (219000 54%) 0.4527
+14m 10s (- 11m 35s) (220000 55%) 0.4691
+14m 14s (- 11m 31s) (221000 55%) 0.4759
+14m 17s (- 11m 27s) (222000 55%) 0.4920
+14m 21s (- 11m 23s) (223000 55%) 0.4589
+14m 25s (- 11m 19s) (224000 56%) 0.4742
+14m 28s (- 11m 15s) (225000 56%) 0.4988
+14m 32s (- 11m 11s) (226000 56%) 0.4652
+14m 36s (- 11m 7s) (227000 56%) 0.5192
+14m 39s (- 11m 3s) (228000 57%) 0.4816
+14m 43s (- 10m 59s) (229000 57%) 0.4821
+14m 47s (- 10m 55s) (230000 57%) 0.4639
+14m 50s (- 10m 51s) (231000 57%) 0.4893
+14m 54s (- 10m 47s) (232000 58%) 0.4566
+14m 58s (- 10m 43s) (233000 58%) 0.5060
+15m 2s (- 10m 39s) (234000 58%) 0.4851
+15m 5s (- 10m 35s) (235000 58%) 0.4863
+15m 9s (- 10m 31s) (236000 59%) 0.4504
+15m 13s (- 10m 27s) (237000 59%) 0.4885
+15m 16s (- 10m 23s) (238000 59%) 0.4606
+15m 20s (- 10m 19s) (239000 59%) 0.4770
+Epoch 6/10 finished
+15m 30s (- 10m 19s) (240000 60%) 0.4803
+15m 34s (- 10m 15s) (241000 60%) 0.4503
+15m 38s (- 10m 11s) (242000 60%) 0.4251
+15m 41s (- 10m 7s) (243000 60%) 0.4072
+15m 45s (- 10m 3s) (244000 61%) 0.4427
+15m 49s (- 9m 59s) (245000 61%) 0.4373
+15m 52s (- 9m 55s) (246000 61%) 0.4384
+15m 56s (- 9m 51s) (247000 61%) 0.4480
+16m 0s (- 9m 47s) (248000 62%) 0.4400
+16m 3s (- 9m 43s) (249000 62%) 0.4384
+16m 7s (- 9m 39s) (250000 62%) 0.4116
+16m 11s (- 9m 36s) (251000 62%) 0.4375
+16m 14s (- 9m 32s) (252000 63%) 0.4491
+16m 18s (- 9m 28s) (253000 63%) 0.4806
+16m 22s (- 9m 24s) (254000 63%) 0.4244
+16m 26s (- 9m 20s) (255000 63%) 0.4586
+16m 29s (- 9m 16s) (256000 64%) 0.4338
+16m 33s (- 9m 12s) (257000 64%) 0.4297
+16m 37s (- 9m 8s) (258000 64%) 0.4551
+16m 40s (- 9m 4s) (259000 64%) 0.4426
+16m 44s (- 9m 0s) (260000 65%) 0.4613
+16m 48s (- 8m 56s) (261000 65%) 0.4735
+16m 51s (- 8m 52s) (262000 65%) 0.4614
+16m 55s (- 8m 48s) (263000 65%) 0.4389
+16m 59s (- 8m 44s) (264000 66%) 0.4637
+17m 2s (- 8m 40s) (265000 66%) 0.4346
+17m 6s (- 8m 36s) (266000 66%) 0.4544
+17m 10s (- 8m 32s) (267000 66%) 0.4620
+17m 13s (- 8m 28s) (268000 67%) 0.4704
+17m 17s (- 8m 24s) (269000 67%) 0.4577
+17m 21s (- 8m 20s) (270000 67%) 0.4531
+17m 25s (- 8m 16s) (271000 67%) 0.4469
+17m 28s (- 8m 12s) (272000 68%) 0.4308
+17m 32s (- 8m 9s) (273000 68%) 0.4611
+17m 36s (- 8m 5s) (274000 68%) 0.4515
+17m 39s (- 8m 1s) (275000 68%) 0.4828
+17m 43s (- 7m 57s) (276000 69%) 0.4583
+17m 47s (- 7m 53s) (277000 69%) 0.4511
+17m 50s (- 7m 49s) (278000 69%) 0.4589
+17m 54s (- 7m 45s) (279000 69%) 0.4640
+Epoch 7/10 finished
+18m 5s (- 7m 44s) (280000 70%) 0.4520
+18m 8s (- 7m 40s) (281000 70%) 0.4012
+18m 12s (- 7m 36s) (282000 70%) 0.4019
+18m 16s (- 7m 32s) (283000 70%) 0.4078
+18m 19s (- 7m 28s) (284000 71%) 0.4269
+18m 23s (- 7m 24s) (285000 71%) 0.4271
+18m 27s (- 7m 20s) (286000 71%) 0.4232
+18m 30s (- 7m 16s) (287000 71%) 0.4372
+18m 34s (- 7m 12s) (288000 72%) 0.4010
+18m 38s (- 7m 8s) (289000 72%) 0.4049
+18m 42s (- 7m 5s) (290000 72%) 0.3892
+18m 45s (- 7m 1s) (291000 72%) 0.3919
+18m 49s (- 6m 57s) (292000 73%) 0.4146
+18m 53s (- 6m 53s) (293000 73%) 0.4374
+18m 56s (- 6m 49s) (294000 73%) 0.4217
+19m 0s (- 6m 45s) (295000 73%) 0.4015
+19m 4s (- 6m 41s) (296000 74%) 0.4349
+19m 7s (- 6m 37s) (297000 74%) 0.4205
+19m 11s (- 6m 33s) (298000 74%) 0.4175
+19m 15s (- 6m 29s) (299000 74%) 0.4324
+19m 18s (- 6m 25s) (300000 75%) 0.4393
+19m 22s (- 6m 21s) (301000 75%) 0.4515
+19m 26s (- 6m 17s) (302000 75%) 0.4290
+19m 29s (- 6m 13s) (303000 75%) 0.4278
+19m 33s (- 6m 10s) (304000 76%) 0.4335
+19m 37s (- 6m 6s) (305000 76%) 0.4544
+19m 40s (- 6m 2s) (306000 76%) 0.4538
+19m 44s (- 5m 58s) (307000 76%) 0.4362
+19m 48s (- 5m 54s) (308000 77%) 0.4268
+19m 51s (- 5m 50s) (309000 77%) 0.4520
+19m 55s (- 5m 46s) (310000 77%) 0.4437
+19m 59s (- 5m 42s) (311000 77%) 0.4308
+20m 2s (- 5m 38s) (312000 78%) 0.4468
+20m 6s (- 5m 34s) (313000 78%) 0.4617
+20m 9s (- 5m 30s) (314000 78%) 0.4172
+20m 13s (- 5m 26s) (315000 78%) 0.4327
+20m 17s (- 5m 23s) (316000 79%) 0.4412
+20m 20s (- 5m 19s) (317000 79%) 0.4406
+20m 24s (- 5m 15s) (318000 79%) 0.4789
+20m 28s (- 5m 11s) (319000 79%) 0.4462
+Epoch 8/10 finished
+20m 38s (- 5m 9s) (320000 80%) 0.4536
+20m 42s (- 5m 5s) (321000 80%) 0.3875
+20m 45s (- 5m 1s) (322000 80%) 0.4043
+20m 49s (- 4m 57s) (323000 80%) 0.3973
+20m 53s (- 4m 53s) (324000 81%) 0.4065
+20m 56s (- 4m 49s) (325000 81%) 0.4154
+21m 0s (- 4m 45s) (326000 81%) 0.3731
+21m 4s (- 4m 41s) (327000 81%) 0.3912
+21m 7s (- 4m 37s) (328000 82%) 0.3945
+21m 11s (- 4m 33s) (329000 82%) 0.3823
+21m 15s (- 4m 29s) (330000 82%) 0.3812
+21m 18s (- 4m 26s) (331000 82%) 0.3935
+21m 22s (- 4m 22s) (332000 83%) 0.4043
+21m 26s (- 4m 18s) (333000 83%) 0.3870
+21m 29s (- 4m 14s) (334000 83%) 0.3866
+21m 33s (- 4m 10s) (335000 83%) 0.4317
+21m 37s (- 4m 6s) (336000 84%) 0.4087
+21m 40s (- 4m 2s) (337000 84%) 0.4042
+21m 44s (- 3m 58s) (338000 84%) 0.3998
+21m 47s (- 3m 54s) (339000 84%) 0.4094
+21m 51s (- 3m 50s) (340000 85%) 0.3863
+21m 55s (- 3m 47s) (341000 85%) 0.4401
+21m 58s (- 3m 43s) (342000 85%) 0.4139
+22m 2s (- 3m 39s) (343000 85%) 0.4124
+22m 6s (- 3m 35s) (344000 86%) 0.4260
+22m 9s (- 3m 31s) (345000 86%) 0.4000
+22m 13s (- 3m 27s) (346000 86%) 0.3932
+22m 17s (- 3m 23s) (347000 86%) 0.4295
+22m 20s (- 3m 19s) (348000 87%) 0.4219
+22m 24s (- 3m 15s) (349000 87%) 0.3988
+22m 28s (- 3m 12s) (350000 87%) 0.4327
+22m 31s (- 3m 8s) (351000 87%) 0.4513
+22m 35s (- 3m 4s) (352000 88%) 0.4285
+22m 39s (- 3m 0s) (353000 88%) 0.4058
+22m 42s (- 2m 56s) (354000 88%) 0.4577
+22m 46s (- 2m 52s) (355000 88%) 0.4044
+22m 50s (- 2m 48s) (356000 89%) 0.4063
+22m 53s (- 2m 44s) (357000 89%) 0.4258
+22m 57s (- 2m 41s) (358000 89%) 0.4146
+23m 1s (- 2m 37s) (359000 89%) 0.4139
+Epoch 9/10 finished
+23m 11s (- 2m 34s) (360000 90%) 0.4045
+23m 15s (- 2m 30s) (361000 90%) 0.3666
+23m 18s (- 2m 26s) (362000 90%) 0.3783
+23m 22s (- 2m 22s) (363000 90%) 0.3649
+23m 26s (- 2m 18s) (364000 91%) 0.3692
+23m 29s (- 2m 14s) (365000 91%) 0.3643
+23m 33s (- 2m 10s) (366000 91%) 0.4094
+23m 36s (- 2m 6s) (367000 91%) 0.3493
+23m 40s (- 2m 2s) (368000 92%) 0.3688
+23m 44s (- 1m 59s) (369000 92%) 0.3920
+23m 47s (- 1m 55s) (370000 92%) 0.3710
+23m 51s (- 1m 51s) (371000 92%) 0.3723
+23m 55s (- 1m 47s) (372000 93%) 0.3891
+23m 58s (- 1m 43s) (373000 93%) 0.3522
+24m 2s (- 1m 39s) (374000 93%) 0.3717
+24m 6s (- 1m 35s) (375000 93%) 0.3795
+24m 9s (- 1m 32s) (376000 94%) 0.3809
+24m 13s (- 1m 28s) (377000 94%) 0.4083
+24m 17s (- 1m 24s) (378000 94%) 0.3618
+24m 20s (- 1m 20s) (379000 94%) 0.4050
+24m 24s (- 1m 16s) (380000 95%) 0.4064
+24m 28s (- 1m 12s) (381000 95%) 0.3950
+24m 31s (- 1m 8s) (382000 95%) 0.4045
+24m 35s (- 1m 4s) (383000 95%) 0.4129
+24m 39s (- 1m 1s) (384000 96%) 0.4042
+24m 42s (- 0m 57s) (385000 96%) 0.4091
+24m 46s (- 0m 53s) (386000 96%) 0.3779
+24m 50s (- 0m 49s) (387000 96%) 0.3980
+24m 53s (- 0m 45s) (388000 97%) 0.3922
+24m 57s (- 0m 41s) (389000 97%) 0.3988
+25m 0s (- 0m 37s) (390000 97%) 0.4359
+25m 4s (- 0m 34s) (391000 97%) 0.4041
+25m 8s (- 0m 30s) (392000 98%) 0.3903
+25m 11s (- 0m 26s) (393000 98%) 0.4051
+25m 15s (- 0m 22s) (394000 98%) 0.4169
+25m 19s (- 0m 18s) (395000 98%) 0.3973
+25m 22s (- 0m 14s) (396000 99%) 0.4100
+25m 26s (- 0m 10s) (397000 99%) 0.4211
+25m 30s (- 0m 7s) (398000 99%) 0.4094
+25m 33s (- 0m 3s) (399000 99%) 0.4145
+Epoch 10/10 finished
+Evaluate randomly on training sentences -- word order:
+> ['tom', 'didn', 't', 'expect', 'to', 'sell', 'his', 'old', 'car', 'for', 'so', 'much', 'money', '.', 'tom didn', 'didn t', 't expect', 'expect to', 'to sell', 'sell his', 'his old', 'old car', 'car for', 'for so', 'so much', 'much money', 'money .'] ['money', 'car']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'saw', 'something', '.', 'we saw', 'saw something', 'something .'] ['saw', 'something']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['classes', 'start', 'at', 'eight', 'in', 'the', 'morning', '.', 'classes start', 'start at', 'at eight', 'eight in', 'in the', 'the morning', 'morning .'] ['morning', 'in']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'do', 'you', 'pronounce', 'your', 'name', '?', 'how do', 'do you', 'you pronounce', 'pronounce your', 'your name', 'name ?'] ['how', 'do']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'll', 'be', 'all', 'right', '.', 'you ll', 'll be', 'be all', 'all right', 'right .'] ['you', 'll']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'fixed', 'myself', 'something', 'to', 'eat', '.', 'i fixed', 'fixed myself', 'myself something', 'something to', 'to eat', 'eat .'] ['to', 'eat']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'think', 'it', 's', 'necessary', 'to', 'do', 'that', '.', 'i don', 'don t', 't think', 'think it', 'it s', 's necessary', 'necessary to', 'to do', 'do that', 'that .'] ['do', 't']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['why', 'are', 'we', 'wasting', 'time', 'like', 'this', '?', 'why are', 'are we', 'we wasting', 'wasting time', 'time like', 'like this', 'this ?'] ['wasting', 'like']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'is', 'quick', 'at', 'everything', '.', 'she is', 'is quick', 'quick at', 'at everything', 'everything .'] ['is', 'at']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 're', 'all', 'here', '.', 'they re', 're all', 'all here', 'here .'] ['all', 'they']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['you', 'can', 'not', 'be', 'serious', '.', 'you can', 'can not', 'not be', 'be serious', 'serious .'] ['be', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['can', 'you', 'climb', 'up', 'that', 'tree', '?', 'can you', 'you climb', 'climb up', 'up that', 'that tree', 'tree ?'] ['climb', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['stir', 'the', 'soup', '.', 'stir the', 'the soup', 'soup .'] ['soup', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 're', 'adorable', '.', 'you re', 're adorable', 'adorable .'] ['re', 'adorable']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'want', 'you', 'to', 'be', 'upset', '.', 'i don', 'don t', 't want', 'want you', 'you to', 'to be', 'be upset', 'upset .'] ['be', 'upset']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'do', 'it', 'again', '.', 'i just', 'just don', 'don t', 't want', 'want to', 'to do', 'do it', 'it again', 'again .'] ['it', 'again']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'happened', 'so', 'fast', '.', 'it happened', 'happened so', 'so fast', 'fast .'] ['fast', 'so']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'have', 'such', 'beautiful', 'eyes', '.', 'you have', 'have such', 'such beautiful', 'beautiful eyes', 'eyes .'] ['beautiful', 'such']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['has', 'the', 'jury', 'reached', 'a', 'verdict', '?', 'has the', 'the jury', 'jury reached', 'reached a', 'a verdict', 'verdict ?'] ['verdict', 'has']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'betrayed', 'you', '.', 'she betrayed', 'betrayed you', 'you .'] ['betrayed', 'you']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 71 %
+Finished
+
+hpc mode: True
+order: 3
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences -- word order:
+> ['all', 'i', 'want', 'now', 'is', 'a', 'glass', 'of', 'water', '.', 'all i', 'i want', 'want now', 'now is', 'is a', 'a glass', 'glass of', 'of water', 'water .', 'all i want', 'i want now', 'want now is', 'now is a', 'is a glass', 'a glass of', 'glass of water', 'of water .'] ['water', 'of']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'apt', 'to', 'make', 'mistakes', '.', 'we are', 'are apt', 'apt to', 'to make', 'make mistakes', 'mistakes .', 'we are apt', 'are apt to', 'apt to make', 'to make mistakes', 'make mistakes .'] ['apt', 'mistakes']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .'] ['same', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'didn', 't', 'know', 'how', 'to', 'express', 'himself', '.', 'he didn', 'didn t', 't know', 'know how', 'how to', 'to express', 'express himself', 'himself .', 'he didn t', 'didn t know', 't know how', 'know how to', 'how to express', 'to express himself', 'express himself .'] ['know', 'express']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['the', 'car', 'isn', 't', 'worth', 'repairing', '.', 'the car', 'car isn', 'isn t', 't worth', 'worth repairing', 'repairing .', 'the car isn', 'car isn t', 'isn t worth', 't worth repairing', 'worth repairing .'] ['isn', 't']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'll', 'cut', 'your', 'head', 'off', '!', 'i ll', 'll cut', 'cut your', 'your head', 'head off', 'off !', 'i ll cut', 'll cut your', 'cut your head', 'your head off', 'head off !'] ['off', 'll']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'like', 'this', 'book', '.', 'i like', 'like this', 'this book', 'book .', 'i like this', 'like this book', 'this book .'] ['book', 'this']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['are', 'you', 'still', 'working', 'for', 'tom', '?', 'are you', 'you still', 'still working', 'working for', 'for tom', 'tom ?', 'are you still', 'you still working', 'still working for', 'working for tom', 'for tom ?'] ['for', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'did', 'you', 'get', 'a', 'naked', 'picture', 'of', 'me', '?', 'how did', 'did you', 'you get', 'get a', 'a naked', 'naked picture', 'picture of', 'of me', 'me ?', 'how did you', 'did you get', 'you get a', 'get a naked', 'a naked picture', 'naked picture of', 'picture of me', 'of me ?'] ['picture', 'of']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'wouldn', 't', 'take', 'all', 'that', 'long', 'to', 'explain', '.', 'it wouldn', 'wouldn t', 't take', 'take all', 'all that', 'that long', 'long to', 'to explain', 'explain .', 'it wouldn t', 'wouldn t take', 't take all', 'take all that', 'all that long', 'that long to', 'long to explain', 'to explain .'] ['to', 'that']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['let', 'me', 'pay', '.', 'let me', 'me pay', 'pay .', 'let me pay', 'me pay .'] ['let', 'pay']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .'] ['to', 'reading']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['would', 'he', 'like', 'that', '?', 'would he', 'he like', 'like that', 'that ?', 'would he like', 'he like that', 'like that ?'] ['he', 'that']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?'] ['japanese', 'anyone']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .'] ['over', 'narrowly']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?'] ['an', 'was']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .'] ['for', 'sold']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .'] ['not', 'mad']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'faced', 'with', 'a', 'host', 'of', 'problems', '.', 'we are', 'are faced', 'faced with', 'with a', 'a host', 'host of', 'of problems', 'problems .', 'we are faced', 'are faced with', 'faced with a', 'with a host', 'a host of', 'host of problems', 'of problems .'] ['host', 'a']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'feel', 'that', 'way', 'about', 'you', '.', 'i just', 'just don', 'don t', 't feel', 'feel that', 'that way', 'way about', 'about you', 'you .', 'i just don', 'just don t', 'don t feel', 't feel that', 'feel that way', 'that way about', 'way about you', 'about you .'] ['you', 'feel']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 50 %
+0m 9s (- 65m 16s) (1000 0%) 0.7061
+0m 13s (- 44m 36s) (2000 0%) 0.6964
+0m 17s (- 37m 39s) (3000 0%) 0.6898
+0m 20s (- 34m 9s) (4000 1%) 0.6922
+0m 24s (- 32m 1s) (5000 1%) 0.6904
+0m 27s (- 30m 35s) (6000 1%) 0.6809
+0m 31s (- 29m 32s) (7000 1%) 0.6829
+0m 35s (- 28m 44s) (8000 2%) 0.6724
+0m 38s (- 28m 6s) (9000 2%) 0.6742
+0m 42s (- 27m 35s) (10000 2%) 0.6695
+0m 46s (- 27m 9s) (11000 2%) 0.6631
+0m 49s (- 26m 46s) (12000 3%) 0.6625
+0m 53s (- 26m 27s) (13000 3%) 0.6652
+0m 56s (- 26m 10s) (14000 3%) 0.6632
+1m 0s (- 25m 55s) (15000 3%) 0.6603
+1m 4s (- 25m 41s) (16000 4%) 0.6646
+1m 7s (- 25m 28s) (17000 4%) 0.6477
+1m 11s (- 25m 17s) (18000 4%) 0.6490
+1m 15s (- 25m 6s) (19000 4%) 0.6537
+1m 18s (- 24m 55s) (20000 5%) 0.6327
+1m 22s (- 24m 46s) (21000 5%) 0.6323
+1m 26s (- 24m 37s) (22000 5%) 0.6314
+1m 29s (- 24m 29s) (23000 5%) 0.6332
+1m 33s (- 24m 21s) (24000 6%) 0.6302
+1m 36s (- 24m 13s) (25000 6%) 0.6376
+1m 40s (- 24m 6s) (26000 6%) 0.6243
+1m 44s (- 23m 58s) (27000 6%) 0.6271
+1m 47s (- 23m 52s) (28000 7%) 0.6322
+1m 51s (- 23m 45s) (29000 7%) 0.6338
+1m 55s (- 23m 38s) (30000 7%) 0.6264
+1m 58s (- 23m 32s) (31000 7%) 0.6126
+2m 2s (- 23m 26s) (32000 8%) 0.6304
+2m 5s (- 23m 20s) (33000 8%) 0.6132
+2m 9s (- 23m 14s) (34000 8%) 0.6236
+2m 13s (- 23m 9s) (35000 8%) 0.6380
+2m 16s (- 23m 3s) (36000 9%) 0.6191
+2m 20s (- 22m 58s) (37000 9%) 0.6119
+2m 24s (- 22m 53s) (38000 9%) 0.6153
+2m 27s (- 22m 47s) (39000 9%) 0.6094
+Epoch 1/10 finished
+2m 37s (- 23m 40s) (40000 10%) 0.6241
+2m 41s (- 23m 33s) (41000 10%) 0.6025
+2m 45s (- 23m 27s) (42000 10%) 0.6031
+2m 48s (- 23m 20s) (43000 10%) 0.5844
+2m 52s (- 23m 14s) (44000 11%) 0.6063
+2m 56s (- 23m 8s) (45000 11%) 0.6086
+2m 59s (- 23m 2s) (46000 11%) 0.6217
+3m 3s (- 22m 56s) (47000 11%) 0.5949
+3m 6s (- 22m 50s) (48000 12%) 0.5944
+3m 10s (- 22m 44s) (49000 12%) 0.6063
+3m 14s (- 22m 39s) (50000 12%) 0.5778
+3m 17s (- 22m 33s) (51000 12%) 0.5900
+3m 21s (- 22m 28s) (52000 13%) 0.6090
+3m 25s (- 22m 22s) (53000 13%) 0.5925
+3m 28s (- 22m 17s) (54000 13%) 0.6148
+3m 32s (- 22m 11s) (55000 13%) 0.6185
+3m 36s (- 22m 6s) (56000 14%) 0.6152
+3m 39s (- 22m 1s) (57000 14%) 0.5851
+3m 43s (- 21m 56s) (58000 14%) 0.5756
+3m 47s (- 21m 51s) (59000 14%) 0.5878
+3m 50s (- 21m 46s) (60000 15%) 0.5966
+3m 54s (- 21m 41s) (61000 15%) 0.5986
+3m 57s (- 21m 36s) (62000 15%) 0.5613
+4m 1s (- 21m 31s) (63000 15%) 0.5724
+4m 5s (- 21m 26s) (64000 16%) 0.5747
+4m 8s (- 21m 22s) (65000 16%) 0.5808
+4m 12s (- 21m 17s) (66000 16%) 0.5722
+4m 16s (- 21m 12s) (67000 16%) 0.6026
+4m 19s (- 21m 7s) (68000 17%) 0.5957
+4m 23s (- 21m 3s) (69000 17%) 0.5939
+4m 27s (- 20m 58s) (70000 17%) 0.5715
+4m 30s (- 20m 53s) (71000 17%) 0.5864
+4m 34s (- 20m 49s) (72000 18%) 0.5808
+4m 37s (- 20m 44s) (73000 18%) 0.5972
+4m 41s (- 20m 40s) (74000 18%) 0.5896
+4m 45s (- 20m 35s) (75000 18%) 0.6019
+4m 48s (- 20m 31s) (76000 19%) 0.5969
+4m 52s (- 20m 26s) (77000 19%) 0.5860
+4m 56s (- 20m 22s) (78000 19%) 0.5798
+4m 59s (- 20m 17s) (79000 19%) 0.5756
+Epoch 2/10 finished
+5m 9s (- 20m 38s) (80000 20%) 0.5648
+5m 13s (- 20m 33s) (81000 20%) 0.5838
+5m 17s (- 20m 29s) (82000 20%) 0.5692
+5m 20s (- 20m 24s) (83000 20%) 0.5671
+5m 24s (- 20m 19s) (84000 21%) 0.5699
+5m 27s (- 20m 14s) (85000 21%) 0.5769
+5m 31s (- 20m 10s) (86000 21%) 0.5821
+5m 35s (- 20m 5s) (87000 21%) 0.5875
+5m 38s (- 20m 1s) (88000 22%) 0.5517
+5m 42s (- 19m 56s) (89000 22%) 0.5788
+5m 46s (- 19m 51s) (90000 22%) 0.5603
+5m 49s (- 19m 47s) (91000 22%) 0.5758
+5m 53s (- 19m 42s) (92000 23%) 0.5803
+5m 57s (- 19m 38s) (93000 23%) 0.5609
+6m 0s (- 19m 33s) (94000 23%) 0.5450
+6m 4s (- 19m 29s) (95000 23%) 0.5614
+6m 8s (- 19m 24s) (96000 24%) 0.5600
+6m 11s (- 19m 20s) (97000 24%) 0.5523
+6m 15s (- 19m 16s) (98000 24%) 0.5647
+6m 18s (- 19m 11s) (99000 24%) 0.5506
+6m 22s (- 19m 7s) (100000 25%) 0.5566
+6m 26s (- 19m 2s) (101000 25%) 0.5528
+6m 29s (- 18m 58s) (102000 25%) 0.5830
+6m 33s (- 18m 54s) (103000 25%) 0.5705
+6m 37s (- 18m 50s) (104000 26%) 0.5634
+6m 40s (- 18m 45s) (105000 26%) 0.5679
+6m 44s (- 18m 41s) (106000 26%) 0.5631
+6m 48s (- 18m 37s) (107000 26%) 0.5608
+6m 51s (- 18m 32s) (108000 27%) 0.5691
+6m 55s (- 18m 28s) (109000 27%) 0.5662
+6m 59s (- 18m 24s) (110000 27%) 0.5618
+7m 2s (- 18m 20s) (111000 27%) 0.5824
+7m 6s (- 18m 15s) (112000 28%) 0.5538
+7m 9s (- 18m 11s) (113000 28%) 0.5656
+7m 13s (- 18m 7s) (114000 28%) 0.5754
+7m 17s (- 18m 3s) (115000 28%) 0.5657
+7m 20s (- 17m 59s) (116000 29%) 0.5735
+7m 24s (- 17m 54s) (117000 29%) 0.5549
+7m 28s (- 17m 50s) (118000 29%) 0.5493
+7m 31s (- 17m 46s) (119000 29%) 0.5671
+Epoch 3/10 finished
+7m 41s (- 17m 57s) (120000 30%) 0.5485
+7m 45s (- 17m 52s) (121000 30%) 0.5378
+7m 49s (- 17m 48s) (122000 30%) 0.5393
+7m 52s (- 17m 44s) (123000 30%) 0.5415
+7m 56s (- 17m 39s) (124000 31%) 0.5434
+8m 0s (- 17m 35s) (125000 31%) 0.5558
+8m 3s (- 17m 31s) (126000 31%) 0.5660
+8m 7s (- 17m 27s) (127000 31%) 0.5376
+8m 11s (- 17m 22s) (128000 32%) 0.5541
+8m 14s (- 17m 18s) (129000 32%) 0.5468
+8m 18s (- 17m 14s) (130000 32%) 0.5580
+8m 21s (- 17m 10s) (131000 32%) 0.5236
+8m 25s (- 17m 5s) (132000 33%) 0.5399
+8m 29s (- 17m 1s) (133000 33%) 0.5680
+8m 32s (- 16m 57s) (134000 33%) 0.5278
+8m 36s (- 16m 53s) (135000 33%) 0.5398
+8m 40s (- 16m 49s) (136000 34%) 0.5538
+8m 43s (- 16m 45s) (137000 34%) 0.5284
+8m 47s (- 16m 40s) (138000 34%) 0.5716
+8m 51s (- 16m 36s) (139000 34%) 0.5537
+8m 54s (- 16m 32s) (140000 35%) 0.5289
+8m 58s (- 16m 28s) (141000 35%) 0.5447
+9m 2s (- 16m 24s) (142000 35%) 0.5555
+9m 5s (- 16m 20s) (143000 35%) 0.5537
+9m 9s (- 16m 16s) (144000 36%) 0.5442
+9m 12s (- 16m 11s) (145000 36%) 0.5387
+9m 16s (- 16m 7s) (146000 36%) 0.5427
+9m 20s (- 16m 3s) (147000 36%) 0.5387
+9m 23s (- 15m 59s) (148000 37%) 0.5518
+9m 27s (- 15m 55s) (149000 37%) 0.5254
+9m 31s (- 15m 51s) (150000 37%) 0.5464
+9m 34s (- 15m 47s) (151000 37%) 0.5009
+9m 38s (- 15m 43s) (152000 38%) 0.5410
+9m 42s (- 15m 39s) (153000 38%) 0.5225
+9m 45s (- 15m 35s) (154000 38%) 0.5619
+9m 49s (- 15m 31s) (155000 38%) 0.5465
+9m 53s (- 15m 27s) (156000 39%) 0.5453
+9m 56s (- 15m 23s) (157000 39%) 0.5409
+10m 0s (- 15m 19s) (158000 39%) 0.5323
+10m 4s (- 15m 15s) (159000 39%) 0.5583
+Epoch 4/10 finished
+10m 14s (- 15m 20s) (160000 40%) 0.5371
+10m 17s (- 15m 16s) (161000 40%) 0.5142
+10m 21s (- 15m 12s) (162000 40%) 0.4914
+10m 24s (- 15m 8s) (163000 40%) 0.5167
+10m 28s (- 15m 3s) (164000 41%) 0.5166
+10m 32s (- 14m 59s) (165000 41%) 0.5130
+10m 35s (- 14m 55s) (166000 41%) 0.5074
+10m 39s (- 14m 51s) (167000 41%) 0.5311
+10m 43s (- 14m 47s) (168000 42%) 0.5316
+10m 46s (- 14m 43s) (169000 42%) 0.5333
+10m 50s (- 14m 39s) (170000 42%) 0.5280
+10m 54s (- 14m 35s) (171000 42%) 0.4969
+10m 57s (- 14m 31s) (172000 43%) 0.5262
+11m 1s (- 14m 27s) (173000 43%) 0.5196
+11m 5s (- 14m 23s) (174000 43%) 0.4981
+11m 8s (- 14m 19s) (175000 43%) 0.5252
+11m 12s (- 14m 15s) (176000 44%) 0.5241
+11m 16s (- 14m 11s) (177000 44%) 0.5125
+11m 19s (- 14m 7s) (178000 44%) 0.5367
+11m 23s (- 14m 3s) (179000 44%) 0.5157
+11m 26s (- 13m 59s) (180000 45%) 0.5546
+11m 30s (- 13m 55s) (181000 45%) 0.5352
+11m 34s (- 13m 51s) (182000 45%) 0.5236
+11m 37s (- 13m 47s) (183000 45%) 0.5282
+11m 41s (- 13m 43s) (184000 46%) 0.5218
+11m 45s (- 13m 39s) (185000 46%) 0.5292
+11m 48s (- 13m 35s) (186000 46%) 0.5267
+11m 52s (- 13m 31s) (187000 46%) 0.5296
+11m 56s (- 13m 27s) (188000 47%) 0.5261
+11m 59s (- 13m 23s) (189000 47%) 0.5356
+12m 3s (- 13m 19s) (190000 47%) 0.5392
+12m 7s (- 13m 15s) (191000 47%) 0.5070
+12m 10s (- 13m 11s) (192000 48%) 0.5320
+12m 14s (- 13m 7s) (193000 48%) 0.5310
+12m 18s (- 13m 3s) (194000 48%) 0.5324
+12m 21s (- 12m 59s) (195000 48%) 0.5231
+12m 25s (- 12m 55s) (196000 49%) 0.5182
+12m 29s (- 12m 51s) (197000 49%) 0.5202
+12m 32s (- 12m 47s) (198000 49%) 0.5459
+12m 36s (- 12m 43s) (199000 49%) 0.5096
+Epoch 5/10 finished
+12m 46s (- 12m 46s) (200000 50%) 0.5353
+12m 50s (- 12m 42s) (201000 50%) 0.4790
+12m 53s (- 12m 37s) (202000 50%) 0.4722
+12m 57s (- 12m 33s) (203000 50%) 0.4857
+13m 1s (- 12m 29s) (204000 51%) 0.4796
+13m 4s (- 12m 25s) (205000 51%) 0.4941
+13m 8s (- 12m 21s) (206000 51%) 0.4573
+13m 12s (- 12m 17s) (207000 51%) 0.5047
+13m 15s (- 12m 13s) (208000 52%) 0.4979
+13m 19s (- 12m 9s) (209000 52%) 0.4900
+13m 22s (- 12m 5s) (210000 52%) 0.4932
+13m 26s (- 12m 1s) (211000 52%) 0.5079
+13m 30s (- 11m 57s) (212000 53%) 0.4846
+13m 33s (- 11m 54s) (213000 53%) 0.4822
+13m 37s (- 11m 50s) (214000 53%) 0.4928
+13m 41s (- 11m 46s) (215000 53%) 0.5022
+13m 44s (- 11m 42s) (216000 54%) 0.5194
+13m 48s (- 11m 38s) (217000 54%) 0.5013
+13m 52s (- 11m 34s) (218000 54%) 0.5067
+13m 56s (- 11m 30s) (219000 54%) 0.4964
+13m 59s (- 11m 26s) (220000 55%) 0.5270
+14m 3s (- 11m 22s) (221000 55%) 0.5179
+14m 7s (- 11m 18s) (222000 55%) 0.5210
+14m 10s (- 11m 14s) (223000 55%) 0.4944
+14m 14s (- 11m 10s) (224000 56%) 0.5053
+14m 18s (- 11m 6s) (225000 56%) 0.5049
+14m 21s (- 11m 3s) (226000 56%) 0.4951
+14m 25s (- 10m 59s) (227000 56%) 0.5381
+14m 29s (- 10m 55s) (228000 57%) 0.5189
+14m 32s (- 10m 51s) (229000 57%) 0.5035
+14m 36s (- 10m 47s) (230000 57%) 0.5187
+14m 40s (- 10m 43s) (231000 57%) 0.5094
+14m 43s (- 10m 39s) (232000 58%) 0.4945
+14m 47s (- 10m 35s) (233000 58%) 0.5057
+14m 51s (- 10m 31s) (234000 58%) 0.5198
+14m 55s (- 10m 27s) (235000 58%) 0.5211
+14m 58s (- 10m 23s) (236000 59%) 0.4886
+15m 2s (- 10m 20s) (237000 59%) 0.5152
+15m 6s (- 10m 16s) (238000 59%) 0.5047
+15m 9s (- 10m 12s) (239000 59%) 0.5239
+Epoch 6/10 finished
+15m 19s (- 10m 12s) (240000 60%) 0.5174
+15m 23s (- 10m 8s) (241000 60%) 0.4615
+15m 26s (- 10m 4s) (242000 60%) 0.4377
+15m 30s (- 10m 0s) (243000 60%) 0.4256
+15m 34s (- 9m 56s) (244000 61%) 0.4668
+15m 37s (- 9m 52s) (245000 61%) 0.4736
+15m 41s (- 9m 48s) (246000 61%) 0.4817
+15m 45s (- 9m 45s) (247000 61%) 0.4820
+15m 48s (- 9m 41s) (248000 62%) 0.4703
+15m 52s (- 9m 37s) (249000 62%) 0.4565
+15m 56s (- 9m 33s) (250000 62%) 0.4412
+16m 0s (- 9m 29s) (251000 62%) 0.4701
+16m 3s (- 9m 25s) (252000 63%) 0.4896
+16m 7s (- 9m 21s) (253000 63%) 0.5156
+16m 11s (- 9m 17s) (254000 63%) 0.4619
+16m 14s (- 9m 13s) (255000 63%) 0.5039
+16m 18s (- 9m 9s) (256000 64%) 0.4666
+16m 22s (- 9m 5s) (257000 64%) 0.4765
+16m 25s (- 9m 2s) (258000 64%) 0.4676
+16m 29s (- 8m 58s) (259000 64%) 0.4703
+16m 33s (- 8m 54s) (260000 65%) 0.4907
+16m 36s (- 8m 50s) (261000 65%) 0.5165
+16m 40s (- 8m 46s) (262000 65%) 0.4842
+16m 44s (- 8m 42s) (263000 65%) 0.4920
+16m 47s (- 8m 38s) (264000 66%) 0.4843
+16m 51s (- 8m 34s) (265000 66%) 0.4863
+16m 55s (- 8m 30s) (266000 66%) 0.4886
+16m 58s (- 8m 27s) (267000 66%) 0.4963
+17m 2s (- 8m 23s) (268000 67%) 0.5051
+17m 6s (- 8m 19s) (269000 67%) 0.4815
+17m 9s (- 8m 15s) (270000 67%) 0.4954
+17m 13s (- 8m 11s) (271000 67%) 0.5149
+17m 17s (- 8m 7s) (272000 68%) 0.4555
+17m 21s (- 8m 3s) (273000 68%) 0.5004
+17m 24s (- 7m 59s) (274000 68%) 0.4764
+17m 28s (- 7m 56s) (275000 68%) 0.5019
+17m 32s (- 7m 52s) (276000 69%) 0.5021
+17m 35s (- 7m 48s) (277000 69%) 0.4860
+17m 39s (- 7m 44s) (278000 69%) 0.4877
+17m 43s (- 7m 40s) (279000 69%) 0.4947
+Epoch 7/10 finished
+17m 53s (- 7m 39s) (280000 70%) 0.4903
+17m 57s (- 7m 35s) (281000 70%) 0.4256
+18m 0s (- 7m 31s) (282000 70%) 0.4513
+18m 4s (- 7m 27s) (283000 70%) 0.4375
+18m 8s (- 7m 23s) (284000 71%) 0.4618
+18m 11s (- 7m 20s) (285000 71%) 0.4600
+18m 15s (- 7m 16s) (286000 71%) 0.4430
+18m 19s (- 7m 12s) (287000 71%) 0.4553
+18m 22s (- 7m 8s) (288000 72%) 0.4522
+18m 26s (- 7m 4s) (289000 72%) 0.4441
+18m 30s (- 7m 0s) (290000 72%) 0.4651
+18m 33s (- 6m 56s) (291000 72%) 0.4355
+18m 37s (- 6m 52s) (292000 73%) 0.4517
+18m 41s (- 6m 48s) (293000 73%) 0.4550
+18m 44s (- 6m 45s) (294000 73%) 0.4598
+18m 48s (- 6m 41s) (295000 73%) 0.4480
+18m 52s (- 6m 37s) (296000 74%) 0.4737
+18m 56s (- 6m 33s) (297000 74%) 0.4338
+18m 59s (- 6m 29s) (298000 74%) 0.4566
+19m 3s (- 6m 25s) (299000 74%) 0.4671
+19m 7s (- 6m 21s) (300000 75%) 0.4729
+19m 10s (- 6m 17s) (301000 75%) 0.4898
+19m 14s (- 6m 14s) (302000 75%) 0.4392
+19m 18s (- 6m 10s) (303000 75%) 0.4494
+19m 21s (- 6m 6s) (304000 76%) 0.4607
+19m 25s (- 6m 2s) (305000 76%) 0.4972
+19m 29s (- 5m 58s) (306000 76%) 0.4586
+19m 32s (- 5m 54s) (307000 76%) 0.4842
+19m 36s (- 5m 50s) (308000 77%) 0.4587
+19m 40s (- 5m 47s) (309000 77%) 0.4981
+19m 43s (- 5m 43s) (310000 77%) 0.4762
+19m 47s (- 5m 39s) (311000 77%) 0.4657
+19m 51s (- 5m 35s) (312000 78%) 0.4671
+19m 54s (- 5m 31s) (313000 78%) 0.4783
+19m 58s (- 5m 27s) (314000 78%) 0.4419
+20m 2s (- 5m 23s) (315000 78%) 0.4859
+20m 5s (- 5m 20s) (316000 79%) 0.4708
+20m 9s (- 5m 16s) (317000 79%) 0.4710
+20m 13s (- 5m 12s) (318000 79%) 0.4916
+20m 17s (- 5m 8s) (319000 79%) 0.4647
+Epoch 8/10 finished
+20m 27s (- 5m 6s) (320000 80%) 0.4643
+20m 30s (- 5m 2s) (321000 80%) 0.4164
+20m 34s (- 4m 58s) (322000 80%) 0.4406
+20m 38s (- 4m 54s) (323000 80%) 0.4197
+20m 41s (- 4m 50s) (324000 81%) 0.4410
+20m 45s (- 4m 46s) (325000 81%) 0.4383
+20m 49s (- 4m 43s) (326000 81%) 0.4026
+20m 52s (- 4m 39s) (327000 81%) 0.4504
+20m 56s (- 4m 35s) (328000 82%) 0.4244
+21m 0s (- 4m 31s) (329000 82%) 0.4382
+21m 3s (- 4m 27s) (330000 82%) 0.4383
+21m 7s (- 4m 23s) (331000 82%) 0.4483
+21m 11s (- 4m 19s) (332000 83%) 0.4294
+21m 14s (- 4m 15s) (333000 83%) 0.4353
+21m 18s (- 4m 12s) (334000 83%) 0.4390
+21m 22s (- 4m 8s) (335000 83%) 0.4444
+21m 26s (- 4m 4s) (336000 84%) 0.4412
+21m 29s (- 4m 0s) (337000 84%) 0.4605
+21m 33s (- 3m 56s) (338000 84%) 0.4587
+21m 37s (- 3m 52s) (339000 84%) 0.4444
+21m 40s (- 3m 49s) (340000 85%) 0.4289
+21m 44s (- 3m 45s) (341000 85%) 0.4714
+21m 48s (- 3m 41s) (342000 85%) 0.4491
+21m 51s (- 3m 37s) (343000 85%) 0.4752
+21m 55s (- 3m 33s) (344000 86%) 0.4669
+21m 59s (- 3m 29s) (345000 86%) 0.4595
+22m 2s (- 3m 25s) (346000 86%) 0.4356
+22m 6s (- 3m 22s) (347000 86%) 0.4703
+22m 10s (- 3m 18s) (348000 87%) 0.4377
+22m 13s (- 3m 14s) (349000 87%) 0.4474
+22m 17s (- 3m 10s) (350000 87%) 0.4369
+22m 21s (- 3m 6s) (351000 87%) 0.4615
+22m 24s (- 3m 2s) (352000 88%) 0.4665
+22m 28s (- 2m 59s) (353000 88%) 0.4273
+22m 32s (- 2m 55s) (354000 88%) 0.4812
+22m 35s (- 2m 51s) (355000 88%) 0.4207
+22m 39s (- 2m 47s) (356000 89%) 0.4573
+22m 43s (- 2m 43s) (357000 89%) 0.4786
+22m 46s (- 2m 39s) (358000 89%) 0.4471
+22m 50s (- 2m 36s) (359000 89%) 0.4474
+Epoch 9/10 finished
+23m 0s (- 2m 32s) (360000 90%) 0.4452
+23m 4s (- 2m 29s) (361000 90%) 0.3987
+23m 8s (- 2m 25s) (362000 90%) 0.4087
+23m 11s (- 2m 21s) (363000 90%) 0.3996
+23m 15s (- 2m 17s) (364000 91%) 0.4039
+23m 19s (- 2m 13s) (365000 91%) 0.4056
+23m 23s (- 2m 9s) (366000 91%) 0.4292
+23m 26s (- 2m 5s) (367000 91%) 0.3994
+23m 30s (- 2m 2s) (368000 92%) 0.4215
+23m 34s (- 1m 58s) (369000 92%) 0.4270
+23m 37s (- 1m 54s) (370000 92%) 0.4218
+23m 41s (- 1m 50s) (371000 92%) 0.4169
+23m 45s (- 1m 46s) (372000 93%) 0.4192
+23m 48s (- 1m 42s) (373000 93%) 0.4190
+23m 52s (- 1m 39s) (374000 93%) 0.4142
+23m 56s (- 1m 35s) (375000 93%) 0.4303
+23m 59s (- 1m 31s) (376000 94%) 0.4549
+24m 3s (- 1m 27s) (377000 94%) 0.4447
+24m 7s (- 1m 23s) (378000 94%) 0.4239
+24m 10s (- 1m 19s) (379000 94%) 0.4460
+24m 14s (- 1m 16s) (380000 95%) 0.4210
+24m 18s (- 1m 12s) (381000 95%) 0.4451
+24m 21s (- 1m 8s) (382000 95%) 0.4361
+24m 25s (- 1m 4s) (383000 95%) 0.4500
+24m 29s (- 1m 0s) (384000 96%) 0.4633
+24m 32s (- 0m 56s) (385000 96%) 0.4190
+24m 36s (- 0m 53s) (386000 96%) 0.4156
+24m 40s (- 0m 49s) (387000 96%) 0.4322
+24m 43s (- 0m 45s) (388000 97%) 0.4323
+24m 47s (- 0m 41s) (389000 97%) 0.4393
+24m 51s (- 0m 37s) (390000 97%) 0.4600
+24m 55s (- 0m 33s) (391000 97%) 0.4412
+24m 58s (- 0m 30s) (392000 98%) 0.4236
+25m 2s (- 0m 26s) (393000 98%) 0.4613
+25m 6s (- 0m 22s) (394000 98%) 0.4173
+25m 9s (- 0m 18s) (395000 98%) 0.4325
+25m 13s (- 0m 14s) (396000 99%) 0.4286
+25m 17s (- 0m 10s) (397000 99%) 0.4390
+25m 20s (- 0m 7s) (398000 99%) 0.4623
+25m 24s (- 0m 3s) (399000 99%) 0.4315
+Epoch 10/10 finished
+Evaluate randomly on training sentences -- word order:
+> ['tom', 'didn', 't', 'expect', 'to', 'sell', 'his', 'old', 'car', 'for', 'so', 'much', 'money', '.', 'tom didn', 'didn t', 't expect', 'expect to', 'to sell', 'sell his', 'his old', 'old car', 'car for', 'for so', 'so much', 'much money', 'money .', 'tom didn t', 'didn t expect', 't expect to', 'expect to sell', 'to sell his', 'sell his old', 'his old car', 'old car for', 'car for so', 'for so much', 'so much money', 'much money .'] ['money', 'car']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'saw', 'something', '.', 'we saw', 'saw something', 'something .', 'we saw something', 'saw something .'] ['saw', 'something']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['classes', 'start', 'at', 'eight', 'in', 'the', 'morning', '.', 'classes start', 'start at', 'at eight', 'eight in', 'in the', 'the morning', 'morning .', 'classes start at', 'start at eight', 'at eight in', 'eight in the', 'in the morning', 'the morning .'] ['morning', 'in']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'do', 'you', 'pronounce', 'your', 'name', '?', 'how do', 'do you', 'you pronounce', 'pronounce your', 'your name', 'name ?', 'how do you', 'do you pronounce', 'you pronounce your', 'pronounce your name', 'your name ?'] ['how', 'do']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'll', 'be', 'all', 'right', '.', 'you ll', 'll be', 'be all', 'all right', 'right .', 'you ll be', 'll be all', 'be all right', 'all right .'] ['you', 'll']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'fixed', 'myself', 'something', 'to', 'eat', '.', 'i fixed', 'fixed myself', 'myself something', 'something to', 'to eat', 'eat .', 'i fixed myself', 'fixed myself something', 'myself something to', 'something to eat', 'to eat .'] ['to', 'eat']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'think', 'it', 's', 'necessary', 'to', 'do', 'that', '.', 'i don', 'don t', 't think', 'think it', 'it s', 's necessary', 'necessary to', 'to do', 'do that', 'that .', 'i don t', 'don t think', 't think it', 'think it s', 'it s necessary', 's necessary to', 'necessary to do', 'to do that', 'do that .'] ['do', 't']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['why', 'are', 'we', 'wasting', 'time', 'like', 'this', '?', 'why are', 'are we', 'we wasting', 'wasting time', 'time like', 'like this', 'this ?', 'why are we', 'are we wasting', 'we wasting time', 'wasting time like', 'time like this', 'like this ?'] ['wasting', 'like']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'is', 'quick', 'at', 'everything', '.', 'she is', 'is quick', 'quick at', 'at everything', 'everything .', 'she is quick', 'is quick at', 'quick at everything', 'at everything .'] ['is', 'at']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 're', 'all', 'here', '.', 'they re', 're all', 'all here', 'here .', 'they re all', 're all here', 'all here .'] ['all', 'they']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['you', 'can', 'not', 'be', 'serious', '.', 'you can', 'can not', 'not be', 'be serious', 'serious .', 'you can not', 'can not be', 'not be serious', 'be serious .'] ['be', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['can', 'you', 'climb', 'up', 'that', 'tree', '?', 'can you', 'you climb', 'climb up', 'up that', 'that tree', 'tree ?', 'can you climb', 'you climb up', 'climb up that', 'up that tree', 'that tree ?'] ['climb', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['stir', 'the', 'soup', '.', 'stir the', 'the soup', 'soup .', 'stir the soup', 'the soup .'] ['soup', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 're', 'adorable', '.', 'you re', 're adorable', 'adorable .', 'you re adorable', 're adorable .'] ['re', 'adorable']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'want', 'you', 'to', 'be', 'upset', '.', 'i don', 'don t', 't want', 'want you', 'you to', 'to be', 'be upset', 'upset .', 'i don t', 'don t want', 't want you', 'want you to', 'you to be', 'to be upset', 'be upset .'] ['be', 'upset']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'do', 'it', 'again', '.', 'i just', 'just don', 'don t', 't want', 'want to', 'to do', 'do it', 'it again', 'again .', 'i just don', 'just don t', 'don t want', 't want to', 'want to do', 'to do it', 'do it again', 'it again .'] ['it', 'again']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'happened', 'so', 'fast', '.', 'it happened', 'happened so', 'so fast', 'fast .', 'it happened so', 'happened so fast', 'so fast .'] ['fast', 'so']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'have', 'such', 'beautiful', 'eyes', '.', 'you have', 'have such', 'such beautiful', 'beautiful eyes', 'eyes .', 'you have such', 'have such beautiful', 'such beautiful eyes', 'beautiful eyes .'] ['beautiful', 'such']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['has', 'the', 'jury', 'reached', 'a', 'verdict', '?', 'has the', 'the jury', 'jury reached', 'reached a', 'a verdict', 'verdict ?', 'has the jury', 'the jury reached', 'jury reached a', 'reached a verdict', 'a verdict ?'] ['verdict', 'has']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'betrayed', 'you', '.', 'she betrayed', 'betrayed you', 'you .', 'she betrayed you', 'betrayed you .'] ['betrayed', 'you']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 72 %
+Finished
+
+hpc mode: True
+order: 4
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences -- word order:
+> ['all', 'i', 'want', 'now', 'is', 'a', 'glass', 'of', 'water', '.', 'all i', 'i want', 'want now', 'now is', 'is a', 'a glass', 'glass of', 'of water', 'water .', 'all i want', 'i want now', 'want now is', 'now is a', 'is a glass', 'a glass of', 'glass of water', 'of water .', 'all i want now', 'i want now is', 'want now is a', 'now is a glass', 'is a glass of', 'a glass of water', 'glass of water .'] ['water', 'of']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'apt', 'to', 'make', 'mistakes', '.', 'we are', 'are apt', 'apt to', 'to make', 'make mistakes', 'mistakes .', 'we are apt', 'are apt to', 'apt to make', 'to make mistakes', 'make mistakes .', 'we are apt to', 'are apt to make', 'apt to make mistakes', 'to make mistakes .'] ['apt', 'mistakes']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .'] ['same', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'didn', 't', 'know', 'how', 'to', 'express', 'himself', '.', 'he didn', 'didn t', 't know', 'know how', 'how to', 'to express', 'express himself', 'himself .', 'he didn t', 'didn t know', 't know how', 'know how to', 'how to express', 'to express himself', 'express himself .', 'he didn t know', 'didn t know how', 't know how to', 'know how to express', 'how to express himself', 'to express himself .'] ['know', 'express']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['the', 'car', 'isn', 't', 'worth', 'repairing', '.', 'the car', 'car isn', 'isn t', 't worth', 'worth repairing', 'repairing .', 'the car isn', 'car isn t', 'isn t worth', 't worth repairing', 'worth repairing .', 'the car isn t', 'car isn t worth', 'isn t worth repairing', 't worth repairing .'] ['isn', 't']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'll', 'cut', 'your', 'head', 'off', '!', 'i ll', 'll cut', 'cut your', 'your head', 'head off', 'off !', 'i ll cut', 'll cut your', 'cut your head', 'your head off', 'head off !', 'i ll cut your', 'll cut your head', 'cut your head off', 'your head off !'] ['off', 'll']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'like', 'this', 'book', '.', 'i like', 'like this', 'this book', 'book .', 'i like this', 'like this book', 'this book .', 'i like this book', 'like this book .'] ['book', 'this']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['are', 'you', 'still', 'working', 'for', 'tom', '?', 'are you', 'you still', 'still working', 'working for', 'for tom', 'tom ?', 'are you still', 'you still working', 'still working for', 'working for tom', 'for tom ?', 'are you still working', 'you still working for', 'still working for tom', 'working for tom ?'] ['for', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'did', 'you', 'get', 'a', 'naked', 'picture', 'of', 'me', '?', 'how did', 'did you', 'you get', 'get a', 'a naked', 'naked picture', 'picture of', 'of me', 'me ?', 'how did you', 'did you get', 'you get a', 'get a naked', 'a naked picture', 'naked picture of', 'picture of me', 'of me ?', 'how did you get', 'did you get a', 'you get a naked', 'get a naked picture', 'a naked picture of', 'naked picture of me', 'picture of me ?'] ['picture', 'of']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'wouldn', 't', 'take', 'all', 'that', 'long', 'to', 'explain', '.', 'it wouldn', 'wouldn t', 't take', 'take all', 'all that', 'that long', 'long to', 'to explain', 'explain .', 'it wouldn t', 'wouldn t take', 't take all', 'take all that', 'all that long', 'that long to', 'long to explain', 'to explain .', 'it wouldn t take', 'wouldn t take all', 't take all that', 'take all that long', 'all that long to', 'that long to explain', 'long to explain .'] ['to', 'that']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['let', 'me', 'pay', '.', 'let me', 'me pay', 'pay .', 'let me pay', 'me pay .', 'let me pay .'] ['let', 'pay']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .'] ['to', 'reading']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['would', 'he', 'like', 'that', '?', 'would he', 'he like', 'like that', 'that ?', 'would he like', 'he like that', 'like that ?', 'would he like that', 'he like that ?'] ['he', 'that']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?'] ['japanese', 'anyone']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .'] ['over', 'narrowly']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?'] ['an', 'was']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .'] ['for', 'sold']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .'] ['not', 'mad']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'faced', 'with', 'a', 'host', 'of', 'problems', '.', 'we are', 'are faced', 'faced with', 'with a', 'a host', 'host of', 'of problems', 'problems .', 'we are faced', 'are faced with', 'faced with a', 'with a host', 'a host of', 'host of problems', 'of problems .', 'we are faced with', 'are faced with a', 'faced with a host', 'with a host of', 'a host of problems', 'host of problems .'] ['host', 'a']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'feel', 'that', 'way', 'about', 'you', '.', 'i just', 'just don', 'don t', 't feel', 'feel that', 'that way', 'way about', 'about you', 'you .', 'i just don', 'just don t', 'don t feel', 't feel that', 'feel that way', 'that way about', 'way about you', 'about you .', 'i just don t', 'just don t feel', 'don t feel that', 't feel that way', 'feel that way about', 'that way about you', 'way about you .'] ['you', 'feel']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 50 %
+0m 10s (- 68m 12s) (1000 0%) 0.7050
+0m 13s (- 46m 15s) (2000 0%) 0.7009
+0m 17s (- 38m 52s) (3000 0%) 0.6947
+0m 21s (- 35m 9s) (4000 1%) 0.6993
+0m 24s (- 32m 53s) (5000 1%) 0.6932
+0m 28s (- 31m 21s) (6000 1%) 0.6923
+0m 32s (- 30m 15s) (7000 1%) 0.6913
+0m 36s (- 29m 24s) (8000 2%) 0.6923
+0m 39s (- 28m 43s) (9000 2%) 0.6885
+0m 43s (- 28m 10s) (10000 2%) 0.6865
+0m 47s (- 27m 42s) (11000 2%) 0.6852
+0m 50s (- 27m 18s) (12000 3%) 0.6810
+0m 54s (- 26m 57s) (13000 3%) 0.6773
+0m 58s (- 26m 39s) (14000 3%) 0.6752
+1m 1s (- 26m 23s) (15000 3%) 0.6817
+1m 5s (- 26m 8s) (16000 4%) 0.6769
+1m 9s (- 25m 55s) (17000 4%) 0.6749
+1m 12s (- 25m 43s) (18000 4%) 0.6682
+1m 16s (- 25m 31s) (19000 4%) 0.6742
+1m 20s (- 25m 21s) (20000 5%) 0.6647
+1m 23s (- 25m 11s) (21000 5%) 0.6565
+1m 27s (- 25m 2s) (22000 5%) 0.6696
+1m 31s (- 24m 53s) (23000 5%) 0.6586
+1m 34s (- 24m 44s) (24000 6%) 0.6629
+1m 38s (- 24m 36s) (25000 6%) 0.6609
+1m 42s (- 24m 28s) (26000 6%) 0.6530
+1m 45s (- 24m 21s) (27000 6%) 0.6551
+1m 49s (- 24m 14s) (28000 7%) 0.6498
+1m 53s (- 24m 7s) (29000 7%) 0.6568
+1m 56s (- 24m 0s) (30000 7%) 0.6459
+2m 0s (- 23m 54s) (31000 7%) 0.6455
+2m 4s (- 23m 47s) (32000 8%) 0.6500
+2m 7s (- 23m 41s) (33000 8%) 0.6390
+2m 11s (- 23m 35s) (34000 8%) 0.6381
+2m 15s (- 23m 29s) (35000 8%) 0.6520
+2m 18s (- 23m 23s) (36000 9%) 0.6456
+2m 22s (- 23m 17s) (37000 9%) 0.6342
+2m 26s (- 23m 12s) (38000 9%) 0.6389
+2m 29s (- 23m 6s) (39000 9%) 0.6255
+Epoch 1/10 finished
+2m 40s (- 24m 0s) (40000 10%) 0.6421
+2m 43s (- 23m 53s) (41000 10%) 0.6345
+2m 47s (- 23m 47s) (42000 10%) 0.6339
+2m 51s (- 23m 40s) (43000 10%) 0.6104
+2m 54s (- 23m 34s) (44000 11%) 0.6255
+2m 58s (- 23m 27s) (45000 11%) 0.6311
+3m 2s (- 23m 21s) (46000 11%) 0.6320
+3m 5s (- 23m 15s) (47000 11%) 0.6232
+3m 9s (- 23m 9s) (48000 12%) 0.6144
+3m 13s (- 23m 3s) (49000 12%) 0.6264
+3m 16s (- 22m 57s) (50000 12%) 0.5993
+3m 20s (- 22m 51s) (51000 12%) 0.6152
+3m 24s (- 22m 46s) (52000 13%) 0.6219
+3m 27s (- 22m 40s) (53000 13%) 0.6088
+3m 31s (- 22m 35s) (54000 13%) 0.6412
+3m 35s (- 22m 29s) (55000 13%) 0.6196
+3m 38s (- 22m 24s) (56000 14%) 0.6247
+3m 42s (- 22m 19s) (57000 14%) 0.6089
+3m 46s (- 22m 13s) (58000 14%) 0.6101
+3m 49s (- 22m 8s) (59000 14%) 0.6090
+3m 53s (- 22m 3s) (60000 15%) 0.6089
+3m 57s (- 21m 58s) (61000 15%) 0.6249
+4m 0s (- 21m 53s) (62000 15%) 0.5927
+4m 4s (- 21m 48s) (63000 15%) 0.5916
+4m 8s (- 21m 43s) (64000 16%) 0.5999
+4m 12s (- 21m 38s) (65000 16%) 0.6009
+4m 15s (- 21m 33s) (66000 16%) 0.6005
+4m 19s (- 21m 28s) (67000 16%) 0.6068
+4m 23s (- 21m 23s) (68000 17%) 0.6171
+4m 26s (- 21m 18s) (69000 17%) 0.6178
+4m 30s (- 21m 14s) (70000 17%) 0.5801
+4m 34s (- 21m 9s) (71000 17%) 0.6071
+4m 37s (- 21m 4s) (72000 18%) 0.5956
+4m 41s (- 21m 0s) (73000 18%) 0.6154
+4m 45s (- 20m 55s) (74000 18%) 0.6044
+4m 48s (- 20m 50s) (75000 18%) 0.6195
+4m 52s (- 20m 46s) (76000 19%) 0.6041
+4m 56s (- 20m 41s) (77000 19%) 0.6062
+4m 59s (- 20m 37s) (78000 19%) 0.6039
+5m 3s (- 20m 32s) (79000 19%) 0.5933
+Epoch 2/10 finished
+5m 13s (- 20m 55s) (80000 20%) 0.5950
+5m 17s (- 20m 50s) (81000 20%) 0.5987
+5m 21s (- 20m 45s) (82000 20%) 0.5972
+5m 24s (- 20m 40s) (83000 20%) 0.5945
+5m 28s (- 20m 35s) (84000 21%) 0.5748
+5m 32s (- 20m 30s) (85000 21%) 0.6018
+5m 35s (- 20m 25s) (86000 21%) 0.5774
+5m 39s (- 20m 21s) (87000 21%) 0.6012
+5m 43s (- 20m 16s) (88000 22%) 0.5805
+5m 46s (- 20m 11s) (89000 22%) 0.5973
+5m 50s (- 20m 7s) (90000 22%) 0.5992
+5m 54s (- 20m 2s) (91000 22%) 0.5810
+5m 57s (- 19m 57s) (92000 23%) 0.5890
+6m 1s (- 19m 53s) (93000 23%) 0.5919
+6m 5s (- 19m 48s) (94000 23%) 0.5704
+6m 8s (- 19m 44s) (95000 23%) 0.5862
+6m 12s (- 19m 39s) (96000 24%) 0.5794
+6m 16s (- 19m 34s) (97000 24%) 0.5828
+6m 19s (- 19m 30s) (98000 24%) 0.5911
+6m 23s (- 19m 25s) (99000 24%) 0.5754
+6m 27s (- 19m 21s) (100000 25%) 0.5793
+6m 31s (- 19m 17s) (101000 25%) 0.5688
+6m 34s (- 19m 12s) (102000 25%) 0.5838
+6m 38s (- 19m 8s) (103000 25%) 0.5875
+6m 42s (- 19m 3s) (104000 26%) 0.5725
+6m 45s (- 18m 59s) (105000 26%) 0.5848
+6m 49s (- 18m 54s) (106000 26%) 0.5787
+6m 53s (- 18m 50s) (107000 26%) 0.5686
+6m 56s (- 18m 46s) (108000 27%) 0.5746
+7m 0s (- 18m 41s) (109000 27%) 0.5857
+7m 4s (- 18m 37s) (110000 27%) 0.5697
+7m 7s (- 18m 33s) (111000 27%) 0.6055
+7m 11s (- 18m 28s) (112000 28%) 0.5766
+7m 15s (- 18m 24s) (113000 28%) 0.5654
+7m 18s (- 18m 20s) (114000 28%) 0.5779
+7m 22s (- 18m 15s) (115000 28%) 0.5921
+7m 26s (- 18m 11s) (116000 29%) 0.5881
+7m 29s (- 18m 7s) (117000 29%) 0.5669
+7m 33s (- 18m 3s) (118000 29%) 0.5683
+7m 37s (- 17m 58s) (119000 29%) 0.5832
+Epoch 3/10 finished
+7m 47s (- 18m 10s) (120000 30%) 0.5522
+7m 51s (- 18m 5s) (121000 30%) 0.5561
+7m 54s (- 18m 1s) (122000 30%) 0.5657
+7m 58s (- 17m 56s) (123000 30%) 0.5672
+8m 2s (- 17m 52s) (124000 31%) 0.5574
+8m 5s (- 17m 48s) (125000 31%) 0.5879
+8m 9s (- 17m 43s) (126000 31%) 0.5821
+8m 13s (- 17m 39s) (127000 31%) 0.5633
+8m 16s (- 17m 35s) (128000 32%) 0.5560
+8m 20s (- 17m 30s) (129000 32%) 0.5598
+8m 24s (- 17m 26s) (130000 32%) 0.5653
+8m 27s (- 17m 22s) (131000 32%) 0.5475
+8m 31s (- 17m 17s) (132000 33%) 0.5694
+8m 35s (- 17m 13s) (133000 33%) 0.5796
+8m 38s (- 17m 9s) (134000 33%) 0.5702
+8m 42s (- 17m 5s) (135000 33%) 0.5628
+8m 46s (- 17m 0s) (136000 34%) 0.5753
+8m 49s (- 16m 56s) (137000 34%) 0.5668
+8m 53s (- 16m 52s) (138000 34%) 0.5674
+8m 57s (- 16m 48s) (139000 34%) 0.5678
+9m 0s (- 16m 43s) (140000 35%) 0.5495
+9m 4s (- 16m 39s) (141000 35%) 0.5531
+9m 8s (- 16m 35s) (142000 35%) 0.5669
+9m 11s (- 16m 31s) (143000 35%) 0.5531
+9m 15s (- 16m 27s) (144000 36%) 0.5649
+9m 19s (- 16m 22s) (145000 36%) 0.5465
+9m 22s (- 16m 18s) (146000 36%) 0.5500
+9m 26s (- 16m 14s) (147000 36%) 0.5601
+9m 30s (- 16m 10s) (148000 37%) 0.5859
+9m 33s (- 16m 6s) (149000 37%) 0.5468
+9m 37s (- 16m 2s) (150000 37%) 0.5608
+9m 41s (- 15m 58s) (151000 37%) 0.5279
+9m 44s (- 15m 53s) (152000 38%) 0.5559
+9m 48s (- 15m 49s) (153000 38%) 0.5419
+9m 52s (- 15m 45s) (154000 38%) 0.5760
+9m 55s (- 15m 41s) (155000 38%) 0.5556
+9m 59s (- 15m 37s) (156000 39%) 0.5617
+10m 3s (- 15m 33s) (157000 39%) 0.5719
+10m 7s (- 15m 29s) (158000 39%) 0.5495
+10m 10s (- 15m 25s) (159000 39%) 0.5739
+Epoch 4/10 finished
+10m 20s (- 15m 30s) (160000 40%) 0.5661
+10m 24s (- 15m 26s) (161000 40%) 0.5343
+10m 28s (- 15m 22s) (162000 40%) 0.5069
+10m 31s (- 15m 18s) (163000 40%) 0.5304
+10m 35s (- 15m 14s) (164000 41%) 0.5288
+10m 39s (- 15m 10s) (165000 41%) 0.5411
+10m 43s (- 15m 5s) (166000 41%) 0.5270
+10m 46s (- 15m 1s) (167000 41%) 0.5482
+10m 50s (- 14m 57s) (168000 42%) 0.5436
+10m 54s (- 14m 53s) (169000 42%) 0.5389
+10m 57s (- 14m 49s) (170000 42%) 0.5413
+11m 1s (- 14m 45s) (171000 42%) 0.5419
+11m 5s (- 14m 41s) (172000 43%) 0.5507
+11m 8s (- 14m 36s) (173000 43%) 0.5348
+11m 12s (- 14m 32s) (174000 43%) 0.5323
+11m 16s (- 14m 28s) (175000 43%) 0.5443
+11m 19s (- 14m 24s) (176000 44%) 0.5567
+11m 23s (- 14m 20s) (177000 44%) 0.5448
+11m 27s (- 14m 16s) (178000 44%) 0.5589
+11m 30s (- 14m 12s) (179000 44%) 0.5541
+11m 34s (- 14m 8s) (180000 45%) 0.5673
+11m 38s (- 14m 4s) (181000 45%) 0.5641
+11m 41s (- 14m 0s) (182000 45%) 0.5580
+11m 45s (- 13m 56s) (183000 45%) 0.5418
+11m 49s (- 13m 51s) (184000 46%) 0.5429
+11m 52s (- 13m 47s) (185000 46%) 0.5513
+11m 56s (- 13m 43s) (186000 46%) 0.5490
+12m 0s (- 13m 39s) (187000 46%) 0.5489
+12m 3s (- 13m 35s) (188000 47%) 0.5312
+12m 7s (- 13m 31s) (189000 47%) 0.5270
+12m 11s (- 13m 27s) (190000 47%) 0.5551
+12m 14s (- 13m 23s) (191000 47%) 0.5388
+12m 18s (- 13m 19s) (192000 48%) 0.5531
+12m 22s (- 13m 15s) (193000 48%) 0.5233
+12m 25s (- 13m 11s) (194000 48%) 0.5447
+12m 29s (- 13m 7s) (195000 48%) 0.5313
+12m 33s (- 13m 3s) (196000 49%) 0.5531
+12m 36s (- 12m 59s) (197000 49%) 0.5182
+12m 40s (- 12m 55s) (198000 49%) 0.5717
+12m 44s (- 12m 51s) (199000 49%) 0.5274
+Epoch 5/10 finished
+12m 54s (- 12m 54s) (200000 50%) 0.5560
+12m 58s (- 12m 50s) (201000 50%) 0.5278
+13m 2s (- 12m 46s) (202000 50%) 0.5026
+13m 5s (- 12m 42s) (203000 50%) 0.5198
+13m 9s (- 12m 38s) (204000 51%) 0.5158
+13m 13s (- 12m 33s) (205000 51%) 0.5291
+13m 16s (- 12m 29s) (206000 51%) 0.5126
+13m 20s (- 12m 25s) (207000 51%) 0.5274
+13m 24s (- 12m 21s) (208000 52%) 0.5373
+13m 27s (- 12m 17s) (209000 52%) 0.5179
+13m 31s (- 12m 13s) (210000 52%) 0.5285
+13m 35s (- 12m 9s) (211000 52%) 0.5382
+13m 38s (- 12m 5s) (212000 53%) 0.5170
+13m 42s (- 12m 1s) (213000 53%) 0.5086
+13m 46s (- 11m 57s) (214000 53%) 0.5097
+13m 49s (- 11m 53s) (215000 53%) 0.5282
+13m 53s (- 11m 49s) (216000 54%) 0.5531
+13m 57s (- 11m 45s) (217000 54%) 0.5170
+14m 1s (- 11m 41s) (218000 54%) 0.5202
+14m 4s (- 11m 37s) (219000 54%) 0.4868
+14m 8s (- 11m 33s) (220000 55%) 0.5336
+14m 12s (- 11m 29s) (221000 55%) 0.5186
+14m 15s (- 11m 25s) (222000 55%) 0.5452
+14m 19s (- 11m 21s) (223000 55%) 0.5188
+14m 23s (- 11m 17s) (224000 56%) 0.5324
+14m 26s (- 11m 13s) (225000 56%) 0.5231
+14m 30s (- 11m 9s) (226000 56%) 0.5260
+14m 34s (- 11m 5s) (227000 56%) 0.5684
+14m 37s (- 11m 1s) (228000 57%) 0.5299
+14m 41s (- 10m 57s) (229000 57%) 0.5232
+14m 45s (- 10m 53s) (230000 57%) 0.5404
+14m 48s (- 10m 49s) (231000 57%) 0.5443
+14m 52s (- 10m 45s) (232000 58%) 0.5303
+14m 56s (- 10m 41s) (233000 58%) 0.5209
+14m 59s (- 10m 37s) (234000 58%) 0.5292
+15m 3s (- 10m 33s) (235000 58%) 0.5272
+15m 7s (- 10m 29s) (236000 59%) 0.5142
+15m 10s (- 10m 25s) (237000 59%) 0.5254
+15m 14s (- 10m 21s) (238000 59%) 0.5165
+15m 18s (- 10m 18s) (239000 59%) 0.5299
+Epoch 6/10 finished
+15m 28s (- 10m 18s) (240000 60%) 0.5598
+15m 32s (- 10m 14s) (241000 60%) 0.5260
+15m 35s (- 10m 10s) (242000 60%) 0.4988
+15m 39s (- 10m 6s) (243000 60%) 0.4706
+15m 43s (- 10m 2s) (244000 61%) 0.5101
+15m 46s (- 9m 58s) (245000 61%) 0.5135
+15m 50s (- 9m 54s) (246000 61%) 0.4843
+15m 54s (- 9m 50s) (247000 61%) 0.5243
+15m 57s (- 9m 46s) (248000 62%) 0.5210
+16m 1s (- 9m 42s) (249000 62%) 0.4839
+16m 5s (- 9m 38s) (250000 62%) 0.4962
+16m 8s (- 9m 34s) (251000 62%) 0.4938
+16m 12s (- 9m 30s) (252000 63%) 0.5189
+16m 16s (- 9m 26s) (253000 63%) 0.5444
+16m 19s (- 9m 22s) (254000 63%) 0.5232
+16m 23s (- 9m 18s) (255000 63%) 0.5208
+16m 27s (- 9m 14s) (256000 64%) 0.5020
+16m 30s (- 9m 10s) (257000 64%) 0.4898
+16m 34s (- 9m 6s) (258000 64%) 0.4635
+16m 38s (- 9m 2s) (259000 64%) 0.4918
+16m 41s (- 8m 58s) (260000 65%) 0.5149
+16m 45s (- 8m 54s) (261000 65%) 0.5409
+16m 49s (- 8m 50s) (262000 65%) 0.5147
+16m 52s (- 8m 47s) (263000 65%) 0.5277
+16m 56s (- 8m 43s) (264000 66%) 0.5221
+17m 0s (- 8m 39s) (265000 66%) 0.5088
+17m 3s (- 8m 35s) (266000 66%) 0.5213
+17m 7s (- 8m 31s) (267000 66%) 0.5174
+17m 11s (- 8m 27s) (268000 67%) 0.5273
+17m 14s (- 8m 23s) (269000 67%) 0.5032
+17m 18s (- 8m 19s) (270000 67%) 0.5159
+17m 22s (- 8m 15s) (271000 67%) 0.4953
+17m 25s (- 8m 11s) (272000 68%) 0.5041
+17m 29s (- 8m 7s) (273000 68%) 0.5169
+17m 33s (- 8m 3s) (274000 68%) 0.5060
+17m 36s (- 7m 59s) (275000 68%) 0.5219
+17m 40s (- 7m 55s) (276000 69%) 0.5342
+17m 44s (- 7m 52s) (277000 69%) 0.5153
+17m 47s (- 7m 48s) (278000 69%) 0.5186
+17m 51s (- 7m 44s) (279000 69%) 0.5129
+Epoch 7/10 finished
+18m 2s (- 7m 43s) (280000 70%) 0.4994
+18m 5s (- 7m 39s) (281000 70%) 0.4792
+18m 9s (- 7m 35s) (282000 70%) 0.4741
+18m 13s (- 7m 31s) (283000 70%) 0.4802
+18m 16s (- 7m 27s) (284000 71%) 0.4918
+18m 20s (- 7m 23s) (285000 71%) 0.4908
+18m 24s (- 7m 19s) (286000 71%) 0.4755
+18m 27s (- 7m 15s) (287000 71%) 0.4947
+18m 31s (- 7m 11s) (288000 72%) 0.5082
+18m 35s (- 7m 7s) (289000 72%) 0.4896
+18m 38s (- 7m 3s) (290000 72%) 0.4870
+18m 42s (- 6m 59s) (291000 72%) 0.4616
+18m 46s (- 6m 56s) (292000 73%) 0.4893
+18m 49s (- 6m 52s) (293000 73%) 0.5015
+18m 53s (- 6m 48s) (294000 73%) 0.4979
+18m 57s (- 6m 44s) (295000 73%) 0.4848
+19m 0s (- 6m 40s) (296000 74%) 0.4963
+19m 4s (- 6m 36s) (297000 74%) 0.4593
+19m 8s (- 6m 32s) (298000 74%) 0.5108
+19m 12s (- 6m 28s) (299000 74%) 0.5059
+19m 15s (- 6m 24s) (300000 75%) 0.4992
+19m 19s (- 6m 20s) (301000 75%) 0.5340
+19m 23s (- 6m 16s) (302000 75%) 0.4881
+19m 26s (- 6m 12s) (303000 75%) 0.5134
+19m 30s (- 6m 9s) (304000 76%) 0.4997
+19m 34s (- 6m 5s) (305000 76%) 0.5249
+19m 37s (- 6m 1s) (306000 76%) 0.5108
+19m 41s (- 5m 57s) (307000 76%) 0.4927
+19m 45s (- 5m 53s) (308000 77%) 0.4721
+19m 48s (- 5m 49s) (309000 77%) 0.5076
+19m 52s (- 5m 45s) (310000 77%) 0.5117
+19m 56s (- 5m 41s) (311000 77%) 0.5146
+19m 59s (- 5m 37s) (312000 78%) 0.5054
+20m 3s (- 5m 33s) (313000 78%) 0.5091
+20m 7s (- 5m 30s) (314000 78%) 0.4909
+20m 10s (- 5m 26s) (315000 78%) 0.5124
+20m 14s (- 5m 22s) (316000 79%) 0.5021
+20m 18s (- 5m 18s) (317000 79%) 0.5012
+20m 21s (- 5m 14s) (318000 79%) 0.5264
+20m 25s (- 5m 10s) (319000 79%) 0.5076
+Epoch 8/10 finished
+20m 36s (- 5m 8s) (320000 80%) 0.5207
+20m 39s (- 5m 4s) (321000 80%) 0.4737
+20m 43s (- 5m 0s) (322000 80%) 0.4912
+20m 47s (- 4m 56s) (323000 80%) 0.4736
+20m 50s (- 4m 52s) (324000 81%) 0.4892
+20m 54s (- 4m 48s) (325000 81%) 0.4854
+20m 58s (- 4m 45s) (326000 81%) 0.4747
+21m 1s (- 4m 41s) (327000 81%) 0.4831
+21m 5s (- 4m 37s) (328000 82%) 0.4729
+21m 9s (- 4m 33s) (329000 82%) 0.4642
+21m 12s (- 4m 29s) (330000 82%) 0.4718
+21m 16s (- 4m 25s) (331000 82%) 0.4958
+21m 20s (- 4m 21s) (332000 83%) 0.4796
+21m 23s (- 4m 17s) (333000 83%) 0.4802
+21m 27s (- 4m 13s) (334000 83%) 0.4906
+21m 31s (- 4m 9s) (335000 83%) 0.5011
+21m 34s (- 4m 6s) (336000 84%) 0.4941
+21m 38s (- 4m 2s) (337000 84%) 0.4750
+21m 42s (- 3m 58s) (338000 84%) 0.4771
+21m 45s (- 3m 54s) (339000 84%) 0.4697
+21m 49s (- 3m 50s) (340000 85%) 0.4539
+21m 53s (- 3m 46s) (341000 85%) 0.5118
+21m 56s (- 3m 42s) (342000 85%) 0.5111
+22m 0s (- 3m 38s) (343000 85%) 0.5080
+22m 4s (- 3m 35s) (344000 86%) 0.4880
+22m 7s (- 3m 31s) (345000 86%) 0.4666
+22m 11s (- 3m 27s) (346000 86%) 0.4735
+22m 15s (- 3m 23s) (347000 86%) 0.4959
+22m 18s (- 3m 19s) (348000 87%) 0.4731
+22m 22s (- 3m 15s) (349000 87%) 0.5309
+22m 26s (- 3m 11s) (350000 87%) 0.4720
+22m 29s (- 3m 7s) (351000 87%) 0.4916
+22m 33s (- 3m 4s) (352000 88%) 0.4681
+22m 37s (- 3m 0s) (353000 88%) 0.4852
+22m 40s (- 2m 56s) (354000 88%) 0.5030
+22m 44s (- 2m 52s) (355000 88%) 0.4608
+22m 48s (- 2m 48s) (356000 89%) 0.4978
+22m 52s (- 2m 44s) (357000 89%) 0.4999
+22m 55s (- 2m 40s) (358000 89%) 0.4810
+22m 59s (- 2m 36s) (359000 89%) 0.4914
+Epoch 9/10 finished
+23m 9s (- 2m 33s) (360000 90%) 0.4755
+23m 13s (- 2m 29s) (361000 90%) 0.4575
+23m 17s (- 2m 26s) (362000 90%) 0.4595
+23m 20s (- 2m 22s) (363000 90%) 0.4471
+23m 24s (- 2m 18s) (364000 91%) 0.4655
+23m 28s (- 2m 14s) (365000 91%) 0.4482
+23m 31s (- 2m 10s) (366000 91%) 0.4685
+23m 35s (- 2m 6s) (367000 91%) 0.4583
+23m 39s (- 2m 2s) (368000 92%) 0.4539
+23m 42s (- 1m 58s) (369000 92%) 0.4843
+23m 46s (- 1m 55s) (370000 92%) 0.4829
+23m 50s (- 1m 51s) (371000 92%) 0.4620
+23m 53s (- 1m 47s) (372000 93%) 0.4915
+23m 57s (- 1m 43s) (373000 93%) 0.4393
+24m 1s (- 1m 39s) (374000 93%) 0.4624
+24m 4s (- 1m 35s) (375000 93%) 0.4690
+24m 8s (- 1m 31s) (376000 94%) 0.4800
+24m 12s (- 1m 28s) (377000 94%) 0.4692
+24m 15s (- 1m 24s) (378000 94%) 0.4690
+24m 19s (- 1m 20s) (379000 94%) 0.4871
+24m 23s (- 1m 16s) (380000 95%) 0.4859
+24m 26s (- 1m 12s) (381000 95%) 0.4796
+24m 30s (- 1m 8s) (382000 95%) 0.4691
+24m 34s (- 1m 4s) (383000 95%) 0.4984
+24m 37s (- 1m 1s) (384000 96%) 0.4912
+24m 41s (- 0m 57s) (385000 96%) 0.4859
+24m 45s (- 0m 53s) (386000 96%) 0.4450
+24m 48s (- 0m 49s) (387000 96%) 0.4674
+24m 52s (- 0m 45s) (388000 97%) 0.4786
+24m 56s (- 0m 41s) (389000 97%) 0.4734
+24m 59s (- 0m 37s) (390000 97%) 0.5057
+25m 3s (- 0m 34s) (391000 97%) 0.4798
+25m 7s (- 0m 30s) (392000 98%) 0.4703
+25m 10s (- 0m 26s) (393000 98%) 0.4733
+25m 14s (- 0m 22s) (394000 98%) 0.4887
+25m 18s (- 0m 18s) (395000 98%) 0.4828
+25m 22s (- 0m 14s) (396000 99%) 0.4600
+25m 25s (- 0m 10s) (397000 99%) 0.4994
+25m 29s (- 0m 7s) (398000 99%) 0.4908
+25m 33s (- 0m 3s) (399000 99%) 0.4718
+Epoch 10/10 finished
+Evaluate randomly on training sentences -- word order:
+> ['tom', 'didn', 't', 'expect', 'to', 'sell', 'his', 'old', 'car', 'for', 'so', 'much', 'money', '.', 'tom didn', 'didn t', 't expect', 'expect to', 'to sell', 'sell his', 'his old', 'old car', 'car for', 'for so', 'so much', 'much money', 'money .', 'tom didn t', 'didn t expect', 't expect to', 'expect to sell', 'to sell his', 'sell his old', 'his old car', 'old car for', 'car for so', 'for so much', 'so much money', 'much money .', 'tom didn t expect', 'didn t expect to', 't expect to sell', 'expect to sell his', 'to sell his old', 'sell his old car', 'his old car for', 'old car for so', 'car for so much', 'for so much money', 'so much money .'] ['money', 'car']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'saw', 'something', '.', 'we saw', 'saw something', 'something .', 'we saw something', 'saw something .', 'we saw something .'] ['saw', 'something']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['classes', 'start', 'at', 'eight', 'in', 'the', 'morning', '.', 'classes start', 'start at', 'at eight', 'eight in', 'in the', 'the morning', 'morning .', 'classes start at', 'start at eight', 'at eight in', 'eight in the', 'in the morning', 'the morning .', 'classes start at eight', 'start at eight in', 'at eight in the', 'eight in the morning', 'in the morning .'] ['morning', 'in']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'do', 'you', 'pronounce', 'your', 'name', '?', 'how do', 'do you', 'you pronounce', 'pronounce your', 'your name', 'name ?', 'how do you', 'do you pronounce', 'you pronounce your', 'pronounce your name', 'your name ?', 'how do you pronounce', 'do you pronounce your', 'you pronounce your name', 'pronounce your name ?'] ['how', 'do']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'll', 'be', 'all', 'right', '.', 'you ll', 'll be', 'be all', 'all right', 'right .', 'you ll be', 'll be all', 'be all right', 'all right .', 'you ll be all', 'll be all right', 'be all right .'] ['you', 'll']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'fixed', 'myself', 'something', 'to', 'eat', '.', 'i fixed', 'fixed myself', 'myself something', 'something to', 'to eat', 'eat .', 'i fixed myself', 'fixed myself something', 'myself something to', 'something to eat', 'to eat .', 'i fixed myself something', 'fixed myself something to', 'myself something to eat', 'something to eat .'] ['to', 'eat']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'think', 'it', 's', 'necessary', 'to', 'do', 'that', '.', 'i don', 'don t', 't think', 'think it', 'it s', 's necessary', 'necessary to', 'to do', 'do that', 'that .', 'i don t', 'don t think', 't think it', 'think it s', 'it s necessary', 's necessary to', 'necessary to do', 'to do that', 'do that .', 'i don t think', 'don t think it', 't think it s', 'think it s necessary', 'it s necessary to', 's necessary to do', 'necessary to do that', 'to do that .'] ['do', 't']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['why', 'are', 'we', 'wasting', 'time', 'like', 'this', '?', 'why are', 'are we', 'we wasting', 'wasting time', 'time like', 'like this', 'this ?', 'why are we', 'are we wasting', 'we wasting time', 'wasting time like', 'time like this', 'like this ?', 'why are we wasting', 'are we wasting time', 'we wasting time like', 'wasting time like this', 'time like this ?'] ['wasting', 'like']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'is', 'quick', 'at', 'everything', '.', 'she is', 'is quick', 'quick at', 'at everything', 'everything .', 'she is quick', 'is quick at', 'quick at everything', 'at everything .', 'she is quick at', 'is quick at everything', 'quick at everything .'] ['is', 'at']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 're', 'all', 'here', '.', 'they re', 're all', 'all here', 'here .', 'they re all', 're all here', 'all here .', 'they re all here', 're all here .'] ['all', 'they']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['you', 'can', 'not', 'be', 'serious', '.', 'you can', 'can not', 'not be', 'be serious', 'serious .', 'you can not', 'can not be', 'not be serious', 'be serious .', 'you can not be', 'can not be serious', 'not be serious .'] ['be', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['can', 'you', 'climb', 'up', 'that', 'tree', '?', 'can you', 'you climb', 'climb up', 'up that', 'that tree', 'tree ?', 'can you climb', 'you climb up', 'climb up that', 'up that tree', 'that tree ?', 'can you climb up', 'you climb up that', 'climb up that tree', 'up that tree ?'] ['climb', 'you']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['stir', 'the', 'soup', '.', 'stir the', 'the soup', 'soup .', 'stir the soup', 'the soup .', 'stir the soup .'] ['soup', 'the']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 're', 'adorable', '.', 'you re', 're adorable', 'adorable .', 'you re adorable', 're adorable .', 'you re adorable .'] ['re', 'adorable']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'want', 'you', 'to', 'be', 'upset', '.', 'i don', 'don t', 't want', 'want you', 'you to', 'to be', 'be upset', 'upset .', 'i don t', 'don t want', 't want you', 'want you to', 'you to be', 'to be upset', 'be upset .', 'i don t want', 'don t want you', 't want you to', 'want you to be', 'you to be upset', 'to be upset .'] ['be', 'upset']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'do', 'it', 'again', '.', 'i just', 'just don', 'don t', 't want', 'want to', 'to do', 'do it', 'it again', 'again .', 'i just don', 'just don t', 'don t want', 't want to', 'want to do', 'to do it', 'do it again', 'it again .', 'i just don t', 'just don t want', 'don t want to', 't want to do', 'want to do it', 'to do it again', 'do it again .'] ['it', 'again']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'happened', 'so', 'fast', '.', 'it happened', 'happened so', 'so fast', 'fast .', 'it happened so', 'happened so fast', 'so fast .', 'it happened so fast', 'happened so fast .'] ['fast', 'so']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'have', 'such', 'beautiful', 'eyes', '.', 'you have', 'have such', 'such beautiful', 'beautiful eyes', 'eyes .', 'you have such', 'have such beautiful', 'such beautiful eyes', 'beautiful eyes .', 'you have such beautiful', 'have such beautiful eyes', 'such beautiful eyes .'] ['beautiful', 'such']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['has', 'the', 'jury', 'reached', 'a', 'verdict', '?', 'has the', 'the jury', 'jury reached', 'reached a', 'a verdict', 'verdict ?', 'has the jury', 'the jury reached', 'jury reached a', 'reached a verdict', 'a verdict ?', 'has the jury reached', 'the jury reached a', 'jury reached a verdict', 'reached a verdict ?'] ['verdict', 'has']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'betrayed', 'you', '.', 'she betrayed', 'betrayed you', 'you .', 'she betrayed you', 'betrayed you .', 'she betrayed you .'] ['betrayed', 'you']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 69 %
+Finished
+
+hpc mode: True
+order: 5
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences -- word order:
+> ['all', 'i', 'want', 'now', 'is', 'a', 'glass', 'of', 'water', '.', 'all i', 'i want', 'want now', 'now is', 'is a', 'a glass', 'glass of', 'of water', 'water .', 'all i want', 'i want now', 'want now is', 'now is a', 'is a glass', 'a glass of', 'glass of water', 'of water .', 'all i want now', 'i want now is', 'want now is a', 'now is a glass', 'is a glass of', 'a glass of water', 'glass of water .', 'all i want now is', 'i want now is a', 'want now is a glass', 'now is a glass of', 'is a glass of water', 'a glass of water .'] ['water', 'of']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'apt', 'to', 'make', 'mistakes', '.', 'we are', 'are apt', 'apt to', 'to make', 'make mistakes', 'mistakes .', 'we are apt', 'are apt to', 'apt to make', 'to make mistakes', 'make mistakes .', 'we are apt to', 'are apt to make', 'apt to make mistakes', 'to make mistakes .', 'we are apt to make', 'are apt to make mistakes', 'apt to make mistakes .'] ['apt', 'mistakes']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .', 'they come from the same', 'come from the same country', 'from the same country .'] ['same', 'the']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'didn', 't', 'know', 'how', 'to', 'express', 'himself', '.', 'he didn', 'didn t', 't know', 'know how', 'how to', 'to express', 'express himself', 'himself .', 'he didn t', 'didn t know', 't know how', 'know how to', 'how to express', 'to express himself', 'express himself .', 'he didn t know', 'didn t know how', 't know how to', 'know how to express', 'how to express himself', 'to express himself .', 'he didn t know how', 'didn t know how to', 't know how to express', 'know how to express himself', 'how to express himself .'] ['know', 'express']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['the', 'car', 'isn', 't', 'worth', 'repairing', '.', 'the car', 'car isn', 'isn t', 't worth', 'worth repairing', 'repairing .', 'the car isn', 'car isn t', 'isn t worth', 't worth repairing', 'worth repairing .', 'the car isn t', 'car isn t worth', 'isn t worth repairing', 't worth repairing .', 'the car isn t worth', 'car isn t worth repairing', 'isn t worth repairing .'] ['isn', 't']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'll', 'cut', 'your', 'head', 'off', '!', 'i ll', 'll cut', 'cut your', 'your head', 'head off', 'off !', 'i ll cut', 'll cut your', 'cut your head', 'your head off', 'head off !', 'i ll cut your', 'll cut your head', 'cut your head off', 'your head off !', 'i ll cut your head', 'll cut your head off', 'cut your head off !'] ['off', 'll']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'like', 'this', 'book', '.', 'i like', 'like this', 'this book', 'book .', 'i like this', 'like this book', 'this book .', 'i like this book', 'like this book .', 'i like this book .'] ['book', 'this']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['are', 'you', 'still', 'working', 'for', 'tom', '?', 'are you', 'you still', 'still working', 'working for', 'for tom', 'tom ?', 'are you still', 'you still working', 'still working for', 'working for tom', 'for tom ?', 'are you still working', 'you still working for', 'still working for tom', 'working for tom ?', 'are you still working for', 'you still working for tom', 'still working for tom ?'] ['for', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'did', 'you', 'get', 'a', 'naked', 'picture', 'of', 'me', '?', 'how did', 'did you', 'you get', 'get a', 'a naked', 'naked picture', 'picture of', 'of me', 'me ?', 'how did you', 'did you get', 'you get a', 'get a naked', 'a naked picture', 'naked picture of', 'picture of me', 'of me ?', 'how did you get', 'did you get a', 'you get a naked', 'get a naked picture', 'a naked picture of', 'naked picture of me', 'picture of me ?', 'how did you get a', 'did you get a naked', 'you get a naked picture', 'get a naked picture of', 'a naked picture of me', 'naked picture of me ?'] ['picture', 'of']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'wouldn', 't', 'take', 'all', 'that', 'long', 'to', 'explain', '.', 'it wouldn', 'wouldn t', 't take', 'take all', 'all that', 'that long', 'long to', 'to explain', 'explain .', 'it wouldn t', 'wouldn t take', 't take all', 'take all that', 'all that long', 'that long to', 'long to explain', 'to explain .', 'it wouldn t take', 'wouldn t take all', 't take all that', 'take all that long', 'all that long to', 'that long to explain', 'long to explain .', 'it wouldn t take all', 'wouldn t take all that', 't take all that long', 'take all that long to', 'all that long to explain', 'that long to explain .'] ['to', 'that']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['let', 'me', 'pay', '.', 'let me', 'me pay', 'pay .', 'let me pay', 'me pay .', 'let me pay .'] ['let', 'pay']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .', 'now that my brother is', 'that my brother is a', 'my brother is a university', 'brother is a university student', 'is a university student he', 'a university student he has', 'university student he has to', 'student he has to do', 'he has to do a', 'has to do a lot', 'to do a lot of', 'do a lot of reading', 'a lot of reading .'] ['to', 'reading']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['would', 'he', 'like', 'that', '?', 'would he', 'he like', 'like that', 'that ?', 'would he like', 'he like that', 'like that ?', 'would he like that', 'he like that ?', 'would he like that ?'] ['he', 'that']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?', 'does anyone know japanese ?'] ['japanese', 'anyone']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .', 'he narrowly escaped being run', 'narrowly escaped being run over', 'escaped being run over .'] ['over', 'narrowly']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?', 'when was the last time', 'was the last time you', 'the last time you went', 'last time you went to', 'time you went to an', 'you went to an art', 'went to an art gallery', 'to an art gallery ?'] ['an', 'was']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .', 'his house was sold for', 'house was sold for .'] ['for', 'sold']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .', 'i m not mad .'] ['not', 'mad']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'are', 'faced', 'with', 'a', 'host', 'of', 'problems', '.', 'we are', 'are faced', 'faced with', 'with a', 'a host', 'host of', 'of problems', 'problems .', 'we are faced', 'are faced with', 'faced with a', 'with a host', 'a host of', 'host of problems', 'of problems .', 'we are faced with', 'are faced with a', 'faced with a host', 'with a host of', 'a host of problems', 'host of problems .', 'we are faced with a', 'are faced with a host', 'faced with a host of', 'with a host of problems', 'a host of problems .'] ['host', 'a']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'feel', 'that', 'way', 'about', 'you', '.', 'i just', 'just don', 'don t', 't feel', 'feel that', 'that way', 'way about', 'about you', 'you .', 'i just don', 'just don t', 'don t feel', 't feel that', 'feel that way', 'that way about', 'way about you', 'about you .', 'i just don t', 'just don t feel', 'don t feel that', 't feel that way', 'feel that way about', 'that way about you', 'way about you .', 'i just don t feel', 'just don t feel that', 'don t feel that way', 't feel that way about', 'feel that way about you', 'that way about you .'] ['you', 'feel']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 50 %
+0m 10s (- 68m 29s) (1000 0%) 0.7132
+0m 13s (- 46m 23s) (2000 0%) 0.6982
+0m 17s (- 38m 57s) (3000 0%) 0.6930
+0m 21s (- 35m 13s) (4000 1%) 0.6961
+0m 25s (- 32m 56s) (5000 1%) 0.6933
+0m 28s (- 31m 25s) (6000 1%) 0.6931
+0m 32s (- 30m 18s) (7000 1%) 0.6892
+0m 36s (- 29m 27s) (8000 2%) 0.6948
+0m 39s (- 28m 46s) (9000 2%) 0.6873
+0m 43s (- 28m 13s) (10000 2%) 0.6863
+0m 47s (- 27m 45s) (11000 2%) 0.6838
+0m 50s (- 27m 21s) (12000 3%) 0.6845
+0m 54s (- 27m 0s) (13000 3%) 0.6786
+0m 58s (- 26m 42s) (14000 3%) 0.6802
+1m 1s (- 26m 25s) (15000 3%) 0.6804
+1m 5s (- 26m 11s) (16000 4%) 0.6829
+1m 9s (- 25m 57s) (17000 4%) 0.6763
+1m 12s (- 25m 45s) (18000 4%) 0.6776
+1m 16s (- 25m 33s) (19000 4%) 0.6749
+1m 20s (- 25m 22s) (20000 5%) 0.6700
+1m 23s (- 25m 12s) (21000 5%) 0.6645
+1m 27s (- 25m 3s) (22000 5%) 0.6765
+1m 31s (- 24m 54s) (23000 5%) 0.6602
+1m 34s (- 24m 45s) (24000 6%) 0.6712
+1m 38s (- 24m 37s) (25000 6%) 0.6671
+1m 42s (- 24m 29s) (26000 6%) 0.6550
+1m 45s (- 24m 22s) (27000 6%) 0.6580
+1m 49s (- 24m 15s) (28000 7%) 0.6563
+1m 53s (- 24m 8s) (29000 7%) 0.6614
+1m 56s (- 24m 1s) (30000 7%) 0.6517
+2m 0s (- 23m 54s) (31000 7%) 0.6468
+2m 4s (- 23m 48s) (32000 8%) 0.6541
+2m 7s (- 23m 42s) (33000 8%) 0.6415
+2m 11s (- 23m 36s) (34000 8%) 0.6482
+2m 15s (- 23m 30s) (35000 8%) 0.6576
+2m 18s (- 23m 24s) (36000 9%) 0.6523
+2m 22s (- 23m 19s) (37000 9%) 0.6469
+2m 26s (- 23m 13s) (38000 9%) 0.6475
+2m 30s (- 23m 8s) (39000 9%) 0.6328
+Epoch 1/10 finished
+2m 40s (- 24m 3s) (40000 10%) 0.6514
+2m 44s (- 23m 56s) (41000 10%) 0.6309
+2m 47s (- 23m 49s) (42000 10%) 0.6408
+2m 51s (- 23m 43s) (43000 10%) 0.6354
+2m 55s (- 23m 36s) (44000 11%) 0.6371
+2m 58s (- 23m 30s) (45000 11%) 0.6499
+3m 2s (- 23m 24s) (46000 11%) 0.6466
+3m 6s (- 23m 17s) (47000 11%) 0.6414
+3m 9s (- 23m 11s) (48000 12%) 0.6197
+3m 13s (- 23m 5s) (49000 12%) 0.6292
+3m 17s (- 22m 59s) (50000 12%) 0.6140
+3m 20s (- 22m 54s) (51000 12%) 0.6204
+3m 24s (- 22m 48s) (52000 13%) 0.6305
+3m 28s (- 22m 42s) (53000 13%) 0.6326
+3m 31s (- 22m 37s) (54000 13%) 0.6479
+3m 35s (- 22m 31s) (55000 13%) 0.6302
+3m 39s (- 22m 26s) (56000 14%) 0.6342
+3m 42s (- 22m 20s) (57000 14%) 0.6176
+3m 46s (- 22m 15s) (58000 14%) 0.6099
+3m 50s (- 22m 10s) (59000 14%) 0.6163
+3m 53s (- 22m 4s) (60000 15%) 0.6215
+3m 57s (- 21m 59s) (61000 15%) 0.6321
+4m 1s (- 21m 54s) (62000 15%) 0.6026
+4m 4s (- 21m 49s) (63000 15%) 0.5968
+4m 8s (- 21m 44s) (64000 16%) 0.6177
+4m 12s (- 21m 39s) (65000 16%) 0.6322
+4m 15s (- 21m 34s) (66000 16%) 0.6059
+4m 19s (- 21m 29s) (67000 16%) 0.6212
+4m 23s (- 21m 24s) (68000 17%) 0.6309
+4m 26s (- 21m 20s) (69000 17%) 0.6231
+4m 30s (- 21m 15s) (70000 17%) 0.6042
+4m 34s (- 21m 10s) (71000 17%) 0.6196
+4m 37s (- 21m 5s) (72000 18%) 0.6155
+4m 41s (- 21m 1s) (73000 18%) 0.6172
+4m 45s (- 20m 56s) (74000 18%) 0.6193
+4m 48s (- 20m 51s) (75000 18%) 0.6147
+4m 52s (- 20m 47s) (76000 19%) 0.6193
+4m 56s (- 20m 42s) (77000 19%) 0.6121
+5m 0s (- 20m 37s) (78000 19%) 0.6061
+5m 3s (- 20m 33s) (79000 19%) 0.6031
+Epoch 2/10 finished
+5m 14s (- 20m 55s) (80000 20%) 0.6037
+5m 17s (- 20m 50s) (81000 20%) 0.6199
+5m 21s (- 20m 46s) (82000 20%) 0.5956
+5m 25s (- 20m 41s) (83000 20%) 0.6039
+5m 28s (- 20m 36s) (84000 21%) 0.6060
+5m 32s (- 20m 31s) (85000 21%) 0.6206
+5m 36s (- 20m 26s) (86000 21%) 0.6105
+5m 39s (- 20m 21s) (87000 21%) 0.6112
+5m 43s (- 20m 17s) (88000 22%) 0.5944
+5m 47s (- 20m 12s) (89000 22%) 0.5983
+5m 50s (- 20m 7s) (90000 22%) 0.5926
+5m 54s (- 20m 3s) (91000 22%) 0.6086
+5m 58s (- 19m 58s) (92000 23%) 0.5856
+6m 1s (- 19m 53s) (93000 23%) 0.6003
+6m 5s (- 19m 49s) (94000 23%) 0.5737
+6m 9s (- 19m 44s) (95000 23%) 0.5915
+6m 12s (- 19m 40s) (96000 24%) 0.5901
+6m 16s (- 19m 35s) (97000 24%) 0.5920
+6m 20s (- 19m 31s) (98000 24%) 0.6087
+6m 23s (- 19m 26s) (99000 24%) 0.5842
+6m 27s (- 19m 22s) (100000 25%) 0.5759
+6m 31s (- 19m 17s) (101000 25%) 0.5897
+6m 34s (- 19m 13s) (102000 25%) 0.6085
+6m 38s (- 19m 8s) (103000 25%) 0.6003
+6m 42s (- 19m 4s) (104000 26%) 0.5893
+6m 45s (- 18m 59s) (105000 26%) 0.5849
+6m 49s (- 18m 55s) (106000 26%) 0.5988
+6m 53s (- 18m 51s) (107000 26%) 0.5846
+6m 56s (- 18m 46s) (108000 27%) 0.5813
+7m 0s (- 18m 42s) (109000 27%) 0.6005
+7m 4s (- 18m 38s) (110000 27%) 0.5924
+7m 7s (- 18m 33s) (111000 27%) 0.6229
+7m 11s (- 18m 29s) (112000 28%) 0.5978
+7m 15s (- 18m 25s) (113000 28%) 0.5936
+7m 18s (- 18m 20s) (114000 28%) 0.5982
+7m 22s (- 18m 16s) (115000 28%) 0.6006
+7m 26s (- 18m 12s) (116000 29%) 0.5969
+7m 29s (- 18m 7s) (117000 29%) 0.5820
+7m 33s (- 18m 3s) (118000 29%) 0.5743
+7m 37s (- 17m 59s) (119000 29%) 0.5849
+Epoch 3/10 finished
+7m 47s (- 18m 10s) (120000 30%) 0.5790
+7m 51s (- 18m 6s) (121000 30%) 0.5624
+7m 55s (- 18m 2s) (122000 30%) 0.5690
+7m 58s (- 17m 57s) (123000 30%) 0.5865
+8m 2s (- 17m 53s) (124000 31%) 0.5783
+8m 6s (- 17m 48s) (125000 31%) 0.6049
+8m 9s (- 17m 44s) (126000 31%) 0.5928
+8m 13s (- 17m 40s) (127000 31%) 0.5792
+8m 17s (- 17m 35s) (128000 32%) 0.5754
+8m 20s (- 17m 31s) (129000 32%) 0.5806
+8m 24s (- 17m 27s) (130000 32%) 0.5909
+8m 28s (- 17m 22s) (131000 32%) 0.5667
+8m 31s (- 17m 18s) (132000 33%) 0.5891
+8m 35s (- 17m 14s) (133000 33%) 0.5898
+8m 39s (- 17m 10s) (134000 33%) 0.5778
+8m 42s (- 17m 5s) (135000 33%) 0.5638
+8m 46s (- 17m 1s) (136000 34%) 0.5804
+8m 50s (- 16m 57s) (137000 34%) 0.5842
+8m 53s (- 16m 53s) (138000 34%) 0.5875
+8m 57s (- 16m 48s) (139000 34%) 0.5828
+9m 1s (- 16m 44s) (140000 35%) 0.5820
+9m 4s (- 16m 40s) (141000 35%) 0.5751
+9m 8s (- 16m 36s) (142000 35%) 0.5778
+9m 12s (- 16m 31s) (143000 35%) 0.5830
+9m 15s (- 16m 27s) (144000 36%) 0.5731
+9m 19s (- 16m 23s) (145000 36%) 0.5411
+9m 23s (- 16m 19s) (146000 36%) 0.5826
+9m 26s (- 16m 15s) (147000 36%) 0.5888
+9m 30s (- 16m 11s) (148000 37%) 0.5874
+9m 34s (- 16m 6s) (149000 37%) 0.5692
+9m 37s (- 16m 2s) (150000 37%) 0.5662
+9m 41s (- 15m 58s) (151000 37%) 0.5547
+9m 45s (- 15m 54s) (152000 38%) 0.5583
+9m 49s (- 15m 50s) (153000 38%) 0.5602
+9m 52s (- 15m 46s) (154000 38%) 0.5932
+9m 56s (- 15m 42s) (155000 38%) 0.5695
+10m 0s (- 15m 38s) (156000 39%) 0.5605
+10m 3s (- 15m 33s) (157000 39%) 0.5915
+10m 7s (- 15m 29s) (158000 39%) 0.5750
+10m 11s (- 15m 25s) (159000 39%) 0.5914
+Epoch 4/10 finished
+10m 21s (- 15m 31s) (160000 40%) 0.5684
+10m 25s (- 15m 27s) (161000 40%) 0.5489
+10m 28s (- 15m 23s) (162000 40%) 0.5500
+10m 32s (- 15m 19s) (163000 40%) 0.5494
+10m 36s (- 15m 14s) (164000 41%) 0.5708
+10m 39s (- 15m 10s) (165000 41%) 0.5627
+10m 43s (- 15m 6s) (166000 41%) 0.5459
+10m 47s (- 15m 2s) (167000 41%) 0.5748
+10m 50s (- 14m 58s) (168000 42%) 0.5435
+10m 54s (- 14m 54s) (169000 42%) 0.5727
+10m 58s (- 14m 50s) (170000 42%) 0.5550
+11m 1s (- 14m 45s) (171000 42%) 0.5611
+11m 5s (- 14m 41s) (172000 43%) 0.5739
+11m 9s (- 14m 37s) (173000 43%) 0.5570
+11m 12s (- 14m 33s) (174000 43%) 0.5588
+11m 16s (- 14m 29s) (175000 43%) 0.5450
+11m 20s (- 14m 25s) (176000 44%) 0.5634
+11m 23s (- 14m 21s) (177000 44%) 0.5542
+11m 27s (- 14m 17s) (178000 44%) 0.5697
+11m 31s (- 14m 12s) (179000 44%) 0.5667
+11m 34s (- 14m 8s) (180000 45%) 0.5715
+11m 38s (- 14m 4s) (181000 45%) 0.5834
+11m 42s (- 14m 0s) (182000 45%) 0.5701
+11m 45s (- 13m 56s) (183000 45%) 0.5742
+11m 49s (- 13m 52s) (184000 46%) 0.5495
+11m 53s (- 13m 48s) (185000 46%) 0.5612
+11m 56s (- 13m 44s) (186000 46%) 0.5743
+12m 0s (- 13m 40s) (187000 46%) 0.5701
+12m 4s (- 13m 36s) (188000 47%) 0.5595
+12m 8s (- 13m 32s) (189000 47%) 0.5479
+12m 11s (- 13m 28s) (190000 47%) 0.5650
+12m 15s (- 13m 24s) (191000 47%) 0.5521
+12m 19s (- 13m 20s) (192000 48%) 0.5700
+12m 22s (- 13m 16s) (193000 48%) 0.5521
+12m 26s (- 13m 12s) (194000 48%) 0.5679
+12m 30s (- 13m 8s) (195000 48%) 0.5544
+12m 33s (- 13m 3s) (196000 49%) 0.5667
+12m 37s (- 12m 59s) (197000 49%) 0.5514
+12m 41s (- 12m 55s) (198000 49%) 0.5738
+12m 44s (- 12m 51s) (199000 49%) 0.5318
+Epoch 5/10 finished
+12m 55s (- 12m 54s) (200000 50%) 0.5695
+12m 59s (- 12m 50s) (201000 50%) 0.5315
+13m 2s (- 12m 46s) (202000 50%) 0.5251
+13m 6s (- 12m 42s) (203000 50%) 0.5392
+13m 10s (- 12m 38s) (204000 51%) 0.5314
+13m 13s (- 12m 34s) (205000 51%) 0.5456
+13m 17s (- 12m 30s) (206000 51%) 0.5081
+13m 21s (- 12m 26s) (207000 51%) 0.5524
+13m 24s (- 12m 22s) (208000 52%) 0.5514
+13m 28s (- 12m 18s) (209000 52%) 0.5441
+13m 32s (- 12m 14s) (210000 52%) 0.5315
+13m 35s (- 12m 10s) (211000 52%) 0.5560
+13m 39s (- 12m 6s) (212000 53%) 0.5326
+13m 43s (- 12m 2s) (213000 53%) 0.5261
+13m 46s (- 11m 58s) (214000 53%) 0.5252
+13m 50s (- 11m 54s) (215000 53%) 0.5516
+13m 54s (- 11m 50s) (216000 54%) 0.5765
+13m 57s (- 11m 46s) (217000 54%) 0.5480
+14m 1s (- 11m 42s) (218000 54%) 0.5572
+14m 5s (- 11m 38s) (219000 54%) 0.5270
+14m 8s (- 11m 34s) (220000 55%) 0.5514
+14m 12s (- 11m 30s) (221000 55%) 0.5482
+14m 16s (- 11m 26s) (222000 55%) 0.5532
+14m 20s (- 11m 22s) (223000 55%) 0.5458
+14m 23s (- 11m 18s) (224000 56%) 0.5369
+14m 27s (- 11m 14s) (225000 56%) 0.5432
+14m 31s (- 11m 10s) (226000 56%) 0.5381
+14m 34s (- 11m 6s) (227000 56%) 0.5715
+14m 38s (- 11m 2s) (228000 57%) 0.5558
+14m 42s (- 10m 58s) (229000 57%) 0.5560
+14m 45s (- 10m 54s) (230000 57%) 0.5346
+14m 49s (- 10m 50s) (231000 57%) 0.5528
+14m 53s (- 10m 46s) (232000 58%) 0.5501
+14m 56s (- 10m 42s) (233000 58%) 0.5512
+15m 0s (- 10m 38s) (234000 58%) 0.5450
+15m 4s (- 10m 34s) (235000 58%) 0.5426
+15m 7s (- 10m 30s) (236000 59%) 0.5136
+15m 11s (- 10m 26s) (237000 59%) 0.5489
+15m 15s (- 10m 22s) (238000 59%) 0.5556
+15m 18s (- 10m 18s) (239000 59%) 0.5467
+Epoch 6/10 finished
+15m 29s (- 10m 18s) (240000 60%) 0.5634
+15m 32s (- 10m 14s) (241000 60%) 0.5361
+15m 36s (- 10m 10s) (242000 60%) 0.5118
+15m 40s (- 10m 6s) (243000 60%) 0.5063
+15m 43s (- 10m 2s) (244000 61%) 0.5186
+15m 47s (- 9m 58s) (245000 61%) 0.5290
+15m 51s (- 9m 54s) (246000 61%) 0.5141
+15m 54s (- 9m 50s) (247000 61%) 0.5340
+15m 58s (- 9m 46s) (248000 62%) 0.5353
+16m 2s (- 9m 42s) (249000 62%) 0.5116
+16m 5s (- 9m 38s) (250000 62%) 0.5173
+16m 9s (- 9m 34s) (251000 62%) 0.5423
+16m 13s (- 9m 30s) (252000 63%) 0.5515
+16m 16s (- 9m 27s) (253000 63%) 0.5725
+16m 20s (- 9m 23s) (254000 63%) 0.5386
+16m 24s (- 9m 19s) (255000 63%) 0.5428
+16m 27s (- 9m 15s) (256000 64%) 0.5305
+16m 31s (- 9m 11s) (257000 64%) 0.5353
+16m 35s (- 9m 7s) (258000 64%) 0.5086
+16m 38s (- 9m 3s) (259000 64%) 0.5280
+16m 42s (- 8m 59s) (260000 65%) 0.5394
+16m 46s (- 8m 55s) (261000 65%) 0.5373
+16m 49s (- 8m 51s) (262000 65%) 0.5425
+16m 53s (- 8m 47s) (263000 65%) 0.5169
+16m 57s (- 8m 43s) (264000 66%) 0.5373
+17m 0s (- 8m 39s) (265000 66%) 0.5369
+17m 4s (- 8m 35s) (266000 66%) 0.5342
+17m 8s (- 8m 31s) (267000 66%) 0.5404
+17m 12s (- 8m 27s) (268000 67%) 0.5617
+17m 15s (- 8m 23s) (269000 67%) 0.5300
+17m 19s (- 8m 19s) (270000 67%) 0.5255
+17m 23s (- 8m 15s) (271000 67%) 0.5351
+17m 26s (- 8m 12s) (272000 68%) 0.5137
+17m 30s (- 8m 8s) (273000 68%) 0.5462
+17m 34s (- 8m 4s) (274000 68%) 0.5240
+17m 37s (- 8m 0s) (275000 68%) 0.5365
+17m 41s (- 7m 56s) (276000 69%) 0.5306
+17m 45s (- 7m 52s) (277000 69%) 0.5096
+17m 48s (- 7m 48s) (278000 69%) 0.5226
+17m 52s (- 7m 44s) (279000 69%) 0.5297
+Epoch 7/10 finished
+18m 3s (- 7m 43s) (280000 70%) 0.5453
+18m 6s (- 7m 39s) (281000 70%) 0.5013
+18m 10s (- 7m 35s) (282000 70%) 0.5184
+18m 14s (- 7m 31s) (283000 70%) 0.4948
+18m 17s (- 7m 27s) (284000 71%) 0.5105
+18m 21s (- 7m 23s) (285000 71%) 0.5143
+18m 25s (- 7m 19s) (286000 71%) 0.4940
+18m 28s (- 7m 16s) (287000 71%) 0.5293
+18m 32s (- 7m 12s) (288000 72%) 0.5206
+18m 36s (- 7m 8s) (289000 72%) 0.4900
+18m 39s (- 7m 4s) (290000 72%) 0.5165
+18m 43s (- 7m 0s) (291000 72%) 0.4945
+18m 47s (- 6m 56s) (292000 73%) 0.5154
+18m 50s (- 6m 52s) (293000 73%) 0.5280
+18m 54s (- 6m 48s) (294000 73%) 0.5193
+18m 58s (- 6m 44s) (295000 73%) 0.5237
+19m 1s (- 6m 40s) (296000 74%) 0.5240
+19m 5s (- 6m 36s) (297000 74%) 0.4800
+19m 9s (- 6m 32s) (298000 74%) 0.5247
+19m 12s (- 6m 28s) (299000 74%) 0.5203
+19m 16s (- 6m 24s) (300000 75%) 0.5109
+19m 20s (- 6m 21s) (301000 75%) 0.5486
+19m 23s (- 6m 17s) (302000 75%) 0.5084
+19m 27s (- 6m 13s) (303000 75%) 0.5288
+19m 31s (- 6m 9s) (304000 76%) 0.5358
+19m 34s (- 6m 5s) (305000 76%) 0.5399
+19m 38s (- 6m 1s) (306000 76%) 0.5126
+19m 42s (- 5m 57s) (307000 76%) 0.5449
+19m 45s (- 5m 53s) (308000 77%) 0.5227
+19m 49s (- 5m 49s) (309000 77%) 0.5399
+19m 53s (- 5m 45s) (310000 77%) 0.5230
+19m 56s (- 5m 41s) (311000 77%) 0.5206
+20m 0s (- 5m 38s) (312000 78%) 0.5379
+20m 4s (- 5m 34s) (313000 78%) 0.5237
+20m 7s (- 5m 30s) (314000 78%) 0.5015
+20m 11s (- 5m 26s) (315000 78%) 0.5375
+20m 15s (- 5m 22s) (316000 79%) 0.5219
+20m 19s (- 5m 18s) (317000 79%) 0.5313
+20m 22s (- 5m 14s) (318000 79%) 0.5469
+20m 26s (- 5m 10s) (319000 79%) 0.5149
+Epoch 8/10 finished
+20m 36s (- 5m 8s) (320000 80%) 0.5218
+20m 40s (- 5m 4s) (321000 80%) 0.4973
+20m 44s (- 5m 0s) (322000 80%) 0.5124
+20m 47s (- 4m 56s) (323000 80%) 0.4954
+20m 51s (- 4m 53s) (324000 81%) 0.5112
+20m 55s (- 4m 49s) (325000 81%) 0.5230
+20m 58s (- 4m 45s) (326000 81%) 0.4966
+21m 2s (- 4m 41s) (327000 81%) 0.4988
+21m 6s (- 4m 37s) (328000 82%) 0.4862
+21m 9s (- 4m 33s) (329000 82%) 0.5015
+21m 13s (- 4m 29s) (330000 82%) 0.5070
+21m 17s (- 4m 25s) (331000 82%) 0.5249
+21m 20s (- 4m 21s) (332000 83%) 0.5061
+21m 24s (- 4m 17s) (333000 83%) 0.5082
+21m 28s (- 4m 14s) (334000 83%) 0.5038
+21m 31s (- 4m 10s) (335000 83%) 0.5309
+21m 35s (- 4m 6s) (336000 84%) 0.5023
+21m 39s (- 4m 2s) (337000 84%) 0.5018
+21m 43s (- 3m 58s) (338000 84%) 0.5158
+21m 46s (- 3m 54s) (339000 84%) 0.5032
+21m 50s (- 3m 50s) (340000 85%) 0.4653
+21m 54s (- 3m 46s) (341000 85%) 0.5161
+21m 57s (- 3m 42s) (342000 85%) 0.4951
+22m 1s (- 3m 39s) (343000 85%) 0.5141
+22m 5s (- 3m 35s) (344000 86%) 0.5122
+22m 8s (- 3m 31s) (345000 86%) 0.4959
+22m 12s (- 3m 27s) (346000 86%) 0.4897
+22m 16s (- 3m 23s) (347000 86%) 0.5186
+22m 19s (- 3m 19s) (348000 87%) 0.5159
+22m 23s (- 3m 15s) (349000 87%) 0.5041
+22m 27s (- 3m 11s) (350000 87%) 0.5002
+22m 30s (- 3m 8s) (351000 87%) 0.5181
+22m 34s (- 3m 4s) (352000 88%) 0.5298
+22m 38s (- 3m 0s) (353000 88%) 0.4820
+22m 41s (- 2m 56s) (354000 88%) 0.5321
+22m 45s (- 2m 52s) (355000 88%) 0.5037
+22m 49s (- 2m 48s) (356000 89%) 0.5186
+22m 52s (- 2m 44s) (357000 89%) 0.5219
+22m 56s (- 2m 40s) (358000 89%) 0.5070
+23m 0s (- 2m 37s) (359000 89%) 0.4889
+Epoch 9/10 finished
+23m 10s (- 2m 33s) (360000 90%) 0.5113
+23m 14s (- 2m 30s) (361000 90%) 0.4917
+23m 18s (- 2m 26s) (362000 90%) 0.4813
+23m 21s (- 2m 22s) (363000 90%) 0.5016
+23m 25s (- 2m 18s) (364000 91%) 0.4904
+23m 29s (- 2m 14s) (365000 91%) 0.4907
+23m 32s (- 2m 10s) (366000 91%) 0.4818
+23m 36s (- 2m 6s) (367000 91%) 0.4729
+23m 40s (- 2m 2s) (368000 92%) 0.4940
+23m 43s (- 1m 59s) (369000 92%) 0.5051
+23m 47s (- 1m 55s) (370000 92%) 0.5175
+23m 51s (- 1m 51s) (371000 92%) 0.4893
+23m 54s (- 1m 47s) (372000 93%) 0.4993
+23m 58s (- 1m 43s) (373000 93%) 0.4681
+24m 2s (- 1m 39s) (374000 93%) 0.4963
+24m 5s (- 1m 35s) (375000 93%) 0.5009
+24m 9s (- 1m 31s) (376000 94%) 0.5006
+24m 13s (- 1m 28s) (377000 94%) 0.4911
+24m 16s (- 1m 24s) (378000 94%) 0.5067
+24m 20s (- 1m 20s) (379000 94%) 0.5210
+24m 24s (- 1m 16s) (380000 95%) 0.4952
+24m 27s (- 1m 12s) (381000 95%) 0.5089
+24m 31s (- 1m 8s) (382000 95%) 0.5041
+24m 35s (- 1m 4s) (383000 95%) 0.5178
+24m 38s (- 1m 1s) (384000 96%) 0.5011
+24m 42s (- 0m 57s) (385000 96%) 0.4858
+24m 46s (- 0m 53s) (386000 96%) 0.4756
+24m 49s (- 0m 49s) (387000 96%) 0.4956
+24m 53s (- 0m 45s) (388000 97%) 0.4832
+24m 57s (- 0m 41s) (389000 97%) 0.5092
+25m 0s (- 0m 37s) (390000 97%) 0.5151
+25m 4s (- 0m 34s) (391000 97%) 0.4978
+25m 8s (- 0m 30s) (392000 98%) 0.5121
+25m 11s (- 0m 26s) (393000 98%) 0.4998
+25m 15s (- 0m 22s) (394000 98%) 0.4962
+25m 19s (- 0m 18s) (395000 98%) 0.5082
+25m 23s (- 0m 14s) (396000 99%) 0.5033
+25m 26s (- 0m 10s) (397000 99%) 0.5115
+25m 30s (- 0m 7s) (398000 99%) 0.4985
+25m 34s (- 0m 3s) (399000 99%) 0.4843
+Epoch 10/10 finished
+Evaluate randomly on training sentences -- word order:
+> ['tom', 'didn', 't', 'expect', 'to', 'sell', 'his', 'old', 'car', 'for', 'so', 'much', 'money', '.', 'tom didn', 'didn t', 't expect', 'expect to', 'to sell', 'sell his', 'his old', 'old car', 'car for', 'for so', 'so much', 'much money', 'money .', 'tom didn t', 'didn t expect', 't expect to', 'expect to sell', 'to sell his', 'sell his old', 'his old car', 'old car for', 'car for so', 'for so much', 'so much money', 'much money .', 'tom didn t expect', 'didn t expect to', 't expect to sell', 'expect to sell his', 'to sell his old', 'sell his old car', 'his old car for', 'old car for so', 'car for so much', 'for so much money', 'so much money .', 'tom didn t expect to', 'didn t expect to sell', 't expect to sell his', 'expect to sell his old', 'to sell his old car', 'sell his old car for', 'his old car for so', 'old car for so much', 'car for so much money', 'for so much money .'] ['money', 'car']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['we', 'saw', 'something', '.', 'we saw', 'saw something', 'something .', 'we saw something', 'saw something .', 'we saw something .'] ['saw', 'something']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['classes', 'start', 'at', 'eight', 'in', 'the', 'morning', '.', 'classes start', 'start at', 'at eight', 'eight in', 'in the', 'the morning', 'morning .', 'classes start at', 'start at eight', 'at eight in', 'eight in the', 'in the morning', 'the morning .', 'classes start at eight', 'start at eight in', 'at eight in the', 'eight in the morning', 'in the morning .', 'classes start at eight in', 'start at eight in the', 'at eight in the morning', 'eight in the morning .'] ['morning', 'in']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['how', 'do', 'you', 'pronounce', 'your', 'name', '?', 'how do', 'do you', 'you pronounce', 'pronounce your', 'your name', 'name ?', 'how do you', 'do you pronounce', 'you pronounce your', 'pronounce your name', 'your name ?', 'how do you pronounce', 'do you pronounce your', 'you pronounce your name', 'pronounce your name ?', 'how do you pronounce your', 'do you pronounce your name', 'you pronounce your name ?'] ['how', 'do']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'll', 'be', 'all', 'right', '.', 'you ll', 'll be', 'be all', 'all right', 'right .', 'you ll be', 'll be all', 'be all right', 'all right .', 'you ll be all', 'll be all right', 'be all right .', 'you ll be all right', 'll be all right .'] ['you', 'll']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'fixed', 'myself', 'something', 'to', 'eat', '.', 'i fixed', 'fixed myself', 'myself something', 'something to', 'to eat', 'eat .', 'i fixed myself', 'fixed myself something', 'myself something to', 'something to eat', 'to eat .', 'i fixed myself something', 'fixed myself something to', 'myself something to eat', 'something to eat .', 'i fixed myself something to', 'fixed myself something to eat', 'myself something to eat .'] ['to', 'eat']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'think', 'it', 's', 'necessary', 'to', 'do', 'that', '.', 'i don', 'don t', 't think', 'think it', 'it s', 's necessary', 'necessary to', 'to do', 'do that', 'that .', 'i don t', 'don t think', 't think it', 'think it s', 'it s necessary', 's necessary to', 'necessary to do', 'to do that', 'do that .', 'i don t think', 'don t think it', 't think it s', 'think it s necessary', 'it s necessary to', 's necessary to do', 'necessary to do that', 'to do that .', 'i don t think it', 'don t think it s', 't think it s necessary', 'think it s necessary to', 'it s necessary to do', 's necessary to do that', 'necessary to do that .'] ['do', 't']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['why', 'are', 'we', 'wasting', 'time', 'like', 'this', '?', 'why are', 'are we', 'we wasting', 'wasting time', 'time like', 'like this', 'this ?', 'why are we', 'are we wasting', 'we wasting time', 'wasting time like', 'time like this', 'like this ?', 'why are we wasting', 'are we wasting time', 'we wasting time like', 'wasting time like this', 'time like this ?', 'why are we wasting time', 'are we wasting time like', 'we wasting time like this', 'wasting time like this ?'] ['wasting', 'like']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'is', 'quick', 'at', 'everything', '.', 'she is', 'is quick', 'quick at', 'at everything', 'everything .', 'she is quick', 'is quick at', 'quick at everything', 'at everything .', 'she is quick at', 'is quick at everything', 'quick at everything .', 'she is quick at everything', 'is quick at everything .'] ['is', 'at']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['they', 're', 'all', 'here', '.', 'they re', 're all', 'all here', 'here .', 'they re all', 're all here', 'all here .', 'they re all here', 're all here .', 'they re all here .'] ['all', 'they']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+Evaluate randomly on testing sentences -- word order:
+> ['you', 'can', 'not', 'be', 'serious', '.', 'you can', 'can not', 'not be', 'be serious', 'serious .', 'you can not', 'can not be', 'not be serious', 'be serious .', 'you can not be', 'can not be serious', 'not be serious .', 'you can not be serious', 'can not be serious .'] ['be', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['can', 'you', 'climb', 'up', 'that', 'tree', '?', 'can you', 'you climb', 'climb up', 'up that', 'that tree', 'tree ?', 'can you climb', 'you climb up', 'climb up that', 'up that tree', 'that tree ?', 'can you climb up', 'you climb up that', 'climb up that tree', 'up that tree ?', 'can you climb up that', 'you climb up that tree', 'climb up that tree ?'] ['climb', 'you']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['stir', 'the', 'soup', '.', 'stir the', 'the soup', 'soup .', 'stir the soup', 'the soup .', 'stir the soup .'] ['soup', 'the']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 're', 'adorable', '.', 'you re', 're adorable', 'adorable .', 'you re adorable', 're adorable .', 'you re adorable .'] ['re', 'adorable']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'don', 't', 'want', 'you', 'to', 'be', 'upset', '.', 'i don', 'don t', 't want', 'want you', 'you to', 'to be', 'be upset', 'upset .', 'i don t', 'don t want', 't want you', 'want you to', 'you to be', 'to be upset', 'be upset .', 'i don t want', 'don t want you', 't want you to', 'want you to be', 'you to be upset', 'to be upset .', 'i don t want you', 'don t want you to', 't want you to be', 'want you to be upset', 'you to be upset .'] ['be', 'upset']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['i', 'just', 'don', 't', 'want', 'to', 'do', 'it', 'again', '.', 'i just', 'just don', 'don t', 't want', 'want to', 'to do', 'do it', 'it again', 'again .', 'i just don', 'just don t', 'don t want', 't want to', 'want to do', 'to do it', 'do it again', 'it again .', 'i just don t', 'just don t want', 'don t want to', 't want to do', 'want to do it', 'to do it again', 'do it again .', 'i just don t want', 'just don t want to', 'don t want to do', 't want to do it', 'want to do it again', 'to do it again .'] ['it', 'again']
+= 1
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['it', 'happened', 'so', 'fast', '.', 'it happened', 'happened so', 'so fast', 'fast .', 'it happened so', 'happened so fast', 'so fast .', 'it happened so fast', 'happened so fast .', 'it happened so fast .'] ['fast', 'so']
+= 0
+< prediction is: 0, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['you', 'have', 'such', 'beautiful', 'eyes', '.', 'you have', 'have such', 'such beautiful', 'beautiful eyes', 'eyes .', 'you have such', 'have such beautiful', 'such beautiful eyes', 'beautiful eyes .', 'you have such beautiful', 'have such beautiful eyes', 'such beautiful eyes .', 'you have such beautiful eyes', 'have such beautiful eyes .'] ['beautiful', 'such']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['has', 'the', 'jury', 'reached', 'a', 'verdict', '?', 'has the', 'the jury', 'jury reached', 'reached a', 'a verdict', 'verdict ?', 'has the jury', 'the jury reached', 'jury reached a', 'reached a verdict', 'a verdict ?', 'has the jury reached', 'the jury reached a', 'jury reached a verdict', 'reached a verdict ?', 'has the jury reached a', 'the jury reached a verdict', 'jury reached a verdict ?'] ['verdict', 'has']
+= 0
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+> ['she', 'betrayed', 'you', '.', 'she betrayed', 'betrayed you', 'you .', 'she betrayed you', 'betrayed you .', 'she betrayed you .'] ['betrayed', 'you']
+= 1
+< prediction is: 1, ###1 represent first word is in front of the second, 0 vice versa###
+
+Accuracy of the network on the word order test set: 67 %
+Finished
+
+hpc mode: True
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Traceback (most recent call last):
+  File "/share/apps/pytorch/0.3.0_4/python3.6/lib/python3.6/site-packages/torch/nn/modules/module.py", line 482, in load_state_dict
+    own_state[name].copy_(param)
+RuntimeError: invalid argument 2: sizes do not match at /pytorch/torch/lib/THC/generic/THCTensorCopy.c:101
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./BOWMIAN/project/order/RNNEncoder/main.py", line 310, in <module>
+    encoder.load_state_dict(torch.load(args.load_data_path + "/RNNEncoder_state_dict.pt"))
+  File "/share/apps/pytorch/0.3.0_4/python3.6/lib/python3.6/site-packages/torch/nn/modules/module.py", line 487, in load_state_dict
+    .format(name, own_state[name].size(), param.size()))
+RuntimeError: While copying the parameter named embedding.weight, whose dimensions in the model are torch.Size([9388, 256]) and whose dimensions in the checkpoint are torch.Size([6435, 256]).
