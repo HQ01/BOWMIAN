@@ -1,0 +1,2654 @@
+hpc mode: True
+order: 1
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.']
+ref sent: she did come here .
+= 4
+< 5-6
+
+> ['it', 'was', 'quite', 'funny', '.']
+ref sent: it was quite funny .
+= 4
+< 9-10
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.']
+ref sent: they come from the same country .
+= 6
+< 9-10
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.']
+ref sent: i didn t finish reading that book .
+= 7
+< 5-6
+
+> ['i', 'm', 'not', 'ready', 'yet', '.']
+ref sent: i m not ready yet .
+= 5
+< 9-10
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.']
+ref sent: we shouldn t confuse solitude with isolation . they are two separate things .
+= 13
+< 5-6
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.']
+ref sent: i don t know what it is .
+= 7
+< 9-10
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?']
+ref sent: are you going home by bus ?
+= 6
+< 9-10
+
+> ['he', 'is', 'intelligent', '.']
+ref sent: he is intelligent .
+= 3
+< 5-6
+
+> ['you', 're', 'so', 'impatient', '.']
+ref sent: you re so impatient .
+= 4
+< 9-10
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.']
+ref sent: team members are provided with equipment and uniforms .
+= 8
+< 5-6
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.']
+ref sent: now that my brother is a university student he has to do a lot of reading .
+= 16
+< 1-2
+
+> ['they', 'had', 'fun', 'with', 'us', '.']
+ref sent: they had fun with us .
+= 5
+< 5-6
+
+> ['does', 'anyone', 'know', 'japanese', '?']
+ref sent: does anyone know japanese ?
+= 4
+< 9-10
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.']
+ref sent: he narrowly escaped being run over .
+= 6
+< 1-2
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?']
+ref sent: when was the last time you went to an art gallery ?
+= 11
+< 15-16
+
+> ['his', 'house', 'was', 'sold', 'for', '.']
+ref sent: his house was sold for .
+= 5
+< 5-6
+
+> ['i', 'm', 'not', 'mad', '.']
+ref sent: i m not mad .
+= 4
+< 9-10
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.']
+ref sent: i thought you d be much fatter .
+= 7
+< 9-10
+
+> ['they', 'are', 'bored', '.']
+ref sent: they are bored .
+= 3
+< 9-10
+
+Accuracy of the network on the sentence length test set: 14 %
+Sentence Length 1-2: 44/46 (incorrect/total) = 0.9565217391304348
+Sentence Length 3-4: 1003/1003 (incorrect/total) = 1.0
+Sentence Length 5-6: 1329/1760 (incorrect/total) = 0.7551136363636364
+Sentence Length 7-8: 1234/1266 (incorrect/total) = 0.9747235387045814
+Sentence Length 9-10: 336/580 (incorrect/total) = 0.5793103448275863
+Sentence Length 11-12: 207/209 (incorrect/total) = 0.9904306220095693
+Sentence Length 13-14: 71/85 (incorrect/total) = 0.8352941176470589
+Sentence Length 15-16: 32/33 (incorrect/total) = 0.9696969696969697
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 8/9 (incorrect/total) = 0.8888888888888888
+0m 3s (- 11m 31s) (1000 0%) 1.7398
+0m 5s (- 8m 39s) (2000 1%) 1.5894
+0m 7s (- 7m 40s) (3000 1%) 1.4608
+0m 8s (- 7m 11s) (4000 2%) 1.4556
+0m 10s (- 6m 52s) (5000 2%) 1.3558
+0m 12s (- 6m 39s) (6000 3%) 1.3316
+0m 14s (- 6m 29s) (7000 3%) 1.3533
+0m 15s (- 6m 21s) (8000 4%) 1.2925
+0m 17s (- 6m 14s) (9000 4%) 1.2815
+0m 19s (- 6m 9s) (10000 5%) 1.2345
+0m 21s (- 6m 4s) (11000 5%) 1.2958
+0m 22s (- 6m 0s) (12000 6%) 1.2724
+0m 24s (- 5m 56s) (13000 6%) 1.2034
+0m 26s (- 5m 52s) (14000 7%) 1.2342
+0m 28s (- 5m 49s) (15000 7%) 1.1902
+0m 30s (- 5m 45s) (16000 8%) 1.2261
+0m 31s (- 5m 42s) (17000 8%) 1.1801
+0m 33s (- 5m 39s) (18000 9%) 1.2042
+0m 35s (- 5m 36s) (19000 9%) 1.1974
+0m 37s (- 5m 34s) (20000 10%) 1.1620
+Epoch 1/10 finished
+0m 40s (- 5m 48s) (21000 10%) 1.0838
+0m 42s (- 5m 44s) (22000 11%) 1.1560
+0m 44s (- 5m 41s) (23000 11%) 1.1682
+0m 46s (- 5m 38s) (24000 12%) 1.0861
+0m 47s (- 5m 35s) (25000 12%) 1.1622
+0m 49s (- 5m 32s) (26000 13%) 1.1198
+0m 51s (- 5m 30s) (27000 13%) 1.1229
+0m 53s (- 5m 27s) (28000 14%) 1.1318
+0m 55s (- 5m 24s) (29000 14%) 1.0681
+0m 56s (- 5m 22s) (30000 15%) 1.1052
+0m 58s (- 5m 19s) (31000 15%) 1.1395
+1m 0s (- 5m 17s) (32000 16%) 1.1228
+1m 2s (- 5m 14s) (33000 16%) 1.0778
+1m 4s (- 5m 12s) (34000 17%) 1.0772
+1m 5s (- 5m 10s) (35000 17%) 1.0693
+1m 7s (- 5m 7s) (36000 18%) 1.0699
+1m 9s (- 5m 5s) (37000 18%) 1.0886
+1m 11s (- 5m 3s) (38000 19%) 1.0524
+1m 12s (- 5m 1s) (39000 19%) 1.1151
+1m 14s (- 4m 58s) (40000 20%) 1.0717
+Epoch 2/10 finished
+1m 18s (- 5m 3s) (41000 20%) 1.0296
+1m 20s (- 5m 1s) (42000 21%) 0.9771
+1m 21s (- 4m 59s) (43000 21%) 1.0029
+1m 23s (- 4m 56s) (44000 22%) 1.0399
+1m 25s (- 4m 54s) (45000 22%) 1.0103
+1m 27s (- 4m 52s) (46000 23%) 1.0524
+1m 29s (- 4m 49s) (47000 23%) 0.9605
+1m 30s (- 4m 47s) (48000 24%) 1.0498
+1m 32s (- 4m 45s) (49000 24%) 0.9576
+1m 34s (- 4m 42s) (50000 25%) 1.0194
+1m 36s (- 4m 40s) (51000 25%) 0.9990
+1m 37s (- 4m 38s) (52000 26%) 1.0211
+1m 39s (- 4m 36s) (53000 26%) 0.9594
+1m 41s (- 4m 34s) (54000 27%) 0.9516
+1m 43s (- 4m 32s) (55000 27%) 1.0183
+1m 44s (- 4m 29s) (56000 28%) 1.0116
+1m 46s (- 4m 27s) (57000 28%) 1.0475
+1m 48s (- 4m 25s) (58000 28%) 0.9136
+1m 50s (- 4m 23s) (59000 29%) 1.0081
+1m 52s (- 4m 21s) (60000 30%) 1.0190
+Epoch 3/10 finished
+1m 55s (- 4m 23s) (61000 30%) 0.9497
+1m 57s (- 4m 21s) (62000 31%) 0.8961
+1m 59s (- 4m 19s) (63000 31%) 0.8887
+2m 0s (- 4m 17s) (64000 32%) 0.9767
+2m 2s (- 4m 14s) (65000 32%) 0.9060
+2m 4s (- 4m 12s) (66000 33%) 0.9540
+2m 6s (- 4m 10s) (67000 33%) 0.9637
+2m 8s (- 4m 8s) (68000 34%) 0.9384
+2m 9s (- 4m 6s) (69000 34%) 0.9163
+2m 11s (- 4m 4s) (70000 35%) 0.9271
+2m 13s (- 4m 2s) (71000 35%) 0.8811
+2m 15s (- 4m 0s) (72000 36%) 0.9128
+2m 17s (- 3m 58s) (73000 36%) 0.9823
+2m 18s (- 3m 56s) (74000 37%) 0.9357
+2m 20s (- 3m 54s) (75000 37%) 0.9753
+2m 22s (- 3m 52s) (76000 38%) 0.8848
+2m 24s (- 3m 50s) (77000 38%) 0.9360
+2m 25s (- 3m 48s) (78000 39%) 0.8716
+2m 27s (- 3m 46s) (79000 39%) 0.9323
+2m 29s (- 3m 44s) (80000 40%) 0.8997
+Epoch 4/10 finished
+2m 33s (- 3m 45s) (81000 40%) 0.8352
+2m 35s (- 3m 43s) (82000 41%) 0.8610
+2m 37s (- 3m 41s) (83000 41%) 0.8507
+2m 38s (- 3m 39s) (84000 42%) 0.8351
+2m 40s (- 3m 37s) (85000 42%) 0.8147
+2m 42s (- 3m 35s) (86000 43%) 0.8764
+2m 44s (- 3m 33s) (87000 43%) 0.8717
+2m 46s (- 3m 31s) (88000 44%) 0.8144
+2m 47s (- 3m 29s) (89000 44%) 0.8520
+2m 49s (- 3m 27s) (90000 45%) 0.8737
+2m 51s (- 3m 25s) (91000 45%) 0.8593
+2m 53s (- 3m 23s) (92000 46%) 0.8543
+2m 54s (- 3m 21s) (93000 46%) 0.8718
+2m 56s (- 3m 19s) (94000 47%) 0.8902
+2m 58s (- 3m 17s) (95000 47%) 0.8686
+3m 0s (- 3m 15s) (96000 48%) 0.8080
+3m 2s (- 3m 13s) (97000 48%) 0.9032
+3m 3s (- 3m 11s) (98000 49%) 0.8598
+3m 5s (- 3m 9s) (99000 49%) 0.8992
+3m 7s (- 3m 7s) (100000 50%) 0.8840
+Epoch 5/10 finished
+3m 11s (- 3m 7s) (101000 50%) 0.7695
+3m 12s (- 3m 5s) (102000 51%) 0.7752
+3m 14s (- 3m 3s) (103000 51%) 0.7621
+3m 16s (- 3m 1s) (104000 52%) 0.7804
+3m 18s (- 2m 59s) (105000 52%) 0.7753
+3m 20s (- 2m 57s) (106000 53%) 0.7630
+3m 21s (- 2m 55s) (107000 53%) 0.8119
+3m 23s (- 2m 53s) (108000 54%) 0.7909
+3m 25s (- 2m 51s) (109000 54%) 0.8243
+3m 27s (- 2m 49s) (110000 55%) 0.7703
+3m 28s (- 2m 47s) (111000 55%) 0.8032
+3m 30s (- 2m 45s) (112000 56%) 0.7749
+3m 32s (- 2m 43s) (113000 56%) 0.7936
+3m 34s (- 2m 41s) (114000 56%) 0.8794
+3m 36s (- 2m 39s) (115000 57%) 0.8181
+3m 37s (- 2m 37s) (116000 57%) 0.7887
+3m 39s (- 2m 35s) (117000 58%) 0.8602
+3m 41s (- 2m 33s) (118000 59%) 0.8748
+3m 43s (- 2m 31s) (119000 59%) 0.7260
+3m 44s (- 2m 29s) (120000 60%) 0.8355
+Epoch 6/10 finished
+3m 48s (- 2m 29s) (121000 60%) 0.7443
+3m 50s (- 2m 27s) (122000 61%) 0.6947
+3m 52s (- 2m 25s) (123000 61%) 0.7346
+3m 54s (- 2m 23s) (124000 62%) 0.7534
+3m 56s (- 2m 21s) (125000 62%) 0.7281
+3m 57s (- 2m 19s) (126000 63%) 0.7675
+3m 59s (- 2m 17s) (127000 63%) 0.7474
+4m 1s (- 2m 15s) (128000 64%) 0.7187
+4m 3s (- 2m 13s) (129000 64%) 0.7960
+4m 4s (- 2m 11s) (130000 65%) 0.7389
+4m 6s (- 2m 9s) (131000 65%) 0.7738
+4m 8s (- 2m 8s) (132000 66%) 0.7073
+4m 10s (- 2m 6s) (133000 66%) 0.7529
+4m 12s (- 2m 4s) (134000 67%) 0.7976
+4m 13s (- 2m 2s) (135000 67%) 0.7433
+4m 15s (- 2m 0s) (136000 68%) 0.7714
+4m 17s (- 1m 58s) (137000 68%) 0.7645
+4m 19s (- 1m 56s) (138000 69%) 0.7257
+4m 20s (- 1m 54s) (139000 69%) 0.8146
+4m 22s (- 1m 52s) (140000 70%) 0.7323
+Epoch 7/10 finished
+4m 26s (- 1m 51s) (141000 70%) 0.6568
+4m 28s (- 1m 49s) (142000 71%) 0.7163
+4m 30s (- 1m 47s) (143000 71%) 0.6870
+4m 32s (- 1m 45s) (144000 72%) 0.7119
+4m 34s (- 1m 43s) (145000 72%) 0.6675
+4m 35s (- 1m 42s) (146000 73%) 0.7433
+4m 37s (- 1m 40s) (147000 73%) 0.6615
+4m 39s (- 1m 38s) (148000 74%) 0.7204
+4m 41s (- 1m 36s) (149000 74%) 0.7084
+4m 42s (- 1m 34s) (150000 75%) 0.6736
+4m 44s (- 1m 32s) (151000 75%) 0.6953
+4m 46s (- 1m 30s) (152000 76%) 0.7181
+4m 48s (- 1m 28s) (153000 76%) 0.7608
+4m 50s (- 1m 26s) (154000 77%) 0.6419
+4m 51s (- 1m 24s) (155000 77%) 0.7041
+4m 53s (- 1m 22s) (156000 78%) 0.7464
+4m 55s (- 1m 20s) (157000 78%) 0.6892
+4m 57s (- 1m 19s) (158000 79%) 0.7366
+4m 59s (- 1m 17s) (159000 79%) 0.7194
+5m 0s (- 1m 15s) (160000 80%) 0.6559
+Epoch 8/10 finished
+5m 4s (- 1m 13s) (161000 80%) 0.6172
+5m 6s (- 1m 11s) (162000 81%) 0.6403
+5m 8s (- 1m 10s) (163000 81%) 0.6535
+5m 10s (- 1m 8s) (164000 82%) 0.6261
+5m 11s (- 1m 6s) (165000 82%) 0.6184
+5m 13s (- 1m 4s) (166000 83%) 0.6318
+5m 15s (- 1m 2s) (167000 83%) 0.6338
+5m 17s (- 1m 0s) (168000 84%) 0.6329
+5m 19s (- 0m 58s) (169000 84%) 0.6790
+5m 20s (- 0m 56s) (170000 85%) 0.6408
+5m 22s (- 0m 54s) (171000 85%) 0.7101
+5m 24s (- 0m 52s) (172000 86%) 0.6907
+5m 26s (- 0m 50s) (173000 86%) 0.6654
+5m 27s (- 0m 49s) (174000 87%) 0.6890
+5m 29s (- 0m 47s) (175000 87%) 0.6622
+5m 31s (- 0m 45s) (176000 88%) 0.6978
+5m 33s (- 0m 43s) (177000 88%) 0.6594
+5m 35s (- 0m 41s) (178000 89%) 0.6555
+5m 36s (- 0m 39s) (179000 89%) 0.6519
+5m 38s (- 0m 37s) (180000 90%) 0.7154
+Epoch 9/10 finished
+5m 42s (- 0m 35s) (181000 90%) 0.5649
+5m 44s (- 0m 34s) (182000 91%) 0.5971
+5m 45s (- 0m 32s) (183000 91%) 0.6492
+5m 47s (- 0m 30s) (184000 92%) 0.6411
+5m 49s (- 0m 28s) (185000 92%) 0.6517
+5m 51s (- 0m 26s) (186000 93%) 0.6392
+5m 53s (- 0m 24s) (187000 93%) 0.5720
+5m 54s (- 0m 22s) (188000 94%) 0.6253
+5m 56s (- 0m 20s) (189000 94%) 0.5644
+5m 58s (- 0m 18s) (190000 95%) 0.6196
+6m 0s (- 0m 16s) (191000 95%) 0.6023
+6m 1s (- 0m 15s) (192000 96%) 0.5718
+6m 3s (- 0m 13s) (193000 96%) 0.5886
+6m 5s (- 0m 11s) (194000 97%) 0.6898
+6m 7s (- 0m 9s) (195000 97%) 0.6044
+6m 9s (- 0m 7s) (196000 98%) 0.6110
+6m 10s (- 0m 5s) (197000 98%) 0.7006
+6m 12s (- 0m 3s) (198000 99%) 0.6337
+6m 14s (- 0m 1s) (199000 99%) 0.6356
+6m 16s (- 0m 0s) (200000 100%) 0.6238
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['are', 'you', 'looking', 'for', 'us', '?']
+ref sent: are you looking for us ?
+= 5
+< 5-6
+
+> ['i', 'feel', 'safe', '.']
+ref sent: i feel safe .
+= 3
+< 3-4
+
+> ['she', 'hurried', 'across', 'the', 'lawn', '.']
+ref sent: she hurried across the lawn .
+= 5
+< 5-6
+
+> ['have', 'something', 'to', 'drink', '.']
+ref sent: have something to drink .
+= 4
+< 3-4
+
+> ['i', 'live', 'in', 'an', 'apartment', '.']
+ref sent: i live in an apartment .
+= 5
+< 5-6
+
+> ['you', 're', 'conscientious', '.']
+ref sent: you re conscientious .
+= 3
+< 3-4
+
+> ['i', 'm', 'not', 'sure', 'what', 'i', 'was', 'thinking', '.']
+ref sent: i m not sure what i was thinking .
+= 8
+< 9-10
+
+> ['she', 'is', 'used', 'to', 'sitting', '.']
+ref sent: she is used to sitting .
+= 5
+< 5-6
+
+> ['you', 've', 'given', 'me', 'good', 'advice', '.']
+ref sent: you ve given me good advice .
+= 6
+< 5-6
+
+> ['i', 'know', 'you', 'have', 'to', 'go', 'back', 'to', 'boston', '.']
+ref sent: i know you have to go back to boston .
+= 9
+< 9-10
+
+Evaluate randomly on testing sentences:
+> ['tom', 'didn', 't', 'like', 'that', 'place', '.']
+ref sent: tom didn t like that place .
+= 6
+< 7-8
+
+> ['do', 'you', 'plan', 'to', 'buy', 'that', 'car', '?']
+ref sent: do you plan to buy that car ?
+= 7
+< 7-8
+
+> ['how', 'long', 'may', 'i', 'keep', 'this', '?']
+ref sent: how long may i keep this ?
+= 6
+< 5-6
+
+> ['i', 'negotiated', 'the', 'price', 'with', 'him', '.']
+ref sent: i negotiated the price with him .
+= 6
+< 5-6
+
+> ['this', 'is', 'what', 'll', 'happen', '.']
+ref sent: this is what ll happen .
+= 5
+< 5-6
+
+> ['your', 'question', 'is', 'hard', 'to', 'answer', '.']
+ref sent: your question is hard to answer .
+= 6
+< 5-6
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.']
+ref sent: i m beginning to get used to doing this .
+= 9
+< 9-10
+
+> ['this', 'is', 'not', 'enough', '.']
+ref sent: this is not enough .
+= 4
+< 3-4
+
+> ['he', 'did', 'it', 'himself', '.']
+ref sent: he did it himself .
+= 4
+< 5-6
+
+> ['he', 'acted', 'the', 'part', 'of', 'king', 'lear', '.']
+ref sent: he acted the part of king lear .
+= 7
+< 7-8
+
+Accuracy of the network on the sentence length test set: 66 %
+Sentence Length 1-2: 23/46 (incorrect/total) = 0.5
+Sentence Length 3-4: 123/1003 (incorrect/total) = 0.1226321036889332
+Sentence Length 5-6: 479/1760 (incorrect/total) = 0.2721590909090909
+Sentence Length 7-8: 572/1266 (incorrect/total) = 0.4518167456556082
+Sentence Length 9-10: 269/580 (incorrect/total) = 0.46379310344827585
+Sentence Length 11-12: 96/209 (incorrect/total) = 0.45933014354066987
+Sentence Length 13-14: 79/85 (incorrect/total) = 0.9294117647058824
+Sentence Length 15-16: 30/33 (incorrect/total) = 0.9090909090909091
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 4/9 (incorrect/total) = 0.4444444444444444
+Finished
+
+hpc mode: True
+order: 2
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .']
+ref sent: she did come here .
+= 4
+< 5-6
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .']
+ref sent: it was quite funny .
+= 4
+< 11-12
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .']
+ref sent: they come from the same country .
+= 6
+< 11-12
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .']
+ref sent: i didn t finish reading that book .
+= 7
+< 1-2
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .']
+ref sent: i m not ready yet .
+= 5
+< 5-6
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .']
+ref sent: we shouldn t confuse solitude with isolation . they are two separate things .
+= 13
+< 11-12
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .']
+ref sent: i don t know what it is .
+= 7
+< 5-6
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?']
+ref sent: are you going home by bus ?
+= 6
+< 11-12
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .']
+ref sent: he is intelligent .
+= 3
+< 9-10
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .']
+ref sent: you re so impatient .
+= 4
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .']
+ref sent: team members are provided with equipment and uniforms .
+= 8
+< 5-6
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .']
+ref sent: now that my brother is a university student he has to do a lot of reading .
+= 16
+< 13-14
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .']
+ref sent: they had fun with us .
+= 5
+< 11-12
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?']
+ref sent: does anyone know japanese ?
+= 4
+< 5-6
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .']
+ref sent: he narrowly escaped being run over .
+= 6
+< 11-12
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?']
+ref sent: when was the last time you went to an art gallery ?
+= 11
+< 7-8
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .']
+ref sent: his house was sold for .
+= 5
+< 11-12
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .']
+ref sent: i m not mad .
+= 4
+< 5-6
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .']
+ref sent: i thought you d be much fatter .
+= 7
+< 5-6
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .']
+ref sent: they are bored .
+= 3
+< 11-12
+
+Accuracy of the network on the sentence length test set: 14 %
+Sentence Length 1-2: 46/46 (incorrect/total) = 1.0
+Sentence Length 3-4: 1003/1003 (incorrect/total) = 1.0
+Sentence Length 5-6: 1243/1760 (incorrect/total) = 0.70625
+Sentence Length 7-8: 1230/1266 (incorrect/total) = 0.9715639810426541
+Sentence Length 9-10: 500/580 (incorrect/total) = 0.8620689655172413
+Sentence Length 11-12: 138/209 (incorrect/total) = 0.6602870813397129
+Sentence Length 13-14: 76/85 (incorrect/total) = 0.8941176470588236
+Sentence Length 15-16: 33/33 (incorrect/total) = 1.0
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 8/9 (incorrect/total) = 0.8888888888888888
+0m 4s (- 13m 22s) (1000 0%) 1.7631
+0m 5s (- 9m 36s) (2000 1%) 1.6157
+0m 7s (- 8m 19s) (3000 1%) 1.5027
+0m 9s (- 7m 40s) (4000 2%) 1.4984
+0m 11s (- 7m 16s) (5000 2%) 1.4323
+0m 12s (- 6m 59s) (6000 3%) 1.3682
+0m 14s (- 6m 47s) (7000 3%) 1.4392
+0m 16s (- 6m 37s) (8000 4%) 1.3741
+0m 18s (- 6m 29s) (9000 4%) 1.3745
+0m 20s (- 6m 22s) (10000 5%) 1.3404
+0m 21s (- 6m 16s) (11000 5%) 1.3688
+0m 23s (- 6m 11s) (12000 6%) 1.3281
+0m 25s (- 6m 6s) (13000 6%) 1.2773
+0m 27s (- 6m 2s) (14000 7%) 1.3493
+0m 29s (- 5m 58s) (15000 7%) 1.2683
+0m 30s (- 5m 54s) (16000 8%) 1.2883
+0m 32s (- 5m 51s) (17000 8%) 1.3276
+0m 34s (- 5m 47s) (18000 9%) 1.2850
+0m 36s (- 5m 44s) (19000 9%) 1.2973
+0m 37s (- 5m 41s) (20000 10%) 1.2429
+Epoch 1/10 finished
+0m 42s (- 6m 0s) (21000 10%) 1.1939
+0m 44s (- 5m 56s) (22000 11%) 1.2025
+0m 45s (- 5m 52s) (23000 11%) 1.2326
+0m 47s (- 5m 49s) (24000 12%) 1.1867
+0m 49s (- 5m 46s) (25000 12%) 1.2400
+0m 51s (- 5m 42s) (26000 13%) 1.1956
+0m 53s (- 5m 39s) (27000 13%) 1.2034
+0m 54s (- 5m 36s) (28000 14%) 1.2068
+0m 56s (- 5m 33s) (29000 14%) 1.1721
+0m 58s (- 5m 30s) (30000 15%) 1.1513
+1m 0s (- 5m 28s) (31000 15%) 1.1982
+1m 1s (- 5m 25s) (32000 16%) 1.1728
+1m 3s (- 5m 22s) (33000 16%) 1.1333
+1m 5s (- 5m 20s) (34000 17%) 1.1561
+1m 7s (- 5m 17s) (35000 17%) 1.1413
+1m 9s (- 5m 14s) (36000 18%) 1.1566
+1m 10s (- 5m 12s) (37000 18%) 1.1842
+1m 12s (- 5m 10s) (38000 19%) 1.1603
+1m 14s (- 5m 7s) (39000 19%) 1.2216
+1m 16s (- 5m 5s) (40000 20%) 1.1818
+Epoch 2/10 finished
+1m 20s (- 5m 10s) (41000 20%) 1.1065
+1m 21s (- 5m 7s) (42000 21%) 1.0841
+1m 23s (- 5m 5s) (43000 21%) 1.0851
+1m 25s (- 5m 2s) (44000 22%) 1.0966
+1m 27s (- 5m 0s) (45000 22%) 1.0770
+1m 29s (- 4m 57s) (46000 23%) 1.1307
+1m 30s (- 4m 55s) (47000 23%) 1.0109
+1m 32s (- 4m 53s) (48000 24%) 1.0827
+1m 34s (- 4m 50s) (49000 24%) 1.0545
+1m 36s (- 4m 48s) (50000 25%) 1.0814
+1m 37s (- 4m 46s) (51000 25%) 1.0239
+1m 39s (- 4m 43s) (52000 26%) 1.0840
+1m 41s (- 4m 41s) (53000 26%) 1.0710
+1m 43s (- 4m 39s) (54000 27%) 1.0489
+1m 45s (- 4m 37s) (55000 27%) 1.1048
+1m 46s (- 4m 35s) (56000 28%) 1.0802
+1m 48s (- 4m 32s) (57000 28%) 1.0847
+1m 50s (- 4m 30s) (58000 28%) 0.9955
+1m 52s (- 4m 28s) (59000 29%) 1.0944
+1m 54s (- 4m 26s) (60000 30%) 1.0096
+Epoch 3/10 finished
+1m 57s (- 4m 28s) (61000 30%) 0.9639
+1m 59s (- 4m 26s) (62000 31%) 0.9404
+2m 1s (- 4m 23s) (63000 31%) 0.9486
+2m 3s (- 4m 21s) (64000 32%) 0.9660
+2m 4s (- 4m 19s) (65000 32%) 0.9612
+2m 6s (- 4m 17s) (66000 33%) 0.9813
+2m 8s (- 4m 15s) (67000 33%) 0.9785
+2m 10s (- 4m 13s) (68000 34%) 1.0180
+2m 12s (- 4m 10s) (69000 34%) 0.9693
+2m 13s (- 4m 8s) (70000 35%) 1.0159
+2m 15s (- 4m 6s) (71000 35%) 0.9308
+2m 17s (- 4m 4s) (72000 36%) 0.9910
+2m 19s (- 4m 2s) (73000 36%) 0.9911
+2m 21s (- 4m 0s) (74000 37%) 0.9653
+2m 22s (- 3m 58s) (75000 37%) 0.9908
+2m 24s (- 3m 56s) (76000 38%) 0.9759
+2m 26s (- 3m 54s) (77000 38%) 1.0097
+2m 28s (- 3m 51s) (78000 39%) 0.9820
+2m 30s (- 3m 49s) (79000 39%) 0.9969
+2m 31s (- 3m 47s) (80000 40%) 0.9914
+Epoch 4/10 finished
+2m 35s (- 3m 48s) (81000 40%) 0.8270
+2m 37s (- 3m 46s) (82000 41%) 0.8721
+2m 39s (- 3m 44s) (83000 41%) 0.8856
+2m 41s (- 3m 42s) (84000 42%) 0.8758
+2m 42s (- 3m 40s) (85000 42%) 0.8700
+2m 44s (- 3m 38s) (86000 43%) 0.8915
+2m 46s (- 3m 36s) (87000 43%) 0.8562
+2m 48s (- 3m 34s) (88000 44%) 0.8501
+2m 50s (- 3m 32s) (89000 44%) 0.8911
+2m 51s (- 3m 30s) (90000 45%) 0.9058
+2m 53s (- 3m 27s) (91000 45%) 0.8701
+2m 55s (- 3m 25s) (92000 46%) 0.8551
+2m 57s (- 3m 23s) (93000 46%) 0.9195
+2m 59s (- 3m 21s) (94000 47%) 0.9096
+3m 0s (- 3m 19s) (95000 47%) 0.9286
+3m 2s (- 3m 17s) (96000 48%) 0.9268
+3m 4s (- 3m 15s) (97000 48%) 0.9386
+3m 6s (- 3m 13s) (98000 49%) 0.9365
+3m 7s (- 3m 11s) (99000 49%) 0.9280
+3m 9s (- 3m 9s) (100000 50%) 0.9465
+Epoch 5/10 finished
+3m 13s (- 3m 10s) (101000 50%) 0.7615
+3m 15s (- 3m 8s) (102000 51%) 0.7821
+3m 17s (- 3m 6s) (103000 51%) 0.7412
+3m 19s (- 3m 4s) (104000 52%) 0.8129
+3m 21s (- 3m 1s) (105000 52%) 0.7828
+3m 22s (- 2m 59s) (106000 53%) 0.8239
+3m 24s (- 2m 57s) (107000 53%) 0.8481
+3m 26s (- 2m 55s) (108000 54%) 0.8399
+3m 28s (- 2m 53s) (109000 54%) 0.8201
+3m 30s (- 2m 51s) (110000 55%) 0.8225
+3m 31s (- 2m 49s) (111000 55%) 0.8208
+3m 33s (- 2m 47s) (112000 56%) 0.8130
+3m 35s (- 2m 45s) (113000 56%) 0.8274
+3m 37s (- 2m 43s) (114000 56%) 0.8879
+3m 39s (- 2m 41s) (115000 57%) 0.8233
+3m 40s (- 2m 39s) (116000 57%) 0.8140
+3m 42s (- 2m 37s) (117000 58%) 0.8478
+3m 44s (- 2m 35s) (118000 59%) 0.8685
+3m 46s (- 2m 33s) (119000 59%) 0.8629
+3m 48s (- 2m 32s) (120000 60%) 0.8339
+Epoch 6/10 finished
+3m 52s (- 2m 31s) (121000 60%) 0.7189
+3m 53s (- 2m 29s) (122000 61%) 0.6714
+3m 55s (- 2m 27s) (123000 61%) 0.7004
+3m 57s (- 2m 25s) (124000 62%) 0.7377
+3m 59s (- 2m 23s) (125000 62%) 0.6971
+4m 1s (- 2m 21s) (126000 63%) 0.7369
+4m 2s (- 2m 19s) (127000 63%) 0.7288
+4m 4s (- 2m 17s) (128000 64%) 0.7544
+4m 6s (- 2m 15s) (129000 64%) 0.8054
+4m 8s (- 2m 13s) (130000 65%) 0.7931
+4m 9s (- 2m 11s) (131000 65%) 0.7347
+4m 11s (- 2m 9s) (132000 66%) 0.7854
+4m 13s (- 2m 7s) (133000 66%) 0.7859
+4m 15s (- 2m 5s) (134000 67%) 0.8233
+4m 17s (- 2m 3s) (135000 67%) 0.7825
+4m 18s (- 2m 1s) (136000 68%) 0.7901
+4m 20s (- 1m 59s) (137000 68%) 0.7878
+4m 22s (- 1m 57s) (138000 69%) 0.7726
+4m 24s (- 1m 55s) (139000 69%) 0.8263
+4m 26s (- 1m 54s) (140000 70%) 0.8005
+Epoch 7/10 finished
+4m 29s (- 1m 52s) (141000 70%) 0.6601
+4m 31s (- 1m 50s) (142000 71%) 0.6526
+4m 33s (- 1m 49s) (143000 71%) 0.6684
+4m 35s (- 1m 47s) (144000 72%) 0.6683
+4m 37s (- 1m 45s) (145000 72%) 0.6638
+4m 38s (- 1m 43s) (146000 73%) 0.7047
+4m 40s (- 1m 41s) (147000 73%) 0.7121
+4m 42s (- 1m 39s) (148000 74%) 0.6781
+4m 44s (- 1m 37s) (149000 74%) 0.6756
+4m 46s (- 1m 35s) (150000 75%) 0.7237
+4m 47s (- 1m 33s) (151000 75%) 0.7008
+4m 49s (- 1m 31s) (152000 76%) 0.6922
+4m 51s (- 1m 29s) (153000 76%) 0.7520
+4m 53s (- 1m 27s) (154000 77%) 0.7050
+4m 55s (- 1m 25s) (155000 77%) 0.6995
+4m 56s (- 1m 23s) (156000 78%) 0.7599
+4m 58s (- 1m 21s) (157000 78%) 0.7386
+5m 0s (- 1m 19s) (158000 79%) 0.7720
+5m 2s (- 1m 17s) (159000 79%) 0.7131
+5m 4s (- 1m 16s) (160000 80%) 0.6881
+Epoch 8/10 finished
+5m 8s (- 1m 14s) (161000 80%) 0.5994
+5m 9s (- 1m 12s) (162000 81%) 0.6105
+5m 11s (- 1m 10s) (163000 81%) 0.6270
+5m 13s (- 1m 8s) (164000 82%) 0.6230
+5m 15s (- 1m 6s) (165000 82%) 0.6249
+5m 17s (- 1m 4s) (166000 83%) 0.6421
+5m 18s (- 1m 3s) (167000 83%) 0.6315
+5m 20s (- 1m 1s) (168000 84%) 0.6430
+5m 22s (- 0m 59s) (169000 84%) 0.6498
+5m 24s (- 0m 57s) (170000 85%) 0.6180
+5m 25s (- 0m 55s) (171000 85%) 0.6705
+5m 27s (- 0m 53s) (172000 86%) 0.6844
+5m 29s (- 0m 51s) (173000 86%) 0.6565
+5m 31s (- 0m 49s) (174000 87%) 0.6350
+5m 33s (- 0m 47s) (175000 87%) 0.6827
+5m 34s (- 0m 45s) (176000 88%) 0.6953
+5m 36s (- 0m 43s) (177000 88%) 0.6686
+5m 38s (- 0m 41s) (178000 89%) 0.6799
+5m 40s (- 0m 39s) (179000 89%) 0.7217
+5m 42s (- 0m 38s) (180000 90%) 0.7395
+Epoch 9/10 finished
+5m 45s (- 0m 36s) (181000 90%) 0.5305
+5m 47s (- 0m 34s) (182000 91%) 0.6092
+5m 49s (- 0m 32s) (183000 91%) 0.6105
+5m 51s (- 0m 30s) (184000 92%) 0.6000
+5m 53s (- 0m 28s) (185000 92%) 0.6413
+5m 54s (- 0m 26s) (186000 93%) 0.6339
+5m 56s (- 0m 24s) (187000 93%) 0.5605
+5m 58s (- 0m 22s) (188000 94%) 0.5728
+6m 0s (- 0m 20s) (189000 94%) 0.5750
+6m 2s (- 0m 19s) (190000 95%) 0.6133
+6m 3s (- 0m 17s) (191000 95%) 0.5897
+6m 5s (- 0m 15s) (192000 96%) 0.6164
+6m 7s (- 0m 13s) (193000 96%) 0.6360
+6m 9s (- 0m 11s) (194000 97%) 0.6015
+6m 11s (- 0m 9s) (195000 97%) 0.6101
+6m 12s (- 0m 7s) (196000 98%) 0.6879
+6m 14s (- 0m 5s) (197000 98%) 0.6667
+6m 16s (- 0m 3s) (198000 99%) 0.6818
+6m 18s (- 0m 1s) (199000 99%) 0.6920
+6m 20s (- 0m 0s) (200000 100%) 0.6783
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['are', 'you', 'looking', 'for', 'us', '?', 'are you', 'you looking', 'looking for', 'for us', 'us ?']
+ref sent: are you looking for us ?
+= 5
+< 5-6
+
+> ['i', 'feel', 'safe', '.', 'i feel', 'feel safe', 'safe .']
+ref sent: i feel safe .
+= 3
+< 3-4
+
+> ['she', 'hurried', 'across', 'the', 'lawn', '.', 'she hurried', 'hurried across', 'across the', 'the lawn', 'lawn .']
+ref sent: she hurried across the lawn .
+= 5
+< 5-6
+
+> ['have', 'something', 'to', 'drink', '.', 'have something', 'something to', 'to drink', 'drink .']
+ref sent: have something to drink .
+= 4
+< 3-4
+
+> ['i', 'live', 'in', 'an', 'apartment', '.', 'i live', 'live in', 'in an', 'an apartment', 'apartment .']
+ref sent: i live in an apartment .
+= 5
+< 5-6
+
+> ['you', 're', 'conscientious', '.', 'you re', 're conscientious', 'conscientious .']
+ref sent: you re conscientious .
+= 3
+< 3-4
+
+> ['i', 'm', 'not', 'sure', 'what', 'i', 'was', 'thinking', '.', 'i m', 'm not', 'not sure', 'sure what', 'what i', 'i was', 'was thinking', 'thinking .']
+ref sent: i m not sure what i was thinking .
+= 8
+< 7-8
+
+> ['she', 'is', 'used', 'to', 'sitting', '.', 'she is', 'is used', 'used to', 'to sitting', 'sitting .']
+ref sent: she is used to sitting .
+= 5
+< 5-6
+
+> ['you', 've', 'given', 'me', 'good', 'advice', '.', 'you ve', 've given', 'given me', 'me good', 'good advice', 'advice .']
+ref sent: you ve given me good advice .
+= 6
+< 5-6
+
+> ['i', 'know', 'you', 'have', 'to', 'go', 'back', 'to', 'boston', '.', 'i know', 'know you', 'you have', 'have to', 'to go', 'go back', 'back to', 'to boston', 'boston .']
+ref sent: i know you have to go back to boston .
+= 9
+< 9-10
+
+Evaluate randomly on testing sentences:
+> ['tom', 'didn', 't', 'like', 'that', 'place', '.', 'tom didn', 'didn t', 't like', 'like that', 'that place', 'place .']
+ref sent: tom didn t like that place .
+= 6
+< 5-6
+
+> ['do', 'you', 'plan', 'to', 'buy', 'that', 'car', '?', 'do you', 'you plan', 'plan to', 'to buy', 'buy that', 'that car', 'car ?']
+ref sent: do you plan to buy that car ?
+= 7
+< 7-8
+
+> ['how', 'long', 'may', 'i', 'keep', 'this', '?', 'how long', 'long may', 'may i', 'i keep', 'keep this', 'this ?']
+ref sent: how long may i keep this ?
+= 6
+< 5-6
+
+> ['i', 'negotiated', 'the', 'price', 'with', 'him', '.', 'i negotiated', 'negotiated the', 'the price', 'price with', 'with him', 'him .']
+ref sent: i negotiated the price with him .
+= 6
+< 5-6
+
+> ['this', 'is', 'what', 'll', 'happen', '.', 'this is', 'is what', 'what ll', 'll happen', 'happen .']
+ref sent: this is what ll happen .
+= 5
+< 3-4
+
+> ['your', 'question', 'is', 'hard', 'to', 'answer', '.', 'your question', 'question is', 'is hard', 'hard to', 'to answer', 'answer .']
+ref sent: your question is hard to answer .
+= 6
+< 7-8
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.', 'i m', 'm beginning', 'beginning to', 'to get', 'get used', 'used to', 'to doing', 'doing this', 'this .']
+ref sent: i m beginning to get used to doing this .
+= 9
+< 7-8
+
+> ['this', 'is', 'not', 'enough', '.', 'this is', 'is not', 'not enough', 'enough .']
+ref sent: this is not enough .
+= 4
+< 3-4
+
+> ['he', 'did', 'it', 'himself', '.', 'he did', 'did it', 'it himself', 'himself .']
+ref sent: he did it himself .
+= 4
+< 3-4
+
+> ['he', 'acted', 'the', 'part', 'of', 'king', 'lear', '.', 'he acted', 'acted the', 'the part', 'part of', 'of king', 'king lear', 'lear .']
+ref sent: he acted the part of king lear .
+= 7
+< 5-6
+
+Accuracy of the network on the sentence length test set: 56 %
+Sentence Length 1-2: 22/46 (incorrect/total) = 0.4782608695652174
+Sentence Length 3-4: 150/1003 (incorrect/total) = 0.14955134596211367
+Sentence Length 5-6: 499/1760 (incorrect/total) = 0.28352272727272726
+Sentence Length 7-8: 763/1266 (incorrect/total) = 0.6026856240126383
+Sentence Length 9-10: 446/580 (incorrect/total) = 0.7689655172413793
+Sentence Length 11-12: 150/209 (incorrect/total) = 0.7177033492822966
+Sentence Length 13-14: 78/85 (incorrect/total) = 0.9176470588235294
+Sentence Length 15-16: 33/33 (incorrect/total) = 1.0
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 7/9 (incorrect/total) = 0.7777777777777778
+Finished
+
+hpc mode: True
+order: 3
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .']
+ref sent: she did come here .
+= 4
+< 9-10
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .']
+ref sent: it was quite funny .
+= 4
+< 13-14
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .']
+ref sent: they come from the same country .
+= 6
+< 11-12
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .']
+ref sent: i didn t finish reading that book .
+= 7
+< 9-10
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .']
+ref sent: i m not ready yet .
+= 5
+< 5-6
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .']
+ref sent: we shouldn t confuse solitude with isolation . they are two separate things .
+= 13
+< 11-12
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .']
+ref sent: i don t know what it is .
+= 7
+< 13-14
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?']
+ref sent: are you going home by bus ?
+= 6
+< 11-12
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .']
+ref sent: he is intelligent .
+= 3
+< 11-12
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .']
+ref sent: you re so impatient .
+= 4
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .']
+ref sent: team members are provided with equipment and uniforms .
+= 8
+< 11-12
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .']
+ref sent: now that my brother is a university student he has to do a lot of reading .
+= 16
+< 11-12
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .']
+ref sent: they had fun with us .
+= 5
+< 11-12
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?']
+ref sent: does anyone know japanese ?
+= 4
+< 13-14
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .']
+ref sent: he narrowly escaped being run over .
+= 6
+< 11-12
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?']
+ref sent: when was the last time you went to an art gallery ?
+= 11
+< 15-16
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .']
+ref sent: his house was sold for .
+= 5
+< 11-12
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .']
+ref sent: i m not mad .
+= 4
+< 5-6
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .']
+ref sent: i thought you d be much fatter .
+= 7
+< 5-6
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .']
+ref sent: they are bored .
+= 3
+< 11-12
+
+Accuracy of the network on the sentence length test set: 12 %
+Sentence Length 1-2: 45/46 (incorrect/total) = 0.9782608695652174
+Sentence Length 3-4: 1002/1003 (incorrect/total) = 0.9990029910269193
+Sentence Length 5-6: 1290/1760 (incorrect/total) = 0.7329545454545454
+Sentence Length 7-8: 1200/1266 (incorrect/total) = 0.9478672985781991
+Sentence Length 9-10: 516/580 (incorrect/total) = 0.8896551724137931
+Sentence Length 11-12: 177/209 (incorrect/total) = 0.84688995215311
+Sentence Length 13-14: 74/85 (incorrect/total) = 0.8705882352941177
+Sentence Length 15-16: 31/33 (incorrect/total) = 0.9393939393939394
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 9/9 (incorrect/total) = 1.0
+0m 3s (- 12m 40s) (1000 0%) 1.8417
+0m 5s (- 9m 15s) (2000 1%) 1.6736
+0m 7s (- 8m 6s) (3000 1%) 1.5845
+0m 9s (- 7m 30s) (4000 2%) 1.5852
+0m 10s (- 7m 8s) (5000 2%) 1.4948
+0m 12s (- 6m 53s) (6000 3%) 1.4703
+0m 14s (- 6m 41s) (7000 3%) 1.4682
+0m 16s (- 6m 32s) (8000 4%) 1.4225
+0m 18s (- 6m 25s) (9000 4%) 1.4620
+0m 19s (- 6m 19s) (10000 5%) 1.3348
+0m 21s (- 6m 13s) (11000 5%) 1.4620
+0m 23s (- 6m 8s) (12000 6%) 1.3639
+0m 25s (- 6m 4s) (13000 6%) 1.3709
+0m 27s (- 6m 0s) (14000 7%) 1.3920
+0m 28s (- 5m 56s) (15000 7%) 1.3548
+0m 30s (- 5m 53s) (16000 8%) 1.3612
+0m 32s (- 5m 50s) (17000 8%) 1.3604
+0m 34s (- 5m 47s) (18000 9%) 1.3338
+0m 36s (- 5m 44s) (19000 9%) 1.3515
+0m 37s (- 5m 41s) (20000 10%) 1.3503
+Epoch 1/10 finished
+0m 42s (- 6m 0s) (21000 10%) 1.2293
+0m 44s (- 5m 56s) (22000 11%) 1.2696
+0m 45s (- 5m 53s) (23000 11%) 1.2712
+0m 47s (- 5m 49s) (24000 12%) 1.2227
+0m 49s (- 5m 46s) (25000 12%) 1.2740
+0m 51s (- 5m 43s) (26000 13%) 1.2221
+0m 53s (- 5m 40s) (27000 13%) 1.2508
+0m 54s (- 5m 37s) (28000 14%) 1.2782
+0m 56s (- 5m 34s) (29000 14%) 1.1905
+0m 58s (- 5m 31s) (30000 15%) 1.2282
+1m 0s (- 5m 28s) (31000 15%) 1.2393
+1m 2s (- 5m 25s) (32000 16%) 1.2280
+1m 3s (- 5m 23s) (33000 16%) 1.2173
+1m 5s (- 5m 20s) (34000 17%) 1.2261
+1m 7s (- 5m 18s) (35000 17%) 1.2192
+1m 9s (- 5m 15s) (36000 18%) 1.1827
+1m 11s (- 5m 12s) (37000 18%) 1.2310
+1m 12s (- 5m 10s) (38000 19%) 1.2333
+1m 14s (- 5m 8s) (39000 19%) 1.2292
+1m 16s (- 5m 5s) (40000 20%) 1.2285
+Epoch 2/10 finished
+1m 20s (- 5m 13s) (41000 20%) 1.1383
+1m 22s (- 5m 10s) (42000 21%) 1.0970
+1m 24s (- 5m 7s) (43000 21%) 1.1230
+1m 26s (- 5m 5s) (44000 22%) 1.1043
+1m 27s (- 5m 2s) (45000 22%) 1.1209
+1m 29s (- 5m 0s) (46000 23%) 1.1441
+1m 31s (- 4m 57s) (47000 23%) 1.1022
+1m 33s (- 4m 55s) (48000 24%) 1.1082
+1m 35s (- 4m 53s) (49000 24%) 1.1167
+1m 36s (- 4m 50s) (50000 25%) 1.1116
+1m 38s (- 4m 48s) (51000 25%) 1.1229
+1m 40s (- 4m 46s) (52000 26%) 1.1118
+1m 42s (- 4m 43s) (53000 26%) 1.1011
+1m 44s (- 4m 41s) (54000 27%) 1.0981
+1m 45s (- 4m 39s) (55000 27%) 1.1470
+1m 47s (- 4m 36s) (56000 28%) 1.0834
+1m 49s (- 4m 34s) (57000 28%) 1.1331
+1m 51s (- 4m 32s) (58000 28%) 1.0550
+1m 53s (- 4m 30s) (59000 29%) 1.1558
+1m 54s (- 4m 28s) (60000 30%) 1.1282
+Epoch 3/10 finished
+1m 58s (- 4m 30s) (61000 30%) 0.9872
+2m 0s (- 4m 28s) (62000 31%) 0.9693
+2m 2s (- 4m 26s) (63000 31%) 1.0410
+2m 4s (- 4m 23s) (64000 32%) 0.9603
+2m 6s (- 4m 21s) (65000 32%) 0.9741
+2m 7s (- 4m 19s) (66000 33%) 1.0260
+2m 9s (- 4m 17s) (67000 33%) 1.0246
+2m 11s (- 4m 15s) (68000 34%) 1.0537
+2m 13s (- 4m 12s) (69000 34%) 1.0230
+2m 15s (- 4m 10s) (70000 35%) 1.0482
+2m 16s (- 4m 8s) (71000 35%) 0.9619
+2m 18s (- 4m 6s) (72000 36%) 1.0527
+2m 20s (- 4m 4s) (73000 36%) 1.0145
+2m 22s (- 4m 2s) (74000 37%) 1.0301
+2m 23s (- 3m 59s) (75000 37%) 1.0485
+2m 25s (- 3m 57s) (76000 38%) 1.0029
+2m 27s (- 3m 55s) (77000 38%) 1.0576
+2m 29s (- 3m 53s) (78000 39%) 1.0018
+2m 31s (- 3m 51s) (79000 39%) 1.0353
+2m 32s (- 3m 49s) (80000 40%) 1.0105
+Epoch 4/10 finished
+2m 37s (- 3m 51s) (81000 40%) 0.8585
+2m 39s (- 3m 49s) (82000 41%) 0.9219
+2m 40s (- 3m 46s) (83000 41%) 0.8954
+2m 42s (- 3m 44s) (84000 42%) 0.9130
+2m 44s (- 3m 42s) (85000 42%) 0.8745
+2m 46s (- 3m 40s) (86000 43%) 0.9080
+2m 48s (- 3m 38s) (87000 43%) 0.8933
+2m 49s (- 3m 36s) (88000 44%) 0.8840
+2m 51s (- 3m 34s) (89000 44%) 0.9585
+2m 53s (- 3m 32s) (90000 45%) 0.9786
+2m 55s (- 3m 30s) (91000 45%) 0.9606
+2m 57s (- 3m 27s) (92000 46%) 0.8865
+2m 58s (- 3m 25s) (93000 46%) 0.9521
+3m 0s (- 3m 23s) (94000 47%) 1.0009
+3m 2s (- 3m 21s) (95000 47%) 0.9696
+3m 4s (- 3m 19s) (96000 48%) 0.9185
+3m 6s (- 3m 17s) (97000 48%) 0.9720
+3m 7s (- 3m 15s) (98000 49%) 0.9565
+3m 9s (- 3m 13s) (99000 49%) 1.0015
+3m 11s (- 3m 11s) (100000 50%) 0.9599
+Epoch 5/10 finished
+3m 15s (- 3m 11s) (101000 50%) 0.7904
+3m 17s (- 3m 9s) (102000 51%) 0.7771
+3m 19s (- 3m 7s) (103000 51%) 0.8256
+3m 20s (- 3m 5s) (104000 52%) 0.8119
+3m 22s (- 3m 3s) (105000 52%) 0.8297
+3m 24s (- 3m 1s) (106000 53%) 0.8513
+3m 26s (- 2m 59s) (107000 53%) 0.8832
+3m 28s (- 2m 57s) (108000 54%) 0.8807
+3m 29s (- 2m 55s) (109000 54%) 0.8309
+3m 31s (- 2m 53s) (110000 55%) 0.8744
+3m 33s (- 2m 51s) (111000 55%) 0.8621
+3m 35s (- 2m 49s) (112000 56%) 0.8625
+3m 37s (- 2m 47s) (113000 56%) 0.8264
+3m 38s (- 2m 45s) (114000 56%) 0.9695
+3m 40s (- 2m 43s) (115000 57%) 0.8701
+3m 42s (- 2m 41s) (116000 57%) 0.8870
+3m 44s (- 2m 39s) (117000 58%) 0.9139
+3m 46s (- 2m 37s) (118000 59%) 0.8770
+3m 47s (- 2m 35s) (119000 59%) 0.8619
+3m 49s (- 2m 33s) (120000 60%) 0.9073
+Epoch 6/10 finished
+3m 53s (- 2m 32s) (121000 60%) 0.7099
+3m 55s (- 2m 30s) (122000 61%) 0.7372
+3m 57s (- 2m 28s) (123000 61%) 0.7920
+3m 59s (- 2m 26s) (124000 62%) 0.7430
+4m 1s (- 2m 24s) (125000 62%) 0.7859
+4m 2s (- 2m 22s) (126000 63%) 0.7731
+4m 4s (- 2m 20s) (127000 63%) 0.7823
+4m 6s (- 2m 18s) (128000 64%) 0.8169
+4m 8s (- 2m 16s) (129000 64%) 0.8686
+4m 10s (- 2m 14s) (130000 65%) 0.7908
+4m 12s (- 2m 12s) (131000 65%) 0.8199
+4m 13s (- 2m 10s) (132000 66%) 0.7951
+4m 15s (- 2m 8s) (133000 66%) 0.8260
+4m 17s (- 2m 6s) (134000 67%) 0.8365
+4m 19s (- 2m 4s) (135000 67%) 0.8056
+4m 21s (- 2m 2s) (136000 68%) 0.8171
+4m 22s (- 2m 0s) (137000 68%) 0.8667
+4m 24s (- 1m 58s) (138000 69%) 0.8202
+4m 26s (- 1m 56s) (139000 69%) 0.8737
+4m 28s (- 1m 54s) (140000 70%) 0.8205
+Epoch 7/10 finished
+4m 32s (- 1m 54s) (141000 70%) 0.6959
+4m 34s (- 1m 52s) (142000 71%) 0.6858
+4m 36s (- 1m 50s) (143000 71%) 0.6532
+4m 37s (- 1m 48s) (144000 72%) 0.7428
+4m 39s (- 1m 46s) (145000 72%) 0.6923
+4m 41s (- 1m 44s) (146000 73%) 0.7557
+4m 43s (- 1m 42s) (147000 73%) 0.7563
+4m 45s (- 1m 40s) (148000 74%) 0.7767
+4m 46s (- 1m 38s) (149000 74%) 0.7042
+4m 48s (- 1m 36s) (150000 75%) 0.8011
+4m 50s (- 1m 34s) (151000 75%) 0.7778
+4m 52s (- 1m 32s) (152000 76%) 0.7408
+4m 54s (- 1m 30s) (153000 76%) 0.8242
+4m 55s (- 1m 28s) (154000 77%) 0.7365
+4m 57s (- 1m 26s) (155000 77%) 0.8045
+4m 59s (- 1m 24s) (156000 78%) 0.7427
+5m 1s (- 1m 22s) (157000 78%) 0.7848
+5m 3s (- 1m 20s) (158000 79%) 0.8157
+5m 4s (- 1m 18s) (159000 79%) 0.8085
+5m 6s (- 1m 16s) (160000 80%) 0.7419
+Epoch 8/10 finished
+5m 10s (- 1m 15s) (161000 80%) 0.6123
+5m 12s (- 1m 13s) (162000 81%) 0.6766
+5m 14s (- 1m 11s) (163000 81%) 0.6692
+5m 16s (- 1m 9s) (164000 82%) 0.6689
+5m 18s (- 1m 7s) (165000 82%) 0.6595
+5m 19s (- 1m 5s) (166000 83%) 0.6515
+5m 21s (- 1m 3s) (167000 83%) 0.6350
+5m 23s (- 1m 1s) (168000 84%) 0.6470
+5m 25s (- 0m 59s) (169000 84%) 0.7350
+5m 27s (- 0m 57s) (170000 85%) 0.7136
+5m 29s (- 0m 55s) (171000 85%) 0.7604
+5m 30s (- 0m 53s) (172000 86%) 0.6983
+5m 32s (- 0m 51s) (173000 86%) 0.7167
+5m 34s (- 0m 49s) (174000 87%) 0.7588
+5m 36s (- 0m 48s) (175000 87%) 0.7596
+5m 38s (- 0m 46s) (176000 88%) 0.7446
+5m 39s (- 0m 44s) (177000 88%) 0.7781
+5m 41s (- 0m 42s) (178000 89%) 0.7577
+5m 43s (- 0m 40s) (179000 89%) 0.7666
+5m 45s (- 0m 38s) (180000 90%) 0.7668
+Epoch 9/10 finished
+5m 49s (- 0m 36s) (181000 90%) 0.5930
+5m 51s (- 0m 34s) (182000 91%) 0.6461
+5m 53s (- 0m 32s) (183000 91%) 0.6339
+5m 54s (- 0m 30s) (184000 92%) 0.6338
+5m 56s (- 0m 28s) (185000 92%) 0.6219
+5m 58s (- 0m 26s) (186000 93%) 0.6820
+6m 0s (- 0m 25s) (187000 93%) 0.6114
+6m 2s (- 0m 23s) (188000 94%) 0.6510
+6m 3s (- 0m 21s) (189000 94%) 0.6655
+6m 5s (- 0m 19s) (190000 95%) 0.6615
+6m 7s (- 0m 17s) (191000 95%) 0.7067
+6m 9s (- 0m 15s) (192000 96%) 0.6738
+6m 11s (- 0m 13s) (193000 96%) 0.6576
+6m 13s (- 0m 11s) (194000 97%) 0.6624
+6m 14s (- 0m 9s) (195000 97%) 0.7124
+6m 16s (- 0m 7s) (196000 98%) 0.6840
+6m 18s (- 0m 5s) (197000 98%) 0.6978
+6m 20s (- 0m 3s) (198000 99%) 0.7012
+6m 22s (- 0m 1s) (199000 99%) 0.7551
+6m 23s (- 0m 0s) (200000 100%) 0.7325
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['are', 'you', 'looking', 'for', 'us', '?', 'are you', 'you looking', 'looking for', 'for us', 'us ?', 'are you looking', 'you looking for', 'looking for us', 'for us ?']
+ref sent: are you looking for us ?
+= 5
+< 5-6
+
+> ['i', 'feel', 'safe', '.', 'i feel', 'feel safe', 'safe .', 'i feel safe', 'feel safe .']
+ref sent: i feel safe .
+= 3
+< 3-4
+
+> ['she', 'hurried', 'across', 'the', 'lawn', '.', 'she hurried', 'hurried across', 'across the', 'the lawn', 'lawn .', 'she hurried across', 'hurried across the', 'across the lawn', 'the lawn .']
+ref sent: she hurried across the lawn .
+= 5
+< 5-6
+
+> ['have', 'something', 'to', 'drink', '.', 'have something', 'something to', 'to drink', 'drink .', 'have something to', 'something to drink', 'to drink .']
+ref sent: have something to drink .
+= 4
+< 3-4
+
+> ['i', 'live', 'in', 'an', 'apartment', '.', 'i live', 'live in', 'in an', 'an apartment', 'apartment .', 'i live in', 'live in an', 'in an apartment', 'an apartment .']
+ref sent: i live in an apartment .
+= 5
+< 5-6
+
+> ['you', 're', 'conscientious', '.', 'you re', 're conscientious', 'conscientious .', 'you re conscientious', 're conscientious .']
+ref sent: you re conscientious .
+= 3
+< 3-4
+
+> ['i', 'm', 'not', 'sure', 'what', 'i', 'was', 'thinking', '.', 'i m', 'm not', 'not sure', 'sure what', 'what i', 'i was', 'was thinking', 'thinking .', 'i m not', 'm not sure', 'not sure what', 'sure what i', 'what i was', 'i was thinking', 'was thinking .']
+ref sent: i m not sure what i was thinking .
+= 8
+< 7-8
+
+> ['she', 'is', 'used', 'to', 'sitting', '.', 'she is', 'is used', 'used to', 'to sitting', 'sitting .', 'she is used', 'is used to', 'used to sitting', 'to sitting .']
+ref sent: she is used to sitting .
+= 5
+< 5-6
+
+> ['you', 've', 'given', 'me', 'good', 'advice', '.', 'you ve', 've given', 'given me', 'me good', 'good advice', 'advice .', 'you ve given', 've given me', 'given me good', 'me good advice', 'good advice .']
+ref sent: you ve given me good advice .
+= 6
+< 5-6
+
+> ['i', 'know', 'you', 'have', 'to', 'go', 'back', 'to', 'boston', '.', 'i know', 'know you', 'you have', 'have to', 'to go', 'go back', 'back to', 'to boston', 'boston .', 'i know you', 'know you have', 'you have to', 'have to go', 'to go back', 'go back to', 'back to boston', 'to boston .']
+ref sent: i know you have to go back to boston .
+= 9
+< 9-10
+
+Evaluate randomly on testing sentences:
+> ['tom', 'didn', 't', 'like', 'that', 'place', '.', 'tom didn', 'didn t', 't like', 'like that', 'that place', 'place .', 'tom didn t', 'didn t like', 't like that', 'like that place', 'that place .']
+ref sent: tom didn t like that place .
+= 6
+< 5-6
+
+> ['do', 'you', 'plan', 'to', 'buy', 'that', 'car', '?', 'do you', 'you plan', 'plan to', 'to buy', 'buy that', 'that car', 'car ?', 'do you plan', 'you plan to', 'plan to buy', 'to buy that', 'buy that car', 'that car ?']
+ref sent: do you plan to buy that car ?
+= 7
+< 7-8
+
+> ['how', 'long', 'may', 'i', 'keep', 'this', '?', 'how long', 'long may', 'may i', 'i keep', 'keep this', 'this ?', 'how long may', 'long may i', 'may i keep', 'i keep this', 'keep this ?']
+ref sent: how long may i keep this ?
+= 6
+< 5-6
+
+> ['i', 'negotiated', 'the', 'price', 'with', 'him', '.', 'i negotiated', 'negotiated the', 'the price', 'price with', 'with him', 'him .', 'i negotiated the', 'negotiated the price', 'the price with', 'price with him', 'with him .']
+ref sent: i negotiated the price with him .
+= 6
+< 5-6
+
+> ['this', 'is', 'what', 'll', 'happen', '.', 'this is', 'is what', 'what ll', 'll happen', 'happen .', 'this is what', 'is what ll', 'what ll happen', 'll happen .']
+ref sent: this is what ll happen .
+= 5
+< 7-8
+
+> ['your', 'question', 'is', 'hard', 'to', 'answer', '.', 'your question', 'question is', 'is hard', 'hard to', 'to answer', 'answer .', 'your question is', 'question is hard', 'is hard to', 'hard to answer', 'to answer .']
+ref sent: your question is hard to answer .
+= 6
+< 5-6
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.', 'i m', 'm beginning', 'beginning to', 'to get', 'get used', 'used to', 'to doing', 'doing this', 'this .', 'i m beginning', 'm beginning to', 'beginning to get', 'to get used', 'get used to', 'used to doing', 'to doing this', 'doing this .']
+ref sent: i m beginning to get used to doing this .
+= 9
+< 9-10
+
+> ['this', 'is', 'not', 'enough', '.', 'this is', 'is not', 'not enough', 'enough .', 'this is not', 'is not enough', 'not enough .']
+ref sent: this is not enough .
+= 4
+< 7-8
+
+> ['he', 'did', 'it', 'himself', '.', 'he did', 'did it', 'it himself', 'himself .', 'he did it', 'did it himself', 'it himself .']
+ref sent: he did it himself .
+= 4
+< 3-4
+
+> ['he', 'acted', 'the', 'part', 'of', 'king', 'lear', '.', 'he acted', 'acted the', 'the part', 'part of', 'of king', 'king lear', 'lear .', 'he acted the', 'acted the part', 'the part of', 'part of king', 'of king lear', 'king lear .']
+ref sent: he acted the part of king lear .
+= 7
+< 5-6
+
+Accuracy of the network on the sentence length test set: 56 %
+Sentence Length 1-2: 40/46 (incorrect/total) = 0.8695652173913043
+Sentence Length 3-4: 187/1003 (incorrect/total) = 0.1864406779661017
+Sentence Length 5-6: 568/1760 (incorrect/total) = 0.32272727272727275
+Sentence Length 7-8: 713/1266 (incorrect/total) = 0.5631911532385466
+Sentence Length 9-10: 379/580 (incorrect/total) = 0.653448275862069
+Sentence Length 11-12: 166/209 (incorrect/total) = 0.7942583732057417
+Sentence Length 13-14: 79/85 (incorrect/total) = 0.9294117647058824
+Sentence Length 15-16: 32/33 (incorrect/total) = 0.9696969696969697
+Sentence Length 17-18: 8/9 (incorrect/total) = 0.8888888888888888
+Sentence Length 18+: 7/9 (incorrect/total) = 0.7777777777777778
+Finished
+
+hpc mode: True
+order: 4
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .', 'she did come here', 'did come here .']
+ref sent: she did come here .
+= 4
+< 11-12
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .', 'it was quite funny', 'was quite funny .']
+ref sent: it was quite funny .
+= 4
+< 7-8
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .']
+ref sent: they come from the same country .
+= 6
+< 1-2
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .', 'i didn t finish', 'didn t finish reading', 't finish reading that', 'finish reading that book', 'reading that book .']
+ref sent: i didn t finish reading that book .
+= 7
+< 7-8
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .', 'i m not ready', 'm not ready yet', 'not ready yet .']
+ref sent: i m not ready yet .
+= 5
+< 5-6
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .', 'we shouldn t confuse', 'shouldn t confuse solitude', 't confuse solitude with', 'confuse solitude with isolation', 'solitude with isolation .', 'with isolation . they', 'isolation . they are', '. they are two', 'they are two separate', 'are two separate things', 'two separate things .']
+ref sent: we shouldn t confuse solitude with isolation . they are two separate things .
+= 13
+< 1-2
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .', 'i don t know', 'don t know what', 't know what it', 'know what it is', 'what it is .']
+ref sent: i don t know what it is .
+= 7
+< 5-6
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?', 'are you going home', 'you going home by', 'going home by bus', 'home by bus ?']
+ref sent: are you going home by bus ?
+= 6
+< 1-2
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .', 'he is intelligent .']
+ref sent: he is intelligent .
+= 3
+< 1-2
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .', 'you re so impatient', 're so impatient .']
+ref sent: you re so impatient .
+= 4
+< 7-8
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .', 'team members are provided', 'members are provided with', 'are provided with equipment', 'provided with equipment and', 'with equipment and uniforms', 'equipment and uniforms .']
+ref sent: team members are provided with equipment and uniforms .
+= 8
+< 5-6
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .']
+ref sent: now that my brother is a university student he has to do a lot of reading .
+= 16
+< 5-6
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .', 'they had fun with', 'had fun with us', 'fun with us .']
+ref sent: they had fun with us .
+= 5
+< 11-12
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?']
+ref sent: does anyone know japanese ?
+= 4
+< 1-2
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .']
+ref sent: he narrowly escaped being run over .
+= 6
+< 11-12
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?']
+ref sent: when was the last time you went to an art gallery ?
+= 11
+< 5-6
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .']
+ref sent: his house was sold for .
+= 5
+< 11-12
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .']
+ref sent: i m not mad .
+= 4
+< 5-6
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .', 'i thought you d', 'thought you d be', 'you d be much', 'd be much fatter', 'be much fatter .']
+ref sent: i thought you d be much fatter .
+= 7
+< 11-12
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .', 'they are bored .']
+ref sent: they are bored .
+= 3
+< 11-12
+
+Accuracy of the network on the sentence length test set: 14 %
+Sentence Length 1-2: 43/46 (incorrect/total) = 0.9347826086956522
+Sentence Length 3-4: 1000/1003 (incorrect/total) = 0.9970089730807578
+Sentence Length 5-6: 1313/1760 (incorrect/total) = 0.7460227272727272
+Sentence Length 7-8: 1170/1266 (incorrect/total) = 0.9241706161137441
+Sentence Length 9-10: 473/580 (incorrect/total) = 0.8155172413793104
+Sentence Length 11-12: 171/209 (incorrect/total) = 0.8181818181818182
+Sentence Length 13-14: 76/85 (incorrect/total) = 0.8941176470588236
+Sentence Length 15-16: 30/33 (incorrect/total) = 0.9090909090909091
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 9/9 (incorrect/total) = 1.0
+0m 4s (- 13m 52s) (1000 0%) 1.8497
+0m 5s (- 9m 51s) (2000 1%) 1.6744
+0m 7s (- 8m 29s) (3000 1%) 1.5629
+0m 9s (- 7m 48s) (4000 2%) 1.5633
+0m 11s (- 7m 22s) (5000 2%) 1.4767
+0m 13s (- 7m 5s) (6000 3%) 1.4564
+0m 14s (- 6m 52s) (7000 3%) 1.4476
+0m 16s (- 6m 41s) (8000 4%) 1.4139
+0m 18s (- 6m 33s) (9000 4%) 1.4451
+0m 20s (- 6m 26s) (10000 5%) 1.3828
+0m 22s (- 6m 20s) (11000 5%) 1.4669
+0m 23s (- 6m 14s) (12000 6%) 1.3592
+0m 25s (- 6m 9s) (13000 6%) 1.3522
+0m 27s (- 6m 5s) (14000 7%) 1.3785
+0m 29s (- 6m 1s) (15000 7%) 1.2960
+0m 31s (- 5m 57s) (16000 8%) 1.3438
+0m 32s (- 5m 54s) (17000 8%) 1.3542
+0m 34s (- 5m 50s) (18000 9%) 1.3164
+0m 36s (- 5m 47s) (19000 9%) 1.3605
+0m 38s (- 5m 44s) (20000 10%) 1.3082
+Epoch 1/10 finished
+0m 42s (- 6m 0s) (21000 10%) 1.2051
+0m 44s (- 5m 56s) (22000 11%) 1.2223
+0m 45s (- 5m 53s) (23000 11%) 1.2577
+0m 47s (- 5m 49s) (24000 12%) 1.2244
+0m 49s (- 5m 46s) (25000 12%) 1.2816
+0m 51s (- 5m 43s) (26000 13%) 1.2407
+0m 53s (- 5m 40s) (27000 13%) 1.2073
+0m 54s (- 5m 37s) (28000 14%) 1.2406
+0m 56s (- 5m 34s) (29000 14%) 1.1996
+0m 58s (- 5m 31s) (30000 15%) 1.2201
+1m 0s (- 5m 28s) (31000 15%) 1.2575
+1m 2s (- 5m 26s) (32000 16%) 1.2253
+1m 3s (- 5m 23s) (33000 16%) 1.2303
+1m 5s (- 5m 20s) (34000 17%) 1.2193
+1m 7s (- 5m 18s) (35000 17%) 1.2024
+1m 9s (- 5m 15s) (36000 18%) 1.1673
+1m 11s (- 5m 13s) (37000 18%) 1.2120
+1m 12s (- 5m 10s) (38000 19%) 1.2010
+1m 14s (- 5m 8s) (39000 19%) 1.2396
+1m 16s (- 5m 6s) (40000 20%) 1.1787
+Epoch 2/10 finished
+1m 20s (- 5m 11s) (41000 20%) 1.1157
+1m 22s (- 5m 9s) (42000 21%) 1.0793
+1m 24s (- 5m 6s) (43000 21%) 1.0982
+1m 25s (- 5m 4s) (44000 22%) 1.1046
+1m 27s (- 5m 1s) (45000 22%) 1.0960
+1m 29s (- 4m 59s) (46000 23%) 1.1257
+1m 31s (- 4m 56s) (47000 23%) 1.0579
+1m 33s (- 4m 54s) (48000 24%) 1.1310
+1m 34s (- 4m 52s) (49000 24%) 1.0915
+1m 36s (- 4m 49s) (50000 25%) 1.0826
+1m 38s (- 4m 47s) (51000 25%) 1.0967
+1m 40s (- 4m 45s) (52000 26%) 1.0917
+1m 42s (- 4m 42s) (53000 26%) 1.1339
+1m 43s (- 4m 40s) (54000 27%) 1.0605
+1m 45s (- 4m 38s) (55000 27%) 1.1097
+1m 47s (- 4m 36s) (56000 28%) 1.1212
+1m 49s (- 4m 34s) (57000 28%) 1.1045
+1m 51s (- 4m 31s) (58000 28%) 1.0455
+1m 52s (- 4m 29s) (59000 29%) 1.1249
+1m 54s (- 4m 27s) (60000 30%) 1.1034
+Epoch 3/10 finished
+1m 58s (- 4m 29s) (61000 30%) 0.9898
+2m 0s (- 4m 27s) (62000 31%) 0.9669
+2m 2s (- 4m 25s) (63000 31%) 0.9997
+2m 3s (- 4m 23s) (64000 32%) 0.9652
+2m 5s (- 4m 21s) (65000 32%) 1.0058
+2m 7s (- 4m 18s) (66000 33%) 0.9733
+2m 9s (- 4m 16s) (67000 33%) 1.0019
+2m 11s (- 4m 14s) (68000 34%) 1.0161
+2m 12s (- 4m 12s) (69000 34%) 0.9854
+2m 14s (- 4m 10s) (70000 35%) 1.0299
+2m 16s (- 4m 8s) (71000 35%) 0.9559
+2m 18s (- 4m 5s) (72000 36%) 1.0558
+2m 20s (- 4m 3s) (73000 36%) 1.0220
+2m 21s (- 4m 1s) (74000 37%) 1.0212
+2m 23s (- 3m 59s) (75000 37%) 1.0585
+2m 25s (- 3m 57s) (76000 38%) 0.9821
+2m 27s (- 3m 55s) (77000 38%) 0.9969
+2m 29s (- 3m 53s) (78000 39%) 0.9519
+2m 30s (- 3m 51s) (79000 39%) 0.9962
+2m 32s (- 3m 49s) (80000 40%) 1.0185
+Epoch 4/10 finished
+2m 36s (- 3m 50s) (81000 40%) 0.8468
+2m 38s (- 3m 48s) (82000 41%) 0.8956
+2m 40s (- 3m 46s) (83000 41%) 0.8591
+2m 42s (- 3m 43s) (84000 42%) 0.9060
+2m 43s (- 3m 41s) (85000 42%) 0.8968
+2m 45s (- 3m 39s) (86000 43%) 0.9257
+2m 47s (- 3m 37s) (87000 43%) 0.8854
+2m 49s (- 3m 35s) (88000 44%) 0.9034
+2m 51s (- 3m 33s) (89000 44%) 0.8892
+2m 52s (- 3m 31s) (90000 45%) 0.9513
+2m 54s (- 3m 29s) (91000 45%) 0.9168
+2m 56s (- 3m 27s) (92000 46%) 0.8831
+2m 58s (- 3m 25s) (93000 46%) 0.9329
+3m 0s (- 3m 23s) (94000 47%) 0.9815
+3m 1s (- 3m 21s) (95000 47%) 0.9254
+3m 3s (- 3m 19s) (96000 48%) 0.9173
+3m 5s (- 3m 17s) (97000 48%) 0.9441
+3m 7s (- 3m 15s) (98000 49%) 0.9630
+3m 9s (- 3m 12s) (99000 49%) 0.9775
+3m 10s (- 3m 10s) (100000 50%) 0.9451
+Epoch 5/10 finished
+3m 15s (- 3m 11s) (101000 50%) 0.7510
+3m 17s (- 3m 9s) (102000 51%) 0.8111
+3m 18s (- 3m 7s) (103000 51%) 0.7754
+3m 20s (- 3m 5s) (104000 52%) 0.8490
+3m 22s (- 3m 3s) (105000 52%) 0.7987
+3m 24s (- 3m 1s) (106000 53%) 0.8128
+3m 26s (- 2m 59s) (107000 53%) 0.8189
+3m 27s (- 2m 57s) (108000 54%) 0.8469
+3m 29s (- 2m 55s) (109000 54%) 0.8652
+3m 31s (- 2m 53s) (110000 55%) 0.8906
+3m 33s (- 2m 51s) (111000 55%) 0.8608
+3m 35s (- 2m 49s) (112000 56%) 0.8273
+3m 37s (- 2m 47s) (113000 56%) 0.8292
+3m 38s (- 2m 45s) (114000 56%) 0.9276
+3m 40s (- 2m 43s) (115000 57%) 0.8455
+3m 42s (- 2m 41s) (116000 57%) 0.8179
+3m 44s (- 2m 39s) (117000 58%) 0.8972
+3m 46s (- 2m 37s) (118000 59%) 0.8988
+3m 47s (- 2m 35s) (119000 59%) 0.8479
+3m 49s (- 2m 33s) (120000 60%) 0.8697
+Epoch 6/10 finished
+3m 53s (- 2m 32s) (121000 60%) 0.7210
+3m 55s (- 2m 30s) (122000 61%) 0.7246
+3m 57s (- 2m 28s) (123000 61%) 0.7504
+3m 58s (- 2m 26s) (124000 62%) 0.7181
+4m 0s (- 2m 24s) (125000 62%) 0.7716
+4m 2s (- 2m 22s) (126000 63%) 0.7614
+4m 4s (- 2m 20s) (127000 63%) 0.7759
+4m 6s (- 2m 18s) (128000 64%) 0.7776
+4m 7s (- 2m 16s) (129000 64%) 0.7991
+4m 9s (- 2m 14s) (130000 65%) 0.7981
+4m 11s (- 2m 12s) (131000 65%) 0.8248
+4m 13s (- 2m 10s) (132000 66%) 0.7952
+4m 15s (- 2m 8s) (133000 66%) 0.8205
+4m 16s (- 2m 6s) (134000 67%) 0.8463
+4m 18s (- 2m 4s) (135000 67%) 0.8228
+4m 20s (- 2m 2s) (136000 68%) 0.8095
+4m 22s (- 2m 0s) (137000 68%) 0.8573
+4m 24s (- 1m 58s) (138000 69%) 0.7938
+4m 25s (- 1m 56s) (139000 69%) 0.8413
+4m 27s (- 1m 54s) (140000 70%) 0.7743
+Epoch 7/10 finished
+4m 31s (- 1m 53s) (141000 70%) 0.6862
+4m 33s (- 1m 51s) (142000 71%) 0.6642
+4m 35s (- 1m 49s) (143000 71%) 0.7072
+4m 37s (- 1m 47s) (144000 72%) 0.7003
+4m 38s (- 1m 45s) (145000 72%) 0.6683
+4m 40s (- 1m 43s) (146000 73%) 0.7559
+4m 42s (- 1m 41s) (147000 73%) 0.7245
+4m 44s (- 1m 39s) (148000 74%) 0.7248
+4m 46s (- 1m 37s) (149000 74%) 0.7251
+4m 47s (- 1m 35s) (150000 75%) 0.7635
+4m 49s (- 1m 34s) (151000 75%) 0.7331
+4m 51s (- 1m 32s) (152000 76%) 0.7496
+4m 53s (- 1m 30s) (153000 76%) 0.7417
+4m 55s (- 1m 28s) (154000 77%) 0.7109
+4m 57s (- 1m 26s) (155000 77%) 0.7621
+4m 58s (- 1m 24s) (156000 78%) 0.7603
+5m 0s (- 1m 22s) (157000 78%) 0.7535
+5m 2s (- 1m 20s) (158000 79%) 0.8305
+5m 4s (- 1m 18s) (159000 79%) 0.8125
+5m 6s (- 1m 16s) (160000 80%) 0.7111
+Epoch 8/10 finished
+5m 9s (- 1m 15s) (161000 80%) 0.6080
+5m 11s (- 1m 13s) (162000 81%) 0.6536
+5m 13s (- 1m 11s) (163000 81%) 0.6419
+5m 15s (- 1m 9s) (164000 82%) 0.6390
+5m 17s (- 1m 7s) (165000 82%) 0.6209
+5m 18s (- 1m 5s) (166000 83%) 0.6654
+5m 20s (- 1m 3s) (167000 83%) 0.7068
+5m 22s (- 1m 1s) (168000 84%) 0.6679
+5m 24s (- 0m 59s) (169000 84%) 0.6886
+5m 26s (- 0m 57s) (170000 85%) 0.7052
+5m 27s (- 0m 55s) (171000 85%) 0.7201
+5m 29s (- 0m 53s) (172000 86%) 0.7056
+5m 31s (- 0m 51s) (173000 86%) 0.6978
+5m 33s (- 0m 49s) (174000 87%) 0.7229
+5m 35s (- 0m 47s) (175000 87%) 0.7339
+5m 36s (- 0m 45s) (176000 88%) 0.6885
+5m 38s (- 0m 44s) (177000 88%) 0.7339
+5m 40s (- 0m 42s) (178000 89%) 0.7010
+5m 42s (- 0m 40s) (179000 89%) 0.7489
+5m 44s (- 0m 38s) (180000 90%) 0.7788
+Epoch 9/10 finished
+5m 48s (- 0m 36s) (181000 90%) 0.5803
+5m 50s (- 0m 34s) (182000 91%) 0.5925
+5m 52s (- 0m 32s) (183000 91%) 0.6153
+5m 53s (- 0m 30s) (184000 92%) 0.6154
+5m 55s (- 0m 28s) (185000 92%) 0.6288
+5m 57s (- 0m 26s) (186000 93%) 0.6345
+5m 59s (- 0m 24s) (187000 93%) 0.6348
+6m 1s (- 0m 23s) (188000 94%) 0.6806
+6m 2s (- 0m 21s) (189000 94%) 0.6512
+6m 4s (- 0m 19s) (190000 95%) 0.6220
+6m 6s (- 0m 17s) (191000 95%) 0.6528
+6m 8s (- 0m 15s) (192000 96%) 0.6796
+6m 10s (- 0m 13s) (193000 96%) 0.6748
+6m 11s (- 0m 11s) (194000 97%) 0.6533
+6m 13s (- 0m 9s) (195000 97%) 0.6588
+6m 15s (- 0m 7s) (196000 98%) 0.7290
+6m 17s (- 0m 5s) (197000 98%) 0.6783
+6m 19s (- 0m 3s) (198000 99%) 0.7121
+6m 21s (- 0m 1s) (199000 99%) 0.7161
+6m 22s (- 0m 0s) (200000 100%) 0.7169
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['are', 'you', 'looking', 'for', 'us', '?', 'are you', 'you looking', 'looking for', 'for us', 'us ?', 'are you looking', 'you looking for', 'looking for us', 'for us ?', 'are you looking for', 'you looking for us', 'looking for us ?']
+ref sent: are you looking for us ?
+= 5
+< 5-6
+
+> ['i', 'feel', 'safe', '.', 'i feel', 'feel safe', 'safe .', 'i feel safe', 'feel safe .', 'i feel safe .']
+ref sent: i feel safe .
+= 3
+< 3-4
+
+> ['she', 'hurried', 'across', 'the', 'lawn', '.', 'she hurried', 'hurried across', 'across the', 'the lawn', 'lawn .', 'she hurried across', 'hurried across the', 'across the lawn', 'the lawn .', 'she hurried across the', 'hurried across the lawn', 'across the lawn .']
+ref sent: she hurried across the lawn .
+= 5
+< 5-6
+
+> ['have', 'something', 'to', 'drink', '.', 'have something', 'something to', 'to drink', 'drink .', 'have something to', 'something to drink', 'to drink .', 'have something to drink', 'something to drink .']
+ref sent: have something to drink .
+= 4
+< 5-6
+
+> ['i', 'live', 'in', 'an', 'apartment', '.', 'i live', 'live in', 'in an', 'an apartment', 'apartment .', 'i live in', 'live in an', 'in an apartment', 'an apartment .', 'i live in an', 'live in an apartment', 'in an apartment .']
+ref sent: i live in an apartment .
+= 5
+< 5-6
+
+> ['you', 're', 'conscientious', '.', 'you re', 're conscientious', 'conscientious .', 'you re conscientious', 're conscientious .', 'you re conscientious .']
+ref sent: you re conscientious .
+= 3
+< 3-4
+
+> ['i', 'm', 'not', 'sure', 'what', 'i', 'was', 'thinking', '.', 'i m', 'm not', 'not sure', 'sure what', 'what i', 'i was', 'was thinking', 'thinking .', 'i m not', 'm not sure', 'not sure what', 'sure what i', 'what i was', 'i was thinking', 'was thinking .', 'i m not sure', 'm not sure what', 'not sure what i', 'sure what i was', 'what i was thinking', 'i was thinking .']
+ref sent: i m not sure what i was thinking .
+= 8
+< 7-8
+
+> ['she', 'is', 'used', 'to', 'sitting', '.', 'she is', 'is used', 'used to', 'to sitting', 'sitting .', 'she is used', 'is used to', 'used to sitting', 'to sitting .', 'she is used to', 'is used to sitting', 'used to sitting .']
+ref sent: she is used to sitting .
+= 5
+< 5-6
+
+> ['you', 've', 'given', 'me', 'good', 'advice', '.', 'you ve', 've given', 'given me', 'me good', 'good advice', 'advice .', 'you ve given', 've given me', 'given me good', 'me good advice', 'good advice .', 'you ve given me', 've given me good', 'given me good advice', 'me good advice .']
+ref sent: you ve given me good advice .
+= 6
+< 5-6
+
+> ['i', 'know', 'you', 'have', 'to', 'go', 'back', 'to', 'boston', '.', 'i know', 'know you', 'you have', 'have to', 'to go', 'go back', 'back to', 'to boston', 'boston .', 'i know you', 'know you have', 'you have to', 'have to go', 'to go back', 'go back to', 'back to boston', 'to boston .', 'i know you have', 'know you have to', 'you have to go', 'have to go back', 'to go back to', 'go back to boston', 'back to boston .']
+ref sent: i know you have to go back to boston .
+= 9
+< 9-10
+
+Evaluate randomly on testing sentences:
+> ['tom', 'didn', 't', 'like', 'that', 'place', '.', 'tom didn', 'didn t', 't like', 'like that', 'that place', 'place .', 'tom didn t', 'didn t like', 't like that', 'like that place', 'that place .', 'tom didn t like', 'didn t like that', 't like that place', 'like that place .']
+ref sent: tom didn t like that place .
+= 6
+< 5-6
+
+> ['do', 'you', 'plan', 'to', 'buy', 'that', 'car', '?', 'do you', 'you plan', 'plan to', 'to buy', 'buy that', 'that car', 'car ?', 'do you plan', 'you plan to', 'plan to buy', 'to buy that', 'buy that car', 'that car ?', 'do you plan to', 'you plan to buy', 'plan to buy that', 'to buy that car', 'buy that car ?']
+ref sent: do you plan to buy that car ?
+= 7
+< 9-10
+
+> ['how', 'long', 'may', 'i', 'keep', 'this', '?', 'how long', 'long may', 'may i', 'i keep', 'keep this', 'this ?', 'how long may', 'long may i', 'may i keep', 'i keep this', 'keep this ?', 'how long may i', 'long may i keep', 'may i keep this', 'i keep this ?']
+ref sent: how long may i keep this ?
+= 6
+< 5-6
+
+> ['i', 'negotiated', 'the', 'price', 'with', 'him', '.', 'i negotiated', 'negotiated the', 'the price', 'price with', 'with him', 'him .', 'i negotiated the', 'negotiated the price', 'the price with', 'price with him', 'with him .', 'i negotiated the price', 'negotiated the price with', 'the price with him', 'price with him .']
+ref sent: i negotiated the price with him .
+= 6
+< 5-6
+
+> ['this', 'is', 'what', 'll', 'happen', '.', 'this is', 'is what', 'what ll', 'll happen', 'happen .', 'this is what', 'is what ll', 'what ll happen', 'll happen .', 'this is what ll', 'is what ll happen', 'what ll happen .']
+ref sent: this is what ll happen .
+= 5
+< 5-6
+
+> ['your', 'question', 'is', 'hard', 'to', 'answer', '.', 'your question', 'question is', 'is hard', 'hard to', 'to answer', 'answer .', 'your question is', 'question is hard', 'is hard to', 'hard to answer', 'to answer .', 'your question is hard', 'question is hard to', 'is hard to answer', 'hard to answer .']
+ref sent: your question is hard to answer .
+= 6
+< 5-6
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.', 'i m', 'm beginning', 'beginning to', 'to get', 'get used', 'used to', 'to doing', 'doing this', 'this .', 'i m beginning', 'm beginning to', 'beginning to get', 'to get used', 'get used to', 'used to doing', 'to doing this', 'doing this .', 'i m beginning to', 'm beginning to get', 'beginning to get used', 'to get used to', 'get used to doing', 'used to doing this', 'to doing this .']
+ref sent: i m beginning to get used to doing this .
+= 9
+< 11-12
+
+> ['this', 'is', 'not', 'enough', '.', 'this is', 'is not', 'not enough', 'enough .', 'this is not', 'is not enough', 'not enough .', 'this is not enough', 'is not enough .']
+ref sent: this is not enough .
+= 4
+< 5-6
+
+> ['he', 'did', 'it', 'himself', '.', 'he did', 'did it', 'it himself', 'himself .', 'he did it', 'did it himself', 'it himself .', 'he did it himself', 'did it himself .']
+ref sent: he did it himself .
+= 4
+< 3-4
+
+> ['he', 'acted', 'the', 'part', 'of', 'king', 'lear', '.', 'he acted', 'acted the', 'the part', 'part of', 'of king', 'king lear', 'lear .', 'he acted the', 'acted the part', 'the part of', 'part of king', 'of king lear', 'king lear .', 'he acted the part', 'acted the part of', 'the part of king', 'part of king lear', 'of king lear .']
+ref sent: he acted the part of king lear .
+= 7
+< 5-6
+
+Accuracy of the network on the sentence length test set: 57 %
+Sentence Length 1-2: 38/46 (incorrect/total) = 0.8260869565217391
+Sentence Length 3-4: 245/1003 (incorrect/total) = 0.24426719840478564
+Sentence Length 5-6: 492/1760 (incorrect/total) = 0.27954545454545454
+Sentence Length 7-8: 742/1266 (incorrect/total) = 0.5860979462875198
+Sentence Length 9-10: 368/580 (incorrect/total) = 0.6344827586206897
+Sentence Length 11-12: 136/209 (incorrect/total) = 0.6507177033492823
+Sentence Length 13-14: 82/85 (incorrect/total) = 0.9647058823529412
+Sentence Length 15-16: 30/33 (incorrect/total) = 0.9090909090909091
+Sentence Length 17-18: 8/9 (incorrect/total) = 0.8888888888888888
+Sentence Length 18+: 9/9 (incorrect/total) = 1.0
+Finished
+
+hpc mode: True
+order: 5
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['she', 'did', 'come', 'here', '.', 'she did', 'did come', 'come here', 'here .', 'she did come', 'did come here', 'come here .', 'she did come here', 'did come here .', 'she did come here .']
+ref sent: she did come here .
+= 4
+< 13-14
+
+> ['it', 'was', 'quite', 'funny', '.', 'it was', 'was quite', 'quite funny', 'funny .', 'it was quite', 'was quite funny', 'quite funny .', 'it was quite funny', 'was quite funny .', 'it was quite funny .']
+ref sent: it was quite funny .
+= 4
+< 1-2
+
+> ['they', 'come', 'from', 'the', 'same', 'country', '.', 'they come', 'come from', 'from the', 'the same', 'same country', 'country .', 'they come from', 'come from the', 'from the same', 'the same country', 'same country .', 'they come from the', 'come from the same', 'from the same country', 'the same country .', 'they come from the same', 'come from the same country', 'from the same country .']
+ref sent: they come from the same country .
+= 6
+< 11-12
+
+> ['i', 'didn', 't', 'finish', 'reading', 'that', 'book', '.', 'i didn', 'didn t', 't finish', 'finish reading', 'reading that', 'that book', 'book .', 'i didn t', 'didn t finish', 't finish reading', 'finish reading that', 'reading that book', 'that book .', 'i didn t finish', 'didn t finish reading', 't finish reading that', 'finish reading that book', 'reading that book .', 'i didn t finish reading', 'didn t finish reading that', 't finish reading that book', 'finish reading that book .']
+ref sent: i didn t finish reading that book .
+= 7
+< 1-2
+
+> ['i', 'm', 'not', 'ready', 'yet', '.', 'i m', 'm not', 'not ready', 'ready yet', 'yet .', 'i m not', 'm not ready', 'not ready yet', 'ready yet .', 'i m not ready', 'm not ready yet', 'not ready yet .', 'i m not ready yet', 'm not ready yet .']
+ref sent: i m not ready yet .
+= 5
+< 5-6
+
+> ['we', 'shouldn', 't', 'confuse', 'solitude', 'with', 'isolation', '.', 'they', 'are', 'two', 'separate', 'things', '.', 'we shouldn', 'shouldn t', 't confuse', 'confuse solitude', 'solitude with', 'with isolation', 'isolation .', '. they', 'they are', 'are two', 'two separate', 'separate things', 'things .', 'we shouldn t', 'shouldn t confuse', 't confuse solitude', 'confuse solitude with', 'solitude with isolation', 'with isolation .', 'isolation . they', '. they are', 'they are two', 'are two separate', 'two separate things', 'separate things .', 'we shouldn t confuse', 'shouldn t confuse solitude', 't confuse solitude with', 'confuse solitude with isolation', 'solitude with isolation .', 'with isolation . they', 'isolation . they are', '. they are two', 'they are two separate', 'are two separate things', 'two separate things .', 'we shouldn t confuse solitude', 'shouldn t confuse solitude with', 't confuse solitude with isolation', 'confuse solitude with isolation .', 'solitude with isolation . they', 'with isolation . they are', 'isolation . they are two', '. they are two separate', 'they are two separate things', 'are two separate things .']
+ref sent: we shouldn t confuse solitude with isolation . they are two separate things .
+= 13
+< 5-6
+
+> ['i', 'don', 't', 'know', 'what', 'it', 'is', '.', 'i don', 'don t', 't know', 'know what', 'what it', 'it is', 'is .', 'i don t', 'don t know', 't know what', 'know what it', 'what it is', 'it is .', 'i don t know', 'don t know what', 't know what it', 'know what it is', 'what it is .', 'i don t know what', 'don t know what it', 't know what it is', 'know what it is .']
+ref sent: i don t know what it is .
+= 7
+< 15-16
+
+> ['are', 'you', 'going', 'home', 'by', 'bus', '?', 'are you', 'you going', 'going home', 'home by', 'by bus', 'bus ?', 'are you going', 'you going home', 'going home by', 'home by bus', 'by bus ?', 'are you going home', 'you going home by', 'going home by bus', 'home by bus ?', 'are you going home by', 'you going home by bus', 'going home by bus ?']
+ref sent: are you going home by bus ?
+= 6
+< 1-2
+
+> ['he', 'is', 'intelligent', '.', 'he is', 'is intelligent', 'intelligent .', 'he is intelligent', 'is intelligent .', 'he is intelligent .']
+ref sent: he is intelligent .
+= 3
+< 1-2
+
+> ['you', 're', 'so', 'impatient', '.', 'you re', 're so', 'so impatient', 'impatient .', 'you re so', 're so impatient', 'so impatient .', 'you re so impatient', 're so impatient .', 'you re so impatient .']
+ref sent: you re so impatient .
+= 4
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['team', 'members', 'are', 'provided', 'with', 'equipment', 'and', 'uniforms', '.', 'team members', 'members are', 'are provided', 'provided with', 'with equipment', 'equipment and', 'and uniforms', 'uniforms .', 'team members are', 'members are provided', 'are provided with', 'provided with equipment', 'with equipment and', 'equipment and uniforms', 'and uniforms .', 'team members are provided', 'members are provided with', 'are provided with equipment', 'provided with equipment and', 'with equipment and uniforms', 'equipment and uniforms .', 'team members are provided with', 'members are provided with equipment', 'are provided with equipment and', 'provided with equipment and uniforms', 'with equipment and uniforms .']
+ref sent: team members are provided with equipment and uniforms .
+= 8
+< 5-6
+
+> ['now', 'that', 'my', 'brother', 'is', 'a', 'university', 'student', 'he', 'has', 'to', 'do', 'a', 'lot', 'of', 'reading', '.', 'now that', 'that my', 'my brother', 'brother is', 'is a', 'a university', 'university student', 'student he', 'he has', 'has to', 'to do', 'do a', 'a lot', 'lot of', 'of reading', 'reading .', 'now that my', 'that my brother', 'my brother is', 'brother is a', 'is a university', 'a university student', 'university student he', 'student he has', 'he has to', 'has to do', 'to do a', 'do a lot', 'a lot of', 'lot of reading', 'of reading .', 'now that my brother', 'that my brother is', 'my brother is a', 'brother is a university', 'is a university student', 'a university student he', 'university student he has', 'student he has to', 'he has to do', 'has to do a', 'to do a lot', 'do a lot of', 'a lot of reading', 'lot of reading .', 'now that my brother is', 'that my brother is a', 'my brother is a university', 'brother is a university student', 'is a university student he', 'a university student he has', 'university student he has to', 'student he has to do', 'he has to do a', 'has to do a lot', 'to do a lot of', 'do a lot of reading', 'a lot of reading .']
+ref sent: now that my brother is a university student he has to do a lot of reading .
+= 16
+< 1-2
+
+> ['they', 'had', 'fun', 'with', 'us', '.', 'they had', 'had fun', 'fun with', 'with us', 'us .', 'they had fun', 'had fun with', 'fun with us', 'with us .', 'they had fun with', 'had fun with us', 'fun with us .', 'they had fun with us', 'had fun with us .']
+ref sent: they had fun with us .
+= 5
+< 11-12
+
+> ['does', 'anyone', 'know', 'japanese', '?', 'does anyone', 'anyone know', 'know japanese', 'japanese ?', 'does anyone know', 'anyone know japanese', 'know japanese ?', 'does anyone know japanese', 'anyone know japanese ?', 'does anyone know japanese ?']
+ref sent: does anyone know japanese ?
+= 4
+< 1-2
+
+> ['he', 'narrowly', 'escaped', 'being', 'run', 'over', '.', 'he narrowly', 'narrowly escaped', 'escaped being', 'being run', 'run over', 'over .', 'he narrowly escaped', 'narrowly escaped being', 'escaped being run', 'being run over', 'run over .', 'he narrowly escaped being', 'narrowly escaped being run', 'escaped being run over', 'being run over .', 'he narrowly escaped being run', 'narrowly escaped being run over', 'escaped being run over .']
+ref sent: he narrowly escaped being run over .
+= 6
+< 11-12
+
+> ['when', 'was', 'the', 'last', 'time', 'you', 'went', 'to', 'an', 'art', 'gallery', '?', 'when was', 'was the', 'the last', 'last time', 'time you', 'you went', 'went to', 'to an', 'an art', 'art gallery', 'gallery ?', 'when was the', 'was the last', 'the last time', 'last time you', 'time you went', 'you went to', 'went to an', 'to an art', 'an art gallery', 'art gallery ?', 'when was the last', 'was the last time', 'the last time you', 'last time you went', 'time you went to', 'you went to an', 'went to an art', 'to an art gallery', 'an art gallery ?', 'when was the last time', 'was the last time you', 'the last time you went', 'last time you went to', 'time you went to an', 'you went to an art', 'went to an art gallery', 'to an art gallery ?']
+ref sent: when was the last time you went to an art gallery ?
+= 11
+< 15-16
+
+> ['his', 'house', 'was', 'sold', 'for', '.', 'his house', 'house was', 'was sold', 'sold for', 'for .', 'his house was', 'house was sold', 'was sold for', 'sold for .', 'his house was sold', 'house was sold for', 'was sold for .', 'his house was sold for', 'house was sold for .']
+ref sent: his house was sold for .
+= 5
+< 11-12
+
+> ['i', 'm', 'not', 'mad', '.', 'i m', 'm not', 'not mad', 'mad .', 'i m not', 'm not mad', 'not mad .', 'i m not mad', 'm not mad .', 'i m not mad .']
+ref sent: i m not mad .
+= 4
+< 5-6
+
+> ['i', 'thought', 'you', 'd', 'be', 'much', 'fatter', '.', 'i thought', 'thought you', 'you d', 'd be', 'be much', 'much fatter', 'fatter .', 'i thought you', 'thought you d', 'you d be', 'd be much', 'be much fatter', 'much fatter .', 'i thought you d', 'thought you d be', 'you d be much', 'd be much fatter', 'be much fatter .', 'i thought you d be', 'thought you d be much', 'you d be much fatter', 'd be much fatter .']
+ref sent: i thought you d be much fatter .
+= 7
+< 5-6
+
+> ['they', 'are', 'bored', '.', 'they are', 'are bored', 'bored .', 'they are bored', 'are bored .', 'they are bored .']
+ref sent: they are bored .
+= 3
+< 9-10
+
+Accuracy of the network on the sentence length test set: 14 %
+Sentence Length 1-2: 45/46 (incorrect/total) = 0.9782608695652174
+Sentence Length 3-4: 1003/1003 (incorrect/total) = 1.0
+Sentence Length 5-6: 1283/1760 (incorrect/total) = 0.7289772727272728
+Sentence Length 7-8: 1157/1266 (incorrect/total) = 0.9139020537124802
+Sentence Length 9-10: 507/580 (incorrect/total) = 0.8741379310344828
+Sentence Length 11-12: 163/209 (incorrect/total) = 0.7799043062200957
+Sentence Length 13-14: 72/85 (incorrect/total) = 0.8470588235294118
+Sentence Length 15-16: 32/33 (incorrect/total) = 0.9696969696969697
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 9/9 (incorrect/total) = 1.0
+0m 4s (- 14m 10s) (1000 0%) 1.8248
+0m 6s (- 9m 59s) (2000 1%) 1.6441
+0m 7s (- 8m 35s) (3000 1%) 1.5621
+0m 9s (- 7m 52s) (4000 2%) 1.5587
+0m 11s (- 7m 25s) (5000 2%) 1.4707
+0m 13s (- 7m 7s) (6000 3%) 1.4242
+0m 14s (- 6m 53s) (7000 3%) 1.4780
+0m 16s (- 6m 42s) (8000 4%) 1.4224
+0m 18s (- 6m 34s) (9000 4%) 1.4399
+0m 20s (- 6m 26s) (10000 5%) 1.3784
+0m 22s (- 6m 20s) (11000 5%) 1.4176
+0m 23s (- 6m 14s) (12000 6%) 1.3982
+0m 25s (- 6m 10s) (13000 6%) 1.3246
+0m 27s (- 6m 5s) (14000 7%) 1.3624
+0m 29s (- 6m 1s) (15000 7%) 1.3342
+0m 31s (- 5m 57s) (16000 8%) 1.3145
+0m 32s (- 5m 53s) (17000 8%) 1.3412
+0m 34s (- 5m 50s) (18000 9%) 1.3269
+0m 36s (- 5m 47s) (19000 9%) 1.3631
+0m 38s (- 5m 44s) (20000 10%) 1.3073
+Epoch 1/10 finished
+0m 42s (- 6m 0s) (21000 10%) 1.2090
+0m 44s (- 5m 56s) (22000 11%) 1.2218
+0m 45s (- 5m 52s) (23000 11%) 1.2247
+0m 47s (- 5m 49s) (24000 12%) 1.2073
+0m 49s (- 5m 45s) (25000 12%) 1.2953
+0m 51s (- 5m 42s) (26000 13%) 1.2282
+0m 52s (- 5m 39s) (27000 13%) 1.2114
+0m 54s (- 5m 36s) (28000 14%) 1.2455
+0m 56s (- 5m 33s) (29000 14%) 1.2216
+0m 58s (- 5m 30s) (30000 15%) 1.2198
+1m 0s (- 5m 27s) (31000 15%) 1.2149
+1m 1s (- 5m 25s) (32000 16%) 1.2128
+1m 3s (- 5m 22s) (33000 16%) 1.2034
+1m 5s (- 5m 19s) (34000 17%) 1.1900
+1m 7s (- 5m 17s) (35000 17%) 1.2025
+1m 9s (- 5m 14s) (36000 18%) 1.1739
+1m 10s (- 5m 12s) (37000 18%) 1.2189
+1m 12s (- 5m 9s) (38000 19%) 1.1860
+1m 14s (- 5m 7s) (39000 19%) 1.2181
+1m 16s (- 5m 5s) (40000 20%) 1.2552
+Epoch 2/10 finished
+1m 20s (- 5m 10s) (41000 20%) 1.1101
+1m 21s (- 5m 8s) (42000 21%) 1.0920
+1m 23s (- 5m 5s) (43000 21%) 1.1014
+1m 25s (- 5m 3s) (44000 22%) 1.1013
+1m 27s (- 5m 0s) (45000 22%) 1.0969
+1m 29s (- 4m 58s) (46000 23%) 1.1335
+1m 30s (- 4m 56s) (47000 23%) 1.0796
+1m 32s (- 4m 53s) (48000 24%) 1.0653
+1m 34s (- 4m 51s) (49000 24%) 1.0865
+1m 36s (- 4m 48s) (50000 25%) 1.0930
+1m 38s (- 4m 46s) (51000 25%) 1.0934
+1m 39s (- 4m 44s) (52000 26%) 1.0591
+1m 41s (- 4m 42s) (53000 26%) 1.0953
+1m 43s (- 4m 39s) (54000 27%) 1.0708
+1m 45s (- 4m 37s) (55000 27%) 1.0963
+1m 47s (- 4m 35s) (56000 28%) 1.0942
+1m 48s (- 4m 33s) (57000 28%) 1.0960
+1m 50s (- 4m 30s) (58000 28%) 1.0206
+1m 52s (- 4m 28s) (59000 29%) 1.1246
+1m 54s (- 4m 26s) (60000 30%) 1.0930
+Epoch 3/10 finished
+1m 58s (- 4m 30s) (61000 30%) 0.9679
+2m 0s (- 4m 28s) (62000 31%) 0.9550
+2m 2s (- 4m 25s) (63000 31%) 0.9726
+2m 4s (- 4m 23s) (64000 32%) 0.9379
+2m 5s (- 4m 21s) (65000 32%) 0.9924
+2m 7s (- 4m 19s) (66000 33%) 0.9790
+2m 9s (- 4m 16s) (67000 33%) 0.9999
+2m 11s (- 4m 14s) (68000 34%) 1.0313
+2m 12s (- 4m 12s) (69000 34%) 1.0064
+2m 14s (- 4m 10s) (70000 35%) 1.0021
+2m 16s (- 4m 8s) (71000 35%) 0.9714
+2m 18s (- 4m 5s) (72000 36%) 1.0125
+2m 20s (- 4m 3s) (73000 36%) 0.9714
+2m 21s (- 4m 1s) (74000 37%) 1.0379
+2m 23s (- 3m 59s) (75000 37%) 1.0162
+2m 25s (- 3m 57s) (76000 38%) 0.9952
+2m 27s (- 3m 55s) (77000 38%) 1.0011
+2m 29s (- 3m 53s) (78000 39%) 1.0210
+2m 30s (- 3m 51s) (79000 39%) 1.0383
+2m 32s (- 3m 49s) (80000 40%) 1.0050
+Epoch 4/10 finished
+2m 36s (- 3m 50s) (81000 40%) 0.8459
+2m 38s (- 3m 48s) (82000 41%) 0.8999
+2m 40s (- 3m 45s) (83000 41%) 0.8683
+2m 42s (- 3m 43s) (84000 42%) 0.8898
+2m 43s (- 3m 41s) (85000 42%) 0.8645
+2m 45s (- 3m 39s) (86000 43%) 0.9166
+2m 47s (- 3m 37s) (87000 43%) 0.8887
+2m 49s (- 3m 35s) (88000 44%) 0.8740
+2m 51s (- 3m 33s) (89000 44%) 0.9300
+2m 52s (- 3m 31s) (90000 45%) 0.9306
+2m 54s (- 3m 29s) (91000 45%) 0.9420
+2m 56s (- 3m 27s) (92000 46%) 0.9102
+2m 58s (- 3m 25s) (93000 46%) 0.9017
+3m 0s (- 3m 22s) (94000 47%) 0.9331
+3m 1s (- 3m 20s) (95000 47%) 0.9646
+3m 3s (- 3m 18s) (96000 48%) 0.8693
+3m 5s (- 3m 16s) (97000 48%) 0.9834
+3m 7s (- 3m 14s) (98000 49%) 0.9124
+3m 8s (- 3m 12s) (99000 49%) 0.9609
+3m 10s (- 3m 10s) (100000 50%) 0.9749
+Epoch 5/10 finished
+3m 15s (- 3m 11s) (101000 50%) 0.7514
+3m 17s (- 3m 9s) (102000 51%) 0.8281
+3m 18s (- 3m 7s) (103000 51%) 0.8296
+3m 20s (- 3m 5s) (104000 52%) 0.8290
+3m 22s (- 3m 3s) (105000 52%) 0.8022
+3m 24s (- 3m 1s) (106000 53%) 0.8267
+3m 26s (- 2m 59s) (107000 53%) 0.8530
+3m 27s (- 2m 57s) (108000 54%) 0.8449
+3m 29s (- 2m 55s) (109000 54%) 0.8413
+3m 31s (- 2m 52s) (110000 55%) 0.8657
+3m 33s (- 2m 50s) (111000 55%) 0.8448
+3m 35s (- 2m 48s) (112000 56%) 0.8445
+3m 36s (- 2m 46s) (113000 56%) 0.8604
+3m 38s (- 2m 44s) (114000 56%) 0.9363
+3m 40s (- 2m 42s) (115000 57%) 0.8449
+3m 42s (- 2m 40s) (116000 57%) 0.8459
+3m 43s (- 2m 38s) (117000 58%) 0.8903
+3m 45s (- 2m 36s) (118000 59%) 0.8824
+3m 47s (- 2m 34s) (119000 59%) 0.8616
+3m 49s (- 2m 32s) (120000 60%) 0.8757
+Epoch 6/10 finished
+3m 53s (- 2m 32s) (121000 60%) 0.7183
+3m 55s (- 2m 30s) (122000 61%) 0.7241
+3m 57s (- 2m 28s) (123000 61%) 0.7519
+3m 59s (- 2m 26s) (124000 62%) 0.7463
+4m 0s (- 2m 24s) (125000 62%) 0.8168
+4m 2s (- 2m 22s) (126000 63%) 0.7640
+4m 4s (- 2m 20s) (127000 63%) 0.7334
+4m 6s (- 2m 18s) (128000 64%) 0.7756
+4m 8s (- 2m 16s) (129000 64%) 0.7838
+4m 9s (- 2m 14s) (130000 65%) 0.7591
+4m 11s (- 2m 12s) (131000 65%) 0.7974
+4m 13s (- 2m 10s) (132000 66%) 0.8143
+4m 15s (- 2m 8s) (133000 66%) 0.8207
+4m 17s (- 2m 6s) (134000 67%) 0.8687
+4m 18s (- 2m 4s) (135000 67%) 0.8606
+4m 20s (- 2m 2s) (136000 68%) 0.8108
+4m 22s (- 2m 0s) (137000 68%) 0.8422
+4m 24s (- 1m 58s) (138000 69%) 0.8191
+4m 26s (- 1m 56s) (139000 69%) 0.8834
+4m 27s (- 1m 54s) (140000 70%) 0.8275
+Epoch 7/10 finished
+4m 31s (- 1m 53s) (141000 70%) 0.6797
+4m 33s (- 1m 51s) (142000 71%) 0.7037
+4m 35s (- 1m 49s) (143000 71%) 0.6942
+4m 37s (- 1m 47s) (144000 72%) 0.6937
+4m 39s (- 1m 45s) (145000 72%) 0.6800
+4m 40s (- 1m 43s) (146000 73%) 0.7346
+4m 42s (- 1m 41s) (147000 73%) 0.7458
+4m 44s (- 1m 39s) (148000 74%) 0.7471
+4m 46s (- 1m 37s) (149000 74%) 0.7294
+4m 48s (- 1m 36s) (150000 75%) 0.7688
+4m 49s (- 1m 34s) (151000 75%) 0.7488
+4m 51s (- 1m 32s) (152000 76%) 0.7206
+4m 53s (- 1m 30s) (153000 76%) 0.7951
+4m 55s (- 1m 28s) (154000 77%) 0.6923
+4m 56s (- 1m 26s) (155000 77%) 0.7719
+4m 58s (- 1m 24s) (156000 78%) 0.7672
+5m 0s (- 1m 22s) (157000 78%) 0.8061
+5m 2s (- 1m 20s) (158000 79%) 0.8043
+5m 4s (- 1m 18s) (159000 79%) 0.7864
+5m 5s (- 1m 16s) (160000 80%) 0.7568
+Epoch 8/10 finished
+5m 10s (- 1m 15s) (161000 80%) 0.5928
+5m 12s (- 1m 13s) (162000 81%) 0.6297
+5m 13s (- 1m 11s) (163000 81%) 0.6781
+5m 15s (- 1m 9s) (164000 82%) 0.6276
+5m 17s (- 1m 7s) (165000 82%) 0.6425
+5m 19s (- 1m 5s) (166000 83%) 0.6675
+5m 21s (- 1m 3s) (167000 83%) 0.6646
+5m 22s (- 1m 1s) (168000 84%) 0.6762
+5m 24s (- 0m 59s) (169000 84%) 0.7017
+5m 26s (- 0m 57s) (170000 85%) 0.7204
+5m 28s (- 0m 55s) (171000 85%) 0.7456
+5m 30s (- 0m 53s) (172000 86%) 0.7177
+5m 31s (- 0m 51s) (173000 86%) 0.7001
+5m 33s (- 0m 49s) (174000 87%) 0.7577
+5m 35s (- 0m 47s) (175000 87%) 0.7437
+5m 37s (- 0m 45s) (176000 88%) 0.7423
+5m 39s (- 0m 44s) (177000 88%) 0.7683
+5m 40s (- 0m 42s) (178000 89%) 0.7567
+5m 42s (- 0m 40s) (179000 89%) 0.7066
+5m 44s (- 0m 38s) (180000 90%) 0.7836
+Epoch 9/10 finished
+5m 48s (- 0m 36s) (181000 90%) 0.6166
+5m 50s (- 0m 34s) (182000 91%) 0.6131
+5m 52s (- 0m 32s) (183000 91%) 0.6323
+5m 53s (- 0m 30s) (184000 92%) 0.5918
+5m 55s (- 0m 28s) (185000 92%) 0.6567
+5m 57s (- 0m 26s) (186000 93%) 0.6443
+5m 59s (- 0m 24s) (187000 93%) 0.6221
+6m 1s (- 0m 23s) (188000 94%) 0.6594
+6m 2s (- 0m 21s) (189000 94%) 0.6175
+6m 4s (- 0m 19s) (190000 95%) 0.6835
+6m 6s (- 0m 17s) (191000 95%) 0.6583
+6m 8s (- 0m 15s) (192000 96%) 0.6808
+6m 9s (- 0m 13s) (193000 96%) 0.6670
+6m 11s (- 0m 11s) (194000 97%) 0.6588
+6m 13s (- 0m 9s) (195000 97%) 0.6774
+6m 15s (- 0m 7s) (196000 98%) 0.7076
+6m 17s (- 0m 5s) (197000 98%) 0.7361
+6m 18s (- 0m 3s) (198000 99%) 0.7069
+6m 20s (- 0m 1s) (199000 99%) 0.7410
+6m 22s (- 0m 0s) (200000 100%) 0.7597
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['are', 'you', 'looking', 'for', 'us', '?', 'are you', 'you looking', 'looking for', 'for us', 'us ?', 'are you looking', 'you looking for', 'looking for us', 'for us ?', 'are you looking for', 'you looking for us', 'looking for us ?', 'are you looking for us', 'you looking for us ?']
+ref sent: are you looking for us ?
+= 5
+< 5-6
+
+> ['i', 'feel', 'safe', '.', 'i feel', 'feel safe', 'safe .', 'i feel safe', 'feel safe .', 'i feel safe .']
+ref sent: i feel safe .
+= 3
+< 3-4
+
+> ['she', 'hurried', 'across', 'the', 'lawn', '.', 'she hurried', 'hurried across', 'across the', 'the lawn', 'lawn .', 'she hurried across', 'hurried across the', 'across the lawn', 'the lawn .', 'she hurried across the', 'hurried across the lawn', 'across the lawn .', 'she hurried across the lawn', 'hurried across the lawn .']
+ref sent: she hurried across the lawn .
+= 5
+< 5-6
+
+> ['have', 'something', 'to', 'drink', '.', 'have something', 'something to', 'to drink', 'drink .', 'have something to', 'something to drink', 'to drink .', 'have something to drink', 'something to drink .', 'have something to drink .']
+ref sent: have something to drink .
+= 4
+< 5-6
+
+> ['i', 'live', 'in', 'an', 'apartment', '.', 'i live', 'live in', 'in an', 'an apartment', 'apartment .', 'i live in', 'live in an', 'in an apartment', 'an apartment .', 'i live in an', 'live in an apartment', 'in an apartment .', 'i live in an apartment', 'live in an apartment .']
+ref sent: i live in an apartment .
+= 5
+< 5-6
+
+> ['you', 're', 'conscientious', '.', 'you re', 're conscientious', 'conscientious .', 'you re conscientious', 're conscientious .', 'you re conscientious .']
+ref sent: you re conscientious .
+= 3
+< 3-4
+
+> ['i', 'm', 'not', 'sure', 'what', 'i', 'was', 'thinking', '.', 'i m', 'm not', 'not sure', 'sure what', 'what i', 'i was', 'was thinking', 'thinking .', 'i m not', 'm not sure', 'not sure what', 'sure what i', 'what i was', 'i was thinking', 'was thinking .', 'i m not sure', 'm not sure what', 'not sure what i', 'sure what i was', 'what i was thinking', 'i was thinking .', 'i m not sure what', 'm not sure what i', 'not sure what i was', 'sure what i was thinking', 'what i was thinking .']
+ref sent: i m not sure what i was thinking .
+= 8
+< 7-8
+
+> ['she', 'is', 'used', 'to', 'sitting', '.', 'she is', 'is used', 'used to', 'to sitting', 'sitting .', 'she is used', 'is used to', 'used to sitting', 'to sitting .', 'she is used to', 'is used to sitting', 'used to sitting .', 'she is used to sitting', 'is used to sitting .']
+ref sent: she is used to sitting .
+= 5
+< 5-6
+
+> ['you', 've', 'given', 'me', 'good', 'advice', '.', 'you ve', 've given', 'given me', 'me good', 'good advice', 'advice .', 'you ve given', 've given me', 'given me good', 'me good advice', 'good advice .', 'you ve given me', 've given me good', 'given me good advice', 'me good advice .', 'you ve given me good', 've given me good advice', 'given me good advice .']
+ref sent: you ve given me good advice .
+= 6
+< 5-6
+
+> ['i', 'know', 'you', 'have', 'to', 'go', 'back', 'to', 'boston', '.', 'i know', 'know you', 'you have', 'have to', 'to go', 'go back', 'back to', 'to boston', 'boston .', 'i know you', 'know you have', 'you have to', 'have to go', 'to go back', 'go back to', 'back to boston', 'to boston .', 'i know you have', 'know you have to', 'you have to go', 'have to go back', 'to go back to', 'go back to boston', 'back to boston .', 'i know you have to', 'know you have to go', 'you have to go back', 'have to go back to', 'to go back to boston', 'go back to boston .']
+ref sent: i know you have to go back to boston .
+= 9
+< 7-8
+
+Evaluate randomly on testing sentences:
+> ['tom', 'didn', 't', 'like', 'that', 'place', '.', 'tom didn', 'didn t', 't like', 'like that', 'that place', 'place .', 'tom didn t', 'didn t like', 't like that', 'like that place', 'that place .', 'tom didn t like', 'didn t like that', 't like that place', 'like that place .', 'tom didn t like that', 'didn t like that place', 't like that place .']
+ref sent: tom didn t like that place .
+= 6
+< 5-6
+
+> ['do', 'you', 'plan', 'to', 'buy', 'that', 'car', '?', 'do you', 'you plan', 'plan to', 'to buy', 'buy that', 'that car', 'car ?', 'do you plan', 'you plan to', 'plan to buy', 'to buy that', 'buy that car', 'that car ?', 'do you plan to', 'you plan to buy', 'plan to buy that', 'to buy that car', 'buy that car ?', 'do you plan to buy', 'you plan to buy that', 'plan to buy that car', 'to buy that car ?']
+ref sent: do you plan to buy that car ?
+= 7
+< 7-8
+
+> ['how', 'long', 'may', 'i', 'keep', 'this', '?', 'how long', 'long may', 'may i', 'i keep', 'keep this', 'this ?', 'how long may', 'long may i', 'may i keep', 'i keep this', 'keep this ?', 'how long may i', 'long may i keep', 'may i keep this', 'i keep this ?', 'how long may i keep', 'long may i keep this', 'may i keep this ?']
+ref sent: how long may i keep this ?
+= 6
+< 5-6
+
+> ['i', 'negotiated', 'the', 'price', 'with', 'him', '.', 'i negotiated', 'negotiated the', 'the price', 'price with', 'with him', 'him .', 'i negotiated the', 'negotiated the price', 'the price with', 'price with him', 'with him .', 'i negotiated the price', 'negotiated the price with', 'the price with him', 'price with him .', 'i negotiated the price with', 'negotiated the price with him', 'the price with him .']
+ref sent: i negotiated the price with him .
+= 6
+< 5-6
+
+> ['this', 'is', 'what', 'll', 'happen', '.', 'this is', 'is what', 'what ll', 'll happen', 'happen .', 'this is what', 'is what ll', 'what ll happen', 'll happen .', 'this is what ll', 'is what ll happen', 'what ll happen .', 'this is what ll happen', 'is what ll happen .']
+ref sent: this is what ll happen .
+= 5
+< 5-6
+
+> ['your', 'question', 'is', 'hard', 'to', 'answer', '.', 'your question', 'question is', 'is hard', 'hard to', 'to answer', 'answer .', 'your question is', 'question is hard', 'is hard to', 'hard to answer', 'to answer .', 'your question is hard', 'question is hard to', 'is hard to answer', 'hard to answer .', 'your question is hard to', 'question is hard to answer', 'is hard to answer .']
+ref sent: your question is hard to answer .
+= 6
+< 5-6
+
+> ['i', 'm', 'beginning', 'to', 'get', 'used', 'to', 'doing', 'this', '.', 'i m', 'm beginning', 'beginning to', 'to get', 'get used', 'used to', 'to doing', 'doing this', 'this .', 'i m beginning', 'm beginning to', 'beginning to get', 'to get used', 'get used to', 'used to doing', 'to doing this', 'doing this .', 'i m beginning to', 'm beginning to get', 'beginning to get used', 'to get used to', 'get used to doing', 'used to doing this', 'to doing this .', 'i m beginning to get', 'm beginning to get used', 'beginning to get used to', 'to get used to doing', 'get used to doing this', 'used to doing this .']
+ref sent: i m beginning to get used to doing this .
+= 9
+< 5-6
+
+> ['this', 'is', 'not', 'enough', '.', 'this is', 'is not', 'not enough', 'enough .', 'this is not', 'is not enough', 'not enough .', 'this is not enough', 'is not enough .', 'this is not enough .']
+ref sent: this is not enough .
+= 4
+< 5-6
+
+> ['he', 'did', 'it', 'himself', '.', 'he did', 'did it', 'it himself', 'himself .', 'he did it', 'did it himself', 'it himself .', 'he did it himself', 'did it himself .', 'he did it himself .']
+ref sent: he did it himself .
+= 4
+< 3-4
+
+> ['he', 'acted', 'the', 'part', 'of', 'king', 'lear', '.', 'he acted', 'acted the', 'the part', 'part of', 'of king', 'king lear', 'lear .', 'he acted the', 'acted the part', 'the part of', 'part of king', 'of king lear', 'king lear .', 'he acted the part', 'acted the part of', 'the part of king', 'part of king lear', 'of king lear .', 'he acted the part of', 'acted the part of king', 'the part of king lear', 'part of king lear .']
+ref sent: he acted the part of king lear .
+= 7
+< 7-8
+
+Accuracy of the network on the sentence length test set: 57 %
+Sentence Length 1-2: 36/46 (incorrect/total) = 0.782608695652174
+Sentence Length 3-4: 222/1003 (incorrect/total) = 0.2213359920239282
+Sentence Length 5-6: 523/1760 (incorrect/total) = 0.29715909090909093
+Sentence Length 7-8: 694/1266 (incorrect/total) = 0.5481832543443917
+Sentence Length 9-10: 422/580 (incorrect/total) = 0.7275862068965517
+Sentence Length 11-12: 119/209 (incorrect/total) = 0.569377990430622
+Sentence Length 13-14: 80/85 (incorrect/total) = 0.9411764705882353
+Sentence Length 15-16: 30/33 (incorrect/total) = 0.9090909090909091
+Sentence Length 17-18: 6/9 (incorrect/total) = 0.6666666666666666
+Sentence Length 18+: 9/9 (incorrect/total) = 1.0
+Finished
+
+hpc mode: True
+mode: sum
+ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences:
+> she did come here .
+= 4
+< 7-8
+
+> it was quite funny .
+= 4
+< 13-14
+
+> they come from the same country .
+= 6
+< 1-2
+
+> i didn t finish reading that book .
+= 7
+< 13-14
+
+> i m not ready yet .
+= 5
+< 13-14
+
+> we shouldn t confuse solitude with isolation . they are two separate things .
+= 13
+< 13-14
+
+> i don t know what it is .
+= 7
+< 13-14
+
+> are you going home by bus ?
+= 6
+< 13-14
+
+> he is intelligent .
+= 3
+< 13-14
+
+> you re so impatient .
+= 4
+< 13-14
+
+Evaluate randomly on testing sentences:
+> team members are provided with equipment and uniforms .
+= 8
+< 13-14
+
+> now that my brother is a university student he has to do a lot of reading .
+= 16
+< 13-14
+
+> they had fun with us .
+= 5
+< 5-6
+
+> does anyone know japanese ?
+= 4
+< 13-14
+
+> he narrowly escaped being run over .
+= 6
+< 7-8
+
+> when was the last time you went to an art gallery ?
+= 11
+< 13-14
+
+> his house was sold for .
+= 5
+< 13-14
+
+> i m not mad .
+= 4
+< 13-14
+
+> i thought you d be much fatter .
+= 7
+< 13-14
+
+> they are bored .
+= 3
+< 13-14
+
+Accuracy of the network on the sentence length test set: 4 %
+Sentence Length 1-2: 46/46 (incorrect/total) = 1.0
+Sentence Length 3-4: 1003/1003 (incorrect/total) = 1.0
+Sentence Length 5-6: 1697/1760 (incorrect/total) = 0.9642045454545455
+Sentence Length 7-8: 1188/1266 (incorrect/total) = 0.9383886255924171
+Sentence Length 9-10: 580/580 (incorrect/total) = 1.0
+Sentence Length 11-12: 209/209 (incorrect/total) = 1.0
+Sentence Length 13-14: 28/85 (incorrect/total) = 0.32941176470588235
+Sentence Length 15-16: 33/33 (incorrect/total) = 1.0
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 7/9 (incorrect/total) = 0.7777777777777778
+0m 15s (- 50m 21s) (1000 0%) 2.0323
+0m 28s (- 46m 43s) (2000 1%) 1.5686
+0m 41s (- 45m 39s) (3000 1%) 1.3467
+0m 55s (- 44m 55s) (4000 2%) 1.1786
+1m 8s (- 44m 18s) (5000 2%) 0.9837
+1m 21s (- 43m 54s) (6000 3%) 0.8585
+1m 34s (- 43m 38s) (7000 3%) 0.7880
+1m 48s (- 43m 17s) (8000 4%) 0.7457
+2m 1s (- 42m 58s) (9000 4%) 0.7215
+2m 14s (- 42m 38s) (10000 5%) 0.6164
+2m 28s (- 42m 24s) (11000 5%) 0.6264
+2m 41s (- 42m 5s) (12000 6%) 0.5586
+2m 54s (- 41m 47s) (13000 6%) 0.5451
+3m 7s (- 41m 33s) (14000 7%) 0.4872
+3m 20s (- 41m 16s) (15000 7%) 0.4462
+3m 34s (- 41m 1s) (16000 8%) 0.4575
+3m 47s (- 40m 45s) (17000 8%) 0.4450
+4m 0s (- 40m 30s) (18000 9%) 0.4061
+4m 13s (- 40m 15s) (19000 9%) 0.4251
+4m 26s (- 40m 2s) (20000 10%) 0.3829
+Epoch 1/10 finished
+4m 42s (- 40m 5s) (21000 10%) 0.3648
+4m 55s (- 39m 52s) (22000 11%) 0.3533
+5m 8s (- 39m 35s) (23000 11%) 0.3406
+5m 21s (- 39m 20s) (24000 12%) 0.3247
+5m 35s (- 39m 5s) (25000 12%) 0.3487
+5m 48s (- 38m 51s) (26000 13%) 0.3356
+6m 1s (- 38m 37s) (27000 13%) 0.3061
+6m 15s (- 38m 23s) (28000 14%) 0.3237
+6m 28s (- 38m 12s) (29000 14%) 0.3204
+6m 42s (- 37m 58s) (30000 15%) 0.3122
+6m 55s (- 37m 44s) (31000 15%) 0.2949
+7m 8s (- 37m 30s) (32000 16%) 0.3126
+7m 21s (- 37m 15s) (33000 16%) 0.2985
+7m 35s (- 37m 2s) (34000 17%) 0.3086
+7m 48s (- 36m 48s) (35000 17%) 0.2658
+8m 1s (- 36m 35s) (36000 18%) 0.2717
+8m 15s (- 36m 23s) (37000 18%) 0.3020
+8m 28s (- 36m 9s) (38000 19%) 0.3012
+8m 42s (- 35m 56s) (39000 19%) 0.3010
+8m 55s (- 35m 43s) (40000 20%) 0.3072
+Epoch 2/10 finished
+9m 11s (- 35m 39s) (41000 20%) 0.2690
+9m 24s (- 35m 24s) (42000 21%) 0.2648
+9m 38s (- 35m 10s) (43000 21%) 0.2571
+9m 51s (- 34m 56s) (44000 22%) 0.2810
+10m 4s (- 34m 42s) (45000 22%) 0.3027
+10m 18s (- 34m 30s) (46000 23%) 0.2648
+10m 31s (- 34m 15s) (47000 23%) 0.2504
+10m 44s (- 34m 1s) (48000 24%) 0.2482
+10m 58s (- 33m 48s) (49000 24%) 0.2636
+11m 11s (- 33m 34s) (50000 25%) 0.2192
+11m 24s (- 33m 20s) (51000 25%) 0.2407
+11m 38s (- 33m 7s) (52000 26%) 0.2752
+11m 51s (- 32m 53s) (53000 26%) 0.2417
+12m 4s (- 32m 39s) (54000 27%) 0.2484
+12m 18s (- 32m 25s) (55000 27%) 0.2646
+12m 31s (- 32m 11s) (56000 28%) 0.2445
+12m 44s (- 31m 58s) (57000 28%) 0.2656
+12m 57s (- 31m 44s) (58000 28%) 0.2423
+13m 11s (- 31m 30s) (59000 29%) 0.2587
+13m 24s (- 31m 17s) (60000 30%) 0.2544
+Epoch 3/10 finished
+13m 40s (- 31m 9s) (61000 30%) 0.2553
+13m 53s (- 30m 55s) (62000 31%) 0.2610
+14m 6s (- 30m 41s) (63000 31%) 0.2639
+14m 19s (- 30m 27s) (64000 32%) 0.2228
+14m 33s (- 30m 14s) (65000 32%) 0.2258
+14m 46s (- 29m 59s) (66000 33%) 0.2260
+14m 59s (- 29m 46s) (67000 33%) 0.2534
+15m 13s (- 29m 32s) (68000 34%) 0.2629
+15m 26s (- 29m 18s) (69000 34%) 0.2232
+15m 39s (- 29m 5s) (70000 35%) 0.2677
+15m 52s (- 28m 50s) (71000 35%) 0.2180
+16m 5s (- 28m 37s) (72000 36%) 0.2523
+16m 19s (- 28m 23s) (73000 36%) 0.2221
+16m 32s (- 28m 9s) (74000 37%) 0.2381
+16m 46s (- 27m 56s) (75000 37%) 0.2473
+16m 59s (- 27m 42s) (76000 38%) 0.2149
+17m 12s (- 27m 29s) (77000 38%) 0.2567
+17m 26s (- 27m 16s) (78000 39%) 0.2426
+17m 39s (- 27m 3s) (79000 39%) 0.2129
+17m 53s (- 26m 49s) (80000 40%) 0.2343
+Epoch 4/10 finished
+18m 8s (- 26m 39s) (81000 40%) 0.2094
+18m 22s (- 26m 25s) (82000 41%) 0.2143
+18m 35s (- 26m 12s) (83000 41%) 0.2318
+18m 48s (- 25m 58s) (84000 42%) 0.2400
+19m 1s (- 25m 44s) (85000 42%) 0.2144
+19m 15s (- 25m 31s) (86000 43%) 0.2232
+19m 28s (- 25m 17s) (87000 43%) 0.2352
+19m 41s (- 25m 3s) (88000 44%) 0.2301
+19m 54s (- 24m 50s) (89000 44%) 0.2253
+20m 8s (- 24m 36s) (90000 45%) 0.2552
+20m 21s (- 24m 22s) (91000 45%) 0.2357
+20m 34s (- 24m 9s) (92000 46%) 0.2339
+20m 47s (- 23m 55s) (93000 46%) 0.2481
+21m 1s (- 23m 42s) (94000 47%) 0.2351
+21m 14s (- 23m 28s) (95000 47%) 0.2329
+21m 27s (- 23m 15s) (96000 48%) 0.2139
+21m 41s (- 23m 1s) (97000 48%) 0.2079
+21m 54s (- 22m 48s) (98000 49%) 0.2214
+22m 7s (- 22m 34s) (99000 49%) 0.2124
+22m 21s (- 22m 21s) (100000 50%) 0.2059
+Epoch 5/10 finished
+22m 36s (- 22m 10s) (101000 50%) 0.2316
+22m 50s (- 21m 56s) (102000 51%) 0.1990
+23m 3s (- 21m 43s) (103000 51%) 0.1768
+23m 17s (- 21m 29s) (104000 52%) 0.2450
+23m 30s (- 21m 15s) (105000 52%) 0.2105
+23m 43s (- 21m 2s) (106000 53%) 0.2072
+23m 56s (- 20m 48s) (107000 53%) 0.2312
+24m 10s (- 20m 35s) (108000 54%) 0.2276
+24m 23s (- 20m 22s) (109000 54%) 0.2455
+24m 37s (- 20m 8s) (110000 55%) 0.2305
+24m 50s (- 19m 54s) (111000 55%) 0.1954
+25m 3s (- 19m 41s) (112000 56%) 0.2148
+25m 16s (- 19m 27s) (113000 56%) 0.2265
+25m 30s (- 19m 14s) (114000 56%) 0.2532
+25m 43s (- 19m 0s) (115000 57%) 0.1935
+25m 56s (- 18m 47s) (116000 57%) 0.1689
+26m 10s (- 18m 33s) (117000 58%) 0.2313
+26m 23s (- 18m 20s) (118000 59%) 0.2242
+26m 36s (- 18m 7s) (119000 59%) 0.2198
+26m 50s (- 17m 53s) (120000 60%) 0.2149
+Epoch 6/10 finished
+27m 5s (- 17m 41s) (121000 60%) 0.2178
+27m 18s (- 17m 27s) (122000 61%) 0.1918
+27m 31s (- 17m 13s) (123000 61%) 0.2050
+27m 44s (- 17m 0s) (124000 62%) 0.1972
+27m 58s (- 16m 47s) (125000 62%) 0.2259
+28m 12s (- 16m 33s) (126000 63%) 0.2130
+28m 25s (- 16m 20s) (127000 63%) 0.2412
+28m 38s (- 16m 6s) (128000 64%) 0.1991
+28m 52s (- 15m 53s) (129000 64%) 0.1794
+29m 5s (- 15m 40s) (130000 65%) 0.2209
+29m 19s (- 15m 26s) (131000 65%) 0.2253
+29m 32s (- 15m 13s) (132000 66%) 0.1896
+29m 46s (- 14m 59s) (133000 66%) 0.2157
+29m 59s (- 14m 46s) (134000 67%) 0.1797
+30m 12s (- 14m 32s) (135000 67%) 0.1940
+30m 25s (- 14m 19s) (136000 68%) 0.2065
+30m 39s (- 14m 5s) (137000 68%) 0.2287
+30m 52s (- 13m 52s) (138000 69%) 0.1853
+31m 6s (- 13m 39s) (139000 69%) 0.2471
+31m 19s (- 13m 25s) (140000 70%) 0.2290
+Epoch 7/10 finished
+31m 35s (- 13m 13s) (141000 70%) 0.1982
+31m 48s (- 12m 59s) (142000 71%) 0.1869
+32m 2s (- 12m 46s) (143000 71%) 0.1979
+32m 15s (- 12m 32s) (144000 72%) 0.2139
+32m 29s (- 12m 19s) (145000 72%) 0.1780
+32m 42s (- 12m 5s) (146000 73%) 0.2065
+32m 56s (- 11m 52s) (147000 73%) 0.2066
+33m 9s (- 11m 39s) (148000 74%) 0.1681
+33m 22s (- 11m 25s) (149000 74%) 0.2058
+33m 36s (- 11m 12s) (150000 75%) 0.2298
+33m 49s (- 10m 58s) (151000 75%) 0.2016
+34m 3s (- 10m 45s) (152000 76%) 0.1851
+34m 16s (- 10m 31s) (153000 76%) 0.2145
+34m 29s (- 10m 18s) (154000 77%) 0.1896
+34m 43s (- 10m 4s) (155000 77%) 0.2331
+34m 56s (- 9m 51s) (156000 78%) 0.1913
+35m 9s (- 9m 37s) (157000 78%) 0.2134
+35m 23s (- 9m 24s) (158000 79%) 0.2123
+35m 36s (- 9m 11s) (159000 79%) 0.2100
+35m 50s (- 8m 57s) (160000 80%) 0.2113
+Epoch 8/10 finished
+36m 6s (- 8m 44s) (161000 80%) 0.1956
+36m 19s (- 8m 31s) (162000 81%) 0.1797
+36m 33s (- 8m 17s) (163000 81%) 0.1732
+36m 46s (- 8m 4s) (164000 82%) 0.1763
+37m 0s (- 7m 50s) (165000 82%) 0.2047
+37m 13s (- 7m 37s) (166000 83%) 0.2187
+37m 26s (- 7m 23s) (167000 83%) 0.1794
+37m 40s (- 7m 10s) (168000 84%) 0.1899
+37m 53s (- 6m 57s) (169000 84%) 0.1962
+38m 7s (- 6m 43s) (170000 85%) 0.2092
+38m 20s (- 6m 30s) (171000 85%) 0.2004
+38m 34s (- 6m 16s) (172000 86%) 0.2437
+38m 47s (- 6m 3s) (173000 86%) 0.1576
+39m 0s (- 5m 49s) (174000 87%) 0.1779
+39m 14s (- 5m 36s) (175000 87%) 0.2022
+39m 28s (- 5m 22s) (176000 88%) 0.1902
+39m 41s (- 5m 9s) (177000 88%) 0.2059
+39m 54s (- 4m 56s) (178000 89%) 0.1679
+40m 8s (- 4m 42s) (179000 89%) 0.1890
+40m 21s (- 4m 29s) (180000 90%) 0.1984
+Epoch 9/10 finished
+40m 37s (- 4m 15s) (181000 90%) 0.1693
+40m 50s (- 4m 2s) (182000 91%) 0.1727
+41m 4s (- 3m 48s) (183000 91%) 0.1974
+41m 17s (- 3m 35s) (184000 92%) 0.2045
+41m 31s (- 3m 22s) (185000 92%) 0.1735
+41m 44s (- 3m 8s) (186000 93%) 0.1603
+41m 57s (- 2m 55s) (187000 93%) 0.1663
+42m 11s (- 2m 41s) (188000 94%) 0.1692
+42m 24s (- 2m 28s) (189000 94%) 0.1792
+42m 38s (- 2m 14s) (190000 95%) 0.1922
+42m 51s (- 2m 1s) (191000 95%) 0.1666
+43m 5s (- 1m 47s) (192000 96%) 0.1828
+43m 18s (- 1m 34s) (193000 96%) 0.1868
+43m 31s (- 1m 20s) (194000 97%) 0.2037
+43m 45s (- 1m 7s) (195000 97%) 0.2052
+43m 58s (- 0m 53s) (196000 98%) 0.2149
+44m 12s (- 0m 40s) (197000 98%) 0.2007
+44m 25s (- 0m 26s) (198000 99%) 0.1759
+44m 38s (- 0m 13s) (199000 99%) 0.1674
+44m 52s (- 0m 0s) (200000 100%) 0.2150
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> are you looking for us ?
+= 5
+< 5-6
+
+> i feel safe .
+= 3
+< 3-4
+
+> she hurried across the lawn .
+= 5
+< 5-6
+
+> have something to drink .
+= 4
+< 3-4
+
+> i live in an apartment .
+= 5
+< 5-6
+
+> you re conscientious .
+= 3
+< 3-4
+
+> i m not sure what i was thinking .
+= 8
+< 7-8
+
+> she is used to sitting .
+= 5
+< 5-6
+
+> you ve given me good advice .
+= 6
+< 5-6
+
+> i know you have to go back to boston .
+= 9
+< 9-10
+
+Evaluate randomly on testing sentences:
+> tom didn t like that place .
+= 6
+< 5-6
+
+> do you plan to buy that car ?
+= 7
+< 7-8
+
+> how long may i keep this ?
+= 6
+< 5-6
+
+> i negotiated the price with him .
+= 6
+< 5-6
+
+> this is what ll happen .
+= 5
+< 5-6
+
+> your question is hard to answer .
+= 6
+< 5-6
+
+> i m beginning to get used to doing this .
+= 9
+< 9-10
+
+> this is not enough .
+= 4
+< 3-4
+
+> he did it himself .
+= 4
+< 3-4
+
+> he acted the part of king lear .
+= 7
+< 7-8
+
+Accuracy of the network on the sentence length test set: 90 %
+Sentence Length 1-2: 16/46 (incorrect/total) = 0.34782608695652173
+Sentence Length 3-4: 32/1003 (incorrect/total) = 0.031904287138584245
+Sentence Length 5-6: 86/1760 (incorrect/total) = 0.048863636363636366
+Sentence Length 7-8: 125/1266 (incorrect/total) = 0.09873617693522907
+Sentence Length 9-10: 93/580 (incorrect/total) = 0.16034482758620688
+Sentence Length 11-12: 70/209 (incorrect/total) = 0.3349282296650718
+Sentence Length 13-14: 37/85 (incorrect/total) = 0.43529411764705883
+Sentence Length 15-16: 24/33 (incorrect/total) = 0.7272727272727273
+Sentence Length 17-18: 9/9 (incorrect/total) = 1.0
+Sentence Length 18+: 6/9 (incorrect/total) = 0.6666666666666666
+Finished
+
