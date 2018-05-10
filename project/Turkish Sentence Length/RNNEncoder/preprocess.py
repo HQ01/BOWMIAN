@@ -115,7 +115,7 @@ if __name__ == '__main__':
     print("order: {}".format(args.order))
     print("num-pairs: {}".format(args.num_pairs))
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'tur', 
-        args.order, args.data_path, args.num_pairs, True)
+        args.order, args.data_path, args.num_pairs, False)
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
 
     with open(args.save_data_path + "/RNNEncoder_pairs.pkl", 'wb') as f:

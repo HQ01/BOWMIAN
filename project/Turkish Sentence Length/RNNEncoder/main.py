@@ -248,7 +248,7 @@ if __name__ == '__main__':
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     if not args.hpc:
         args.data_path = '.'
-        args.load_data_path = '../../embedding_weights'
+        args.load_data_path = '../../tur_embedding_weights'
 
     # Print settings
     print("hpc mode: {}".format(args.hpc))

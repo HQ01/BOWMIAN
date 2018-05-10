@@ -139,7 +139,7 @@ if __name__ == '__main__':
     print("order: {}".format(args.order))
     print("num-pairs: {}".format(args.num_pairs))
     input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fin', 
-        args.order, args.data_path, args.num_pairs, True)
+        args.order, args.data_path, args.num_pairs, False)
     vocab_ngrams = output_lang.createNGramDictionary()
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
