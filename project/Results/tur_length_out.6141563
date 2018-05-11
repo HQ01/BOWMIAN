@@ -1,0 +1,2534 @@
+hpc mode: True
+mode: sum
+ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+
+Start
+Evaluate randomly on training sentences:
+> o cok cal sma sayesinde bir servet yapt .
+= 8
+< 5-6
+
+> o cal samayacak kadar cok yorgun .
+= 6
+< 5-6
+
+> tom bana mary nin onun tipi oldugunu soyledi .
+= 8
+< 5-6
+
+> her ikiniz de deli misiniz ?
+= 5
+< 5-6
+
+> tom mary ye baska bir sans veriyor .
+= 7
+< 5-6
+
+> insallah s nav gecebilirim .
+= 4
+< 5-6
+
+> bira almak icin cok gencim .
+= 5
+< 1-2
+
+> art k onunla gorusmeyecegim .
+= 4
+< 1-2
+
+> ben bunu kesinlikle yapar m .
+= 5
+< 5-6
+
+> oturdum .
+= 1
+< 5-6
+
+Evaluate randomly on testing sentences:
+> kendini yakma .
+= 2
+< 5-6
+
+> tom cana yak n bir kisi .
+= 6
+< 5-6
+
+> hafta sonu icin bir plan n var m ?
+= 8
+< 1-2
+
+> odan zda kimse yok .
+= 4
+< 5-6
+
+> tom cok onemsiyor .
+= 3
+< 5-6
+
+> birinin bunu zaten bulmad g n nas l biliyorsun ?
+= 9
+< 5-6
+
+> tom neden kendini oldurdu ?
+= 4
+< 5-6
+
+> anahtarlar m nereye koydugumu tam hat rlayam yorum .
+= 8
+< 5-6
+
+> bunu cok gec olmadan yapmam z gerek .
+= 7
+< 5-6
+
+> tom kacacak .
+= 2
+< 5-6
+
+Accuracy of the network on the sentence length test set: 28 %
+0m 13s (- 44m 47s) (1000 0%) 1.8978
+0m 25s (- 41m 18s) (2000 1%) 1.3918
+0m 36s (- 40m 9s) (3000 1%) 1.1457
+0m 48s (- 39m 33s) (4000 2%) 0.9395
+1m 0s (- 39m 10s) (5000 2%) 0.8600
+1m 11s (- 38m 41s) (6000 3%) 0.6915
+1m 23s (- 38m 19s) (7000 3%) 0.6451
+1m 35s (- 38m 0s) (8000 4%) 0.5592
+1m 46s (- 37m 41s) (9000 4%) 0.4853
+1m 58s (- 37m 25s) (10000 5%) 0.4848
+2m 9s (- 37m 8s) (11000 5%) 0.4548
+2m 21s (- 36m 53s) (12000 6%) 0.4520
+2m 33s (- 36m 41s) (13000 6%) 0.4346
+2m 44s (- 36m 27s) (14000 7%) 0.3827
+2m 56s (- 36m 13s) (15000 7%) 0.4021
+3m 7s (- 35m 59s) (16000 8%) 0.3756
+3m 19s (- 35m 48s) (17000 8%) 0.3829
+3m 31s (- 35m 34s) (18000 9%) 0.3347
+3m 42s (- 35m 21s) (19000 9%) 0.3072
+3m 54s (- 35m 8s) (20000 10%) 0.3104
+Epoch 1/10 finished
+4m 7s (- 35m 13s) (21000 10%) 0.3291
+4m 19s (- 34m 59s) (22000 11%) 0.2984
+4m 31s (- 34m 46s) (23000 11%) 0.3132
+4m 42s (- 34m 32s) (24000 12%) 0.2568
+4m 54s (- 34m 20s) (25000 12%) 0.2910
+5m 6s (- 34m 8s) (26000 13%) 0.2988
+5m 17s (- 33m 56s) (27000 13%) 0.2487
+5m 29s (- 33m 43s) (28000 14%) 0.2411
+5m 40s (- 33m 30s) (29000 14%) 0.2541
+5m 52s (- 33m 18s) (30000 15%) 0.2968
+6m 4s (- 33m 5s) (31000 15%) 0.2329
+6m 15s (- 32m 52s) (32000 16%) 0.2578
+6m 27s (- 32m 39s) (33000 16%) 0.2019
+6m 38s (- 32m 26s) (34000 17%) 0.2198
+6m 50s (- 32m 15s) (35000 17%) 0.2572
+7m 2s (- 32m 3s) (36000 18%) 0.2776
+7m 13s (- 31m 51s) (37000 18%) 0.2474
+7m 25s (- 31m 38s) (38000 19%) 0.2388
+7m 37s (- 31m 27s) (39000 19%) 0.2513
+7m 48s (- 31m 15s) (40000 20%) 0.2206
+Epoch 2/10 finished
+8m 2s (- 31m 11s) (41000 20%) 0.2414
+8m 14s (- 30m 59s) (42000 21%) 0.2159
+8m 25s (- 30m 47s) (43000 21%) 0.2279
+8m 37s (- 30m 35s) (44000 22%) 0.2398
+8m 49s (- 30m 23s) (45000 22%) 0.2090
+9m 1s (- 30m 11s) (46000 23%) 0.2438
+9m 12s (- 29m 59s) (47000 23%) 0.2143
+9m 24s (- 29m 48s) (48000 24%) 0.2219
+9m 36s (- 29m 35s) (49000 24%) 0.1991
+9m 48s (- 29m 24s) (50000 25%) 0.2052
+9m 59s (- 29m 12s) (51000 25%) 0.1978
+10m 11s (- 28m 59s) (52000 26%) 0.1959
+10m 23s (- 28m 48s) (53000 26%) 0.2386
+10m 34s (- 28m 35s) (54000 27%) 0.2354
+10m 46s (- 28m 23s) (55000 27%) 0.2188
+10m 57s (- 28m 11s) (56000 28%) 0.2146
+11m 9s (- 27m 59s) (57000 28%) 0.2204
+11m 21s (- 27m 47s) (58000 28%) 0.2029
+11m 32s (- 27m 35s) (59000 29%) 0.2013
+11m 44s (- 27m 23s) (60000 30%) 0.2241
+Epoch 3/10 finished
+11m 57s (- 27m 15s) (61000 30%) 0.2126
+12m 9s (- 27m 3s) (62000 31%) 0.1861
+12m 21s (- 26m 51s) (63000 31%) 0.1926
+12m 32s (- 26m 39s) (64000 32%) 0.2034
+12m 44s (- 26m 27s) (65000 32%) 0.1798
+12m 56s (- 26m 15s) (66000 33%) 0.1970
+13m 7s (- 26m 3s) (67000 33%) 0.1874
+13m 19s (- 25m 51s) (68000 34%) 0.2020
+13m 30s (- 25m 39s) (69000 34%) 0.2120
+13m 42s (- 25m 27s) (70000 35%) 0.2042
+13m 54s (- 25m 16s) (71000 35%) 0.2340
+14m 6s (- 25m 4s) (72000 36%) 0.1938
+14m 17s (- 24m 52s) (73000 36%) 0.2089
+14m 29s (- 24m 40s) (74000 37%) 0.2087
+14m 41s (- 24m 28s) (75000 37%) 0.2155
+14m 52s (- 24m 16s) (76000 38%) 0.1799
+15m 4s (- 24m 4s) (77000 38%) 0.1794
+15m 15s (- 23m 52s) (78000 39%) 0.2290
+15m 27s (- 23m 40s) (79000 39%) 0.2170
+15m 39s (- 23m 28s) (80000 40%) 0.1893
+Epoch 4/10 finished
+15m 52s (- 23m 19s) (81000 40%) 0.2050
+16m 4s (- 23m 7s) (82000 41%) 0.1857
+16m 16s (- 22m 56s) (83000 41%) 0.2306
+16m 28s (- 22m 44s) (84000 42%) 0.1909
+16m 39s (- 22m 32s) (85000 42%) 0.1722
+16m 51s (- 22m 20s) (86000 43%) 0.1847
+17m 2s (- 22m 8s) (87000 43%) 0.1897
+17m 14s (- 21m 56s) (88000 44%) 0.1916
+17m 26s (- 21m 45s) (89000 44%) 0.1880
+17m 38s (- 21m 33s) (90000 45%) 0.1832
+17m 49s (- 21m 21s) (91000 45%) 0.1980
+18m 1s (- 21m 9s) (92000 46%) 0.1768
+18m 13s (- 20m 57s) (93000 46%) 0.1969
+18m 24s (- 20m 45s) (94000 47%) 0.1734
+18m 36s (- 20m 33s) (95000 47%) 0.1658
+18m 47s (- 20m 21s) (96000 48%) 0.1803
+18m 59s (- 20m 9s) (97000 48%) 0.1957
+19m 11s (- 19m 57s) (98000 49%) 0.1795
+19m 22s (- 19m 46s) (99000 49%) 0.2251
+19m 34s (- 19m 34s) (100000 50%) 0.2137
+Epoch 5/10 finished
+19m 48s (- 19m 24s) (101000 50%) 0.1714
+19m 59s (- 19m 12s) (102000 51%) 0.1781
+20m 11s (- 19m 0s) (103000 51%) 0.1967
+20m 23s (- 18m 49s) (104000 52%) 0.2008
+20m 34s (- 18m 37s) (105000 52%) 0.1771
+20m 46s (- 18m 25s) (106000 53%) 0.1657
+20m 58s (- 18m 13s) (107000 53%) 0.1973
+21m 9s (- 18m 1s) (108000 54%) 0.1797
+21m 21s (- 17m 49s) (109000 54%) 0.2095
+21m 33s (- 17m 38s) (110000 55%) 0.1881
+21m 45s (- 17m 26s) (111000 55%) 0.1880
+21m 56s (- 17m 14s) (112000 56%) 0.1841
+22m 8s (- 17m 2s) (113000 56%) 0.1787
+22m 20s (- 16m 50s) (114000 56%) 0.1608
+22m 31s (- 16m 39s) (115000 57%) 0.1669
+22m 43s (- 16m 27s) (116000 57%) 0.2121
+22m 55s (- 16m 15s) (117000 58%) 0.1843
+23m 6s (- 16m 3s) (118000 59%) 0.1855
+23m 18s (- 15m 52s) (119000 59%) 0.1950
+23m 30s (- 15m 40s) (120000 60%) 0.1944
+Epoch 6/10 finished
+23m 44s (- 15m 29s) (121000 60%) 0.1643
+23m 55s (- 15m 17s) (122000 61%) 0.1878
+24m 7s (- 15m 6s) (123000 61%) 0.1794
+24m 19s (- 14m 54s) (124000 62%) 0.2048
+24m 30s (- 14m 42s) (125000 62%) 0.1721
+24m 42s (- 14m 30s) (126000 63%) 0.1863
+24m 53s (- 14m 18s) (127000 63%) 0.1443
+25m 5s (- 14m 6s) (128000 64%) 0.1757
+25m 17s (- 13m 55s) (129000 64%) 0.1495
+25m 29s (- 13m 43s) (130000 65%) 0.1613
+25m 40s (- 13m 31s) (131000 65%) 0.2156
+25m 52s (- 13m 19s) (132000 66%) 0.1855
+26m 4s (- 13m 8s) (133000 66%) 0.1874
+26m 16s (- 12m 56s) (134000 67%) 0.1743
+26m 27s (- 12m 44s) (135000 67%) 0.2014
+26m 39s (- 12m 32s) (136000 68%) 0.1483
+26m 51s (- 12m 20s) (137000 68%) 0.1630
+27m 3s (- 12m 9s) (138000 69%) 0.1578
+27m 14s (- 11m 57s) (139000 69%) 0.1755
+27m 26s (- 11m 45s) (140000 70%) 0.2142
+Epoch 7/10 finished
+27m 40s (- 11m 34s) (141000 70%) 0.1270
+27m 51s (- 11m 22s) (142000 71%) 0.1833
+28m 3s (- 11m 11s) (143000 71%) 0.1861
+28m 14s (- 10m 59s) (144000 72%) 0.1818
+28m 26s (- 10m 47s) (145000 72%) 0.1781
+28m 38s (- 10m 35s) (146000 73%) 0.2039
+28m 50s (- 10m 23s) (147000 73%) 0.1578
+29m 1s (- 10m 11s) (148000 74%) 0.1534
+29m 13s (- 10m 0s) (149000 74%) 0.1408
+29m 25s (- 9m 48s) (150000 75%) 0.1787
+29m 36s (- 9m 36s) (151000 75%) 0.1424
+29m 48s (- 9m 24s) (152000 76%) 0.1688
+30m 0s (- 9m 13s) (153000 76%) 0.1626
+30m 12s (- 9m 1s) (154000 77%) 0.1785
+30m 23s (- 8m 49s) (155000 77%) 0.1710
+30m 35s (- 8m 37s) (156000 78%) 0.1805
+30m 47s (- 8m 25s) (157000 78%) 0.1612
+30m 59s (- 8m 14s) (158000 79%) 0.1903
+31m 10s (- 8m 2s) (159000 79%) 0.1478
+31m 22s (- 7m 50s) (160000 80%) 0.1548
+Epoch 8/10 finished
+31m 36s (- 7m 39s) (161000 80%) 0.1508
+31m 47s (- 7m 27s) (162000 81%) 0.1599
+31m 59s (- 7m 15s) (163000 81%) 0.1609
+32m 11s (- 7m 3s) (164000 82%) 0.1724
+32m 23s (- 6m 52s) (165000 82%) 0.1503
+32m 34s (- 6m 40s) (166000 83%) 0.1793
+32m 46s (- 6m 28s) (167000 83%) 0.1570
+32m 58s (- 6m 16s) (168000 84%) 0.1673
+33m 10s (- 6m 5s) (169000 84%) 0.1747
+33m 21s (- 5m 53s) (170000 85%) 0.1541
+33m 33s (- 5m 41s) (171000 85%) 0.1324
+33m 45s (- 5m 29s) (172000 86%) 0.1605
+33m 57s (- 5m 18s) (173000 86%) 0.1775
+34m 9s (- 5m 6s) (174000 87%) 0.1477
+34m 20s (- 4m 54s) (175000 87%) 0.1640
+34m 32s (- 4m 42s) (176000 88%) 0.1700
+34m 44s (- 4m 30s) (177000 88%) 0.1564
+34m 55s (- 4m 19s) (178000 89%) 0.1917
+35m 7s (- 4m 7s) (179000 89%) 0.1533
+35m 19s (- 3m 55s) (180000 90%) 0.1625
+Epoch 9/10 finished
+35m 32s (- 3m 43s) (181000 90%) 0.1562
+35m 44s (- 3m 32s) (182000 91%) 0.1494
+35m 56s (- 3m 20s) (183000 91%) 0.1408
+36m 8s (- 3m 8s) (184000 92%) 0.1625
+36m 19s (- 2m 56s) (185000 92%) 0.1391
+36m 31s (- 2m 44s) (186000 93%) 0.1423
+36m 43s (- 2m 33s) (187000 93%) 0.1643
+36m 55s (- 2m 21s) (188000 94%) 0.1836
+37m 6s (- 2m 9s) (189000 94%) 0.1655
+37m 18s (- 1m 57s) (190000 95%) 0.1532
+37m 30s (- 1m 46s) (191000 95%) 0.1547
+37m 41s (- 1m 34s) (192000 96%) 0.1613
+37m 53s (- 1m 22s) (193000 96%) 0.1585
+38m 5s (- 1m 10s) (194000 97%) 0.1732
+38m 17s (- 0m 58s) (195000 97%) 0.1598
+38m 28s (- 0m 47s) (196000 98%) 0.1430
+38m 40s (- 0m 35s) (197000 98%) 0.1370
+38m 52s (- 0m 23s) (198000 99%) 0.1557
+39m 3s (- 0m 11s) (199000 99%) 0.1579
+39m 15s (- 0m 0s) (200000 100%) 0.1370
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> bu senin icin bir sok olmal .
+= 6
+< 5-6
+
+> kahvenin hepsi bitmis .
+= 3
+< 3-4
+
+> tom onumuzdeki ekim ay nda avustralya ya gitmek niyetinde oldugunu soyledi .
+= 11
+< 11-12
+
+> tom s r tutmada iyi degildi .
+= 6
+< 5-6
+
+> gecen cuma bu odada toplant m z vard .
+= 8
+< 7-8
+
+> bunu yapmak icin bana para odenmiyor .
+= 6
+< 5-6
+
+> bu kadar ac olmasayd m bunu yemezdim .
+= 7
+< 7-8
+
+> tom sayg m z hak ediyor .
+= 6
+< 5-6
+
+> yapmaya cal st g n z seyi yapabildiniz mi ?
+= 9
+< 9-10
+
+> copu d sar c kard k .
+= 6
+< 7-8
+
+Evaluate randomly on testing sentences:
+> uc kez boston a gittim .
+= 5
+< 5-6
+
+> o populer olmam ona borcluyum dedi .
+= 6
+< 5-6
+
+> bir adam n odaya girdigini gordum .
+= 6
+< 5-6
+
+> tom benimle tan smak istemedi .
+= 5
+< 5-6
+
+> san r m tom guvensiz .
+= 5
+< 5-6
+
+> tom inan lmaz bir adam .
+= 5
+< 5-6
+
+> o adamlar gercekten begendim .
+= 4
+< 3-4
+
+> tom ailemizde yemek pisirmede biraz iyi olan tek kisidir .
+= 9
+< 9-10
+
+> sigaray b rakmak kolay degil .
+= 5
+< 5-6
+
+> kisisel nedenlerden dolay sirketten ayr ld .
+= 6
+< 5-6
+
+Accuracy of the network on the sentence length test set: 89 %
+Finished
+
+hpc mode: True
+order: 1
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['o', 'cok', 'cal', 'sma', 'sayesinde', 'bir', 'servet', 'yapt', '.']
+ref sent: o cok cal sma sayesinde bir servet yapt .
+= 8
+< 11-12
+
+> ['o', 'cal', 'samayacak', 'kadar', 'cok', 'yorgun', '.']
+ref sent: o cal samayacak kadar cok yorgun .
+= 6
+< 15-16
+
+> ['tom', 'bana', 'mary', 'nin', 'onun', 'tipi', 'oldugunu', 'soyledi', '.']
+ref sent: tom bana mary nin onun tipi oldugunu soyledi .
+= 8
+< 5-6
+
+> ['her', 'ikiniz', 'de', 'deli', 'misiniz', '?']
+ref sent: her ikiniz de deli misiniz ?
+= 5
+< 5-6
+
+> ['tom', 'mary', 'ye', 'baska', 'bir', 'sans', 'veriyor', '.']
+ref sent: tom mary ye baska bir sans veriyor .
+= 7
+< 5-6
+
+> ['insallah', 's', 'nav', 'gecebilirim', '.']
+ref sent: insallah s nav gecebilirim .
+= 4
+< 5-6
+
+> ['bira', 'almak', 'icin', 'cok', 'gencim', '.']
+ref sent: bira almak icin cok gencim .
+= 5
+< 5-6
+
+> ['art', 'k', 'onunla', 'gorusmeyecegim', '.']
+ref sent: art k onunla gorusmeyecegim .
+= 4
+< 5-6
+
+> ['ben', 'bunu', 'kesinlikle', 'yapar', 'm', '.']
+ref sent: ben bunu kesinlikle yapar m .
+= 5
+< 1-2
+
+> ['oturdum', '.']
+ref sent: oturdum .
+= 1
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['kendini', 'yakma', '.']
+ref sent: kendini yakma .
+= 2
+< 5-6
+
+> ['tom', 'cana', 'yak', 'n', 'bir', 'kisi', '.']
+ref sent: tom cana yak n bir kisi .
+= 6
+< 5-6
+
+> ['hafta', 'sonu', 'icin', 'bir', 'plan', 'n', 'var', 'm', '?']
+ref sent: hafta sonu icin bir plan n var m ?
+= 8
+< 1-2
+
+> ['odan', 'zda', 'kimse', 'yok', '.']
+ref sent: odan zda kimse yok .
+= 4
+< 1-2
+
+> ['tom', 'cok', 'onemsiyor', '.']
+ref sent: tom cok onemsiyor .
+= 3
+< 5-6
+
+> ['birinin', 'bunu', 'zaten', 'bulmad', 'g', 'n', 'nas', 'l', 'biliyorsun', '?']
+ref sent: birinin bunu zaten bulmad g n nas l biliyorsun ?
+= 9
+< 5-6
+
+> ['tom', 'neden', 'kendini', 'oldurdu', '?']
+ref sent: tom neden kendini oldurdu ?
+= 4
+< 1-2
+
+> ['anahtarlar', 'm', 'nereye', 'koydugumu', 'tam', 'hat', 'rlayam', 'yorum', '.']
+ref sent: anahtarlar m nereye koydugumu tam hat rlayam yorum .
+= 8
+< 5-6
+
+> ['bunu', 'cok', 'gec', 'olmadan', 'yapmam', 'z', 'gerek', '.']
+ref sent: bunu cok gec olmadan yapmam z gerek .
+= 7
+< 1-2
+
+> ['tom', 'kacacak', '.']
+ref sent: tom kacacak .
+= 2
+< 5-6
+
+Accuracy of the network on the sentence length test set: 23 %
+0m 3s (- 10m 21s) (1000 0%) 1.7313
+0m 4s (- 7m 46s) (2000 1%) 1.5404
+0m 6s (- 6m 54s) (3000 1%) 1.3956
+0m 7s (- 6m 27s) (4000 2%) 1.3784
+0m 9s (- 6m 10s) (5000 2%) 1.4308
+0m 11s (- 5m 58s) (6000 3%) 1.2986
+0m 12s (- 5m 50s) (7000 3%) 1.2994
+0m 14s (- 5m 42s) (8000 4%) 1.2701
+0m 15s (- 5m 37s) (9000 4%) 1.2422
+0m 17s (- 5m 32s) (10000 5%) 1.2313
+0m 19s (- 5m 27s) (11000 5%) 1.2259
+0m 20s (- 5m 23s) (12000 6%) 1.2967
+0m 22s (- 5m 20s) (13000 6%) 1.2717
+0m 23s (- 5m 17s) (14000 7%) 1.2592
+0m 25s (- 5m 14s) (15000 7%) 1.1652
+0m 27s (- 5m 12s) (16000 8%) 1.3007
+0m 28s (- 5m 9s) (17000 8%) 1.2559
+0m 30s (- 5m 6s) (18000 9%) 1.2355
+0m 31s (- 5m 4s) (19000 9%) 1.2375
+0m 33s (- 5m 1s) (20000 10%) 1.2096
+Epoch 1/10 finished
+0m 36s (- 5m 13s) (21000 10%) 1.2253
+0m 38s (- 5m 10s) (22000 11%) 1.1927
+0m 40s (- 5m 7s) (23000 11%) 1.2102
+0m 41s (- 5m 5s) (24000 12%) 1.1348
+0m 43s (- 5m 2s) (25000 12%) 1.1864
+0m 44s (- 4m 59s) (26000 13%) 1.1359
+0m 46s (- 4m 57s) (27000 13%) 1.1390
+0m 48s (- 4m 54s) (28000 14%) 1.1258
+0m 49s (- 4m 52s) (29000 14%) 1.1045
+0m 51s (- 4m 50s) (30000 15%) 1.1740
+0m 52s (- 4m 47s) (31000 15%) 1.1601
+0m 54s (- 4m 45s) (32000 16%) 1.1389
+0m 56s (- 4m 43s) (33000 16%) 1.0822
+0m 57s (- 4m 41s) (34000 17%) 1.1292
+0m 59s (- 4m 39s) (35000 17%) 1.1757
+1m 0s (- 4m 37s) (36000 18%) 1.1302
+1m 2s (- 4m 35s) (37000 18%) 1.1151
+1m 4s (- 4m 33s) (38000 19%) 1.1147
+1m 5s (- 4m 31s) (39000 19%) 1.1468
+1m 7s (- 4m 29s) (40000 20%) 1.1459
+Epoch 2/10 finished
+1m 10s (- 4m 33s) (41000 20%) 1.1205
+1m 12s (- 4m 31s) (42000 21%) 1.0547
+1m 13s (- 4m 29s) (43000 21%) 1.0395
+1m 15s (- 4m 26s) (44000 22%) 1.0713
+1m 16s (- 4m 24s) (45000 22%) 1.0878
+1m 18s (- 4m 22s) (46000 23%) 1.0625
+1m 20s (- 4m 20s) (47000 23%) 1.0353
+1m 21s (- 4m 18s) (48000 24%) 1.0692
+1m 23s (- 4m 16s) (49000 24%) 1.0516
+1m 24s (- 4m 14s) (50000 25%) 1.0972
+1m 26s (- 4m 12s) (51000 25%) 1.0745
+1m 28s (- 4m 10s) (52000 26%) 1.0083
+1m 29s (- 4m 8s) (53000 26%) 1.0354
+1m 31s (- 4m 6s) (54000 27%) 1.1010
+1m 32s (- 4m 4s) (55000 27%) 1.0300
+1m 34s (- 4m 2s) (56000 28%) 1.0454
+1m 36s (- 4m 0s) (57000 28%) 1.0060
+1m 37s (- 3m 59s) (58000 28%) 0.9851
+1m 39s (- 3m 57s) (59000 29%) 0.9712
+1m 40s (- 3m 55s) (60000 30%) 1.0677
+Epoch 3/10 finished
+1m 43s (- 3m 56s) (61000 30%) 0.9957
+1m 45s (- 3m 55s) (62000 31%) 0.9308
+1m 47s (- 3m 53s) (63000 31%) 1.0181
+1m 48s (- 3m 51s) (64000 32%) 0.9452
+1m 50s (- 3m 49s) (65000 32%) 0.9989
+1m 51s (- 3m 47s) (66000 33%) 0.9906
+1m 53s (- 3m 45s) (67000 33%) 0.9113
+1m 55s (- 3m 43s) (68000 34%) 0.9741
+1m 56s (- 3m 41s) (69000 34%) 0.9719
+1m 58s (- 3m 39s) (70000 35%) 1.0114
+1m 59s (- 3m 38s) (71000 35%) 0.9738
+2m 1s (- 3m 36s) (72000 36%) 0.9324
+2m 3s (- 3m 34s) (73000 36%) 0.9734
+2m 4s (- 3m 32s) (74000 37%) 0.9793
+2m 6s (- 3m 30s) (75000 37%) 0.9959
+2m 8s (- 3m 28s) (76000 38%) 0.9046
+2m 9s (- 3m 27s) (77000 38%) 0.9586
+2m 11s (- 3m 25s) (78000 39%) 0.9952
+2m 12s (- 3m 23s) (79000 39%) 1.0075
+2m 14s (- 3m 21s) (80000 40%) 0.9619
+Epoch 4/10 finished
+2m 17s (- 3m 22s) (81000 40%) 0.8713
+2m 19s (- 3m 20s) (82000 41%) 0.9064
+2m 20s (- 3m 18s) (83000 41%) 0.9006
+2m 22s (- 3m 16s) (84000 42%) 0.9271
+2m 24s (- 3m 14s) (85000 42%) 0.9057
+2m 25s (- 3m 13s) (86000 43%) 0.8905
+2m 27s (- 3m 11s) (87000 43%) 0.9025
+2m 28s (- 3m 9s) (88000 44%) 0.9013
+2m 30s (- 3m 7s) (89000 44%) 0.9521
+2m 32s (- 3m 5s) (90000 45%) 0.9347
+2m 33s (- 3m 4s) (91000 45%) 0.9011
+2m 35s (- 3m 2s) (92000 46%) 0.9448
+2m 36s (- 3m 0s) (93000 46%) 0.9274
+2m 38s (- 2m 58s) (94000 47%) 0.9086
+2m 40s (- 2m 56s) (95000 47%) 0.8930
+2m 41s (- 2m 55s) (96000 48%) 0.8496
+2m 43s (- 2m 53s) (97000 48%) 0.9164
+2m 44s (- 2m 51s) (98000 49%) 0.9464
+2m 46s (- 2m 49s) (99000 49%) 0.8840
+2m 48s (- 2m 48s) (100000 50%) 0.9109
+Epoch 5/10 finished
+2m 51s (- 2m 47s) (101000 50%) 0.8279
+2m 52s (- 2m 46s) (102000 51%) 0.8671
+2m 54s (- 2m 44s) (103000 51%) 0.8937
+2m 56s (- 2m 42s) (104000 52%) 0.8628
+2m 57s (- 2m 40s) (105000 52%) 0.8432
+2m 59s (- 2m 38s) (106000 53%) 0.8077
+3m 0s (- 2m 37s) (107000 53%) 0.8495
+3m 2s (- 2m 35s) (108000 54%) 0.8565
+3m 4s (- 2m 33s) (109000 54%) 0.8423
+3m 5s (- 2m 31s) (110000 55%) 0.8671
+3m 7s (- 2m 30s) (111000 55%) 0.7859
+3m 8s (- 2m 28s) (112000 56%) 0.8907
+3m 10s (- 2m 26s) (113000 56%) 0.8364
+3m 12s (- 2m 24s) (114000 56%) 0.8647
+3m 13s (- 2m 23s) (115000 57%) 0.8601
+3m 15s (- 2m 21s) (116000 57%) 0.8906
+3m 16s (- 2m 19s) (117000 58%) 0.8518
+3m 18s (- 2m 17s) (118000 59%) 0.8386
+3m 20s (- 2m 16s) (119000 59%) 0.8576
+3m 21s (- 2m 14s) (120000 60%) 0.8417
+Epoch 6/10 finished
+3m 24s (- 2m 13s) (121000 60%) 0.7257
+3m 26s (- 2m 12s) (122000 61%) 0.7891
+3m 28s (- 2m 10s) (123000 61%) 0.7980
+3m 29s (- 2m 8s) (124000 62%) 0.7743
+3m 31s (- 2m 6s) (125000 62%) 0.8204
+3m 32s (- 2m 5s) (126000 63%) 0.8177
+3m 34s (- 2m 3s) (127000 63%) 0.8105
+3m 36s (- 2m 1s) (128000 64%) 0.7822
+3m 37s (- 1m 59s) (129000 64%) 0.8455
+3m 39s (- 1m 58s) (130000 65%) 0.7722
+3m 40s (- 1m 56s) (131000 65%) 0.7831
+3m 42s (- 1m 54s) (132000 66%) 0.8005
+3m 44s (- 1m 52s) (133000 66%) 0.8046
+3m 45s (- 1m 51s) (134000 67%) 0.8262
+3m 47s (- 1m 49s) (135000 67%) 0.8045
+3m 48s (- 1m 47s) (136000 68%) 0.8138
+3m 50s (- 1m 45s) (137000 68%) 0.8155
+3m 52s (- 1m 44s) (138000 69%) 0.8229
+3m 53s (- 1m 42s) (139000 69%) 0.8994
+3m 55s (- 1m 40s) (140000 70%) 0.8314
+Epoch 7/10 finished
+3m 58s (- 1m 39s) (141000 70%) 0.6970
+4m 0s (- 1m 38s) (142000 71%) 0.7244
+4m 1s (- 1m 36s) (143000 71%) 0.7973
+4m 3s (- 1m 34s) (144000 72%) 0.7665
+4m 4s (- 1m 32s) (145000 72%) 0.7303
+4m 6s (- 1m 31s) (146000 73%) 0.7374
+4m 8s (- 1m 29s) (147000 73%) 0.7122
+4m 9s (- 1m 27s) (148000 74%) 0.7940
+4m 11s (- 1m 26s) (149000 74%) 0.7549
+4m 12s (- 1m 24s) (150000 75%) 0.8000
+4m 14s (- 1m 22s) (151000 75%) 0.7840
+4m 16s (- 1m 20s) (152000 76%) 0.7819
+4m 17s (- 1m 19s) (153000 76%) 0.7593
+4m 19s (- 1m 17s) (154000 77%) 0.8019
+4m 20s (- 1m 15s) (155000 77%) 0.7021
+4m 22s (- 1m 14s) (156000 78%) 0.7478
+4m 24s (- 1m 12s) (157000 78%) 0.7973
+4m 25s (- 1m 10s) (158000 79%) 0.7871
+4m 27s (- 1m 8s) (159000 79%) 0.7375
+4m 29s (- 1m 7s) (160000 80%) 0.7759
+Epoch 8/10 finished
+4m 32s (- 1m 5s) (161000 80%) 0.6996
+4m 33s (- 1m 4s) (162000 81%) 0.6921
+4m 35s (- 1m 2s) (163000 81%) 0.7503
+4m 36s (- 1m 0s) (164000 82%) 0.6864
+4m 38s (- 0m 59s) (165000 82%) 0.6628
+4m 40s (- 0m 57s) (166000 83%) 0.7077
+4m 41s (- 0m 55s) (167000 83%) 0.7929
+4m 43s (- 0m 53s) (168000 84%) 0.7035
+4m 44s (- 0m 52s) (169000 84%) 0.7503
+4m 46s (- 0m 50s) (170000 85%) 0.7114
+4m 48s (- 0m 48s) (171000 85%) 0.6890
+4m 49s (- 0m 47s) (172000 86%) 0.7618
+4m 51s (- 0m 45s) (173000 86%) 0.7079
+4m 52s (- 0m 43s) (174000 87%) 0.6789
+4m 54s (- 0m 42s) (175000 87%) 0.7371
+4m 56s (- 0m 40s) (176000 88%) 0.7371
+4m 57s (- 0m 38s) (177000 88%) 0.7126
+4m 59s (- 0m 36s) (178000 89%) 0.7564
+5m 0s (- 0m 35s) (179000 89%) 0.7362
+5m 2s (- 0m 33s) (180000 90%) 0.7604
+Epoch 9/10 finished
+5m 5s (- 0m 32s) (181000 90%) 0.6508
+5m 7s (- 0m 30s) (182000 91%) 0.6964
+5m 8s (- 0m 28s) (183000 91%) 0.6253
+5m 10s (- 0m 27s) (184000 92%) 0.6560
+5m 12s (- 0m 25s) (185000 92%) 0.6540
+5m 13s (- 0m 23s) (186000 93%) 0.6756
+5m 15s (- 0m 21s) (187000 93%) 0.6669
+5m 16s (- 0m 20s) (188000 94%) 0.7106
+5m 18s (- 0m 18s) (189000 94%) 0.6759
+5m 20s (- 0m 16s) (190000 95%) 0.7295
+5m 21s (- 0m 15s) (191000 95%) 0.7279
+5m 23s (- 0m 13s) (192000 96%) 0.6629
+5m 25s (- 0m 11s) (193000 96%) 0.6491
+5m 26s (- 0m 10s) (194000 97%) 0.7156
+5m 28s (- 0m 8s) (195000 97%) 0.6669
+5m 29s (- 0m 6s) (196000 98%) 0.6409
+5m 31s (- 0m 5s) (197000 98%) 0.6779
+5m 33s (- 0m 3s) (198000 99%) 0.7102
+5m 34s (- 0m 1s) (199000 99%) 0.6667
+5m 36s (- 0m 0s) (200000 100%) 0.6864
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['bu', 'senin', 'icin', 'bir', 'sok', 'olmal', '.']
+ref sent: bu senin icin bir sok olmal .
+= 6
+< 5-6
+
+> ['kahvenin', 'hepsi', 'bitmis', '.']
+ref sent: kahvenin hepsi bitmis .
+= 3
+< 3-4
+
+> ['tom', 'onumuzdeki', 'ekim', 'ay', 'nda', 'avustralya', 'ya', 'gitmek', 'niyetinde', 'oldugunu', 'soyledi', '.']
+ref sent: tom onumuzdeki ekim ay nda avustralya ya gitmek niyetinde oldugunu soyledi .
+= 11
+< 7-8
+
+> ['tom', 's', 'r', 'tutmada', 'iyi', 'degildi', '.']
+ref sent: tom s r tutmada iyi degildi .
+= 6
+< 5-6
+
+> ['gecen', 'cuma', 'bu', 'odada', 'toplant', 'm', 'z', 'vard', '.']
+ref sent: gecen cuma bu odada toplant m z vard .
+= 8
+< 7-8
+
+> ['bunu', 'yapmak', 'icin', 'bana', 'para', 'odenmiyor', '.']
+ref sent: bunu yapmak icin bana para odenmiyor .
+= 6
+< 7-8
+
+> ['bu', 'kadar', 'ac', 'olmasayd', 'm', 'bunu', 'yemezdim', '.']
+ref sent: bu kadar ac olmasayd m bunu yemezdim .
+= 7
+< 7-8
+
+> ['tom', 'sayg', 'm', 'z', 'hak', 'ediyor', '.']
+ref sent: tom sayg m z hak ediyor .
+= 6
+< 5-6
+
+> ['yapmaya', 'cal', 'st', 'g', 'n', 'z', 'seyi', 'yapabildiniz', 'mi', '?']
+ref sent: yapmaya cal st g n z seyi yapabildiniz mi ?
+= 9
+< 9-10
+
+> ['copu', 'd', 'sar', 'c', 'kard', 'k', '.']
+ref sent: copu d sar c kard k .
+= 6
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['uc', 'kez', 'boston', 'a', 'gittim', '.']
+ref sent: uc kez boston a gittim .
+= 5
+< 5-6
+
+> ['o', 'populer', 'olmam', 'ona', 'borcluyum', 'dedi', '.']
+ref sent: o populer olmam ona borcluyum dedi .
+= 6
+< 5-6
+
+> ['bir', 'adam', 'n', 'odaya', 'girdigini', 'gordum', '.']
+ref sent: bir adam n odaya girdigini gordum .
+= 6
+< 5-6
+
+> ['tom', 'benimle', 'tan', 'smak', 'istemedi', '.']
+ref sent: tom benimle tan smak istemedi .
+= 5
+< 5-6
+
+> ['san', 'r', 'm', 'tom', 'guvensiz', '.']
+ref sent: san r m tom guvensiz .
+= 5
+< 7-8
+
+> ['tom', 'inan', 'lmaz', 'bir', 'adam', '.']
+ref sent: tom inan lmaz bir adam .
+= 5
+< 5-6
+
+> ['o', 'adamlar', 'gercekten', 'begendim', '.']
+ref sent: o adamlar gercekten begendim .
+= 4
+< 3-4
+
+> ['tom', 'ailemizde', 'yemek', 'pisirmede', 'biraz', 'iyi', 'olan', 'tek', 'kisidir', '.']
+ref sent: tom ailemizde yemek pisirmede biraz iyi olan tek kisidir .
+= 9
+< 5-6
+
+> ['sigaray', 'b', 'rakmak', 'kolay', 'degil', '.']
+ref sent: sigaray b rakmak kolay degil .
+= 5
+< 3-4
+
+> ['kisisel', 'nedenlerden', 'dolay', 'sirketten', 'ayr', 'ld', '.']
+ref sent: kisisel nedenlerden dolay sirketten ayr ld .
+= 6
+< 3-4
+
+Accuracy of the network on the sentence length test set: 61 %
+Finished
+
+hpc mode: True
+order: 2
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['o', 'cok', 'cal', 'sma', 'sayesinde', 'bir', 'servet', 'yapt', '.', 'o cok', 'cok cal', 'cal sma', 'sma sayesinde', 'sayesinde bir', 'bir servet', 'servet yapt', 'yapt .']
+ref sent: o cok cal sma sayesinde bir servet yapt .
+= 8
+< 7-8
+
+> ['o', 'cal', 'samayacak', 'kadar', 'cok', 'yorgun', '.', 'o cal', 'cal samayacak', 'samayacak kadar', 'kadar cok', 'cok yorgun', 'yorgun .']
+ref sent: o cal samayacak kadar cok yorgun .
+= 6
+< 11-12
+
+> ['tom', 'bana', 'mary', 'nin', 'onun', 'tipi', 'oldugunu', 'soyledi', '.', 'tom bana', 'bana mary', 'mary nin', 'nin onun', 'onun tipi', 'tipi oldugunu', 'oldugunu soyledi', 'soyledi .']
+ref sent: tom bana mary nin onun tipi oldugunu soyledi .
+= 8
+< 7-8
+
+> ['her', 'ikiniz', 'de', 'deli', 'misiniz', '?', 'her ikiniz', 'ikiniz de', 'de deli', 'deli misiniz', 'misiniz ?']
+ref sent: her ikiniz de deli misiniz ?
+= 5
+< 5-6
+
+> ['tom', 'mary', 'ye', 'baska', 'bir', 'sans', 'veriyor', '.', 'tom mary', 'mary ye', 'ye baska', 'baska bir', 'bir sans', 'sans veriyor', 'veriyor .']
+ref sent: tom mary ye baska bir sans veriyor .
+= 7
+< 11-12
+
+> ['insallah', 's', 'nav', 'gecebilirim', '.', 'insallah s', 's nav', 'nav gecebilirim', 'gecebilirim .']
+ref sent: insallah s nav gecebilirim .
+= 4
+< 13-14
+
+> ['bira', 'almak', 'icin', 'cok', 'gencim', '.', 'bira almak', 'almak icin', 'icin cok', 'cok gencim', 'gencim .']
+ref sent: bira almak icin cok gencim .
+= 5
+< 9-10
+
+> ['art', 'k', 'onunla', 'gorusmeyecegim', '.', 'art k', 'k onunla', 'onunla gorusmeyecegim', 'gorusmeyecegim .']
+ref sent: art k onunla gorusmeyecegim .
+= 4
+< 5-6
+
+> ['ben', 'bunu', 'kesinlikle', 'yapar', 'm', '.', 'ben bunu', 'bunu kesinlikle', 'kesinlikle yapar', 'yapar m', 'm .']
+ref sent: ben bunu kesinlikle yapar m .
+= 5
+< 7-8
+
+> ['oturdum', '.', 'oturdum .']
+ref sent: oturdum .
+= 1
+< 1-2
+
+Evaluate randomly on testing sentences:
+> ['kendini', 'yakma', '.', 'kendini yakma', 'yakma .']
+ref sent: kendini yakma .
+= 2
+< 1-2
+
+> ['tom', 'cana', 'yak', 'n', 'bir', 'kisi', '.', 'tom cana', 'cana yak', 'yak n', 'n bir', 'bir kisi', 'kisi .']
+ref sent: tom cana yak n bir kisi .
+= 6
+< 1-2
+
+> ['hafta', 'sonu', 'icin', 'bir', 'plan', 'n', 'var', 'm', '?', 'hafta sonu', 'sonu icin', 'icin bir', 'bir plan', 'plan n', 'n var', 'var m', 'm ?']
+ref sent: hafta sonu icin bir plan n var m ?
+= 8
+< 5-6
+
+> ['odan', 'zda', 'kimse', 'yok', '.', 'odan zda', 'zda kimse', 'kimse yok', 'yok .']
+ref sent: odan zda kimse yok .
+= 4
+< 1-2
+
+> ['tom', 'cok', 'onemsiyor', '.', 'tom cok', 'cok onemsiyor', 'onemsiyor .']
+ref sent: tom cok onemsiyor .
+= 3
+< 5-6
+
+> ['birinin', 'bunu', 'zaten', 'bulmad', 'g', 'n', 'nas', 'l', 'biliyorsun', '?', 'birinin bunu', 'bunu zaten', 'zaten bulmad', 'bulmad g', 'g n', 'n nas', 'nas l', 'l biliyorsun', 'biliyorsun ?']
+ref sent: birinin bunu zaten bulmad g n nas l biliyorsun ?
+= 9
+< 5-6
+
+> ['tom', 'neden', 'kendini', 'oldurdu', '?', 'tom neden', 'neden kendini', 'kendini oldurdu', 'oldurdu ?']
+ref sent: tom neden kendini oldurdu ?
+= 4
+< 5-6
+
+> ['anahtarlar', 'm', 'nereye', 'koydugumu', 'tam', 'hat', 'rlayam', 'yorum', '.', 'anahtarlar m', 'm nereye', 'nereye koydugumu', 'koydugumu tam', 'tam hat', 'hat rlayam', 'rlayam yorum', 'yorum .']
+ref sent: anahtarlar m nereye koydugumu tam hat rlayam yorum .
+= 8
+< 13-14
+
+> ['bunu', 'cok', 'gec', 'olmadan', 'yapmam', 'z', 'gerek', '.', 'bunu cok', 'cok gec', 'gec olmadan', 'olmadan yapmam', 'yapmam z', 'z gerek', 'gerek .']
+ref sent: bunu cok gec olmadan yapmam z gerek .
+= 7
+< 9-10
+
+> ['tom', 'kacacak', '.', 'tom kacacak', 'kacacak .']
+ref sent: tom kacacak .
+= 2
+< 11-12
+
+Accuracy of the network on the sentence length test set: 13 %
+0m 3s (- 10m 41s) (1000 0%) 1.8348
+0m 4s (- 7m 57s) (2000 1%) 1.5909
+0m 6s (- 7m 1s) (3000 1%) 1.4619
+0m 8s (- 6m 33s) (4000 2%) 1.4212
+0m 9s (- 6m 15s) (5000 2%) 1.4442
+0m 11s (- 6m 3s) (6000 3%) 1.3515
+0m 12s (- 5m 53s) (7000 3%) 1.3471
+0m 14s (- 5m 46s) (8000 4%) 1.2948
+0m 16s (- 5m 40s) (9000 4%) 1.2796
+0m 17s (- 5m 34s) (10000 5%) 1.2769
+0m 19s (- 5m 30s) (11000 5%) 1.2865
+0m 20s (- 5m 26s) (12000 6%) 1.3014
+0m 22s (- 5m 22s) (13000 6%) 1.3365
+0m 24s (- 5m 19s) (14000 7%) 1.3193
+0m 25s (- 5m 15s) (15000 7%) 1.2771
+0m 27s (- 5m 12s) (16000 8%) 1.3590
+0m 28s (- 5m 10s) (17000 8%) 1.3017
+0m 30s (- 5m 7s) (18000 9%) 1.3016
+0m 32s (- 5m 4s) (19000 9%) 1.2668
+0m 33s (- 5m 2s) (20000 10%) 1.2707
+Epoch 1/10 finished
+0m 36s (- 5m 15s) (21000 10%) 1.2553
+0m 38s (- 5m 12s) (22000 11%) 1.2196
+0m 40s (- 5m 9s) (23000 11%) 1.2381
+0m 41s (- 5m 6s) (24000 12%) 1.1705
+0m 43s (- 5m 3s) (25000 12%) 1.2283
+0m 44s (- 5m 1s) (26000 13%) 1.2122
+0m 46s (- 4m 58s) (27000 13%) 1.2023
+0m 48s (- 4m 56s) (28000 14%) 1.1945
+0m 49s (- 4m 53s) (29000 14%) 1.1568
+0m 51s (- 4m 51s) (30000 15%) 1.2309
+0m 52s (- 4m 48s) (31000 15%) 1.2098
+0m 54s (- 4m 46s) (32000 16%) 1.1743
+0m 56s (- 4m 44s) (33000 16%) 1.1308
+0m 57s (- 4m 42s) (34000 17%) 1.1803
+0m 59s (- 4m 39s) (35000 17%) 1.2299
+1m 0s (- 4m 37s) (36000 18%) 1.1904
+1m 2s (- 4m 35s) (37000 18%) 1.1725
+1m 4s (- 4m 33s) (38000 19%) 1.1628
+1m 5s (- 4m 31s) (39000 19%) 1.1891
+1m 7s (- 4m 29s) (40000 20%) 1.2069
+Epoch 2/10 finished
+1m 10s (- 4m 33s) (41000 20%) 1.1732
+1m 12s (- 4m 31s) (42000 21%) 1.0849
+1m 13s (- 4m 29s) (43000 21%) 1.0578
+1m 15s (- 4m 27s) (44000 22%) 1.0883
+1m 17s (- 4m 25s) (45000 22%) 1.1433
+1m 18s (- 4m 23s) (46000 23%) 1.1137
+1m 20s (- 4m 21s) (47000 23%) 1.0886
+1m 21s (- 4m 19s) (48000 24%) 1.1280
+1m 23s (- 4m 16s) (49000 24%) 1.0699
+1m 24s (- 4m 14s) (50000 25%) 1.1380
+1m 26s (- 4m 12s) (51000 25%) 1.1216
+1m 28s (- 4m 10s) (52000 26%) 1.0737
+1m 29s (- 4m 8s) (53000 26%) 1.0871
+1m 31s (- 4m 7s) (54000 27%) 1.1213
+1m 32s (- 4m 5s) (55000 27%) 1.0984
+1m 34s (- 4m 3s) (56000 28%) 1.0808
+1m 36s (- 4m 1s) (57000 28%) 1.0941
+1m 37s (- 3m 59s) (58000 28%) 1.0007
+1m 39s (- 3m 57s) (59000 29%) 1.0328
+1m 40s (- 3m 55s) (60000 30%) 1.0724
+Epoch 3/10 finished
+1m 44s (- 3m 57s) (61000 30%) 1.0094
+1m 45s (- 3m 55s) (62000 31%) 0.9669
+1m 47s (- 3m 53s) (63000 31%) 1.0118
+1m 49s (- 3m 51s) (64000 32%) 0.9666
+1m 50s (- 3m 49s) (65000 32%) 1.0365
+1m 52s (- 3m 47s) (66000 33%) 1.0162
+1m 53s (- 3m 45s) (67000 33%) 0.9601
+1m 55s (- 3m 44s) (68000 34%) 1.0215
+1m 56s (- 3m 42s) (69000 34%) 1.0224
+1m 58s (- 3m 40s) (70000 35%) 1.0463
+2m 0s (- 3m 38s) (71000 35%) 1.0045
+2m 1s (- 3m 36s) (72000 36%) 1.0098
+2m 3s (- 3m 34s) (73000 36%) 0.9799
+2m 4s (- 3m 32s) (74000 37%) 0.9858
+2m 6s (- 3m 30s) (75000 37%) 0.9793
+2m 8s (- 3m 29s) (76000 38%) 0.9612
+2m 9s (- 3m 27s) (77000 38%) 1.0344
+2m 11s (- 3m 25s) (78000 39%) 1.0434
+2m 12s (- 3m 23s) (79000 39%) 1.0064
+2m 14s (- 3m 21s) (80000 40%) 1.0204
+Epoch 4/10 finished
+2m 17s (- 3m 22s) (81000 40%) 0.9002
+2m 19s (- 3m 20s) (82000 41%) 0.9039
+2m 21s (- 3m 18s) (83000 41%) 0.9251
+2m 22s (- 3m 17s) (84000 42%) 0.9257
+2m 24s (- 3m 15s) (85000 42%) 0.8700
+2m 25s (- 3m 13s) (86000 43%) 0.9103
+2m 27s (- 3m 11s) (87000 43%) 0.9356
+2m 29s (- 3m 9s) (88000 44%) 0.9659
+2m 30s (- 3m 7s) (89000 44%) 0.9420
+2m 32s (- 3m 6s) (90000 45%) 0.9599
+2m 33s (- 3m 4s) (91000 45%) 0.9360
+2m 35s (- 3m 2s) (92000 46%) 0.9203
+2m 37s (- 3m 0s) (93000 46%) 0.9309
+2m 38s (- 2m 58s) (94000 47%) 0.9122
+2m 40s (- 2m 57s) (95000 47%) 0.9212
+2m 41s (- 2m 55s) (96000 48%) 0.8796
+2m 43s (- 2m 53s) (97000 48%) 0.9220
+2m 45s (- 2m 51s) (98000 49%) 0.9189
+2m 46s (- 2m 50s) (99000 49%) 0.9336
+2m 48s (- 2m 48s) (100000 50%) 0.9568
+Epoch 5/10 finished
+2m 51s (- 2m 48s) (101000 50%) 0.7977
+2m 53s (- 2m 46s) (102000 51%) 0.8203
+2m 54s (- 2m 44s) (103000 51%) 0.8510
+2m 56s (- 2m 42s) (104000 52%) 0.8587
+2m 57s (- 2m 41s) (105000 52%) 0.8607
+2m 59s (- 2m 39s) (106000 53%) 0.8232
+3m 1s (- 2m 37s) (107000 53%) 0.8742
+3m 2s (- 2m 35s) (108000 54%) 0.8418
+3m 4s (- 2m 33s) (109000 54%) 0.8626
+3m 5s (- 2m 32s) (110000 55%) 0.8650
+3m 7s (- 2m 30s) (111000 55%) 0.8478
+3m 9s (- 2m 28s) (112000 56%) 0.8689
+3m 10s (- 2m 26s) (113000 56%) 0.8672
+3m 12s (- 2m 25s) (114000 56%) 0.8441
+3m 13s (- 2m 23s) (115000 57%) 0.8790
+3m 15s (- 2m 21s) (116000 57%) 0.8975
+3m 17s (- 2m 19s) (117000 58%) 0.8818
+3m 18s (- 2m 18s) (118000 59%) 0.8734
+3m 20s (- 2m 16s) (119000 59%) 0.8577
+3m 21s (- 2m 14s) (120000 60%) 0.8931
+Epoch 6/10 finished
+3m 25s (- 2m 13s) (121000 60%) 0.7379
+3m 26s (- 2m 12s) (122000 61%) 0.7787
+3m 28s (- 2m 10s) (123000 61%) 0.7846
+3m 29s (- 2m 8s) (124000 62%) 0.7889
+3m 31s (- 2m 6s) (125000 62%) 0.8027
+3m 33s (- 2m 5s) (126000 63%) 0.7920
+3m 34s (- 2m 3s) (127000 63%) 0.8115
+3m 36s (- 2m 1s) (128000 64%) 0.7966
+3m 37s (- 1m 59s) (129000 64%) 0.8191
+3m 39s (- 1m 58s) (130000 65%) 0.7677
+3m 41s (- 1m 56s) (131000 65%) 0.7974
+3m 42s (- 1m 54s) (132000 66%) 0.7857
+3m 44s (- 1m 53s) (133000 66%) 0.8440
+3m 45s (- 1m 51s) (134000 67%) 0.8312
+3m 47s (- 1m 49s) (135000 67%) 0.8040
+3m 49s (- 1m 47s) (136000 68%) 0.7918
+3m 50s (- 1m 46s) (137000 68%) 0.7700
+3m 52s (- 1m 44s) (138000 69%) 0.8463
+3m 53s (- 1m 42s) (139000 69%) 0.8158
+3m 55s (- 1m 40s) (140000 70%) 0.8472
+Epoch 7/10 finished
+3m 58s (- 1m 39s) (141000 70%) 0.6595
+4m 0s (- 1m 38s) (142000 71%) 0.7020
+4m 2s (- 1m 36s) (143000 71%) 0.7560
+4m 3s (- 1m 34s) (144000 72%) 0.6844
+4m 5s (- 1m 33s) (145000 72%) 0.7357
+4m 6s (- 1m 31s) (146000 73%) 0.7875
+4m 8s (- 1m 29s) (147000 73%) 0.7317
+4m 10s (- 1m 27s) (148000 74%) 0.7172
+4m 11s (- 1m 26s) (149000 74%) 0.7613
+4m 13s (- 1m 24s) (150000 75%) 0.7480
+4m 14s (- 1m 22s) (151000 75%) 0.7495
+4m 16s (- 1m 20s) (152000 76%) 0.7425
+4m 18s (- 1m 19s) (153000 76%) 0.7722
+4m 19s (- 1m 17s) (154000 77%) 0.8035
+4m 21s (- 1m 15s) (155000 77%) 0.7590
+4m 22s (- 1m 14s) (156000 78%) 0.7884
+4m 24s (- 1m 12s) (157000 78%) 0.7788
+4m 26s (- 1m 10s) (158000 79%) 0.7745
+4m 27s (- 1m 9s) (159000 79%) 0.7823
+4m 29s (- 1m 7s) (160000 80%) 0.7640
+Epoch 8/10 finished
+4m 32s (- 1m 6s) (161000 80%) 0.6293
+4m 34s (- 1m 4s) (162000 81%) 0.6255
+4m 35s (- 1m 2s) (163000 81%) 0.6899
+4m 37s (- 1m 0s) (164000 82%) 0.6157
+4m 38s (- 0m 59s) (165000 82%) 0.6617
+4m 40s (- 0m 57s) (166000 83%) 0.7174
+4m 42s (- 0m 55s) (167000 83%) 0.7318
+4m 43s (- 0m 54s) (168000 84%) 0.7024
+4m 45s (- 0m 52s) (169000 84%) 0.7505
+4m 46s (- 0m 50s) (170000 85%) 0.7026
+4m 48s (- 0m 48s) (171000 85%) 0.7058
+4m 50s (- 0m 47s) (172000 86%) 0.7222
+4m 51s (- 0m 45s) (173000 86%) 0.7691
+4m 53s (- 0m 43s) (174000 87%) 0.7114
+4m 54s (- 0m 42s) (175000 87%) 0.7061
+4m 56s (- 0m 40s) (176000 88%) 0.7242
+4m 58s (- 0m 38s) (177000 88%) 0.7314
+4m 59s (- 0m 37s) (178000 89%) 0.7716
+5m 1s (- 0m 35s) (179000 89%) 0.7456
+5m 2s (- 0m 33s) (180000 90%) 0.7175
+Epoch 9/10 finished
+5m 6s (- 0m 32s) (181000 90%) 0.5970
+5m 7s (- 0m 30s) (182000 91%) 0.6026
+5m 9s (- 0m 28s) (183000 91%) 0.6523
+5m 11s (- 0m 27s) (184000 92%) 0.6356
+5m 12s (- 0m 25s) (185000 92%) 0.5949
+5m 14s (- 0m 23s) (186000 93%) 0.6507
+5m 15s (- 0m 21s) (187000 93%) 0.6510
+5m 17s (- 0m 20s) (188000 94%) 0.6968
+5m 19s (- 0m 18s) (189000 94%) 0.6302
+5m 20s (- 0m 16s) (190000 95%) 0.6761
+5m 22s (- 0m 15s) (191000 95%) 0.6961
+5m 23s (- 0m 13s) (192000 96%) 0.6649
+5m 25s (- 0m 11s) (193000 96%) 0.6347
+5m 27s (- 0m 10s) (194000 97%) 0.7386
+5m 28s (- 0m 8s) (195000 97%) 0.7022
+5m 30s (- 0m 6s) (196000 98%) 0.6592
+5m 31s (- 0m 5s) (197000 98%) 0.6847
+5m 33s (- 0m 3s) (198000 99%) 0.7491
+5m 35s (- 0m 1s) (199000 99%) 0.7075
+5m 36s (- 0m 0s) (200000 100%) 0.7205
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['bu', 'senin', 'icin', 'bir', 'sok', 'olmal', '.', 'bu senin', 'senin icin', 'icin bir', 'bir sok', 'sok olmal', 'olmal .']
+ref sent: bu senin icin bir sok olmal .
+= 6
+< 5-6
+
+> ['kahvenin', 'hepsi', 'bitmis', '.', 'kahvenin hepsi', 'hepsi bitmis', 'bitmis .']
+ref sent: kahvenin hepsi bitmis .
+= 3
+< 1-2
+
+> ['tom', 'onumuzdeki', 'ekim', 'ay', 'nda', 'avustralya', 'ya', 'gitmek', 'niyetinde', 'oldugunu', 'soyledi', '.', 'tom onumuzdeki', 'onumuzdeki ekim', 'ekim ay', 'ay nda', 'nda avustralya', 'avustralya ya', 'ya gitmek', 'gitmek niyetinde', 'niyetinde oldugunu', 'oldugunu soyledi', 'soyledi .']
+ref sent: tom onumuzdeki ekim ay nda avustralya ya gitmek niyetinde oldugunu soyledi .
+= 11
+< 11-12
+
+> ['tom', 's', 'r', 'tutmada', 'iyi', 'degildi', '.', 'tom s', 's r', 'r tutmada', 'tutmada iyi', 'iyi degildi', 'degildi .']
+ref sent: tom s r tutmada iyi degildi .
+= 6
+< 5-6
+
+> ['gecen', 'cuma', 'bu', 'odada', 'toplant', 'm', 'z', 'vard', '.', 'gecen cuma', 'cuma bu', 'bu odada', 'odada toplant', 'toplant m', 'm z', 'z vard', 'vard .']
+ref sent: gecen cuma bu odada toplant m z vard .
+= 8
+< 5-6
+
+> ['bunu', 'yapmak', 'icin', 'bana', 'para', 'odenmiyor', '.', 'bunu yapmak', 'yapmak icin', 'icin bana', 'bana para', 'para odenmiyor', 'odenmiyor .']
+ref sent: bunu yapmak icin bana para odenmiyor .
+= 6
+< 5-6
+
+> ['bu', 'kadar', 'ac', 'olmasayd', 'm', 'bunu', 'yemezdim', '.', 'bu kadar', 'kadar ac', 'ac olmasayd', 'olmasayd m', 'm bunu', 'bunu yemezdim', 'yemezdim .']
+ref sent: bu kadar ac olmasayd m bunu yemezdim .
+= 7
+< 7-8
+
+> ['tom', 'sayg', 'm', 'z', 'hak', 'ediyor', '.', 'tom sayg', 'sayg m', 'm z', 'z hak', 'hak ediyor', 'ediyor .']
+ref sent: tom sayg m z hak ediyor .
+= 6
+< 7-8
+
+> ['yapmaya', 'cal', 'st', 'g', 'n', 'z', 'seyi', 'yapabildiniz', 'mi', '?', 'yapmaya cal', 'cal st', 'st g', 'g n', 'n z', 'z seyi', 'seyi yapabildiniz', 'yapabildiniz mi', 'mi ?']
+ref sent: yapmaya cal st g n z seyi yapabildiniz mi ?
+= 9
+< 9-10
+
+> ['copu', 'd', 'sar', 'c', 'kard', 'k', '.', 'copu d', 'd sar', 'sar c', 'c kard', 'kard k', 'k .']
+ref sent: copu d sar c kard k .
+= 6
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['uc', 'kez', 'boston', 'a', 'gittim', '.', 'uc kez', 'kez boston', 'boston a', 'a gittim', 'gittim .']
+ref sent: uc kez boston a gittim .
+= 5
+< 5-6
+
+> ['o', 'populer', 'olmam', 'ona', 'borcluyum', 'dedi', '.', 'o populer', 'populer olmam', 'olmam ona', 'ona borcluyum', 'borcluyum dedi', 'dedi .']
+ref sent: o populer olmam ona borcluyum dedi .
+= 6
+< 3-4
+
+> ['bir', 'adam', 'n', 'odaya', 'girdigini', 'gordum', '.', 'bir adam', 'adam n', 'n odaya', 'odaya girdigini', 'girdigini gordum', 'gordum .']
+ref sent: bir adam n odaya girdigini gordum .
+= 6
+< 7-8
+
+> ['tom', 'benimle', 'tan', 'smak', 'istemedi', '.', 'tom benimle', 'benimle tan', 'tan smak', 'smak istemedi', 'istemedi .']
+ref sent: tom benimle tan smak istemedi .
+= 5
+< 3-4
+
+> ['san', 'r', 'm', 'tom', 'guvensiz', '.', 'san r', 'r m', 'm tom', 'tom guvensiz', 'guvensiz .']
+ref sent: san r m tom guvensiz .
+= 5
+< 5-6
+
+> ['tom', 'inan', 'lmaz', 'bir', 'adam', '.', 'tom inan', 'inan lmaz', 'lmaz bir', 'bir adam', 'adam .']
+ref sent: tom inan lmaz bir adam .
+= 5
+< 5-6
+
+> ['o', 'adamlar', 'gercekten', 'begendim', '.', 'o adamlar', 'adamlar gercekten', 'gercekten begendim', 'begendim .']
+ref sent: o adamlar gercekten begendim .
+= 4
+< 3-4
+
+> ['tom', 'ailemizde', 'yemek', 'pisirmede', 'biraz', 'iyi', 'olan', 'tek', 'kisidir', '.', 'tom ailemizde', 'ailemizde yemek', 'yemek pisirmede', 'pisirmede biraz', 'biraz iyi', 'iyi olan', 'olan tek', 'tek kisidir', 'kisidir .']
+ref sent: tom ailemizde yemek pisirmede biraz iyi olan tek kisidir .
+= 9
+< 5-6
+
+> ['sigaray', 'b', 'rakmak', 'kolay', 'degil', '.', 'sigaray b', 'b rakmak', 'rakmak kolay', 'kolay degil', 'degil .']
+ref sent: sigaray b rakmak kolay degil .
+= 5
+< 5-6
+
+> ['kisisel', 'nedenlerden', 'dolay', 'sirketten', 'ayr', 'ld', '.', 'kisisel nedenlerden', 'nedenlerden dolay', 'dolay sirketten', 'sirketten ayr', 'ayr ld', 'ld .']
+ref sent: kisisel nedenlerden dolay sirketten ayr ld .
+= 6
+< 5-6
+
+Accuracy of the network on the sentence length test set: 54 %
+Finished
+
+hpc mode: True
+order: 3
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['o', 'cok', 'cal', 'sma', 'sayesinde', 'bir', 'servet', 'yapt', '.', 'o cok', 'cok cal', 'cal sma', 'sma sayesinde', 'sayesinde bir', 'bir servet', 'servet yapt', 'yapt .', 'o cok cal', 'cok cal sma', 'cal sma sayesinde', 'sma sayesinde bir', 'sayesinde bir servet', 'bir servet yapt', 'servet yapt .']
+ref sent: o cok cal sma sayesinde bir servet yapt .
+= 8
+< 13-14
+
+> ['o', 'cal', 'samayacak', 'kadar', 'cok', 'yorgun', '.', 'o cal', 'cal samayacak', 'samayacak kadar', 'kadar cok', 'cok yorgun', 'yorgun .', 'o cal samayacak', 'cal samayacak kadar', 'samayacak kadar cok', 'kadar cok yorgun', 'cok yorgun .']
+ref sent: o cal samayacak kadar cok yorgun .
+= 6
+< 13-14
+
+> ['tom', 'bana', 'mary', 'nin', 'onun', 'tipi', 'oldugunu', 'soyledi', '.', 'tom bana', 'bana mary', 'mary nin', 'nin onun', 'onun tipi', 'tipi oldugunu', 'oldugunu soyledi', 'soyledi .', 'tom bana mary', 'bana mary nin', 'mary nin onun', 'nin onun tipi', 'onun tipi oldugunu', 'tipi oldugunu soyledi', 'oldugunu soyledi .']
+ref sent: tom bana mary nin onun tipi oldugunu soyledi .
+= 8
+< 5-6
+
+> ['her', 'ikiniz', 'de', 'deli', 'misiniz', '?', 'her ikiniz', 'ikiniz de', 'de deli', 'deli misiniz', 'misiniz ?', 'her ikiniz de', 'ikiniz de deli', 'de deli misiniz', 'deli misiniz ?']
+ref sent: her ikiniz de deli misiniz ?
+= 5
+< 11-12
+
+> ['tom', 'mary', 'ye', 'baska', 'bir', 'sans', 'veriyor', '.', 'tom mary', 'mary ye', 'ye baska', 'baska bir', 'bir sans', 'sans veriyor', 'veriyor .', 'tom mary ye', 'mary ye baska', 'ye baska bir', 'baska bir sans', 'bir sans veriyor', 'sans veriyor .']
+ref sent: tom mary ye baska bir sans veriyor .
+= 7
+< 9-10
+
+> ['insallah', 's', 'nav', 'gecebilirim', '.', 'insallah s', 's nav', 'nav gecebilirim', 'gecebilirim .', 'insallah s nav', 's nav gecebilirim', 'nav gecebilirim .']
+ref sent: insallah s nav gecebilirim .
+= 4
+< 11-12
+
+> ['bira', 'almak', 'icin', 'cok', 'gencim', '.', 'bira almak', 'almak icin', 'icin cok', 'cok gencim', 'gencim .', 'bira almak icin', 'almak icin cok', 'icin cok gencim', 'cok gencim .']
+ref sent: bira almak icin cok gencim .
+= 5
+< 1-2
+
+> ['art', 'k', 'onunla', 'gorusmeyecegim', '.', 'art k', 'k onunla', 'onunla gorusmeyecegim', 'gorusmeyecegim .', 'art k onunla', 'k onunla gorusmeyecegim', 'onunla gorusmeyecegim .']
+ref sent: art k onunla gorusmeyecegim .
+= 4
+< 1-2
+
+> ['ben', 'bunu', 'kesinlikle', 'yapar', 'm', '.', 'ben bunu', 'bunu kesinlikle', 'kesinlikle yapar', 'yapar m', 'm .', 'ben bunu kesinlikle', 'bunu kesinlikle yapar', 'kesinlikle yapar m', 'yapar m .']
+ref sent: ben bunu kesinlikle yapar m .
+= 5
+< 9-10
+
+> ['oturdum', '.', 'oturdum .']
+ref sent: oturdum .
+= 1
+< 11-12
+
+Evaluate randomly on testing sentences:
+> ['kendini', 'yakma', '.', 'kendini yakma', 'yakma .', 'kendini yakma .']
+ref sent: kendini yakma .
+= 2
+< 11-12
+
+> ['tom', 'cana', 'yak', 'n', 'bir', 'kisi', '.', 'tom cana', 'cana yak', 'yak n', 'n bir', 'bir kisi', 'kisi .', 'tom cana yak', 'cana yak n', 'yak n bir', 'n bir kisi', 'bir kisi .']
+ref sent: tom cana yak n bir kisi .
+= 6
+< 5-6
+
+> ['hafta', 'sonu', 'icin', 'bir', 'plan', 'n', 'var', 'm', '?', 'hafta sonu', 'sonu icin', 'icin bir', 'bir plan', 'plan n', 'n var', 'var m', 'm ?', 'hafta sonu icin', 'sonu icin bir', 'icin bir plan', 'bir plan n', 'plan n var', 'n var m', 'var m ?']
+ref sent: hafta sonu icin bir plan n var m ?
+= 8
+< 9-10
+
+> ['odan', 'zda', 'kimse', 'yok', '.', 'odan zda', 'zda kimse', 'kimse yok', 'yok .', 'odan zda kimse', 'zda kimse yok', 'kimse yok .']
+ref sent: odan zda kimse yok .
+= 4
+< 5-6
+
+> ['tom', 'cok', 'onemsiyor', '.', 'tom cok', 'cok onemsiyor', 'onemsiyor .', 'tom cok onemsiyor', 'cok onemsiyor .']
+ref sent: tom cok onemsiyor .
+= 3
+< 11-12
+
+> ['birinin', 'bunu', 'zaten', 'bulmad', 'g', 'n', 'nas', 'l', 'biliyorsun', '?', 'birinin bunu', 'bunu zaten', 'zaten bulmad', 'bulmad g', 'g n', 'n nas', 'nas l', 'l biliyorsun', 'biliyorsun ?', 'birinin bunu zaten', 'bunu zaten bulmad', 'zaten bulmad g', 'bulmad g n', 'g n nas', 'n nas l', 'nas l biliyorsun', 'l biliyorsun ?']
+ref sent: birinin bunu zaten bulmad g n nas l biliyorsun ?
+= 9
+< 1-2
+
+> ['tom', 'neden', 'kendini', 'oldurdu', '?', 'tom neden', 'neden kendini', 'kendini oldurdu', 'oldurdu ?', 'tom neden kendini', 'neden kendini oldurdu', 'kendini oldurdu ?']
+ref sent: tom neden kendini oldurdu ?
+= 4
+< 5-6
+
+> ['anahtarlar', 'm', 'nereye', 'koydugumu', 'tam', 'hat', 'rlayam', 'yorum', '.', 'anahtarlar m', 'm nereye', 'nereye koydugumu', 'koydugumu tam', 'tam hat', 'hat rlayam', 'rlayam yorum', 'yorum .', 'anahtarlar m nereye', 'm nereye koydugumu', 'nereye koydugumu tam', 'koydugumu tam hat', 'tam hat rlayam', 'hat rlayam yorum', 'rlayam yorum .']
+ref sent: anahtarlar m nereye koydugumu tam hat rlayam yorum .
+= 8
+< 7-8
+
+> ['bunu', 'cok', 'gec', 'olmadan', 'yapmam', 'z', 'gerek', '.', 'bunu cok', 'cok gec', 'gec olmadan', 'olmadan yapmam', 'yapmam z', 'z gerek', 'gerek .', 'bunu cok gec', 'cok gec olmadan', 'gec olmadan yapmam', 'olmadan yapmam z', 'yapmam z gerek', 'z gerek .']
+ref sent: bunu cok gec olmadan yapmam z gerek .
+= 7
+< 9-10
+
+> ['tom', 'kacacak', '.', 'tom kacacak', 'kacacak .', 'tom kacacak .']
+ref sent: tom kacacak .
+= 2
+< 11-12
+
+Accuracy of the network on the sentence length test set: 14 %
+0m 3s (- 11m 17s) (1000 0%) 1.8551
+0m 5s (- 8m 17s) (2000 1%) 1.6327
+0m 6s (- 7m 15s) (3000 1%) 1.5017
+0m 8s (- 6m 43s) (4000 2%) 1.4676
+0m 9s (- 6m 24s) (5000 2%) 1.5174
+0m 11s (- 6m 11s) (6000 3%) 1.4201
+0m 13s (- 6m 0s) (7000 3%) 1.4139
+0m 14s (- 5m 52s) (8000 4%) 1.3687
+0m 16s (- 5m 46s) (9000 4%) 1.3456
+0m 17s (- 5m 40s) (10000 5%) 1.3548
+0m 19s (- 5m 35s) (11000 5%) 1.3182
+0m 21s (- 5m 31s) (12000 6%) 1.3741
+0m 22s (- 5m 27s) (13000 6%) 1.3760
+0m 24s (- 5m 23s) (14000 7%) 1.3216
+0m 25s (- 5m 20s) (15000 7%) 1.2972
+0m 27s (- 5m 17s) (16000 8%) 1.3504
+0m 29s (- 5m 14s) (17000 8%) 1.3583
+0m 30s (- 5m 11s) (18000 9%) 1.3126
+0m 32s (- 5m 8s) (19000 9%) 1.3130
+0m 34s (- 5m 6s) (20000 10%) 1.2808
+Epoch 1/10 finished
+0m 37s (- 5m 20s) (21000 10%) 1.2504
+0m 39s (- 5m 16s) (22000 11%) 1.2355
+0m 40s (- 5m 13s) (23000 11%) 1.2337
+0m 42s (- 5m 10s) (24000 12%) 1.2049
+0m 43s (- 5m 7s) (25000 12%) 1.2324
+0m 45s (- 5m 5s) (26000 13%) 1.2259
+0m 47s (- 5m 2s) (27000 13%) 1.2227
+0m 48s (- 4m 59s) (28000 14%) 1.1910
+0m 50s (- 4m 57s) (29000 14%) 1.1663
+0m 52s (- 4m 54s) (30000 15%) 1.2585
+0m 53s (- 4m 52s) (31000 15%) 1.1766
+0m 55s (- 4m 50s) (32000 16%) 1.1680
+0m 56s (- 4m 47s) (33000 16%) 1.1335
+0m 58s (- 4m 45s) (34000 17%) 1.1929
+1m 0s (- 4m 43s) (35000 17%) 1.2169
+1m 1s (- 4m 41s) (36000 18%) 1.2226
+1m 3s (- 4m 38s) (37000 18%) 1.1659
+1m 4s (- 4m 36s) (38000 19%) 1.1520
+1m 6s (- 4m 34s) (39000 19%) 1.2258
+1m 8s (- 4m 32s) (40000 20%) 1.1952
+Epoch 2/10 finished
+1m 11s (- 4m 37s) (41000 20%) 1.1520
+1m 13s (- 4m 35s) (42000 21%) 1.0806
+1m 14s (- 4m 32s) (43000 21%) 1.0787
+1m 16s (- 4m 30s) (44000 22%) 1.0933
+1m 17s (- 4m 28s) (45000 22%) 1.1086
+1m 19s (- 4m 26s) (46000 23%) 1.1123
+1m 21s (- 4m 24s) (47000 23%) 1.1226
+1m 22s (- 4m 22s) (48000 24%) 1.0824
+1m 24s (- 4m 20s) (49000 24%) 1.0540
+1m 26s (- 4m 18s) (50000 25%) 1.1456
+1m 27s (- 4m 16s) (51000 25%) 1.0790
+1m 29s (- 4m 14s) (52000 26%) 1.0470
+1m 30s (- 4m 12s) (53000 26%) 1.1027
+1m 32s (- 4m 10s) (54000 27%) 1.1224
+1m 34s (- 4m 8s) (55000 27%) 1.0774
+1m 35s (- 4m 6s) (56000 28%) 1.0749
+1m 37s (- 4m 4s) (57000 28%) 1.0276
+1m 38s (- 4m 2s) (58000 28%) 1.0562
+1m 40s (- 4m 0s) (59000 29%) 1.0513
+1m 42s (- 3m 58s) (60000 30%) 1.0699
+Epoch 3/10 finished
+1m 45s (- 4m 0s) (61000 30%) 1.0198
+1m 47s (- 3m 58s) (62000 31%) 1.0012
+1m 48s (- 3m 56s) (63000 31%) 0.9934
+1m 50s (- 3m 54s) (64000 32%) 0.9620
+1m 52s (- 3m 52s) (65000 32%) 1.0076
+1m 53s (- 3m 50s) (66000 33%) 1.0245
+1m 55s (- 3m 48s) (67000 33%) 0.9591
+1m 56s (- 3m 46s) (68000 34%) 0.9610
+1m 58s (- 3m 44s) (69000 34%) 1.0091
+2m 0s (- 3m 43s) (70000 35%) 1.0536
+2m 1s (- 3m 41s) (71000 35%) 1.0313
+2m 3s (- 3m 39s) (72000 36%) 0.9884
+2m 4s (- 3m 37s) (73000 36%) 0.9955
+2m 6s (- 3m 35s) (74000 37%) 0.9692
+2m 8s (- 3m 33s) (75000 37%) 0.9906
+2m 9s (- 3m 31s) (76000 38%) 0.9761
+2m 11s (- 3m 29s) (77000 38%) 1.0212
+2m 13s (- 3m 28s) (78000 39%) 1.0513
+2m 14s (- 3m 26s) (79000 39%) 1.0203
+2m 16s (- 3m 24s) (80000 40%) 0.9851
+Epoch 4/10 finished
+2m 19s (- 3m 25s) (81000 40%) 0.8836
+2m 21s (- 3m 23s) (82000 41%) 0.8821
+2m 22s (- 3m 21s) (83000 41%) 0.9421
+2m 24s (- 3m 19s) (84000 42%) 0.9067
+2m 26s (- 3m 17s) (85000 42%) 0.8799
+2m 27s (- 3m 15s) (86000 43%) 0.9069
+2m 29s (- 3m 14s) (87000 43%) 0.8990
+2m 31s (- 3m 12s) (88000 44%) 0.9235
+2m 32s (- 3m 10s) (89000 44%) 0.9647
+2m 34s (- 3m 8s) (90000 45%) 0.9450
+2m 35s (- 3m 6s) (91000 45%) 0.9837
+2m 37s (- 3m 4s) (92000 46%) 0.9417
+2m 39s (- 3m 3s) (93000 46%) 0.9651
+2m 40s (- 3m 1s) (94000 47%) 0.9347
+2m 42s (- 2m 59s) (95000 47%) 0.9184
+2m 43s (- 2m 57s) (96000 48%) 0.9178
+2m 45s (- 2m 55s) (97000 48%) 0.9553
+2m 47s (- 2m 53s) (98000 49%) 0.9793
+2m 48s (- 2m 52s) (99000 49%) 0.9116
+2m 50s (- 2m 50s) (100000 50%) 0.9935
+Epoch 5/10 finished
+2m 53s (- 2m 50s) (101000 50%) 0.8166
+2m 55s (- 2m 48s) (102000 51%) 0.7761
+2m 57s (- 2m 46s) (103000 51%) 0.8337
+2m 58s (- 2m 44s) (104000 52%) 0.8749
+3m 0s (- 2m 43s) (105000 52%) 0.8352
+3m 1s (- 2m 41s) (106000 53%) 0.8760
+3m 3s (- 2m 39s) (107000 53%) 0.8772
+3m 5s (- 2m 37s) (108000 54%) 0.8510
+3m 6s (- 2m 35s) (109000 54%) 0.8624
+3m 8s (- 2m 34s) (110000 55%) 0.8661
+3m 9s (- 2m 32s) (111000 55%) 0.9102
+3m 11s (- 2m 30s) (112000 56%) 0.9020
+3m 13s (- 2m 28s) (113000 56%) 0.8892
+3m 14s (- 2m 26s) (114000 56%) 0.8879
+3m 16s (- 2m 25s) (115000 57%) 0.8850
+3m 17s (- 2m 23s) (116000 57%) 0.9264
+3m 19s (- 2m 21s) (117000 58%) 0.9115
+3m 21s (- 2m 19s) (118000 59%) 0.9128
+3m 22s (- 2m 18s) (119000 59%) 0.8990
+3m 24s (- 2m 16s) (120000 60%) 0.9010
+Epoch 6/10 finished
+3m 27s (- 2m 15s) (121000 60%) 0.7684
+3m 29s (- 2m 13s) (122000 61%) 0.7887
+3m 31s (- 2m 12s) (123000 61%) 0.8026
+3m 32s (- 2m 10s) (124000 62%) 0.8093
+3m 34s (- 2m 8s) (125000 62%) 0.8111
+3m 35s (- 2m 6s) (126000 63%) 0.7838
+3m 37s (- 2m 5s) (127000 63%) 0.8102
+3m 39s (- 2m 3s) (128000 64%) 0.8153
+3m 40s (- 2m 1s) (129000 64%) 0.8082
+3m 42s (- 1m 59s) (130000 65%) 0.8207
+3m 43s (- 1m 57s) (131000 65%) 0.8426
+3m 45s (- 1m 56s) (132000 66%) 0.8523
+3m 47s (- 1m 54s) (133000 66%) 0.8561
+3m 48s (- 1m 52s) (134000 67%) 0.9022
+3m 50s (- 1m 50s) (135000 67%) 0.8337
+3m 51s (- 1m 49s) (136000 68%) 0.8412
+3m 53s (- 1m 47s) (137000 68%) 0.8206
+3m 55s (- 1m 45s) (138000 69%) 0.8572
+3m 56s (- 1m 43s) (139000 69%) 0.8412
+3m 58s (- 1m 42s) (140000 70%) 0.9096
+Epoch 7/10 finished
+4m 1s (- 1m 41s) (141000 70%) 0.6793
+4m 3s (- 1m 39s) (142000 71%) 0.7276
+4m 5s (- 1m 37s) (143000 71%) 0.7475
+4m 6s (- 1m 35s) (144000 72%) 0.7194
+4m 8s (- 1m 34s) (145000 72%) 0.7476
+4m 9s (- 1m 32s) (146000 73%) 0.7830
+4m 11s (- 1m 30s) (147000 73%) 0.7683
+4m 13s (- 1m 28s) (148000 74%) 0.8046
+4m 14s (- 1m 27s) (149000 74%) 0.7721
+4m 16s (- 1m 25s) (150000 75%) 0.7828
+4m 18s (- 1m 23s) (151000 75%) 0.7963
+4m 19s (- 1m 21s) (152000 76%) 0.8090
+4m 21s (- 1m 20s) (153000 76%) 0.8473
+4m 22s (- 1m 18s) (154000 77%) 0.8366
+4m 24s (- 1m 16s) (155000 77%) 0.7844
+4m 26s (- 1m 15s) (156000 78%) 0.8139
+4m 27s (- 1m 13s) (157000 78%) 0.7971
+4m 29s (- 1m 11s) (158000 79%) 0.8451
+4m 30s (- 1m 9s) (159000 79%) 0.8268
+4m 32s (- 1m 8s) (160000 80%) 0.8016
+Epoch 8/10 finished
+4m 35s (- 1m 6s) (161000 80%) 0.6484
+4m 37s (- 1m 5s) (162000 81%) 0.6541
+4m 39s (- 1m 3s) (163000 81%) 0.6869
+4m 40s (- 1m 1s) (164000 82%) 0.6942
+4m 42s (- 0m 59s) (165000 82%) 0.7241
+4m 44s (- 0m 58s) (166000 83%) 0.7126
+4m 45s (- 0m 56s) (167000 83%) 0.7280
+4m 47s (- 0m 54s) (168000 84%) 0.7430
+4m 48s (- 0m 52s) (169000 84%) 0.7693
+4m 50s (- 0m 51s) (170000 85%) 0.7246
+4m 52s (- 0m 49s) (171000 85%) 0.7737
+4m 53s (- 0m 47s) (172000 86%) 0.7871
+4m 55s (- 0m 46s) (173000 86%) 0.7597
+4m 56s (- 0m 44s) (174000 87%) 0.7547
+4m 58s (- 0m 42s) (175000 87%) 0.8132
+5m 0s (- 0m 40s) (176000 88%) 0.7457
+5m 1s (- 0m 39s) (177000 88%) 0.7634
+5m 3s (- 0m 37s) (178000 89%) 0.8056
+5m 4s (- 0m 35s) (179000 89%) 0.8466
+5m 6s (- 0m 34s) (180000 90%) 0.8087
+Epoch 9/10 finished
+5m 10s (- 0m 32s) (181000 90%) 0.6691
+5m 11s (- 0m 30s) (182000 91%) 0.6554
+5m 13s (- 0m 29s) (183000 91%) 0.6903
+5m 14s (- 0m 27s) (184000 92%) 0.6978
+5m 16s (- 0m 25s) (185000 92%) 0.7119
+5m 18s (- 0m 23s) (186000 93%) 0.6764
+5m 19s (- 0m 22s) (187000 93%) 0.6872
+5m 21s (- 0m 20s) (188000 94%) 0.7068
+5m 22s (- 0m 18s) (189000 94%) 0.7091
+5m 24s (- 0m 17s) (190000 95%) 0.7564
+5m 26s (- 0m 15s) (191000 95%) 0.7111
+5m 27s (- 0m 13s) (192000 96%) 0.7339
+5m 29s (- 0m 11s) (193000 96%) 0.7116
+5m 31s (- 0m 10s) (194000 97%) 0.7272
+5m 32s (- 0m 8s) (195000 97%) 0.7698
+5m 34s (- 0m 6s) (196000 98%) 0.7571
+5m 35s (- 0m 5s) (197000 98%) 0.7260
+5m 37s (- 0m 3s) (198000 99%) 0.7371
+5m 39s (- 0m 1s) (199000 99%) 0.7398
+5m 40s (- 0m 0s) (200000 100%) 0.7755
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['bu', 'senin', 'icin', 'bir', 'sok', 'olmal', '.', 'bu senin', 'senin icin', 'icin bir', 'bir sok', 'sok olmal', 'olmal .', 'bu senin icin', 'senin icin bir', 'icin bir sok', 'bir sok olmal', 'sok olmal .']
+ref sent: bu senin icin bir sok olmal .
+= 6
+< 7-8
+
+> ['kahvenin', 'hepsi', 'bitmis', '.', 'kahvenin hepsi', 'hepsi bitmis', 'bitmis .', 'kahvenin hepsi bitmis', 'hepsi bitmis .']
+ref sent: kahvenin hepsi bitmis .
+= 3
+< 3-4
+
+> ['tom', 'onumuzdeki', 'ekim', 'ay', 'nda', 'avustralya', 'ya', 'gitmek', 'niyetinde', 'oldugunu', 'soyledi', '.', 'tom onumuzdeki', 'onumuzdeki ekim', 'ekim ay', 'ay nda', 'nda avustralya', 'avustralya ya', 'ya gitmek', 'gitmek niyetinde', 'niyetinde oldugunu', 'oldugunu soyledi', 'soyledi .', 'tom onumuzdeki ekim', 'onumuzdeki ekim ay', 'ekim ay nda', 'ay nda avustralya', 'nda avustralya ya', 'avustralya ya gitmek', 'ya gitmek niyetinde', 'gitmek niyetinde oldugunu', 'niyetinde oldugunu soyledi', 'oldugunu soyledi .']
+ref sent: tom onumuzdeki ekim ay nda avustralya ya gitmek niyetinde oldugunu soyledi .
+= 11
+< 11-12
+
+> ['tom', 's', 'r', 'tutmada', 'iyi', 'degildi', '.', 'tom s', 's r', 'r tutmada', 'tutmada iyi', 'iyi degildi', 'degildi .', 'tom s r', 's r tutmada', 'r tutmada iyi', 'tutmada iyi degildi', 'iyi degildi .']
+ref sent: tom s r tutmada iyi degildi .
+= 6
+< 7-8
+
+> ['gecen', 'cuma', 'bu', 'odada', 'toplant', 'm', 'z', 'vard', '.', 'gecen cuma', 'cuma bu', 'bu odada', 'odada toplant', 'toplant m', 'm z', 'z vard', 'vard .', 'gecen cuma bu', 'cuma bu odada', 'bu odada toplant', 'odada toplant m', 'toplant m z', 'm z vard', 'z vard .']
+ref sent: gecen cuma bu odada toplant m z vard .
+= 8
+< 7-8
+
+> ['bunu', 'yapmak', 'icin', 'bana', 'para', 'odenmiyor', '.', 'bunu yapmak', 'yapmak icin', 'icin bana', 'bana para', 'para odenmiyor', 'odenmiyor .', 'bunu yapmak icin', 'yapmak icin bana', 'icin bana para', 'bana para odenmiyor', 'para odenmiyor .']
+ref sent: bunu yapmak icin bana para odenmiyor .
+= 6
+< 5-6
+
+> ['bu', 'kadar', 'ac', 'olmasayd', 'm', 'bunu', 'yemezdim', '.', 'bu kadar', 'kadar ac', 'ac olmasayd', 'olmasayd m', 'm bunu', 'bunu yemezdim', 'yemezdim .', 'bu kadar ac', 'kadar ac olmasayd', 'ac olmasayd m', 'olmasayd m bunu', 'm bunu yemezdim', 'bunu yemezdim .']
+ref sent: bu kadar ac olmasayd m bunu yemezdim .
+= 7
+< 7-8
+
+> ['tom', 'sayg', 'm', 'z', 'hak', 'ediyor', '.', 'tom sayg', 'sayg m', 'm z', 'z hak', 'hak ediyor', 'ediyor .', 'tom sayg m', 'sayg m z', 'm z hak', 'z hak ediyor', 'hak ediyor .']
+ref sent: tom sayg m z hak ediyor .
+= 6
+< 7-8
+
+> ['yapmaya', 'cal', 'st', 'g', 'n', 'z', 'seyi', 'yapabildiniz', 'mi', '?', 'yapmaya cal', 'cal st', 'st g', 'g n', 'n z', 'z seyi', 'seyi yapabildiniz', 'yapabildiniz mi', 'mi ?', 'yapmaya cal st', 'cal st g', 'st g n', 'g n z', 'n z seyi', 'z seyi yapabildiniz', 'seyi yapabildiniz mi', 'yapabildiniz mi ?']
+ref sent: yapmaya cal st g n z seyi yapabildiniz mi ?
+= 9
+< 7-8
+
+> ['copu', 'd', 'sar', 'c', 'kard', 'k', '.', 'copu d', 'd sar', 'sar c', 'c kard', 'kard k', 'k .', 'copu d sar', 'd sar c', 'sar c kard', 'c kard k', 'kard k .']
+ref sent: copu d sar c kard k .
+= 6
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['uc', 'kez', 'boston', 'a', 'gittim', '.', 'uc kez', 'kez boston', 'boston a', 'a gittim', 'gittim .', 'uc kez boston', 'kez boston a', 'boston a gittim', 'a gittim .']
+ref sent: uc kez boston a gittim .
+= 5
+< 3-4
+
+> ['o', 'populer', 'olmam', 'ona', 'borcluyum', 'dedi', '.', 'o populer', 'populer olmam', 'olmam ona', 'ona borcluyum', 'borcluyum dedi', 'dedi .', 'o populer olmam', 'populer olmam ona', 'olmam ona borcluyum', 'ona borcluyum dedi', 'borcluyum dedi .']
+ref sent: o populer olmam ona borcluyum dedi .
+= 6
+< 3-4
+
+> ['bir', 'adam', 'n', 'odaya', 'girdigini', 'gordum', '.', 'bir adam', 'adam n', 'n odaya', 'odaya girdigini', 'girdigini gordum', 'gordum .', 'bir adam n', 'adam n odaya', 'n odaya girdigini', 'odaya girdigini gordum', 'girdigini gordum .']
+ref sent: bir adam n odaya girdigini gordum .
+= 6
+< 7-8
+
+> ['tom', 'benimle', 'tan', 'smak', 'istemedi', '.', 'tom benimle', 'benimle tan', 'tan smak', 'smak istemedi', 'istemedi .', 'tom benimle tan', 'benimle tan smak', 'tan smak istemedi', 'smak istemedi .']
+ref sent: tom benimle tan smak istemedi .
+= 5
+< 5-6
+
+> ['san', 'r', 'm', 'tom', 'guvensiz', '.', 'san r', 'r m', 'm tom', 'tom guvensiz', 'guvensiz .', 'san r m', 'r m tom', 'm tom guvensiz', 'tom guvensiz .']
+ref sent: san r m tom guvensiz .
+= 5
+< 5-6
+
+> ['tom', 'inan', 'lmaz', 'bir', 'adam', '.', 'tom inan', 'inan lmaz', 'lmaz bir', 'bir adam', 'adam .', 'tom inan lmaz', 'inan lmaz bir', 'lmaz bir adam', 'bir adam .']
+ref sent: tom inan lmaz bir adam .
+= 5
+< 7-8
+
+> ['o', 'adamlar', 'gercekten', 'begendim', '.', 'o adamlar', 'adamlar gercekten', 'gercekten begendim', 'begendim .', 'o adamlar gercekten', 'adamlar gercekten begendim', 'gercekten begendim .']
+ref sent: o adamlar gercekten begendim .
+= 4
+< 3-4
+
+> ['tom', 'ailemizde', 'yemek', 'pisirmede', 'biraz', 'iyi', 'olan', 'tek', 'kisidir', '.', 'tom ailemizde', 'ailemizde yemek', 'yemek pisirmede', 'pisirmede biraz', 'biraz iyi', 'iyi olan', 'olan tek', 'tek kisidir', 'kisidir .', 'tom ailemizde yemek', 'ailemizde yemek pisirmede', 'yemek pisirmede biraz', 'pisirmede biraz iyi', 'biraz iyi olan', 'iyi olan tek', 'olan tek kisidir', 'tek kisidir .']
+ref sent: tom ailemizde yemek pisirmede biraz iyi olan tek kisidir .
+= 9
+< 5-6
+
+> ['sigaray', 'b', 'rakmak', 'kolay', 'degil', '.', 'sigaray b', 'b rakmak', 'rakmak kolay', 'kolay degil', 'degil .', 'sigaray b rakmak', 'b rakmak kolay', 'rakmak kolay degil', 'kolay degil .']
+ref sent: sigaray b rakmak kolay degil .
+= 5
+< 3-4
+
+> ['kisisel', 'nedenlerden', 'dolay', 'sirketten', 'ayr', 'ld', '.', 'kisisel nedenlerden', 'nedenlerden dolay', 'dolay sirketten', 'sirketten ayr', 'ayr ld', 'ld .', 'kisisel nedenlerden dolay', 'nedenlerden dolay sirketten', 'dolay sirketten ayr', 'sirketten ayr ld', 'ayr ld .']
+ref sent: kisisel nedenlerden dolay sirketten ayr ld .
+= 6
+< 5-6
+
+Accuracy of the network on the sentence length test set: 54 %
+Finished
+
+hpc mode: True
+order: 4
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['o', 'cok', 'cal', 'sma', 'sayesinde', 'bir', 'servet', 'yapt', '.', 'o cok', 'cok cal', 'cal sma', 'sma sayesinde', 'sayesinde bir', 'bir servet', 'servet yapt', 'yapt .', 'o cok cal', 'cok cal sma', 'cal sma sayesinde', 'sma sayesinde bir', 'sayesinde bir servet', 'bir servet yapt', 'servet yapt .', 'o cok cal sma', 'cok cal sma sayesinde', 'cal sma sayesinde bir', 'sma sayesinde bir servet', 'sayesinde bir servet yapt', 'bir servet yapt .']
+ref sent: o cok cal sma sayesinde bir servet yapt .
+= 8
+< 9-10
+
+> ['o', 'cal', 'samayacak', 'kadar', 'cok', 'yorgun', '.', 'o cal', 'cal samayacak', 'samayacak kadar', 'kadar cok', 'cok yorgun', 'yorgun .', 'o cal samayacak', 'cal samayacak kadar', 'samayacak kadar cok', 'kadar cok yorgun', 'cok yorgun .', 'o cal samayacak kadar', 'cal samayacak kadar cok', 'samayacak kadar cok yorgun', 'kadar cok yorgun .']
+ref sent: o cal samayacak kadar cok yorgun .
+= 6
+< 13-14
+
+> ['tom', 'bana', 'mary', 'nin', 'onun', 'tipi', 'oldugunu', 'soyledi', '.', 'tom bana', 'bana mary', 'mary nin', 'nin onun', 'onun tipi', 'tipi oldugunu', 'oldugunu soyledi', 'soyledi .', 'tom bana mary', 'bana mary nin', 'mary nin onun', 'nin onun tipi', 'onun tipi oldugunu', 'tipi oldugunu soyledi', 'oldugunu soyledi .', 'tom bana mary nin', 'bana mary nin onun', 'mary nin onun tipi', 'nin onun tipi oldugunu', 'onun tipi oldugunu soyledi', 'tipi oldugunu soyledi .']
+ref sent: tom bana mary nin onun tipi oldugunu soyledi .
+= 8
+< 5-6
+
+> ['her', 'ikiniz', 'de', 'deli', 'misiniz', '?', 'her ikiniz', 'ikiniz de', 'de deli', 'deli misiniz', 'misiniz ?', 'her ikiniz de', 'ikiniz de deli', 'de deli misiniz', 'deli misiniz ?', 'her ikiniz de deli', 'ikiniz de deli misiniz', 'de deli misiniz ?']
+ref sent: her ikiniz de deli misiniz ?
+= 5
+< 5-6
+
+> ['tom', 'mary', 'ye', 'baska', 'bir', 'sans', 'veriyor', '.', 'tom mary', 'mary ye', 'ye baska', 'baska bir', 'bir sans', 'sans veriyor', 'veriyor .', 'tom mary ye', 'mary ye baska', 'ye baska bir', 'baska bir sans', 'bir sans veriyor', 'sans veriyor .', 'tom mary ye baska', 'mary ye baska bir', 'ye baska bir sans', 'baska bir sans veriyor', 'bir sans veriyor .']
+ref sent: tom mary ye baska bir sans veriyor .
+= 7
+< 5-6
+
+> ['insallah', 's', 'nav', 'gecebilirim', '.', 'insallah s', 's nav', 'nav gecebilirim', 'gecebilirim .', 'insallah s nav', 's nav gecebilirim', 'nav gecebilirim .', 'insallah s nav gecebilirim', 's nav gecebilirim .']
+ref sent: insallah s nav gecebilirim .
+= 4
+< 11-12
+
+> ['bira', 'almak', 'icin', 'cok', 'gencim', '.', 'bira almak', 'almak icin', 'icin cok', 'cok gencim', 'gencim .', 'bira almak icin', 'almak icin cok', 'icin cok gencim', 'cok gencim .', 'bira almak icin cok', 'almak icin cok gencim', 'icin cok gencim .']
+ref sent: bira almak icin cok gencim .
+= 5
+< 5-6
+
+> ['art', 'k', 'onunla', 'gorusmeyecegim', '.', 'art k', 'k onunla', 'onunla gorusmeyecegim', 'gorusmeyecegim .', 'art k onunla', 'k onunla gorusmeyecegim', 'onunla gorusmeyecegim .', 'art k onunla gorusmeyecegim', 'k onunla gorusmeyecegim .']
+ref sent: art k onunla gorusmeyecegim .
+= 4
+< 11-12
+
+> ['ben', 'bunu', 'kesinlikle', 'yapar', 'm', '.', 'ben bunu', 'bunu kesinlikle', 'kesinlikle yapar', 'yapar m', 'm .', 'ben bunu kesinlikle', 'bunu kesinlikle yapar', 'kesinlikle yapar m', 'yapar m .', 'ben bunu kesinlikle yapar', 'bunu kesinlikle yapar m', 'kesinlikle yapar m .']
+ref sent: ben bunu kesinlikle yapar m .
+= 5
+< 11-12
+
+> ['oturdum', '.', 'oturdum .']
+ref sent: oturdum .
+= 1
+< 11-12
+
+Evaluate randomly on testing sentences:
+> ['kendini', 'yakma', '.', 'kendini yakma', 'yakma .', 'kendini yakma .']
+ref sent: kendini yakma .
+= 2
+< 11-12
+
+> ['tom', 'cana', 'yak', 'n', 'bir', 'kisi', '.', 'tom cana', 'cana yak', 'yak n', 'n bir', 'bir kisi', 'kisi .', 'tom cana yak', 'cana yak n', 'yak n bir', 'n bir kisi', 'bir kisi .', 'tom cana yak n', 'cana yak n bir', 'yak n bir kisi', 'n bir kisi .']
+ref sent: tom cana yak n bir kisi .
+= 6
+< 11-12
+
+> ['hafta', 'sonu', 'icin', 'bir', 'plan', 'n', 'var', 'm', '?', 'hafta sonu', 'sonu icin', 'icin bir', 'bir plan', 'plan n', 'n var', 'var m', 'm ?', 'hafta sonu icin', 'sonu icin bir', 'icin bir plan', 'bir plan n', 'plan n var', 'n var m', 'var m ?', 'hafta sonu icin bir', 'sonu icin bir plan', 'icin bir plan n', 'bir plan n var', 'plan n var m', 'n var m ?']
+ref sent: hafta sonu icin bir plan n var m ?
+= 8
+< 11-12
+
+> ['odan', 'zda', 'kimse', 'yok', '.', 'odan zda', 'zda kimse', 'kimse yok', 'yok .', 'odan zda kimse', 'zda kimse yok', 'kimse yok .', 'odan zda kimse yok', 'zda kimse yok .']
+ref sent: odan zda kimse yok .
+= 4
+< 7-8
+
+> ['tom', 'cok', 'onemsiyor', '.', 'tom cok', 'cok onemsiyor', 'onemsiyor .', 'tom cok onemsiyor', 'cok onemsiyor .', 'tom cok onemsiyor .']
+ref sent: tom cok onemsiyor .
+= 3
+< 11-12
+
+> ['birinin', 'bunu', 'zaten', 'bulmad', 'g', 'n', 'nas', 'l', 'biliyorsun', '?', 'birinin bunu', 'bunu zaten', 'zaten bulmad', 'bulmad g', 'g n', 'n nas', 'nas l', 'l biliyorsun', 'biliyorsun ?', 'birinin bunu zaten', 'bunu zaten bulmad', 'zaten bulmad g', 'bulmad g n', 'g n nas', 'n nas l', 'nas l biliyorsun', 'l biliyorsun ?', 'birinin bunu zaten bulmad', 'bunu zaten bulmad g', 'zaten bulmad g n', 'bulmad g n nas', 'g n nas l', 'n nas l biliyorsun', 'nas l biliyorsun ?']
+ref sent: birinin bunu zaten bulmad g n nas l biliyorsun ?
+= 9
+< 5-6
+
+> ['tom', 'neden', 'kendini', 'oldurdu', '?', 'tom neden', 'neden kendini', 'kendini oldurdu', 'oldurdu ?', 'tom neden kendini', 'neden kendini oldurdu', 'kendini oldurdu ?', 'tom neden kendini oldurdu', 'neden kendini oldurdu ?']
+ref sent: tom neden kendini oldurdu ?
+= 4
+< 5-6
+
+> ['anahtarlar', 'm', 'nereye', 'koydugumu', 'tam', 'hat', 'rlayam', 'yorum', '.', 'anahtarlar m', 'm nereye', 'nereye koydugumu', 'koydugumu tam', 'tam hat', 'hat rlayam', 'rlayam yorum', 'yorum .', 'anahtarlar m nereye', 'm nereye koydugumu', 'nereye koydugumu tam', 'koydugumu tam hat', 'tam hat rlayam', 'hat rlayam yorum', 'rlayam yorum .', 'anahtarlar m nereye koydugumu', 'm nereye koydugumu tam', 'nereye koydugumu tam hat', 'koydugumu tam hat rlayam', 'tam hat rlayam yorum', 'hat rlayam yorum .']
+ref sent: anahtarlar m nereye koydugumu tam hat rlayam yorum .
+= 8
+< 5-6
+
+> ['bunu', 'cok', 'gec', 'olmadan', 'yapmam', 'z', 'gerek', '.', 'bunu cok', 'cok gec', 'gec olmadan', 'olmadan yapmam', 'yapmam z', 'z gerek', 'gerek .', 'bunu cok gec', 'cok gec olmadan', 'gec olmadan yapmam', 'olmadan yapmam z', 'yapmam z gerek', 'z gerek .', 'bunu cok gec olmadan', 'cok gec olmadan yapmam', 'gec olmadan yapmam z', 'olmadan yapmam z gerek', 'yapmam z gerek .']
+ref sent: bunu cok gec olmadan yapmam z gerek .
+= 7
+< 11-12
+
+> ['tom', 'kacacak', '.', 'tom kacacak', 'kacacak .', 'tom kacacak .']
+ref sent: tom kacacak .
+= 2
+< 11-12
+
+Accuracy of the network on the sentence length test set: 14 %
+0m 3s (- 11m 8s) (1000 0%) 1.8660
+0m 4s (- 8m 11s) (2000 1%) 1.6316
+0m 6s (- 7m 11s) (3000 1%) 1.5266
+0m 8s (- 6m 41s) (4000 2%) 1.4690
+0m 9s (- 6m 21s) (5000 2%) 1.4879
+0m 11s (- 6m 8s) (6000 3%) 1.4075
+0m 12s (- 5m 58s) (7000 3%) 1.3812
+0m 14s (- 5m 50s) (8000 4%) 1.3388
+0m 16s (- 5m 44s) (9000 4%) 1.3215
+0m 17s (- 5m 39s) (10000 5%) 1.3241
+0m 19s (- 5m 34s) (11000 5%) 1.3239
+0m 21s (- 5m 30s) (12000 6%) 1.3429
+0m 22s (- 5m 26s) (13000 6%) 1.3449
+0m 24s (- 5m 22s) (14000 7%) 1.3417
+0m 25s (- 5m 19s) (15000 7%) 1.2743
+0m 27s (- 5m 16s) (16000 8%) 1.3420
+0m 29s (- 5m 13s) (17000 8%) 1.3343
+0m 30s (- 5m 10s) (18000 9%) 1.3040
+0m 32s (- 5m 7s) (19000 9%) 1.2662
+0m 33s (- 5m 5s) (20000 10%) 1.2561
+Epoch 1/10 finished
+0m 37s (- 5m 19s) (21000 10%) 1.2376
+0m 39s (- 5m 15s) (22000 11%) 1.2110
+0m 40s (- 5m 12s) (23000 11%) 1.2317
+0m 42s (- 5m 9s) (24000 12%) 1.1883
+0m 43s (- 5m 6s) (25000 12%) 1.2070
+0m 45s (- 5m 4s) (26000 13%) 1.2121
+0m 47s (- 5m 1s) (27000 13%) 1.2040
+0m 48s (- 4m 58s) (28000 14%) 1.1864
+0m 50s (- 4m 56s) (29000 14%) 1.1693
+0m 51s (- 4m 54s) (30000 15%) 1.1989
+0m 53s (- 4m 51s) (31000 15%) 1.1905
+0m 55s (- 4m 49s) (32000 16%) 1.1540
+0m 56s (- 4m 47s) (33000 16%) 1.1084
+0m 58s (- 4m 44s) (34000 17%) 1.1841
+0m 59s (- 4m 42s) (35000 17%) 1.1957
+1m 1s (- 4m 40s) (36000 18%) 1.1780
+1m 3s (- 4m 38s) (37000 18%) 1.1973
+1m 4s (- 4m 36s) (38000 19%) 1.1784
+1m 6s (- 4m 33s) (39000 19%) 1.1760
+1m 7s (- 4m 31s) (40000 20%) 1.1744
+Epoch 2/10 finished
+1m 11s (- 4m 36s) (41000 20%) 1.1311
+1m 12s (- 4m 34s) (42000 21%) 1.1010
+1m 14s (- 4m 32s) (43000 21%) 1.0294
+1m 16s (- 4m 30s) (44000 22%) 1.0965
+1m 17s (- 4m 27s) (45000 22%) 1.1063
+1m 19s (- 4m 25s) (46000 23%) 1.1037
+1m 20s (- 4m 23s) (47000 23%) 1.1154
+1m 22s (- 4m 21s) (48000 24%) 1.0660
+1m 24s (- 4m 19s) (49000 24%) 1.0639
+1m 25s (- 4m 17s) (50000 25%) 1.1334
+1m 27s (- 4m 15s) (51000 25%) 1.0946
+1m 29s (- 4m 13s) (52000 26%) 1.0380
+1m 30s (- 4m 11s) (53000 26%) 1.0841
+1m 32s (- 4m 9s) (54000 27%) 1.0894
+1m 33s (- 4m 7s) (55000 27%) 1.0978
+1m 35s (- 4m 5s) (56000 28%) 1.0553
+1m 37s (- 4m 3s) (57000 28%) 1.0815
+1m 38s (- 4m 1s) (58000 28%) 1.0279
+1m 40s (- 3m 59s) (59000 29%) 1.0247
+1m 41s (- 3m 57s) (60000 30%) 1.0987
+Epoch 3/10 finished
+1m 45s (- 3m 59s) (61000 30%) 1.0078
+1m 46s (- 3m 57s) (62000 31%) 0.9422
+1m 48s (- 3m 55s) (63000 31%) 1.0097
+1m 50s (- 3m 53s) (64000 32%) 0.9588
+1m 51s (- 3m 51s) (65000 32%) 0.9975
+1m 53s (- 3m 50s) (66000 33%) 1.0222
+1m 54s (- 3m 48s) (67000 33%) 0.9537
+1m 56s (- 3m 46s) (68000 34%) 0.9858
+1m 58s (- 3m 44s) (69000 34%) 1.0131
+1m 59s (- 3m 42s) (70000 35%) 1.0387
+2m 1s (- 3m 40s) (71000 35%) 1.0115
+2m 2s (- 3m 38s) (72000 36%) 0.9846
+2m 4s (- 3m 36s) (73000 36%) 1.0034
+2m 6s (- 3m 34s) (74000 37%) 0.9649
+2m 7s (- 3m 32s) (75000 37%) 1.0180
+2m 9s (- 3m 31s) (76000 38%) 0.9924
+2m 11s (- 3m 29s) (77000 38%) 1.0187
+2m 12s (- 3m 27s) (78000 39%) 1.0298
+2m 14s (- 3m 25s) (79000 39%) 1.0027
+2m 15s (- 3m 23s) (80000 40%) 1.0096
+Epoch 4/10 finished
+2m 19s (- 3m 24s) (81000 40%) 0.9066
+2m 20s (- 3m 22s) (82000 41%) 0.8909
+2m 22s (- 3m 20s) (83000 41%) 0.9269
+2m 24s (- 3m 19s) (84000 42%) 0.9310
+2m 25s (- 3m 17s) (85000 42%) 0.8899
+2m 27s (- 3m 15s) (86000 43%) 0.9045
+2m 28s (- 3m 13s) (87000 43%) 0.9363
+2m 30s (- 3m 11s) (88000 44%) 0.9243
+2m 32s (- 3m 9s) (89000 44%) 0.9288
+2m 33s (- 3m 7s) (90000 45%) 0.9589
+2m 35s (- 3m 6s) (91000 45%) 0.9677
+2m 36s (- 3m 4s) (92000 46%) 0.9466
+2m 38s (- 3m 2s) (93000 46%) 0.9569
+2m 40s (- 3m 0s) (94000 47%) 0.9238
+2m 41s (- 2m 58s) (95000 47%) 0.9495
+2m 43s (- 2m 56s) (96000 48%) 0.9173
+2m 44s (- 2m 55s) (97000 48%) 0.9252
+2m 46s (- 2m 53s) (98000 49%) 0.9607
+2m 48s (- 2m 51s) (99000 49%) 0.9294
+2m 49s (- 2m 49s) (100000 50%) 0.9777
+Epoch 5/10 finished
+2m 53s (- 2m 49s) (101000 50%) 0.8470
+2m 54s (- 2m 47s) (102000 51%) 0.8049
+2m 56s (- 2m 46s) (103000 51%) 0.8668
+2m 58s (- 2m 44s) (104000 52%) 0.8546
+2m 59s (- 2m 42s) (105000 52%) 0.8463
+3m 1s (- 2m 40s) (106000 53%) 0.8566
+3m 2s (- 2m 38s) (107000 53%) 0.8950
+3m 4s (- 2m 37s) (108000 54%) 0.8453
+3m 6s (- 2m 35s) (109000 54%) 0.8904
+3m 7s (- 2m 33s) (110000 55%) 0.8862
+3m 9s (- 2m 31s) (111000 55%) 0.8639
+3m 10s (- 2m 30s) (112000 56%) 0.8782
+3m 12s (- 2m 28s) (113000 56%) 0.9099
+3m 14s (- 2m 26s) (114000 56%) 0.8690
+3m 15s (- 2m 24s) (115000 57%) 0.8764
+3m 17s (- 2m 22s) (116000 57%) 0.9018
+3m 19s (- 2m 21s) (117000 58%) 0.9058
+3m 20s (- 2m 19s) (118000 59%) 0.8988
+3m 22s (- 2m 17s) (119000 59%) 0.9327
+3m 23s (- 2m 15s) (120000 60%) 0.8778
+Epoch 6/10 finished
+3m 27s (- 2m 15s) (121000 60%) 0.7785
+3m 28s (- 2m 13s) (122000 61%) 0.7517
+3m 30s (- 2m 11s) (123000 61%) 0.8041
+3m 32s (- 2m 9s) (124000 62%) 0.8032
+3m 33s (- 2m 8s) (125000 62%) 0.8152
+3m 35s (- 2m 6s) (126000 63%) 0.8019
+3m 36s (- 2m 4s) (127000 63%) 0.8301
+3m 38s (- 2m 2s) (128000 64%) 0.7761
+3m 40s (- 2m 1s) (129000 64%) 0.8578
+3m 41s (- 1m 59s) (130000 65%) 0.8283
+3m 43s (- 1m 57s) (131000 65%) 0.8806
+3m 44s (- 1m 55s) (132000 66%) 0.8355
+3m 46s (- 1m 54s) (133000 66%) 0.8388
+3m 48s (- 1m 52s) (134000 67%) 0.8560
+3m 49s (- 1m 50s) (135000 67%) 0.8535
+3m 51s (- 1m 48s) (136000 68%) 0.8613
+3m 52s (- 1m 47s) (137000 68%) 0.8376
+3m 54s (- 1m 45s) (138000 69%) 0.8757
+3m 56s (- 1m 43s) (139000 69%) 0.8432
+3m 57s (- 1m 41s) (140000 70%) 0.8788
+Epoch 7/10 finished
+4m 1s (- 1m 40s) (141000 70%) 0.6946
+4m 2s (- 1m 39s) (142000 71%) 0.7269
+4m 4s (- 1m 37s) (143000 71%) 0.7526
+4m 6s (- 1m 35s) (144000 72%) 0.7195
+4m 7s (- 1m 33s) (145000 72%) 0.7494
+4m 9s (- 1m 32s) (146000 73%) 0.7605
+4m 10s (- 1m 30s) (147000 73%) 0.7626
+4m 12s (- 1m 28s) (148000 74%) 0.7444
+4m 14s (- 1m 27s) (149000 74%) 0.7840
+4m 15s (- 1m 25s) (150000 75%) 0.8062
+4m 17s (- 1m 23s) (151000 75%) 0.7988
+4m 19s (- 1m 21s) (152000 76%) 0.8417
+4m 20s (- 1m 20s) (153000 76%) 0.8013
+4m 22s (- 1m 18s) (154000 77%) 0.8616
+4m 23s (- 1m 16s) (155000 77%) 0.7921
+4m 25s (- 1m 14s) (156000 78%) 0.8133
+4m 27s (- 1m 13s) (157000 78%) 0.7903
+4m 28s (- 1m 11s) (158000 79%) 0.8051
+4m 30s (- 1m 9s) (159000 79%) 0.8015
+4m 31s (- 1m 7s) (160000 80%) 0.8787
+Epoch 8/10 finished
+4m 35s (- 1m 6s) (161000 80%) 0.6647
+4m 36s (- 1m 4s) (162000 81%) 0.6506
+4m 38s (- 1m 3s) (163000 81%) 0.6868
+4m 40s (- 1m 1s) (164000 82%) 0.6892
+4m 41s (- 0m 59s) (165000 82%) 0.6827
+4m 43s (- 0m 58s) (166000 83%) 0.6743
+4m 44s (- 0m 56s) (167000 83%) 0.7429
+4m 46s (- 0m 54s) (168000 84%) 0.7489
+4m 48s (- 0m 52s) (169000 84%) 0.7724
+4m 49s (- 0m 51s) (170000 85%) 0.7768
+4m 51s (- 0m 49s) (171000 85%) 0.7772
+4m 53s (- 0m 47s) (172000 86%) 0.7794
+4m 54s (- 0m 45s) (173000 86%) 0.7793
+4m 56s (- 0m 44s) (174000 87%) 0.7211
+4m 57s (- 0m 42s) (175000 87%) 0.7937
+4m 59s (- 0m 40s) (176000 88%) 0.7764
+5m 1s (- 0m 39s) (177000 88%) 0.8146
+5m 2s (- 0m 37s) (178000 89%) 0.8066
+5m 4s (- 0m 35s) (179000 89%) 0.7872
+5m 5s (- 0m 33s) (180000 90%) 0.8276
+Epoch 9/10 finished
+5m 9s (- 0m 32s) (181000 90%) 0.6257
+5m 11s (- 0m 30s) (182000 91%) 0.6613
+5m 12s (- 0m 29s) (183000 91%) 0.6699
+5m 14s (- 0m 27s) (184000 92%) 0.6354
+5m 15s (- 0m 25s) (185000 92%) 0.6582
+5m 17s (- 0m 23s) (186000 93%) 0.6925
+5m 19s (- 0m 22s) (187000 93%) 0.7127
+5m 20s (- 0m 20s) (188000 94%) 0.7096
+5m 22s (- 0m 18s) (189000 94%) 0.7161
+5m 23s (- 0m 17s) (190000 95%) 0.7460
+5m 25s (- 0m 15s) (191000 95%) 0.7398
+5m 27s (- 0m 13s) (192000 96%) 0.7382
+5m 28s (- 0m 11s) (193000 96%) 0.7532
+5m 30s (- 0m 10s) (194000 97%) 0.7431
+5m 31s (- 0m 8s) (195000 97%) 0.7627
+5m 33s (- 0m 6s) (196000 98%) 0.7019
+5m 35s (- 0m 5s) (197000 98%) 0.7505
+5m 36s (- 0m 3s) (198000 99%) 0.7643
+5m 38s (- 0m 1s) (199000 99%) 0.7664
+5m 40s (- 0m 0s) (200000 100%) 0.7192
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['bu', 'senin', 'icin', 'bir', 'sok', 'olmal', '.', 'bu senin', 'senin icin', 'icin bir', 'bir sok', 'sok olmal', 'olmal .', 'bu senin icin', 'senin icin bir', 'icin bir sok', 'bir sok olmal', 'sok olmal .', 'bu senin icin bir', 'senin icin bir sok', 'icin bir sok olmal', 'bir sok olmal .']
+ref sent: bu senin icin bir sok olmal .
+= 6
+< 5-6
+
+> ['kahvenin', 'hepsi', 'bitmis', '.', 'kahvenin hepsi', 'hepsi bitmis', 'bitmis .', 'kahvenin hepsi bitmis', 'hepsi bitmis .', 'kahvenin hepsi bitmis .']
+ref sent: kahvenin hepsi bitmis .
+= 3
+< 3-4
+
+> ['tom', 'onumuzdeki', 'ekim', 'ay', 'nda', 'avustralya', 'ya', 'gitmek', 'niyetinde', 'oldugunu', 'soyledi', '.', 'tom onumuzdeki', 'onumuzdeki ekim', 'ekim ay', 'ay nda', 'nda avustralya', 'avustralya ya', 'ya gitmek', 'gitmek niyetinde', 'niyetinde oldugunu', 'oldugunu soyledi', 'soyledi .', 'tom onumuzdeki ekim', 'onumuzdeki ekim ay', 'ekim ay nda', 'ay nda avustralya', 'nda avustralya ya', 'avustralya ya gitmek', 'ya gitmek niyetinde', 'gitmek niyetinde oldugunu', 'niyetinde oldugunu soyledi', 'oldugunu soyledi .', 'tom onumuzdeki ekim ay', 'onumuzdeki ekim ay nda', 'ekim ay nda avustralya', 'ay nda avustralya ya', 'nda avustralya ya gitmek', 'avustralya ya gitmek niyetinde', 'ya gitmek niyetinde oldugunu', 'gitmek niyetinde oldugunu soyledi', 'niyetinde oldugunu soyledi .']
+ref sent: tom onumuzdeki ekim ay nda avustralya ya gitmek niyetinde oldugunu soyledi .
+= 11
+< 7-8
+
+> ['tom', 's', 'r', 'tutmada', 'iyi', 'degildi', '.', 'tom s', 's r', 'r tutmada', 'tutmada iyi', 'iyi degildi', 'degildi .', 'tom s r', 's r tutmada', 'r tutmada iyi', 'tutmada iyi degildi', 'iyi degildi .', 'tom s r tutmada', 's r tutmada iyi', 'r tutmada iyi degildi', 'tutmada iyi degildi .']
+ref sent: tom s r tutmada iyi degildi .
+= 6
+< 5-6
+
+> ['gecen', 'cuma', 'bu', 'odada', 'toplant', 'm', 'z', 'vard', '.', 'gecen cuma', 'cuma bu', 'bu odada', 'odada toplant', 'toplant m', 'm z', 'z vard', 'vard .', 'gecen cuma bu', 'cuma bu odada', 'bu odada toplant', 'odada toplant m', 'toplant m z', 'm z vard', 'z vard .', 'gecen cuma bu odada', 'cuma bu odada toplant', 'bu odada toplant m', 'odada toplant m z', 'toplant m z vard', 'm z vard .']
+ref sent: gecen cuma bu odada toplant m z vard .
+= 8
+< 5-6
+
+> ['bunu', 'yapmak', 'icin', 'bana', 'para', 'odenmiyor', '.', 'bunu yapmak', 'yapmak icin', 'icin bana', 'bana para', 'para odenmiyor', 'odenmiyor .', 'bunu yapmak icin', 'yapmak icin bana', 'icin bana para', 'bana para odenmiyor', 'para odenmiyor .', 'bunu yapmak icin bana', 'yapmak icin bana para', 'icin bana para odenmiyor', 'bana para odenmiyor .']
+ref sent: bunu yapmak icin bana para odenmiyor .
+= 6
+< 5-6
+
+> ['bu', 'kadar', 'ac', 'olmasayd', 'm', 'bunu', 'yemezdim', '.', 'bu kadar', 'kadar ac', 'ac olmasayd', 'olmasayd m', 'm bunu', 'bunu yemezdim', 'yemezdim .', 'bu kadar ac', 'kadar ac olmasayd', 'ac olmasayd m', 'olmasayd m bunu', 'm bunu yemezdim', 'bunu yemezdim .', 'bu kadar ac olmasayd', 'kadar ac olmasayd m', 'ac olmasayd m bunu', 'olmasayd m bunu yemezdim', 'm bunu yemezdim .']
+ref sent: bu kadar ac olmasayd m bunu yemezdim .
+= 7
+< 7-8
+
+> ['tom', 'sayg', 'm', 'z', 'hak', 'ediyor', '.', 'tom sayg', 'sayg m', 'm z', 'z hak', 'hak ediyor', 'ediyor .', 'tom sayg m', 'sayg m z', 'm z hak', 'z hak ediyor', 'hak ediyor .', 'tom sayg m z', 'sayg m z hak', 'm z hak ediyor', 'z hak ediyor .']
+ref sent: tom sayg m z hak ediyor .
+= 6
+< 7-8
+
+> ['yapmaya', 'cal', 'st', 'g', 'n', 'z', 'seyi', 'yapabildiniz', 'mi', '?', 'yapmaya cal', 'cal st', 'st g', 'g n', 'n z', 'z seyi', 'seyi yapabildiniz', 'yapabildiniz mi', 'mi ?', 'yapmaya cal st', 'cal st g', 'st g n', 'g n z', 'n z seyi', 'z seyi yapabildiniz', 'seyi yapabildiniz mi', 'yapabildiniz mi ?', 'yapmaya cal st g', 'cal st g n', 'st g n z', 'g n z seyi', 'n z seyi yapabildiniz', 'z seyi yapabildiniz mi', 'seyi yapabildiniz mi ?']
+ref sent: yapmaya cal st g n z seyi yapabildiniz mi ?
+= 9
+< 7-8
+
+> ['copu', 'd', 'sar', 'c', 'kard', 'k', '.', 'copu d', 'd sar', 'sar c', 'c kard', 'kard k', 'k .', 'copu d sar', 'd sar c', 'sar c kard', 'c kard k', 'kard k .', 'copu d sar c', 'd sar c kard', 'sar c kard k', 'c kard k .']
+ref sent: copu d sar c kard k .
+= 6
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['uc', 'kez', 'boston', 'a', 'gittim', '.', 'uc kez', 'kez boston', 'boston a', 'a gittim', 'gittim .', 'uc kez boston', 'kez boston a', 'boston a gittim', 'a gittim .', 'uc kez boston a', 'kez boston a gittim', 'boston a gittim .']
+ref sent: uc kez boston a gittim .
+= 5
+< 5-6
+
+> ['o', 'populer', 'olmam', 'ona', 'borcluyum', 'dedi', '.', 'o populer', 'populer olmam', 'olmam ona', 'ona borcluyum', 'borcluyum dedi', 'dedi .', 'o populer olmam', 'populer olmam ona', 'olmam ona borcluyum', 'ona borcluyum dedi', 'borcluyum dedi .', 'o populer olmam ona', 'populer olmam ona borcluyum', 'olmam ona borcluyum dedi', 'ona borcluyum dedi .']
+ref sent: o populer olmam ona borcluyum dedi .
+= 6
+< 3-4
+
+> ['bir', 'adam', 'n', 'odaya', 'girdigini', 'gordum', '.', 'bir adam', 'adam n', 'n odaya', 'odaya girdigini', 'girdigini gordum', 'gordum .', 'bir adam n', 'adam n odaya', 'n odaya girdigini', 'odaya girdigini gordum', 'girdigini gordum .', 'bir adam n odaya', 'adam n odaya girdigini', 'n odaya girdigini gordum', 'odaya girdigini gordum .']
+ref sent: bir adam n odaya girdigini gordum .
+= 6
+< 5-6
+
+> ['tom', 'benimle', 'tan', 'smak', 'istemedi', '.', 'tom benimle', 'benimle tan', 'tan smak', 'smak istemedi', 'istemedi .', 'tom benimle tan', 'benimle tan smak', 'tan smak istemedi', 'smak istemedi .', 'tom benimle tan smak', 'benimle tan smak istemedi', 'tan smak istemedi .']
+ref sent: tom benimle tan smak istemedi .
+= 5
+< 3-4
+
+> ['san', 'r', 'm', 'tom', 'guvensiz', '.', 'san r', 'r m', 'm tom', 'tom guvensiz', 'guvensiz .', 'san r m', 'r m tom', 'm tom guvensiz', 'tom guvensiz .', 'san r m tom', 'r m tom guvensiz', 'm tom guvensiz .']
+ref sent: san r m tom guvensiz .
+= 5
+< 5-6
+
+> ['tom', 'inan', 'lmaz', 'bir', 'adam', '.', 'tom inan', 'inan lmaz', 'lmaz bir', 'bir adam', 'adam .', 'tom inan lmaz', 'inan lmaz bir', 'lmaz bir adam', 'bir adam .', 'tom inan lmaz bir', 'inan lmaz bir adam', 'lmaz bir adam .']
+ref sent: tom inan lmaz bir adam .
+= 5
+< 5-6
+
+> ['o', 'adamlar', 'gercekten', 'begendim', '.', 'o adamlar', 'adamlar gercekten', 'gercekten begendim', 'begendim .', 'o adamlar gercekten', 'adamlar gercekten begendim', 'gercekten begendim .', 'o adamlar gercekten begendim', 'adamlar gercekten begendim .']
+ref sent: o adamlar gercekten begendim .
+= 4
+< 3-4
+
+> ['tom', 'ailemizde', 'yemek', 'pisirmede', 'biraz', 'iyi', 'olan', 'tek', 'kisidir', '.', 'tom ailemizde', 'ailemizde yemek', 'yemek pisirmede', 'pisirmede biraz', 'biraz iyi', 'iyi olan', 'olan tek', 'tek kisidir', 'kisidir .', 'tom ailemizde yemek', 'ailemizde yemek pisirmede', 'yemek pisirmede biraz', 'pisirmede biraz iyi', 'biraz iyi olan', 'iyi olan tek', 'olan tek kisidir', 'tek kisidir .', 'tom ailemizde yemek pisirmede', 'ailemizde yemek pisirmede biraz', 'yemek pisirmede biraz iyi', 'pisirmede biraz iyi olan', 'biraz iyi olan tek', 'iyi olan tek kisidir', 'olan tek kisidir .']
+ref sent: tom ailemizde yemek pisirmede biraz iyi olan tek kisidir .
+= 9
+< 5-6
+
+> ['sigaray', 'b', 'rakmak', 'kolay', 'degil', '.', 'sigaray b', 'b rakmak', 'rakmak kolay', 'kolay degil', 'degil .', 'sigaray b rakmak', 'b rakmak kolay', 'rakmak kolay degil', 'kolay degil .', 'sigaray b rakmak kolay', 'b rakmak kolay degil', 'rakmak kolay degil .']
+ref sent: sigaray b rakmak kolay degil .
+= 5
+< 5-6
+
+> ['kisisel', 'nedenlerden', 'dolay', 'sirketten', 'ayr', 'ld', '.', 'kisisel nedenlerden', 'nedenlerden dolay', 'dolay sirketten', 'sirketten ayr', 'ayr ld', 'ld .', 'kisisel nedenlerden dolay', 'nedenlerden dolay sirketten', 'dolay sirketten ayr', 'sirketten ayr ld', 'ayr ld .', 'kisisel nedenlerden dolay sirketten', 'nedenlerden dolay sirketten ayr', 'dolay sirketten ayr ld', 'sirketten ayr ld .']
+ref sent: kisisel nedenlerden dolay sirketten ayr ld .
+= 6
+< 5-6
+
+Accuracy of the network on the sentence length test set: 53 %
+Finished
+
+hpc mode: True
+order: 5
+mode: sum
+max ngram dictionary size: 50000
+hidden-size: 256
+n-epochs: 10
+print-every: 1000
+plot-every: 100
+lr: 0.001
+use cuda: True
+Start
+Evaluate randomly on training sentences:
+> ['o', 'cok', 'cal', 'sma', 'sayesinde', 'bir', 'servet', 'yapt', '.', 'o cok', 'cok cal', 'cal sma', 'sma sayesinde', 'sayesinde bir', 'bir servet', 'servet yapt', 'yapt .', 'o cok cal', 'cok cal sma', 'cal sma sayesinde', 'sma sayesinde bir', 'sayesinde bir servet', 'bir servet yapt', 'servet yapt .', 'o cok cal sma', 'cok cal sma sayesinde', 'cal sma sayesinde bir', 'sma sayesinde bir servet', 'sayesinde bir servet yapt', 'bir servet yapt .', 'o cok cal sma sayesinde', 'cok cal sma sayesinde bir', 'cal sma sayesinde bir servet', 'sma sayesinde bir servet yapt', 'sayesinde bir servet yapt .']
+ref sent: o cok cal sma sayesinde bir servet yapt .
+= 8
+< 13-14
+
+> ['o', 'cal', 'samayacak', 'kadar', 'cok', 'yorgun', '.', 'o cal', 'cal samayacak', 'samayacak kadar', 'kadar cok', 'cok yorgun', 'yorgun .', 'o cal samayacak', 'cal samayacak kadar', 'samayacak kadar cok', 'kadar cok yorgun', 'cok yorgun .', 'o cal samayacak kadar', 'cal samayacak kadar cok', 'samayacak kadar cok yorgun', 'kadar cok yorgun .', 'o cal samayacak kadar cok', 'cal samayacak kadar cok yorgun', 'samayacak kadar cok yorgun .']
+ref sent: o cal samayacak kadar cok yorgun .
+= 6
+< 15-16
+
+> ['tom', 'bana', 'mary', 'nin', 'onun', 'tipi', 'oldugunu', 'soyledi', '.', 'tom bana', 'bana mary', 'mary nin', 'nin onun', 'onun tipi', 'tipi oldugunu', 'oldugunu soyledi', 'soyledi .', 'tom bana mary', 'bana mary nin', 'mary nin onun', 'nin onun tipi', 'onun tipi oldugunu', 'tipi oldugunu soyledi', 'oldugunu soyledi .', 'tom bana mary nin', 'bana mary nin onun', 'mary nin onun tipi', 'nin onun tipi oldugunu', 'onun tipi oldugunu soyledi', 'tipi oldugunu soyledi .', 'tom bana mary nin onun', 'bana mary nin onun tipi', 'mary nin onun tipi oldugunu', 'nin onun tipi oldugunu soyledi', 'onun tipi oldugunu soyledi .']
+ref sent: tom bana mary nin onun tipi oldugunu soyledi .
+= 8
+< 7-8
+
+> ['her', 'ikiniz', 'de', 'deli', 'misiniz', '?', 'her ikiniz', 'ikiniz de', 'de deli', 'deli misiniz', 'misiniz ?', 'her ikiniz de', 'ikiniz de deli', 'de deli misiniz', 'deli misiniz ?', 'her ikiniz de deli', 'ikiniz de deli misiniz', 'de deli misiniz ?', 'her ikiniz de deli misiniz', 'ikiniz de deli misiniz ?']
+ref sent: her ikiniz de deli misiniz ?
+= 5
+< 9-10
+
+> ['tom', 'mary', 'ye', 'baska', 'bir', 'sans', 'veriyor', '.', 'tom mary', 'mary ye', 'ye baska', 'baska bir', 'bir sans', 'sans veriyor', 'veriyor .', 'tom mary ye', 'mary ye baska', 'ye baska bir', 'baska bir sans', 'bir sans veriyor', 'sans veriyor .', 'tom mary ye baska', 'mary ye baska bir', 'ye baska bir sans', 'baska bir sans veriyor', 'bir sans veriyor .', 'tom mary ye baska bir', 'mary ye baska bir sans', 'ye baska bir sans veriyor', 'baska bir sans veriyor .']
+ref sent: tom mary ye baska bir sans veriyor .
+= 7
+< 9-10
+
+> ['insallah', 's', 'nav', 'gecebilirim', '.', 'insallah s', 's nav', 'nav gecebilirim', 'gecebilirim .', 'insallah s nav', 's nav gecebilirim', 'nav gecebilirim .', 'insallah s nav gecebilirim', 's nav gecebilirim .', 'insallah s nav gecebilirim .']
+ref sent: insallah s nav gecebilirim .
+= 4
+< 9-10
+
+> ['bira', 'almak', 'icin', 'cok', 'gencim', '.', 'bira almak', 'almak icin', 'icin cok', 'cok gencim', 'gencim .', 'bira almak icin', 'almak icin cok', 'icin cok gencim', 'cok gencim .', 'bira almak icin cok', 'almak icin cok gencim', 'icin cok gencim .', 'bira almak icin cok gencim', 'almak icin cok gencim .']
+ref sent: bira almak icin cok gencim .
+= 5
+< 15-16
+
+> ['art', 'k', 'onunla', 'gorusmeyecegim', '.', 'art k', 'k onunla', 'onunla gorusmeyecegim', 'gorusmeyecegim .', 'art k onunla', 'k onunla gorusmeyecegim', 'onunla gorusmeyecegim .', 'art k onunla gorusmeyecegim', 'k onunla gorusmeyecegim .', 'art k onunla gorusmeyecegim .']
+ref sent: art k onunla gorusmeyecegim .
+= 4
+< 11-12
+
+> ['ben', 'bunu', 'kesinlikle', 'yapar', 'm', '.', 'ben bunu', 'bunu kesinlikle', 'kesinlikle yapar', 'yapar m', 'm .', 'ben bunu kesinlikle', 'bunu kesinlikle yapar', 'kesinlikle yapar m', 'yapar m .', 'ben bunu kesinlikle yapar', 'bunu kesinlikle yapar m', 'kesinlikle yapar m .', 'ben bunu kesinlikle yapar m', 'bunu kesinlikle yapar m .']
+ref sent: ben bunu kesinlikle yapar m .
+= 5
+< 7-8
+
+> ['oturdum', '.', 'oturdum .']
+ref sent: oturdum .
+= 1
+< 7-8
+
+Evaluate randomly on testing sentences:
+> ['kendini', 'yakma', '.', 'kendini yakma', 'yakma .', 'kendini yakma .']
+ref sent: kendini yakma .
+= 2
+< 11-12
+
+> ['tom', 'cana', 'yak', 'n', 'bir', 'kisi', '.', 'tom cana', 'cana yak', 'yak n', 'n bir', 'bir kisi', 'kisi .', 'tom cana yak', 'cana yak n', 'yak n bir', 'n bir kisi', 'bir kisi .', 'tom cana yak n', 'cana yak n bir', 'yak n bir kisi', 'n bir kisi .', 'tom cana yak n bir', 'cana yak n bir kisi', 'yak n bir kisi .']
+ref sent: tom cana yak n bir kisi .
+= 6
+< 9-10
+
+> ['hafta', 'sonu', 'icin', 'bir', 'plan', 'n', 'var', 'm', '?', 'hafta sonu', 'sonu icin', 'icin bir', 'bir plan', 'plan n', 'n var', 'var m', 'm ?', 'hafta sonu icin', 'sonu icin bir', 'icin bir plan', 'bir plan n', 'plan n var', 'n var m', 'var m ?', 'hafta sonu icin bir', 'sonu icin bir plan', 'icin bir plan n', 'bir plan n var', 'plan n var m', 'n var m ?', 'hafta sonu icin bir plan', 'sonu icin bir plan n', 'icin bir plan n var', 'bir plan n var m', 'plan n var m ?']
+ref sent: hafta sonu icin bir plan n var m ?
+= 8
+< 5-6
+
+> ['odan', 'zda', 'kimse', 'yok', '.', 'odan zda', 'zda kimse', 'kimse yok', 'yok .', 'odan zda kimse', 'zda kimse yok', 'kimse yok .', 'odan zda kimse yok', 'zda kimse yok .', 'odan zda kimse yok .']
+ref sent: odan zda kimse yok .
+= 4
+< 5-6
+
+> ['tom', 'cok', 'onemsiyor', '.', 'tom cok', 'cok onemsiyor', 'onemsiyor .', 'tom cok onemsiyor', 'cok onemsiyor .', 'tom cok onemsiyor .']
+ref sent: tom cok onemsiyor .
+= 3
+< 9-10
+
+> ['birinin', 'bunu', 'zaten', 'bulmad', 'g', 'n', 'nas', 'l', 'biliyorsun', '?', 'birinin bunu', 'bunu zaten', 'zaten bulmad', 'bulmad g', 'g n', 'n nas', 'nas l', 'l biliyorsun', 'biliyorsun ?', 'birinin bunu zaten', 'bunu zaten bulmad', 'zaten bulmad g', 'bulmad g n', 'g n nas', 'n nas l', 'nas l biliyorsun', 'l biliyorsun ?', 'birinin bunu zaten bulmad', 'bunu zaten bulmad g', 'zaten bulmad g n', 'bulmad g n nas', 'g n nas l', 'n nas l biliyorsun', 'nas l biliyorsun ?', 'birinin bunu zaten bulmad g', 'bunu zaten bulmad g n', 'zaten bulmad g n nas', 'bulmad g n nas l', 'g n nas l biliyorsun', 'n nas l biliyorsun ?']
+ref sent: birinin bunu zaten bulmad g n nas l biliyorsun ?
+= 9
+< 1-2
+
+> ['tom', 'neden', 'kendini', 'oldurdu', '?', 'tom neden', 'neden kendini', 'kendini oldurdu', 'oldurdu ?', 'tom neden kendini', 'neden kendini oldurdu', 'kendini oldurdu ?', 'tom neden kendini oldurdu', 'neden kendini oldurdu ?', 'tom neden kendini oldurdu ?']
+ref sent: tom neden kendini oldurdu ?
+= 4
+< 11-12
+
+> ['anahtarlar', 'm', 'nereye', 'koydugumu', 'tam', 'hat', 'rlayam', 'yorum', '.', 'anahtarlar m', 'm nereye', 'nereye koydugumu', 'koydugumu tam', 'tam hat', 'hat rlayam', 'rlayam yorum', 'yorum .', 'anahtarlar m nereye', 'm nereye koydugumu', 'nereye koydugumu tam', 'koydugumu tam hat', 'tam hat rlayam', 'hat rlayam yorum', 'rlayam yorum .', 'anahtarlar m nereye koydugumu', 'm nereye koydugumu tam', 'nereye koydugumu tam hat', 'koydugumu tam hat rlayam', 'tam hat rlayam yorum', 'hat rlayam yorum .', 'anahtarlar m nereye koydugumu tam', 'm nereye koydugumu tam hat', 'nereye koydugumu tam hat rlayam', 'koydugumu tam hat rlayam yorum', 'tam hat rlayam yorum .']
+ref sent: anahtarlar m nereye koydugumu tam hat rlayam yorum .
+= 8
+< 5-6
+
+> ['bunu', 'cok', 'gec', 'olmadan', 'yapmam', 'z', 'gerek', '.', 'bunu cok', 'cok gec', 'gec olmadan', 'olmadan yapmam', 'yapmam z', 'z gerek', 'gerek .', 'bunu cok gec', 'cok gec olmadan', 'gec olmadan yapmam', 'olmadan yapmam z', 'yapmam z gerek', 'z gerek .', 'bunu cok gec olmadan', 'cok gec olmadan yapmam', 'gec olmadan yapmam z', 'olmadan yapmam z gerek', 'yapmam z gerek .', 'bunu cok gec olmadan yapmam', 'cok gec olmadan yapmam z', 'gec olmadan yapmam z gerek', 'olmadan yapmam z gerek .']
+ref sent: bunu cok gec olmadan yapmam z gerek .
+= 7
+< 15-16
+
+> ['tom', 'kacacak', '.', 'tom kacacak', 'kacacak .', 'tom kacacak .']
+ref sent: tom kacacak .
+= 2
+< 11-12
+
+Accuracy of the network on the sentence length test set: 13 %
+0m 3s (- 11m 28s) (1000 0%) 1.8699
+0m 5s (- 8m 23s) (2000 1%) 1.6348
+0m 6s (- 7m 19s) (3000 1%) 1.5368
+0m 8s (- 6m 46s) (4000 2%) 1.4651
+0m 9s (- 6m 26s) (5000 2%) 1.5140
+0m 11s (- 6m 12s) (6000 3%) 1.3850
+0m 13s (- 6m 2s) (7000 3%) 1.3967
+0m 14s (- 5m 54s) (8000 4%) 1.3288
+0m 16s (- 5m 47s) (9000 4%) 1.3268
+0m 17s (- 5m 41s) (10000 5%) 1.3297
+0m 19s (- 5m 36s) (11000 5%) 1.3143
+0m 21s (- 5m 31s) (12000 6%) 1.3387
+0m 22s (- 5m 27s) (13000 6%) 1.3542
+0m 24s (- 5m 24s) (14000 7%) 1.3287
+0m 26s (- 5m 20s) (15000 7%) 1.2949
+0m 27s (- 5m 17s) (16000 8%) 1.3713
+0m 29s (- 5m 14s) (17000 8%) 1.3143
+0m 30s (- 5m 11s) (18000 9%) 1.3034
+0m 32s (- 5m 8s) (19000 9%) 1.2672
+0m 34s (- 5m 6s) (20000 10%) 1.2533
+Epoch 1/10 finished
+0m 37s (- 5m 20s) (21000 10%) 1.2635
+0m 39s (- 5m 17s) (22000 11%) 1.2072
+0m 40s (- 5m 14s) (23000 11%) 1.2364
+0m 42s (- 5m 11s) (24000 12%) 1.1830
+0m 44s (- 5m 8s) (25000 12%) 1.2140
+0m 45s (- 5m 5s) (26000 13%) 1.2024
+0m 47s (- 5m 2s) (27000 13%) 1.2228
+0m 48s (- 5m 0s) (28000 14%) 1.1811
+0m 50s (- 4m 57s) (29000 14%) 1.1424
+0m 52s (- 4m 55s) (30000 15%) 1.2270
+0m 53s (- 4m 52s) (31000 15%) 1.1844
+0m 55s (- 4m 50s) (32000 16%) 1.1808
+0m 56s (- 4m 48s) (33000 16%) 1.1019
+0m 58s (- 4m 45s) (34000 17%) 1.1701
+1m 0s (- 4m 43s) (35000 17%) 1.2272
+1m 1s (- 4m 41s) (36000 18%) 1.1968
+1m 3s (- 4m 39s) (37000 18%) 1.1610
+1m 5s (- 4m 37s) (38000 19%) 1.1707
+1m 6s (- 4m 35s) (39000 19%) 1.1730
+1m 8s (- 4m 32s) (40000 20%) 1.1617
+Epoch 2/10 finished
+1m 11s (- 4m 38s) (41000 20%) 1.1512
+1m 13s (- 4m 35s) (42000 21%) 1.0859
+1m 14s (- 4m 33s) (43000 21%) 1.0541
+1m 16s (- 4m 31s) (44000 22%) 1.1243
+1m 18s (- 4m 29s) (45000 22%) 1.0809
+1m 19s (- 4m 26s) (46000 23%) 1.1113
+1m 21s (- 4m 24s) (47000 23%) 1.0897
+1m 22s (- 4m 22s) (48000 24%) 1.0633
+1m 24s (- 4m 20s) (49000 24%) 1.0536
+1m 26s (- 4m 18s) (50000 25%) 1.1074
+1m 27s (- 4m 16s) (51000 25%) 1.0856
+1m 29s (- 4m 14s) (52000 26%) 1.0687
+1m 31s (- 4m 12s) (53000 26%) 1.0723
+1m 32s (- 4m 10s) (54000 27%) 1.1213
+1m 34s (- 4m 8s) (55000 27%) 1.0722
+1m 35s (- 4m 6s) (56000 28%) 1.0925
+1m 37s (- 4m 4s) (57000 28%) 1.0844
+1m 39s (- 4m 2s) (58000 28%) 1.0045
+1m 40s (- 4m 0s) (59000 29%) 1.0327
+1m 42s (- 3m 58s) (60000 30%) 1.0780
+Epoch 3/10 finished
+1m 45s (- 4m 0s) (61000 30%) 0.9700
+1m 47s (- 3m 58s) (62000 31%) 0.9655
+1m 48s (- 3m 56s) (63000 31%) 1.0049
+1m 50s (- 3m 54s) (64000 32%) 0.9643
+1m 52s (- 3m 52s) (65000 32%) 1.0034
+1m 53s (- 3m 51s) (66000 33%) 1.0157
+1m 55s (- 3m 49s) (67000 33%) 0.9559
+1m 57s (- 3m 47s) (68000 34%) 0.9987
+1m 58s (- 3m 45s) (69000 34%) 1.0239
+2m 0s (- 3m 43s) (70000 35%) 1.0142
+2m 1s (- 3m 41s) (71000 35%) 0.9905
+2m 3s (- 3m 39s) (72000 36%) 0.9900
+2m 5s (- 3m 37s) (73000 36%) 1.0114
+2m 6s (- 3m 35s) (74000 37%) 1.0059
+2m 8s (- 3m 33s) (75000 37%) 0.9955
+2m 9s (- 3m 31s) (76000 38%) 1.0010
+2m 11s (- 3m 30s) (77000 38%) 1.0210
+2m 13s (- 3m 28s) (78000 39%) 1.0597
+2m 14s (- 3m 26s) (79000 39%) 1.0188
+2m 16s (- 3m 24s) (80000 40%) 1.0105
+Epoch 4/10 finished
+2m 19s (- 3m 25s) (81000 40%) 0.8880
+2m 21s (- 3m 23s) (82000 41%) 0.8850
+2m 23s (- 3m 21s) (83000 41%) 0.9113
+2m 24s (- 3m 19s) (84000 42%) 0.9201
+2m 26s (- 3m 18s) (85000 42%) 0.8678
+2m 27s (- 3m 16s) (86000 43%) 0.9029
+2m 29s (- 3m 14s) (87000 43%) 0.9148
+2m 31s (- 3m 12s) (88000 44%) 0.9272
+2m 32s (- 3m 10s) (89000 44%) 0.9683
+2m 34s (- 3m 8s) (90000 45%) 0.9758
+2m 36s (- 3m 6s) (91000 45%) 0.9810
+2m 37s (- 3m 5s) (92000 46%) 0.9345
+2m 39s (- 3m 3s) (93000 46%) 0.9361
+2m 40s (- 3m 1s) (94000 47%) 0.9212
+2m 42s (- 2m 59s) (95000 47%) 0.9573
+2m 44s (- 2m 57s) (96000 48%) 0.9134
+2m 45s (- 2m 55s) (97000 48%) 0.9582
+2m 47s (- 2m 54s) (98000 49%) 0.9632
+2m 48s (- 2m 52s) (99000 49%) 0.9448
+2m 50s (- 2m 50s) (100000 50%) 0.9723
+Epoch 5/10 finished
+2m 54s (- 2m 50s) (101000 50%) 0.8266
+2m 55s (- 2m 48s) (102000 51%) 0.7955
+2m 57s (- 2m 46s) (103000 51%) 0.8423
+2m 58s (- 2m 45s) (104000 52%) 0.8411
+3m 0s (- 2m 43s) (105000 52%) 0.8609
+3m 2s (- 2m 41s) (106000 53%) 0.8373
+3m 3s (- 2m 39s) (107000 53%) 0.8836
+3m 5s (- 2m 37s) (108000 54%) 0.8579
+3m 6s (- 2m 36s) (109000 54%) 0.8813
+3m 8s (- 2m 34s) (110000 55%) 0.9122
+3m 10s (- 2m 32s) (111000 55%) 0.8580
+3m 11s (- 2m 30s) (112000 56%) 0.8852
+3m 13s (- 2m 28s) (113000 56%) 0.8966
+3m 15s (- 2m 27s) (114000 56%) 0.8606
+3m 16s (- 2m 25s) (115000 57%) 0.9285
+3m 18s (- 2m 23s) (116000 57%) 0.9099
+3m 19s (- 2m 21s) (117000 58%) 0.9406
+3m 21s (- 2m 20s) (118000 59%) 0.8898
+3m 23s (- 2m 18s) (119000 59%) 0.9302
+3m 24s (- 2m 16s) (120000 60%) 0.9448
+Epoch 6/10 finished
+3m 28s (- 2m 15s) (121000 60%) 0.7743
+3m 29s (- 2m 14s) (122000 61%) 0.7506
+3m 31s (- 2m 12s) (123000 61%) 0.7736
+3m 32s (- 2m 10s) (124000 62%) 0.7959
+3m 34s (- 2m 8s) (125000 62%) 0.8106
+3m 36s (- 2m 6s) (126000 63%) 0.8124
+3m 37s (- 2m 5s) (127000 63%) 0.8179
+3m 39s (- 2m 3s) (128000 64%) 0.8031
+3m 40s (- 2m 1s) (129000 64%) 0.8528
+3m 42s (- 1m 59s) (130000 65%) 0.8244
+3m 44s (- 1m 58s) (131000 65%) 0.8322
+3m 45s (- 1m 56s) (132000 66%) 0.8329
+3m 47s (- 1m 54s) (133000 66%) 0.8543
+3m 49s (- 1m 52s) (134000 67%) 0.8818
+3m 50s (- 1m 51s) (135000 67%) 0.8779
+3m 52s (- 1m 49s) (136000 68%) 0.8166
+3m 53s (- 1m 47s) (137000 68%) 0.8102
+3m 55s (- 1m 45s) (138000 69%) 0.8859
+3m 57s (- 1m 44s) (139000 69%) 0.8096
+3m 58s (- 1m 42s) (140000 70%) 0.8890
+Epoch 7/10 finished
+4m 2s (- 1m 41s) (141000 70%) 0.6982
+4m 3s (- 1m 39s) (142000 71%) 0.7100
+4m 5s (- 1m 37s) (143000 71%) 0.7390
+4m 7s (- 1m 36s) (144000 72%) 0.7217
+4m 8s (- 1m 34s) (145000 72%) 0.7478
+4m 10s (- 1m 32s) (146000 73%) 0.8011
+4m 11s (- 1m 30s) (147000 73%) 0.7858
+4m 13s (- 1m 29s) (148000 74%) 0.7588
+4m 15s (- 1m 27s) (149000 74%) 0.7560
+4m 16s (- 1m 25s) (150000 75%) 0.7487
+4m 18s (- 1m 23s) (151000 75%) 0.8017
+4m 20s (- 1m 22s) (152000 76%) 0.7958
+4m 21s (- 1m 20s) (153000 76%) 0.8195
+4m 23s (- 1m 18s) (154000 77%) 0.8654
+4m 24s (- 1m 16s) (155000 77%) 0.7594
+4m 26s (- 1m 15s) (156000 78%) 0.8392
+4m 28s (- 1m 13s) (157000 78%) 0.8233
+4m 29s (- 1m 11s) (158000 79%) 0.8288
+4m 31s (- 1m 9s) (159000 79%) 0.8141
+4m 32s (- 1m 8s) (160000 80%) 0.8064
+Epoch 8/10 finished
+4m 36s (- 1m 6s) (161000 80%) 0.6561
+4m 37s (- 1m 5s) (162000 81%) 0.6423
+4m 39s (- 1m 3s) (163000 81%) 0.7101
+4m 41s (- 1m 1s) (164000 82%) 0.7225
+4m 42s (- 0m 59s) (165000 82%) 0.7153
+4m 44s (- 0m 58s) (166000 83%) 0.7007
+4m 46s (- 0m 56s) (167000 83%) 0.6835
+4m 47s (- 0m 54s) (168000 84%) 0.7343
+4m 49s (- 0m 53s) (169000 84%) 0.7722
+4m 50s (- 0m 51s) (170000 85%) 0.7761
+4m 52s (- 0m 49s) (171000 85%) 0.7495
+4m 54s (- 0m 47s) (172000 86%) 0.7961
+4m 55s (- 0m 46s) (173000 86%) 0.7643
+4m 57s (- 0m 44s) (174000 87%) 0.7075
+4m 58s (- 0m 42s) (175000 87%) 0.7626
+5m 0s (- 0m 40s) (176000 88%) 0.7754
+5m 2s (- 0m 39s) (177000 88%) 0.7857
+5m 3s (- 0m 37s) (178000 89%) 0.8164
+5m 5s (- 0m 35s) (179000 89%) 0.7719
+5m 6s (- 0m 34s) (180000 90%) 0.7822
+Epoch 9/10 finished
+5m 10s (- 0m 32s) (181000 90%) 0.6274
+5m 12s (- 0m 30s) (182000 91%) 0.6431
+5m 13s (- 0m 29s) (183000 91%) 0.6086
+5m 15s (- 0m 27s) (184000 92%) 0.6578
+5m 16s (- 0m 25s) (185000 92%) 0.6900
+5m 18s (- 0m 23s) (186000 93%) 0.6702
+5m 20s (- 0m 22s) (187000 93%) 0.6750
+5m 21s (- 0m 20s) (188000 94%) 0.7172
+5m 23s (- 0m 18s) (189000 94%) 0.6726
+5m 25s (- 0m 17s) (190000 95%) 0.6990
+5m 26s (- 0m 15s) (191000 95%) 0.7363
+5m 28s (- 0m 13s) (192000 96%) 0.7269
+5m 29s (- 0m 11s) (193000 96%) 0.6734
+5m 31s (- 0m 10s) (194000 97%) 0.7622
+5m 33s (- 0m 8s) (195000 97%) 0.8065
+5m 34s (- 0m 6s) (196000 98%) 0.7249
+5m 36s (- 0m 5s) (197000 98%) 0.7193
+5m 37s (- 0m 3s) (198000 99%) 0.7810
+5m 39s (- 0m 1s) (199000 99%) 0.7422
+5m 41s (- 0m 0s) (200000 100%) 0.7617
+Epoch 10/10 finished
+Evaluate randomly on training sentences:
+> ['bu', 'senin', 'icin', 'bir', 'sok', 'olmal', '.', 'bu senin', 'senin icin', 'icin bir', 'bir sok', 'sok olmal', 'olmal .', 'bu senin icin', 'senin icin bir', 'icin bir sok', 'bir sok olmal', 'sok olmal .', 'bu senin icin bir', 'senin icin bir sok', 'icin bir sok olmal', 'bir sok olmal .', 'bu senin icin bir sok', 'senin icin bir sok olmal', 'icin bir sok olmal .']
+ref sent: bu senin icin bir sok olmal .
+= 6
+< 5-6
+
+> ['kahvenin', 'hepsi', 'bitmis', '.', 'kahvenin hepsi', 'hepsi bitmis', 'bitmis .', 'kahvenin hepsi bitmis', 'hepsi bitmis .', 'kahvenin hepsi bitmis .']
+ref sent: kahvenin hepsi bitmis .
+= 3
+< 3-4
+
+> ['tom', 'onumuzdeki', 'ekim', 'ay', 'nda', 'avustralya', 'ya', 'gitmek', 'niyetinde', 'oldugunu', 'soyledi', '.', 'tom onumuzdeki', 'onumuzdeki ekim', 'ekim ay', 'ay nda', 'nda avustralya', 'avustralya ya', 'ya gitmek', 'gitmek niyetinde', 'niyetinde oldugunu', 'oldugunu soyledi', 'soyledi .', 'tom onumuzdeki ekim', 'onumuzdeki ekim ay', 'ekim ay nda', 'ay nda avustralya', 'nda avustralya ya', 'avustralya ya gitmek', 'ya gitmek niyetinde', 'gitmek niyetinde oldugunu', 'niyetinde oldugunu soyledi', 'oldugunu soyledi .', 'tom onumuzdeki ekim ay', 'onumuzdeki ekim ay nda', 'ekim ay nda avustralya', 'ay nda avustralya ya', 'nda avustralya ya gitmek', 'avustralya ya gitmek niyetinde', 'ya gitmek niyetinde oldugunu', 'gitmek niyetinde oldugunu soyledi', 'niyetinde oldugunu soyledi .', 'tom onumuzdeki ekim ay nda', 'onumuzdeki ekim ay nda avustralya', 'ekim ay nda avustralya ya', 'ay nda avustralya ya gitmek', 'nda avustralya ya gitmek niyetinde', 'avustralya ya gitmek niyetinde oldugunu', 'ya gitmek niyetinde oldugunu soyledi', 'gitmek niyetinde oldugunu soyledi .']
+ref sent: tom onumuzdeki ekim ay nda avustralya ya gitmek niyetinde oldugunu soyledi .
+= 11
+< 7-8
+
+> ['tom', 's', 'r', 'tutmada', 'iyi', 'degildi', '.', 'tom s', 's r', 'r tutmada', 'tutmada iyi', 'iyi degildi', 'degildi .', 'tom s r', 's r tutmada', 'r tutmada iyi', 'tutmada iyi degildi', 'iyi degildi .', 'tom s r tutmada', 's r tutmada iyi', 'r tutmada iyi degildi', 'tutmada iyi degildi .', 'tom s r tutmada iyi', 's r tutmada iyi degildi', 'r tutmada iyi degildi .']
+ref sent: tom s r tutmada iyi degildi .
+= 6
+< 5-6
+
+> ['gecen', 'cuma', 'bu', 'odada', 'toplant', 'm', 'z', 'vard', '.', 'gecen cuma', 'cuma bu', 'bu odada', 'odada toplant', 'toplant m', 'm z', 'z vard', 'vard .', 'gecen cuma bu', 'cuma bu odada', 'bu odada toplant', 'odada toplant m', 'toplant m z', 'm z vard', 'z vard .', 'gecen cuma bu odada', 'cuma bu odada toplant', 'bu odada toplant m', 'odada toplant m z', 'toplant m z vard', 'm z vard .', 'gecen cuma bu odada toplant', 'cuma bu odada toplant m', 'bu odada toplant m z', 'odada toplant m z vard', 'toplant m z vard .']
+ref sent: gecen cuma bu odada toplant m z vard .
+= 8
+< 7-8
+
+> ['bunu', 'yapmak', 'icin', 'bana', 'para', 'odenmiyor', '.', 'bunu yapmak', 'yapmak icin', 'icin bana', 'bana para', 'para odenmiyor', 'odenmiyor .', 'bunu yapmak icin', 'yapmak icin bana', 'icin bana para', 'bana para odenmiyor', 'para odenmiyor .', 'bunu yapmak icin bana', 'yapmak icin bana para', 'icin bana para odenmiyor', 'bana para odenmiyor .', 'bunu yapmak icin bana para', 'yapmak icin bana para odenmiyor', 'icin bana para odenmiyor .']
+ref sent: bunu yapmak icin bana para odenmiyor .
+= 6
+< 7-8
+
+> ['bu', 'kadar', 'ac', 'olmasayd', 'm', 'bunu', 'yemezdim', '.', 'bu kadar', 'kadar ac', 'ac olmasayd', 'olmasayd m', 'm bunu', 'bunu yemezdim', 'yemezdim .', 'bu kadar ac', 'kadar ac olmasayd', 'ac olmasayd m', 'olmasayd m bunu', 'm bunu yemezdim', 'bunu yemezdim .', 'bu kadar ac olmasayd', 'kadar ac olmasayd m', 'ac olmasayd m bunu', 'olmasayd m bunu yemezdim', 'm bunu yemezdim .', 'bu kadar ac olmasayd m', 'kadar ac olmasayd m bunu', 'ac olmasayd m bunu yemezdim', 'olmasayd m bunu yemezdim .']
+ref sent: bu kadar ac olmasayd m bunu yemezdim .
+= 7
+< 11-12
+
+> ['tom', 'sayg', 'm', 'z', 'hak', 'ediyor', '.', 'tom sayg', 'sayg m', 'm z', 'z hak', 'hak ediyor', 'ediyor .', 'tom sayg m', 'sayg m z', 'm z hak', 'z hak ediyor', 'hak ediyor .', 'tom sayg m z', 'sayg m z hak', 'm z hak ediyor', 'z hak ediyor .', 'tom sayg m z hak', 'sayg m z hak ediyor', 'm z hak ediyor .']
+ref sent: tom sayg m z hak ediyor .
+= 6
+< 7-8
+
+> ['yapmaya', 'cal', 'st', 'g', 'n', 'z', 'seyi', 'yapabildiniz', 'mi', '?', 'yapmaya cal', 'cal st', 'st g', 'g n', 'n z', 'z seyi', 'seyi yapabildiniz', 'yapabildiniz mi', 'mi ?', 'yapmaya cal st', 'cal st g', 'st g n', 'g n z', 'n z seyi', 'z seyi yapabildiniz', 'seyi yapabildiniz mi', 'yapabildiniz mi ?', 'yapmaya cal st g', 'cal st g n', 'st g n z', 'g n z seyi', 'n z seyi yapabildiniz', 'z seyi yapabildiniz mi', 'seyi yapabildiniz mi ?', 'yapmaya cal st g n', 'cal st g n z', 'st g n z seyi', 'g n z seyi yapabildiniz', 'n z seyi yapabildiniz mi', 'z seyi yapabildiniz mi ?']
+ref sent: yapmaya cal st g n z seyi yapabildiniz mi ?
+= 9
+< 9-10
+
+> ['copu', 'd', 'sar', 'c', 'kard', 'k', '.', 'copu d', 'd sar', 'sar c', 'c kard', 'kard k', 'k .', 'copu d sar', 'd sar c', 'sar c kard', 'c kard k', 'kard k .', 'copu d sar c', 'd sar c kard', 'sar c kard k', 'c kard k .', 'copu d sar c kard', 'd sar c kard k', 'sar c kard k .']
+ref sent: copu d sar c kard k .
+= 6
+< 5-6
+
+Evaluate randomly on testing sentences:
+> ['uc', 'kez', 'boston', 'a', 'gittim', '.', 'uc kez', 'kez boston', 'boston a', 'a gittim', 'gittim .', 'uc kez boston', 'kez boston a', 'boston a gittim', 'a gittim .', 'uc kez boston a', 'kez boston a gittim', 'boston a gittim .', 'uc kez boston a gittim', 'kez boston a gittim .']
+ref sent: uc kez boston a gittim .
+= 5
+< 5-6
+
+> ['o', 'populer', 'olmam', 'ona', 'borcluyum', 'dedi', '.', 'o populer', 'populer olmam', 'olmam ona', 'ona borcluyum', 'borcluyum dedi', 'dedi .', 'o populer olmam', 'populer olmam ona', 'olmam ona borcluyum', 'ona borcluyum dedi', 'borcluyum dedi .', 'o populer olmam ona', 'populer olmam ona borcluyum', 'olmam ona borcluyum dedi', 'ona borcluyum dedi .', 'o populer olmam ona borcluyum', 'populer olmam ona borcluyum dedi', 'olmam ona borcluyum dedi .']
+ref sent: o populer olmam ona borcluyum dedi .
+= 6
+< 3-4
+
+> ['bir', 'adam', 'n', 'odaya', 'girdigini', 'gordum', '.', 'bir adam', 'adam n', 'n odaya', 'odaya girdigini', 'girdigini gordum', 'gordum .', 'bir adam n', 'adam n odaya', 'n odaya girdigini', 'odaya girdigini gordum', 'girdigini gordum .', 'bir adam n odaya', 'adam n odaya girdigini', 'n odaya girdigini gordum', 'odaya girdigini gordum .', 'bir adam n odaya girdigini', 'adam n odaya girdigini gordum', 'n odaya girdigini gordum .']
+ref sent: bir adam n odaya girdigini gordum .
+= 6
+< 5-6
+
+> ['tom', 'benimle', 'tan', 'smak', 'istemedi', '.', 'tom benimle', 'benimle tan', 'tan smak', 'smak istemedi', 'istemedi .', 'tom benimle tan', 'benimle tan smak', 'tan smak istemedi', 'smak istemedi .', 'tom benimle tan smak', 'benimle tan smak istemedi', 'tan smak istemedi .', 'tom benimle tan smak istemedi', 'benimle tan smak istemedi .']
+ref sent: tom benimle tan smak istemedi .
+= 5
+< 5-6
+
+> ['san', 'r', 'm', 'tom', 'guvensiz', '.', 'san r', 'r m', 'm tom', 'tom guvensiz', 'guvensiz .', 'san r m', 'r m tom', 'm tom guvensiz', 'tom guvensiz .', 'san r m tom', 'r m tom guvensiz', 'm tom guvensiz .', 'san r m tom guvensiz', 'r m tom guvensiz .']
+ref sent: san r m tom guvensiz .
+= 5
+< 5-6
+
+> ['tom', 'inan', 'lmaz', 'bir', 'adam', '.', 'tom inan', 'inan lmaz', 'lmaz bir', 'bir adam', 'adam .', 'tom inan lmaz', 'inan lmaz bir', 'lmaz bir adam', 'bir adam .', 'tom inan lmaz bir', 'inan lmaz bir adam', 'lmaz bir adam .', 'tom inan lmaz bir adam', 'inan lmaz bir adam .']
+ref sent: tom inan lmaz bir adam .
+= 5
+< 7-8
+
+> ['o', 'adamlar', 'gercekten', 'begendim', '.', 'o adamlar', 'adamlar gercekten', 'gercekten begendim', 'begendim .', 'o adamlar gercekten', 'adamlar gercekten begendim', 'gercekten begendim .', 'o adamlar gercekten begendim', 'adamlar gercekten begendim .', 'o adamlar gercekten begendim .']
+ref sent: o adamlar gercekten begendim .
+= 4
+< 3-4
+
+> ['tom', 'ailemizde', 'yemek', 'pisirmede', 'biraz', 'iyi', 'olan', 'tek', 'kisidir', '.', 'tom ailemizde', 'ailemizde yemek', 'yemek pisirmede', 'pisirmede biraz', 'biraz iyi', 'iyi olan', 'olan tek', 'tek kisidir', 'kisidir .', 'tom ailemizde yemek', 'ailemizde yemek pisirmede', 'yemek pisirmede biraz', 'pisirmede biraz iyi', 'biraz iyi olan', 'iyi olan tek', 'olan tek kisidir', 'tek kisidir .', 'tom ailemizde yemek pisirmede', 'ailemizde yemek pisirmede biraz', 'yemek pisirmede biraz iyi', 'pisirmede biraz iyi olan', 'biraz iyi olan tek', 'iyi olan tek kisidir', 'olan tek kisidir .', 'tom ailemizde yemek pisirmede biraz', 'ailemizde yemek pisirmede biraz iyi', 'yemek pisirmede biraz iyi olan', 'pisirmede biraz iyi olan tek', 'biraz iyi olan tek kisidir', 'iyi olan tek kisidir .']
+ref sent: tom ailemizde yemek pisirmede biraz iyi olan tek kisidir .
+= 9
+< 5-6
+
+> ['sigaray', 'b', 'rakmak', 'kolay', 'degil', '.', 'sigaray b', 'b rakmak', 'rakmak kolay', 'kolay degil', 'degil .', 'sigaray b rakmak', 'b rakmak kolay', 'rakmak kolay degil', 'kolay degil .', 'sigaray b rakmak kolay', 'b rakmak kolay degil', 'rakmak kolay degil .', 'sigaray b rakmak kolay degil', 'b rakmak kolay degil .']
+ref sent: sigaray b rakmak kolay degil .
+= 5
+< 7-8
+
+> ['kisisel', 'nedenlerden', 'dolay', 'sirketten', 'ayr', 'ld', '.', 'kisisel nedenlerden', 'nedenlerden dolay', 'dolay sirketten', 'sirketten ayr', 'ayr ld', 'ld .', 'kisisel nedenlerden dolay', 'nedenlerden dolay sirketten', 'dolay sirketten ayr', 'sirketten ayr ld', 'ayr ld .', 'kisisel nedenlerden dolay sirketten', 'nedenlerden dolay sirketten ayr', 'dolay sirketten ayr ld', 'sirketten ayr ld .', 'kisisel nedenlerden dolay sirketten ayr', 'nedenlerden dolay sirketten ayr ld', 'dolay sirketten ayr ld .']
+ref sent: kisisel nedenlerden dolay sirketten ayr ld .
+= 6
+< 5-6
+
+Accuracy of the network on the sentence length test set: 53 %
+Finished
+
