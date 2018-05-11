@@ -1,4 +1,0 @@
-sentence 	index
-this is sentence 1	hello world
-this is sentence 2	a dog likes to bite a cat
-this is sentence 3	an elephant will be shot to death
