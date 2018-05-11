@@ -94,9 +94,9 @@ def readLangs(lang1, lang2, order, data_path, reverse=False):
     print("Reading lines...")
 
     # Read the file and split into lines
-    train_lines = open(data_path + '/train.txt', encoding='utf-8').\
+    train_lines = open(data_path + '/train_tur.txt', encoding='utf-8').\
         read().strip().split('\n')
-    test_lines = open(data_path + '/test.txt', encoding='utf-8').\
+    test_lines = open(data_path + '/test_tur.txt', encoding='utf-8').\
         read().strip().split('\n')
 
     # Split every line into pairs and normalize
@@ -178,8 +178,8 @@ def prepareData(lang1, lang2, order, data_path, num_pairs, reverse=False):
 if __name__ == '__main__':
     args = parser.parse_args()
     
-    input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
-        args.order, args.data_path,  args.num_pairs, True)
+    input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'tur', 
+        args.order, args.data_path,  args.num_pairs, False)
     vocab_ngrams = output_lang.createNGramDictionary()
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words, 
         args.order, vocab_ngrams, max_ngrams_len)
