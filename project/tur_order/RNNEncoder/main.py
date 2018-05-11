@@ -25,8 +25,8 @@ from metric import score
 parser = argparse.ArgumentParser(description='Infering Sentence Length with RNNEncoder + MLP')
 parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
-parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/tur_word_order', metavar='PATH',
-                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/tur_word_order)')
+parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/tur_order', metavar='PATH',
+                    help='data path of pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/tur_order)')
 parser.add_argument('--load-data-path', type=str, default='/scratch/zc807/nlu/tur_embedding_weights', metavar='PATH',
                     help='data path to load embedding weights (default: /scratch/zc807/nlu/tur_embedding_weights)')
 parser.add_argument('--mode', type=str, choices=['sum', 'mean'], default='sum', metavar='MODE',
