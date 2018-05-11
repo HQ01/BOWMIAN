@@ -18,8 +18,8 @@ parser.add_argument('--hpc', action='store_true', default=False,
                     help='set to hpc mode')
 parser.add_argument('--data-path', type=str, default='/scratch/zc807/nlu/data', metavar='PATH',
                     help='data path (default: /scratch/zc807/nlu/data)')
-parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/fin_word_order', metavar='PATH',
-                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/fin_word_order)')
+parser.add_argument('--save-data-path', type=str, default='/scratch/zc807/nlu/fin_order', metavar='PATH',
+                    help='data path to save pairs.pkl and lang.pkl (default: /scratch/zc807/nlu/fin_order)')
 parser.add_argument('--order', type=int, default=3, metavar='N',
                     help='order of ngram')
 parser.add_argument('--num-pairs', type=int, default=20000, metavar='N',
@@ -184,7 +184,7 @@ if __name__ == '__main__':
     print("order: {}".format(args.order))
     print("num-sentence-pairs: {}".format(args.num_pairs))
 
-    input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fra', 
+    input_lang, output_lang, train_pairs, test_pairs, max_ngrams_len = prepareData('eng', 'fin', 
         args.order, args.data_path, args.num_pairs, False)
     lang = (output_lang.word2index, output_lang.word2count, output_lang.index2word, output_lang.n_words)
     
